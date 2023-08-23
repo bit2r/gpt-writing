@@ -267,7 +267,6 @@ fonts_list |>
 
 ## 작업흐름
 
-
 [네이버 나눔스퀘어](https://campaign.naver.com/nanumsquare_neo) 글꼴을 로컬 컴퓨터에 다운로드 받아 
 모든 사용자용으로 설치한다.
 
@@ -288,7 +287,6 @@ fs::file_exists("C:/Windows/Fonts/NanumSquare.ttf")
 font_import(pattern = "NanumSquare.ttf", prompt = FALSE)
 ```
 
-
 동일한 방식으로 [마루부리 글꼴](https://hangeul.naver.com/maruproject_11)도 설치한다.
 
 ```{r}
@@ -301,3 +299,53 @@ font_import(pattern = "MaruBuri-Light.ttf", prompt = FALSE)
 ```
 
 
+```{r}
+library(tidyverse)
+library(palmerpenguins)
+
+extrafont::loadfonts("win", quiet = TRUE)
+
+available_fonts <- extrafont::fonts()
+
+available_fonts[str_detect(available_fonts, "Maru|Nanum")]
+
+ggplot_fonts_gg <- penguins |> 
+  ggplot(aes(x = flipper_length_mm, y = body_mass_g)) +
+    geom_point(aes(color = species, shape = species), size = 3) +
+    geom_smooth(method = "lm", se = FALSE, color = "black")  +
+    labs(
+      title = "물갈퀴 길이와 체중 회귀분석",
+      subtitle = "남극 파머 펭귄 데이터셋",
+      x = "물갈퀴 길이 (mm)",
+      y = "체중 (g)",
+      color = "펭귄종",
+      caption = "자료출처: palmerpenguins 패키지"
+    ) +
+    theme_minimal()  +
+    theme(
+      plot.title = element_text(family = "NanumSquare", size = 18, face = "bold"),
+      plot.subtitle  = element_text(family = "MaruBuri", size = 13),
+      axis.title.x  = element_text(family = "MaruBuri"),
+      axis.title.y  = element_text(family = "MaruBuri"),
+      axis.text.x   = element_text(family = "MaruBuri", size = 11),
+      axis.text.y   = element_text(family = "MaruBuri", size = 11),
+      legend.title  = element_text(family = "MaruBuri", size=13),
+      plot.caption = element_text(family = "NanumSquare", color = "gray20")
+    ) +
+    annotate(
+      "text", x = 200, y = 5000, label = "회귀분석 모형", 
+      hjust = 0.5, size = 8, color = "steelblue",
+      family = "MaruBuri", face = "bold"
+    ) +
+    guides(shape = "none")
+
+ggplot_fonts_gg
+
+# ragg::agg_jpeg("images/ggplot_fonts_gg.jpeg",
+#               width = 10, height = 7, units = "in", res = 600)
+# ggplot_fonts_gg
+# dev.off()
+```
+
+
+![`ggplot` 다른 한글 글꼴 적용](images/fonts_ggplot_penguins.jpg)
