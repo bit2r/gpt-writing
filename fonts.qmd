@@ -9,6 +9,28 @@ editor:
 
 # 글꼴
 
+글꼴(Fonts)은 문자나 기호를 디지털화하여 표현하는 데 사용되는 그래픽 디자인으로 
+주로 로컬 설치형 글꼴과 웹폰트 두가지 형태로 사용된다.
+
+로컬 설치형 글꼴은 사용자의 컴퓨터나 기기에 직접 설치되어 있는 글꼴로, 
+윈도우(Windows)나 맥(macOS)에서 기본적으로 제공되는 글꼴이나 사용자가 따로 설치하여 사용하는 글꼴을 의미한다. 
+인터넷 연결 없이도 사용할 수 있으며, 로컬에서 동작하므로 빠른 렌더링 속도를 제공한다는 점이 큰 장점이지만, 
+사용자 컴퓨터나 기기에 설치되어 있지 않은 글꼴은 보이지 않을 수 있으며, 
+글꼴 업데이트나 관리는 수동으로 직접해야한다는 점은 단점이다.
+
+반면 웹폰트는 웹페이지를 로드할 때 서버에서 함께 다운로드되어 사용자의 브라우저에 표시된다. 
+[구글 폰트(Google Fonts)](https://fonts.google.com/), [눈누](https://noonnu.cc/)와 같은 웹폰트 서비스를 통해 제공되며, 웹페이지를 방문하는 모든 사용자에게 동일한 글꼴를 통해 보여준다는 점은 장점이다. 
+다양한 스타일과 가중치(weights) 글꼴을 쉽게 사용할 수 있으며, 
+글꼴 업데이트나 관리가 자동화되는 장점은 있으나, 초기 페이지 로딩 시간이 길어질 수 있으며, 
+서버 다운 혹은 인터넷 연결 문제로 웹폰트가 정상적으로 로드되지 않을 위험도 있고, 인터넷 통신 
+데이터 사용량이 증가되어 속도가 늦어지고 관련 네트워크 비용이 늘어날 수 있다.
+
+
+## R 글꼴
+
+다각형을 그리는 `path()` 및 `polygon()`, 비트맵 이미지를 표시하는 `raster()`, 텍스트를 표시하는 
+`text()` 또는 `textUTF8()` 등을 통해 R에서 시각적 그래픽 요소를 구현하고 있다.
+
 
 R을 단순히 통계 언어로 생각하지 말고 적용범위를 확대해서 활용하면 
 데이터 과학 산출물을 다양한 전자문서로 제작하여 커뮤니케이션 할 수 있다.
@@ -217,6 +239,65 @@ p <- ggplot(NULL, aes(x = 1, y = 1)) + ylim(0.8, 1.2) +
            family = "NanumBarunGothic", size = 12)
 
 print(p)
+```
+
+
+## 글꼴 패키지
+
+로컬 컴퓨터에 설치된 R 관련 폰트 패키지를 확인할 수 있다.
+
+
+```{r}
+library(tidyverse)
+
+font_packages <- c("extrafont", "showtext", "sysfonts")
+
+fonts_list <- map(font_packages, packageDescription)
+
+fonts_list |> 
+  enframe() |> 
+  mutate(패키지명 = map_chr(value, "Package"),
+         버전 = map_chr(value, "Version"),
+         날짜 = map(value, "Date") |> as.character(),
+         URL = map(value, "URL") |> as.character()) |> 
+  select(-name, -value) |> 
+  gt::gt()
+```
+
+
+## 작업흐름
+
+
+[네이버 나눔스퀘어](https://campaign.naver.com/nanumsquare_neo) 글꼴을 로컬 컴퓨터에 다운로드 받아 
+모든 사용자용으로 설치한다.
+
+![윈도우 나눔스퀘어 글꼴 설치](images/fonts_nanumsquare.jpg)
+
+`fs` 패키지 `file_exists()` 함수로 `NanumSquare.ttf` 파일이 존재함을 확인한다.
+그리고 나서, `font_import()` 명령어로 글꼴을 설치한다. 경로(`path = `)를
+지정하는 방식과 `pattern =`을 지정하는 방식이 있는데 둘 중 글꼴을 설치되는 방식으로 진행한다.
+
+```{r}
+#| eval: false
+
+library(extrafont)
+
+fs::file_exists("C:/Windows/Fonts/NanumSquare.ttf")
+
+# font_import(paths = "C:/Windows/Fonts/NanumSquare.ttf")
+font_import(pattern = "NanumSquare.ttf", prompt = FALSE)
+```
+
+
+동일한 방식으로 [마루부리 글꼴](https://hangeul.naver.com/maruproject_11)도 설치한다.
+
+```{r}
+#| eval: false
+
+font_import(pattern = "MaruBuri-ExtraLight.ttf", prompt = FALSE)
+font_import(pattern = "MaruBuri-Regular.ttf", prompt = FALSE)
+font_import(pattern = "MaruBuri-Bold.ttf", prompt = FALSE)
+font_import(pattern = "MaruBuri-Light.ttf", prompt = FALSE)
 ```
 
 

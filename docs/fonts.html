@@ -165,21 +165,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">목차</h2>
    
   <ul>
-<li><a href="#font-coding" id="toc-font-coding" class="nav-link active" data-scroll-target="#font-coding"><span class="header-section-number">1.1</span> R 코딩 글꼴</a></li>
+<li><a href="#r-%EA%B8%80%EA%BC%B4" id="toc-r-글꼴" class="nav-link active" data-scroll-target="#r-%EA%B8%80%EA%BC%B4"><span class="header-section-number">1.1</span> R 글꼴</a></li>
+  <li><a href="#font-coding" id="toc-font-coding" class="nav-link" data-scroll-target="#font-coding"><span class="header-section-number">1.2</span> R 코딩 글꼴</a></li>
   <li>
-<a href="#r-viz-font" id="toc-r-viz-font" class="nav-link" data-scroll-target="#r-viz-font"><span class="header-section-number">1.2</span> <code>ggplot</code> 시각화 글꼴</a>
+<a href="#r-viz-font" id="toc-r-viz-font" class="nav-link" data-scroll-target="#r-viz-font"><span class="header-section-number">1.3</span> <code>ggplot</code> 시각화 글꼴</a>
   <ul class="collapse">
-<li><a href="#font-viz-font-example" id="toc-font-viz-font-example" class="nav-link" data-scroll-target="#font-viz-font-example"><span class="header-section-number">1.2.1</span> <code>ggplot</code> 한글 글꼴 사례</a></li>
+<li><a href="#font-viz-font-example" id="toc-font-viz-font-example" class="nav-link" data-scroll-target="#font-viz-font-example"><span class="header-section-number">1.3.1</span> <code>ggplot</code> 한글 글꼴 사례</a></li>
   </ul>
 </li>
   <li>
-<a href="#font-showtext" id="toc-font-showtext" class="nav-link" data-scroll-target="#font-showtext"><span class="header-section-number">1.3</span> <code>showtext</code> 패키지 </a>
+<a href="#font-showtext" id="toc-font-showtext" class="nav-link" data-scroll-target="#font-showtext"><span class="header-section-number">1.4</span> <code>showtext</code> 패키지 </a>
   <ul class="collapse">
-<li><a href="#showtext-korean-example" id="toc-showtext-korean-example" class="nav-link" data-scroll-target="#showtext-korean-example"><span class="header-section-number">1.3.1</span> R 설치 글꼴 확인</a></li>
-  <li><a href="#font-showtext-korean-example-ggplot" id="toc-font-showtext-korean-example-ggplot" class="nav-link" data-scroll-target="#font-showtext-korean-example-ggplot"><span class="header-section-number">1.3.2</span> <code>ggplot</code> 글꼴 적용</a></li>
+<li><a href="#showtext-korean-example" id="toc-showtext-korean-example" class="nav-link" data-scroll-target="#showtext-korean-example"><span class="header-section-number">1.4.1</span> R 설치 글꼴 확인</a></li>
+  <li><a href="#font-showtext-korean-example-ggplot" id="toc-font-showtext-korean-example-ggplot" class="nav-link" data-scroll-target="#font-showtext-korean-example-ggplot"><span class="header-section-number">1.4.2</span> <code>ggplot</code> 글꼴 적용</a></li>
   </ul>
 </li>
-  <li><a href="#font-showtext-korean-example-ttf" id="toc-font-showtext-korean-example-ttf" class="nav-link" data-scroll-target="#font-showtext-korean-example-ttf"><span class="header-section-number">1.4</span> 로컬 글꼴 적용</a></li>
+  <li><a href="#font-showtext-korean-example-ttf" id="toc-font-showtext-korean-example-ttf" class="nav-link" data-scroll-target="#font-showtext-korean-example-ttf"><span class="header-section-number">1.5</span> 로컬 글꼴 적용</a></li>
+  <li><a href="#%EA%B8%80%EA%BC%B4-%ED%8C%A8%ED%82%A4%EC%A7%80" id="toc-글꼴-패키지" class="nav-link" data-scroll-target="#%EA%B8%80%EA%BC%B4-%ED%8C%A8%ED%82%A4%EC%A7%80"><span class="header-section-number">1.6</span> 글꼴 패키지</a></li>
+  <li><a href="#%EC%9E%91%EC%97%85%ED%9D%90%EB%A6%84" id="toc-작업흐름" class="nav-link" data-scroll-target="#%EC%9E%91%EC%97%85%ED%9D%90%EB%A6%84"><span class="header-section-number">1.7</span> 작업흐름</a></li>
   </ul></nav>
     </div>
 <!-- main -->
@@ -200,15 +203,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><p>R을 단순히 통계 언어로 생각하지 말고 적용범위를 확대해서 활용하면 데이터 과학 산출물을 다양한 전자문서로 제작하여 커뮤니케이션 할 수 있다. PDF, HTML, 워드 등 문서 뿐만 아니라, 파워포인트 같은 발표자료를 슬라이드로 제작하여 배포할 수 있다. 그래프 문법(Grammar of Graphics)에 따라 <code>ggplot</code> 시각화를 산출물에도 다양한 글꼴(font)을 반영하여 좀더 관심을 끌 수 있는 그래프 제작도 가능하다. 데이터 과학자나 개발자 관점에서도 통합개발환경(IDE)이 필요한데 개발과 저작에 집중할 수 있는 글꼴을 지정하여 활용할 경우 생산성도 높일 수 있고 좀더 쾌적한 환경에서 개발을 진행할 수 있다.</p>
+</header><p>글꼴(Fonts)은 문자나 기호를 디지털화하여 표현하는 데 사용되는 그래픽 디자인으로 주로 로컬 설치형 글꼴과 웹폰트 두가지 형태로 사용된다.</p>
+<p>로컬 설치형 글꼴은 사용자의 컴퓨터나 기기에 직접 설치되어 있는 글꼴로, 윈도우(Windows)나 맥(macOS)에서 기본적으로 제공되는 글꼴이나 사용자가 따로 설치하여 사용하는 글꼴을 의미한다. 인터넷 연결 없이도 사용할 수 있으며, 로컬에서 동작하므로 빠른 렌더링 속도를 제공한다는 점이 큰 장점이지만, 사용자 컴퓨터나 기기에 설치되어 있지 않은 글꼴은 보이지 않을 수 있으며, 글꼴 업데이트나 관리는 수동으로 직접해야한다는 점은 단점이다.</p>
+<p>반면 웹폰트는 웹페이지를 로드할 때 서버에서 함께 다운로드되어 사용자의 브라우저에 표시된다. <a href="https://fonts.google.com/">구글 폰트(Google Fonts)</a>, <a href="https://noonnu.cc/">눈누</a>와 같은 웹폰트 서비스를 통해 제공되며, 웹페이지를 방문하는 모든 사용자에게 동일한 글꼴를 통해 보여준다는 점은 장점이다. 다양한 스타일과 가중치(weights) 글꼴을 쉽게 사용할 수 있으며, 글꼴 업데이트나 관리가 자동화되는 장점은 있으나, 초기 페이지 로딩 시간이 길어질 수 있으며, 서버 다운 혹은 인터넷 연결 문제로 웹폰트가 정상적으로 로드되지 않을 위험도 있고, 인터넷 통신 데이터 사용량이 증가되어 속도가 늦어지고 관련 네트워크 비용이 늘어날 수 있다.</p>
+<section id="r-글꼴" class="level2" data-number="1.1"><h2 data-number="1.1" class="anchored" data-anchor-id="r-글꼴">
+<span class="header-section-number">1.1</span> R 글꼴</h2>
+<p>다각형을 그리는 <code>path()</code> 및 <code><a href="https://rdrr.io/r/graphics/polygon.html">polygon()</a></code>, 비트맵 이미지를 표시하는 <code>raster()</code>, 텍스트를 표시하는 <code><a href="https://rdrr.io/r/graphics/text.html">text()</a></code> 또는 <code>textUTF8()</code> 등을 통해 R에서 시각적 그래픽 요소를 구현하고 있다.</p>
+<p>R을 단순히 통계 언어로 생각하지 말고 적용범위를 확대해서 활용하면 데이터 과학 산출물을 다양한 전자문서로 제작하여 커뮤니케이션 할 수 있다. PDF, HTML, 워드 등 문서 뿐만 아니라, 파워포인트 같은 발표자료를 슬라이드로 제작하여 배포할 수 있다. 그래프 문법(Grammar of Graphics)에 따라 <code>ggplot</code> 시각화를 산출물에도 다양한 글꼴(font)을 반영하여 좀더 관심을 끌 수 있는 그래프 제작도 가능하다. 데이터 과학자나 개발자 관점에서도 통합개발환경(IDE)이 필요한데 개발과 저작에 집중할 수 있는 글꼴을 지정하여 활용할 경우 생산성도 높일 수 있고 좀더 쾌적한 환경에서 개발을 진행할 수 있다.</p>
 <p>R 스크립트 작성을 위한 글꼴과 그래프에 한글 글꼴(font)을 적용한다. <code>ggplot</code>을 비롯한 시각화를 위해 <code>extrafont</code>와 <code>showtext</code> 패키지를 활용하여 적절한 한글 글꼴을 사용할 뿐만 아니라 코딩 개발할 때 R 스크립트(<code>.R</code>) 및 R마크다운(<code>.Rmd</code>)에서도 적절한 한글글꼴 사용을 위해서 코딩관련 글꼴도 설치한다.</p>
 <p>기본적인 작업흐름은 운영체제에 먼저 외부에서 가져온 폰트를 설치한다. 그리고 나서 <code>extrafont</code> 팩키지 <code><a href="https://rdrr.io/pkg/extrafont/man/font_import.html">font_import()</a></code> 함수를 사용해서 폰트를 R에서 불러 사용할 수 있도록 설치한다. 그리고 나서 <code><a href="https://rdrr.io/pkg/extrafont/man/loadfonts.html">loadfonts()</a></code> 함수를 사용해서 글꼴을 <code>ggplot</code>등에서 불러 사용한다. <a href="https://fonts.google.com/">구글 글꼴</a>을 사용하고자 할 경우 <code>showtext</code> 패키지를 사용해서 로컬 컴퓨터에 설치하여 적용한다.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><a href="images/font_overview.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="R 폰트/글꼴 설치"><img src="images/font_overview.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
 <figcaption class="figure-caption">R 폰트/글꼴 설치</figcaption></figure>
 </div>
-<section id="font-coding" class="level2" data-number="1.1"><h2 data-number="1.1" class="anchored" data-anchor-id="font-coding">
-<span class="header-section-number">1.1</span> R 코딩 글꼴</h2>
+</section><section id="font-coding" class="level2" data-number="1.2"><h2 data-number="1.2" class="anchored" data-anchor-id="font-coding">
+<span class="header-section-number">1.2</span> R 코딩 글꼴</h2>
 <p>문서를 위해 작성하는데 사용되는 글꼴과 R 코딩을 위해 사용되는 글꼴은 차이가 난다. 왜냐하면 R 코딩에 사용되는 글꼴은 가독성이 좋아야하고 디버깅에 용이해야 된다. 영어는 <code>consolas</code> 글꼴을 많이 사용하는데 무료가 아니다. 그래서 <code>consolas</code>에서 영감을 받은 SIL 오픈 폰트 라이선스를 따르는 <a href="https://en.wikipedia.org/wiki/Inconsolata">Inconsolata</a>가 R 코딩에 많이 사용되고 있다. 하지만, R코드를 작성할 때 주석을 한글로 달거나 R마크다운 작업을 할 경우 유사한 기능을 하는 한글 글꼴이 필요하다.</p>
 <ul>
 <li><a href="https://github.com/naver/nanumfont/blob/master/README.md">네이버 나눔고딕 코딩글꼴</a></li>
@@ -219,8 +228,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <figure class="figure"><p><a href="images/font_d2coding.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="D2 코딩폰트 설치"><img src="images/font_d2coding.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
 <figcaption class="figure-caption">D2 코딩폰트 설치</figcaption></figure>
 </div>
-</section><section id="r-viz-font" class="level2" data-number="1.2"><h2 data-number="1.2" class="anchored" data-anchor-id="r-viz-font">
-<span class="header-section-number">1.2</span> <code>ggplot</code> 시각화 글꼴</h2>
+</section><section id="r-viz-font" class="level2" data-number="1.3"><h2 data-number="1.3" class="anchored" data-anchor-id="r-viz-font">
+<span class="header-section-number">1.3</span> <code>ggplot</code> 시각화 글꼴</h2>
 <p><code>extrafont</code> 팩키지에서 <code><a href="https://rdrr.io/pkg/extrafont/man/font_import.html">font_import()</a></code> 함수로 운영체제(윈도우/리눅스)에 설치된 글꼴을 R로 가져온다. 그리고 나서 <code><a href="https://rdrr.io/pkg/extrafont/man/loadfonts.html">loadfonts()</a></code> 함수를 사용해서 설치된 글꼴을 사용하는 작업흐름을 따르게 된다.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(extrafont)</span>
@@ -240,8 +249,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">font_import</span>(<span class="at">pattern =</span> <span class="st">"Nanum"</span>)</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="font-viz-font-example" class="level3" data-number="1.2.1"><h3 data-number="1.2.1" class="anchored" data-anchor-id="font-viz-font-example">
-<span class="header-section-number">1.2.1</span> <code>ggplot</code> 한글 글꼴 사례</h3>
+<section id="font-viz-font-example" class="level3" data-number="1.3.1"><h3 data-number="1.3.1" class="anchored" data-anchor-id="font-viz-font-example">
+<span class="header-section-number">1.3.1</span> <code>ggplot</code> 한글 글꼴 사례</h3>
 <p><code>extrafont</code> 패키지 <code><a href="https://rdrr.io/pkg/extrafont/man/loadfonts.html">loadfonts()</a></code> 함수를 사용해서 <code>ggplot</code>에서 적용시킬 수 있는 글꼴을 불러냈다. R 내장 데이터셋 <code>iris</code>를 사용하여 나눔글꼴 “Nanum Pen Script”을 기본 글꼴로 적용시켰다.</p>
 <div class="cell">
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
@@ -261,8 +270,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</section></section><section id="font-showtext" class="level2" data-number="1.3"><h2 data-number="1.3" class="anchored" data-anchor-id="font-showtext">
-<span class="header-section-number">1.3</span> <code>showtext</code> 패키지 <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>
+</section></section><section id="font-showtext" class="level2" data-number="1.4"><h2 data-number="1.4" class="anchored" data-anchor-id="font-showtext">
+<span class="header-section-number">1.4</span> <code>showtext</code> 패키지 <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>
 </h2>
 <p><a href="https://github.com/wch/extrafont">extrafont</a> 패키지를 통해 한자를 포함한 한글을 처리할 수 있었으나, <a href="https://github.com/wch/extrafont">extrafont</a>는 트루타입폰트(<code>.ttf</code>)를 PDF 그래픽 장치에 초점을 맞춰 개발이 되었다. 따라서, 데이터과학 최종산출물이 PDF 형태 책이 아닌 경우 여러가지 면에서 다양한 한글 글꼴을 표현하는데 있어 한계가 있다.</p>
 <p>새로 개발된 <a href="https://cran.rstudio.com/web/packages/showtext/index.html">showtext</a> 팩키지는 <code>Ghostscript</code>같은 외부 소프트웨어를 활용하지 않고도 다양한 (그래픽) 글꼴을 지원한다. <a href="https://cran.rstudio.com/web/packages/showtext/index.html">showtext</a>로 R 그래프를 생성할 때, 다양한 글꼴(TrueType, OpenType, Type 1, web fonts 등)을 지원한다.</p>
@@ -273,8 +282,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>사용자가 그래프에 텍스트를 넣기 위해 R 함수에서 <code><a href="https://rdrr.io/r/graphics/text.html">text()</a></code>를 호출할 때 <code>showtext</code>가 활성화 되어 있으면 <code>showtext</code> 팩키지 <code><a href="https://rdrr.io/r/graphics/text.html">text()</a></code> 함수를 호출해서 그래픽 혹은 이미지 파일에 텍스트를 표현하고 그렇지 않는 경우는 디폴트 장치함수 <code><a href="https://rdrr.io/r/graphics/text.html">text()</a></code> 함수를 호출하게 되어 있다.</p>
 <p>내부적으로 상세 작동 로직은 글꼴 위치를 파악해서 글리프(glyph) 정보를 추출하고 비트맵 형식, 벡터그래픽 형식에 따라서 비트맵일 경우 <code>raster()</code> 장치함수를 호출하고, 벡터그래픽인 경우 <code>path()</code> 장치함수를 호출해서 기능을 수행한다.</p>
-<section id="showtext-korean-example" class="level3" data-number="1.3.1"><h3 data-number="1.3.1" class="anchored" data-anchor-id="showtext-korean-example">
-<span class="header-section-number">1.3.1</span> R 설치 글꼴 확인</h3>
+<section id="showtext-korean-example" class="level3" data-number="1.4.1"><h3 data-number="1.4.1" class="anchored" data-anchor-id="showtext-korean-example">
+<span class="header-section-number">1.4.1</span> R 설치 글꼴 확인</h3>
 <p><code>extrafont</code> 팩키지 <code><a href="https://rdrr.io/pkg/extrafont/man/loadfonts.html">loadfonts()</a></code> 함수를 통해 <code>.ttf</code> 파일 정보를 확인한다. 현재 <a href="http://www.google.com/fonts">구글 글끌</a> 페이지에서 많은 한글 글꼴을 지원하지 않고 있다. 구글에서 전세계 글꼴을 지원하다보 동아시아 3국 대상으로 지원되는 글꼴은 적은 것으로 보인다.</p>
 <div class="cell">
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># 0. 환경설정 --------------------------------------------------------------------------</span></span>
@@ -283,8 +292,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/wch/extrafont">extrafont</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/extrafont/man/loadfonts.html">loadfonts</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="font-showtext-korean-example-ggplot" class="level3" data-number="1.3.2"><h3 data-number="1.3.2" class="anchored" data-anchor-id="font-showtext-korean-example-ggplot">
-<span class="header-section-number">1.3.2</span> <code>ggplot</code> 글꼴 적용</h3>
+</section><section id="font-showtext-korean-example-ggplot" class="level3" data-number="1.4.2"><h3 data-number="1.4.2" class="anchored" data-anchor-id="font-showtext-korean-example-ggplot">
+<span class="header-section-number">1.4.2</span> <code>ggplot</code> 글꼴 적용</h3>
 <p>한글 글꼴을 바로 적용하기에 앞서 <code>showtext</code> 패키지 포함된 영문글꼴 적용 사례를 먼저 돌려보자. <code>ggplot</code> 그래픽에 적용되는 <code>showtext</code> 활용 기본 작업흐름은 다음과 같다.</p>
 <ol type="1">
 <li>글꼴을 적재한다.</li>
@@ -318,8 +327,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/showtext/man/showtext_end.html">showtext.end</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># 그래픽 장치 닫기</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section></section><section id="font-showtext-korean-example-ttf" class="level2" data-number="1.4"><h2 data-number="1.4" class="anchored" data-anchor-id="font-showtext-korean-example-ttf">
-<span class="header-section-number">1.4</span> 로컬 글꼴 적용</h2>
+</section></section><section id="font-showtext-korean-example-ttf" class="level2" data-number="1.5"><h2 data-number="1.5" class="anchored" data-anchor-id="font-showtext-korean-example-ttf">
+<span class="header-section-number">1.5</span> 로컬 글꼴 적용</h2>
 <p>로컬 컴퓨터에 저장된 <code>.ttf</code> 파일을 사용자 지정해서 가져온 후 이를 <code>ggplot</code>에 반영하여 한글을 R 그래프에 적용하는 것도 가능하다. <code>showtext</code>는 <code>extrafont</code> 보다 나중에 개발되어 <code>extrafont</code>가 로컬 컴퓨터에 설치된 글꼴을 <code>ggplot</code>에 구현되는데 전력을 다했다면 <code>showtext</code>는 이를 발판으로 나중에 개발되어 구글 폰트와 같은 인터넷 글꼴과 최근 웹출판에 대한 개념도 넣어 개발된 것이 차이점이다.</p>
 <div class="cell">
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># ３. 한글 그래픽 --------------------------------------------------------------------------</span></span>
@@ -343,6 +352,519 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 </div>
+</div>
+</section><section id="글꼴-패키지" class="level2" data-number="1.6"><h2 data-number="1.6" class="anchored" data-anchor-id="글꼴-패키지">
+<span class="header-section-number">1.6</span> 글꼴 패키지</h2>
+<p>로컬 컴퓨터에 설치된 R 관련 폰트 패키지를 확인할 수 있다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">font_packages</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"extrafont"</span>, <span class="st">"showtext"</span>, <span class="st">"sysfonts"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">fonts_list</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map</a></span><span class="op">(</span><span class="va">font_packages</span>, <span class="va">packageDescription</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">fonts_list</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://tibble.tidyverse.org/reference/enframe.html">enframe</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>패키지명 <span class="op">=</span> <span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map_chr</a></span><span class="op">(</span><span class="va">value</span>, <span class="st">"Package"</span><span class="op">)</span>,</span>
+<span>         버전 <span class="op">=</span> <span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map_chr</a></span><span class="op">(</span><span class="va">value</span>, <span class="st">"Version"</span><span class="op">)</span>,</span>
+<span>         날짜 <span class="op">=</span> <span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map</a></span><span class="op">(</span><span class="va">value</span>, <span class="st">"Date"</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html">as.character</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>         URL <span class="op">=</span> <span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map</a></span><span class="op">(</span><span class="va">value</span>, <span class="st">"URL"</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html">as.character</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="op">-</span><span class="va">name</span>, <span class="op">-</span><span class="va">value</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/gt.html">gt</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="yvmzooxocv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#yvmzooxocv table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#yvmzooxocv thead, #yvmzooxocv tbody, #yvmzooxocv tfoot, #yvmzooxocv tr, #yvmzooxocv td, #yvmzooxocv th {
+  border-style: none;
+}
+
+#yvmzooxocv p {
+  margin: 0;
+  padding: 0;
+}
+
+#yvmzooxocv .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#yvmzooxocv .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#yvmzooxocv .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#yvmzooxocv .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#yvmzooxocv .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#yvmzooxocv .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#yvmzooxocv .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#yvmzooxocv .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#yvmzooxocv .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#yvmzooxocv .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#yvmzooxocv .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#yvmzooxocv .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#yvmzooxocv .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#yvmzooxocv .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#yvmzooxocv .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#yvmzooxocv .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#yvmzooxocv .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#yvmzooxocv .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#yvmzooxocv .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#yvmzooxocv .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#yvmzooxocv .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#yvmzooxocv .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#yvmzooxocv .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#yvmzooxocv .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#yvmzooxocv .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#yvmzooxocv .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#yvmzooxocv .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#yvmzooxocv .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#yvmzooxocv .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#yvmzooxocv .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#yvmzooxocv .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#yvmzooxocv .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#yvmzooxocv .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#yvmzooxocv .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#yvmzooxocv .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#yvmzooxocv .gt_left {
+  text-align: left;
+}
+
+#yvmzooxocv .gt_center {
+  text-align: center;
+}
+
+#yvmzooxocv .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#yvmzooxocv .gt_font_normal {
+  font-weight: normal;
+}
+
+#yvmzooxocv .gt_font_bold {
+  font-weight: bold;
+}
+
+#yvmzooxocv .gt_font_italic {
+  font-style: italic;
+}
+
+#yvmzooxocv .gt_super {
+  font-size: 65%;
+}
+
+#yvmzooxocv .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#yvmzooxocv .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#yvmzooxocv .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#yvmzooxocv .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#yvmzooxocv .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#yvmzooxocv .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#yvmzooxocv .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead><tr class="gt_col_headings">
+<th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="패키지명">패키지명</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="버전">버전</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="날짜">날짜</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="URL">URL</th>
+    </tr></thead>
+<tbody class="gt_table_body">
+<tr>
+<td headers="패키지명" class="gt_row gt_left">extrafont</td>
+<td headers="버전" class="gt_row gt_right">0.19</td>
+<td headers="날짜" class="gt_row gt_left">NULL</td>
+<td headers="URL" class="gt_row gt_left">https://github.com/wch/extrafont</td>
+</tr>
+<tr>
+<td headers="패키지명" class="gt_row gt_left">showtext</td>
+<td headers="버전" class="gt_row gt_right">0.9-6</td>
+<td headers="날짜" class="gt_row gt_left">2023-05-03</td>
+<td headers="URL" class="gt_row gt_left">https://github.com/yixuan/showtext</td>
+</tr>
+<tr>
+<td headers="패키지명" class="gt_row gt_left">sysfonts</td>
+<td headers="버전" class="gt_row gt_right">0.8.8</td>
+<td headers="날짜" class="gt_row gt_left">2022-03-13</td>
+<td headers="URL" class="gt_row gt_left">https://github.com/yixuan/sysfonts</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section><section id="작업흐름" class="level2" data-number="1.7"><h2 data-number="1.7" class="anchored" data-anchor-id="작업흐름">
+<span class="header-section-number">1.7</span> 작업흐름</h2>
+<p><a href="https://campaign.naver.com/nanumsquare_neo">네이버 나눔스퀘어</a> 글꼴을 로컬 컴퓨터에 다운로드 받아 모든 사용자용으로 설치한다.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/fonts_nanumsquare.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="윈도우 나눔스퀘어 글꼴 설치"><img src="images/fonts_nanumsquare.jpg" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">윈도우 나눔스퀘어 글꼴 설치</figcaption></figure>
+</div>
+<p><code>fs</code> 패키지 <code>file_exists()</code> 함수로 <code>NanumSquare.ttf</code> 파일이 존재함을 확인한다. 그리고 나서, <code><a href="https://rdrr.io/pkg/extrafont/man/font_import.html">font_import()</a></code> 명령어로 글꼴을 설치한다. 경로(<code>path =</code>)를 지정하는 방식과 <code>pattern =</code>을 지정하는 방식이 있는데 둘 중 글꼴을 설치되는 방식으로 진행한다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/wch/extrafont">extrafont</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">fs</span><span class="fu">::</span><span class="fu"><a href="https://fs.r-lib.org/reference/file_access.html">file_exists</a></span><span class="op">(</span><span class="st">"C:/Windows/Fonts/NanumSquare.ttf"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># font_import(paths = "C:/Windows/Fonts/NanumSquare.ttf")</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/extrafont/man/font_import.html">font_import</a></span><span class="op">(</span>pattern <span class="op">=</span> <span class="st">"NanumSquare.ttf"</span>, prompt <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>동일한 방식으로 <a href="https://hangeul.naver.com/maruproject_11">마루부리 글꼴</a>도 설치한다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/extrafont/man/font_import.html">font_import</a></span><span class="op">(</span>pattern <span class="op">=</span> <span class="st">"MaruBuri-ExtraLight.ttf"</span>, prompt <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/extrafont/man/font_import.html">font_import</a></span><span class="op">(</span>pattern <span class="op">=</span> <span class="st">"MaruBuri-Regular.ttf"</span>, prompt <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/extrafont/man/font_import.html">font_import</a></span><span class="op">(</span>pattern <span class="op">=</span> <span class="st">"MaruBuri-Bold.ttf"</span>, prompt <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/extrafont/man/font_import.html">font_import</a></span><span class="op">(</span>pattern <span class="op">=</span> <span class="st">"MaruBuri-Light.ttf"</span>, prompt <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
@@ -677,7 +1199,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","openEffect":"zoom","closeEffect":"zoom","loop":true,"selector":".lightbox"});</script>
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","closeEffect":"zoom","loop":true,"openEffect":"zoom"});</script>
 
 
 </body></html>
