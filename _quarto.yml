@@ -1,0 +1,65 @@
+project:
+  type: book
+  output-dir: docs
+  resources:
+    - "data/*.mp3"
+  render:
+    - "*.qmd"
+    - "!*.Rmd"
+
+lang: ko-KR
+date-format: "YYYY년 MM월 DD일"
+
+book:
+  title: "챗GPT 디지털 글쓰기"
+  author: "이광춘"
+  date: last-modified
+  chapters:
+    - index.qmd
+
+    - part: "기본요소"
+      chapters:
+        - fonts.qmd
+
+    - references.qmd
+
+filters:
+   - lightbox
+lightbox: auto
+
+format:
+  html:
+    theme:
+      - cosmo
+      - chatGPT4ds.scss
+    number-depth: 3
+    number-sections: true
+    colorlinks: true
+    cite-method: biblatex
+    code-overflow: wrap
+    code-link: true
+    author-meta: "이광춘"
+    callout-appearance: simple
+
+  pdf:
+    documentclass: scrreprt
+    cite-method: biblatex
+
+bibliography: references.bib
+csl: apa-single-spaced.csl
+link-citations: true
+
+
+knitr:
+  opts_chunk:
+    message: false
+    warning: false
+    collapse: false
+editor_options:
+  chunk_output_type: console
+
+
+execute:
+  freeze: auto
+
+editor: source
