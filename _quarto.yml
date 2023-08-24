@@ -20,6 +20,8 @@ book:
     - part: "기본요소"
       chapters:
         - fonts.qmd
+        - colors.qmd
+        - themes.qmd
 
     - references.qmd
 
