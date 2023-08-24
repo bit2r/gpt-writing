@@ -186,7 +186,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul>
 </li>
   <li><a href="#%EC%82%AC%EC%9A%A9%EC%9E%90-%ED%85%8C%EB%A7%88" id="toc-사용자-테마" class="nav-link" data-scroll-target="#%EC%82%AC%EC%9A%A9%EC%9E%90-%ED%85%8C%EB%A7%88"><span class="header-section-number">3.2</span> 사용자 테마</a></li>
-  <li><a href="#%EC%9E%90%EB%8F%99-%EC%84%A4%EC%A0%95" id="toc-자동-설정" class="nav-link" data-scroll-target="#%EC%9E%90%EB%8F%99-%EC%84%A4%EC%A0%95"><span class="header-section-number">3.3</span> 자동 설정</a></li>
+  <li><a href="#%EA%B7%B8%EB%9E%98%ED%94%84-%EC%9E%90%EB%8F%99-%EC%84%A4%EC%A0%95" id="toc-그래프-자동-설정" class="nav-link" data-scroll-target="#%EA%B7%B8%EB%9E%98%ED%94%84-%EC%9E%90%EB%8F%99-%EC%84%A4%EC%A0%95"><span class="header-section-number">3.3</span> 그래프 자동 설정</a></li>
   <li>
 <a href="#%ED%91%9C-%ED%85%8C%EB%A7%88" id="toc-표-테마" class="nav-link" data-scroll-target="#%ED%91%9C-%ED%85%8C%EB%A7%88"><span class="header-section-number">3.4</span> 표 테마</a>
   <ul class="collapse">
@@ -195,6 +195,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#gtextra" id="toc-gtextra" class="nav-link" data-scroll-target="#gtextra"><span class="header-section-number">3.4.3</span> <code>gtExtra</code></a></li>
   </ul>
 </li>
+  <li><a href="#%EC%82%AC%EC%9A%A9%EC%9E%90-%ED%85%8C%EB%A7%88-1" id="toc-사용자-테마-1" class="nav-link" data-scroll-target="#%EC%82%AC%EC%9A%A9%EC%9E%90-%ED%85%8C%EB%A7%88-1"><span class="header-section-number">3.5</span> 사용자 테마</a></li>
+  <li><a href="#%ED%91%9C-%EC%9E%90%EB%8F%99-%EC%84%A4%EC%A0%95" id="toc-표-자동-설정" class="nav-link" data-scroll-target="#%ED%91%9C-%EC%9E%90%EB%8F%99-%EC%84%A4%EC%A0%95"><span class="header-section-number">3.6</span> 표 자동 설정</a></li>
   </ul></nav>
     </div>
 <!-- main -->
@@ -407,8 +409,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</section><section id="자동-설정" class="level2" data-number="3.3"><h2 data-number="3.3" class="anchored" data-anchor-id="자동-설정">
-<span class="header-section-number">3.3</span> 자동 설정</h2>
+</section><section id="그래프-자동-설정" class="level2" data-number="3.3"><h2 data-number="3.3" class="anchored" data-anchor-id="그래프-자동-설정">
+<span class="header-section-number">3.3</span> 그래프 자동 설정</h2>
 <p>작성한 테마를 매번 코드를 “복사하여 붙여넣기” 하여 사용하는 대신 <code>.Rprofile</code> 파일에 반영하여 매번 <code>ggplot</code> 시각화를 할 때 사용하는 방법을 살펴보자. <code>usethis</code> 패키지 <code>edit_r_profile()</code> 함수를 호출하여 앞서 작성한 테마를 반영한다.</p>
 <div class="cell">
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/edit.html">edit_r_profile</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -473,52 +475,61 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span><span class="fu"><a href="https://rdrr.io/r/grDevices/dev.html">dev.off</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/penguins_theme_gg.jpg" class="lightbox" title="펭귄 데이터 사용자 테마 적용 그래프" data-gallery="quarto-lightbox-gallery-7"><img src="images/penguins_theme_gg.jpg" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="images/penguins_theme_gg.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="펭귄 데이터 사용자 테마 적용 그래프"><img src="images/penguins_theme_gg.jpg" class="img-fluid figure-img"></a></p>
 <figcaption class="figure-caption">펭귄 데이터 사용자 테마 적용 그래프</figcaption></figure>
 </div>
 </section><section id="표-테마" class="level2" data-number="3.4"><h2 data-number="3.4" class="anchored" data-anchor-id="표-테마">
 <span class="header-section-number">3.4</span> 표 테마</h2>
 <p><code>ggplot</code> 뿐만 아니라 <code>gt</code> 패키지에도 사용자 정의 테마 설정 기능이 있다.</p>
 <div class="cell">
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://gt.rstudio.com/">gt</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jthomasmock/gtExtras">gtExtras</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://docs.ropensci.org/magick/">magick</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">penguins_gt</span> <span class="op">&lt;-</span> <span class="va">penguins</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">species</span>, <span class="va">island</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_wider.html">pivot_wider</a></span><span class="op">(</span>names_from <span class="op">=</span> <span class="va">island</span>, values_from <span class="op">=</span> <span class="va">n</span>, values_fill <span class="op">=</span> <span class="fl">0</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://gt.rstudio.com/reference/gt.html">gt</a></span><span class="op">(</span>rowname_col <span class="op">=</span> <span class="st">"species"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://gt.rstudio.com/reference/grand_summary_rows.html">grand_summary_rows</a></span><span class="op">(</span></span>
-<span>    columns <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">Biscoe</span>, <span class="va">Dream</span>, <span class="va">Torgersen</span><span class="op">)</span>,</span>
-<span>    fns <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
-<span>      <span class="st">'합계'</span> <span class="op">=</span> <span class="op">~</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">.</span><span class="op">)</span> </span>
-<span>    <span class="op">)</span>,</span>
-<span>    fmt <span class="op">=</span> <span class="op">~</span> <span class="fu"><a href="https://gt.rstudio.com/reference/fmt_number.html">fmt_number</a></span><span class="op">(</span><span class="va">.</span>, use_seps <span class="op">=</span> <span class="cn">FALSE</span>, decimals <span class="op">=</span> <span class="fl">0</span><span class="op">)</span>,</span>
-<span>    missing_text <span class="op">=</span> <span class="st">'-'</span></span>
-<span>  <span class="op">)</span>  <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://gt.rstudio.com/reference/cols_align.html">cols_align</a></span><span class="op">(</span><span class="st">"center"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://gt.rstudio.com/reference/opt_row_striping.html">opt_row_striping</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/tab_header.html">tab_header</a></span><span class="op">(</span></span>
+<span>      title <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/md.html">md</a></span><span class="op">(</span><span class="st">"남극 펭귄 **서식섬과 종** 빈도표"</span><span class="op">)</span>,</span>
+<span>      subtitle <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/md.html">md</a></span><span class="op">(</span><span class="st">"`palmerpenguins` 데이터 패키지"</span><span class="op">)</span></span>
+<span>    <span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/grand_summary_rows.html">grand_summary_rows</a></span><span class="op">(</span></span>
+<span>      columns <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">Biscoe</span>, <span class="va">Dream</span>, <span class="va">Torgersen</span><span class="op">)</span>,</span>
+<span>      fns <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
+<span>        <span class="st">'합계'</span> <span class="op">=</span> <span class="op">~</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">.</span><span class="op">)</span> </span>
+<span>      <span class="op">)</span>,</span>
+<span>      fmt <span class="op">=</span> <span class="op">~</span> <span class="fu"><a href="https://gt.rstudio.com/reference/fmt_number.html">fmt_number</a></span><span class="op">(</span><span class="va">.</span>, use_seps <span class="op">=</span> <span class="cn">FALSE</span>, decimals <span class="op">=</span> <span class="fl">0</span><span class="op">)</span>,</span>
+<span>      missing_text <span class="op">=</span> <span class="st">'-'</span></span>
+<span>    <span class="op">)</span>  <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/cols_align.html">cols_align</a></span><span class="op">(</span><span class="st">"center"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/opt_row_striping.html">opt_row_striping</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/tab_source_note.html">tab_source_note</a></span><span class="op">(</span></span>
+<span>      source_note <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/md.html">md</a></span><span class="op">(</span><span class="st">"자료출처: `penguins` 데이터셋"</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
 <span></span>
 <span><span class="va">penguins_gt</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="sstmkxomon" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#sstmkxomon table {
+<div id="gapdrndnln" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#gapdrndnln table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#sstmkxomon thead, #sstmkxomon tbody, #sstmkxomon tfoot, #sstmkxomon tr, #sstmkxomon td, #sstmkxomon th {
+#gapdrndnln thead, #gapdrndnln tbody, #gapdrndnln tfoot, #gapdrndnln tr, #gapdrndnln td, #gapdrndnln th {
   border-style: none;
 }
 
-#sstmkxomon p {
+#gapdrndnln p {
   margin: 0;
   padding: 0;
 }
 
-#sstmkxomon .gt_table {
+#gapdrndnln .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -544,12 +555,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#sstmkxomon .gt_caption {
+#gapdrndnln .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#sstmkxomon .gt_title {
+#gapdrndnln .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -561,7 +572,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#sstmkxomon .gt_subtitle {
+#gapdrndnln .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -573,7 +584,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#sstmkxomon .gt_heading {
+#gapdrndnln .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -585,13 +596,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#sstmkxomon .gt_bottom_border {
+#gapdrndnln .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#sstmkxomon .gt_col_headings {
+#gapdrndnln .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -606,7 +617,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#sstmkxomon .gt_col_heading {
+#gapdrndnln .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -626,7 +637,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#sstmkxomon .gt_column_spanner_outer {
+#gapdrndnln .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -638,15 +649,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#sstmkxomon .gt_column_spanner_outer:first-child {
+#gapdrndnln .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#sstmkxomon .gt_column_spanner_outer:last-child {
+#gapdrndnln .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#sstmkxomon .gt_column_spanner {
+#gapdrndnln .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -658,11 +669,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#sstmkxomon .gt_spanner_row {
+#gapdrndnln .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#sstmkxomon .gt_group_heading {
+#gapdrndnln .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -688,7 +699,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#sstmkxomon .gt_empty_group_heading {
+#gapdrndnln .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -703,15 +714,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#sstmkxomon .gt_from_md > :first-child {
+#gapdrndnln .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#sstmkxomon .gt_from_md > :last-child {
+#gapdrndnln .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#sstmkxomon .gt_row {
+#gapdrndnln .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -730,7 +741,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#sstmkxomon .gt_stub {
+#gapdrndnln .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -743,7 +754,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#sstmkxomon .gt_stub_row_group {
+#gapdrndnln .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -757,15 +768,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#sstmkxomon .gt_row_group_first td {
+#gapdrndnln .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#sstmkxomon .gt_row_group_first th {
+#gapdrndnln .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#sstmkxomon .gt_summary_row {
+#gapdrndnln .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -775,16 +786,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#sstmkxomon .gt_first_summary_row {
+#gapdrndnln .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#sstmkxomon .gt_first_summary_row.thick {
+#gapdrndnln .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#sstmkxomon .gt_last_summary_row {
+#gapdrndnln .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -794,7 +805,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#sstmkxomon .gt_grand_summary_row {
+#gapdrndnln .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -804,7 +815,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#sstmkxomon .gt_first_grand_summary_row {
+#gapdrndnln .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -814,7 +825,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#sstmkxomon .gt_last_grand_summary_row_top {
+#gapdrndnln .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -824,11 +835,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#sstmkxomon .gt_striped {
+#gapdrndnln .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#sstmkxomon .gt_table_body {
+#gapdrndnln .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -837,7 +848,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#sstmkxomon .gt_footnotes {
+#gapdrndnln .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -851,7 +862,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#sstmkxomon .gt_footnote {
+#gapdrndnln .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -860,7 +871,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#sstmkxomon .gt_sourcenotes {
+#gapdrndnln .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -874,7 +885,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#sstmkxomon .gt_sourcenote {
+#gapdrndnln .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -882,73 +893,82 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#sstmkxomon .gt_left {
+#gapdrndnln .gt_left {
   text-align: left;
 }
 
-#sstmkxomon .gt_center {
+#gapdrndnln .gt_center {
   text-align: center;
 }
 
-#sstmkxomon .gt_right {
+#gapdrndnln .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#sstmkxomon .gt_font_normal {
+#gapdrndnln .gt_font_normal {
   font-weight: normal;
 }
 
-#sstmkxomon .gt_font_bold {
+#gapdrndnln .gt_font_bold {
   font-weight: bold;
 }
 
-#sstmkxomon .gt_font_italic {
+#gapdrndnln .gt_font_italic {
   font-style: italic;
 }
 
-#sstmkxomon .gt_super {
+#gapdrndnln .gt_super {
   font-size: 65%;
 }
 
-#sstmkxomon .gt_footnote_marks {
+#gapdrndnln .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#sstmkxomon .gt_asterisk {
+#gapdrndnln .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#sstmkxomon .gt_indent_1 {
+#gapdrndnln .gt_indent_1 {
   text-indent: 5px;
 }
 
-#sstmkxomon .gt_indent_2 {
+#gapdrndnln .gt_indent_2 {
   text-indent: 10px;
 }
 
-#sstmkxomon .gt_indent_3 {
+#gapdrndnln .gt_indent_3 {
   text-indent: 15px;
 }
 
-#sstmkxomon .gt_indent_4 {
+#gapdrndnln .gt_indent_4 {
   text-indent: 20px;
 }
 
-#sstmkxomon .gt_indent_5 {
+#gapdrndnln .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
 <table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<thead><tr class="gt_col_headings">
+<thead>
+<tr class="gt_heading">
+<td colspan="4" class="gt_heading gt_title gt_font_normal" style="">남극 펭귄 <strong>서식섬과 종</strong> 빈도표</td>
+    </tr>
+<tr class="gt_heading">
+<td colspan="4" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style="">
+<code>palmerpenguins</code> 데이터 패키지</td>
+    </tr>
+<tr class="gt_col_headings">
 <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id=""></th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="Biscoe">Biscoe</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="Dream">Dream</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="Torgersen">Torgersen</th>
-    </tr></thead>
+    </tr>
+</thead>
 <tbody class="gt_table_body">
 <tr>
 <th id="stub_1_1" scope="row" class="gt_row gt_center gt_stub">Adelie</th>
@@ -975,6 +995,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td headers="grand_summary_stub_1 Torgersen" class="gt_row gt_center gt_grand_summary_row gt_first_grand_summary_row gt_last_summary_row">52</td>
 </tr>
 </tbody>
+<tfoot class="gt_sourcenotes"><tr>
+<td class="gt_sourcenote" colspan="4">자료출처: <code>penguins</code> 데이터셋</td>
+    </tr></tfoot>
 </table>
 </div>
 </div>
@@ -1062,9 +1085,791 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section><section id="gtextra" class="level3" data-number="3.4.3"><h3 data-number="3.4.3" class="anchored" data-anchor-id="gtextra">
 <span class="header-section-number">3.4.3</span> <code>gtExtra</code>
 </h3>
+<div class="cell">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gtExtra_themes</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">gt_theme_538</span>, <span class="va">gt_theme_espn</span>, <span class="va">gt_theme_nytimes</span>, <span class="va">gt_theme_guardian</span>,</span>
+<span>                    <span class="va">gt_theme_dot_matrix</span>, <span class="va">gt_theme_dark</span>, <span class="va">gt_theme_excel</span>, <span class="va">gt_theme_pff</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">gtExtra_themes_names</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"gt_theme_538"</span>, <span class="st">"gt_theme_espn"</span>, <span class="st">"gt_theme_nytimes"</span>,</span>
+<span>                          <span class="st">"gt_theme_guardian"</span>, <span class="st">"gt_theme_dot_matrix"</span>, <span class="st">"gt_theme_dark"</span>,</span>
+<span>                          <span class="st">"gt_theme_excel"</span>, <span class="st">"gt_theme_pff"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">draw_gtExtras_theme</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">gt_theme</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">penguins_gt</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu">gt_theme</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="co"># draw_gtExtras_theme(gtExtra_themes[5][[1]])</span></span>
+<span><span class="co">## gtExtras 테마적용 표 -------------------</span></span>
+<span></span>
+<span><span class="va">gtExtra_styles_list</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/vector.html">vector</a></span><span class="op">(</span>mode <span class="op">=</span><span class="st">"list"</span>, length <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">gtExtra_themes</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">gtExtra_themes</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">gtExtra_styles_list</span><span class="op">[[</span><span class="va">i</span><span class="op">]</span><span class="op">]</span> <span class="op">&lt;-</span>  <span class="fu">draw_gtExtras_theme</span><span class="op">(</span><span class="va">gtExtra_themes</span><span class="op">[</span><span class="va">i</span><span class="op">]</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="co">## 테마 표 png 파일 저장 -------------------</span></span>
+<span></span>
+<span><span class="va">gtExtras_path_filenames</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/vector.html">vector</a></span><span class="op">(</span>mode <span class="op">=</span> <span class="st">"character"</span>, length <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">gtExtra_themes</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">gtExtra_themes</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">gtExtras_path_filenames</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">&lt;-</span>  <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_glue.html">str_glue</a></span><span class="op">(</span><span class="st">"images/gtExtras_theme_{gtExtra_themes_names[i]}.png"</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">gtExtra_themes</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://gt.rstudio.com/reference/gtsave.html">gtsave</a></span><span class="op">(</span><span class="va">gtExtra_styles_list</span><span class="op">[[</span><span class="va">i</span><span class="op">]</span><span class="op">]</span>, <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_glue.html">str_glue</a></span><span class="op">(</span><span class="st">"images/gtExtras_theme_{gtExtra_themes_names[i]}.png"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gtExtra_themes_names</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"gt_theme_538"</span>, <span class="st">"gt_theme_espn"</span>, <span class="st">"gt_theme_nytimes"</span>,</span>
+<span>                          <span class="st">"gt_theme_guardian"</span>, <span class="st">"gt_theme_dot_matrix"</span>, <span class="st">"gt_theme_dark"</span>,</span>
+<span>                          <span class="st">"gt_theme_excel"</span>, <span class="st">"gt_theme_pff"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">gtExtras_path_filenames</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/vector.html">vector</a></span><span class="op">(</span>mode <span class="op">=</span> <span class="st">"character"</span>, length <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">gtExtra_themes_names</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">gtExtra_themes_names</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">gtExtras_path_filenames</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">&lt;-</span>  <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_glue.html">str_glue</a></span><span class="op">(</span><span class="st">"images/gtExtras_theme_{gtExtra_themes_names[i]}.png"</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="va">gtExtra_style_images_list</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map</a></span><span class="op">(</span><span class="va">gtExtras_path_filenames</span>, <span class="fu">magick</span><span class="fu">::</span><span class="va"><a href="https://docs.ropensci.org/magick/reference/editing.html">image_read</a></span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map</a></span><span class="op">(</span><span class="va">image_resize</span>, geometry <span class="op">=</span> <span class="st">"200x200"</span><span class="op">)</span> </span>
+<span>  </span>
+<span><span class="va">gtExtra_style_images</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://docs.ropensci.org/magick/reference/editing.html">image_join</a></span><span class="op">(</span><span class="va">gtExtra_style_images_list</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://docs.ropensci.org/magick/reference/animation.html">image_append</a></span><span class="op">(</span><span class="va">gtExtra_style_images</span>, stack <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="themes_files/figure-html/unnamed-chunk-16-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="themes_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="800"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</section></section><section id="사용자-테마-1" class="level2" data-number="3.5"><h2 data-number="3.5" class="anchored" data-anchor-id="사용자-테마-1">
+<span class="header-section-number">3.5</span> 사용자 테마</h2>
+<p>기본 표 테마에 글꼴, 텍스트 크기, 색상을 넣어 전문적으로 표를 작성한다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">penguins_theme_gt</span> <span class="op">&lt;-</span> <span class="va">penguins_gt</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_538.html">gt_theme_538</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://gt.rstudio.com/reference/tab_options.html">tab_options</a></span><span class="op">(</span></span>
+<span>    <span class="co"># column_labels.background.color = '#1E61B0', # R logo 파란색</span></span>
+<span>    table.font.names <span class="op">=</span><span class="st">"NanumSquare"</span>,    </span>
+<span>    heading.title.font.size <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/px.html">px</a></span><span class="op">(</span><span class="fl">26</span><span class="op">)</span>,</span>
+<span>    heading.subtitle.font.size <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/px.html">px</a></span><span class="op">(</span><span class="fl">16</span><span class="op">)</span>,    </span>
+<span>    heading.background.color <span class="op">=</span> <span class="st">"transparent"</span>, </span>
+<span>    column_labels.font.weight <span class="op">=</span> <span class="st">'bold'</span>,</span>
+<span>    table_body.hlines.width <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/px.html">px</a></span><span class="op">(</span><span class="fl">0</span><span class="op">)</span>,</span>
+<span>    data_row.padding <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/px.html">px</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span>,</span>
+<span>    heading.align <span class="op">=</span> <span class="st">'center'</span>,</span>
+<span>    stub.background.color <span class="op">=</span> <span class="st">"#ffffff"</span>,</span>
+<span>    stub.font.weight <span class="op">=</span> <span class="st">"bold"</span>,</span>
+<span>    source_notes.font.size <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/px.html">px</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span>,</span>
+<span>    row.striping.include_table_body <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://gt.rstudio.com/reference/cols_align.html">cols_align</a></span><span class="op">(</span> align <span class="op">=</span> <span class="st">"center"</span>, columns <span class="op">=</span> <span class="fu"><a href="https://tidyselect.r-lib.org/reference/where.html">where</a></span><span class="op">(</span><span class="va">is.numeric</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://gt.rstudio.com/reference/cols_align.html">cols_align</a></span><span class="op">(</span> align <span class="op">=</span> <span class="st">"auto"</span>, columns <span class="op">=</span> <span class="fu"><a href="https://tidyselect.r-lib.org/reference/where.html">where</a></span><span class="op">(</span><span class="va">is.character</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="co">## 글꼴 달리 적용</span></span>
+<span>  <span class="fu"><a href="https://gt.rstudio.com/reference/tab_style.html">tab_style</a></span><span class="op">(</span></span>
+<span>    style <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cell_text.html">cell_text</a></span><span class="op">(</span></span>
+<span>      font <span class="op">=</span> <span class="st">"MaruBuri"</span>,      </span>
+<span>      weight <span class="op">=</span> <span class="st">'bold'</span> </span>
+<span>    <span class="op">)</span>,</span>
+<span>    locations <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cells_title.html">cells_title</a></span><span class="op">(</span>groups <span class="op">=</span> <span class="st">'subtitle'</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://gt.rstudio.com/reference/tab_style.html">tab_style</a></span><span class="op">(</span></span>
+<span>    style <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cell_text.html">cell_text</a></span><span class="op">(</span></span>
+<span>      font <span class="op">=</span> <span class="st">"MaruBuri"</span>,      </span>
+<span>      weight <span class="op">=</span> <span class="st">'bold'</span> </span>
+<span>    <span class="op">)</span>,</span>
+<span>    locations <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cells_body.html">cells_body</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://gt.rstudio.com/reference/tab_style.html">tab_style</a></span><span class="op">(</span></span>
+<span>    style <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cell_text.html">cell_text</a></span><span class="op">(</span></span>
+<span>      font <span class="op">=</span> <span class="st">"MaruBuri"</span>,      </span>
+<span>      weight <span class="op">=</span> <span class="st">'bold'</span> </span>
+<span>    <span class="op">)</span>,</span>
+<span>    locations <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cells_column_labels.html">cells_column_labels</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://gt.rstudio.com/reference/tab_style.html">tab_style</a></span><span class="op">(</span></span>
+<span>    style <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cell_text.html">cell_text</a></span><span class="op">(</span></span>
+<span>      font <span class="op">=</span> <span class="st">"MaruBuri"</span>,      </span>
+<span>    <span class="op">)</span>,</span>
+<span>    locations <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cells_source_notes.html">cells_source_notes</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
+<span></span>
+<span><span class="va">penguins_theme_gt</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://gt.rstudio.com/reference/gtsave.html">gtsave</a></span><span class="op">(</span>filename <span class="op">=</span> <span class="st">"images/penguins_theme_gt.png"</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/penguins_theme_gt.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="gt 사용자 정의 테마 적용 표"><img src="images/penguins_theme_gt.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption"><code>gt</code> 사용자 정의 테마 적용 표</figcaption></figure>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gt_theme_hangul</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">gt_tbl</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  </span>
+<span>  <span class="co"># Grab number of rows of data from gt object</span></span>
+<span>  <span class="va">n_rows</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">gt_tbl</span><span class="op">$</span><span class="va">`_data`</span><span class="op">)</span></span>
+<span>  </span>
+<span>  <span class="va">gt_tbl</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_538.html">gt_theme_538</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/tab_options.html">tab_options</a></span><span class="op">(</span></span>
+<span>      <span class="co"># column_labels.background.color = '#1E61B0', # R logo 파란색</span></span>
+<span>      table.font.names <span class="op">=</span><span class="st">"NanumSquare"</span>,    </span>
+<span>      heading.title.font.size <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/px.html">px</a></span><span class="op">(</span><span class="fl">26</span><span class="op">)</span>,</span>
+<span>      heading.subtitle.font.size <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/px.html">px</a></span><span class="op">(</span><span class="fl">16</span><span class="op">)</span>,    </span>
+<span>      heading.background.color <span class="op">=</span> <span class="st">"transparent"</span>, </span>
+<span>      column_labels.font.weight <span class="op">=</span> <span class="st">'bold'</span>,</span>
+<span>      table_body.hlines.width <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/px.html">px</a></span><span class="op">(</span><span class="fl">0</span><span class="op">)</span>,</span>
+<span>      data_row.padding <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/px.html">px</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span>,</span>
+<span>      heading.align <span class="op">=</span> <span class="st">'center'</span>,</span>
+<span>      stub.background.color <span class="op">=</span> <span class="st">"#ffffff"</span>,</span>
+<span>      stub.font.weight <span class="op">=</span> <span class="st">"bold"</span>,</span>
+<span>      source_notes.font.size <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/px.html">px</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span>,</span>
+<span>      row.striping.include_table_body <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span>    <span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/cols_align.html">cols_align</a></span><span class="op">(</span> align <span class="op">=</span> <span class="st">"center"</span>, columns <span class="op">=</span> <span class="fu"><a href="https://tidyselect.r-lib.org/reference/where.html">where</a></span><span class="op">(</span><span class="va">is.numeric</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/cols_align.html">cols_align</a></span><span class="op">(</span> align <span class="op">=</span> <span class="st">"auto"</span>, columns <span class="op">=</span> <span class="fu"><a href="https://tidyselect.r-lib.org/reference/where.html">where</a></span><span class="op">(</span><span class="va">is.character</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="co">## 글꼴 달리 적용</span></span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/tab_style.html">tab_style</a></span><span class="op">(</span></span>
+<span>      style <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cell_text.html">cell_text</a></span><span class="op">(</span></span>
+<span>        font <span class="op">=</span> <span class="st">"MaruBuri"</span>,      </span>
+<span>        weight <span class="op">=</span> <span class="st">'bold'</span> </span>
+<span>      <span class="op">)</span>,</span>
+<span>      locations <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cells_title.html">cells_title</a></span><span class="op">(</span>groups <span class="op">=</span> <span class="st">'subtitle'</span><span class="op">)</span></span>
+<span>    <span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/tab_style.html">tab_style</a></span><span class="op">(</span></span>
+<span>      style <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cell_text.html">cell_text</a></span><span class="op">(</span></span>
+<span>        font <span class="op">=</span> <span class="st">"MaruBuri"</span>,      </span>
+<span>        weight <span class="op">=</span> <span class="st">'bold'</span> </span>
+<span>      <span class="op">)</span>,</span>
+<span>      locations <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cells_body.html">cells_body</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>    <span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/tab_style.html">tab_style</a></span><span class="op">(</span></span>
+<span>      style <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cell_text.html">cell_text</a></span><span class="op">(</span></span>
+<span>        font <span class="op">=</span> <span class="st">"MaruBuri"</span>,      </span>
+<span>        weight <span class="op">=</span> <span class="st">'bold'</span> </span>
+<span>      <span class="op">)</span>,</span>
+<span>      locations <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cells_column_labels.html">cells_column_labels</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>    <span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/tab_style.html">tab_style</a></span><span class="op">(</span></span>
+<span>      style <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cell_text.html">cell_text</a></span><span class="op">(</span></span>
+<span>        font <span class="op">=</span> <span class="st">"MaruBuri"</span>,      </span>
+<span>      <span class="op">)</span>,</span>
+<span>      locations <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cells_source_notes.html">cells_source_notes</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>    <span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/tab_style.html">tab_style</a></span><span class="op">(</span></span>
+<span>      style <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cell_fill.html">cell_fill</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">'grey90'</span><span class="op">)</span>,</span>
+<span>      locations <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cells_body.html">cells_body</a></span><span class="op">(</span>rows <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1</span>, <span class="va">n_rows</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span></span>
+<span>    <span class="op">)</span>    </span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="va">penguins_gt</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">gt_theme_hangul</span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="sedcoivoxj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>@import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+#sedcoivoxj table {
+  font-family: NanumSquare;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#sedcoivoxj thead, #sedcoivoxj tbody, #sedcoivoxj tfoot, #sedcoivoxj tr, #sedcoivoxj td, #sedcoivoxj th {
+  border-style: none;
+}
+
+#sedcoivoxj p {
+  margin: 0;
+  padding: 0;
+}
+
+#sedcoivoxj .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: none;
+  border-top-width: 3px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#sedcoivoxj .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#sedcoivoxj .gt_title {
+  color: #333333;
+  font-size: 26px;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#sedcoivoxj .gt_subtitle {
+  color: #333333;
+  font-size: 16px;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#sedcoivoxj .gt_heading {
+  background-color: rgba(255, 255, 255, 0);
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#sedcoivoxj .gt_bottom_border {
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#sedcoivoxj .gt_col_headings {
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #000000;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#sedcoivoxj .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#sedcoivoxj .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#sedcoivoxj .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#sedcoivoxj .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#sedcoivoxj .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #000000;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#sedcoivoxj .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#sedcoivoxj .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #000000;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#sedcoivoxj .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #000000;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #FFFFFF;
+  vertical-align: middle;
+}
+
+#sedcoivoxj .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#sedcoivoxj .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#sedcoivoxj .gt_row {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 0px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#sedcoivoxj .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-right-style: solid;
+  border-right-width: 0px;
+  border-right-color: #FFFFFF;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sedcoivoxj .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#sedcoivoxj .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#sedcoivoxj .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#sedcoivoxj .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sedcoivoxj .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#sedcoivoxj .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#sedcoivoxj .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#sedcoivoxj .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sedcoivoxj .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#sedcoivoxj .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#sedcoivoxj .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#sedcoivoxj .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#sedcoivoxj .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#sedcoivoxj .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sedcoivoxj .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#sedcoivoxj .gt_sourcenote {
+  font-size: 10px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sedcoivoxj .gt_left {
+  text-align: left;
+}
+
+#sedcoivoxj .gt_center {
+  text-align: center;
+}
+
+#sedcoivoxj .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#sedcoivoxj .gt_font_normal {
+  font-weight: normal;
+}
+
+#sedcoivoxj .gt_font_bold {
+  font-weight: bold;
+}
+
+#sedcoivoxj .gt_font_italic {
+  font-style: italic;
+}
+
+#sedcoivoxj .gt_super {
+  font-size: 65%;
+}
+
+#sedcoivoxj .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#sedcoivoxj .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#sedcoivoxj .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#sedcoivoxj .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#sedcoivoxj .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#sedcoivoxj .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#sedcoivoxj .gt_indent_5 {
+  text-indent: 25px;
+}
+
+tbody tr:last-child {
+  border-bottom: 2px solid #ffffff00;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_heading">
+<td colspan="4" class="gt_heading gt_title gt_font_normal" style="">남극 펭귄 <strong>서식섬과 종</strong> 빈도표</td>
+    </tr>
+<tr class="gt_heading">
+<td colspan="4" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style="font-family: MaruBuri; font-weight: bold;">
+<code>palmerpenguins</code> 데이터 패키지</td>
+    </tr>
+<tr class="gt_col_headings">
+<th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id=""></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: MaruBuri; font-weight: bold;" scope="col" id="Biscoe">Biscoe</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: MaruBuri; font-weight: bold;" scope="col" id="Dream">Dream</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: MaruBuri; font-weight: bold;" scope="col" id="Torgersen">Torgersen</th>
+    </tr>
+</thead>
+<tbody class="gt_table_body">
+<tr>
+<th id="stub_1_1" scope="row" class="gt_row gt_center gt_stub">Adelie</th>
+<td headers="stub_1_1 Biscoe" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">44</td>
+<td headers="stub_1_1 Dream" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">56</td>
+<td headers="stub_1_1 Torgersen" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">52</td>
+</tr>
+<tr>
+<th id="stub_1_2" scope="row" class="gt_row gt_center gt_stub">Chinstrap</th>
+<td headers="stub_1_2 Biscoe" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold;">0</td>
+<td headers="stub_1_2 Dream" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold;">68</td>
+<td headers="stub_1_2 Torgersen" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold;">0</td>
+</tr>
+<tr>
+<th id="stub_1_3" scope="row" class="gt_row gt_center gt_stub">Gentoo</th>
+<td headers="stub_1_3 Biscoe" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">124</td>
+<td headers="stub_1_3 Dream" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">0</td>
+<td headers="stub_1_3 Torgersen" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">0</td>
+</tr>
+<tr>
+<th id="grand_summary_stub_1" scope="row" class="gt_row gt_left gt_stub gt_grand_summary_row gt_first_grand_summary_row gt_last_summary_row">합계</th>
+<td headers="grand_summary_stub_1 Biscoe" class="gt_row gt_center gt_grand_summary_row gt_first_grand_summary_row gt_last_summary_row">168</td>
+<td headers="grand_summary_stub_1 Dream" class="gt_row gt_center gt_grand_summary_row gt_first_grand_summary_row gt_last_summary_row">124</td>
+<td headers="grand_summary_stub_1 Torgersen" class="gt_row gt_center gt_grand_summary_row gt_first_grand_summary_row gt_last_summary_row">52</td>
+</tr>
+</tbody>
+<tfoot class="gt_sourcenotes"><tr>
+<td class="gt_sourcenote" style="font-family: MaruBuri;" colspan="4">자료출처: <code>penguins</code> 데이터셋</td>
+    </tr></tfoot>
+</table>
+</div>
+</div>
+</div>
+</section><section id="표-자동-설정" class="level2" data-number="3.6"><h2 data-number="3.6" class="anchored" data-anchor-id="표-자동-설정">
+<span class="header-section-number">3.6</span> 표 자동 설정</h2>
+<p>작성한 테마를 매번 코드를 “복사하여 붙여넣기” 하여 사용하는 대신 <code>.Rprofile</code> 파일에 반영하여 매번 <code>gt</code> 표 제작에 테마를 사용하는 방법을 살펴보자. <code>usethis</code> 패키지 <code>edit_r_profile()</code> 함수를 호출하여 앞서 작성한 테마를 반영한다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/edit.html">edit_r_profile</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><code>gt_theme_hangul()</code> 테마를 <code>gt</code> 표 객체에 반영한다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://gt.rstudio.com/">gt</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jthomasmock/gtExtras">gtExtras</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">gt_theme_hangul</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">gt_tbl</span><span class="op">)</span> <span class="op">{</span></span>
+<span></span>
+<span>  <span class="co"># Grab number of rows of data from gt object</span></span>
+<span>  <span class="va">n_rows</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">gt_tbl</span><span class="op">$</span><span class="va">`_data`</span><span class="op">)</span></span>
+<span></span>
+<span>  <span class="va">gt_tbl</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu"><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_538.html">gt_theme_538</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/tab_options.html">tab_options</a></span><span class="op">(</span></span>
+<span>      <span class="co"># column_labels.background.color = '#1E61B0', # R logo 파란색</span></span>
+<span>      table.font.names <span class="op">=</span><span class="st">"NanumSquare"</span>,</span>
+<span>      heading.title.font.size <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/px.html">px</a></span><span class="op">(</span><span class="fl">26</span><span class="op">)</span>,</span>
+<span>      heading.subtitle.font.size <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/px.html">px</a></span><span class="op">(</span><span class="fl">16</span><span class="op">)</span>,</span>
+<span>      heading.background.color <span class="op">=</span> <span class="st">"transparent"</span>,</span>
+<span>      column_labels.font.weight <span class="op">=</span> <span class="st">'bold'</span>,</span>
+<span>      table_body.hlines.width <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/px.html">px</a></span><span class="op">(</span><span class="fl">0</span><span class="op">)</span>,</span>
+<span>      data_row.padding <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/px.html">px</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span>,</span>
+<span>      heading.align <span class="op">=</span> <span class="st">'center'</span>,</span>
+<span>      stub.background.color <span class="op">=</span> <span class="st">"#ffffff"</span>,</span>
+<span>      stub.font.weight <span class="op">=</span> <span class="st">"bold"</span>,</span>
+<span>      source_notes.font.size <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/px.html">px</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span>,</span>
+<span>      row.striping.include_table_body <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span>    <span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/cols_align.html">cols_align</a></span><span class="op">(</span> align <span class="op">=</span> <span class="st">"center"</span>, columns <span class="op">=</span> <span class="fu"><a href="https://tidyselect.r-lib.org/reference/where.html">where</a></span><span class="op">(</span><span class="va">is.numeric</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/cols_align.html">cols_align</a></span><span class="op">(</span> align <span class="op">=</span> <span class="st">"auto"</span>, columns <span class="op">=</span> <span class="fu"><a href="https://tidyselect.r-lib.org/reference/where.html">where</a></span><span class="op">(</span><span class="va">is.character</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>    <span class="co">## 글꼴 달리 적용</span></span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/tab_style.html">tab_style</a></span><span class="op">(</span></span>
+<span>      style <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cell_text.html">cell_text</a></span><span class="op">(</span></span>
+<span>        font <span class="op">=</span> <span class="st">"MaruBuri"</span>,</span>
+<span>        weight <span class="op">=</span> <span class="st">'bold'</span></span>
+<span>      <span class="op">)</span>,</span>
+<span>      locations <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cells_title.html">cells_title</a></span><span class="op">(</span>groups <span class="op">=</span> <span class="st">'subtitle'</span><span class="op">)</span></span>
+<span>    <span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/tab_style.html">tab_style</a></span><span class="op">(</span></span>
+<span>      style <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cell_text.html">cell_text</a></span><span class="op">(</span></span>
+<span>        font <span class="op">=</span> <span class="st">"MaruBuri"</span>,</span>
+<span>        weight <span class="op">=</span> <span class="st">'bold'</span></span>
+<span>      <span class="op">)</span>,</span>
+<span>      locations <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cells_body.html">cells_body</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>    <span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/tab_style.html">tab_style</a></span><span class="op">(</span></span>
+<span>      style <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cell_text.html">cell_text</a></span><span class="op">(</span></span>
+<span>        font <span class="op">=</span> <span class="st">"MaruBuri"</span>,</span>
+<span>        weight <span class="op">=</span> <span class="st">'bold'</span></span>
+<span>      <span class="op">)</span>,</span>
+<span>      locations <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cells_column_labels.html">cells_column_labels</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>    <span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/tab_style.html">tab_style</a></span><span class="op">(</span></span>
+<span>      style <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cell_text.html">cell_text</a></span><span class="op">(</span></span>
+<span>        font <span class="op">=</span> <span class="st">"MaruBuri"</span>,</span>
+<span>      <span class="op">)</span>,</span>
+<span>      locations <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cells_source_notes.html">cells_source_notes</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>    <span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/tab_style.html">tab_style</a></span><span class="op">(</span></span>
+<span>      style <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cell_fill.html">cell_fill</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">'grey90'</span><span class="op">)</span>,</span>
+<span>      locations <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cells_body.html">cells_body</a></span><span class="op">(</span>rows <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1</span>, <span class="va">n_rows</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span></span>
+<span>    <span class="op">)</span></span>
+<span><span class="op">}</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><code>.Rprofile</code> 파일에 <code>gt</code> 사용자 정의 테마가 지정되어 있기 때문에 새로 R 세션을 시작하면 <code>gt_theme_hangul()</code> 테마를 사용할 수 있다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">original_penguins_gt</span> <span class="op">&lt;-</span> <span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">species</span>, <span class="va">sex</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_wider.html">pivot_wider</a></span><span class="op">(</span>names_from <span class="op">=</span> <span class="va">sex</span>, values_from <span class="op">=</span> <span class="va">n</span>, values_fill <span class="op">=</span> <span class="fl">0</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">janitor</span><span class="fu">::</span><span class="fu"><a href="https://sfirke.github.io/janitor/reference/adorn_totals.html">adorn_totals</a></span><span class="op">(</span>where <span class="op">=</span> <span class="st">"col"</span>, name <span class="op">=</span> <span class="st">"합계"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html">rename</a></span><span class="op">(</span>펭귄종 <span class="op">=</span> <span class="va">species</span>, 암컷 <span class="op">=</span> <span class="va">female</span>, 수컷 <span class="op">=</span> <span class="va">male</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://gt.rstudio.com/reference/gt.html">gt</a></span><span class="op">(</span>rowname_col <span class="op">=</span> <span class="st">"펭귄종"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/tab_header.html">tab_header</a></span><span class="op">(</span></span>
+<span>      title <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/md.html">md</a></span><span class="op">(</span><span class="st">"남극 펭귄 **암수와 종** 빈도표"</span><span class="op">)</span>,</span>
+<span>      subtitle <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/md.html">md</a></span><span class="op">(</span><span class="st">"`palmerpenguins` 데이터 패키지"</span><span class="op">)</span></span>
+<span>    <span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/grand_summary_rows.html">grand_summary_rows</a></span><span class="op">(</span></span>
+<span>      columns <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">펭귄종</span>, <span class="va">암컷</span>, <span class="va">수컷</span><span class="op">)</span>,</span>
+<span>      fns <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
+<span>        <span class="st">'합계'</span> <span class="op">=</span> <span class="op">~</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">.</span><span class="op">)</span> </span>
+<span>      <span class="op">)</span>,</span>
+<span>      fmt <span class="op">=</span> <span class="op">~</span> <span class="fu"><a href="https://gt.rstudio.com/reference/fmt_number.html">fmt_number</a></span><span class="op">(</span><span class="va">.</span>, use_seps <span class="op">=</span> <span class="cn">FALSE</span>, decimals <span class="op">=</span> <span class="fl">0</span><span class="op">)</span>,</span>
+<span>      missing_text <span class="op">=</span> <span class="st">'-'</span></span>
+<span>    <span class="op">)</span>  <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/cols_align.html">cols_align</a></span><span class="op">(</span><span class="st">"center"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/opt_row_striping.html">opt_row_striping</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/tab_source_note.html">tab_source_note</a></span><span class="op">(</span></span>
+<span>      source_note <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/md.html">md</a></span><span class="op">(</span><span class="st">"자료출처: `penguins` 데이터셋"</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
+<span></span>
+<span><span class="va">theme_penguins_gt</span> <span class="op">&lt;-</span> <span class="va">original_penguins_gt</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">gt_theme_hangul</span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">gt_theme_hangul_penguins</span> <span class="op">&lt;-</span> <span class="fu">gtExtras</span><span class="fu">::</span><span class="fu"><a href="https://jthomasmock.github.io/gtExtras/reference/gt_two_column_layout.html">gt_two_column_layout</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="va">original_penguins_gt</span>, <span class="va">theme_penguins_gt</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">gt_theme_hangul_penguins</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://jthomasmock.github.io/gtExtras/reference/gtsave_extra.html">gtsave_extra</a></span><span class="op">(</span><span class="st">"images/gt_theme_hangul_penguins.png"</span>, expand <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/gt_theme_hangul_penguins.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="gt_theme_hangul() 테마 적용 전후"><img src="images/gt_theme_hangul_penguins.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption"><code>gt_theme_hangul()</code> 테마 적용 전후</figcaption></figure>
+</div>
 
 
-</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1392,7 +2197,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","closeEffect":"zoom","loop":true,"descPosition":"bottom"});</script>
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","loop":true,"closeEffect":"zoom","descPosition":"bottom","selector":".lightbox"});</script>
 
 
 </body></html>
