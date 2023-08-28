@@ -108,20 +108,22 @@ font_import(pattern = "Nanum")
 ### `ggplot` 한글 글꼴 사례 {#font-viz-font-example}
 
 `extrafont` 패키지 `loadfonts()` 함수를 사용해서 `ggplot`에서 적용시킬 수 있는
-글꼴을 불러냈다. R 내장 데이터셋 `iris`를 사용하여 나눔글꼴 "Nanum Pen Script"을 기본 글꼴로 적용시켰다.
+글꼴을 불러냈다. R 내장 데이터셋 `iris`를 사용하여 나눔글꼴 "나눔손글씨 가람연꽃"(NanumGaRamYeonGgoc)을 기본 글꼴로 적용시켰다.
 
 ```{r}
 #| label: ggplot-extrafont-in-r
 
 library(tidyverse)
-library(extrafont)
-loadfonts() # 로컬 PC 에서 설치된 글꼴을 불러냄!!!
+# extrafont::font_import(pattern = "Nanum", prompt = FALSE)
 
-iris %>% 
+extrafont::loadfonts() # 로컬 PC 에서 설치된 글꼴을 불러냄!!!
+
+iris |> 
   ggplot(aes(x=Sepal.Length, y=Petal.Length, color=Species)) +
     geom_point()+
-    labs(title="붓꽃 데이터 한글 글꼴 적용", color="붓꽃 종류") +
-    theme_minimal(base_family = "Nanum Pen Script") +
+    labs(title="붓꽃 데이터 한글 글꼴 적용", color="붓꽃 종류",
+         x = "꽃받침 길이", y = "꽃잎 길이") +
+    theme_minimal(base_family = "NanumGaRamYeonGgoc") +
     theme(legend.position = "top")
 
 ```

@@ -15,13 +15,31 @@ book:
   author: "이광춘"
   date: last-modified
   chapters:
+    - preface.qmd
     - index.qmd
+    - history.qmd
+
+    - part: "글쓰기"
+      chapters:
+        - markdown_01_mess.qmd
+        - markdown_02_markdown.qmd
+        - markdown_03_advanced.qmd
 
     - part: "기본요소"
       chapters:
         - fonts.qmd
         - colors.qmd
         - themes.qmd
+
+    - part: "디지털 글쓰기"
+      chapters:
+        - whole_game.qmd
+        - dw_fonts.qmd
+        - dw_pdf.qmd
+
+    - part: "실무"
+      chapters:
+        - publishing.qmd
 
     - references.qmd
 
@@ -37,7 +55,6 @@ format:
     number-depth: 3
     number-sections: true
     colorlinks: true
-    cite-method: biblatex
     code-overflow: wrap
     code-link: true
     author-meta: "이광춘"

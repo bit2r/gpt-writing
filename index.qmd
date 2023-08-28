@@ -1,4 +1,167 @@
-# 서문 {.unnumbered}
+# 글쓰기 {.unnumbered}
+
+글쓰기(Writing)는 언어를 사용하여 생각이나 정보를 표현하는 과정이다. 
+글쓰기는 말하기와 다르게 물리적인 형태로 기록되어 남겨지며, 
+시간과 공간의 제약을 받지 않아 
+글쓰기 결과물로 다양한 (디지털) 문서형태로 담아 지적유산으로 후대에 남길 수 있다.
+정보 전달, 감정 표현, 이야기 전달 등 글쓰기는 다양한 목적을 갖고 있으며 
+최근에는 기계와 의사소통을 위해 강조되고 있는 교육용 파이썬, 데이터 과학 및 과학연구를 위한 R 프로그래밍도 글쓰기 범주에 포함되고 있다.
+
+글쓰기는 정보 전달의 가장 기본적인 방법 중 하나로, 
+시간과 공간의 제약을 받지 않는 특징이 있다. 물론 글쓰기 결과물에 담긴 
+문서에는 그 시대 시간적 공간적 특성도 담겨있다.
+
+글쓰기를 통해 우리는 지식을 전달하고, 이야기를 전달하며, 감정을 표현할 수 있다.
+또한 글쓰기를 통해 우리는 법률 문서와 계약서 등을 작성하여 사회적인 규칙과 약속을 정할 수 있고, 현대 사회를 지탱하는 과학기술지식도 글쓰기가 시작점이 된다. 
+인공지능 기술의 비약적인 발전으로 프로그래밍을 통한 코딩도 기계와 규칙을 정해 상호 커뮤니케이션하는 글쓰기로 부각되고 있다. 이러한 이유로 글쓰기는 매우 중요한 역할을 하고,
+글쓰기 없이 고도화된 현대 사회생존은 불가능하다.
+
+## 글쓰기 비교
+
+디지털 글쓰기와 전통적인 글쓰기는 몇 가지 차이점이 있다. 
+디지털 글쓰기는 검색 엔진에 의해 쉽게 찾아질 수 있도록 설계되어 있으며, 다양한 미디어가 쉽게 통합될 수 있고, 디지털 글쓰기는 발행 후에도 언제든지 쉽게 조작할 수 있어 더 동적이고 생동감을 넣을 수도 있고, [깃(Git)](https://git-scm.com/)과 같은 버전제어 도구와 연결시켜 글쓰기를 하게 되면 추적도 가능하여 재현가능한 글쓰기가 가능하게 된다. 
+디지털 글쓰기의 가장 큰 장점 중의 하나는 사람만이 저작을 하는 것이 아니라 
+기계가 저작한 프로그램도 글쓰기에 담을 수 있어 더욱 풍성한 글쓰기가 가능하다는 점이다.
+
+반면 전통적인 글쓰기는 발행 후 개발이 중단될 뿐만 아니라 한정된 지면(예를 들어 A4, B5)에 다양한 색상을 넣어 강조와 가독성을 높일 수 있으나 인쇄 난이도의 증가로 인해 비용도 급격히 증가하게 되고 무엇보다 정적인 정보만 담을 수 있어 최신 기술 흐름을 반영하는데 
+한계가 있다.
+
+또한 커뮤니케이션 관점에서 보면 디지털 글쓰기는 온라인 도구를 사용하여 작성 과정의 초기부터 광범위한 청중과 거의 실시간으로 텍스트를 공유할 수 있어 작성 과정이 공개적이고 다수다
+저작과정에 별다른 장벽없이 참여할 수 있다는 점에서 전통적인 글쓰기가 소수의 저자가
+집필을 마무리해야 후속 디자인 작업을 비롯한 후속 출판작업이 진행된다는 면에서 큰 차이가 있다. 특히 전통 글쓰기 결과물이 책과 같은 물리적 매체에 담기게 되면 이를 다시 
+디지털로 되돌리기 위해 광학문자인식(OCR) 과정을 거쳐야 하며 책속에 담긴 
+그래프, 표, 이미지 등 데이터는 별도 과정을 거쳐 디지털화 해야하는 한계도 명확하다.
+
+## (챗GPT) 디지털 글쓰기 
+
+챗GPT가 이목을 집중하고 있는 가장 근본적인 이유는 디지털 글쓰기를 사람보다 신속하고 빠르게 하기 때문이다. 
+전통적인 글쓰기와 달리 디지털 글쓰기에는 다양한 종류의 글쓰기, 코딩, 추론 등이 포함되고 있다. 
+"챗GPT 디지털 글쓰기"를 통해 챗GPT 출현 이전과 이후 확연히 달라진 글쓰기 방법에 관심을 가져야만 된다. [^quarto]
 
 
-역사적 사명을 ...
+[^quarto]: 한국 R 사용자회 [데이터 과학 글쓰기](https://r2bit.com/quarto/)
+
+![챗GPT 디지털 글쓰기 진화과정](images/writing_history.jpg)
+
+
+```{mermaid}
+
+graph LR
+
+    chatGPT["챗GPT"] --> Contents
+
+    subgraph Contents["디지털 글쓰기"]
+        direction LR
+        Writing["글감"] --> Table["표"]
+        Writing --> Graph["그래프"]
+        Writing --> Code["파이썬/R/SQL<br>코드"]
+        Writing --> Figure["그림"]
+        Writing --> Diagram["도형"]        
+    end
+
+    chatGPT --> Format
+    Contents --> Format
+
+    subgraph Format["구조와 외양"]
+        direction LR
+        Theme["구조와 외양"] --> Title["문서 구조"]
+        Theme               --> Formatting["문서 서식"]
+        Theme               --> Layout["문서 레이아웃"]
+        Theme               --> reference["문서 참조"]
+    end
+
+    chatGPT --> Deployment
+    Format --> Deployment
+
+    subgraph Deployment["배포와 공유"]
+        direction LR
+        Deploy --> Reader["독자(사람)"]
+        Deploy --> Author["독자(저작자)"]
+        Deploy --> Machine["독자(기계)"]
+    end
+
+
+    style chatGPT fill:#f5f5f5,stroke:#333,stroke-width:3px
+
+    style Contents fill:#059fff,stroke:#333,stroke-width:1px
+    style Format fill:#fc0303,stroke:#333,stroke-width:1px
+    style Deployment fill:#03fc30,stroke:#333,stroke-width:1px
+```
+
+
+## 챗GPT 글감 작성
+
+사전 자료조사를 통해서 한국영화 10선 중 **국제시장**과 [펭귄
+데이터](https://r2bit.com/chatGPT/palmer_penguins.html)를 통해 흥행과
+현재 우리가 당면한 ESG 문제를 다룬 뭉클한 감동을 주는 영화 시놉시스
+작성을 목표로 하자.
+
+```{mermaid}
+graph LR
+
+    chatGPT["챗GPT"] --> Survey
+
+    subgraph Survey["자료 조사"]
+        direction LR
+        Top10["한국영화<br>10선"] --> OpenAI["챗GPT"]
+        Top10                    --> Bard["구글 바드"]
+        Top10                    --> KOBIS["역대<br>박스오피스"]
+    end
+
+    Survey --> Synopsis
+
+    subgraph Synopsis["시놉시스"]
+        direction LR
+        Movie_A["명량"]     -.-> New_Movie["새로운 영화<br>시놉시스"]
+        Movie_B["극한직업"] --> New_Movie
+        Movie_C["신과함께"] -.-> New_Movie
+        Market["국제시장"] --> New_Movie        
+        Movie_E["..."] -.-> New_Movie
+        Penguins["펭귄 데이터"] --> New_Movie
+    end
+
+    Synopsis --> Synopsis_fin["최종<br>시놉시스"]
+
+    style chatGPT fill:#f5f5f5,stroke:#333,stroke-width:3px
+
+    style Survey fill:#059fff,stroke:#333,stroke-width:1px
+    style Synopsis fill:#fc0303,stroke:#333,stroke-width:1px
+    style Synopsis_fin fill:#03fc30,stroke:#333,stroke-width:1px
+
+    style Penguins fill:#03fc30,stroke:#333,stroke-width:3px
+    style Market fill:#03fc30,stroke:#333,stroke-width:3px
+    
+```
+
+
+
+## 구조와 외양
+
+글감이 준비되면 그 다음으로 가독성을 높이고 효과적인 콘텐츠 제작을 위해서 
+그림, 표, 그래프, 수식, 도형 등 다양한 문서 객체 뿐만 아니라 색상을 달리하여 시각적인 효과도 극대화하여 고품질 문서를 저작하게 된다.
+
+- 마크다운 기본 글쓰기
+    - 대중소 제목
+    - 굵은 글씨, 밑줄, ..
+    - 단락 구분
+- 그림 (Figure)
+- 그래프 (Graph)
+- 표 (Table)
+- 도형 (Diagrams)
+- 수식 (LaTeX)
+- 호출 블록 (Callout Blocks)
+- 기사 레이아웃 (Article Layout)
+- 학술저작 (Scholarly Writing)
+- 다단편집(Side-by-Side Layout)
+- …
+
+![](images/layout_format.jpg)
+
+
+## 배포와 공유
+
+디지털 글쓰기 저작물을 제작하게 되면 그 다음 단계로 출판을 해야하는데 다양한 문서를 모아 프로젝트로 담아 [`Quarto Pub`](https://quartopub.com/)에 전자출판한다.
+다른 출판 플랫폼으로 [netlify](https://netlify.com/), [GitHub Pages](https://github.com/), [RStudio Connect](https://www.rstudio.com/products/connect/)가 많이 사용된다.
+
+![](images/document_deployment.jpg)
+

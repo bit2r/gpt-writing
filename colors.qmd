@@ -7,7 +7,7 @@ editor:
     wrap: sentence
 ---
 
-## 색상
+# 색상
 
 ## 시각화 메커니즘 [^viz-mechanism] {#color-mechanism}
 
