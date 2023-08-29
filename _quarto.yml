@@ -19,6 +19,12 @@ book:
     - index.qmd
     - history.qmd
 
+    - part: "글쓰기 환경"
+      chapters:
+        - writing.qmd
+        - quarto.qmd
+        - quarto_install.qmd
+
     - part: "글쓰기"
       chapters:
         - markdown_01_mess.qmd
