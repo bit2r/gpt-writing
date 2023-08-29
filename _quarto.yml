@@ -35,7 +35,12 @@ book:
       chapters:
         - fonts.qmd
         - colors.qmd
-        - themes.qmd
+
+    - part: "템플릿과 테마"
+      chapters:
+        - themes_ggplot.qmd
+        - themes_gt.qmd
+        - templates.qmd
 
     - part: "디지털 글쓰기"
       chapters:
@@ -46,6 +51,7 @@ book:
     - part: "실무"
       chapters:
         - publishing.qmd
+        - about_book.qmd
 
     - references.qmd
 

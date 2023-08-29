@@ -1,0 +1,150 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+
+# 책과 편집 용어
+
+[[책 이해하기: 용어](https://statkclee.github.io/comp_document/bookdown-about-book.html)]{.aside}
+
+
+[국가기술표준원 (2009-12-28), "책의 명칭 및 편집 일반 용어", KS X 0003](https://www.standard.go.kr/KSCI/standardIntro/getStandardSearchView.do?menuId=919&topMenuId=502&upperMenuId=503&ksNo=KSX0003&tmprKsNo=KSX0003&reformNo=03) 내용을 참조하여 책에 대한 한국어 표준용어 사전을 이해한다. [@KCI2009]
+
+책의 명칭과 편집 일반용어가 필요한 곳은 일반 **책**을 비롯하여 신문, 잡지, 교과서, 사전, 리플릿, 문서, 인쇄 광고물 등 **종이 출판물**과 웹북, 웹진, 모바일 콘텐츠 등 **전자적 표기에 널리 쓰이는 모든 표현 매체**를 아우른다.
+
+책은 다음과 같은 구성을 갖고 있다.
+
+-   책의 외부 명칭(1) : 책의 명칭은 출판, 인쇄, 편집의 여러 용어 중에서 가장 기본적이고 중요한 사항으로서 표지 등 장정을 구성하고 있는 요소들로 이루어져 있다.
+-   책의 외부 명칭(2) : 책의 표지를 펼치면 책의 제목, 저자명, 출판사명과 더불어 책 속의 면지, 띠지, 책날개 등이 나오는데 이 모든 것을 책의 외무 명칭(2)에서 다룬다.
+-   책의 내부 명칭 : 책의 내용에 관계되는 사항들의 명칭이다. 본문 편집 순서에 따라 머릿그림, 머리말, 추천사, 차례, 본문, 부록 등 책의 내용을 구성하는 요소들이다.
+-   본문 편집 판면의 명칭(1) : 제목이나 사진 등이 들어가는 본문의 내용을 편집할 때 알아야할 명칭들이다. 큰제목, 중간 제목, 캡션, 단간 등을 담고 있다.
+-   본문 편집 판면의 명칭(2) : 본문의 내용을 편집할 때 알아야 할 명칭들이다. 판면의 편집에 필요한 면주, 쪽번호, 행길이, 행간, 여백 등으로 이루어져 있다.
+-   편집 일반 용어 : 책을 편집할 때 기본적으로 알아야 할 용어와 현장에서 많이 쓰이고 있는 용어들이다.
+
+![책 해부도](images/anatomy-of-book.jpg)
+
+## PDF 에서 표 추출 {#book-outer-extract}
+
+PDF에서 바로 표를 추출할 경우 기계판독 가능한 표이기는 하지만 형태가 뭉개져서 제대로 사용할 수 없다.
+
+이런 문제를 PDF 파일으로 워드로 변환시킨 후에 워드에서 표를 추출하는 방식을 동원한다. 자세한 사항은 [워드 파일에서 표(table) 추출](https://statkclee.github.io/pdf/word-table-extraction.html) 하는 방식을 참고한다.
+
+PDF를 워드파일로 변경한 후에 `officer` 팩키지의 도움으로 테이블을 추출한다. 그리고 나서, 표를 추출한다.
+
+```{r}
+#| label: page-conversion
+
+library(tidyverse)
+library(officer)
+library(reactable)
+
+book_docx <- officer::read_docx("data/KSX0003_20091228.docx")
+book_content <- docx_summary(book_docx) %>% as_tibble()
+
+# book_content
+
+table_cells <- book_content %>% 
+  filter(content_type %in% "table cell") %>% 
+  as_tibble()
+
+cover_tbl <- table_cells %>% 
+  filter(doc_index == 89) %>% 
+  select(text, row_id, cell_id) %>% 
+  pivot_wider(names_from = cell_id, values_from = text) %>% 
+  select(-row_id) 
+
+cover_first_tbl <- cover_tbl %>% 
+  set_names(cover_tbl %>% slice(1)) %>% 
+  filter(row_number() != 1) %>% 
+  select(1,2,4,3) 
+```
+
+## 책 외부 (I) 명칭 {#book-outer-I}
+
+책 외부(I) 명칭을 살펴보면 다음과 같다.
+
+```{r first-cover-tbl}
+library(gt)
+
+cover_first_tbl |> 
+  gt() |> 
+  gt_theme_hangul()
+```
+
+워드 파일에서 이미지를 추출하는 방식은 워드 파일 압축을 풀면된다. 그렇게 하기 위해서 `KSX0003_20091228.docx` 파일명을 `KSX0003_20091228.zip`으로 바꾼 후에 압축을 풀어준다. 그러면 `word/media` 디렉토리에 이미지가 저장된다.
+
+
+![](images/book_cover.jpeg)
+
+## 책 외부 (II) 명칭 {#book-outer-II}
+
+책 외부 명칭(II)을 살펴보면 다음과 같다.
+
+```{r first-cover-tbl-II}
+cover_ii_tbl <- table_cells %>% 
+  filter(doc_index == 116) %>% 
+  select(text, row_id, cell_id) %>% 
+  pivot_wider(names_from = cell_id, values_from = text) %>% 
+  select(-row_id) 
+
+cover_second_tbl <- cover_ii_tbl %>% 
+  set_names(cover_tbl %>% slice(1)) %>% 
+  filter(row_number() != 1) %>% 
+  select(1,2,4,3) 
+
+cover_second_tbl %>% 
+  reactable::reactable(
+    defaultColDef = colDef(
+    header = function(value) gsub(".", " ", value, fixed = TRUE),
+    cell = function(value) format(value, nsmall = 1),
+    align = "center",
+    minWidth = 70,
+    headerStyle = list(background = "#f7f7f8")
+    ),
+    columns = list(
+    순 = colDef(minWidth = 40),   # 50% width, 200px minimum
+    `용 어` = colDef(minWidth = 100),   # 25% width, 100px minimum
+    `대응 영어` = colDef(minWidth = 150),   # 25% width, 100px minimum    
+    `용어 정의` = colDef(minWidth = 500)  # 25% width, 100px minimum
+    ),
+    bordered = TRUE,
+    highlight = TRUE,
+    filterable = TRUE
+  )
+```
+
+워드 파일에서 이미지를 추출하는 방식은 워드 파일 압축을 풀면된다. 그렇게 하기 위해서 `KSX0003_20091228.docx` 파일명을 `KSX0003_20091228.zip`으로 바꾼 후에 압축을 풀어준다. 그러면 `word/media` 디렉토리에 이미지가 저장된다.
+
+![](images/book_cover_inside.jpeg)
+
+
+# 책의 내부 순서 및 명칭 {#book-outer-content}
+
+책의 내부 순서 및 명칭을 살펴보면 다음과 같다.
+
+```{r first-cover-tbl-main}
+content_144_tbl <- table_cells %>% 
+  filter(doc_index == 144) %>% 
+  select(text, row_id, cell_id) %>% 
+  pivot_wider(names_from = cell_id, values_from = text) %>% 
+  select(-row_id) 
+
+content_147_tbl <- table_cells %>% 
+  filter(doc_index == 147) %>% 
+  select(text, row_id, cell_id) %>%  
+  pivot_wider(names_from = cell_id, values_from = text) %>% 
+  select(-row_id) 
+
+content_tbl <- bind_rows(content_144_tbl, content_147_tbl)
+
+content_tbl <- content_tbl %>% 
+  set_names(cover_tbl %>% slice(1)) %>% 
+  filter(row_number() != 1) %>% 
+  select(1,2,4,3) 
+
+content_tbl |> 
+  gt() |> 
+  gt_theme_hangul()
+```
