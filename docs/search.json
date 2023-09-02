@@ -2,583 +2,51 @@
   {
     "objectID": "fonts.html#r-글꼴",
     "href": "fonts.html#r-글꼴",
-    "title": "\n5  글꼴\n",
-    "section": "\n5.1 R 글꼴",
-    "text": "5.1 R 글꼴\n다각형을 그리는 path() 및 polygon(), 비트맵 이미지를 표시하는 raster(), 텍스트를 표시하는 text() 또는 textUTF8() 등을 통해 R에서 시각적 그래픽 요소를 구현하고 있다.\nR을 단순히 통계 언어로 생각하지 말고 적용범위를 확대해서 활용하면 데이터 과학 산출물을 다양한 전자문서로 제작하여 커뮤니케이션 할 수 있다. PDF, HTML, 워드 등 문서 뿐만 아니라, 파워포인트 같은 발표자료를 슬라이드로 제작하여 배포할 수 있다. 그래프 문법(Grammar of Graphics)에 따라 ggplot 시각화를 산출물에도 다양한 글꼴(font)을 반영하여 좀더 관심을 끌 수 있는 그래프 제작도 가능하다. 데이터 과학자나 개발자 관점에서도 통합개발환경(IDE)이 필요한데 개발과 저작에 집중할 수 있는 글꼴을 지정하여 활용할 경우 생산성도 높일 수 있고 좀더 쾌적한 환경에서 개발을 진행할 수 있다.\nR 스크립트 작성을 위한 글꼴과 그래프에 한글 글꼴(font)을 적용한다. ggplot을 비롯한 시각화를 위해 extrafont와 showtext 패키지를 활용하여 적절한 한글 글꼴을 사용할 뿐만 아니라 코딩 개발할 때 R 스크립트(.R) 및 R마크다운(.Rmd)에서도 적절한 한글글꼴 사용을 위해서 코딩관련 글꼴도 설치한다.\n기본적인 작업흐름은 운영체제에 먼저 외부에서 가져온 폰트를 설치한다. 그리고 나서 extrafont 팩키지 font_import() 함수를 사용해서 폰트를 R에서 불러 사용할 수 있도록 설치한다. 그리고 나서 loadfonts() 함수를 사용해서 글꼴을 ggplot등에서 불러 사용한다. 구글 글꼴을 사용하고자 할 경우 showtext 패키지를 사용해서 로컬 컴퓨터에 설치하여 적용한다.\n\n\nR 폰트/글꼴 설치"
+    "title": "\n9  글꼴\n",
+    "section": "\n9.1 R 글꼴",
+    "text": "9.1 R 글꼴\n다각형을 그리는 path() 및 polygon(), 비트맵 이미지를 표시하는 raster(), 텍스트를 표시하는 text() 또는 textUTF8() 등을 통해 R에서 시각적 그래픽 요소를 구현하고 있다.\nR을 단순히 통계 언어로 생각하지 말고 적용범위를 확대해서 활용하면 데이터 과학 산출물을 다양한 전자문서로 제작하여 커뮤니케이션 할 수 있다. PDF, HTML, 워드 등 문서 뿐만 아니라, 파워포인트 같은 발표자료를 슬라이드로 제작하여 배포할 수 있다. 그래프 문법(Grammar of Graphics)에 따라 ggplot 시각화를 산출물에도 다양한 글꼴(font)을 반영하여 좀더 관심을 끌 수 있는 그래프 제작도 가능하다. 데이터 과학자나 개발자 관점에서도 통합개발환경(IDE)이 필요한데 개발과 저작에 집중할 수 있는 글꼴을 지정하여 활용할 경우 생산성도 높일 수 있고 좀더 쾌적한 환경에서 개발을 진행할 수 있다.\nR 스크립트 작성을 위한 글꼴과 그래프에 한글 글꼴(font)을 적용한다. ggplot을 비롯한 시각화를 위해 extrafont와 showtext 패키지를 활용하여 적절한 한글 글꼴을 사용할 뿐만 아니라 코딩 개발할 때 R 스크립트(.R) 및 R마크다운(.Rmd)에서도 적절한 한글글꼴 사용을 위해서 코딩관련 글꼴도 설치한다.\n기본적인 작업흐름은 운영체제에 먼저 외부에서 가져온 폰트를 설치한다. 그리고 나서 extrafont 팩키지 font_import() 함수를 사용해서 폰트를 R에서 불러 사용할 수 있도록 설치한다. 그리고 나서 loadfonts() 함수를 사용해서 글꼴을 ggplot등에서 불러 사용한다. 구글 글꼴을 사용하고자 할 경우 showtext 패키지를 사용해서 로컬 컴퓨터에 설치하여 적용한다.\n\n\nR 폰트/글꼴 설치"
   },
   {
     "objectID": "fonts.html#font-coding",
     "href": "fonts.html#font-coding",
-    "title": "\n5  글꼴\n",
-    "section": "\n5.2 R 코딩 글꼴",
-    "text": "5.2 R 코딩 글꼴\n문서를 위해 작성하는데 사용되는 글꼴과 R 코딩을 위해 사용되는 글꼴은 차이가 난다. 왜냐하면 R 코딩에 사용되는 글꼴은 가독성이 좋아야하고 디버깅에 용이해야 된다. 영어는 consolas 글꼴을 많이 사용하는데 무료가 아니다. 그래서 consolas에서 영감을 받은 SIL 오픈 폰트 라이선스를 따르는 Inconsolata가 R 코딩에 많이 사용되고 있다. 하지만, R코드를 작성할 때 주석을 한글로 달거나 R마크다운 작업을 할 경우 유사한 기능을 하는 한글 글꼴이 필요하다.\n\n네이버 나눔고딕 코딩글꼴\nD2 Coding 글꼴\n\n“네이버 나눔고딕 코딩글꼴”과 “D2 Coding 글꼴”을 설치하고 나서 RStudio IDE에서 “Tools” → “Global Options…”를 클릭하면 “Options”창에서 Appearance에서 Editor font:에서 설치한 코딩전용 글꼴을 선택하고 Editor theme:도 지정한다.\n\n\nD2 코딩폰트 설치"
+    "title": "\n9  글꼴\n",
+    "section": "\n9.2 R 코딩 글꼴",
+    "text": "9.2 R 코딩 글꼴\n문서를 위해 작성하는데 사용되는 글꼴과 R 코딩을 위해 사용되는 글꼴은 차이가 난다. 왜냐하면 R 코딩에 사용되는 글꼴은 가독성이 좋아야하고 디버깅에 용이해야 된다. 영어는 consolas 글꼴을 많이 사용하는데 무료가 아니다. 그래서 consolas에서 영감을 받은 SIL 오픈 폰트 라이선스를 따르는 Inconsolata가 R 코딩에 많이 사용되고 있다. 하지만, R코드를 작성할 때 주석을 한글로 달거나 R마크다운 작업을 할 경우 유사한 기능을 하는 한글 글꼴이 필요하다.\n\n네이버 나눔고딕 코딩글꼴\nD2 Coding 글꼴\n\n“네이버 나눔고딕 코딩글꼴”과 “D2 Coding 글꼴”을 설치하고 나서 RStudio IDE에서 “Tools” → “Global Options…”를 클릭하면 “Options”창에서 Appearance에서 Editor font:에서 설치한 코딩전용 글꼴을 선택하고 Editor theme:도 지정한다.\n\n\nD2 코딩폰트 설치"
   },
   {
     "objectID": "fonts.html#r-viz-font",
     "href": "fonts.html#r-viz-font",
-    "title": "\n5  글꼴\n",
-    "section": "\n5.3 ggplot 시각화 글꼴",
-    "text": "5.3 ggplot 시각화 글꼴\nextrafont 팩키지에서 font_import() 함수로 운영체제(윈도우/리눅스)에 설치된 글꼴을 R로 가져온다. 그리고 나서 loadfonts() 함수를 사용해서 설치된 글꼴을 사용하는 작업흐름을 따르게 된다.\n\nlibrary(extrafont)\nfont_import(pattern = \"D2\")\n\nImporting fonts may take a few minutes, depending on the number of fonts and the speed of the system.\nContinue? [y/n] y\nScanning ttf files in C:\\Windows\\Fonts ...\nExtracting .afm files from .ttf files...\nC:\\Windows\\Fonts\\D2Coding-Ver1.3.2-20180524.ttf =&gt; C:/Users/tidyverse_user/Documents/R/win-library/3.5/extrafontdb/metrics/D2Coding-Ver1.3.2-20180524\nC:\\Windows\\Fonts\\D2CodingBold-Ver1.3.2-20180524.ttf =&gt; C:/Users/tidyverse_user/Documents/R/win-library/3.5/extrafontdb/metrics/D2CodingBold-Ver1.3.2-20180524\nC:\\Windows\\Fonts\\MOD20.TTF =&gt; C:/Users/tidyverse_user/Documents/R/win-library/3.5/extrafontdb/metrics/MOD20\nFound FontName for 3 fonts.\nScanning afm files in C:/Users/tidyverse_user/Documents/R/win-library/3.5/extrafontdb/metrics\nWriting font table in C:/Users/tidyverse_user/Documents/R/win-library/3.5/extrafontdb/fontmap/fonttable.csv\nWriting Fontmap to C:/Users/tidyverse_user/Documents/R/win-library/3.5/extrafontdb/fontmap/Fontmap...\n\nfont_import(pattern = \"Nanum\")\n\n\n5.3.1 ggplot 한글 글꼴 사례\nextrafont 패키지 loadfonts() 함수를 사용해서 ggplot에서 적용시킬 수 있는 글꼴을 불러냈다. R 내장 데이터셋 iris를 사용하여 나눔글꼴 “나눔손글씨 가람연꽃”(NanumGaRamYeonGgoc)을 기본 글꼴로 적용시켰다.\n\nlibrary(tidyverse)\n# extrafont::font_import(pattern = \"Nanum\", prompt = FALSE)\n\nextrafont::loadfonts() # 로컬 PC 에서 설치된 글꼴을 불러냄!!!\n\niris |&gt; \n  ggplot(aes(x=Sepal.Length, y=Petal.Length, color=Species)) +\n    geom_point()+\n    labs(title=\"붓꽃 데이터 한글 글꼴 적용\", color=\"붓꽃 종류\",\n         x = \"꽃받침 길이\", y = \"꽃잎 길이\") +\n    theme_minimal(base_family = \"NanumGaRamYeonGgoc\") +\n    theme(legend.position = \"top\")"
+    "title": "\n9  글꼴\n",
+    "section": "\n9.3 ggplot 시각화 글꼴",
+    "text": "9.3 ggplot 시각화 글꼴\nextrafont 팩키지에서 font_import() 함수로 운영체제(윈도우/리눅스)에 설치된 글꼴을 R로 가져온다. 그리고 나서 loadfonts() 함수를 사용해서 설치된 글꼴을 사용하는 작업흐름을 따르게 된다.\n\nlibrary(extrafont)\nfont_import(pattern = \"D2\")\n\nImporting fonts may take a few minutes, depending on the number of fonts and the speed of the system.\nContinue? [y/n] y\nScanning ttf files in C:\\Windows\\Fonts ...\nExtracting .afm files from .ttf files...\nC:\\Windows\\Fonts\\D2Coding-Ver1.3.2-20180524.ttf =&gt; C:/Users/tidyverse_user/Documents/R/win-library/3.5/extrafontdb/metrics/D2Coding-Ver1.3.2-20180524\nC:\\Windows\\Fonts\\D2CodingBold-Ver1.3.2-20180524.ttf =&gt; C:/Users/tidyverse_user/Documents/R/win-library/3.5/extrafontdb/metrics/D2CodingBold-Ver1.3.2-20180524\nC:\\Windows\\Fonts\\MOD20.TTF =&gt; C:/Users/tidyverse_user/Documents/R/win-library/3.5/extrafontdb/metrics/MOD20\nFound FontName for 3 fonts.\nScanning afm files in C:/Users/tidyverse_user/Documents/R/win-library/3.5/extrafontdb/metrics\nWriting font table in C:/Users/tidyverse_user/Documents/R/win-library/3.5/extrafontdb/fontmap/fonttable.csv\nWriting Fontmap to C:/Users/tidyverse_user/Documents/R/win-library/3.5/extrafontdb/fontmap/Fontmap...\n\nfont_import(pattern = \"Nanum\")\n\n\n9.3.1 ggplot 한글 글꼴 사례\nextrafont 패키지 loadfonts() 함수를 사용해서 ggplot에서 적용시킬 수 있는 글꼴을 불러냈다. R 내장 데이터셋 iris를 사용하여 나눔글꼴 “나눔손글씨 가람연꽃”(NanumGaRamYeonGgoc)을 기본 글꼴로 적용시켰다.\n\nlibrary(tidyverse)\n# extrafont::font_import(pattern = \"Nanum\", prompt = FALSE)\n\nextrafont::loadfonts() # 로컬 PC 에서 설치된 글꼴을 불러냄!!!\n\niris |&gt; \n  ggplot(aes(x=Sepal.Length, y=Petal.Length, color=Species)) +\n    geom_point()+\n    labs(title=\"붓꽃 데이터 한글 글꼴 적용\", color=\"붓꽃 종류\",\n         x = \"꽃받침 길이\", y = \"꽃잎 길이\") +\n    theme_minimal(base_family = \"NanumGaRamYeonGgoc\") +\n    theme(legend.position = \"top\")"
   },
   {
     "objectID": "fonts.html#font-showtext",
     "href": "fonts.html#font-showtext",
-    "title": "\n5  글꼴\n",
-    "section": "\n5.4 showtext 패키지 1\n",
-    "text": "5.4 showtext 패키지 1\n\nextrafont 패키지를 통해 한자를 포함한 한글을 처리할 수 있었으나, extrafont는 트루타입폰트(.ttf)를 PDF 그래픽 장치에 초점을 맞춰 개발이 되었다. 따라서, 데이터과학 최종산출물이 PDF 형태 책이 아닌 경우 여러가지 면에서 다양한 한글 글꼴을 표현하는데 있어 한계가 있다.\n새로 개발된 showtext 팩키지는 Ghostscript같은 외부 소프트웨어를 활용하지 않고도 다양한 (그래픽) 글꼴을 지원한다. showtext로 R 그래프를 생성할 때, 다양한 글꼴(TrueType, OpenType, Type 1, web fonts 등)을 지원한다.\n과거 PDF와 같은 책형태로 정보를 공유하고 전달하는 방식이 주류를 이뤘다면 인터넷 등장 이후 웹으로 정보 생성과 소비가 주류로 떠오르게 되면서 글꼴에도 변화가 생겼다. 가까운 미래에는 웹을 우선시하는 글꼴이 대세를 이룰 것으로 보인다.\n\n\nshowtext 글꼴\n\n사용자가 그래프에 텍스트를 넣기 위해 R 함수에서 text()를 호출할 때 showtext가 활성화 되어 있으면 showtext 팩키지 text() 함수를 호출해서 그래픽 혹은 이미지 파일에 텍스트를 표현하고 그렇지 않는 경우는 디폴트 장치함수 text() 함수를 호출하게 되어 있다.\n내부적으로 상세 작동 로직은 글꼴 위치를 파악해서 글리프(glyph) 정보를 추출하고 비트맵 형식, 벡터그래픽 형식에 따라서 비트맵일 경우 raster() 장치함수를 호출하고, 벡터그래픽인 경우 path() 장치함수를 호출해서 기능을 수행한다.\n\n5.4.1 R 설치 글꼴 확인\nextrafont 팩키지 loadfonts() 함수를 통해 .ttf 파일 정보를 확인한다. 현재 구글 글끌 페이지에서 많은 한글 글꼴을 지원하지 않고 있다. 구글에서 전세계 글꼴을 지원하다보 동아시아 3국 대상으로 지원되는 글꼴은 적은 것으로 보인다.\n\n# 0. 환경설정 --------------------------------------------------------------------------\nlibrary(tidyverse)\nlibrary(showtext) # 글꼴, install.packages(\"showtext\")\nlibrary(extrafont)\nloadfonts()\n\n\n5.4.2 ggplot 글꼴 적용\n한글 글꼴을 바로 적용하기에 앞서 showtext 패키지 포함된 영문글꼴 적용 사례를 먼저 돌려보자. ggplot 그래픽에 적용되는 showtext 활용 기본 작업흐름은 다음과 같다.\n\n글꼴을 적재한다.\n그래픽 장치를 연다\n\nshowtext를 통해 텍스트를 표시한다고 지정한다.\n그래프를 그린다.\n장치를 닫는다.\n\n\nlibrary(tidyverse)\nlibrary(showtext)\n\n# ggplot 그래픽 ----------------------------\n\ndat &lt;- data.frame(cond = factor(rep(c(\"A\",\"B\"), each=200)), \n                  rating = c(rnorm(200),rnorm(200, mean=.8)))\n\nfont_add_google(\"Schoolbell\", \"bell\") # 글꼴 적재\n\nshowtext.begin() # 그래픽 장치 열기\n\nggplot(dat, aes(x=rating)) + \n  geom_histogram(binwidth=.5)+ \n　annotate(\"text\", 1, 2.1, family = \"bell\", size = 15, color=\"red\", label = \"histogram\")\n\n\n\n\n\n\nshowtext.end() # 그래픽 장치 닫기"
+    "title": "\n9  글꼴\n",
+    "section": "\n9.4 showtext 패키지 1\n",
+    "text": "9.4 showtext 패키지 1\n\nextrafont 패키지를 통해 한자를 포함한 한글을 처리할 수 있었으나, extrafont는 트루타입폰트(.ttf)를 PDF 그래픽 장치에 초점을 맞춰 개발이 되었다. 따라서, 데이터과학 최종산출물이 PDF 형태 책이 아닌 경우 여러가지 면에서 다양한 한글 글꼴을 표현하는데 있어 한계가 있다.\n새로 개발된 showtext 팩키지는 Ghostscript같은 외부 소프트웨어를 활용하지 않고도 다양한 (그래픽) 글꼴을 지원한다. showtext로 R 그래프를 생성할 때, 다양한 글꼴(TrueType, OpenType, Type 1, web fonts 등)을 지원한다.\n과거 PDF와 같은 책형태로 정보를 공유하고 전달하는 방식이 주류를 이뤘다면 인터넷 등장 이후 웹으로 정보 생성과 소비가 주류로 떠오르게 되면서 글꼴에도 변화가 생겼다. 가까운 미래에는 웹을 우선시하는 글꼴이 대세를 이룰 것으로 보인다.\n\n\nshowtext 글꼴\n\n사용자가 그래프에 텍스트를 넣기 위해 R 함수에서 text()를 호출할 때 showtext가 활성화 되어 있으면 showtext 팩키지 text() 함수를 호출해서 그래픽 혹은 이미지 파일에 텍스트를 표현하고 그렇지 않는 경우는 디폴트 장치함수 text() 함수를 호출하게 되어 있다.\n내부적으로 상세 작동 로직은 글꼴 위치를 파악해서 글리프(glyph) 정보를 추출하고 비트맵 형식, 벡터그래픽 형식에 따라서 비트맵일 경우 raster() 장치함수를 호출하고, 벡터그래픽인 경우 path() 장치함수를 호출해서 기능을 수행한다.\n\n9.4.1 R 설치 글꼴 확인\nextrafont 팩키지 loadfonts() 함수를 통해 .ttf 파일 정보를 확인한다. 현재 구글 글끌 페이지에서 많은 한글 글꼴을 지원하지 않고 있다. 구글에서 전세계 글꼴을 지원하다보 동아시아 3국 대상으로 지원되는 글꼴은 적은 것으로 보인다.\n\n# 0. 환경설정 --------------------------------------------------------------------------\nlibrary(tidyverse)\nlibrary(showtext) # 글꼴, install.packages(\"showtext\")\nlibrary(extrafont)\nloadfonts()\n\n\n9.4.2 ggplot 글꼴 적용\n한글 글꼴을 바로 적용하기에 앞서 showtext 패키지 포함된 영문글꼴 적용 사례를 먼저 돌려보자. ggplot 그래픽에 적용되는 showtext 활용 기본 작업흐름은 다음과 같다.\n\n글꼴을 적재한다.\n그래픽 장치를 연다\n\nshowtext를 통해 텍스트를 표시한다고 지정한다.\n그래프를 그린다.\n장치를 닫는다.\n\n\nlibrary(tidyverse)\nlibrary(showtext)\n\n# ggplot 그래픽 ----------------------------\n\ndat &lt;- data.frame(cond = factor(rep(c(\"A\",\"B\"), each=200)), \n                  rating = c(rnorm(200),rnorm(200, mean=.8)))\n\nfont_add_google(\"Schoolbell\", \"bell\") # 글꼴 적재\n\nshowtext.begin() # 그래픽 장치 열기\n\nggplot(dat, aes(x=rating)) + \n  geom_histogram(binwidth=.5)+ \n　annotate(\"text\", 1, 2.1, family = \"bell\", size = 15, color=\"red\", label = \"histogram\")\n\n\n\n\n\n\nshowtext.end() # 그래픽 장치 닫기"
   },
   {
     "objectID": "fonts.html#font-showtext-korean-example-ttf",
     "href": "fonts.html#font-showtext-korean-example-ttf",
-    "title": "\n5  글꼴\n",
-    "section": "\n5.5 로컬 글꼴 적용",
-    "text": "5.5 로컬 글꼴 적용\n로컬 컴퓨터에 저장된 .ttf 파일을 사용자 지정해서 가져온 후 이를 ggplot에 반영하여 한글을 R 그래프에 적용하는 것도 가능하다. showtext는 extrafont 보다 나중에 개발되어 extrafont가 로컬 컴퓨터에 설치된 글꼴을 ggplot에 구현되는데 전력을 다했다면 showtext는 이를 발판으로 나중에 개발되어 구글 폰트와 같은 인터넷 글꼴과 최근 웹출판에 대한 개념도 넣어 개발된 것이 차이점이다.\n\n# ３. 한글 그래픽 --------------------------------------------------------------------------\n## 나눔펜　스크립트\nfont_add(\"NanumBarunGothic\", \"NanumBarunGothic.ttf\")\n\nshowtext.auto()\n\np &lt;- ggplot(NULL, aes(x = 1, y = 1)) + ylim(0.8, 1.2) +\n  theme(axis.title = element_blank(), axis.ticks = element_blank(),\n        axis.text = element_blank()) +\n  annotate(\"text\", 1, 1.1, family = \"NanumBarunGothic\", size = 15, color=\"red\",\n           label = \"한글 사랑\") +\n  annotate(\"text\", 1, 0.9, label = 'korean for \"Hello, world!\"',\n           family = \"NanumBarunGothic\", size = 12)\n\nprint(p)"
+    "title": "\n9  글꼴\n",
+    "section": "\n9.5 로컬 글꼴 적용",
+    "text": "9.5 로컬 글꼴 적용\n로컬 컴퓨터에 저장된 .ttf 파일을 사용자 지정해서 가져온 후 이를 ggplot에 반영하여 한글을 R 그래프에 적용하는 것도 가능하다. showtext는 extrafont 보다 나중에 개발되어 extrafont가 로컬 컴퓨터에 설치된 글꼴을 ggplot에 구현되는데 전력을 다했다면 showtext는 이를 발판으로 나중에 개발되어 구글 폰트와 같은 인터넷 글꼴과 최근 웹출판에 대한 개념도 넣어 개발된 것이 차이점이다.\n\n# ３. 한글 그래픽 --------------------------------------------------------------------------\n## 나눔펜　스크립트\nfont_add(\"NanumBarunGothic\", \"NanumBarunGothic.ttf\")\n\nshowtext.auto()\n\np &lt;- ggplot(NULL, aes(x = 1, y = 1)) + ylim(0.8, 1.2) +\n  theme(axis.title = element_blank(), axis.ticks = element_blank(),\n        axis.text = element_blank()) +\n  annotate(\"text\", 1, 1.1, family = \"NanumBarunGothic\", size = 15, color=\"red\",\n           label = \"한글 사랑\") +\n  annotate(\"text\", 1, 0.9, label = 'korean for \"Hello, world!\"',\n           family = \"NanumBarunGothic\", size = 12)\n\nprint(p)"
   },
   {
     "objectID": "fonts.html#글꼴-패키지",
     "href": "fonts.html#글꼴-패키지",
-    "title": "\n5  글꼴\n",
-    "section": "\n5.6 글꼴 패키지",
-    "text": "5.6 글꼴 패키지\n로컬 컴퓨터에 설치된 R 관련 폰트 패키지를 확인할 수 있다.\n\nlibrary(tidyverse)\n\nfont_packages &lt;- c(\"extrafont\", \"showtext\", \"sysfonts\")\n\nfonts_list &lt;- map(font_packages, packageDescription)\n\nfonts_list |&gt; \n  enframe() |&gt; \n  mutate(패키지명 = map_chr(value, \"Package\"),\n         버전 = map_chr(value, \"Version\"),\n         날짜 = map(value, \"Date\") |&gt; as.character(),\n         URL = map(value, \"URL\") |&gt; as.character()) |&gt; \n  select(-name, -value) |&gt; \n  gt::gt()\n\n\n\n\n\n패키지명\n      버전\n      날짜\n      URL\n    \n\n\nextrafont\n0.19\nNULL\nhttps://github.com/wch/extrafont\n\n\nshowtext\n0.9-6\n2023-05-03\nhttps://github.com/yixuan/showtext\n\n\nsysfonts\n0.8.8\n2022-03-13\nhttps://github.com/yixuan/sysfonts"
+    "title": "\n9  글꼴\n",
+    "section": "\n9.6 글꼴 패키지",
+    "text": "9.6 글꼴 패키지\n로컬 컴퓨터에 설치된 R 관련 폰트 패키지를 확인할 수 있다.\n\nlibrary(tidyverse)\n\nfont_packages &lt;- c(\"extrafont\", \"showtext\", \"sysfonts\")\n\nfonts_list &lt;- map(font_packages, packageDescription)\n\nfonts_list |&gt; \n  enframe() |&gt; \n  mutate(패키지명 = map_chr(value, \"Package\"),\n         버전 = map_chr(value, \"Version\"),\n         날짜 = map(value, \"Date\") |&gt; as.character(),\n         URL = map(value, \"URL\") |&gt; as.character()) |&gt; \n  select(-name, -value) |&gt; \n  gt::gt()\n\n\n\n\n\n패키지명\n      버전\n      날짜\n      URL\n    \n\n\nextrafont\n0.19\nNULL\nhttps://github.com/wch/extrafont\n\n\nshowtext\n0.9-6\n2023-05-03\nhttps://github.com/yixuan/showtext\n\n\nsysfonts\n0.8.8\n2022-03-13\nhttps://github.com/yixuan/sysfonts"
   },
   {
     "objectID": "fonts.html#작업흐름",
     "href": "fonts.html#작업흐름",
-    "title": "\n5  글꼴\n",
-    "section": "\n5.7 작업흐름",
-    "text": "5.7 작업흐름\n네이버 나눔스퀘어 글꼴을 로컬 컴퓨터에 다운로드 받아 모든 사용자용으로 설치한다.\n\n\n윈도우 나눔스퀘어 글꼴 설치\n\nfs 패키지 file_exists() 함수로 NanumSquare.ttf 파일이 존재함을 확인한다. 그리고 나서, font_import() 명령어로 글꼴을 설치한다. 경로(path =)를 지정하는 방식과 pattern =을 지정하는 방식이 있는데 둘 중 글꼴을 설치되는 방식으로 진행한다.\n\nlibrary(extrafont)\n\nfs::file_exists(\"C:/Windows/Fonts/NanumSquare.ttf\")\n\n# font_import(paths = \"C:/Windows/Fonts/NanumSquare.ttf\")\nfont_import(pattern = \"NanumSquare.ttf\", prompt = FALSE)\n\n동일한 방식으로 마루부리 글꼴도 설치한다.\n\nfont_import(pattern = \"MaruBuri-ExtraLight.ttf\", prompt = FALSE)\nfont_import(pattern = \"MaruBuri-Regular.ttf\", prompt = FALSE)\nfont_import(pattern = \"MaruBuri-Bold.ttf\", prompt = FALSE)\nfont_import(pattern = \"MaruBuri-Light.ttf\", prompt = FALSE)\n\n\nlibrary(tidyverse)\nlibrary(palmerpenguins)\n\nextrafont::loadfonts(\"win\", quiet = TRUE)\n\navailable_fonts &lt;- extrafont::fonts()\n\navailable_fonts[str_detect(available_fonts, \"Maru|Nanum\")]\n\n [1] \"NanumGothic\"                 \"NanumGothicExtraBold\"       \n [3] \"NanumGothic Light\"           \"MaruBuri Bold\"              \n [5] \"MaruBuri Light\"              \"MaruBuri Regular\"           \n [7] \"MaruBuri SemiBold\"           \"NanumBarunGothic\"           \n [9] \"NanumBarunGothic Light\"      \"NanumBarunGothic UltraLight\"\n[11] \"NanumBarunpen\"               \"NanumBarunpen Bold\"         \n[13] \"NanumSquare_ac Bold\"         \"Nanum Brush Script\"         \n[15] \"Nanum GaRamYeonGgoc\"         \"NanumMyeongjo\"              \n[17] \"NanumMyeongjoExtraBold\"      \"Nanum Pen Script\"           \n[19] \"NanumSquare_ac ExtraBold\"    \"NanumSquare_ac Light\"       \n[21] \"NanumSquare_ac\"              \"NanumSquare Bold\"           \n[23] \"NanumSquare ExtraBold\"       \"NanumSquare Light\"          \n[25] \"NanumSquare\"                \n\nggplot_fonts_gg &lt;- penguins |&gt; \n  ggplot(aes(x = flipper_length_mm, y = body_mass_g)) +\n    geom_point(aes(color = species, shape = species), size = 3) +\n    geom_smooth(method = \"lm\", se = FALSE, color = \"black\")  +\n    labs(\n      title = \"물갈퀴 길이와 체중 회귀분석\",\n      subtitle = \"남극 파머 펭귄 데이터셋\",\n      x = \"물갈퀴 길이 (mm)\",\n      y = \"체중 (g)\",\n      color = \"펭귄종\",\n      caption = \"자료출처: palmerpenguins 패키지\"\n    ) +\n    theme_minimal()  +\n    theme(\n      plot.title = element_text(family = \"NanumSquare\", size = 18, face = \"bold\"),\n      plot.subtitle  = element_text(family = \"MaruBuri\", size = 13),\n      axis.title.x  = element_text(family = \"MaruBuri\"),\n      axis.title.y  = element_text(family = \"MaruBuri\"),\n      axis.text.x   = element_text(family = \"MaruBuri\", size = 11),\n      axis.text.y   = element_text(family = \"MaruBuri\", size = 11),\n      legend.title  = element_text(family = \"MaruBuri\", size=13),\n      plot.caption = element_text(family = \"NanumSquare\", color = \"gray20\")\n    ) +\n    annotate(\n      \"text\", x = 200, y = 5000, label = \"회귀분석 모형\", \n      hjust = 0.5, size = 8, color = \"steelblue\",\n      family = \"MaruBuri\", face = \"bold\"\n    ) +\n    guides(shape = \"none\")\n\nggplot_fonts_gg\n\n\n\n\n\n\n# ragg::agg_jpeg(\"images/ggplot_fonts_gg.jpeg\",\n#               width = 10, height = 7, units = \"in\", res = 600)\n# ggplot_fonts_gg\n# dev.off()\n\n\n\nggplot 다른 한글 글꼴 적용"
-  },
-  {
-    "objectID": "colors.html#color-mechanism",
-    "href": "colors.html#color-mechanism",
-    "title": "\n6  색상\n",
-    "section": "\n6.1 시각화 메커니즘 1\n",
-    "text": "6.1 시각화 메커니즘 1\n\n크게 보면 기계 즉, 컴퓨터가 색을 이해하고 표현하는 RGB 체계와 사람이 색을 인지하고 이해하는 HCL 체계로 나누어 진다. 2진수로 표현된 시각적 데이터는 RGB 16진수로 변환되어 모니터에 표시되고, 물리적 광자(photon)로 사람눈에 위치한 망막에 꽂히게 되고, 사람은 뇌에서 인지한 후에 이를 처리하여 시각적인 정보를 인식하게 된다.\n따라서, 사람뇌에 인식할 수 있는 시각적인 정보로 데이터를 구성해야만 다양한 종류의 모니터를 통해 효율적이고 효과적으로 정보가 전달될 수 있다.\n\n\n시각적 인지 메커니즘\n\n\n6.1.1 16진수 RGB 표색법\n양수 숫자나 크레파스 명칭 대신에, 일반적이고 컴퓨터가 읽어들일 수 있는 색상 표색법이 16진수 팔레트다. Cynthia Brewer 는 펜실베니아 대학에서 교수로 색상이론과 시각화에 관련된 전문분야를 갖고 있으며 특히, ColorBrewer 으로 알려진 색생체계는 웹, 출판, 색맹을 고려하여 널리 쓰이고 있다. ColorBrewer 색상체계를 R에서 시각화를 할 때 사용될 수 있게 만든 것이 RColorBrewer 패키지다. RColorBrewer Dark2 팔레트를 통해 실제로 구현된 색상체계를 살펴보자.\n\nlibrary(RColorBrewer)\nbrewer.pal(n = 8, name = \"Dark2\")\n\n[1] \"#1B9E77\" \"#D95F02\" \"#7570B3\" \"#E7298A\" \"#66A61E\" \"#E6AB02\" \"#A6761D\"\n[8] \"#666666\"\n\n\n# 기호는 관례로 붙이는 것이고, 16진수 문자열을 다음과 같이 파싱한다: #rrggbb에서 rr, gg, bb 각각은 적색, 녹색, 청색 채널에 대한 생상농도를 나타낸다. 각 색상은 2를 밑으로 하는 16개 숫자를 나타내고, “16진수(hexadecimal)” 혹은 줄여서 헥스(hex)로 부른다. 다음에 밑을 10으로 하는 십진수와 16진수 비교표가 다음에 나와 있다.\n\n\n\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\nA\nB\nC\nD\nE\nF\n\n\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n\n\n\n예를 들어, 팔렛트 첫 색상이 #1B9E77으로 명세되어 있다. 따라서, 녹색 채널 색상농도는 9E가 된다.\n\\[ 9E = 9 * 16^1 + 14 * 16^0 = 9 * 16 + 14 = 158 \\]\n무슨 뜻일까? 해당 채널의 가장 낮은 값은 00=0 이 되고, 가장 높은 값은 FF=255 가 된다.\n도움이 되는 기억해야될 중요한 사례가 다음에 나타나 있다. 적색, 녹색, 청색에 대한 강렬한 RGB 색상은 다음과 같다.\n\n\n\n색상\n헥스코드\n붉은색\n녹색\n파란색\n\n\n\nblue\n#0000FF\n0\n0\n255\n\n\ngreen\n#00FF00\n0\n255\n0\n\n\nred\n#FF0000\n255\n0\n0\n\n\n\n\n다음에 흑백, 회색을 표현한 것이 나타나 있다.\n\n\n\n색상\n헥스코드\n붉은색\n녹색\n파란색\n\n\n\nwhite, gray100\n#FFFFFF\n255\n255\n255\n\n\ngray67\n#ABABAB\n171\n171\n171\n\n\ngray33\n#545454\n84\n84\n84\n\n\nblack, gray0\n#000000\n0\n0\n0\n\n\n\n\n“gray” 회색으로 치환하게 되면, “gray”를 보게되는 어느 곳에서나 동일한 결과를 얻게 됨에 주목한다. 모든 채널을 최대값으로 하면 흰색, 모든 채널을 최소값으로 하면 검정색이 된다.\n\n\nR에서 색상을 지정하는 방법\n\n\n양의 정수: palette()함수로 조작하거나 검색한 현재 색상 팔레트에 인덱스를 사용.\n\n색상 명칭: colors() 함수로 검색된 색상\n\n16진수 문자열: 16진수로 구성된 3개조에 추가해서, 알파 투명도를 나타내는 네번째 채널을 넣어 16진수 4개조로 구성된 생상표로 확장하기도 한다.\n\n\nrgb(), col2rgb(), convertColor() 함수도 유용하니, 자세한 내용은 도움말을 참조한다."
-  },
-  {
-    "objectID": "colors.html#dataviz-mechanism-hcl",
-    "href": "colors.html#dataviz-mechanism-hcl",
-    "title": "\n6  색상\n",
-    "section": "\n6.2 RGB 색상모형 대안 - HCL\n",
-    "text": "6.2 RGB 색상모형 대안 - HCL\n\nRGB 색공간과 색상모형이 유일무이하고 가장 최고는 아니다. 컴퓨터 화면에 색상을 표현하는데는 자연스럽지만, 일부 영역에서 색상을 선택하는 작업에는 이런 모형을 적용하기 어렵다. 예를 들어, 사람이 구별하기는 쉽지만, 인지적으로 색상별로 비교되는 생각으로 구성된 정성적인 팔레트를 만들어 내는 방법은 명확하지 않다. 컴퓨터에 사용되는 색상을 기술하는데 RGB를 사용하지만, 사람이 색상체계를 구축하는 색공간에 RGB체계를 사용할 이유는 없다. 이점은 사람과 컴퓨터가 다른 것이고, 이를 인정해야만 된다.\n색상모형은 일반적으로 RGB와 마찬가지로 세가지 차원으로 구성된다. 이는 망막에 세가지 다른 수용체를 인간이 갖는 생리적 사실에 기인한다. RGB와 인간 시각 체계에 대한 자세한 정보는 블로그를 참고한다. 색상모형의 차원이 사람이 인식할 수 있는 식별가능한 정보량에 더 가까이 부합되면 될수록, 더욱 유용하다. 이런 부합성이 사려깊게 작성된 팔레트 생성을 가능하게 하고, 더불어 특정한 특성을 갖는 색공간에 대한 길을 연다. RGB 색체계는 인간의 인식체계와 일치성이 떨어진다. 적색, 녹색, 청색광을 탐지할 수 있는 광수용체를 갖기 때문에, 색을 인지하는 체험이 RGB 방식으로 분해된다는 것을 의미하지 않는다. 적색과 녹색을 섞은 것으로 황색을 인식하는 체험을 했는가? 물론 아니다. 생리학적인 현실은 그렇다. 또다른 RGB 대안 모형이 HSV(Hue-Saturation-Value, 색상-채도-명도)모형이다. 불행하게도, 색을 선택하는데 문제가 많은데, 이유는 색상이 서로 중첩되는 차원을 갖기 때문이다.\n사람이 인지하기 좋은 색모형은 무엇일까? CIELUV 와 CIELAB 이 가장 잘 알려진 사례다. CIELUV의 변종인 HCL(Hue-Chroma-Luminance, 색상-채도-휘도) 모형을 좀더 살펴보자. Zeileis와 동료들이 R 사용자를 위한 팩키지로 멋지게 작성했다.2 colorspace R 팩키지에 딸려있고, HCL 색상모형을 탐색하고 이용하는데 도움을 준다. 마지막으로, HCL 색모형이 ggplot2에 RColorBrewer와 마찬가지로 잘 녹여져있다.\n\n\nHCL 색상모형의 세가지 차원\n\n\n색상(Hue) : 색상은 일반적으로 “색상이 뭐지?”라고 생각할 때 생각나는 것이다. 이해가 바로되는 쉬운 것이다! 각도로 주어지고 따라서 0 에서 360 까지 값을 갖는데, 무지개 도넛을 상상하면 된다.\n\n채도(Chroma) : 채도는 색상이 얼마나 순수한지 혹은 생생한지 나타낸다. 특정 색상이 회색과 섞일 수록, 채도는 떨어진다. 가장 낮은 값은 0 으로 회색 그자체에 대응되고, 최대값은 휘도에 따라 변한다.\n\n휘도(Lumiance) : 휘도는 명도(brightness), 명도(Lightness), 광도(intensity), 명도(value)와 관련된다. 낮은 휘도는 어두움을 의미하고, 진짜 검정색은 휘도가 0 이다. 높은 휘도는 밝음을 의미하고, 진짜 흰색은 휘도가 1 이다.\n\n\n저자는 채도와 휘도를 이해하고 구별하는데 힘든 시간을 보냈다. 위에서 살펴봤듯이, 색체계는 서로 독립된 것이 아니고, 3차원 HCL 공간에 기이한 모형으로 정보를 제공하고 있다.\n위캠의 ggplot2 책에 나온 6.6 그림이 HCL 색공간을 이해하는데 도움이 된다.\n\n\nggplot2 HCL 색공간\n\n위캠 책에 언급된 내용을 다시 적으면 다음과 같다: 각 측면, 창은 휘도에 따라 가장 낮은 값에서 높은 값 순으로 HCL 공간을 슬라이스로 나누어 도식화한 것을 보여주고 있다. 0 과 100 극단 휘도값은 생략되었는데, 이유는 각각 검은 점과 흰점으로 나타나기 때문이다. 슬라이스 내부에, 중심은 채도가 0 으로, 회색에 대응된다. 슬라이스 끝쪽으로 이동하면, 채도가 증가하고, 색상이 더 순색에 가까워지고 농도가 짖어진다. 색상은 각도로 매핑된다.\ncolorspace 팩키지에 가치있는 기여는 아마도 함수를 사용해서 색상공간을 합리적 방식으로 색공간을 이리저리 돌아다닐 수 있게 만든 것이다. 이와는 대조적으로 RColorBrewer 팩키지가 제공하는 팔레트는 정교하게 제작되었지만, 불행히도 고정이다.\n인지기반 색상체계를 사용하는 것에 대한 옹호 사례와 더불어 색공간에 0 이 자리하는 것을 알려주는 중요성을 시연하고 있다.\n\n“Why Should Engineers and Scientists Be Worried About Color?”"
-  },
-  {
-    "objectID": "colors.html#viz-printer-cmyk",
-    "href": "colors.html#viz-printer-cmyk",
-    "title": "\n6  색상\n",
-    "section": "\n6.3 프린터 색상모형: CMYK 3 4\n",
-    "text": "6.3 프린터 색상모형: CMYK 3 4\n\nCMYK 색상표는 시안(Cyan), 마젠타(Magenta), 옐로(Yellow), 블랙(Black = Key)를 원색으로 하여 명도가 낮아지는 감산혼합으로 주로 출력물 인쇄 혹은 사진 필림 현상에 사용되며 쿼크익스프레스, 일러스트레이터, 포토샵 등에서 CMYK 감산혼합을 지원한다. 현실적인 문제 때문에 RGB나 HSB(HSV)보다 표현 가능한 색이 적은 것으로 알려져 있다.\n학창시절 감산혼합의 색의 3원색은 빨강, 노랑, 파랑인데, CMYK는 생뚱맞게도 시안(Cyan), 마젠타(Magenta), 옐로(Yellow), 블랙(Black = Key)을 원색으로 하는데 이유는 빨강은 사실 자홍색(마젠타), 파랑은 청록색(시안)이라 정확한 색상이 후자가 맞다. 우리가 잘못 배운 탓이 크다.\nRGB 생상과 CMYK 생상을 PDF 파일로 찍어 상호 비교해보자. 5\n\n\nRGB 색상 출력\n\npdf(\"data/color_rgb.pdf\")\nRColorBrewer::display.brewer.all(type=\"qual\")\ndev.off()\n\n\n\n\n\n\nCMYK 색상 출력\n\npdf(\"data/color_cmyk.pdf\", colormodel = \"cmyk\")\nRColorBrewer::display.brewer.all(type=\"qual\")\ndev.off()"
-  },
-  {
-    "objectID": "colors.html#dataviz-color-brewer-viridis",
-    "href": "colors.html#dataviz-color-brewer-viridis",
-    "title": "\n6  색상\n",
-    "section": "\n6.4 RColorBrewer 와 viridis\n",
-    "text": "6.4 RColorBrewer 와 viridis\n\n\n6.4.1 RColorBrewer\n색상선택이 가장 논란이 많고, 이리저리 만지작 거리면서 정말 많은 시간을 보내는 분야다. 지리학자이며 생상 전문가 Cynthia Brewer 교수가 출판과 웹에서 사용되는 색상표를 제작했고, 이는 RColorBrewer 팩키지에 반영되어 있다. 팩키지를 설치하고 사용하면 된다. 연관된 전체 팔레트를 살펴보는 명령어는 display.brewer.all() 이다.\n\nlibrary(RColorBrewer) # install.packages(\"RColorBrewer\")\ndisplay.brewer.all()\n\n\n\n\n\n\n\n팔레트는 종류가 많지만 다음 세가지 범주에 속한다. 위에서 아래부터 다음과 같다.\n\n\n순차적(sequential) : 낮은 것에서 높은 것으로 한쪽 극단이 흥미롭고 반대쪽 극단이 재미없는 것을 시각화하는데 매우 좋다. 예를 들어 p-값, 상관계수 (주의: 상관계수 1 이 흥미로운 것은 양수를 가정했다)\n\n정량적(quantitative) : 순서가 없는 범주형 자료를 시각화할 때 유용하다. 예를 들어, 국가나 대륙. 특수한 “쌍을 이룬” 팔레트가 있다; 예를 들어, 곡물 밀 유형같이 실험이 아닌 요인, 실험군과 대조군 같은 이진 실험 요인.\n\n발산하는(diverging) : 극단의 음수에서 극단의 양수까지 범위를 같는 것을 시각화하는데 유용한다. 이런 데이터는 극단의 값이 중간에 위치한 덜 흥미로운 지점을 지난다. 예를 들어, t-통계량, z-점수, 상관계수가 이에 속한다.\n\n명칭을 명세해서 RColorBrewer 팔렛트 하나만 볼 수 있다.\n\ndisplay.brewer.pal(n = 8, name = 'Dark2')\n\n\n\n\n\n\n\n\n6.4.2 viridis\n2015년 Stéfan van der Walt 와 Nathaniel Smith는 파이썬 matplotlib 팩키지에 사용될 새로운 색상 지도를 설계했고, SciPy 2015에서 발표했다. viridis 팩키지로 인해 R에 4가지 신규 팔레트가 추가되었다. CRAN과, GitHub에서 팩키지를 만날 수 있다.\n\n\nviridis 색상표는 완벽하게 균등하게 지각되도록 설계되었고, 정규형식에서나 흑백으로 전환되었을 때도 마찬가지다. 또한 색망을 갖는 독자도 올바르게 지각될 수 있도록 설계되었다.\n\n아직 나온지 얼마되지 않아서, 자세한 사항은 viridis 팩키지를 설치하고 소품문을 읽고 직접 경험하기 바란다.\n\n6.4.3 색맹을 갖는 사람\ndichromat 팩키지(CRAN)는 2색시자에 대한 효과적인 색상조합을 선택하는데 도움이 된다.\n\nlibrary(dichromat) # install.packages(\"dichromat\")\n\ncolorschems 목록에는 17 가지 색상조합이 담겨있는데, 적색과 녹색을 구별하는 능력이 없거나 예외적인 시력을 갖는 2색시자에게 적합하다.\n\n\n\n\n\n\n\n\ndichmat() 함수는 색상을 변환해서 다른 형태의 색맹에 근사적인 효과를 구현할 수 있어서, 후보 색상조합에 대한 효과를 평가할 수 있게 한다. data(\"dalton\") 명령어는 256 색상 팔레트를 표현하는 객체를 생성하는데, 정상 시야로 표현되는 것과, 적록(red-green) 색맹과 청녹(green-blue) 생맹으로 표현되는 것이다.(rogowitz1996ibm?)\n\npal_name &lt;- names(tvthemes:::stevenUniverse_palette)\n\nshow_all_pal &lt;- function(pal_name) {\n  exp_pal &lt;- paste0(\"tvthemes:::stevenUniverse_palette$\", pal_name)\n  \n  pal_call &lt;- eval(expr = parse(text = exp_pal))\n  \n  return(scales::show_col(pal_call))\n}\n\npurrr::walk(pal_name, ~ show_all_pal(pal_name = .x))\n\nRColorBrewer는 ColorBrewer 2.0에서 제공하는 색상 팔레트에 기반한 R 색상 패키지다. 데이터 시각화를 위한 다양한 색상 조합을 제공하며, 데이터 시각화 가독성과 해석력을 향상을 위한 발산(diverging), 연속(sequential), 범주형(qualitive) 데이터 유형에 대한 적합한 색상 팔레트가 포함되어 있다.\n\nlibrary(RColorBrewer)\n\npar(mfrow=c(1 ,3))\ndisplay.brewer.all(type=\"div\")  # 양쪽발산(diverging)\ndisplay.brewer.all(type=\"seq\")  # 연속형(sequential)\ndisplay.brewer.all(type=\"qual\") # 범주형(qualitive)\n\n\n\n\n\n\ndev.off()\n\nnull device \n          1 \n\n\npenguins 데이터셋을 활용하여 각 섬별로 펭귄의 수를 집계한 다음, Torgersen 섬의 이름을 NA(결측값)으로 변경한다. 변경된 데이터를 바탕으로 ggplot2 패키지를 사용해 막대 그래프를 생성하며, 섬의 이름을 x축에, 각 섬의 펭귄 수를 y축에 배치하고, 각 막대는 해당 섬의 이름에 따라 다른 색상으로 채워운다. 결측값(여기서는 Torgersen 섬)은 회색으로 표시되며, 나머지 색상은 RColorBrewer의 “Accent” 팔레트를 사용하여 색을 채워넣는다.\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\npenguins |&gt; \n  count(island) |&gt; \n  mutate(island = if_else(island ==  \"Torgersen\", NA_character_, island)) |&gt; \n  ggplot(aes( x = island, y = n, fill = island)) +\n    geom_col() +\n    scale_fill_brewer(palette=\"Accent\", na.value=\"grey50\")"
-  },
-  {
-    "objectID": "colors.html#정당-색상",
-    "href": "colors.html#정당-색상",
-    "title": "\n6  색상\n",
-    "section": "\n6.5 정당 색상",
-    "text": "6.5 정당 색상\n더블어민주당, 국민의힘, 정의당 웹사이트에서 각 정당 로고 및 주된 로고 색상을 확인할 수 있다. 이를 바탕으로 정당별 시각화 제작에 사용될 색상으로 팔레트를 생성하여 활용한다.\n\n# 각 정당별 색상\n민주당_2색상 &lt;- c(\"#00A0E2\", \"#004EA1\")\n민주당_4색상 &lt;- c(\"#8AC452\", \"#00AA7D\", \"#008CCD\", \"#004EA1\")\n\n국힘_3색상 &lt;- c(\"#FFFFFF\", \"#E61E2B\", \"#00B5E2\")\n국힘_6색상 &lt;- c(\"#EDB19D\", \"#F18070\", \"#BDE4F8\", \"#004C7E\", \"#112C56\")\n\n정의당_3색상 &lt;- c(\"#ffed00\", \"#e8306d\", \"#00a366\", \"#623e91\")\n\n무소속_색상 &lt;- \"#999999\"\n\n# 정당, 색상코드, 시각화\nparty_palette &lt;- c(\"민주당\" = 민주당_2색상[2], \n                   \"국민의힘\" = 국힘_3색상[2], \n                   \"정의당\" = 정의당_3색상[1], \n                   \"무소속\" = 무소속_색상)\n\ndf_colors &lt;- data.frame(\n  party = names(party_palette),\n  color = party_palette\n)\n\nggplot(df_colors, aes(x = 1, y = party, fill = color)) +\n  geom_tile() +\n  scale_fill_identity() +\n  theme_void() +\n  coord_fixed(ratio = 0.1) +\n  geom_text(aes(label = str_glue(\"{party} - {color}\")))\n\n\n\n\n\n\n\n정당별 색상을 반영한 데이터 시각화 그래프 제작을 위해서 난수를 생성한 정당별 지지율 데이터를 만든 후에 정당색상을 반영한 그래프를 제작한다.\n\nparty_name &lt;- c(\"민주당\", \"국민의힘\", \"정의당\", \"무소속\")\nvotes &lt;- c(runif(1, min=.4, max=.5),\n           runif(1, min=.4, max=.5),\n           runif(1, min=.0, max=.05),\n           runif(1, min=.0, max=.05))\n\ntibble(party_name, votes) |&gt; \n  mutate(party_name = factor(party_name, levels = c(\"민주당\", \"국민의힘\", \"정의당\", \"무소속\"))) |&gt; \n  ggplot(aes(x = party_name, y = votes, fill = party_name)) +\n    geom_col() +\n    scale_fill_manual(values = party_palette) +\n    scale_y_continuous(labels = scales::percent) +\n    labs(x = \"\",\n         y = \"지지율\",\n         fill = \"정당명\",\n         title = \"정당별 지지율\")"
-  },
-  {
-    "objectID": "colors.html#이미지-색상",
-    "href": "colors.html#이미지-색상",
-    "title": "\n6  색상\n",
-    "section": "\n6.6 이미지 → 색상",
-    "text": "6.6 이미지 → 색상\n이미지에서 색상을 출력한 후에 이를 팔레트로 만들어서 시각화한 사례를 만들어보자. 태극기에서 가장 많은 색상을 선택하여 16진수 색상코드를 추출한다. magick 패키지와 생상에서 데이터프레임 변환을 위해 imager 패키지를 사용해서 변환한다. 6\n\nlibrary(scales)\nlibrary(imager)\nlibrary(magick)\n\nflag_svg &lt;- image_read_svg(\"images/korean_flag.svg\")\n\nflag_palette &lt;- flag_svg |&gt; \n  image_resize(\"500\") |&gt; \n  image_quantize(max = 4, colorspace=\"RGB\") |&gt; \n  magick2cimg() |&gt; \n  RGBtoHSV() |&gt; \n  as.data.frame(wide=\"c\") %&gt;%  #3 making it wide makes it easier to output hex colour\n  mutate(hex=hsv(rescale(c.1, from=c(0,360)),c.2,c.3),\n         hue = c.1,\n         sat = c.2,\n         value = c.3) %&gt;%\n  count(hex, hue, sat,value, sort=T) %&gt;% \n  mutate(colorspace = \"RGB\") |&gt; \n  pull(hex)\n\nflag_colors_gg &lt;- tibble(colors = flag_palette) |&gt; \n  ggplot(aes(x = 1, y = 1:length(flag_palette), fill = colors)) + \n    geom_tile() +\n    scale_fill_identity() +\n    theme_void() + \n    coord_fixed(ratio = 0.2) +\n    geom_text(aes(label = str_glue(\"{colors}\")))  \n\n태극기 이미지를 ggplot으로 시각화한다.\n\nlibrary(ggimage)\n\nflag_image_gg &lt;- ggplot() +\n  geom_image(aes(x=0, y=0, image=\"images/korean_flag.svg\"), size=1) +\n  coord_cartesian(xlim=c(-1, 1), ylim=c(-1, 1)) +\n  theme_void()  \n\n태극기에서 추출한 색상을 바탕으로 막대그래프에 색상을 입혀 시각화한다.\n\nflag_penguin_gg &lt;- penguins |&gt; \n  count(island) |&gt; \n  mutate(island = if_else(island ==  \"Torgersen\", NA_character_, island)) |&gt; \n  ggplot(aes( x = island, y = n, fill = island)) +\n    geom_col() +\n    scale_fill_manual(values = flag_palette[2:4], na.value=\"grey50\") +\n    theme(legend.position = \"top\")\n\n태극기, 태극기 색상, 막대그래프 시각화를 한번에 요약하여 시각화한다.\n\nlibrary(patchwork)\n\nprint((flag_image_gg + flag_colors_gg) / flag_penguin_gg)"
-  },
-  {
-    "objectID": "themes.html#그래픽-테마",
-    "href": "themes.html#그래픽-테마",
-    "title": "\n7  테마\n",
-    "section": "\n7.1 그래픽 테마",
-    "text": "7.1 그래픽 테마\nggplot2에 기본으로 제공되는 theme이 9개가 있어, 각 테마별로 시각화해보고 추후 가장 적합한 그래프를 선정한다. 먼저, 각 테마를 달리 적용하여 비교할 수 있는 기본 ggplot 그래프를 준비한다.\n\nlibrary(tidyverse)\nlibrary(palmerpenguins)\n\nbase_penguins_gg &lt;- penguins |&gt; \n  ggplot(aes(x = flipper_length_mm, y = body_mass_g)) +\n    geom_point(aes(color = species, shape = species), size = 3) +\n    geom_smooth(method = \"lm\", se = FALSE, color = \"black\")  +\n    labs(\n      title = \"기본 테마\",\n      subtitle = \"물갈퀴 길이와 체중 회귀분석\",\n      x = \"물갈퀴 길이 (mm)\",\n      y = \"체중 (g)\",\n      color = \"펭귄종\",\n    ) +\n    guides(shape = \"none\") +\n    theme(legend.position = c(0.90, 0.15))\n\nbase_penguins_gg\n\n\n\n\n\n\n\n펭귄 데이터셋을 사용하여 물갈퀴 길이와 체중 사이의 관계를 시각화하는 그래프를 draw_themes() 함수로 테마를 달리 적용하여 ggplot 그래프를 생성한 후에 리스트 객체로 저장한다.\n다양한 테마를 draw_themes() 함수에 인자로 넘기기 위해 themes_name과 themes_vector에 테마명과 테마 함수를 저장장 한 후 map2() 함수로 테마를 달리한 ggplot 그래프를 저장한다. 마지막으로, patchwork::wrap_plots() 함수를 사용하여 모든 그래프를 결합하여 하나의 그래프로 출력한다.\n\ndraw_themes &lt;- function(theme_name, theme_choice) {\n  penguins |&gt; \n    ggplot(aes(x = flipper_length_mm, y = body_mass_g)) +\n      geom_point(aes(color = species, shape = species), size = 1) +\n      geom_smooth(method = \"lm\", se = FALSE, color = \"black\")  +\n      labs(\n        title = theme_name,\n        subtitle = \"물갈퀴 길이와 체중 회귀분석\",\n        x = \"물갈퀴 길이 (mm)\",\n        y = \"체중 (g)\",\n        color = \"펭귄종\",\n      ) +\n      guides(shape = \"none\") +\n      theme_choice() +\n      theme(legend.position = c(0.90, 0.15))    \n}\n\n## 테마명과 벡터\nthemes_name &lt;- c(\"theme_gray\", \"theme_bw\", \"theme_linedraw\", \n                 \"theme_light\", \"theme_dark\", \"theme_minimal\", \"theme_classic\", \n                 \"theme_void\", \"theme_test\")\n\nthemes_vector &lt;- c(theme_gray , theme_bw , theme_linedraw , \n                  theme_light , theme_dark , theme_minimal , theme_classic , \n                  theme_void , theme_test )\n\ntheme_output &lt;- map2(themes_name, themes_vector, draw_themes)\n\npatchwork::wrap_plots(theme_output)\n\n\n\n\n\n\n\n\n7.1.1 hrbrthemes\n\n밥 루디스가 제작한 hrbrthemes 테마 패키지는 특히 텍스트가 많은 비즈니스 유형의 프레젠테이션에 적합한 테마와 테마 구성 요소를 제공한다.\n\nlibrary(hrbrthemes)\n\nhrbr_themes_name &lt;- c(\"theme_ipsum\", \"theme_ipsum_ps\", \"theme_ipsum_es\", \"theme_ipsum_rc\", \"theme_ipsum_ps\", \"theme_ipsum_pub\", \"theme_ipsum_tw\", \"theme_modern_rc\", \"theme_ft_rc\")\n\nhrbr_themes_vector &lt;- c(theme_ipsum, theme_ipsum_ps, theme_ipsum_es, theme_ipsum_rc, theme_ipsum_ps, theme_ipsum_pub, theme_ipsum_tw, theme_modern_rc, theme_ft_rc)\n\nhrbr_theme_output &lt;- map2(hrbr_themes_name, hrbr_themes_vector, draw_themes)\n\npatchwork::wrap_plots(hrbr_theme_output)\n\n\n\n\n\n\n\n\n7.1.2 ggthemes\n\n제프리 아놀드(Jeffrey Arnold)가 제작한 ggthemes 테마 패키지는 소프트웨어, 데이터 시각화 선구자 및 다양한 곳에서 영감을 얻은 다양한 테마를 제공한다.\n\nlibrary(ggthemes)\n\nggthemes_name &lt;- c(\"theme_base()\",\"theme_calc()\",\"theme_clean()\",\"theme_economist()\", \"theme_economist_white()\",\"theme_excel()\",\"theme_excel_new()\",\"theme_few()\",\"theme_fivethirtyeight()\",\"theme_foundation()\",\"theme_gdocs()\",\"theme_hc()\",\"theme_igray()\",\"theme_map()\",\"theme_pander()\",\"theme_solarized_2()\",\"theme_solid()\",\"theme_stata()\",\"theme_tufte()\",\"theme_wsj()\")\n\nggthemes_vector &lt;- c(theme_base, theme_calc, theme_clean, theme_economist, theme_economist_white, theme_excel, theme_excel_new, theme_few, theme_fivethirtyeight, theme_foundation, theme_gdocs, theme_hc, theme_igray, theme_map, theme_pander, theme_solarized_2, theme_solid, theme_stata, theme_tufte, theme_wsj)\n\nggtheme_output &lt;- map2(ggthemes_name, ggthemes_vector, draw_themes)\n\npatchwork::wrap_plots(ggtheme_output)\n\n\n\n\n\n\n\n\n7.1.3 wesanderson\n\n웨스 앤더슨(Wes Anderson) 영화의 독특하고 눈에 띄는 스타일을 기반으로 한 색상 팔레트를 제공하는 패키지다.\n\nlibrary(wesanderson)\n\ndraw_wesanderson &lt;- function(palette_name, wesanderson_palette =\"Darjeeling1\") {\n  penguins |&gt; \n    ggplot(aes(x = flipper_length_mm, y = body_mass_g)) +\n      geom_point(aes(color = species, shape = species), size = 1) +\n      geom_smooth(method = \"lm\", se = FALSE, color = \"black\")  +\n      labs(\n        title = palette_name,\n        subtitle = \"물갈퀴 길이와 체중 회귀분석\",\n        x = \"물갈퀴 길이 (mm)\",\n        y = \"체중 (g)\",\n        color = \"펭귄종\",\n      ) +\n      guides(shape = \"none\") +\n      theme_minimal() +\n      theme(legend.position = c(0.90, 0.15)) +  \n      scale_color_manual(values= wes_palette(wesanderson_palette, n = 3))\n}\n\nwes_theme_output &lt;- map2(names(wes_palettes), names(wes_palettes), draw_wesanderson)\n\npatchwork::wrap_plots(wes_theme_output)"
-  },
-  {
-    "objectID": "themes.html#사용자-테마",
-    "href": "themes.html#사용자-테마",
-    "title": "\n7  테마\n",
-    "section": "\n7.2 사용자 테마",
-    "text": "7.2 사용자 테마\n설치한 한글 글꼴과 색상을 매칭하여 사용자 맞춤 테마(theme_penguin)을 생성하고 색상은 wesanderson 패키지에서 Darjeeling1 5가지 색상을 사용하여 시각화한다.\n\nextrafont::loadfonts(\"win\")\n\ntheme_penguin &lt;- function() {\n  \n  # ggthemes::theme_tufte() +\n  theme_minimal() +\n    \n  theme(\n      plot.title     = element_text(family = \"NanumSquare\", size = 18, face = \"bold\"),\n      plot.subtitle  = element_text(family = \"MaruBuri\", size = 13),\n      axis.title.x   = element_text(family = \"MaruBuri\"),\n      axis.title.y   = element_text(family = \"MaruBuri\"),\n      axis.text.x    = element_text(family = \"MaruBuri\", size = 11),\n      axis.text.y    = element_text(family = \"MaruBuri\", size = 11),\n      legend.title   = element_text(family = \"MaruBuri\", size=13),\n      plot.caption   = element_text(family = \"NanumSquare\", color = \"gray20\")\n  )\n}\n\ndarjeeling1_palette &lt;- wes_palette(\"Darjeeling1\", n = 5)\n\npenguins |&gt; \n  ggplot(aes(x = flipper_length_mm, y = body_mass_g)) +\n    geom_point(aes(color = species, shape = species), size = 3) +\n    geom_smooth(method = \"lm\", se = FALSE, color = \"black\")  +\n    labs(\n      title = \"물갈퀴 길이와 체중 회귀분석\",\n      subtitle = \"남극 파머 펭귄 데이터셋\",\n      x = \"물갈퀴 길이 (mm)\",\n      y = \"체중 (g)\",\n      color = \"펭귄종\",\n      caption = \"자료출처: palmerpenguins 패키지\"\n    ) +\n  guides(shape = \"none\") +\n  scale_color_manual(values =  darjeeling1_palette) +\n  theme_penguin()"
-  },
-  {
-    "objectID": "themes.html#그래프-자동-설정",
-    "href": "themes.html#그래프-자동-설정",
-    "title": "\n7  테마\n",
-    "section": "\n7.3 그래프 자동 설정",
-    "text": "7.3 그래프 자동 설정\n작성한 테마를 매번 코드를 “복사하여 붙여넣기” 하여 사용하는 대신 .Rprofile 파일에 반영하여 매번 ggplot 시각화를 할 때 사용하는 방법을 살펴보자. usethis 패키지 edit_r_profile() 함수를 호출하여 앞서 작성한 테마를 반영한다.\n\nusethis::edit_r_profile()\n\ntheme_penguin() 테마를 ggplot2 패키지 theme_set()으로 설정하고 기본 색상을 정의하면 시각화 그래프에 반영하여 사용할 수 있다.\n\nsuppressWarnings(suppressMessages({\n\n  extrafont::loadfonts(\"win\")\n\n\n  ## 테마 (글꼴) -----------------------------\n  theme_penguin &lt;- function() {\n\n    # ggthemes::theme_tufte() +\n    ggplot2::theme_minimal() +\n\n      ggplot2::theme(\n        plot.title     = ggplot2::element_text(family = \"NanumSquare\", size = 18, face = \"bold\"),\n        plot.subtitle  = ggplot2::element_text(family = \"MaruBuri\", size = 13),\n        axis.title.x   = ggplot2::element_text(family = \"MaruBuri\"),\n        axis.title.y   = ggplot2::element_text(family = \"MaruBuri\"),\n        axis.text.x    = ggplot2::element_text(family = \"MaruBuri\", size = 11),\n        axis.text.y    = ggplot2::element_text(family = \"MaruBuri\", size = 11),\n        legend.title   = ggplot2::element_text(family = \"MaruBuri\", size=13),\n        plot.caption   = ggplot2::element_text(family = \"NanumSquare\", color = \"gray20\")\n      )\n  }\n\n  ## 색상\n  ### 웨스 앤더슨\n  color_palette &lt;- wesanderson::wes_palette(\"Darjeeling1\", n = 5)\n\n  ggplot2::theme_set(theme_penguin())\n\n}))\n\n.Rprofile 파일에 ggplot() 사용자 정의 테마가 지정되어 있기 때문에 새로 R 세션을 시작하면 theme_penguin() 테마 및 웨스 앤더스 color_palette 색상 팔레트도 사용할 수 있다.\n\nlibrary(tidyverse)\nlibrary(palmerpenguins)\n\npenguins_theme_gg &lt;- penguins |&gt; \n  ggplot(aes(x = flipper_length_mm, y = body_mass_g)) +\n    geom_point(aes(color = species, shape = species), size = 3) +\n    geom_smooth(method = \"lm\", se = FALSE, color = \"black\")  +\n    labs(\n      title = \"물갈퀴 길이와 체중 회귀분석\",\n      subtitle = \"남극 파머 펭귄 데이터셋\",\n      x = \"물갈퀴 길이 (mm)\",\n      y = \"체중 (g)\",\n      color = \"펭귄종\",\n      caption = \"자료출처: palmerpenguins 패키지\"\n    ) +\n  guides(shape = \"none\") +\n  scale_color_manual(values =  color_palette) +\n  theme_penguin()\n\nragg::agg_jpeg(\"images/penguins_theme_gg.jpg\",\n              width = 10, height = 7, units = \"in\", res = 600)\npenguins_theme_gg\ndev.off()\n\n\n\n펭귄 데이터 사용자 테마 적용 그래프"
-  },
-  {
-    "objectID": "themes.html#표-테마",
-    "href": "themes.html#표-테마",
-    "title": "\n7  테마\n",
-    "section": "\n7.4 표 테마",
-    "text": "7.4 표 테마\nggplot 뿐만 아니라 gt 패키지에도 사용자 정의 테마 설정 기능이 있다.\n\nlibrary(tidyverse)\nlibrary(palmerpenguins)\nlibrary(gt)\nlibrary(gtExtras)\nlibrary(magick)\n\npenguins_gt &lt;- penguins |&gt; \n  count(species, island) |&gt; \n  pivot_wider(names_from = island, values_from = n, values_fill = 0) |&gt; \n  as_tibble() |&gt; \n  gt(rowname_col = \"species\") |&gt; \n    tab_header(\n      title = md(\"남극 펭귄 **서식섬과 종** 빈도표\"),\n      subtitle = md(\"`palmerpenguins` 데이터 패키지\")\n    ) |&gt; \n    grand_summary_rows(\n      columns = c(Biscoe, Dream, Torgersen),\n      fns = list(\n        '합계' = ~sum(.) \n      ),\n      fmt = ~ fmt_number(., use_seps = FALSE, decimals = 0),\n      missing_text = '-'\n    )  |&gt; \n    cols_align(\"center\") |&gt; \n    opt_row_striping() |&gt; \n    tab_source_note(\n      source_note = md(\"자료출처: `penguins` 데이터셋\")\n  )\n\npenguins_gt\n\n\n\n\n\n\n남극 펭귄 서식섬과 종 빈도표\n    \n\n\npalmerpenguins 데이터 패키지\n    \n\n\n      Biscoe\n      Dream\n      Torgersen\n    \n\n\n\nAdelie\n44\n56\n52\n\n\nChinstrap\n0\n68\n0\n\n\nGentoo\n124\n0\n0\n\n\n합계\n168\n124\n52\n\n\n\n자료출처: penguins 데이터셋\n    \n\n\n\n\n\n7.4.1 기본 색상과 스타일\n\nopt_colors &lt;- c(\"blue\", \"cyan\", \"pink\", \"green\", \"red\", \"gray\")\n\ndraw_color_gt &lt;- function(gt_color = \"blue\") {\n  penguins_gt |&gt; \n    opt_stylize(style = 1, color = gt_color)\n}                \n\ngt_colors_list &lt;- map(opt_colors, draw_color_gt)\n\n\nfor(i in 1:length(opt_styles)) {\n  gtsave(gt_colors_list[[i]], str_glue(\"images/gt_theme_{opt_colors[i]}.png\"))\n}\n\n\nlibrary(magick)\n\nopt_colors &lt;- c(\"blue\", \"cyan\", \"pink\", \"green\", \"red\", \"gray\")\n\ncolor_path_filenames &lt;- vector(mode = \"character\", length = length(opt_colors))\n\nfor(i in 1:length(opt_colors)) {\n  color_path_filenames[i] &lt;-  str_glue(\"images/gt_theme_{opt_colors[i]}.png\")\n}\n\ngt_color_images_list &lt;- map(color_path_filenames, magick::image_read) |&gt; \n  map(image_resize, geometry = \"200x200\")\n\ngt_color_images &lt;- image_join(gt_color_images_list)\n\nimage_append(gt_color_images, stack = FALSE)\n\n\n\n\n\n\n\n\n7.4.2 스타일\n\nopt_sytles &lt;- 1:6\n\ndraw_style_gt &lt;- function(opt_sytle, gt_color = \"blue\") {\n  penguins_gt |&gt; \n    opt_stylize(style = opt_sytle, color = gt_color)\n}                \n\ngt_styles_list &lt;- map(opt_sytles, draw_style_gt)\n\n\nfor(i in 1:length(opt_styles)) {\n  gtsave(gt_styles_list[[i]], str_glue(\"images/gt_theme_style_{opt_sytles[i]}.png\"))\n}\n\n\nopt_sytles &lt;- 1:6\n\nstyle_path_filenames &lt;- vector(mode = \"character\", length = length(opt_sytles))\n\nfor(i in 1:length(opt_sytles)) {\n  style_path_filenames[i] &lt;-  str_glue(\"images/gt_theme_style_{opt_sytles[i]}.png\")\n}\n\ngt_style_images_list &lt;- map(style_path_filenames, magick::image_read) |&gt; \n  map(image_resize, geometry = \"200x200\") \n  \ngt_style_images &lt;- image_join(gt_style_images_list)\n\nimage_append(gt_style_images, stack = FALSE)\n\n\n\n\n\n\n\n\n7.4.3 gtExtra\n\n\ngtExtra_themes &lt;- c(gt_theme_538, gt_theme_espn, gt_theme_nytimes, gt_theme_guardian,\n                    gt_theme_dot_matrix, gt_theme_dark, gt_theme_excel, gt_theme_pff)\n\ngtExtra_themes_names &lt;- c(\"gt_theme_538\", \"gt_theme_espn\", \"gt_theme_nytimes\",\n                          \"gt_theme_guardian\", \"gt_theme_dot_matrix\", \"gt_theme_dark\",\n                          \"gt_theme_excel\", \"gt_theme_pff\")\n\ndraw_gtExtras_theme &lt;- function(gt_theme) {\n  penguins_gt |&gt; \n    gt_theme()\n}\n\n# draw_gtExtras_theme(gtExtra_themes[5][[1]])\n## gtExtras 테마적용 표 -------------------\n\ngtExtra_styles_list &lt;- vector(mode =\"list\", length = length(gtExtra_themes))\n\nfor(i in 1:length(gtExtra_themes)) {\n  gtExtra_styles_list[[i]] &lt;-  draw_gtExtras_theme(gtExtra_themes[i][[1]])\n}\n\n## 테마 표 png 파일 저장 -------------------\n\ngtExtras_path_filenames &lt;- vector(mode = \"character\", length = length(gtExtra_themes))\n\nfor(i in 1:length(gtExtra_themes)) {\n  gtExtras_path_filenames[i] &lt;-  str_glue(\"images/gtExtras_theme_{gtExtra_themes_names[i]}.png\")\n}\n\nfor(i in 1:length(gtExtra_themes)) {\n  gtsave(gtExtra_styles_list[[i]], str_glue(\"images/gtExtras_theme_{gtExtra_themes_names[i]}.png\"))\n}\n\n\ngtExtra_themes_names &lt;- c(\"gt_theme_538\", \"gt_theme_espn\", \"gt_theme_nytimes\",\n                          \"gt_theme_guardian\", \"gt_theme_dot_matrix\", \"gt_theme_dark\",\n                          \"gt_theme_excel\", \"gt_theme_pff\")\n\ngtExtras_path_filenames &lt;- vector(mode = \"character\", length = length(gtExtra_themes_names))\n\nfor(i in 1:length(gtExtra_themes_names)) {\n  gtExtras_path_filenames[i] &lt;-  str_glue(\"images/gtExtras_theme_{gtExtra_themes_names[i]}.png\")\n}\n\ngtExtra_style_images_list &lt;- map(gtExtras_path_filenames, magick::image_read) |&gt; \n  map(image_resize, geometry = \"200x200\") \n  \ngtExtra_style_images &lt;- image_join(gtExtra_style_images_list)\n\nimage_append(gtExtra_style_images, stack = FALSE)"
-  },
-  {
-    "objectID": "themes.html#사용자-테마-1",
-    "href": "themes.html#사용자-테마-1",
-    "title": "\n7  테마\n",
-    "section": "\n7.5 사용자 테마",
-    "text": "7.5 사용자 테마\n기본 표 테마에 글꼴, 텍스트 크기, 색상을 넣어 전문적으로 표를 작성한다.\n\npenguins_theme_gt &lt;- penguins_gt |&gt; \n  gt_theme_538() |&gt; \n  tab_options(\n    # column_labels.background.color = '#1E61B0', # R logo 파란색\n    table.font.names =\"NanumSquare\",    \n    heading.title.font.size = px(26),\n    heading.subtitle.font.size = px(16),    \n    heading.background.color = \"transparent\", \n    column_labels.font.weight = 'bold',\n    table_body.hlines.width = px(0),\n    data_row.padding = px(6),\n    heading.align = 'center',\n    stub.background.color = \"#ffffff\",\n    stub.font.weight = \"bold\",\n    source_notes.font.size = px(10),\n    row.striping.include_table_body = TRUE\n  ) |&gt; \n  cols_align( align = \"center\", columns = where(is.numeric)) |&gt; \n  cols_align( align = \"auto\", columns = where(is.character)) |&gt; \n  ## 글꼴 달리 적용\n  tab_style(\n    style = cell_text(\n      font = \"MaruBuri\",      \n      weight = 'bold' \n    ),\n    locations = cells_title(groups = 'subtitle')\n  ) |&gt; \n  tab_style(\n    style = cell_text(\n      font = \"MaruBuri\",      \n      weight = 'bold' \n    ),\n    locations = cells_body()\n  ) |&gt; \n  tab_style(\n    style = cell_text(\n      font = \"MaruBuri\",      \n      weight = 'bold' \n    ),\n    locations = cells_column_labels()\n  ) |&gt; \n  tab_style(\n    style = cell_text(\n      font = \"MaruBuri\",      \n    ),\n    locations = cells_source_notes()\n  )\n\npenguins_theme_gt |&gt; \n  gtsave(filename = \"images/penguins_theme_gt.png\")\n\n\n\ngt 사용자 정의 테마 적용 표\n\n\ngt_theme_hangul &lt;- function(gt_tbl) {\n  \n  # Grab number of rows of data from gt object\n  n_rows &lt;- nrow(gt_tbl$`_data`)\n  \n  gt_tbl |&gt; \n    gt_theme_538() |&gt; \n    tab_options(\n      # column_labels.background.color = '#1E61B0', # R logo 파란색\n      table.font.names =\"NanumSquare\",    \n      heading.title.font.size = px(26),\n      heading.subtitle.font.size = px(16),    \n      heading.background.color = \"transparent\", \n      column_labels.font.weight = 'bold',\n      table_body.hlines.width = px(0),\n      data_row.padding = px(6),\n      heading.align = 'center',\n      stub.background.color = \"#ffffff\",\n      stub.font.weight = \"bold\",\n      source_notes.font.size = px(10),\n      row.striping.include_table_body = FALSE\n    ) |&gt; \n    cols_align( align = \"center\", columns = where(is.numeric)) |&gt; \n    cols_align( align = \"auto\", columns = where(is.character)) |&gt; \n    ## 글꼴 달리 적용\n    tab_style(\n      style = cell_text(\n        font = \"MaruBuri\",      \n        weight = 'bold' \n      ),\n      locations = cells_title(groups = 'subtitle')\n    ) |&gt; \n    tab_style(\n      style = cell_text(\n        font = \"MaruBuri\",      \n        weight = 'bold' \n      ),\n      locations = cells_body()\n    ) |&gt; \n    tab_style(\n      style = cell_text(\n        font = \"MaruBuri\",      \n        weight = 'bold' \n      ),\n      locations = cells_column_labels()\n    ) |&gt; \n    tab_style(\n      style = cell_text(\n        font = \"MaruBuri\",      \n      ),\n      locations = cells_source_notes()\n    ) |&gt; \n    tab_style(\n      style = cell_fill(color = 'grey90'),\n      locations = cells_body(rows = seq(1, n_rows, 2))\n    )    \n}\n\npenguins_gt |&gt; \n  gt_theme_hangul()\n\n\n\n\n\n\n남극 펭귄 서식섬과 종 빈도표\n    \n\n\npalmerpenguins 데이터 패키지\n    \n\n\n      Biscoe\n      Dream\n      Torgersen\n    \n\n\n\nAdelie\n44\n56\n52\n\n\nChinstrap\n0\n68\n0\n\n\nGentoo\n124\n0\n0\n\n\n합계\n168\n124\n52\n\n\n\n자료출처: penguins 데이터셋"
-  },
-  {
-    "objectID": "themes.html#표-자동-설정",
-    "href": "themes.html#표-자동-설정",
-    "title": "\n7  테마\n",
-    "section": "\n7.6 표 자동 설정",
-    "text": "7.6 표 자동 설정\n작성한 테마를 매번 코드를 “복사하여 붙여넣기” 하여 사용하는 대신 .Rprofile 파일에 반영하여 매번 gt 표 제작에 테마를 사용하는 방법을 살펴보자. usethis 패키지 edit_r_profile() 함수를 호출하여 앞서 작성한 테마를 반영한다.\n\nusethis::edit_r_profile()\n\ngt_theme_hangul() 테마를 gt 표 객체에 반영한다.\n\nlibrary(gt)\nlibrary(gtExtras)\n\ngt_theme_hangul &lt;- function(gt_tbl) {\n\n  # Grab number of rows of data from gt object\n  n_rows &lt;- nrow(gt_tbl$`_data`)\n\n  gt_tbl |&gt;\n    gt_theme_538() |&gt;\n    tab_options(\n      # column_labels.background.color = '#1E61B0', # R logo 파란색\n      table.font.names =\"NanumSquare\",\n      heading.title.font.size = px(26),\n      heading.subtitle.font.size = px(16),\n      heading.background.color = \"transparent\",\n      column_labels.font.weight = 'bold',\n      table_body.hlines.width = px(0),\n      data_row.padding = px(6),\n      heading.align = 'center',\n      stub.background.color = \"#ffffff\",\n      stub.font.weight = \"bold\",\n      source_notes.font.size = px(10),\n      row.striping.include_table_body = FALSE\n    ) |&gt;\n    cols_align( align = \"center\", columns = where(is.numeric)) |&gt;\n    cols_align( align = \"auto\", columns = where(is.character)) |&gt;\n    ## 글꼴 달리 적용\n    tab_style(\n      style = cell_text(\n        font = \"MaruBuri\",\n        weight = 'bold'\n      ),\n      locations = cells_title(groups = 'subtitle')\n    ) |&gt;\n    tab_style(\n      style = cell_text(\n        font = \"MaruBuri\",\n        weight = 'bold'\n      ),\n      locations = cells_body()\n    ) |&gt;\n    tab_style(\n      style = cell_text(\n        font = \"MaruBuri\",\n        weight = 'bold'\n      ),\n      locations = cells_column_labels()\n    ) |&gt;\n    tab_style(\n      style = cell_text(\n        font = \"MaruBuri\",\n      ),\n      locations = cells_source_notes()\n    ) |&gt;\n    tab_style(\n      style = cell_fill(color = 'grey90'),\n      locations = cells_body(rows = seq(1, n_rows, 2))\n    )\n}\n\n.Rprofile 파일에 gt 사용자 정의 테마가 지정되어 있기 때문에 새로 R 세션을 시작하면 gt_theme_hangul() 테마를 사용할 수 있다.\n\noriginal_penguins_gt &lt;- penguins |&gt; \n  drop_na() |&gt; \n  count(species, sex) |&gt; \n  pivot_wider(names_from = sex, values_from = n, values_fill = 0) |&gt; \n  janitor::adorn_totals(where = \"col\", name = \"합계\") |&gt; \n  rename(펭귄종 = species, 암컷 = female, 수컷 = male) |&gt; \n  as_tibble() |&gt; \n  gt(rowname_col = \"펭귄종\") |&gt; \n    tab_header(\n      title = md(\"남극 펭귄 **암수와 종** 빈도표\"),\n      subtitle = md(\"`palmerpenguins` 데이터 패키지\")\n    ) |&gt; \n    grand_summary_rows(\n      columns = c(펭귄종, 암컷, 수컷),\n      fns = list(\n        '합계' = ~sum(.) \n      ),\n      fmt = ~ fmt_number(., use_seps = FALSE, decimals = 0),\n      missing_text = '-'\n    )  |&gt; \n    cols_align(\"center\") |&gt; \n    opt_row_striping() |&gt; \n    tab_source_note(\n      source_note = md(\"자료출처: `penguins` 데이터셋\")\n  )\n\ntheme_penguins_gt &lt;- original_penguins_gt |&gt; \n  gt_theme_hangul()\n\ngt_theme_hangul_penguins &lt;- gtExtras::gt_two_column_layout(list(original_penguins_gt, theme_penguins_gt))\n\ngt_theme_hangul_penguins |&gt; \n  gtsave_extra(\"images/gt_theme_hangul_penguins.png\", expand = 1)\n\n\n\ngt_theme_hangul() 테마 적용 전후"
-  },
-  {
-    "objectID": "whole_game.html#디지털-문서-제작-패러다임",
-    "href": "whole_game.html#디지털-문서-제작-패러다임",
-    "title": "8  디지털 글쓰기",
-    "section": "8.1 디지털 문서 제작 패러다임",
-    "text": "8.1 디지털 문서 제작 패러다임\n신속하고 빠르게 누구나 짧은 학습을 통해서 문서를 저작하고 출판할 수 있는 방식으로 인기를 얻은 아래한글 혹은 MS워드 워드프로세서를 사용하는데 이는 위지위그(WYSIWYG: What You See Is What You Get, “보는 대로 얻는다”)에 기초한 것으로 문서 편집 과정에서 화면에 포맷된 낱말, 문장이 출력물과 동일하게 나오는 방식이다. 이전 타자기 대비 경쟁력이 있었고 이를 바탕으로 문서편집기 소프트웨어가 대세로 떠올랐다.\n위지윅의 대척점에 있는 것이 위지윔(WYSIWYM, What You See Is What You Mean)으로 대표적인 것인 \\(LaTeX\\) 으로 구조화된 방식으로 문서를 작성하면 컴파일을 통해서 최종 문서가 미려한 출판가능한 PDF, PS, DVI 등 확장자를 갖는 출판결과물을 얻을 수 있다.\n\\(LaTeX\\)이 갖는 장점은 이제 프로그래밍 코드(R / 파이썬 / SQL / 쉘스크립트 / 자바스크립트 등)을 문서저작에 포함되며 literate programming 패러다임이 대세로 떠올랐고 현존하는 다양한 문서저작 문제에 대한 응답으로 자리를 매김하고 있다. 1"
-  },
-  {
-    "objectID": "whole_game.html#문서로-보는-민주주의",
-    "href": "whole_game.html#문서로-보는-민주주의",
-    "title": "8  디지털 글쓰기",
-    "section": "8.2 문서로 보는 민주주의",
-    "text": "8.2 문서로 보는 민주주의\n대한민국은 권력을 입법권, 행정권, 사법권으로 나눠 권력을 나누었다. 세부적으보 보면 다소 차이는 있겠지만 법을 만드는 것은 결국 문서를 저작하는 것이고 대한민국 정부는 법에 담긴 문서를 실행하는 기관이고 사법부는 법 문서를 해석하는 기관으로 볼 수 있다. 결국 민주주의는 문서를 기반으로 존립하는 사회체계라고 볼 수 있다. 최근 들어 인공지능이 부상하면서 문서저작을 보조하던 수단에서 이제는 사람보다 더 나은 통찰력을 보이는 분야도 속속 등장하고 있다. 이런 측면에서 인공지능 기계를 현 민주주의 체계 내에 어떻게 녹여낼 것인지 관심이 높아지고 있다."
-  },
-  {
-    "objectID": "whole_game.html#디지털-문서-저작",
-    "href": "whole_game.html#디지털-문서-저작",
-    "title": "8  디지털 글쓰기",
-    "section": "8.3 디지털 문서 저작",
-    "text": "8.3 디지털 문서 저작\n과거 둘로 쪼개져서 과학기술 문서저작 즉 논문 등은 \\(LaTeX\\) 기반 위지윔(WYSIWYM) 패러다임이 확고한 자리를 잡았지만 위지위그(WYSIWYG) 패러다임 기반 아래한글 워드와 같은 문서저작편집기 성능이 높아지면서 사실상 둘 사이 경계도 허물어졌다.\n하지만, 과학기술 논문 저작에 진실성, 재현성 등이 강조되고 빅데이터 기반 과학연구가 큰 성과를 보이고 프로그래밍이 과학기술 논문 저작에 주요한 역할을 하면서 이런 추세를 반영한 과학기술 저작 패러다임이 떠오르고 있다.\n이러한 추세를 반영한 도구의 발전도 함께 이뤄지면서 과학기술 저작은 물론 거의 모든 문서 저작분야에 큰 변화가 일어나고 있다."
-  },
-  {
-    "objectID": "whole_game.html#과학문서-저작",
-    "href": "whole_game.html#과학문서-저작",
-    "title": "8  디지털 글쓰기",
-    "section": "8.4 과학문서 저작",
-    "text": "8.4 과학문서 저작\n\n심각한 현재상황\n마크다운 기초\n고급 마크다운\n문서저작 실무\n수학 수식"
-  },
-  {
-    "objectID": "whole_game.html#사례-한국-r-컨퍼런스2021",
-    "href": "whole_game.html#사례-한국-r-컨퍼런스2021",
-    "title": "8  디지털 글쓰기",
-    "section": "8.5 사례: 한국 R 컨퍼런스(2021)",
-    "text": "8.5 사례: 한국 R 컨퍼런스(2021)\n\n컨퍼런스 웹사이트\n컨퍼런스 전 기획\n\n컨퍼런스 포스터\n컨퍼런스 후원\n\n컨퍼런스 본 행사\n\n발표 슬라이드\n발표 템플릿\n\n컨퍼런스 후 설문\n\n설문조사 보고서\n\n기타\n\n탄소중립 신재생 에너지 캠프"
-  },
-  {
-    "objectID": "dw_fonts.html#font-classification",
-    "href": "dw_fonts.html#font-classification",
-    "title": "\n9  한글 글꼴\n",
-    "section": "\n9.1 글꼴 분류 1\n",
-    "text": "9.1 글꼴 분류 1\n\n\n\n활자(Type)는 본래는 글자를 만드는 데 사용된 나무 또는 금속 조각을 일컫는 말이었습니다.\n\n타이포그래피(Typography): 인쇄된 텍스트의 스타일과 모양을 가리키는 디자인 용어입니다.\n\n서체(또는 글꼴 모음, Typeface): 글자 및 기호가 서로 비슷한 특징을 가지도록 디자인된 문자로 타임즈(Times), 에어리얼(Arial) 및 미니언(Minion)을 들 수 있습니다.\n\n글꼴(Font): 서체의 특정 스타일을 지칭하는데, 예를 들어, 에어리얼 블랙(Arial Black)은 에어리얼 서체 중 한 글꼴이며, 미니언 프로 이탤릭체(Minion Pro Italic)는 미니언 글꼴 모음에 포함되어 있는 글꼴이다.\n\n글꼴(Font)는 다양하지만 크게 다음 5가지로 영문의 경우 분류된다. 글꼴은 기본적으로 세리프(serif)와 산세리프(sans serif)의 2가지 스타일로 구분되는데 세리프는 글자의 획 끝에 작은 삐침이 있는 글꼴이며 산스(sans)은 라틴어로 없다는 뜻이기 때문에 삐침이 없는 글꼴을 지칭합니다.\n\nserif\nsans serif\nscript\nmonospaced\ndisplay\n\n가장 쉽게 분류되는 monospaced 글꼴은 코드를 작성하기 위해 등간격을 갖는 글꼴로 consolas, D2 Coding이 대표적이다. 산세리프(Sans serif)와 세리프(Serif) 글꼴은 본문에 사용하기 적합하지만, 좀더 시선을 끄는 디자인을 위해서는 조금 더 매력적인 디스플레이(Display) 혹은 스크립트(Script)을 선택하고, 제목(Title)에는 산세리프 글꼴을 사용하는 것이 일반적이다.\n\n\n출판문서 글꼴 분류\n\n\n9.1.1 typeface vs font\n\ntypeface는 서체로 번역되고 font는 글꼴로 번역된다. 하나의 typeface에 다수 font가 포함될 수 있다. 팬그램(Pangram)은 ’모든 글자’라는 뜻으로 주어진 모든 문자를 적어도 한 번 이상 사용하여 만든 문장을 뜻한다. 팬그램은 로렘 입숨처럼 글꼴 샘플을 보여주거나 장비를 테스트하는 데 사용된다. 영어 팬그램으로 가장 유명한 ‘The quick brown fox jumps over the lazy dog’는 19세기부터 사용되어 왔다. 유사하게 한글에서는 “다람쥐 헌 쳇바퀴에 타고파”가 사용되고 있다.\n\n9.1.2 파일폰트와 웹폰트\n데이터 사이언스 출판을 위해 필요한 글꼴을 반영하는 방식은 크게 두가지로 나뉜다. 하나는 전통적인 방식으로 운영체제에 내장된 글꼴을 문서제작에 글꼴을 반영하는 방식이고, 다른 하나는 웹폰트를 사용하는 방식이다. 웹폰트를 사용하게 될 경우 장점은 출판문서가 동작되는 컴퓨터에 해당 글꼴이 없어도 인터넷을 통해 다운로드하여 글꼴이 반영되기 때문에 글꼴이 없어 생기는 다양한 문제를 해결하는 장점이 있다. 웹폰트로 구글폰트와 눈누가 유명하다. 저작권을 살펴보고 문서제작에 필요한 글꼴을 사용하면 된다.\n\n눈누\n구글 폰트"
-  },
-  {
-    "objectID": "dw_fonts.html#출판-문서",
-    "href": "dw_fonts.html#출판-문서",
-    "title": "\n9  한글 글꼴\n",
-    "section": "\n9.2 출판 문서",
-    "text": "9.2 출판 문서\n데이터 사이언스 한글 출판 문서 제작을 위해서 다음 글꼴을 선택한다. 제목으로 산스 세리프 폰트로 구글 폰트에서 “노토 산스 세리프”를 선정하고, 본문은 눈누 웹사이트에서 “마루부리”를 선정하고 코딩 글꼴 폰트로 눈누에서 D2Coding 폰트를 지정한다.\n\n산스 세리프(제목): Noto Sans Serif\n세리프(본문): 마루부리\n등간격(코딩): D2Coding\n\n\nlibrary(tidyverse)\n\nmass_flipper &lt;- ggplot(data = penguins,\n                       aes(x = flipper_length_mm,\n                           y = body_mass_g)) +\n  geom_point(size = 3,\n             alpha = 0.8) +\n  theme_minimal() +\n  labs(title = \"팔머 관측소 LTER 서식 펭귄 크기\",\n       subtitle = \"Adelie, Chinstrap, Gentoo 펭귄에 대한 물갈퀴 길이와 체질량\",\n       x = \"물갈퀴 길이(Flipper length) (mm)\",\n       y = \"체질량(Body mass) (g)\") +\n  theme_minimal()"
-  },
-  {
-    "objectID": "dw_fonts.html#css-파일",
-    "href": "dw_fonts.html#css-파일",
-    "title": "\n9  한글 글꼴\n",
-    "section": "\n9.3 css 파일",
-    "text": "9.3 css 파일\n출판문서 제작에 사용된 글꼴 관련 사항을 css/quarto-fonts.css 파일에 지정해둔다.\n\n/* 글꼴 */\n@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR');\n\n@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR');\n\n@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');\n\n@font-face {\n    font-family: 'MaruBuri-Regular';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff') format('woff');\n    font-weight: normal;\n    font-style: normal;\n}\n\n@font-face {\n    font-family: 'D2Coding';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/D2Coding.woff') format('woff');\n    font-weight: normal;\n    font-style: normal;\n}\n\n/* HTML */\n\nh1, h2, h3, h4, h5, h6 {\n  font-family: \"Noto Sans KR\", sans-serif;\n}\n\nbody {\n  font-family: \"Nanum Myeongjo\", \"MaruBuri-Regular\", \"Noto Serif KR\", serif;\n  font-size: 15px;\n}\n\ntt, code, pre {\n  font-family: \"D2Coding\", Consolas, monospace;\n  font-size: 15px;\n}"
-  },
-  {
-    "objectID": "dw_fonts.html#그래프",
-    "href": "dw_fonts.html#그래프",
-    "title": "\n9  한글 글꼴\n",
-    "section": "\n9.4 그래프",
-    "text": "9.4 그래프\n그래프(ggplot)에 사용되는 글꼴도 마찬가지로 showtext 패키지 웹폰트를 사용해서 다양한 한글도 사용할 수 있다. showtext 패키지는 font_add_google() 함수를 통해서 구글 한글폰트를 지정하여 이를 ggplot 에 적용시킬 수 있다.\n\nlibrary(tidyverse)\nlibrary(showtext)\nlibrary(palmerpenguins)\n\nfont_add_google(\"Nanum Pen Script\", \"nanum_pen_script\")\nfont_add_google(\"Jua\", \"Jua\")\nshowtext_auto()\n\ntheme_quarto &lt;- theme(\n  text = element_text(family = 'Jua', size = 25),\n  plot.title.position = 'plot',\n  plot.title = element_text(\n    family = 'nanum_pen_script', size = 55,\n    face = 'bold', \n    colour = thematic::okabe_ito(8)[3],\n    margin = margin(t = 2, r = 0, b = 3, l = 0, unit = \"mm\")\n  ),\n  plot.subtitle = element_text(\n    family = 'Jua', size = 25,\n    face = 'bold', \n    colour = thematic::okabe_ito(8)[5],\n    margin = margin(t = 0, r = 0, b = 0, l = 0, unit = \"mm\")\n  )\n  \n)\n\ntheme_set(theme_minimal() + theme_quarto)\n\nmass_flipper &lt;- ggplot(data = penguins,\n                       aes(x = flipper_length_mm,\n                           y = body_mass_g)) +\n  geom_point(size = 3,\n             alpha = 0.8) +\n  labs(title = \"팔머 관측소 LTER 서식 펭귄 크기\",\n       subtitle = \"Adelie, Chinstrap, Gentoo 펭귄에 대한 물갈퀴 길이와 체질량\",\n       x = \"물갈퀴 길이(Flipper length) (mm)\",\n       y = \"체질량(Body mass) (g)\")\n\nmass_flipper"
-  },
-  {
-    "objectID": "dw_fonts.html#표",
-    "href": "dw_fonts.html#표",
-    "title": "\n9  한글 글꼴\n",
-    "section": "\n9.5 표",
-    "text": "9.5 표\n구글 폰트에서 다양한 글꼴을 표 제목, 표 칼럼명, 표 셀값에 다르게 적용하며 크기는 물론 색상과 굵기도 적용이 가능하다.\n\nlibrary(gt)\n\nbasic_theme &lt;- function(data, ...){\n  data %&gt;% \n    tab_options(\n      column_labels.background.color = \"blue\",\n      table.font.size = px(12),\n      column_labels.font.size = px(20),\n      row.striping.background_color = \"#9678b6\",\n      heading.align = \"left\",\n      heading.title.font.size = px(30)\n  )\n}\n\npalmerpenguins::penguins %&gt;% \n  select( 펭귄종=species, 섬=island, bill_length_mm, body_mass_g) %&gt;% \n  slice_sample(n = 10) %&gt;% \n  gt() %&gt;% \n    tab_header(title = md(\"팔머 펭귄 표본 **10 마리** 측정 정보\")) %&gt;% \n    tab_source_note(source_note = \"데이터: Kristen Gorman 박사와 남국 팔머 관측소(Palmer Station, Antarctica LTER)에서 수집\") %&gt;% \n    cols_label(bill_length_mm = \"부리 길이 (mm)\",\n               body_mass_g    = \"체질량 (g)\") %&gt;% \n  tab_style(\n    style = cell_text(\n      font = c(\n        google_font(name = \"Nanum Pen Script\"),\n        default_fonts()\n      ),\n      size = \"xx-large\",\n      color = \"gray35\",\n      weight = \"bolder\"\n    ),\n    locations = cells_body(columns = bill_length_mm)\n  ) %&gt;% \n  # 체질량 칼럼  ---------------\n  tab_style(\n    style = cell_text(\n      font = c(\n        google_font(name = \"Black Han Sans\"),\n        default_fonts()\n      ),\n      size = \"large\",\n      color = \"blue\",\n      weight = \"bolder\"\n    ),\n    locations = cells_body(columns = body_mass_g)\n  ) %&gt;% \n  # 표 Header 와 첫번째 칼럼  ---------------\n  tab_style(\n    style = cell_text(\n      font = google_font(\"Do Hyeon\"), \n      size = \"large\"\n    ),\n    locations = list(\n      cells_column_labels(everything()), \n      cells_body(columns = 1)\n    )\n  ) %&gt;%   \n  # 표 제목 ---------------\n  tab_style(\n    style = cell_text(\n      font = google_font(\"Dokdo\"), \n      align = \"left\", \n      size = \"xx-large\"\n    ),\n    locations = cells_title(\"title\")\n  ) %&gt;%   \n  basic_theme() \n\n\n\n\n\n\n팔머 펭귄 표본 10 마리 측정 정보\n    \n\n펭귄종\n      섬\n      부리 길이 (mm)\n      체질량 (g)\n    \n\n\n\nChinstrap\nDream\n48.1\n3325\n\n\nGentoo\nBiscoe\n49.1\n4625\n\n\nChinstrap\nDream\n49.6\n3775\n\n\nAdelie\nTorgersen\n42.1\n4000\n\n\nChinstrap\nDream\n51.3\n3750\n\n\nAdelie\nTorgersen\n44.1\n4000\n\n\nChinstrap\nDream\n40.9\n3200\n\n\nAdelie\nTorgersen\n37.8\n3700\n\n\nAdelie\nDream\n38.8\n3950\n\n\nAdelie\nDream\n40.7\n3725\n\n\n\n데이터: Kristen Gorman 박사와 남국 팔머 관측소(Palmer Station, Antarctica LTER)에서 수집\n    \n\n\n\n\n\nR 마크다운 문서 작성에 필요한 글꼴 관련 정보\n\n글꼴(font)\n구글 노토 글꼴(Noto Fonts)\nR 마크다운 폰트"
-  },
-  {
-    "objectID": "dw_pdf.html#출판-디지털-전환",
-    "href": "dw_pdf.html#출판-디지털-전환",
-    "title": "\n10  한글 PDF\n",
-    "section": "\n10.1 출판 디지털 전환",
-    "text": "10.1 출판 디지털 전환\n200자 원고지 4장은 통상 A4 용지 한장에 해당한다. 만약 A4 용지 10장 보고서나 논문을 작성한다고 하면, 종이 200자 원고지 40장에 연필이나 볼펜을 가지고 작성하게 된다. 최종본을 얻기까지 빨간색으로 선생님이나 주변의 첨삭지도를 받아 최종본을 만들기까지 여러번의 반복과정을 거치게 된다.\n최종 원고가 200자 원고지 40장에 담겨 탈고를 마치게 되면, 독자에게 다가갈 준비를 한다. 그림을 넣거나 아름다운 글씨체를 적용해 보고 종이 재질을 바꿔보기도 하고 영혼이 담긴 원고를 독자가 보기 좋고, 이해하기 쉽고, 때로는 감동과 재미를 줄 수 있도록 출판 단계에서 많은 사람들의 노력이 들어간다.\n탈고를 마친 원고에 글씨체를 비롯한 디자인 작업이 완료되면 출판장비를 갖춘 출판소에서 인쇄장비를 거쳐 종이책 혹은 보고서가 완성되고, 이렇게 대량으로 출력되면 각 서점으로 배송되어 독자가 서점에서 구독을 하게 된다.\n저자의 생각을 글로 표현하면 현재도 대부분 편집 및 디자인, 출판, 배송, 서점 등 각 단계에 사람이 관여하고 필요에 따라서는 컴퓨터가 작업을 지원하는데 사용되어 최종 독자에게 전달된다.\n책과 보고서 제작하는 과정은 워드 프로세스를 기본으로 두고, 숫자 계산이 필요하면 엑셀, 이미지가 필요하면 그래픽 전문 소프트웨어, 정보 검색도 웹브라우져를 사용한다. 글자, 단어, 문장, 문단, 장/절/항으로 생각의 단위를 서문, 본문, 결어 및 참고문헌, 주석, 그림, 그래프, 도표 등도 함께 체계적으로 작성해 나간다.\n다양한 소프트웨어를 통해서 원고를 탈고하게 되면 서식, 문장 문단 모양, 색인, 참조문헌 등 보기 좋고 가독성 높은 형태로 외양을 입히는 과정을 거치게 되는데 이 과정도 소프트웨어가 핵심적인 역할을 하게 된다. 책과 보고서에 대한 디자인 작업이 완료되면 다양한 형태로 배포하기 위한 프로그래밍 과정을 거쳐 PDF, 전자책(ePUB), 웹(HTML), 출판책 형태로 독자에게 전달된다.\n글을 써서 이를 독자에게 전달되는 과정은 과거에 전문작가, 디자인 전문가, 출판전문가, 서점운영자 등 수많은 전문가가 연관되어 있고 타자기, 디자인 기계, 인쇄기 등 수많은 기계가 필요했으며 이를 사업적으로 기술적으로 연결할 수 있는 다양한 통신 방법이 필요했다. 비전문가가 밖에서 보면 복잡하고 어려워 보이지만, 컴퓨팅 사고의 시각으로 보면 단순할 수 있다.\n\n\n\n\n\n\n\n\n\n\n\n\nPDF 작업흐름\n\n\n\n아날로그 출판\n\n\n\n디지털 출판\n\n\n그림 10.1: 디지털 출판 방식"
-  },
-  {
-    "objectID": "dw_pdf.html#latex-knuth",
-    "href": "dw_pdf.html#latex-knuth",
-    "title": "\n10  한글 PDF\n",
-    "section": "\n10.2 \\(LaTeX\\) 개요",
-    "text": "10.2 \\(LaTeX\\) 개요\n미국 스탠포트 대학 크누스(Donald Knuth) 교수가 1977년에 만든 문서조판 프로그램을 \\(TeX\\)(“텍”이라고 읽음)이라고 하고, Leslie Lamport 교수가 만든 TeX 매크로 팩키지를 LaTeX(“레이텍”이라고 읽음)이라고 한다. 수학과 교수였던 크누스 교수는 문서 식자체계를 통해 수식도 사용하기 쉽게 개발했고 METAFONT 폰트도 개발하여 양질의 글자체를 제작했다. 이후 레슬리 램포트가 \\(LaTeX\\)을 쉽게 쓸 수 있도록 다양한 매크로를 작성하여 공개했다. 이를 바탕으로 일반인도 고품질의 문서를 \\(LaTeX\\)으로 작성할 수 있게 되었다. 버클리 마이클 스피백(Michael Spivak) 교수는 수식을 쉽게 문서화시킬 수 있는 AMS-TeX을 매크로로 작성하여 공개하여 “The Joy of TeX” 책을 출간하기도 했다.\npdftex과 e-TeX이 합쳐져서 사실상(de factor) 표준 TeX이 되었고, XeTeX과 LuaTeX이 기존TeX을 대체하면서 발전하고 특히, 한글 폰트 때문에 XeTeX[“지텍”이라고 읽음]을 한글처리를 위해서 많이 사용하고 있다.1\n\\(LaTeX\\)의 동작원리는 Salomon이 도식화한 것에 영감을 받아, Kees van der Laan 2이 1994년 정리한 논문에 잘 정리되어 있다. 기본적으로 고품질 전자출판을 위해서 폰트와 더블어 TeX이 필요하고 이를 하나로 묶어서 고품질 출력물을 얻게된다. 저자가 편집기(editor)로 작업한 .tex 파일이 폰트(Fonts) 작업과정과 조판(Typesetting)과정이 하나로 합쳐져 출력물이 산출된다. TeX 기본 엔진을 지원하는 다양한 TeX 팩키지, AMS-(La)TeX, LaTeX, manmac가 눈에 띈다.\n문서에 들어가는 다양한 구성요소, 목차, 색인, 참고문헌, 그림과 표 등은 모듈화되어 관리되고, 폰트나 구조 스타일과 관련된 것도 별도로 구분되어 관리되고 있으며, TeXWorks같이 위지윅을 지원하는 은 편집기는 구문강조 및 맞춤범 검사등 고품질 LaTeX 저작물 작성을 위해 저작자를 지원하고 있다.\n\n\n\n\n기본적인 LaTeX 작동방식 및 주요 모듈에 대해 살펴본 후에 효과적인 LaTeX 문서을 위한 구성요소를 세부적으로 살펴보자.\n\n\n배포판: 과거 다양한 배포판이 윈도, 리눅스, 맥에 사용되었으나 현재는 TeX Live 가 유일의 LaTeX 작업환경이 되었다. 물론 MikTeX이 독자적으로 유지되고 있으나 별차이가 없다.\n\n폰트: 과거 폰트 메트릭(tfm), 메타폰트(MetaFont)를 사용하였으나, Type 1 을 걸쳐 트루타입과 오픈타입을 사용하도록 확대되었다.\n\n폰트를 식품으로 표현하면 밥과 같이 거의 항상 평타를 칠 수 있는 폰트를 선택하는 것이 중요하다. 물론 특식 필요한 경우 그에 맞게 적절한 폰트를 선택하는 것이 중요하다.\n폰트는 Serif와 San Serif를 한짝으로 삼아 한글로 보면 명조체(삐침이 있는 글꼴)과 고딕체를 동일한 폰트로 선택하는게 전체적으로 균형이 맞는다. 예를 들어, 나눔고딕-나눔명조, KoPub돋움-KoPub바탕, 함초롬도움-함초롬바탕 조합을 선택한다.\n글자 크기는 10~12 포인트를 선택하는데 이유는 장시간 글을 읽게 되도 피로감을 줄일 수 있다.\n\n\n\n그래픽: TeX/LaTeX은 기본적으로 그림은 TeX/LaTeX의 영역이 아닌 것으로 간주하고 있다. dvips를 사용하여 과거 EPS그림을 주로 사용했으나, 현재는 .jpg, .png, .pdf도 잘 처리한다.\n\n\n문자와 입력: 컴퓨터가 미국에서 개발되어 발전되어 주로 ASCII 코드가 주를 이뤘으나 2바이트 문자권인 한중일도 컴퓨터에서 자유로이 문자를 표현하고 입력할 수 있는 방식으로 UTF-8을 권장하고 있다. 특히, \\usepackage[utf8x]{inputenc} 사용이 필요한 경우가 많이 있다.\n\n색인과 참고문헌: makeindex와 bibtex가 색인과 참고문헌 처리를 위한 표준이지만, 유니코드를 좀더 잘 처리하고자 xindy와 biber도 주목받고 있다.\n\n수식: 수학표현관련 미국수학회에서 발전시킨 amsmath가 표준이다.\n\n출력: 과거 .dvi가 기본이였으나, 현재는 .pdf가 기본이고, 웹을 위한 다양한 .html 출력 생성도 지원한다. 즉, 과거에는 책 형태가 최종문서 산출물의 기본이였지만, 현재는 그리고 앞으로는 웹이 과거 책 형태의 위치를 차지하여 기본이 되고 책은 보조적인 역할로 남을 것으로 보인다."
-  },
-  {
-    "objectID": "dw_pdf.html#quarto-pdf",
-    "href": "dw_pdf.html#quarto-pdf",
-    "title": "\n10  한글 PDF\n",
-    "section": "\n10.3 Quarto PDF",
-    "text": "10.3 Quarto PDF\nPDF는 기술적, 학술적, 사업적으로 혁신적인 문서 양식이다. PDF가 개발된 것은 오랜 역사를 자랑하지만 아래한글, 워드퍼펙트, MS 워드, 리브레 워드 등에 가려 그 진가를 발휘하지 못했다. 하지만 이제 PDF는 문서 출판의 최고봉이라는데 이의를 제기하는 사람은 없을 것이다.\nPDF 를 통해 아도비(Adobe) 회사는 엄청난 성공을 이어나가고 있고, 과학기술 저작에도 필수적인 파일 형태라 PDF에 대한 기본소양은 인공지능 시대를 살고 있는 시민으로 누구나 갖춰야하는 소양이다.\n\n10.3.1 \\(LaTeX\\) 엔진\n보통 TexLive에 기반을 둔 tinytex 를 사용하는데 한글을 사용하는 입장에서는 kotex를 설치하는 방법도 모색이 필요하다. 유니코드 문자를 처리하기 위해서 xelatex이 Quarto \\(LaTeX\\) 기본엔진이다. 달리 특정하지 않게 되면 xelatex을 통해 CJK 문자가 포함된 PDF 파일 제작이 가능하다.\nquarto install tool tinytex\nkotex 이 갖는 장점은 한글관련 이슈가 될만한 거의 모든 \\(LaTeX\\) 패키지와 기본 한글글꼴도 내장하고 있다는 점이다. 하지만, tidytex를 기본 \\(LaTeX\\) 엔진으로 사용하는 경우 빠진 패키지로 인해 후속 작업이 어려운 경우 tinytex::parse_install() 함수를 사용하게 되면 다음과 같이 오류난 텍스트를 붙여넣게 되면 자동으로 설치해준다.\n\ntinytex::parse_install(\n  text = \"! LaTeX Error: File `titlepic.sty' not found.\"\n)\n\n\n10.3.2 YAML 파일\n문서를 구성하는 기본사항을 적어둔다. PDF 문서를 저작하는 것이라 \\(LaTeX\\) 에 대한 기본 지식은 Quarto PDF 문서를 생성하는데 많은 도움이 된다. 글꼴 지정관련하여 로컬 컴퓨터에 폰트 디렉토리에 관련 글꼴 정보가 운영체제와 연결되어 있어야 한다.\nPandoc 문서에 메타데이터 variables for LaTeX을 참조하여 필요한 상세설정작업을 수행한다.\n---\ntitle: \"한글 PDF\"\nformat: \n  pdf:\n    documentclass: report\n    papersize: a4\n    toc: true\n    toc-depth: 2\n    number-sections: true\n    colorlinks: true\n    include-in-header: \n      text: |\n        \\usepackage{pdfpages} \nbibliography: bibliography.bib\nlink-citations: yes\ncsl: apa-single-spaced.csl\nmainfont: \"NanumMyeongjo\"\nsansfont: \"NanumGothic\"\nmonofont: \"D2Coding\"\n---\nQuarto 가 문서 변환 핵심 엔진으로 사용하고 있는 Pandoc 은 \\(LaTeX\\) 외에도 ConTeXt, roff ms, HTML (via wkhtmltopdf) 을 사용해서 PDF 파일을 제작할 수 있다. 기존 Pandoc을 이런 방식으로 PDF 를 제작하신 분은 다음 내용을 건너뛰는 것도 좋을 듯 싶다.\n\n10.3.3 저작\n마크다운으로 이미지, 표, 텍스트, 서식, 수식 등 다양한 저작사항을 .qmd 파일에 담아내면 \\(LaTeX\\) 엔진이 PDF로 변환작업을 수행해준다.\n이미지\n\\(LaTeX\\)에 이미지도 삽입가능하다.\n\n\n\n\n그림 10.2: Allison Horst 박사가 그린 펭귄 3종 도식화\n\n\n\n그림 10.3: 펭귄 부리(bill) 변수 설명\n\n\n\nR 코드\n\\(LaTeX\\)에 R 파이썬 코드를 통해 계산된 결과를 그래프, 표, 요약통계량 등으로 뽑아내 삽입가능하다.\n\nmass_flipper &lt;- ggplot(data = penguins,\n                       aes(x = flipper_length_mm,\n                           y = body_mass_g)) +\n  geom_point(size = 3,\n             alpha = 0.8) +\n  theme_minimal() +\n  labs(title = \"팔머 관측소 LTER 서식 펭귄 크기\",\n       subtitle = \"Adelie, Chinstrap, Gentoo 펭귄에 대한 물갈퀴 길이와 체질량\",\n       x = \"물갈퀴 길이(Flipper length) (mm)\",\n       y = \"체질량(Body mass) (g)\") +\n  theme_minimal()\n\nmass_flipper\n\n표\n\\(LaTeX\\)에 \\(LaTeX\\) 표를 넣을 수도 있고 R 혹은 파이썬에서 나온 표를 PDF 파일에 넣을 수도 있다.\nLaTeX 표\n\n\ngt 표\n\nknitr::kable(\n  mtcars[1:6, 1:10]\n)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmpg\ncyl\ndisp\nhp\ndrat\nwt\nqsec\nvs\nam\ngear\n\n\n\nMazda RX4\n21.0\n6\n160\n110\n3.90\n2.620\n16.46\n0\n1\n4\n\n\nMazda RX4 Wag\n21.0\n6\n160\n110\n3.90\n2.875\n17.02\n0\n1\n4\n\n\nDatsun 710\n22.8\n4\n108\n93\n3.85\n2.320\n18.61\n1\n1\n4\n\n\nHornet 4 Drive\n21.4\n6\n258\n110\n3.08\n3.215\n19.44\n1\n0\n3\n\n\nHornet Sportabout\n18.7\n8\n360\n175\n3.15\n3.440\n17.02\n0\n0\n3\n\n\nValiant\n18.1\n6\n225\n105\n2.76\n3.460\n20.22\n1\n0\n3\n\n\n\n\n\n데이터\n\n\n\n\n\n\n데이터 수집에 대해 궁금하신 분은 클릭하여 추가 학습하세요\n\n\n\n\n\n팔머펭귄 데이터는 Kristen Gorman 박사와 남국 팔머 관측소(Palmer Station, Antarctica LTER)에서 수집되어 공공에 이용가능하게 공개되었습니다.\n\n\n\n{palmerpenguins} 패키지 (palmer-penguins?)를 통해 R에서 손쉽게 이용가능하게 되었고 원데이터는 (Gorman-2014?) 에서 최초 공개되었다.\nPDF 겉면\nfitpaper \\(LaTeX\\) 패키지를 사용해서 책 첫장(\\frontmatter)과 마지막장(\\backmatter) 겉면을 장식할 수 있다.\n\\includepdf[fitpaper]{book/canva-backmatter}"
-  },
-  {
-    "objectID": "dw_pdf.html#한글-글꼴",
-    "href": "dw_pdf.html#한글-글꼴",
-    "title": "\n10  한글 PDF\n",
-    "section": "\n10.4 한글 글꼴",
-    "text": "10.4 한글 글꼴\nQuarto PDF Engines에서 \\(LaTeX\\) 엔진을 별도 다룰 정도로 \\(LaTeX\\) 엔진은 중요하다. Quarto 에서는 TinyTeX를 기반엔진으로 사용되는데 TeX Live 배포판에 기반하고 Pandoc 에서 가장 많이 사용되는 대략 200 여개 패키지를 포함시켜 사용성은 좋게하면서 크기는 대폭 줄였다.\n.qmd 파일 YAML 헤더에 로컬 컴퓨터에 등록된 글꼴을 지정하는 방식도 있다.\nmainfont: \"NanumMyeongjo\"\nsansfont: \"NanumGothic\"\nmonofont: \"D2Coding\"\nCJKmainfont: \"NanumGothic\"\n다른 방식은 글꼴 관련 사항은 packages.tex \\(TeX\\) 파일에 지정하는 것이다.\nformat:\n  pdf:\n    include-in-header:\n      - packages.tex\n      - macros.tex\n    include-before-body: before.tex\n예를 들어 packages.tex 에 한글 글꼴을 다음과 같이 지정한다.\n% 한글 폰트 ----------------------------\n\\setmainhangulfont{NanumMyeongjo} % 나눔명조\n\\setsanshangulfont{NanumGothic}   % 나눔고딕\n\\setmonohangulfont{D2Coding}      % D2코딩\n\n\n\n\n\n\n\n\n\n\n\n\n이광춘, “글을 쓰는 것은 소프트웨어 개발이다!”, 강서양천신문 특집기고(’15년 9월) 와 LaTeX, PDF, 문서, 그리고 사고에서 관련 내용을 발췌한 것임을 밝혀둡니다. 그리고, Quarto PDF 문서를 많이 참고 했습니다."
-  },
-  {
-    "objectID": "publishing.html",
-    "href": "publishing.html",
-    "title": "11  출판",
-    "section": "",
-    "text": "12 법인 출판사 신청\n개인이 아닌 법인으로 출판사를 설립하거나 법인 업종에 “출판업”을 추가하는 경우 목적은 출판사 신고확인증을 발급받는 것이다. 책을 출판하는 경우 먼저 관할 지자체에 신고를 준비해야 한다. 이를 위해서 “출판사(신고서, 변경신고서)”를 작성하고 다음 서류를 준비하여 관할 지자체(구시군청)를 내방하여 제출한다. 출판사 신고서는 출판문화산업 진흥법 시행규칙에 별지 서식으로 다운로드 가능하다.\n출판사 등록제출서류 제출 후 3일 내 처리하는 것이 원칙이고 출판등록신고증은 등기(서류제출 시 수령주소 명시)로도 수령이 가능하다. 출판등록신고증이 완료되면 세무서를 사업자등록증에 이를 업종에 반영하여 마무리한다.\n국립중앙도서관에서 책을 출판하는 경우 “ISBN” 번호를 출판사가 부여받아야 한다. 이를 위해서 국립중앙도서관 ISBN ISSN 납본시스템에 접속하여 안내에 맞춰 후속 절차를 진행한다. 먼저 국립중앙도서관 ISBN ISSN 납본시스템 상단 계정등록 작업을 수행하여 앞서 발급받은 출판사 신고확인증을 증빙으로 계정등록을 한다.\n출판사가 출판할 책이 정해지면 다음 단계로 수익창출을 위해 인쇄소와 계약을 하여 종이형태 책을 500권, 1,000권 등 수요 구독자를 감안하여 인쇄소에서 출판한다.\n다양한 출판채널을 통해 독자를 만나고 책을 판매하여 수익을 출판사와 저자, 그리고 서점과 분배한다."
-  },
-  {
-    "objectID": "publishing.html#발행자번호-신청",
-    "href": "publishing.html#발행자번호-신청",
-    "title": "11  출판",
-    "section": "13.1 발행자번호 신청",
-    "text": "13.1 발행자번호 신청\n발행자번호 신청을 통해 출판사 신고확인증에 기재된 출판사명과 대응되는 ISBN 발행자번호를 부여받는 작업을 수행한다. 처리기간은 업무일 기준 3일이 소요된다."
-  },
-  {
-    "objectID": "publishing.html#isbn-번호-신청",
-    "href": "publishing.html#isbn-번호-신청",
-    "title": "11  출판",
-    "section": "13.2 ISBN 번호 신청",
-    "text": "13.2 ISBN 번호 신청\n출판사 발행자번호가 발급되면 출판할 책의 ISBN 번호를 부여할 수 있다."
-  },
-  {
-    "objectID": "history.html#글쓰기-진화",
-    "href": "history.html#글쓰기-진화",
-    "title": "1  문자와 종이 역사",
-    "section": "1.1 글쓰기 진화",
-    "text": "1.1 글쓰기 진화\n글쓰기는 항상 변화해왔으며 인간의 필요와 유행에 따라 발전해 왔다. 글쓰기의 전신으로 토큰(token)이 존재했고, 그림문자(pictogram)가 나타났으며, 그 후 로고그래피(logography)가 나타나면서 시각에서 청각으로 전환되었다. 알파벳은 소리의 분할을 나타내며, 현대 알파벳이 나타났으며, 조선시대 한글도 이전 문자체계를 자체적으로 분석하여 발명했다.\n글쓰기의 진화는 고대 문명의 초기 형태로 거슬러 올라갈 수 있으며 여러 단계로 나눌 수 있습니다. 다음은 시간 경과에 따른 문자 시스템의 발전에 대한 간략한 개요입니다:\n\n픽토그래프(기원전 6000~4000년경): 가장 초기에 알려진 문자 형태인 상형문자는 사물이나 아이디어를 나타내는 단순한 그림이나 기호였습니다. 수메르, 이집트, 중국에서 기본적인 정보를 전달하기 위해 사용되었습니다.\n설형 문자(기원전 3400~3200년경): 고대 수메르(현대 이라크)에서 개발된 설형문자는 가장 초기의 문자 체계 중 하나로 간주됩니다. 상형문자에서 발전한 이 문자는 점토판에 쐐기 모양의 스타일러스를 눌러 단어와 아이디어를 나타내는 일련의 쐐기 모양의 자국을 만들었습니다.\n이집트 상형 문자(기원전 3200~3000년경): 고대 이집트인들은 음성 기호와 표의 문자를 조합하여 사용하는 문자 체계인 상형 문자를 개발했습니다. 상형문자는 종교 텍스트, 비문, 공식 문서에 사용되었습니다.\n페니키아 알파벳(기원전 1200년경): 페니키아 알파벳은 이집트 상형문자에서 파생된 초기 알파벳 문자였습니다. 각 기호가 고유한 소리를 나타내는 알파벳 개념을 도입한 이 문자는 문자 발전에 있어 중요한 발전이었습니다.\n그리스 알파벳(기원전 800년경): 그리스 알파벳은 페니키아 알파벳에서 발전하여 모음을 도입하여 문자의 표현력을 크게 향상시켰습니다. 그리스 알파벳은 라틴어와 키릴 문자를 비롯한 많은 현대 유럽 문자 체계의 토대를 마련했습니다.\n라틴 알파벳(기원전 700년경): 고대 로마인들이 사용한 라틴 알파벳은 그리스 알파벳에서 파생되었습니다. 시간이 지남에 따라 발전하여 영어, 스페인어, 프랑스어, 독일어 등 많은 현대 문자 체계의 기초를 형성하고 있습니다.\n중국어 문자(기원전 1200년경): 중국어 문자는 상형문자에서 발전하여 각 문자가 단어 또는 형태소(의미 단위)를 나타내는 복잡한 로고그램 체계로 발전했습니다. 중국어 문자는 일본어와 한국어 등 다른 동아시아 문자 체계의 발전에 영향을 미쳤습니다.\n브라흐미 문자(기원전 300년경): 브라흐미 문자는 고대 인도에서 개발되었으며 데바나가리(힌디어와 산스크리트어에 사용), 타밀어, 태국어를 비롯한 많은 남아시아 및 동남아시아 문자의 조상으로 간주됩니다.\n아랍 문자(기원전 4세기경): 나바테아 알파벳에서 발전한 아랍 문자는 아랍어를 표기하는 데 사용되며 페르시아어, 우르두어, 파슈토어 등 다른 언어와 함께 사용할 수 있도록 변형되었습니다.\n키릴 문자(기원전 9세기경): 러시아어와 다른 여러 슬라브어를 표기하는 데 사용되는 키릴 문자는 선교사 형제인 시릴과 메토디우스가 제1차 불가리아 제국에서 개발했습니다. 그리스 알파벳을 기반으로 슬라브어 고유의 소리를 표현하기 위한 문자가 추가되었습니다.\n한글(기원후 14세기): 조선전기 제4대 세종대왕이 훈민정음이라는 이름으로 창제하여 반포한 우리나라 고유의 문자입니다. 한글은 다른 나라의 기원과 발달 과정에 비하면 전혀 다른 과정을 거쳐 온 문자입니다. 세종대왕을 중심으로 한 소수의 집현전 학자들에 의해 치밀하게 계획되어 처음부터 완전한 글자꼴과 표현 원리를 정해 1443년에 창제되어 세종28년 1446년에 10월에 반포한 것으로 이러한 독창적인 글자를 만든 일은 세계 역사에 일찍이 찾아볼 수 없었습니다.\n\n역사를 통틀어 다양한 문자 체계가 진화하고 적응하며 서로 영향을 주고받았습니다. 오늘날에는 전 세계 사람들의 다양한 언어적 요구를 충족하는 수많은 문자 체계와 알파벳이 존재합니다."
-  },
-  {
-    "objectID": "history.html#언어와-문자",
-    "href": "history.html#언어와-문자",
-    "title": "1  문자와 종이 역사",
-    "section": "1.2 언어와 문자",
-    "text": "1.2 언어와 문자\n전세계인구는 77.5억(2020년 기준)명이며 언어는 대략 7,100개 언어가 존재하고 있는 것으로 파악되고 있으며 영어, 중국어, 힌디어, 스페인어, 프랑스어, 아랍어, 벵골어, 러시아어, 포르투갈어, 인도네시아어 순으로 많은 언어인구를 갖고 있다.\n한국어 언어는 한글을 문자로 갖고 있지만 모든 언어가 문자(Writing System)를 갖는 것은 아니다. 다르게 보면 동일한 뿌리를 갖는 문자를 공유하는 언어도 많다. 예를 들어,\n\n알파벳: 라틴어(영어, 불어, 독어, 이태리어 등), 셀틱, 발틱, 슬로박, 등\n한자: 중국어, 대만어\n아랍문자: 아랍, 인도-이란 어족(페르시아, 펀잡 등)\n가나: 일본\n…\n\n문자가 존재하기 위한 전제조건이 있는데 크게 다음 세가지를 들고 있다.\n\n언어 : 한국어, 영어, 중국어, …\n아이디어: 생각, 콘텐츠,…\n기호: 숫자, 문자, 그림, …\n\n언어\n숫자와 수식\n교통표지 등 표식\n\n매체: 종이, 파피루스, 디스플레이"
-  },
-  {
-    "objectID": "history.html#매체-역사",
-    "href": "history.html#매체-역사",
-    "title": "1  문자와 종이 역사",
-    "section": "1.3 매체 역사",
-    "text": "1.3 매체 역사\n메시지를 전달하기 위해서 의미를 담을 수 있는 상형문자가 전세계 동시 다발적으로 개발되었으나 동시에 추상적인 개념 (예를 들어, 숫자)을 전달하기 위한 문자체계도 필요하여 개발됨과 동시에 문자를 담을 수 있는 매체에 대한 발전도 함께 이뤄졌다.\n초기 동굴벽화처럼 벽면에 그림을 그려서 의사를 전달하는 체계가 출현한 것은 기원전 16,500년 라스코 동굴벽화를 비롯하여 반구암각화에도 그 흔적을 어렵지 않게 찾을 수 있다. 기원전 3,000년 수메르 문명이 출현하면서 수십만의 사람들이 도시에 모여살게 되면서 세금 징수, 계약 등 산적한 정치, 사회, 경제 문제를 해결하는데 필수적으로 문자가 필요하게 되었다. 동시에 세금과 계약관계를 기록하고 보존할 수 있는 방식으로 점토를 사용하였고, 이집트에서도 유사한 목적으로 점토판 대신에 파피루스를 종이처럼 사용하는 방식을 사용했다.\n\n\n\n문자 매체의 진화\n\n\n문자를 담을 수 있는 매체도 생산과 유지관리에 비용이 많이 들고, 상형문자가 담을 수 있는 정보에 한계가 보임에 따라 지중해에서 수많은 물품을 거래하던 페니키아인들은 기존 상형문자체계를 벗어나 소리에 의미를 담을 수 있는 방식으로 진화시켜 무한대에 가까운 의미를 담을 수 있는 문자를 만들어냈는데 기원전 1,200년 페니키아 문자를 창안하게 되었다. 이후, 그리스 헬레니즘 문화를 거치면서 쥴리어스 시저 시대 라틴 알파벳(대문자)이 공표되면서 오늘에 이르게 되었다. 라틴 알파벳을 담을 수 있는 매체로 양피지(Parchment)가 사용되었고 필경사(Scribe)가 한땀 한땀 손으로 필사를 했다.\n동굴벽, 점토판, 파피루스 종이, 양피지를 거쳐 드디어 106년 채륜(Cai Lun)이 종이를 발명하면서 문자문화에 큰 변화가 생기게 되었다. 이후 서기 800년경 목판인쇄술이 발명되고 1450년 구텐베르크 인쇄술을 통해 성경이 대량 인쇄되어 르네상스의 초석이 되었으며, 푸어드니어(Fourdrinier) 형제가 1806년 종이를 대량생산하게 되는 초지기(Paper Macine)를 발병하면서 저렴한 비용으로 일반대중도 아이디어를 문자로 종이에 기록하여 널리 알릴 수 있는 토대가 완성되었다. 여기에 더해 1922년 독일에서 ISO 216을 통해 종이에 대한 국제 표준이 자리잡으면서 미국을 비롯한 일부 국가를 제외하고 전세계적으로 문자를 담아낸 매체에 대한 표준이 확립되었다."
-  },
-  {
-    "objectID": "history.html#문자",
-    "href": "history.html#문자",
-    "title": "1  문자와 종이 역사",
-    "section": "1.4 문자",
-    "text": "1.4 문자\n언어를 기록하기 위한 상징체계로 문자(文字, writing system)가 발명되었다. 문자는 언어중에서도 음성언어를 기록하기 위해 생겨난 것으로 알려져 있다. 문자는 정보의 저장과 전달에 신뢰성이 담보된다는 점에서 그 유용성이 크다.\n문자는 크게 표음문자(Phonographic)와 표의문자(Logographic)로 나눠진다. 표의문자의 대표적인 문자로 중국 한문과 이집트 상형문자가 꼽힌다. 예를 들어 木(나무 목) 은 목이라는 소리를 내지만 뜻은 나무를 갖고 있다. 표음문자는 한글을 비롯한 라틴계열 대부분의 언어가 여기에 포함된다.\n\n1.4.1 알파벳 1\n알파벳(Alphabet) 문자는 이집트 상형문자에서 시작되었다고 알려져 있다. 이후 상형문자는 페니키아 상인이 소리를 기반으로 의미를 전달하는 방식으로 진화되었고 그리스를 거쳐 알파벳 뒤쪽 문자가 추가되고 로마시대에 오늘날 알려진 영어 대문자가 완성되고 이후 소문자가 손으로 필사되면서 발명되고 다양한 글꼴이 생겨나게 되었다. 구텐베르그가 활자인쇄술을 발명되면서 현재와 같은 알파벳 문자가 완성되었다.\n\n\n\n알파벳 진화 역사\n\n\n\n\n1.4.2 문자 시스템\n앞서 문자를 크게 표음문자와 표의문자로 구분하였다. 이를 좀더 상세히 세분화하면 전세계 문자는 크게 다음과 같이 4개로 구분된다. (gohos2010?) 표어문자의 대표적인 문자가 중국의 한자, 음절문자의 대표적 문자가 일본어, 자질문자의 대표 문자가 한글이다. 그외 음소문자는 로마자로 대표되는 영문자가 있다.\n\n표어문자(logographic)\n음절문자(syllabic)\n음소문자(alphabetic)\n자질문자(featural)\n\n\n\n\n\n\n\n\n\n종류\n기호 표현\n예\n\n\n\n\n표어 문자\n형태소\n중국의 한자\n\n\n음절 문자\n음절 또는 모라\n일본의 가나 (문자)\n\n\n음소 문자\n낱소리 (자음 또는 모음)\n로마자, 키릴문자, 그리스 문자\n\n\n아부기다\n낱소리 (자음+모음)\n데바나가리 문자, 그으즈 문자\n\n\n아브자드\n낱소리 (자음)\n아랍 문자, 히브리 문자\n\n\n자질 문자\n음성 자질\n한국의 한글\n\n\n\n\n\n1.4.3 글쓰기 방향\n대부분의 문자를 왼쪽에서 오른쪽, 위에서 아래 방향으로 작성하는 방식을 취하고 있으나 이슬람권에서는 오른쪽에서 왼쪽으로 작성을 하고 있고 몽골은 위에서 아래로 작성하고 있다.\n\n\n\n1.4.4 표의 문자\n한자와 같은 표의 문자가 여러가지 단점이 있는 것처럼 보이기도 하지만 표의문자가 갖는 장점으로 인해 그 중요성이 더욱 부각되고 있다. 표의문자가 갖는 장점은 문자 자체 의미가 부여되기 때문에 전세계 누구도 문자만 보면 그 뜻을 유추할 수 있다는 점이다.\n\n그림문자(Pictographic): r emo::ji(\"face\"), r emo::ji(\"happy\"), r emo::ji(\"cake\"), …\n표의문자(Ideogrpahic): 🚫 금지와 같은 의미를 갖는 문자로 ⛔ 🚸 교통 표지판, ▶️ 전자제품 사용\n추상 어표(Abstract Logograpahic): 한자 사람 인(人), %, &, …\n\n그림문자와 표의문자를 결합하게 되면 다음과 같이 흡연을 금지하는 의미를 명확히 전달할 수 있다.\n\n\n\n흡연과 금지가 결합된 표의문자"
-  },
-  {
-    "objectID": "history.html#저작",
-    "href": "history.html#저작",
-    "title": "1  문자와 종이 역사",
-    "section": "1.5 저작",
-    "text": "1.5 저작\n점토판에 쐐기를 사용해서 문자를 활용하여 갖고 있던 아이디어(세금, 계약, 신화 등)를 작성하던 방식이 중세시대 종이가 발명되며 동양에서는 붓과 머루, 서양에서는 잉크와 새깃털펜으로 저작을 하였다. 이후 타자기가 발명되어 개인 저작이 가능하게 되었으며 이후 전동타자기도 등장하여 아이디어를 문서로 남기는 것이 훨씬 비용도 저렴해지고 품질도 좋아지고 출판까지 과정도 신속해졌다. 제2차 세계대전이 남긴 에니악 컴퓨터는 민수로 전환되어 IBM에서 1964년 워드프레서서를 시장에 출시하였고 1969년 IBM에서 저장장치도 출시되어 기계식 저작방식이 디지털 저작방식으로 넘어가는 기반이 다져졌다. 1980년대 전후로 컴퓨터를 기반으로 두가지 저작방식 즉, 마이크로소프트 워드 1.0 혹은 아래한글과 같은 위지윅(WYSWHG) 방식과 문서를 구조적으로 작성하여 컴파일하는 위지윔(WYSIWYM) 방식이 일반화되면서 현재에 이르고 있다."
-  },
-  {
-    "objectID": "quarto.html",
-    "href": "quarto.html",
-    "title": "3  쿼토 소개",
-    "section": "",
-    "text": "4 Single Sourcing 출판저작\n데이터 사이언스 출판저작에 다소 차이는 있지만 출판에 대한 대체적인 방식은 유사할 것으로 보인다. 즉, Single Sourcing 을 콘텐츠 저작, 디자인, 최종 출판물 관리까지 일원화되어 자동화되어 체계적으로 관리된다면 중복되는 낭비는 물론 재현가능성도 높여 과학기술 출판저작물로 가장 이상적으로 간주되고 있다."
-  },
-  {
-    "objectID": "quarto.html#재현가능-글쓰기",
-    "href": "quarto.html#재현가능-글쓰기",
-    "title": "2  쿼토",
-    "section": "2.1 재현가능 글쓰기",
-    "text": "2.1 재현가능 글쓰기\n과학의 근본적인 원칙 중 하나는 연구의 결과가 독립적으로 재현가능해야 한다는 것이다. 이 원칙은 연구 타당성을 확인하고, 그 결과가 일반화 가능한지 검증하는 데 필수적이다. 그러나 2010년 전후, 다양한 학문 분야에서 재현할 수 없는 연구 결과가 다수 발표됨에 따라 과학 커뮤니티 내에서 큰 우려가 발생하였고, 이러한 현상을 재현성 위기(Reproducibity Crisis)라고 부르며, 과학연구 신뢰성을 크게 훼손시켰다.\n이 위기에 대응하여, 전 세계 연구자들과 전문가들은 재현가능한 연구 저작을 촉진하고 지원하기 위한 다양한 방안을 모색하기 시작했다. 연구방법론 표준화, 데이터 공유, 연구 소프트웨어 투명성 강화 등 다양한 활동이 들불처럼 일어났고, 기술 커뮤니티 형성과 더불어 다양한 도구와 플랫폼 개발을 통해 재현성 문제를 해결하고자 하는 움직임이 확산되고 있다.\n데이터 과학에서 재현성은 핵심적인 요소로 간주된다. 연구 결과의 신뢰성과 타당성을 검증하는 데 있어, 다른 연구자나 전문가들이 동일한 결과를 도출할 수 있도록 연구 과정을 투명하게 공유하는 것은 필수적이다. 이러한 맥락에서 R 팩키지는 재현가능한 데이터 분석 프로젝트를 지원하는 데 중요한 역할을 한다.\n\n\n\n그림 2.1: 재현가능한 과학기술 문서 제작과정\n\n\n특히, R 팩키지를 활용한 연구 개요서(research compendia)는 재현성을 강화하는 훌륭한 도구로 간주된다. 연구 개요서는 연구의 모든 요소(코드, 데이터, 출력 결과물, 환경 등)을 포괄적으로 담고 있어, 연구의 전체 과정을 투명하게 추적하고 검증할 수 있다. 한 사례로 그림 2.1 에 코드부터 단계별로 재현가능한 과학기술 문서 제작과정을 보여주고 있다."
-  },
-  {
-    "objectID": "quarto.html#디지털-글쓰기",
-    "href": "quarto.html#디지털-글쓰기",
-    "title": "2  쿼토",
-    "section": "2.2 디지털 글쓰기",
-    "text": "2.2 디지털 글쓰기\n글쓰기는 인류의 역사와 함께한 중요한 소통 도구로서, 그 방식과 형태는 시대별로 지속적으로 변화해왔다. 최근의 글쓰기 환경은 그 전보다 훨씬 복잡하고 다양한 요소를 요구한다. 과거에는 원고지에 텍스트를 작성하는 것만으로도 충분했다. 한글이나 영어로 이루어진 문장들은 감정을 전달하거나 사실을 나열하며, 이를 통해 독자와의 소통을 이루었다. 그러나 현대의 글쓰기 환경에서는 단순한 텍스트 정보 전달만으로는 부족하다. 이미지, 그래픽, 그리고 인터랙티브한 요소들이 텍스트와 함께 통합되어야 하며, 이를 통해 독자의 관심을 끌고 정보의 흡수를 증진시킨다.\n가독성 또한 중요한 고려사항이다. 디자인적인 측면에서 효과적인 글꼴 선택은 텍스트의 내용을 더욱 돋보이게 하며, 독자의 읽기 경험을 향상시킨다. 현대의 글쓰기는 단순한 정보 전달을 넘어서, 그 과정과 결과의 재현성에도 중점을 둔다. 특히 과학연구나 기술문서에서 두드러진다. 자동화 도구와 버전 관리 시스템의 도입을 통해 재현성을 지원하고, 글쓰기 효율성과 투명성을 동시에 높이고 있다.\n최근의 눈에 띄는 추세 중 하나는 인공지능 발전과 그에 따른 기계 저작물의 폭증을 들 수 있다. 기계가 작성한 텍스트를 포함한 콘텐츠가 인간 저자와 비슷하거나 오히려 생산 속도나 경제적인 면에서 확실한 우위를 보이면서 이에 대한 연구와 기술적 시도가 활발히 이루어지고 있다.\n\n\n\n현대의 글쓰기: 기술적 도전과 진화의 중심"
-  },
-  {
-    "objectID": "quarto.html#latex-philosophy",
-    "href": "quarto.html#latex-philosophy",
-    "title": "2  쿼토",
-    "section": "2.3 \\(\\LaTeX\\) 철학",
-    "text": "2.3 \\(\\LaTeX\\) 철학\n\\(\\LaTeX\\)은 한마디로 정의하게 되면 “논리적인 디자인”이라고 볼 수 있다. 저작물이 만들어지는 과정은 저작자가 원고를 손으로 쓰거나 타자기로 쳐서 출판사에 넘겨주면, 출판사의 편집디자이너는 원고를 보고 세부적인 출력형식을 결정하여 인쇄소에 넘긴다. 인쇄소는 이를 토대로 과거 식자공이 식자판을 만들었다면 현재는 컴퓨터가 파일을 만든다. \\(\\LaTeX\\) 과 \\(\\TeX\\) 이 하는 업무가 다소 차이가 난다. (김영록, 2017)\n\n\\(\\LaTeX\\) 은 편집디자이너에 해당되는 업무를 수행\n\\(\\TeX\\) 은 식자공에 해당되는 업무를 수행\n\n\n\n\n문서의 논리적 구조와 디자인\n\n\n컴퓨터를 활용하여 전자조판을 넘긴 이유는 문서를 좀 더 읽기 쉽게 만들어 독자에게 저작자의 생각을 잘 이해시키는 것이다. 이러한 목적을 달성하기 위해서는 문서의 디자인이 그 문서의 논리적 구조를 잘 반영시켜야 하고, 반대로 문서의 논리적 구조를 잘 반영시키기 위해서는 문서 디자이너가 문서의 논리적 구조를 잘 이해해야만 된다. \\(\\LaTeX\\)의 명령어는 기본적으로 문서의 논리적 구조를 기술하는 것이다. 이렇게 기술된 명령어를 \\(\\TeX\\)으로 전달하여 조판하게 되어 원하는 최종 결과물을 얻게 된다.\n\\(\\LaTeX\\)에서 채택하는 논리적 디자인의 가장 큰 장점은 글을 더 잘 쓰게 된다는 점에 있다. \\(\\LaTeX\\) 으로 글을 작성하게 되면 점점 \\(\\LaTeX\\)이 채택하고 있는 논리적 디자인에 맞추게 되고 이를 통해서 글쓰기 실력이 향상된다.\n아마도 \\(\\LaTeX\\)의 가장 큰 장점은 자동화에 있다. 시각적 디자인(Wysiwig)을 채택하여 작성한 문서를 다른 형식으로 변환하거나 문서의 수식의 일련번호를 로마자에서 아라비아 숫자로 모두 변경시키거나 표나 그래프 번호를 일괄번경하는 등 이러한 사례는 자주 발견된다. 특히, 국내외 저널에 제출할 논문을 \\(\\LaTeX\\) 으로 작성한 경우 템플릿만 바꾸면 쉽게 고품질 논문을 만들 수 있는데 워드를 이용하여 작성할 경우 수작업을 하게 되어 비생산적인 시간낭비도 크고 미려한 문서를 얻을 수도 없다.\n따라서, \\(\\LaTeX\\) 으로 글을 쓰게 되면 글쓰기 본질에 집중할 수 있어 저작자의 생각과 의견을 좀더 진솔하게 가감없이 독자에게 전달시킬 수 있게 된다."
-  },
-  {
-    "objectID": "quarto.html#wysiwyg",
-    "href": "quarto.html#wysiwyg",
-    "title": "2  쿼토",
-    "section": "2.4 시각적 디자인",
-    "text": "2.4 시각적 디자인\n문서를 논리적으로 디자인하는 반대 개념으로 있는 것이 위즈윅(WSYIWIG, What You See Is What You Get) 으로 대표적인 것이 아래한글, MS 워드와 같은 워드 프로세서다. 시각적 디자인을 하게 되면 논리적이지 못한 애매한 조판을 하기 쉽다. 또한, PDF 파일로도 출력을 할 때 미세하나마 출력물에 일관성이 실종되기도 한다."
-  },
-  {
-    "objectID": "quarto.html#latex-engine",
-    "href": "quarto.html#latex-engine",
-    "title": "2  쿼토",
-    "section": "2.5 \\(\\LaTeX\\) 엔진",
-    "text": "2.5 \\(\\LaTeX\\) 엔진\n\\(\\LaTeX\\) 을 실제 문서작성에 사용하기 위해서는 텍 배포판을 선택해야 하는데 KTUG 한국 \\(\\TeX\\) 사용자 그룹에서 \\(ko.TeX\\) Live를 추천하고 있다. 이유는 다음과 같다. (이호재, 2017)\n\npdfLaTeX, XeLaTeX, LuaLaTeX 3종 \\(\\LaTeX\\) 엔진이 있는데 XeLaTeX 이 유니코드 텍 엔진이라 CJK 동아시아권 언어를 잘 지원하고 트루타입 및 오픈타입 폰트도 자유롭게 선택할 수 있기 때문에 인기가 많다.\n운영체제에 따라 차이가 나지만 안정적으로 \\(\\LaTeX\\) 을 설치하여 실제 문서작업에 이용하기에는 \\(\\TeX\\) Live 가 MikTeX 보다 안정성이나 여러가지 사용자 지원 측면에서 낫다.\n\\(\\TeX\\) 소스파일에서 PDF 파일로 탐색을 하던가 반대로 PDF 파일에서 \\(\\TeX\\) 소스파일로 탐색을 하게 되는 기능을 TexStudio IDE를 활용하여 바로 가능하게 됨\n\n과거 latex+divps+pspdf 를 활용한 가장 전통적인 작업흐름을 가졌다. 즉, pstricks를 활용하여 PDF 파일을 제작하는 방식으로 시간이 오래 걸리고 이미지로 eps 파일만 사용한다는 한계가 있다. 또 다른 latex+dvipdfmx 작업흐름은 중간에 .dvi 파일을 생성하고 dvipdfmx를 사용하여 PDF 파일을 제작하는 방식이다. 마지막으로 pdfLaTeX, XeLaTeX, LuaLaTeX 을 활용한 작업흐름이 있는데 .tex 소스파일에서 .pdf 파일을 즉시 생성한다는 점에서 인기가 있다.\n이외에도 논문 제작이 아닌 문서를 제작하는 경우 한단계 더 들어가 memoir 혹은 oblivoir 클래스를 이용하는 것이 이미 검증된 문서 템플릿을 바탕으로 PDF 문서를 뽑아내는 신속한 방법이다.\n\n\n\n한글지원 LaTeX 엔진과 작업흐름\n\n\n\n\n\n\n김영록. (2017). 교육 현장에서의 텍의 활용. TeX: 조판, 그 이상의 가능성.\n\n\n이호재. (2017). 레이텍을 빨리 쓸 수 있는 방법. TeX: 조판, 그 이상의 가능성."
-  },
-  {
-    "objectID": "quarto.html#윈도우-설치",
-    "href": "quarto.html#윈도우-설치",
-    "title": "\n3  쿼토 설치\n",
-    "section": "\n3.1 윈도우 설치",
-    "text": "3.1 윈도우 설치\nQuarto를 운영체제에 맞춰 설치한다. Quarto 는 기본적으로 CLI 라서 설치 후 제대로 설정이 되었는지는 환경설정에 경로를 등록해줘야 한다.\n\n3.1.1 Quarto 다운로드\n\n\n\n\n\n3.1.2 Quarto 설치\n\n\n\n\n\n3.1.3 Quarto CLI\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n윈도우 시스템의 경우 quarto.exe가 아니고 quarto.cmd 라 이에 유의한다. 즉, 제어판 → 환경 변수 설정 … 에서 \"C:\\Users\\사용자명\\AppData\\Local\\Programs\\Quarto\\bin 디렉토리를 등록한 후 quarto.cmd 을 사용해서 출판한다.\n\nSys.which(\"quarto\")\n                                                                  quarto \n\"C:\\\\Users\\\\STATKC~1\\\\AppData\\\\Local\\\\Programs\\\\Quarto\\\\bin\\\\quarto.cmd\""
-  },
-  {
-    "objectID": "quarto.html#설치방법",
-    "href": "quarto.html#설치방법",
-    "title": "\n3  쿼토 설치\n",
-    "section": "\n3.2 설치방법",
-    "text": "3.2 설치방법\nquarto 웹사이트에서 Quarto CLI 엔진을 설치한다. 통합개발도구(IDE)를 설치한다. Quarto CLI를 지원하는 IDE는 VS Code, RStudio, Jupyter, VIM/Emacs 와 같은 텍스트 편집기가 포함된다. IDE까지 설치를 했다면 literate programming 방식으로 마크다운과 프로그래밍 언어를 결합하여 출판을 위한 전문 문서 저작을 시작한다."
-  },
-  {
-    "objectID": "quarto.html#출판-플랫폼",
-    "href": "quarto.html#출판-플랫폼",
-    "title": "\n3  쿼토 설치\n",
-    "section": "\n3.3 출판 플랫폼",
-    "text": "3.3 출판 플랫폼\n데이터 사이언스 저작물을 제작하게 되면 그 다음 단계로 출판을 해야하는데 다양한 문서를 모아 프로젝트로 담아 Quarto Pub에 전자출판한다. 다른 출판 플랫폼으로 netlify, GitHub Pages, RStudio Connect가 많이 사용된다."
-  },
-  {
-    "objectID": "quarto.html#quarto-pub-출판-quarto-pub",
-    "href": "quarto.html#quarto-pub-출판-quarto-pub",
-    "title": "\n3  쿼토 설치\n",
-    "section": "\n3.4 Quarto Pub 출판 1\n",
-    "text": "3.4 Quarto Pub 출판 1\n\nQuarto Pub 웹사이트에 출판하는 방식은 Quarto CLI 를 사용한다. 필히 RStudio 내부 Terminal을 사용해서 Quarto Pub으로 출판한다.\n\nquarto.cmd publish quarto-pub\n? Authorize (Y/n) › \n❯ In order to publish to Quarto Pub you need to\n  authorize your account. Please be sure you are\n  logged into the correct Quarto Pub account in \n  your default web browser, then press Enter or \n  'Y' to authorize.\n\n첫번째 출판하게 되면 인증작업을 수행하고 나면 _publish.yml 파일이 하나 생성된다.\n\n- source: project\n  quarto-pub:\n    - id: 1fa3ab1f-c010-453a-aaf2-f462bd074a66\n      url: 'https://quartopub.com/sites/statkclee/quarto-ds'\n\n이제 모든 준비가 되었기 때문에 다음 명령어로 작성한 출판 문서를 포함한 웹사이트를 로컬에서 미리 확인 한 후에 Quarto Pub으로 전자출판한다. 윈도우에서는 RStudio 내부 Terminal CLI를 사용하는 것을 권장한다.\n\nquarto.cmd preview\nquarto.cmd publish quarto-pub"
-  },
-  {
-    "objectID": "writing.html#재현가능-글쓰기",
-    "href": "writing.html#재현가능-글쓰기",
-    "title": "2  쿼토",
-    "section": "2.1 재현가능 글쓰기",
-    "text": "2.1 재현가능 글쓰기\n과학의 근본적인 원칙 중 하나는 연구의 결과가 독립적으로 재현가능해야 한다는 것이다. 이 원칙은 연구 타당성을 확인하고, 그 결과가 일반화 가능한지 검증하는 데 필수적이다. 그러나 2010년 전후, 다양한 학문 분야에서 재현할 수 없는 연구 결과가 다수 발표됨에 따라 과학 커뮤니티 내에서 큰 우려가 발생하였고, 이러한 현상을 재현성 위기(Reproducibity Crisis)라고 부르며, 과학연구 신뢰성을 크게 훼손시켰다.\n이 위기에 대응하여, 전 세계 연구자들과 전문가들은 재현가능한 연구 저작을 촉진하고 지원하기 위한 다양한 방안을 모색하기 시작했다. 연구방법론 표준화, 데이터 공유, 연구 소프트웨어 투명성 강화 등 다양한 활동이 들불처럼 일어났고, 기술 커뮤니티 형성과 더불어 다양한 도구와 플랫폼 개발을 통해 재현성 문제를 해결하고자 하는 움직임이 확산되고 있다.\n데이터 과학에서 재현성은 핵심적인 요소로 간주된다. 연구 결과의 신뢰성과 타당성을 검증하는 데 있어, 다른 연구자나 전문가들이 동일한 결과를 도출할 수 있도록 연구 과정을 투명하게 공유하는 것은 필수적이다. 이러한 맥락에서 R 팩키지는 재현가능한 데이터 분석 프로젝트를 지원하는 데 중요한 역할을 한다.\n\n\n\n그림 2.1: 재현가능한 과학기술 문서 제작과정\n\n\n특히, R 팩키지를 활용한 연구 개요서(research compendia)는 재현성을 강화하는 훌륭한 도구로 간주된다. 연구 개요서는 연구의 모든 요소(코드, 데이터, 출력 결과물, 환경 등)을 포괄적으로 담고 있어, 연구의 전체 과정을 투명하게 추적하고 검증할 수 있다. 한 사례로 그림 2.1 에 코드부터 단계별로 재현가능한 과학기술 문서 제작과정을 보여주고 있다."
-  },
-  {
-    "objectID": "writing.html#디지털-글쓰기",
-    "href": "writing.html#디지털-글쓰기",
-    "title": "2  쿼토",
-    "section": "2.2 디지털 글쓰기",
-    "text": "2.2 디지털 글쓰기\n글쓰기는 인류의 역사와 함께한 중요한 소통 도구로서, 그 방식과 형태는 시대별로 지속적으로 변화해왔다. 최근의 글쓰기 환경은 그 전보다 훨씬 복잡하고 다양한 요소를 요구한다. 과거에는 원고지에 텍스트를 작성하는 것만으로도 충분했다. 한글이나 영어로 이루어진 문장들은 감정을 전달하거나 사실을 나열하며, 이를 통해 독자와의 소통을 이루었다. 그러나 현대의 글쓰기 환경에서는 단순한 텍스트 정보 전달만으로는 부족하다. 이미지, 그래픽, 그리고 인터랙티브한 요소들이 텍스트와 함께 통합되어야 하며, 이를 통해 독자의 관심을 끌고 정보의 흡수를 증진시킨다.\n가독성 또한 중요한 고려사항이다. 디자인적인 측면에서 효과적인 글꼴 선택은 텍스트의 내용을 더욱 돋보이게 하며, 독자의 읽기 경험을 향상시킨다. 현대의 글쓰기는 단순한 정보 전달을 넘어서, 그 과정과 결과의 재현성에도 중점을 둔다. 특히 과학연구나 기술문서에서 두드러진다. 자동화 도구와 버전 관리 시스템의 도입을 통해 재현성을 지원하고, 글쓰기 효율성과 투명성을 동시에 높이고 있다.\n최근의 눈에 띄는 추세 중 하나는 인공지능 발전과 그에 따른 기계 저작물의 폭증을 들 수 있다. 기계가 작성한 텍스트를 포함한 콘텐츠가 인간 저자와 비슷하거나 오히려 생산 속도나 경제적인 면에서 확실한 우위를 보이면서 이에 대한 연구와 기술적 시도가 활발히 이루어지고 있다.\n\n\n\n현대의 글쓰기: 기술적 도전과 진화의 중심"
-  },
-  {
-    "objectID": "writing.html#latex-philosophy",
-    "href": "writing.html#latex-philosophy",
-    "title": "2  쿼토",
-    "section": "2.3 \\(\\LaTeX\\) 철학",
-    "text": "2.3 \\(\\LaTeX\\) 철학\n\\(\\LaTeX\\)은 한마디로 정의하게 되면 “논리적인 디자인”이라고 볼 수 있다. 저작물이 만들어지는 과정은 저작자가 원고를 손으로 쓰거나 타자기로 쳐서 출판사에 넘겨주면, 출판사의 편집디자이너는 원고를 보고 세부적인 출력형식을 결정하여 인쇄소에 넘긴다. 인쇄소는 이를 토대로 과거 식자공이 식자판을 만들었다면 현재는 컴퓨터가 파일을 만든다. \\(\\LaTeX\\) 과 \\(\\TeX\\) 이 하는 업무가 다소 차이가 난다. (김영록, 2017)\n\n\\(\\LaTeX\\) 은 편집디자이너에 해당되는 업무를 수행\n\\(\\TeX\\) 은 식자공에 해당되는 업무를 수행\n\n\n\n\n문서의 논리적 구조와 디자인\n\n\n컴퓨터를 활용하여 전자조판을 넘긴 이유는 문서를 좀 더 읽기 쉽게 만들어 독자에게 저작자의 생각을 잘 이해시키는 것이다. 이러한 목적을 달성하기 위해서는 문서의 디자인이 그 문서의 논리적 구조를 잘 반영시켜야 하고, 반대로 문서의 논리적 구조를 잘 반영시키기 위해서는 문서 디자이너가 문서의 논리적 구조를 잘 이해해야만 된다. \\(\\LaTeX\\)의 명령어는 기본적으로 문서의 논리적 구조를 기술하는 것이다. 이렇게 기술된 명령어를 \\(\\TeX\\)으로 전달하여 조판하게 되어 원하는 최종 결과물을 얻게 된다.\n\\(\\LaTeX\\)에서 채택하는 논리적 디자인의 가장 큰 장점은 글을 더 잘 쓰게 된다는 점에 있다. \\(\\LaTeX\\) 으로 글을 작성하게 되면 점점 \\(\\LaTeX\\)이 채택하고 있는 논리적 디자인에 맞추게 되고 이를 통해서 글쓰기 실력이 향상된다.\n아마도 \\(\\LaTeX\\)의 가장 큰 장점은 자동화에 있다. 시각적 디자인(Wysiwig)을 채택하여 작성한 문서를 다른 형식으로 변환하거나 문서의 수식의 일련번호를 로마자에서 아라비아 숫자로 모두 변경시키거나 표나 그래프 번호를 일괄번경하는 등 이러한 사례는 자주 발견된다. 특히, 국내외 저널에 제출할 논문을 \\(\\LaTeX\\) 으로 작성한 경우 템플릿만 바꾸면 쉽게 고품질 논문을 만들 수 있는데 워드를 이용하여 작성할 경우 수작업을 하게 되어 비생산적인 시간낭비도 크고 미려한 문서를 얻을 수도 없다.\n따라서, \\(\\LaTeX\\) 으로 글을 쓰게 되면 글쓰기 본질에 집중할 수 있어 저작자의 생각과 의견을 좀더 진솔하게 가감없이 독자에게 전달시킬 수 있게 된다."
-  },
-  {
-    "objectID": "writing.html#wysiwyg",
-    "href": "writing.html#wysiwyg",
-    "title": "2  쿼토",
-    "section": "2.4 시각적 디자인",
-    "text": "2.4 시각적 디자인\n문서를 논리적으로 디자인하는 반대 개념으로 있는 것이 위즈윅(WSYIWIG, What You See Is What You Get) 으로 대표적인 것이 아래한글, MS 워드와 같은 워드 프로세서다. 시각적 디자인을 하게 되면 논리적이지 못한 애매한 조판을 하기 쉽다. 또한, PDF 파일로도 출력을 할 때 미세하나마 출력물에 일관성이 실종되기도 한다."
-  },
-  {
-    "objectID": "writing.html#latex-engine",
-    "href": "writing.html#latex-engine",
-    "title": "2  쿼토",
-    "section": "2.5 \\(\\LaTeX\\) 엔진",
-    "text": "2.5 \\(\\LaTeX\\) 엔진\n\\(\\LaTeX\\) 을 실제 문서작성에 사용하기 위해서는 텍 배포판을 선택해야 하는데 KTUG 한국 \\(\\TeX\\) 사용자 그룹에서 \\(ko.TeX\\) Live를 추천하고 있다. 이유는 다음과 같다. (이호재, 2017)\n\npdfLaTeX, XeLaTeX, LuaLaTeX 3종 \\(\\LaTeX\\) 엔진이 있는데 XeLaTeX 이 유니코드 텍 엔진이라 CJK 동아시아권 언어를 잘 지원하고 트루타입 및 오픈타입 폰트도 자유롭게 선택할 수 있기 때문에 인기가 많다.\n운영체제에 따라 차이가 나지만 안정적으로 \\(\\LaTeX\\) 을 설치하여 실제 문서작업에 이용하기에는 \\(\\TeX\\) Live 가 MikTeX 보다 안정성이나 여러가지 사용자 지원 측면에서 낫다.\n\\(\\TeX\\) 소스파일에서 PDF 파일로 탐색을 하던가 반대로 PDF 파일에서 \\(\\TeX\\) 소스파일로 탐색을 하게 되는 기능을 TexStudio IDE를 활용하여 바로 가능하게 됨\n\n과거 latex+divps+pspdf 를 활용한 가장 전통적인 작업흐름을 가졌다. 즉, pstricks를 활용하여 PDF 파일을 제작하는 방식으로 시간이 오래 걸리고 이미지로 eps 파일만 사용한다는 한계가 있다. 또 다른 latex+dvipdfmx 작업흐름은 중간에 .dvi 파일을 생성하고 dvipdfmx를 사용하여 PDF 파일을 제작하는 방식이다. 마지막으로 pdfLaTeX, XeLaTeX, LuaLaTeX 을 활용한 작업흐름이 있는데 .tex 소스파일에서 .pdf 파일을 즉시 생성한다는 점에서 인기가 있다.\n이외에도 논문 제작이 아닌 문서를 제작하는 경우 한단계 더 들어가 memoir 혹은 oblivoir 클래스를 이용하는 것이 이미 검증된 문서 템플릿을 바탕으로 PDF 문서를 뽑아내는 신속한 방법이다.\n\n\n\n한글지원 LaTeX 엔진과 작업흐름\n\n\n\n\n\n\n김영록. (2017). 교육 현장에서의 텍의 활용. TeX: 조판, 그 이상의 가능성.\n\n\n이호재. (2017). 레이텍을 빨리 쓸 수 있는 방법. TeX: 조판, 그 이상의 가능성."
-  },
-  {
-    "objectID": "quarto.html#작업흐름",
-    "href": "quarto.html#작업흐름",
-    "title": "3  쿼토 소개",
-    "section": "4.1 작업흐름",
-    "text": "4.1 작업흐름\n기존 R .Rmd, 파이썬 .ipynb 확장자를 갖는 작업흐름이 .qmd 파일로 단일화되는 것이 가장 큰 특징이다. 따라서 마크다운으로 콘텐츠를 작성하고 프로그래밍 코드를 R, 파이썬, 자바스크립트, 쥴리아 로 작성하게 되면 자동으로 계산을 수행하고 결과물을 마크다운으로 변환시키기 때문에 후속 작업을 신경쓰지 않고 원하는 결과물을 얻을 수 있는 장점이 있다."
-  },
-  {
-    "objectID": "quarto.html#r-.rmd",
-    "href": "quarto.html#r-.rmd",
-    "title": "3  쿼토 소개",
-    "section": "4.2 R (.Rmd)",
-    "text": "4.2 R (.Rmd)"
-  },
-  {
-    "objectID": "quarto.html#파이썬-주피터",
-    "href": "quarto.html#파이썬-주피터",
-    "title": "3  쿼토 소개",
-    "section": "4.3 파이썬 (주피터)",
-    "text": "4.3 파이썬 (주피터)"
-  },
-  {
-    "objectID": "quarto.html#quarto---r",
-    "href": "quarto.html#quarto---r",
-    "title": "3  쿼토 소개",
-    "section": "4.4 Quarto - R",
-    "text": "4.4 Quarto - R"
-  },
-  {
-    "objectID": "quarto.html#quarto---파이썬",
-    "href": "quarto.html#quarto---파이썬",
-    "title": "3  쿼토 소개",
-    "section": "4.5 Quarto - 파이썬",
-    "text": "4.5 Quarto - 파이썬"
-  },
-  {
-    "objectID": "quarto.html#주요-기능",
-    "href": "quarto.html#주요-기능",
-    "title": "3  쿼토 소개",
-    "section": "4.6 주요 기능",
-    "text": "4.6 주요 기능\n\n\n\nFeature\nR Markdown\nQuarto\n\n\n\n\nBasic Formats\n\nhtml_document\npdf_document\nword_document\n\n\nhtml\npdf\ndocx\n\n\n\nBeamer\n\nbeamer_presentation\n\n\nbeamer\n\n\n\nPowerPoint\n\npowerpoint_presentation\n\n\npptx\n\n\n\nHTML Slides\n\nxaringan\nrevealjs\n\n\nrevealjs\n\n\n\nAdvanced Layout\n\ntufte\ndistill\n\n\nQuarto Article Layout\n\n\n\nCross References\n\nhtml_document2\npdf_document2\nword_document2\n\n\nQuarto Crossrefs\n\n\n\nWebsites & Blogs\n\nblogdown\ndistill\n\nQuarto Websites\nQuarto Blogs\n\n\nBooks\n\nbookdown\n\nQuarto Books\n\n\nInteractivity\nShiny Documents\nQuarto Interactive Documents\n\n\nPaged HTML\npagedown\nSummer 2022\n\n\nJournal Articles\nrticles\nSummer 2022\n\n\nDashboards\nflexdashboard |\nFall 2022"
-  },
-  {
-    "objectID": "quarto.html#위지윅-vs-위지윔",
-    "href": "quarto.html#위지윅-vs-위지윔",
-    "title": "3  쿼토 소개",
-    "section": "4.7 위지윅 vs 위지윔",
-    "text": "4.7 위지윅 vs 위지윔\n신속하고 빠르게 누구나 짧은 학습을 통해서 문서를 저작하고 출판할 수 있는 방식은 아래한글 혹은 MS워드 워드프로세서를 사용하는데 이는 위지위그(WYSIWYG: What You See Is What You Get, “보는 대로 얻는다”)에 기초한 것으로 문서 편집 과정에서 화면에 포맷된 낱말, 문장이 출력물과 동일하게 나오는 방식을 말한다. 위지윅의 대척점에 있는 것이 위지윔(WYSIWYM, What You See Is What You Mean)으로 대표적인 것인 \\(\\LaTeX\\) 으로 구조화된 방식으로 문서를 작성하면 컴파일을 통해서 최종 문서가 미려한 출판가능한 PDF, PS, DVI 등 확장자를 갖는 출판결과물을 얻을 수 있다.\n\n\n\n\n\n\n4.7.1 블로그 저작 소프트웨어\n개인용 컴퓨터가 보급되면서 아래한글과 같은 워드 프로세서를 사용해서 저작을 하는 것이 일반화되었지만 곧이어 인터넷이 보급되면서 웹에 문서를 저작하는 것이 이제는 더욱 중요하게 되었다. 전문 개발자가 아닌 일반인이 HTML, CSS, JavaScript를 학습하여 웹에 문서를 제작하고 출판하는 것은 난이도가 있다보니 워드프레스와 티스토리 같은 위지위그 패러다임을 채택한 저작도구가 사용되고 있으나 상대적으로 HTML, CSS, JavaScript을 조합한 방식과 비교하여 고급스러운 면과 함께 정교함에 있어 아쉬움이 있는 것도 사실이다.\n\n\n4.7.2 워드프레스와 티스토리\n\n\n\n\n\n\n\n4.7.3 HTML + CSS + 자바스크립트"
-  },
-  {
-    "objectID": "quarto.html#quarto",
-    "href": "quarto.html#quarto",
-    "title": "3  쿼토 소개",
-    "section": "4.8 Quarto",
-    "text": "4.8 Quarto\nQuarto 는 10년전부터 시작된 knitr 경험을 많이 녹여냈고 위지윔 패러다임에 기초를 하고 있다고 볼 수 있다. RStudio를 IDE로 Quarto CLI와 함께 출판물을 저작한다면 편집기에 있는 Visual 모드가 있어 위지윅 패러다임도 문서저작에 사용이 가능하다. 특히, R, 파이썬, SQL, 자바스크립트 등 컴퓨팅 엔진을 달리하여 문서에 그래프, 표, 인터랙티브 결과물도 함께 담을 수 있는 것은 커다란 장점이다."
-  },
-  {
-    "objectID": "quarto.html#quarto-해부",
-    "href": "quarto.html#quarto-해부",
-    "title": "3  쿼토 소개",
-    "section": "4.9 Quarto 해부",
-    "text": "4.9 Quarto 해부\nQuarto 저작은 크게 3가지 구성요소로 되어 있다.\n\n메타데이터: YAML\n텍스트: 마크다운\n코드: knitr, jupyter\n\n상기 구성요소를 조합하게 되면 다양한 데이터 사이언스 웹사이트를 비롯한 출판물을 제작하게 된다.\n\n\n\nQuarto 문서 구성요소\n\n\n\n4.9.1 YAML\n메타데이터는 YAML인데 GNU처럼 “Yet Another Markup Language” 혹은 “YAML Ain’t Markup Language”을 줄인단어다.\n\n키값\n---\nkey: value\n---\n\n\n\n4.9.2 출력옵션\n---\nformat: something\n---\n. . .\n---\nformat: pdf\n---\n---\nformat: pdf\n---\n---\nformat: revealjs\n---\n\n\n4.9.3 상세 출력옵션\n---\nformat: \n  html:\n    toc: true\n    code-fold: true\n---\n왜 YAML이 필요하게 된 것인가? YAML은 단순히 KEY: Value 에 불과한데 CLI를 이해하게 되면 왜 YAML을 사용하는 것이 유용한지 이해할 수 있다. 먼저 간단한 CLI 명령어를 YAML로 변환해보자.\n\n\nterminal\n\nquarto render document.qmd --to html\n\n---\nformat: pdf\n---\n한단계 더 들어가서 좀더 많은 선택옵션을 넣어 고급 기능을 넣는 사례를 살펴본다.\n\n\nterminal\n\nquarto render document.qmd --to html -M code fold:true\n\n---\nformat: \n  html:\n    toc: true\n    code-fold: true\n---"
-  },
-  {
-    "objectID": "quarto.html#마크다운",
-    "href": "quarto.html#마크다운",
-    "title": "3  쿼토 소개",
-    "section": "4.10 마크다운",
-    "text": "4.10 마크다운\n데이터 과학 문서 웹사이트에 “마크다운 기초”, “고급 마크다운”, “R 마크다운 실무” 를 참조한다."
-  },
-  {
-    "objectID": "quarto.html#코드",
-    "href": "quarto.html#코드",
-    "title": "3  쿼토 소개",
-    "section": "4.11 코드",
-    "text": "4.11 코드\nR, 파이썬, SQL, 자바스크립트 등 버그 없이 정상 동작하는 프로그램을 작성하여 포함시킨다."
-  },
-  {
-    "objectID": "quarto.html#yaml-코드편집",
-    "href": "quarto.html#yaml-코드편집",
-    "title": "3  쿼토 소개",
-    "section": "4.12 YAML 코드편집",
-    "text": "4.12 YAML 코드편집\nRStudio, VSCode IDE는 탭-자동완성(tab-completion)을 제공한다. 즉, 첫단어를 타이핑하고 탭을 연결하여 키보드를 치게되면 연관 명령어가 나와 선택하면 된다. 혹은 Ctrl + space 단축키를 치게되면 전체 명령어가 나온다.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHyde, A. (2021, 8월 16). Single Source Publishing - A investigation of what Single Source Publishing is and how this ’holy grail’ can be achieved. https://coko.foundation/articles/single-source-publishing.html"
-  },
-  {
-    "objectID": "quarto_install.html#윈도우-설치",
-    "href": "quarto_install.html#윈도우-설치",
-    "title": "\n4  쿼토 설치\n",
-    "section": "\n4.1 윈도우 설치",
-    "text": "4.1 윈도우 설치\nQuarto를 운영체제에 맞춰 설치한다. Quarto 는 기본적으로 CLI 라서 설치 후 제대로 설정이 되었는지는 환경설정에 경로를 등록해줘야 한다.\n\n4.1.1 Quarto 다운로드\n\n\n\n\n\n4.1.2 Quarto 설치\n\n\n\n\n\n4.1.3 Quarto CLI\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n윈도우 시스템의 경우 quarto.exe가 아니고 quarto.cmd 라 이에 유의한다. 즉, 제어판 → 환경 변수 설정 … 에서 \"C:\\Users\\사용자명\\AppData\\Local\\Programs\\Quarto\\bin 디렉토리를 등록한 후 quarto.cmd 을 사용해서 출판한다.\n\nSys.which(\"quarto\")\n                                                                  quarto \n\"C:\\\\Users\\\\STATKC~1\\\\AppData\\\\Local\\\\Programs\\\\Quarto\\\\bin\\\\quarto.cmd\""
-  },
-  {
-    "objectID": "quarto_install.html#설치방법",
-    "href": "quarto_install.html#설치방법",
-    "title": "\n4  쿼토 설치\n",
-    "section": "\n4.2 설치방법",
-    "text": "4.2 설치방법\nquarto 웹사이트에서 Quarto CLI 엔진을 설치한다. 통합개발도구(IDE)를 설치한다. Quarto CLI를 지원하는 IDE는 VS Code, RStudio, Jupyter, VIM/Emacs 와 같은 텍스트 편집기가 포함된다. IDE까지 설치를 했다면 literate programming 방식으로 마크다운과 프로그래밍 언어를 결합하여 출판을 위한 전문 문서 저작을 시작한다."
-  },
-  {
-    "objectID": "quarto_install.html#출판-플랫폼",
-    "href": "quarto_install.html#출판-플랫폼",
-    "title": "\n4  쿼토 설치\n",
-    "section": "\n4.3 출판 플랫폼",
-    "text": "4.3 출판 플랫폼\n데이터 사이언스 저작물을 제작하게 되면 그 다음 단계로 출판을 해야하는데 다양한 문서를 모아 프로젝트로 담아 Quarto Pub에 전자출판한다. 다른 출판 플랫폼으로 netlify, GitHub Pages, RStudio Connect가 많이 사용된다."
-  },
-  {
-    "objectID": "quarto_install.html#quarto-pub-출판-quarto-pub",
-    "href": "quarto_install.html#quarto-pub-출판-quarto-pub",
-    "title": "\n4  쿼토 설치\n",
-    "section": "\n4.4 Quarto Pub 출판 1\n",
-    "text": "4.4 Quarto Pub 출판 1\n\nQuarto Pub 웹사이트에 출판하는 방식은 Quarto CLI 를 사용한다. 필히 RStudio 내부 Terminal을 사용해서 Quarto Pub으로 출판한다.\n\nquarto.cmd publish quarto-pub\n? Authorize (Y/n) › \n❯ In order to publish to Quarto Pub you need to\n  authorize your account. Please be sure you are\n  logged into the correct Quarto Pub account in \n  your default web browser, then press Enter or \n  'Y' to authorize.\n\n첫번째 출판하게 되면 인증작업을 수행하고 나면 _publish.yml 파일이 하나 생성된다.\n\n- source: project\n  quarto-pub:\n    - id: 1fa3ab1f-c010-453a-aaf2-f462bd074a66\n      url: 'https://quartopub.com/sites/statkclee/quarto-ds'\n\n이제 모든 준비가 되었기 때문에 다음 명령어로 작성한 출판 문서를 포함한 웹사이트를 로컬에서 미리 확인 한 후에 Quarto Pub으로 전자출판한다. 윈도우에서는 RStudio 내부 Terminal CLI를 사용하는 것을 권장한다.\n\nquarto.cmd preview\nquarto.cmd publish quarto-pub"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "챗GPT 디지털 글쓰기",
-    "section": "",
-    "text": "1 글쓰기\n글쓰기(Writing)는 언어를 사용하여 생각이나 정보를 표현하는 과정이다. 글쓰기는 말하기와 다르게 물리적인 형태로 기록되어 남겨지며, 시간과 공간의 제약을 받지 않아 글쓰기 결과물로 다양한 (디지털) 문서형태로 담아 지적유산으로 후대에 남길 수 있다. 정보 전달, 감정 표현, 이야기 전달 등 글쓰기는 다양한 목적을 갖고 있으며 최근에는 기계와 의사소통을 위해 강조되고 있는 교육용 파이썬, 데이터 과학 및 과학연구를 위한 R 프로그래밍도 글쓰기 범주에 포함되고 있다.\n글쓰기는 정보 전달의 가장 기본적인 방법 중 하나로, 시간과 공간의 제약을 받지 않는 특징이 있다. 물론 글쓰기 결과물에 담긴 문서에는 그 시대 시간적 공간적 특성도 담겨있다.\n글쓰기를 통해 우리는 지식을 전달하고, 이야기를 전달하며, 감정을 표현할 수 있다. 또한 글쓰기를 통해 우리는 법률 문서와 계약서 등을 작성하여 사회적인 규칙과 약속을 정할 수 있고, 현대 사회를 지탱하는 과학기술지식도 글쓰기가 시작점이 된다. 인공지능 기술의 비약적인 발전으로 프로그래밍을 통한 코딩도 기계와 규칙을 정해 상호 커뮤니케이션하는 글쓰기로 부각되고 있다. 이러한 이유로 글쓰기는 매우 중요한 역할을 하고, 글쓰기 없이 고도화된 현대 사회생존은 불가능하다."
-  },
-  {
-    "objectID": "index.html#글쓰기-비교",
-    "href": "index.html#글쓰기-비교",
-    "title": "챗GPT 디지털 글쓰기",
-    "section": "1.1 글쓰기 비교",
-    "text": "1.1 글쓰기 비교\n디지털 글쓰기와 전통적인 글쓰기는 몇 가지 차이점이 있다. 디지털 글쓰기는 검색 엔진에 의해 쉽게 찾아질 수 있도록 설계되어 있으며, 다양한 미디어가 쉽게 통합될 수 있고, 디지털 글쓰기는 발행 후에도 언제든지 쉽게 조작할 수 있어 더 동적이고 생동감을 넣을 수도 있고, 깃(Git)과 같은 버전제어 도구와 연결시켜 글쓰기를 하게 되면 추적도 가능하여 재현가능한 글쓰기가 가능하게 된다. 디지털 글쓰기의 가장 큰 장점 중의 하나는 사람만이 저작을 하는 것이 아니라 기계가 저작한 프로그램도 글쓰기에 담을 수 있어 더욱 풍성한 글쓰기가 가능하다는 점이다.\n반면 전통적인 글쓰기는 발행 후 개발이 중단될 뿐만 아니라 한정된 지면(예를 들어 A4, B5)에 다양한 색상을 넣어 강조와 가독성을 높일 수 있으나 인쇄 난이도의 증가로 인해 비용도 급격히 증가하게 되고 무엇보다 정적인 정보만 담을 수 있어 최신 기술 흐름을 반영하는데 한계가 있다.\n또한 커뮤니케이션 관점에서 보면 디지털 글쓰기는 온라인 도구를 사용하여 작성 과정의 초기부터 광범위한 청중과 거의 실시간으로 텍스트를 공유할 수 있어 작성 과정이 공개적이고 다수다 저작과정에 별다른 장벽없이 참여할 수 있다는 점에서 전통적인 글쓰기가 소수의 저자가 집필을 마무리해야 후속 디자인 작업을 비롯한 후속 출판작업이 진행된다는 면에서 큰 차이가 있다. 특히 전통 글쓰기 결과물이 책과 같은 물리적 매체에 담기게 되면 이를 다시 디지털로 되돌리기 위해 광학문자인식(OCR) 과정을 거쳐야 하며 책속에 담긴 그래프, 표, 이미지 등 데이터는 별도 과정을 거쳐 디지털화 해야하는 한계도 명확하다."
-  },
-  {
-    "objectID": "index.html#챗gpt-디지털-글쓰기",
-    "href": "index.html#챗gpt-디지털-글쓰기",
-    "title": "챗GPT 디지털 글쓰기",
-    "section": "1.2 (챗GPT) 디지털 글쓰기",
-    "text": "1.2 (챗GPT) 디지털 글쓰기\n챗GPT가 이목을 집중하고 있는 가장 근본적인 이유는 디지털 글쓰기를 사람보다 신속하고 빠르게 하기 때문이다. 전통적인 글쓰기와 달리 디지털 글쓰기에는 다양한 종류의 글쓰기, 코딩, 추론 등이 포함되고 있다. “챗GPT 디지털 글쓰기”를 통해 챗GPT 출현 이전과 이후 확연히 달라진 글쓰기 방법에 관심을 가져야만 된다. 1\n\n\n\n챗GPT 디지털 글쓰기 진화과정\n\n\n\n\n\n\ngraph LR\n\n    chatGPT[\"챗GPT\"] --&gt; Contents\n\n    subgraph Contents[\"디지털 글쓰기\"]\n        direction LR\n        Writing[\"글감\"] --&gt; Table[\"표\"]\n        Writing --&gt; Graph[\"그래프\"]\n        Writing --&gt; Code[\"파이썬/R/SQL&lt;br&gt;코드\"]\n        Writing --&gt; Figure[\"그림\"]\n        Writing --&gt; Diagram[\"도형\"]        \n    end\n\n    chatGPT --&gt; Format\n    Contents --&gt; Format\n\n    subgraph Format[\"구조와 외양\"]\n        direction LR\n        Theme[\"구조와 외양\"] --&gt; Title[\"문서 구조\"]\n        Theme               --&gt; Formatting[\"문서 서식\"]\n        Theme               --&gt; Layout[\"문서 레이아웃\"]\n        Theme               --&gt; reference[\"문서 참조\"]\n    end\n\n    chatGPT --&gt; Deployment\n    Format --&gt; Deployment\n\n    subgraph Deployment[\"배포와 공유\"]\n        direction LR\n        Deploy --&gt; Reader[\"독자(사람)\"]\n        Deploy --&gt; Author[\"독자(저작자)\"]\n        Deploy --&gt; Machine[\"독자(기계)\"]\n    end\n\n\n    style chatGPT fill:#f5f5f5,stroke:#333,stroke-width:3px\n\n    style Contents fill:#059fff,stroke:#333,stroke-width:1px\n    style Format fill:#fc0303,stroke:#333,stroke-width:1px\n    style Deployment fill:#03fc30,stroke:#333,stroke-width:1px"
-  },
-  {
-    "objectID": "index.html#챗gpt-글감-작성",
-    "href": "index.html#챗gpt-글감-작성",
-    "title": "챗GPT 디지털 글쓰기",
-    "section": "1.3 챗GPT 글감 작성",
-    "text": "1.3 챗GPT 글감 작성\n사전 자료조사를 통해서 한국영화 10선 중 국제시장과 펭귄 데이터를 통해 흥행과 현재 우리가 당면한 ESG 문제를 다룬 뭉클한 감동을 주는 영화 시놉시스 작성을 목표로 하자.\n\n\n\n\ngraph LR\n\n    chatGPT[\"챗GPT\"] --&gt; Survey\n\n    subgraph Survey[\"자료 조사\"]\n        direction LR\n        Top10[\"한국영화&lt;br&gt;10선\"] --&gt; OpenAI[\"챗GPT\"]\n        Top10                    --&gt; Bard[\"구글 바드\"]\n        Top10                    --&gt; KOBIS[\"역대&lt;br&gt;박스오피스\"]\n    end\n\n    Survey --&gt; Synopsis\n\n    subgraph Synopsis[\"시놉시스\"]\n        direction LR\n        Movie_A[\"명량\"]     -.-&gt; New_Movie[\"새로운 영화&lt;br&gt;시놉시스\"]\n        Movie_B[\"극한직업\"] --&gt; New_Movie\n        Movie_C[\"신과함께\"] -.-&gt; New_Movie\n        Market[\"국제시장\"] --&gt; New_Movie        \n        Movie_E[\"...\"] -.-&gt; New_Movie\n        Penguins[\"펭귄 데이터\"] --&gt; New_Movie\n    end\n\n    Synopsis --&gt; Synopsis_fin[\"최종&lt;br&gt;시놉시스\"]\n\n    style chatGPT fill:#f5f5f5,stroke:#333,stroke-width:3px\n\n    style Survey fill:#059fff,stroke:#333,stroke-width:1px\n    style Synopsis fill:#fc0303,stroke:#333,stroke-width:1px\n    style Synopsis_fin fill:#03fc30,stroke:#333,stroke-width:1px\n\n    style Penguins fill:#03fc30,stroke:#333,stroke-width:3px\n    style Market fill:#03fc30,stroke:#333,stroke-width:3px"
-  },
-  {
-    "objectID": "index.html#구조와-외양",
-    "href": "index.html#구조와-외양",
-    "title": "챗GPT 디지털 글쓰기",
-    "section": "1.4 구조와 외양",
-    "text": "1.4 구조와 외양\n글감이 준비되면 그 다음으로 가독성을 높이고 효과적인 콘텐츠 제작을 위해서 그림, 표, 그래프, 수식, 도형 등 다양한 문서 객체 뿐만 아니라 색상을 달리하여 시각적인 효과도 극대화하여 고품질 문서를 저작하게 된다.\n\n마크다운 기본 글쓰기\n\n대중소 제목\n굵은 글씨, 밑줄, ..\n단락 구분\n\n그림 (Figure)\n그래프 (Graph)\n표 (Table)\n도형 (Diagrams)\n수식 (LaTeX)\n호출 블록 (Callout Blocks)\n기사 레이아웃 (Article Layout)\n학술저작 (Scholarly Writing)\n다단편집(Side-by-Side Layout)\n…"
-  },
-  {
-    "objectID": "index.html#배포와-공유",
-    "href": "index.html#배포와-공유",
-    "title": "챗GPT 디지털 글쓰기",
-    "section": "1.5 배포와 공유",
-    "text": "1.5 배포와 공유\n디지털 글쓰기 저작물을 제작하게 되면 그 다음 단계로 출판을 해야하는데 다양한 문서를 모아 프로젝트로 담아 Quarto Pub에 전자출판한다. 다른 출판 플랫폼으로 netlify, GitHub Pages, RStudio Connect가 많이 사용된다."
-  },
-  {
-    "objectID": "themes_ggplot.html#사용자-테마",
-    "href": "themes_ggplot.html#사용자-테마",
-    "title": "\n10  그래픽 테마\n",
-    "section": "\n10.1 사용자 테마",
-    "text": "10.1 사용자 테마\n설치한 한글 글꼴과 색상을 매칭하여 사용자 맞춤 테마(theme_penguin)을 생성하고 색상은 wesanderson 패키지에서 Darjeeling1 5가지 색상을 사용하여 시각화한다.\n\nextrafont::loadfonts(\"win\")\n\ntheme_penguin &lt;- function() {\n  \n  # ggthemes::theme_tufte() +\n  theme_minimal() +\n    \n  theme(\n      plot.title     = element_text(family = \"NanumSquare\", size = 18, face = \"bold\"),\n      plot.subtitle  = element_text(family = \"MaruBuri\", size = 13),\n      axis.title.x   = element_text(family = \"MaruBuri\"),\n      axis.title.y   = element_text(family = \"MaruBuri\"),\n      axis.text.x    = element_text(family = \"MaruBuri\", size = 11),\n      axis.text.y    = element_text(family = \"MaruBuri\", size = 11),\n      legend.title   = element_text(family = \"MaruBuri\", size=13),\n      plot.caption   = element_text(family = \"NanumSquare\", color = \"gray20\")\n  )\n}\n\ndarjeeling1_palette &lt;- wes_palette(\"Darjeeling1\", n = 5)\n\npenguins |&gt; \n  ggplot(aes(x = flipper_length_mm, y = body_mass_g)) +\n    geom_point(aes(color = species, shape = species), size = 3) +\n    geom_smooth(method = \"lm\", se = FALSE, color = \"black\")  +\n    labs(\n      title = \"물갈퀴 길이와 체중 회귀분석\",\n      subtitle = \"남극 파머 펭귄 데이터셋\",\n      x = \"물갈퀴 길이 (mm)\",\n      y = \"체중 (g)\",\n      color = \"펭귄종\",\n      caption = \"자료출처: palmerpenguins 패키지\"\n    ) +\n  guides(shape = \"none\") +\n  scale_color_manual(values =  darjeeling1_palette) +\n  theme_penguin()"
-  },
-  {
-    "objectID": "themes_ggplot.html#그래프-자동-설정",
-    "href": "themes_ggplot.html#그래프-자동-설정",
-    "title": "\n10  그래픽 테마\n",
-    "section": "\n10.2 그래프 자동 설정",
-    "text": "10.2 그래프 자동 설정\n작성한 테마를 매번 코드를 “복사하여 붙여넣기” 하여 사용하는 대신 .Rprofile 파일에 반영하여 매번 ggplot 시각화를 할 때 사용하는 방법을 살펴보자. usethis 패키지 edit_r_profile() 함수를 호출하여 앞서 작성한 테마를 반영한다.\n\nusethis::edit_r_profile()\n\ntheme_penguin() 테마를 ggplot2 패키지 theme_set()으로 설정하고 기본 색상을 정의하면 시각화 그래프에 반영하여 사용할 수 있다.\n\nsuppressWarnings(suppressMessages({\n\n  extrafont::loadfonts(\"win\")\n\n\n  ## 테마 (글꼴) -----------------------------\n  theme_penguin &lt;- function() {\n\n    # ggthemes::theme_tufte() +\n    ggplot2::theme_minimal() +\n\n      ggplot2::theme(\n        plot.title     = ggplot2::element_text(family = \"NanumSquare\", size = 18, face = \"bold\"),\n        plot.subtitle  = ggplot2::element_text(family = \"MaruBuri\", size = 13),\n        axis.title.x   = ggplot2::element_text(family = \"MaruBuri\"),\n        axis.title.y   = ggplot2::element_text(family = \"MaruBuri\"),\n        axis.text.x    = ggplot2::element_text(family = \"MaruBuri\", size = 11),\n        axis.text.y    = ggplot2::element_text(family = \"MaruBuri\", size = 11),\n        legend.title   = ggplot2::element_text(family = \"MaruBuri\", size=13),\n        plot.caption   = ggplot2::element_text(family = \"NanumSquare\", color = \"gray20\")\n      )\n  }\n\n  ## 색상\n  ### 웨스 앤더슨\n  color_palette &lt;- wesanderson::wes_palette(\"Darjeeling1\", n = 5)\n\n  ggplot2::theme_set(theme_penguin())\n\n}))\n\n.Rprofile 파일에 ggplot() 사용자 정의 테마가 지정되어 있기 때문에 새로 R 세션을 시작하면 theme_penguin() 테마 및 웨스 앤더스 color_palette 색상 팔레트도 사용할 수 있다.\n\nlibrary(tidyverse)\nlibrary(palmerpenguins)\n\npenguins_theme_gg &lt;- penguins |&gt; \n  ggplot(aes(x = flipper_length_mm, y = body_mass_g)) +\n    geom_point(aes(color = species, shape = species), size = 3) +\n    geom_smooth(method = \"lm\", se = FALSE, color = \"black\")  +\n    labs(\n      title = \"물갈퀴 길이와 체중 회귀분석\",\n      subtitle = \"남극 파머 펭귄 데이터셋\",\n      x = \"물갈퀴 길이 (mm)\",\n      y = \"체중 (g)\",\n      color = \"펭귄종\",\n      caption = \"자료출처: palmerpenguins 패키지\"\n    ) +\n  guides(shape = \"none\") +\n  scale_color_manual(values =  color_palette) +\n  theme_penguin()\n\nragg::agg_jpeg(\"images/penguins_theme_gg.jpg\",\n              width = 10, height = 7, units = \"in\", res = 600)\npenguins_theme_gg\ndev.off()\n\n\n\n펭귄 데이터 사용자 테마 적용 그래프"
-  },
-  {
-    "objectID": "themes_gt.html#사용자-테마",
-    "href": "themes_gt.html#사용자-테마",
-    "title": "\n11  표 테마\n",
-    "section": "\n11.1 사용자 테마",
-    "text": "11.1 사용자 테마\n기본 표 테마에 글꼴, 텍스트 크기, 색상을 넣어 전문적으로 표를 작성한다.\n\npenguins_theme_gt &lt;- penguins_gt |&gt; \n  gt_theme_538() |&gt; \n  tab_options(\n    # column_labels.background.color = '#1E61B0', # R logo 파란색\n    table.font.names =\"NanumSquare\",    \n    heading.title.font.size = px(26),\n    heading.subtitle.font.size = px(16),    \n    heading.background.color = \"transparent\", \n    column_labels.font.weight = 'bold',\n    table_body.hlines.width = px(0),\n    data_row.padding = px(6),\n    heading.align = 'center',\n    stub.background.color = \"#ffffff\",\n    stub.font.weight = \"bold\",\n    source_notes.font.size = px(10),\n    row.striping.include_table_body = TRUE\n  ) |&gt; \n  cols_align( align = \"center\", columns = where(is.numeric)) |&gt; \n  cols_align( align = \"auto\", columns = where(is.character)) |&gt; \n  ## 글꼴 달리 적용\n  tab_style(\n    style = cell_text(\n      font = \"MaruBuri\",      \n      weight = 'bold' \n    ),\n    locations = cells_title(groups = 'subtitle')\n  ) |&gt; \n  tab_style(\n    style = cell_text(\n      font = \"MaruBuri\",      \n      weight = 'bold' \n    ),\n    locations = cells_body()\n  ) |&gt; \n  tab_style(\n    style = cell_text(\n      font = \"MaruBuri\",      \n      weight = 'bold' \n    ),\n    locations = cells_column_labels()\n  ) |&gt; \n  tab_style(\n    style = cell_text(\n      font = \"MaruBuri\",      \n    ),\n    locations = cells_source_notes()\n  )\n\npenguins_theme_gt |&gt; \n  gtsave(filename = \"images/penguins_theme_gt.png\")\n\n\n\ngt 사용자 정의 테마 적용 표\n\n\ngt_theme_hangul &lt;- function(gt_tbl) {\n  \n  # Grab number of rows of data from gt object\n  n_rows &lt;- nrow(gt_tbl$`_data`)\n  \n  gt_tbl |&gt; \n    gt_theme_538() |&gt; \n    tab_options(\n      # column_labels.background.color = '#1E61B0', # R logo 파란색\n      table.font.names =\"NanumSquare\",    \n      heading.title.font.size = px(26),\n      heading.subtitle.font.size = px(16),    \n      heading.background.color = \"transparent\", \n      column_labels.font.weight = 'bold',\n      table_body.hlines.width = px(0),\n      data_row.padding = px(6),\n      heading.align = 'center',\n      stub.background.color = \"#ffffff\",\n      stub.font.weight = \"bold\",\n      source_notes.font.size = px(10),\n      row.striping.include_table_body = FALSE\n    ) |&gt; \n    cols_align( align = \"center\", columns = where(is.numeric)) |&gt; \n    cols_align( align = \"auto\", columns = where(is.character)) |&gt; \n    ## 글꼴 달리 적용\n    tab_style(\n      style = cell_text(\n        font = \"MaruBuri\",      \n        weight = 'bold' \n      ),\n      locations = cells_title(groups = 'subtitle')\n    ) |&gt; \n    tab_style(\n      style = cell_text(\n        font = \"MaruBuri\",      \n        weight = 'bold' \n      ),\n      locations = cells_body()\n    ) |&gt; \n    tab_style(\n      style = cell_text(\n        font = \"MaruBuri\",      \n        weight = 'bold' \n      ),\n      locations = cells_column_labels()\n    ) |&gt; \n    tab_style(\n      style = cell_text(\n        font = \"MaruBuri\",      \n      ),\n      locations = cells_source_notes()\n    ) |&gt; \n    tab_style(\n      style = cell_fill(color = 'grey90'),\n      locations = cells_body(rows = seq(1, n_rows, 2))\n    )    \n}\n\npenguins_gt |&gt; \n  gt_theme_hangul()\n\n\n\n\n\n\n남극 펭귄 서식섬과 종 빈도표\n    \n\n\npalmerpenguins 데이터 패키지\n    \n\n\n      Biscoe\n      Dream\n      Torgersen\n    \n\n\n\nAdelie\n44\n56\n52\n\n\nChinstrap\n0\n68\n0\n\n\nGentoo\n124\n0\n0\n\n\n합계\n168\n124\n52\n\n\n\n자료출처: penguins 데이터셋"
-  },
-  {
-    "objectID": "themes_gt.html#표-자동-설정",
-    "href": "themes_gt.html#표-자동-설정",
-    "title": "\n11  표 테마\n",
-    "section": "\n11.2 표 자동 설정",
-    "text": "11.2 표 자동 설정\n작성한 테마를 매번 코드를 “복사하여 붙여넣기” 하여 사용하는 대신 .Rprofile 파일에 반영하여 매번 gt 표 제작에 테마를 사용하는 방법을 살펴보자. usethis 패키지 edit_r_profile() 함수를 호출하여 앞서 작성한 테마를 반영한다.\n\nusethis::edit_r_profile()\n\ngt_theme_hangul() 테마를 gt 표 객체에 반영한다.\n\nlibrary(gt)\nlibrary(gtExtras)\n\ngt_theme_hangul &lt;- function(gt_tbl) {\n\n  # Grab number of rows of data from gt object\n  n_rows &lt;- nrow(gt_tbl$`_data`)\n\n  gt_tbl |&gt;\n    gt_theme_538() |&gt;\n    tab_options(\n      # column_labels.background.color = '#1E61B0', # R logo 파란색\n      table.font.names =\"NanumSquare\",\n      heading.title.font.size = px(26),\n      heading.subtitle.font.size = px(16),\n      heading.background.color = \"transparent\",\n      column_labels.font.weight = 'bold',\n      table_body.hlines.width = px(0),\n      data_row.padding = px(6),\n      heading.align = 'center',\n      stub.background.color = \"#ffffff\",\n      stub.font.weight = \"bold\",\n      source_notes.font.size = px(10),\n      row.striping.include_table_body = FALSE\n    ) |&gt;\n    cols_align( align = \"center\", columns = where(is.numeric)) |&gt;\n    cols_align( align = \"auto\", columns = where(is.character)) |&gt;\n    ## 글꼴 달리 적용\n    tab_style(\n      style = cell_text(\n        font = \"MaruBuri\",\n        weight = 'bold'\n      ),\n      locations = cells_title(groups = 'subtitle')\n    ) |&gt;\n    tab_style(\n      style = cell_text(\n        font = \"MaruBuri\",\n        weight = 'bold'\n      ),\n      locations = cells_body()\n    ) |&gt;\n    tab_style(\n      style = cell_text(\n        font = \"MaruBuri\",\n        weight = 'bold'\n      ),\n      locations = cells_column_labels()\n    ) |&gt;\n    tab_style(\n      style = cell_text(\n        font = \"MaruBuri\",\n      ),\n      locations = cells_source_notes()\n    ) |&gt;\n    tab_style(\n      style = cell_fill(color = 'grey90'),\n      locations = cells_body(rows = seq(1, n_rows, 2))\n    )\n}\n\n.Rprofile 파일에 gt 사용자 정의 테마가 지정되어 있기 때문에 새로 R 세션을 시작하면 gt_theme_hangul() 테마를 사용할 수 있다.\n\noriginal_penguins_gt &lt;- penguins |&gt; \n  drop_na() |&gt; \n  count(species, sex) |&gt; \n  pivot_wider(names_from = sex, values_from = n, values_fill = 0) |&gt; \n  janitor::adorn_totals(where = \"col\", name = \"합계\") |&gt; \n  rename(펭귄종 = species, 암컷 = female, 수컷 = male) |&gt; \n  as_tibble() |&gt; \n  gt(rowname_col = \"펭귄종\") |&gt; \n    tab_header(\n      title = md(\"남극 펭귄 **암수와 종** 빈도표\"),\n      subtitle = md(\"`palmerpenguins` 데이터 패키지\")\n    ) |&gt; \n    grand_summary_rows(\n      columns = c(펭귄종, 암컷, 수컷),\n      fns = list(\n        '합계' = ~sum(.) \n      ),\n      fmt = ~ fmt_number(., use_seps = FALSE, decimals = 0),\n      missing_text = '-'\n    )  |&gt; \n    cols_align(\"center\") |&gt; \n    opt_row_striping() |&gt; \n    tab_source_note(\n      source_note = md(\"자료출처: `penguins` 데이터셋\")\n  )\n\ntheme_penguins_gt &lt;- original_penguins_gt |&gt; \n  gt_theme_hangul()\n\ngt_theme_hangul_penguins &lt;- gtExtras::gt_two_column_layout(list(original_penguins_gt, theme_penguins_gt))\n\ngt_theme_hangul_penguins |&gt; \n  gtsave_extra(\"images/gt_theme_hangul_penguins.png\", expand = 1)\n\n\n\ngt_theme_hangul() 테마 적용 전후"
-  },
-  {
-    "objectID": "templates.html",
-    "href": "templates.html",
-    "title": "12  템플릿",
-    "section": "",
-    "text": "“템플릿(template)”과 “테마(theme)”는 웹, 디자인, 문서 영역에서 주로 사용되는 용어로, 각각 다른 맥락과 목적을 갖는다. 재사용 가능한 디자인 구조를 제공하여 사용자에게 일관된 경험을 제공하여 문서저작, 디자인 및 개발 시간을 단축시킬 뿐만 아니라 디자인과 레이아웃 표준화를 지원한다.\n템플릿이 문서, 특정 페이지나 컴포넌트의 레이아웃을 위주로 정의하는 반면, 테마는 전체 문서, 웹사이트, 애플리케이션의 디자인과 스타일을 총체적으로 지칭한다는 면에서 차이가 있다."
+    "title": "\n9  글꼴\n",
+    "section": "\n9.7 작업흐름",
+    "text": "9.7 작업흐름\n네이버 나눔스퀘어 글꼴을 로컬 컴퓨터에 다운로드 받아 모든 사용자용으로 설치한다.\n\n\n윈도우 나눔스퀘어 글꼴 설치\n\nfs 패키지 file_exists() 함수로 NanumSquare.ttf 파일이 존재함을 확인한다. 그리고 나서, font_import() 명령어로 글꼴을 설치한다. 경로(path =)를 지정하는 방식과 pattern =을 지정하는 방식이 있는데 둘 중 글꼴을 설치되는 방식으로 진행한다.\n\nlibrary(extrafont)\n\nfs::file_exists(\"C:/Windows/Fonts/NanumSquare.ttf\")\n\n# font_import(paths = \"C:/Windows/Fonts/NanumSquare.ttf\")\nfont_import(pattern = \"NanumSquare.ttf\", prompt = FALSE)\n\n동일한 방식으로 마루부리 글꼴도 설치한다.\n\nfont_import(pattern = \"MaruBuri-ExtraLight.ttf\", prompt = FALSE)\nfont_import(pattern = \"MaruBuri-Regular.ttf\", prompt = FALSE)\nfont_import(pattern = \"MaruBuri-Bold.ttf\", prompt = FALSE)\nfont_import(pattern = \"MaruBuri-Light.ttf\", prompt = FALSE)\n\n\nlibrary(tidyverse)\nlibrary(palmerpenguins)\n\nextrafont::loadfonts(\"win\", quiet = TRUE)\n\navailable_fonts &lt;- extrafont::fonts()\n\navailable_fonts[str_detect(available_fonts, \"Maru|Nanum\")]\n\n [1] \"NanumGothic\"                 \"NanumGothicExtraBold\"       \n [3] \"NanumGothic Light\"           \"MaruBuri Bold\"              \n [5] \"MaruBuri Light\"              \"MaruBuri Regular\"           \n [7] \"MaruBuri SemiBold\"           \"NanumBarunGothic\"           \n [9] \"NanumBarunGothic Light\"      \"NanumBarunGothic UltraLight\"\n[11] \"NanumBarunpen\"               \"NanumBarunpen Bold\"         \n[13] \"NanumSquare_ac Bold\"         \"Nanum Brush Script\"         \n[15] \"Nanum GaRamYeonGgoc\"         \"NanumMyeongjo\"              \n[17] \"NanumMyeongjoExtraBold\"      \"Nanum Pen Script\"           \n[19] \"NanumSquare_ac ExtraBold\"    \"NanumSquare_ac Light\"       \n[21] \"NanumSquare_ac\"              \"NanumSquare Bold\"           \n[23] \"NanumSquare ExtraBold\"       \"NanumSquare Light\"          \n[25] \"NanumSquare\"                \n\nggplot_fonts_gg &lt;- penguins |&gt; \n  ggplot(aes(x = flipper_length_mm, y = body_mass_g)) +\n    geom_point(aes(color = species, shape = species), size = 3) +\n    geom_smooth(method = \"lm\", se = FALSE, color = \"black\")  +\n    labs(\n      title = \"물갈퀴 길이와 체중 회귀분석\",\n      subtitle = \"남극 파머 펭귄 데이터셋\",\n      x = \"물갈퀴 길이 (mm)\",\n      y = \"체중 (g)\",\n      color = \"펭귄종\",\n      caption = \"자료출처: palmerpenguins 패키지\"\n    ) +\n    theme_minimal()  +\n    theme(\n      plot.title = element_text(family = \"NanumSquare\", size = 18, face = \"bold\"),\n      plot.subtitle  = element_text(family = \"MaruBuri\", size = 13),\n      axis.title.x  = element_text(family = \"MaruBuri\"),\n      axis.title.y  = element_text(family = \"MaruBuri\"),\n      axis.text.x   = element_text(family = \"MaruBuri\", size = 11),\n      axis.text.y   = element_text(family = \"MaruBuri\", size = 11),\n      legend.title  = element_text(family = \"MaruBuri\", size=13),\n      plot.caption = element_text(family = \"NanumSquare\", color = \"gray20\")\n    ) +\n    annotate(\n      \"text\", x = 200, y = 5000, label = \"회귀분석 모형\", \n      hjust = 0.5, size = 8, color = \"steelblue\",\n      family = \"MaruBuri\", face = \"bold\"\n    ) +\n    guides(shape = \"none\")\n\nggplot_fonts_gg\n\n\n\n\n\n\n# ragg::agg_jpeg(\"images/ggplot_fonts_gg.jpeg\",\n#               width = 10, height = 7, units = \"in\", res = 600)\n# ggplot_fonts_gg\n# dev.off()\n\n\n\nggplot 다른 한글 글꼴 적용"
   },
   {
     "objectID": "about_book.html",
@@ -607,5 +75,124 @@
     "title": "\n18  책과 편집 용어\n",
     "section": "\n18.3 책 외부 (II) 명칭",
     "text": "18.3 책 외부 (II) 명칭\n책 외부 명칭(II)을 살펴보면 다음과 같다.\n\ncover_ii_tbl &lt;- table_cells %&gt;% \n  filter(doc_index == 116) %&gt;% \n  select(text, row_id, cell_id) %&gt;% \n  pivot_wider(names_from = cell_id, values_from = text) %&gt;% \n  select(-row_id) \n\ncover_second_tbl &lt;- cover_ii_tbl %&gt;% \n  set_names(cover_tbl %&gt;% slice(1)) %&gt;% \n  filter(row_number() != 1) %&gt;% \n  select(1,2,4,3) \n\ncover_second_tbl %&gt;% \n  reactable::reactable(\n    defaultColDef = colDef(\n    header = function(value) gsub(\".\", \" \", value, fixed = TRUE),\n    cell = function(value) format(value, nsmall = 1),\n    align = \"center\",\n    minWidth = 70,\n    headerStyle = list(background = \"#f7f7f8\")\n    ),\n    columns = list(\n    순 = colDef(minWidth = 40),   # 50% width, 200px minimum\n    `용 어` = colDef(minWidth = 100),   # 25% width, 100px minimum\n    `대응 영어` = colDef(minWidth = 150),   # 25% width, 100px minimum    \n    `용어 정의` = colDef(minWidth = 500)  # 25% width, 100px minimum\n    ),\n    bordered = TRUE,\n    highlight = TRUE,\n    filterable = TRUE\n  )\n\n\n\n\n\n워드 파일에서 이미지를 추출하는 방식은 워드 파일 압축을 풀면된다. 그렇게 하기 위해서 KSX0003_20091228.docx 파일명을 KSX0003_20091228.zip으로 바꾼 후에 압축을 풀어준다. 그러면 word/media 디렉토리에 이미지가 저장된다."
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "참고문헌",
+    "section": "",
+    "text": "Hyde, A. (2021, August 16). Single source publishing - a\ninvestigation of what single source publishing is and how this ’holy\ngrail’ can be achieved. https://coko.foundation/articles/single-source-publishing.html\n\n\n국가기술표준원. (2009, December 28). 책의 명칭 및 편집 일반\n용어. https://www.standard.go.kr/KSCI/standardIntro/getStandardSearchView.do?menuId=919&topMenuId=502&upperMenuId=503&ksNo=KSX0003&tmprKsNo=KSX0003&reformNo=03\n\n\n김영록. (2017). 교육 현장에서의 텍의 활용. TeX: 조판, 그 이상의\n가능성.\n\n\n이호재. (2017). 레이텍을 빨리 쓸 수 있는 방법. TeX: 조판, 그\n이상의 가능성."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "챗GPT 디지털 글쓰기",
+    "section": "",
+    "text": "1 글쓰기\n글쓰기(Writing)는 언어를 사용하여 생각이나 정보를 표현하는 과정이다. 글쓰기는 말하기와 다르게 물리적인 형태로 기록되어 남겨지며, 시간과 공간의 제약을 받지 않아 글쓰기 결과물로 다양한 (디지털) 문서형태로 담아 지적유산으로 후대에 남길 수 있다. 정보 전달, 감정 표현, 이야기 전달 등 글쓰기는 다양한 목적을 갖고 있으며 최근에는 기계와 의사소통을 위해 강조되고 있는 교육용 파이썬, 데이터 과학 및 과학연구를 위한 R 프로그래밍도 글쓰기 범주에 포함되고 있다.\n글쓰기는 정보 전달의 가장 기본적인 방법 중 하나로, 시간과 공간의 제약을 받지 않는 특징이 있다. 물론 글쓰기 결과물에 담긴 문서에는 그 시대 시간적 공간적 특성도 담겨있다.\n글쓰기를 통해 우리는 지식을 전달하고, 이야기를 전달하며, 감정을 표현할 수 있다. 또한 글쓰기를 통해 우리는 법률 문서와 계약서 등을 작성하여 사회적인 규칙과 약속을 정할 수 있고, 현대 사회를 지탱하는 과학기술지식도 글쓰기가 시작점이 된다. 인공지능 기술의 비약적인 발전으로 프로그래밍을 통한 코딩도 기계와 규칙을 정해 상호 커뮤니케이션하는 글쓰기로 부각되고 있다. 이러한 이유로 글쓰기는 매우 중요한 역할을 하고, 글쓰기 없이 고도화된 현대 사회생존은 불가능하다."
+  },
+  {
+    "objectID": "index.html#디지털-문서-제작-패러다임",
+    "href": "index.html#디지털-문서-제작-패러다임",
+    "title": "챗GPT 디지털 글쓰기",
+    "section": "1.1 디지털 문서 제작 패러다임",
+    "text": "1.1 디지털 문서 제작 패러다임\n신속하고 빠르게 누구나 짧은 학습을 통해서 문서를 저작하고 출판할 수 있는 방식으로 인기를 얻은 아래한글 혹은 MS워드 워드프로세서를 사용하는데 이는 위지위그(WYSIWYG: What You See Is What You Get, “보는 대로 얻는다”)에 기초한 것으로 문서 편집 과정에서 화면에 포맷된 낱말, 문장이 출력물과 동일하게 나오는 방식이다. 이전 타자기 대비 경쟁력이 있었고 이를 바탕으로 문서편집기 소프트웨어가 대세로 떠올랐다.\n위지윅의 대척점에 있는 것이 위지윔(WYSIWYM, What You See Is What You Mean)으로 대표적인 것인 \\(LaTeX\\) 으로 구조화된 방식으로 문서를 작성하면 컴파일을 통해서 최종 문서가 미려한 출판가능한 PDF, PS, DVI 등 확장자를 갖는 출판결과물을 얻을 수 있다.\n\\(LaTeX\\)이 갖는 장점은 이제 프로그래밍 코드(R / 파이썬 / SQL / 쉘스크립트 / 자바스크립트 등)을 문서저작에 포함되며 literate programming 패러다임이 대세로 떠올랐고 현존하는 다양한 문서저작 문제에 대한 응답으로 자리를 매김하고 있다. 1"
+  },
+  {
+    "objectID": "index.html#문서로-보는-민주주의",
+    "href": "index.html#문서로-보는-민주주의",
+    "title": "챗GPT 디지털 글쓰기",
+    "section": "1.2 문서로 보는 민주주의",
+    "text": "1.2 문서로 보는 민주주의\n대한민국은 권력을 입법권, 행정권, 사법권으로 나눠 권력을 나누었다. 세부적으보 보면 다소 차이는 있겠지만 법을 만드는 것은 결국 문서를 저작하는 것이고 대한민국 정부는 법에 담긴 문서를 실행하는 기관이고 사법부는 법 문서를 해석하는 기관으로 볼 수 있다. 결국 민주주의는 문서를 기반으로 존립하는 사회체계라고 볼 수 있다. 최근 들어 인공지능이 부상하면서 문서저작을 보조하던 수단에서 이제는 사람보다 더 나은 통찰력을 보이는 분야도 속속 등장하고 있다. 이런 측면에서 인공지능 기계를 현 민주주의 체계 내에 어떻게 녹여낼 것인지 관심이 높아지고 있다."
+  },
+  {
+    "objectID": "index.html#디지털-문서-저작",
+    "href": "index.html#디지털-문서-저작",
+    "title": "챗GPT 디지털 글쓰기",
+    "section": "1.3 디지털 문서 저작",
+    "text": "1.3 디지털 문서 저작\n과거 둘로 쪼개져서 과학기술 문서저작 즉 논문 등은 \\(LaTeX\\) 기반 위지윔(WYSIWYM) 패러다임이 확고한 자리를 잡았지만 위지위그(WYSIWYG) 패러다임 기반 아래한글 워드와 같은 문서저작편집기 성능이 높아지면서 사실상 둘 사이 경계도 허물어졌다.\n하지만, 과학기술 논문 저작에 진실성, 재현성 등이 강조되고 빅데이터 기반 과학연구가 큰 성과를 보이고 프로그래밍이 과학기술 논문 저작에 주요한 역할을 하면서 이런 추세를 반영한 과학기술 저작 패러다임이 떠오르고 있다.\n이러한 추세를 반영한 도구의 발전도 함께 이뤄지면서 과학기술 저작은 물론 거의 모든 문서 저작분야에 큰 변화가 일어나고 있다."
+  },
+  {
+    "objectID": "index.html#과학문서-저작",
+    "href": "index.html#과학문서-저작",
+    "title": "챗GPT 디지털 글쓰기",
+    "section": "1.4 과학문서 저작",
+    "text": "1.4 과학문서 저작\n\n심각한 현재상황\n마크다운 기초\n고급 마크다운\n문서저작 실무\n수학 수식"
+  },
+  {
+    "objectID": "index.html#사례-한국-r-컨퍼런스2021",
+    "href": "index.html#사례-한국-r-컨퍼런스2021",
+    "title": "챗GPT 디지털 글쓰기",
+    "section": "1.5 사례: 한국 R 컨퍼런스(2021)",
+    "text": "1.5 사례: 한국 R 컨퍼런스(2021)\n\n컨퍼런스 웹사이트\n컨퍼런스 전 기획\n\n컨퍼런스 포스터\n컨퍼런스 후원\n\n컨퍼런스 본 행사\n\n발표 슬라이드\n발표 템플릿\n\n컨퍼런스 후 설문\n\n설문조사 보고서\n\n기타\n\n탄소중립 신재생 에너지 캠프"
+  },
+  {
+    "objectID": "dw_fonts.html#font-classification",
+    "href": "dw_fonts.html#font-classification",
+    "title": "\n15  한글 글꼴\n",
+    "section": "\n15.1 글꼴 분류 1\n",
+    "text": "15.1 글꼴 분류 1\n\n\n\n활자(Type)는 본래는 글자를 만드는 데 사용된 나무 또는 금속 조각을 일컫는 말이었습니다.\n\n타이포그래피(Typography): 인쇄된 텍스트의 스타일과 모양을 가리키는 디자인 용어입니다.\n\n서체(또는 글꼴 모음, Typeface): 글자 및 기호가 서로 비슷한 특징을 가지도록 디자인된 문자로 타임즈(Times), 에어리얼(Arial) 및 미니언(Minion)을 들 수 있습니다.\n\n글꼴(Font): 서체의 특정 스타일을 지칭하는데, 예를 들어, 에어리얼 블랙(Arial Black)은 에어리얼 서체 중 한 글꼴이며, 미니언 프로 이탤릭체(Minion Pro Italic)는 미니언 글꼴 모음에 포함되어 있는 글꼴이다.\n\n글꼴(Font)는 다양하지만 크게 다음 5가지로 영문의 경우 분류된다. 글꼴은 기본적으로 세리프(serif)와 산세리프(sans serif)의 2가지 스타일로 구분되는데 세리프는 글자의 획 끝에 작은 삐침이 있는 글꼴이며 산스(sans)은 라틴어로 없다는 뜻이기 때문에 삐침이 없는 글꼴을 지칭합니다.\n\nserif\nsans serif\nscript\nmonospaced\ndisplay\n\n가장 쉽게 분류되는 monospaced 글꼴은 코드를 작성하기 위해 등간격을 갖는 글꼴로 consolas, D2 Coding이 대표적이다. 산세리프(Sans serif)와 세리프(Serif) 글꼴은 본문에 사용하기 적합하지만, 좀더 시선을 끄는 디자인을 위해서는 조금 더 매력적인 디스플레이(Display) 혹은 스크립트(Script)을 선택하고, 제목(Title)에는 산세리프 글꼴을 사용하는 것이 일반적이다.\n\n\n출판문서 글꼴 분류\n\n\n15.1.1 typeface vs font\n\ntypeface는 서체로 번역되고 font는 글꼴로 번역된다. 하나의 typeface에 다수 font가 포함될 수 있다. 팬그램(Pangram)은 ’모든 글자’라는 뜻으로 주어진 모든 문자를 적어도 한 번 이상 사용하여 만든 문장을 뜻한다. 팬그램은 로렘 입숨처럼 글꼴 샘플을 보여주거나 장비를 테스트하는 데 사용된다. 영어 팬그램으로 가장 유명한 ‘The quick brown fox jumps over the lazy dog’는 19세기부터 사용되어 왔다. 유사하게 한글에서는 “다람쥐 헌 쳇바퀴에 타고파”가 사용되고 있다.\n\n15.1.2 파일폰트와 웹폰트\n데이터 사이언스 출판을 위해 필요한 글꼴을 반영하는 방식은 크게 두가지로 나뉜다. 하나는 전통적인 방식으로 운영체제에 내장된 글꼴을 문서제작에 글꼴을 반영하는 방식이고, 다른 하나는 웹폰트를 사용하는 방식이다. 웹폰트를 사용하게 될 경우 장점은 출판문서가 동작되는 컴퓨터에 해당 글꼴이 없어도 인터넷을 통해 다운로드하여 글꼴이 반영되기 때문에 글꼴이 없어 생기는 다양한 문제를 해결하는 장점이 있다. 웹폰트로 구글폰트와 눈누가 유명하다. 저작권을 살펴보고 문서제작에 필요한 글꼴을 사용하면 된다.\n\n눈누\n구글 폰트"
+  },
+  {
+    "objectID": "dw_fonts.html#출판-문서",
+    "href": "dw_fonts.html#출판-문서",
+    "title": "\n15  한글 글꼴\n",
+    "section": "\n15.2 출판 문서",
+    "text": "15.2 출판 문서\n데이터 사이언스 한글 출판 문서 제작을 위해서 다음 글꼴을 선택한다. 제목으로 산스 세리프 폰트로 구글 폰트에서 “노토 산스 세리프”를 선정하고, 본문은 눈누 웹사이트에서 “마루부리”를 선정하고 코딩 글꼴 폰트로 눈누에서 D2Coding 폰트를 지정한다.\n\n산스 세리프(제목): Noto Sans Serif\n세리프(본문): 마루부리\n등간격(코딩): D2Coding\n\n\nlibrary(tidyverse)\n\nmass_flipper &lt;- ggplot(data = penguins,\n                       aes(x = flipper_length_mm,\n                           y = body_mass_g)) +\n  geom_point(size = 3,\n             alpha = 0.8) +\n  theme_minimal() +\n  labs(title = \"팔머 관측소 LTER 서식 펭귄 크기\",\n       subtitle = \"Adelie, Chinstrap, Gentoo 펭귄에 대한 물갈퀴 길이와 체질량\",\n       x = \"물갈퀴 길이(Flipper length) (mm)\",\n       y = \"체질량(Body mass) (g)\") +\n  theme_minimal()"
+  },
+  {
+    "objectID": "dw_fonts.html#css-파일",
+    "href": "dw_fonts.html#css-파일",
+    "title": "\n15  한글 글꼴\n",
+    "section": "\n15.3 css 파일",
+    "text": "15.3 css 파일\n출판문서 제작에 사용된 글꼴 관련 사항을 css/quarto-fonts.css 파일에 지정해둔다.\n\n/* 글꼴 */\n@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR');\n\n@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR');\n\n@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');\n\n@font-face {\n    font-family: 'MaruBuri-Regular';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff') format('woff');\n    font-weight: normal;\n    font-style: normal;\n}\n\n@font-face {\n    font-family: 'D2Coding';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/D2Coding.woff') format('woff');\n    font-weight: normal;\n    font-style: normal;\n}\n\n/* HTML */\n\nh1, h2, h3, h4, h5, h6 {\n  font-family: \"Noto Sans KR\", sans-serif;\n}\n\nbody {\n  font-family: \"Nanum Myeongjo\", \"MaruBuri-Regular\", \"Noto Serif KR\", serif;\n  font-size: 15px;\n}\n\ntt, code, pre {\n  font-family: \"D2Coding\", Consolas, monospace;\n  font-size: 15px;\n}"
+  },
+  {
+    "objectID": "dw_fonts.html#그래프",
+    "href": "dw_fonts.html#그래프",
+    "title": "\n15  한글 글꼴\n",
+    "section": "\n15.4 그래프",
+    "text": "15.4 그래프\n그래프(ggplot)에 사용되는 글꼴도 마찬가지로 showtext 패키지 웹폰트를 사용해서 다양한 한글도 사용할 수 있다. showtext 패키지는 font_add_google() 함수를 통해서 구글 한글폰트를 지정하여 이를 ggplot 에 적용시킬 수 있다.\n\nlibrary(tidyverse)\nlibrary(showtext)\nlibrary(palmerpenguins)\n\nfont_add_google(\"Nanum Pen Script\", \"nanum_pen_script\")\nfont_add_google(\"Jua\", \"Jua\")\nshowtext_auto()\n\ntheme_quarto &lt;- theme(\n  text = element_text(family = 'Jua', size = 25),\n  plot.title.position = 'plot',\n  plot.title = element_text(\n    family = 'nanum_pen_script', size = 55,\n    face = 'bold', \n    colour = thematic::okabe_ito(8)[3],\n    margin = margin(t = 2, r = 0, b = 3, l = 0, unit = \"mm\")\n  ),\n  plot.subtitle = element_text(\n    family = 'Jua', size = 25,\n    face = 'bold', \n    colour = thematic::okabe_ito(8)[5],\n    margin = margin(t = 0, r = 0, b = 0, l = 0, unit = \"mm\")\n  )\n  \n)\n\ntheme_set(theme_minimal() + theme_quarto)\n\nmass_flipper &lt;- ggplot(data = penguins,\n                       aes(x = flipper_length_mm,\n                           y = body_mass_g)) +\n  geom_point(size = 3,\n             alpha = 0.8) +\n  labs(title = \"팔머 관측소 LTER 서식 펭귄 크기\",\n       subtitle = \"Adelie, Chinstrap, Gentoo 펭귄에 대한 물갈퀴 길이와 체질량\",\n       x = \"물갈퀴 길이(Flipper length) (mm)\",\n       y = \"체질량(Body mass) (g)\")\n\nmass_flipper"
+  },
+  {
+    "objectID": "dw_fonts.html#표",
+    "href": "dw_fonts.html#표",
+    "title": "\n15  한글 글꼴\n",
+    "section": "\n15.5 표",
+    "text": "15.5 표\n구글 폰트에서 다양한 글꼴을 표 제목, 표 칼럼명, 표 셀값에 다르게 적용하며 크기는 물론 색상과 굵기도 적용이 가능하다.\n\nlibrary(gt)\n\nbasic_theme &lt;- function(data, ...){\n  data %&gt;% \n    tab_options(\n      column_labels.background.color = \"blue\",\n      table.font.size = px(12),\n      column_labels.font.size = px(20),\n      row.striping.background_color = \"#9678b6\",\n      heading.align = \"left\",\n      heading.title.font.size = px(30)\n  )\n}\n\npalmerpenguins::penguins %&gt;% \n  select( 펭귄종=species, 섬=island, bill_length_mm, body_mass_g) %&gt;% \n  slice_sample(n = 10) %&gt;% \n  gt() %&gt;% \n    tab_header(title = md(\"팔머 펭귄 표본 **10 마리** 측정 정보\")) %&gt;% \n    tab_source_note(source_note = \"데이터: Kristen Gorman 박사와 남국 팔머 관측소(Palmer Station, Antarctica LTER)에서 수집\") %&gt;% \n    cols_label(bill_length_mm = \"부리 길이 (mm)\",\n               body_mass_g    = \"체질량 (g)\") %&gt;% \n  tab_style(\n    style = cell_text(\n      font = c(\n        google_font(name = \"Nanum Pen Script\"),\n        default_fonts()\n      ),\n      size = \"xx-large\",\n      color = \"gray35\",\n      weight = \"bolder\"\n    ),\n    locations = cells_body(columns = bill_length_mm)\n  ) %&gt;% \n  # 체질량 칼럼  ---------------\n  tab_style(\n    style = cell_text(\n      font = c(\n        google_font(name = \"Black Han Sans\"),\n        default_fonts()\n      ),\n      size = \"large\",\n      color = \"blue\",\n      weight = \"bolder\"\n    ),\n    locations = cells_body(columns = body_mass_g)\n  ) %&gt;% \n  # 표 Header 와 첫번째 칼럼  ---------------\n  tab_style(\n    style = cell_text(\n      font = google_font(\"Do Hyeon\"), \n      size = \"large\"\n    ),\n    locations = list(\n      cells_column_labels(everything()), \n      cells_body(columns = 1)\n    )\n  ) %&gt;%   \n  # 표 제목 ---------------\n  tab_style(\n    style = cell_text(\n      font = google_font(\"Dokdo\"), \n      align = \"left\", \n      size = \"xx-large\"\n    ),\n    locations = cells_title(\"title\")\n  ) %&gt;%   \n  basic_theme() \n\n\n\n\n\n\n팔머 펭귄 표본 10 마리 측정 정보\n    \n\n펭귄종\n      섬\n      부리 길이 (mm)\n      체질량 (g)\n    \n\n\n\nGentoo\nBiscoe\n48.4\n5850\n\n\nAdelie\nTorgersen\n36.7\n3450\n\n\nGentoo\nBiscoe\n46.2\n4375\n\n\nAdelie\nBiscoe\n38.1\n3825\n\n\nGentoo\nBiscoe\n45.1\n5050\n\n\nGentoo\nBiscoe\n42.6\n4950\n\n\nGentoo\nBiscoe\n46.5\n5200\n\n\nChinstrap\nDream\n45.4\n3525\n\n\nAdelie\nBiscoe\n35.0\n3725\n\n\nGentoo\nBiscoe\n44.5\n4875\n\n\n\n데이터: Kristen Gorman 박사와 남국 팔머 관측소(Palmer Station, Antarctica LTER)에서 수집\n    \n\n\n\n\n\nR 마크다운 문서 작성에 필요한 글꼴 관련 정보\n\n글꼴(font)\n구글 노토 글꼴(Noto Fonts)\nR 마크다운 폰트"
+  },
+  {
+    "objectID": "whole_game.html#글쓰기-비교",
+    "href": "whole_game.html#글쓰기-비교",
+    "title": "14  디지털 글쓰기",
+    "section": "14.1 글쓰기 비교",
+    "text": "14.1 글쓰기 비교\n디지털 글쓰기와 전통적인 글쓰기는 몇 가지 차이점이 있다. 디지털 글쓰기는 검색 엔진에 의해 쉽게 찾아질 수 있도록 설계되어 있으며, 다양한 미디어가 쉽게 통합될 수 있고, 디지털 글쓰기는 발행 후에도 언제든지 쉽게 조작할 수 있어 더 동적이고 생동감을 넣을 수도 있고, 깃(Git)과 같은 버전제어 도구와 연결시켜 글쓰기를 하게 되면 추적도 가능하여 재현가능한 글쓰기가 가능하게 된다. 디지털 글쓰기의 가장 큰 장점 중의 하나는 사람만이 저작을 하는 것이 아니라 기계가 저작한 프로그램도 글쓰기에 담을 수 있어 더욱 풍성한 글쓰기가 가능하다는 점이다.\n반면 전통적인 글쓰기는 발행 후 개발이 중단될 뿐만 아니라 한정된 지면(예를 들어 A4, B5)에 다양한 색상을 넣어 강조와 가독성을 높일 수 있으나 인쇄 난이도의 증가로 인해 비용도 급격히 증가하게 되고 무엇보다 정적인 정보만 담을 수 있어 최신 기술 흐름을 반영하는데 한계가 있다.\n또한 커뮤니케이션 관점에서 보면 디지털 글쓰기는 온라인 도구를 사용하여 작성 과정의 초기부터 광범위한 청중과 거의 실시간으로 텍스트를 공유할 수 있어 작성 과정이 공개적이고 다수다 저작과정에 별다른 장벽없이 참여할 수 있다는 점에서 전통적인 글쓰기가 소수의 저자가 집필을 마무리해야 후속 디자인 작업을 비롯한 후속 출판작업이 진행된다는 면에서 큰 차이가 있다. 특히 전통 글쓰기 결과물이 책과 같은 물리적 매체에 담기게 되면 이를 다시 디지털로 되돌리기 위해 광학문자인식(OCR) 과정을 거쳐야 하며 책속에 담긴 그래프, 표, 이미지 등 데이터는 별도 과정을 거쳐 디지털화 해야하는 한계도 명확하다."
+  },
+  {
+    "objectID": "whole_game.html#챗gpt-디지털-글쓰기",
+    "href": "whole_game.html#챗gpt-디지털-글쓰기",
+    "title": "14  디지털 글쓰기",
+    "section": "14.2 (챗GPT) 디지털 글쓰기",
+    "text": "14.2 (챗GPT) 디지털 글쓰기\n챗GPT가 이목을 집중하고 있는 가장 근본적인 이유는 디지털 글쓰기를 사람보다 신속하고 빠르게 하기 때문이다. 전통적인 글쓰기와 달리 디지털 글쓰기에는 다양한 종류의 글쓰기, 코딩, 추론 등이 포함되고 있다. “챗GPT 디지털 글쓰기”를 통해 챗GPT 출현 이전과 이후 확연히 달라진 글쓰기 방법에 관심을 가져야만 된다. 1\n\n\n\n챗GPT 디지털 글쓰기 진화과정\n\n\n\n\n\n\ngraph LR\n\n    chatGPT[\"챗GPT\"] --&gt; Contents\n\n    subgraph Contents[\"디지털 글쓰기\"]\n        direction LR\n        Writing[\"글감\"] --&gt; Table[\"표\"]\n        Writing --&gt; Graph[\"그래프\"]\n        Writing --&gt; Code[\"파이썬/R/SQL&lt;br&gt;코드\"]\n        Writing --&gt; Figure[\"그림\"]\n        Writing --&gt; Diagram[\"도형\"]        \n    end\n\n    chatGPT --&gt; Format\n    Contents --&gt; Format\n\n    subgraph Format[\"구조와 외양\"]\n        direction LR\n        Theme[\"구조와 외양\"] --&gt; Title[\"문서 구조\"]\n        Theme               --&gt; Formatting[\"문서 서식\"]\n        Theme               --&gt; Layout[\"문서 레이아웃\"]\n        Theme               --&gt; reference[\"문서 참조\"]\n    end\n\n    chatGPT --&gt; Deployment\n    Format --&gt; Deployment\n\n    subgraph Deployment[\"배포와 공유\"]\n        direction LR\n        Deploy --&gt; Reader[\"독자(사람)\"]\n        Deploy --&gt; Author[\"독자(저작자)\"]\n        Deploy --&gt; Machine[\"독자(기계)\"]\n    end\n\n\n    style chatGPT fill:#f5f5f5,stroke:#333,stroke-width:3px\n\n    style Contents fill:#059fff,stroke:#333,stroke-width:1px\n    style Format fill:#fc0303,stroke:#333,stroke-width:1px\n    style Deployment fill:#03fc30,stroke:#333,stroke-width:1px"
+  },
+  {
+    "objectID": "whole_game.html#챗gpt-글감-작성",
+    "href": "whole_game.html#챗gpt-글감-작성",
+    "title": "14  디지털 글쓰기",
+    "section": "14.3 챗GPT 글감 작성",
+    "text": "14.3 챗GPT 글감 작성\n사전 자료조사를 통해서 한국영화 10선 중 국제시장과 펭귄 데이터를 통해 흥행과 현재 우리가 당면한 ESG 문제를 다룬 뭉클한 감동을 주는 영화 시놉시스 작성을 목표로 하자.\n\n\n\n\ngraph LR\n\n    chatGPT[\"챗GPT\"] --&gt; Survey\n\n    subgraph Survey[\"자료 조사\"]\n        direction LR\n        Top10[\"한국영화&lt;br&gt;10선\"] --&gt; OpenAI[\"챗GPT\"]\n        Top10                    --&gt; Bard[\"구글 바드\"]\n        Top10                    --&gt; KOBIS[\"역대&lt;br&gt;박스오피스\"]\n    end\n\n    Survey --&gt; Synopsis\n\n    subgraph Synopsis[\"시놉시스\"]\n        direction LR\n        Movie_A[\"명량\"]     -.-&gt; New_Movie[\"새로운 영화&lt;br&gt;시놉시스\"]\n        Movie_B[\"극한직업\"] --&gt; New_Movie\n        Movie_C[\"신과함께\"] -.-&gt; New_Movie\n        Market[\"국제시장\"] --&gt; New_Movie        \n        Movie_E[\"...\"] -.-&gt; New_Movie\n        Penguins[\"펭귄 데이터\"] --&gt; New_Movie\n    end\n\n    Synopsis --&gt; Synopsis_fin[\"최종&lt;br&gt;시놉시스\"]\n\n    style chatGPT fill:#f5f5f5,stroke:#333,stroke-width:3px\n\n    style Survey fill:#059fff,stroke:#333,stroke-width:1px\n    style Synopsis fill:#fc0303,stroke:#333,stroke-width:1px\n    style Synopsis_fin fill:#03fc30,stroke:#333,stroke-width:1px\n\n    style Penguins fill:#03fc30,stroke:#333,stroke-width:3px\n    style Market fill:#03fc30,stroke:#333,stroke-width:3px"
+  },
+  {
+    "objectID": "whole_game.html#구조와-외양",
+    "href": "whole_game.html#구조와-외양",
+    "title": "14  디지털 글쓰기",
+    "section": "14.4 구조와 외양",
+    "text": "14.4 구조와 외양\n글감이 준비되면 그 다음으로 가독성을 높이고 효과적인 콘텐츠 제작을 위해서 그림, 표, 그래프, 수식, 도형 등 다양한 문서 객체 뿐만 아니라 색상을 달리하여 시각적인 효과도 극대화하여 고품질 문서를 저작하게 된다.\n\n마크다운 기본 글쓰기\n\n대중소 제목\n굵은 글씨, 밑줄, ..\n단락 구분\n\n그림 (Figure)\n그래프 (Graph)\n표 (Table)\n도형 (Diagrams)\n수식 (LaTeX)\n호출 블록 (Callout Blocks)\n기사 레이아웃 (Article Layout)\n학술저작 (Scholarly Writing)\n다단편집(Side-by-Side Layout)\n…"
+  },
+  {
+    "objectID": "whole_game.html#배포와-공유",
+    "href": "whole_game.html#배포와-공유",
+    "title": "14  디지털 글쓰기",
+    "section": "14.5 배포와 공유",
+    "text": "14.5 배포와 공유\n디지털 글쓰기 저작물을 제작하게 되면 그 다음 단계로 출판을 해야하는데 다양한 문서를 모아 프로젝트로 담아 Quarto Pub에 전자출판한다. 다른 출판 플랫폼으로 netlify, GitHub Pages, RStudio Connect가 많이 사용된다."
   }
 ]

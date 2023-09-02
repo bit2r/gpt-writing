@@ -16,152 +16,54 @@
 인공지능 기술의 비약적인 발전으로 프로그래밍을 통한 코딩도 기계와 규칙을 정해 상호 커뮤니케이션하는 글쓰기로 부각되고 있다. 이러한 이유로 글쓰기는 매우 중요한 역할을 하고,
 글쓰기 없이 고도화된 현대 사회생존은 불가능하다.
 
-## 글쓰기 비교
+## 디지털 문서 제작 패러다임
 
-디지털 글쓰기와 전통적인 글쓰기는 몇 가지 차이점이 있다. 
-디지털 글쓰기는 검색 엔진에 의해 쉽게 찾아질 수 있도록 설계되어 있으며, 다양한 미디어가 쉽게 통합될 수 있고, 디지털 글쓰기는 발행 후에도 언제든지 쉽게 조작할 수 있어 더 동적이고 생동감을 넣을 수도 있고, [깃(Git)](https://git-scm.com/)과 같은 버전제어 도구와 연결시켜 글쓰기를 하게 되면 추적도 가능하여 재현가능한 글쓰기가 가능하게 된다. 
-디지털 글쓰기의 가장 큰 장점 중의 하나는 사람만이 저작을 하는 것이 아니라 
-기계가 저작한 프로그램도 글쓰기에 담을 수 있어 더욱 풍성한 글쓰기가 가능하다는 점이다.
+신속하고 빠르게 누구나 짧은 학습을 통해서 문서를 저작하고 출판할 수 있는 방식으로 인기를 얻은 아래한글 혹은 MS워드 워드프로세서를 사용하는데 이는 **위지위그(WYSIWYG: What You See Is What You Get, "보는 대로 얻는다")**에 기초한 것으로 문서 편집 과정에서 화면에 포맷된 낱말, 문장이 출력물과 동일하게 나오는 방식이다. 이전 타자기 대비 경쟁력이 있었고 이를 바탕으로 문서편집기 소프트웨어가 대세로 떠올랐다.
 
-반면 전통적인 글쓰기는 발행 후 개발이 중단될 뿐만 아니라 한정된 지면(예를 들어 A4, B5)에 다양한 색상을 넣어 강조와 가독성을 높일 수 있으나 인쇄 난이도의 증가로 인해 비용도 급격히 증가하게 되고 무엇보다 정적인 정보만 담을 수 있어 최신 기술 흐름을 반영하는데 
-한계가 있다.
+위지윅의 대척점에 있는 것이 **위지윔(WYSIWYM, What You See Is What You Mean)**으로 대표적인 것인 $LaTeX$ 으로 구조화된 방식으로 문서를 작성하면 컴파일을 통해서 최종 문서가 미려한 출판가능한 PDF, PS, DVI 등 확장자를 갖는 출판결과물을 얻을 수 있다.
 
-또한 커뮤니케이션 관점에서 보면 디지털 글쓰기는 온라인 도구를 사용하여 작성 과정의 초기부터 광범위한 청중과 거의 실시간으로 텍스트를 공유할 수 있어 작성 과정이 공개적이고 다수다
-저작과정에 별다른 장벽없이 참여할 수 있다는 점에서 전통적인 글쓰기가 소수의 저자가
-집필을 마무리해야 후속 디자인 작업을 비롯한 후속 출판작업이 진행된다는 면에서 큰 차이가 있다. 특히 전통 글쓰기 결과물이 책과 같은 물리적 매체에 담기게 되면 이를 다시 
-디지털로 되돌리기 위해 광학문자인식(OCR) 과정을 거쳐야 하며 책속에 담긴 
-그래프, 표, 이미지 등 데이터는 별도 과정을 거쳐 디지털화 해야하는 한계도 명확하다.
+$LaTeX$이 갖는 장점은 이제 프로그래밍 코드(R / 파이썬 / SQL / 쉘스크립트 / 자바스크립트 등)을 문서저작에 포함되며 **literate programming** 패러다임이 대세로 떠올랐고 현존하는 다양한 문서저작 문제에 대한 응답으로 자리를 매김하고 있다. [^image-ref]
 
-## (챗GPT) 디지털 글쓰기 
+[^image-ref]: [출처: http://www.cbinews.co.kr/news/articleView.html?idxno=36859]
 
-챗GPT가 이목을 집중하고 있는 가장 근본적인 이유는 디지털 글쓰기를 사람보다 신속하고 빠르게 하기 때문이다. 
-전통적인 글쓰기와 달리 디지털 글쓰기에는 다양한 종류의 글쓰기, 코딩, 추론 등이 포함되고 있다. 
-"챗GPT 디지털 글쓰기"를 통해 챗GPT 출현 이전과 이후 확연히 달라진 글쓰기 방법에 관심을 가져야만 된다. [^quarto]
+![](images/digital-writing-paradigm-shift.png)
+
+## 문서로 보는 민주주의
+
+대한민국은 권력을 입법권, 행정권, 사법권으로 나눠 권력을 나누었다. 세부적으보 보면 다소 차이는 있겠지만 법을 만드는 것은 결국 문서를 저작하는 것이고 대한민국 정부는 법에 담긴 문서를 실행하는 기관이고 사법부는 법 문서를 해석하는 기관으로 볼 수 있다. 결국 민주주의는 문서를 기반으로 존립하는 사회체계라고 볼 수 있다. 최근 들어 인공지능이 부상하면서 문서저작을 보조하던 수단에서 이제는 사람보다 더 나은 통찰력을 보이는 분야도 속속 등장하고 있다. 이런 측면에서 인공지능 기계를 현 민주주의 체계 내에 어떻게 녹여낼 것인지 관심이 높아지고 있다.
 
 
-[^quarto]: 한국 R 사용자회 [데이터 과학 글쓰기](https://r2bit.com/quarto/)
+![](images/three-pillar.png)
 
-![챗GPT 디지털 글쓰기 진화과정](images/writing_history.jpg)
+## 디지털 문서 저작
 
+과거 둘로 쪼개져서 과학기술 문서저작 즉 논문 등은 $LaTeX$ 기반 위지윔(WYSIWYM) 패러다임이 확고한 자리를 잡았지만 위지위그(WYSIWYG) 패러다임 기반 아래한글 워드와 같은 문서저작편집기 성능이 높아지면서 사실상 둘 사이 경계도 허물어졌다.
 
-```{mermaid}
+하지만, 과학기술 논문 저작에 진실성, 재현성 등이 강조되고 빅데이터 기반 과학연구가 큰 성과를 보이고 프로그래밍이 과학기술 논문 저작에 주요한 역할을 하면서 이런 추세를 반영한 과학기술 저작 패러다임이 떠오르고 있다.
 
-graph LR
+이러한 추세를 반영한 도구의 발전도 함께 이뤄지면서 과학기술 저작은 물론 거의 모든 문서 저작분야에 큰 변화가 일어나고 있다.
 
-    chatGPT["챗GPT"] --> Contents
+<!-- ![](images/digital-writing.gif) -->
 
-    subgraph Contents["디지털 글쓰기"]
-        direction LR
-        Writing["글감"] --> Table["표"]
-        Writing --> Graph["그래프"]
-        Writing --> Code["파이썬/R/SQL<br>코드"]
-        Writing --> Figure["그림"]
-        Writing --> Diagram["도형"]        
-    end
+## 과학문서 저작
 
-    chatGPT --> Format
-    Contents --> Format
+- [심각한 현재상황](http://statkclee.github.io/modern-scientific-authoring/01-mess-kr.html)
+- [마크다운 기초](http://statkclee.github.io/modern-scientific-authoring/02-markdown-kr.html)
+- [고급 마크다운](http://statkclee.github.io/modern-scientific-authoring/03-advanced-kr.html)
+- [문서저작 실무](http://aispiration.com/comp_document/rmarkdown-in-production.html)
+- [수학 수식](http://aispiration.com/comp_document/cd-latex.html)
 
-    subgraph Format["구조와 외양"]
-        direction LR
-        Theme["구조와 외양"] --> Title["문서 구조"]
-        Theme               --> Formatting["문서 서식"]
-        Theme               --> Layout["문서 레이아웃"]
-        Theme               --> reference["문서 참조"]
-    end
+## 사례: 한국 R 컨퍼런스(2021)
 
-    chatGPT --> Deployment
-    Format --> Deployment
-
-    subgraph Deployment["배포와 공유"]
-        direction LR
-        Deploy --> Reader["독자(사람)"]
-        Deploy --> Author["독자(저작자)"]
-        Deploy --> Machine["독자(기계)"]
-    end
-
-
-    style chatGPT fill:#f5f5f5,stroke:#333,stroke-width:3px
-
-    style Contents fill:#059fff,stroke:#333,stroke-width:1px
-    style Format fill:#fc0303,stroke:#333,stroke-width:1px
-    style Deployment fill:#03fc30,stroke:#333,stroke-width:1px
-```
-
-
-## 챗GPT 글감 작성
-
-사전 자료조사를 통해서 한국영화 10선 중 **국제시장**과 [펭귄
-데이터](https://r2bit.com/chatGPT/palmer_penguins.html)를 통해 흥행과
-현재 우리가 당면한 ESG 문제를 다룬 뭉클한 감동을 주는 영화 시놉시스
-작성을 목표로 하자.
-
-```{mermaid}
-graph LR
-
-    chatGPT["챗GPT"] --> Survey
-
-    subgraph Survey["자료 조사"]
-        direction LR
-        Top10["한국영화<br>10선"] --> OpenAI["챗GPT"]
-        Top10                    --> Bard["구글 바드"]
-        Top10                    --> KOBIS["역대<br>박스오피스"]
-    end
-
-    Survey --> Synopsis
-
-    subgraph Synopsis["시놉시스"]
-        direction LR
-        Movie_A["명량"]     -.-> New_Movie["새로운 영화<br>시놉시스"]
-        Movie_B["극한직업"] --> New_Movie
-        Movie_C["신과함께"] -.-> New_Movie
-        Market["국제시장"] --> New_Movie        
-        Movie_E["..."] -.-> New_Movie
-        Penguins["펭귄 데이터"] --> New_Movie
-    end
-
-    Synopsis --> Synopsis_fin["최종<br>시놉시스"]
-
-    style chatGPT fill:#f5f5f5,stroke:#333,stroke-width:3px
-
-    style Survey fill:#059fff,stroke:#333,stroke-width:1px
-    style Synopsis fill:#fc0303,stroke:#333,stroke-width:1px
-    style Synopsis_fin fill:#03fc30,stroke:#333,stroke-width:1px
-
-    style Penguins fill:#03fc30,stroke:#333,stroke-width:3px
-    style Market fill:#03fc30,stroke:#333,stroke-width:3px
-    
-```
-
-
-
-## 구조와 외양
-
-글감이 준비되면 그 다음으로 가독성을 높이고 효과적인 콘텐츠 제작을 위해서 
-그림, 표, 그래프, 수식, 도형 등 다양한 문서 객체 뿐만 아니라 색상을 달리하여 시각적인 효과도 극대화하여 고품질 문서를 저작하게 된다.
-
-- 마크다운 기본 글쓰기
-    - 대중소 제목
-    - 굵은 글씨, 밑줄, ..
-    - 단락 구분
-- 그림 (Figure)
-- 그래프 (Graph)
-- 표 (Table)
-- 도형 (Diagrams)
-- 수식 (LaTeX)
-- 호출 블록 (Callout Blocks)
-- 기사 레이아웃 (Article Layout)
-- 학술저작 (Scholarly Writing)
-- 다단편집(Side-by-Side Layout)
-- …
-
-![](images/layout_format.jpg)
-
-
-## 배포와 공유
-
-디지털 글쓰기 저작물을 제작하게 되면 그 다음 단계로 출판을 해야하는데 다양한 문서를 모아 프로젝트로 담아 [`Quarto Pub`](https://quartopub.com/)에 전자출판한다.
-다른 출판 플랫폼으로 [netlify](https://netlify.com/), [GitHub Pages](https://github.com/), [RStudio Connect](https://www.rstudio.com/products/connect/)가 많이 사용된다.
-
-![](images/document_deployment.jpg)
+- [컨퍼런스 웹사이트](https://github.com/tidyverse-korea/rconf)
+- 컨퍼런스 전 기획
+    - [컨퍼런스 포스터](https://github.com/tidyverse-korea/poster)
+    - [컨퍼런스 후원](https://github.com/tidyverse-korea/sponsor)
+- 컨퍼런스 본 행사
+    - [발표 슬라이드](http://aispiration.com/ds-authoring/useR-r-user-community.html#1)
+    - [발표 템플릿](https://github.com/tidyverse-korea/templates)
+- 컨퍼런스 후 설문    
+    - [설문조사 보고서](https://github.com/tidyverse-korea/rconf-2021-survey)
+- 기타
+    - [탄소중립 신재생 에너지 캠프](https://github.com/tidyverse-korea/renewable)
 
