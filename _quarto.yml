@@ -21,9 +21,9 @@ book:
 
     - part: "글쓰기 환경"
       chapters:
+        - editor.qmd
         - writing.qmd
         - quarto.qmd
-        - quarto_install.qmd
 
     - part: "글쓰기"
       chapters:
