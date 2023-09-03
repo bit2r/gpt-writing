@@ -1,0 +1,2010 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko-KR" xml:lang="ko-KR"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.288">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="author" content="이광춘">
+<title>챗GPT 디지털 글쓰기 - 9&nbsp; 유니코드와 UTF-8</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./fonts.html" rel="next">
+<link href="./markdown_03_advanced.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "일치 없음",
+    "search-matching-documents-text": "일치된 문서",
+    "search-copy-link-title": "검색 링크 복사",
+    "search-hide-matches-text": "추가 검색 결과 숨기기",
+    "search-more-match-text": "추가 검색결과",
+    "search-more-matches-text": "추가 검색결과",
+    "search-clear-button-title": "제거",
+    "search-detached-cancel-button-title": "취소",
+    "search-submit-button-title": "검색",
+    "search-label": "검색"
+  }
+}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+</head>
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./unicode.html">기본요소</a></li><li class="breadcrumb-item"><a href="./unicode.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">유니코드와 UTF-8</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">챗GPT 디지털 글쓰기</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="검색"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">서문</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">글쓰기</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./history.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">문자와 종이 역사</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">글쓰기 환경</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./writing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">쿼토</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quarto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">쿼토 소개</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quarto_install.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">쿼토 설치</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">글쓰기</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./markdown_01_mess.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">심각한 현재 상황</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./markdown_02_markdown.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">마크다운 기초</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./markdown_03_advanced.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">고급 마크다운</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">기본요소</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unicode.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">유니코드와 UTF-8</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./fonts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">글꼴</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./colors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">색상</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">템플릿과 테마</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./themes_ggplot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">그래픽 테마</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./themes_gt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">표 테마</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./templates.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">템플릿</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+ <span class="menu-text">디지털 글쓰기</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./whole_game.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">디지털 글쓰기</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dw_fonts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">한글 글꼴</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dw_pdf.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">한글 PDF</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+ <span class="menu-text">실무</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./publishing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">출판</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./about_book.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">책과 편집 용어</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">참고문헌</span></a>
+  </div>
+</li>
+    </ul>
+</div>
+</nav><div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">목차</h2>
+   
+  <ul>
+<li><a href="#%EC%9D%B8%EC%BD%94%EB%94%A9-%EB%AC%B8%EC%A0%9C" id="toc-인코딩-문제" class="nav-link active" data-scroll-target="#%EC%9D%B8%EC%BD%94%EB%94%A9-%EB%AC%B8%EC%A0%9C"><span class="header-section-number">9.1</span> 인코딩 문제</a></li>
+  <li>
+<a href="#%EB%AC%B8%EC%9E%90-%EC%A7%91%ED%95%A9" id="toc-문자-집합" class="nav-link" data-scroll-target="#%EB%AC%B8%EC%9E%90-%EC%A7%91%ED%95%A9"><span class="header-section-number">9.2</span> 문자 집합</a>
+  <ul class="collapse">
+<li><a href="#%EC%95%84%EC%8A%A4%ED%82%A4-%EC%BD%94%EB%93%9C" id="toc-아스키-코드" class="nav-link" data-scroll-target="#%EC%95%84%EC%8A%A4%ED%82%A4-%EC%BD%94%EB%93%9C"><span class="header-section-number">9.2.1</span> 아스키 코드</a></li>
+  <li><a href="#ascii-extension" id="toc-ascii-extension" class="nav-link" data-scroll-target="#ascii-extension"><span class="header-section-number">9.2.2</span> 확장 아스키</a></li>
+  <li><a href="#%ED%95%9C%EA%B8%80-%EC%99%84%EC%84%B1%ED%98%95%EA%B3%BC-%EC%A1%B0%ED%95%A9%ED%98%95" id="toc-한글-완성형과-조합형" class="nav-link" data-scroll-target="#%ED%95%9C%EA%B8%80-%EC%99%84%EC%84%B1%ED%98%95%EA%B3%BC-%EC%A1%B0%ED%95%A9%ED%98%95"><span class="header-section-number">9.2.3</span> 한글 완성형과 조합형</a></li>
+  <li><a href="#ascii-unicode" id="toc-ascii-unicode" class="nav-link" data-scroll-target="#ascii-unicode"><span class="header-section-number">9.2.4</span> 유니코드</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#utf-8" id="toc-utf-8" class="nav-link" data-scroll-target="#utf-8"><span class="header-section-number">9.3</span> UTF-8</a>
+  <ul class="collapse">
+<li><a href="#%EC%9B%B9-%ED%91%9C%EC%A4%80-%EC%9D%B8%EC%BD%94%EB%94%A9" id="toc-웹-표준-인코딩" class="nav-link" data-scroll-target="#%EC%9B%B9-%ED%91%9C%EC%A4%80-%EC%9D%B8%EC%BD%94%EB%94%A9"><span class="header-section-number">9.3.1</span> 웹 표준 인코딩</a></li>
+  </ul>
+</li>
+  <li><a href="#%ED%85%8D%EC%8A%A4%ED%8A%B8-%ED%91%9C%ED%98%84" id="toc-텍스트-표현" class="nav-link" data-scroll-target="#%ED%85%8D%EC%8A%A4%ED%8A%B8-%ED%91%9C%ED%98%84"><span class="header-section-number">9.4</span> 텍스트 표현</a></li>
+  <li><a href="#localization" id="toc-localization" class="nav-link" data-scroll-target="#localization"><span class="header-section-number">9.5</span> 현지화/세계화</a></li>
+  </ul></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./unicode.html">기본요소</a></li><li class="breadcrumb-item"><a href="./unicode.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">유니코드와 UTF-8</span></a></li></ol></nav><div class="quarto-title">
+<h1 class="title">
+<span class="chapter-number">9</span>&nbsp; <span class="chapter-title">유니코드와 UTF-8</span>
+</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header><p>사람 간의 의사소통은 다양한 기호 체계를 통해 이루어진다. 영어 알파벳, 한글, 한자 등 문자가 의사소통에 사용되는 좋은 예다. 디지털 환경에서 이러한 의사소통을 가능하게 하는 기술적 장치가 바로 문자집합과 문자 인코딩과 디코딩이다.</p>
+<p>컴퓨터 시스템은 이진수 바이트를 기본 단위로 사용한다. 바이트는 파일 형태로 묶이거나 네트워크를 통해 전송되어 다른 시스템에 도달한다. 이 데이터가 사람에게 의미 있는 정보로 전달되기 위해서는 인코딩(부호화)과 디코딩(복호화) 과정을 거쳐야 한다.</p>
+<p>컴퓨터 시스템은 데이터를 바이트(Byte) 형태로 처리한다. 이 바이트 데이터는 이진수, 즉 010101과 같은 형태로 표현되고, 바이트 데이터를 사람이 읽을 수 있는 문자로 변환하는 최초의 표준이 ASCII(아스키)다. 하지만 ASCII는 256개 문자만을 지원하기 때문에, CJK(중국, 일본, 한국)와 같은 동아시아 문화권에서는 그 한계가 명확하다. 이러한 한계를 해결하기 위해 유니코드(Unicode) 가 도입되었다. 유니코드는 영문자는 물론이고 지구상의 거의 모든 문자와 기호를 디지털로 표현할 수 있는 방법을 제공한다.</p>
+<p><strong>유니코드(Unicode)</strong>는 글자와 코드가 1:1 매핑되어 있는 단순한 코드표에 불과하고 산업표준으로 일종의 국가 당사자간 약속이다. 한글이 표현된 유니코드 영역도 <a href="https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C_%EC%98%81%EC%97%AD">위키백과 유니코드 영역</a>에서 찾을 수 있다.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/auth-unicode-utf-8.png" class="lightbox" title="유니코드와 UTF-8" data-gallery="quarto-lightbox-gallery-1"><img src="images/auth-unicode-utf-8.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">유니코드와 UTF-8</figcaption></figure>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+인코딩 (Encoding)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>문자 인코딩(character encoding)</strong> 줄여서 인코딩은 사용자가 입력한 문자나 기호들을 컴퓨터가 이용할 수 있는 신호로 만드는 것을 말한다. 넓은 의미의 컴퓨터는 이러한 신호를 입력받고 처리하는 기계를 뜻하며, 신호 처리 시스템을 통해 이렇게 처리된 정보를 사용자가 이해할 수 있게 된다.</p>
+<blockquote class="blockquote">
+<p>All text has a character encoding.</p>
+</blockquote>
+</div>
+</div>
+<section id="인코딩-문제" class="level2" data-number="9.1"><h2 data-number="9.1" class="anchored" data-anchor-id="인코딩-문제">
+<span class="header-section-number">9.1</span> 인코딩 문제</h2>
+<p>문자 인코딩은 컴퓨터가 텍스트를 바이트로 변환하거나 바이트를 텍스트로 변환하는 방법이다. 인코딩 과정에서는 다양한 문제가 발생할 수 있고, 그 중 세 가지 문제가 많이 알려져있다. 첫번째는 ’두부(Tofu)’라 불리는 상황으로, 컴퓨터가 어떤 문자를 표현해야 할지 알지만, 화면에 어떻게 출력해야 할지 모르기 때문에 빈 사각형 상자로 표시된다. 두번째는 ’문자깨짐(Mojibake, 文字化け)’이다. 특히 일본어에서 자주 발생하며, 한 인코딩 방식으로 작성된 텍스트가 다른 인코딩 방식으로 해석될 때 문자가 깨지는 현상을 의미한다. 세번째는 ’의문부호(Question Marks)’로, 특정 문자가 다른 문자로 변환될 때 발생된다. 문자집합과 인코딩 궁합이 맞지 않을 때 발생하며, 데이터 손실과 오류도 야기된다.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/common-encoding-problem.png" class="lightbox" title="세가지 인코딩 문제" data-gallery="quarto-lightbox-gallery-2"><img src="images/common-encoding-problem.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">세가지 인코딩 문제</figcaption></figure>
+</div>
+</section><section id="문자-집합" class="level2" data-number="9.2"><h2 data-number="9.2" class="anchored" data-anchor-id="문자-집합">
+<span class="header-section-number">9.2</span> 문자 집합</h2>
+<section id="아스키-코드" class="level3" data-number="9.2.1"><h3 data-number="9.2.1" class="anchored" data-anchor-id="아스키-코드">
+<span class="header-section-number">9.2.1</span> 아스키 코드</h3>
+<p>디지털 글쓰기는 내용과 상관없이 결국 텍스트로 표현되고, 텍스트는 단지 문자다. 하지만, 컴퓨터가 문자 하나를 어떻게 표현할까?</p>
+<p>1960년대 미국식 영문자를 컴퓨터로 표현하는 해결책은 간단했다 - 알파벳 26개(대문자, 소문자), 숫자 10, 구두점 몇개, 그리고 전신을 보내던 시절에 제어를 위해 사용된 몇개 특수 문자(“새줄로 이동”, “본문 시작”, “개행”, “경고음”, 등). 모두 합쳐도 128개보다 적어서, 아스키(ASCII) 위원회가 문자마다 7비트( <span class="math inline">\(2^7\)</span> = 128)를 사용하는 인코딩으로 표준화했다. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="tbl-ascii" class="anchored">
+<div>
+<div style="display: inline-block;float:left;">
+<div id="vgqghggoum" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>@import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+#vgqghggoum table {
+  font-family: NanumSquare;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#vgqghggoum thead, #vgqghggoum tbody, #vgqghggoum tfoot, #vgqghggoum tr, #vgqghggoum td, #vgqghggoum th {
+  border-style: none;
+}
+
+#vgqghggoum p {
+  margin: 0;
+  padding: 0;
+}
+
+#vgqghggoum .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: none;
+  border-top-width: 3px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#vgqghggoum .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#vgqghggoum .gt_title {
+  color: #333333;
+  font-size: 26px;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#vgqghggoum .gt_subtitle {
+  color: #333333;
+  font-size: 16px;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#vgqghggoum .gt_heading {
+  background-color: rgba(255, 255, 255, 0);
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#vgqghggoum .gt_bottom_border {
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vgqghggoum .gt_col_headings {
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #000000;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#vgqghggoum .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#vgqghggoum .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#vgqghggoum .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#vgqghggoum .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#vgqghggoum .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #000000;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#vgqghggoum .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#vgqghggoum .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #000000;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#vgqghggoum .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #000000;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #FFFFFF;
+  vertical-align: middle;
+}
+
+#vgqghggoum .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#vgqghggoum .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#vgqghggoum .gt_row {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 0px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#vgqghggoum .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-right-style: solid;
+  border-right-width: 0px;
+  border-right-color: #FFFFFF;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vgqghggoum .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#vgqghggoum .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#vgqghggoum .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#vgqghggoum .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vgqghggoum .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#vgqghggoum .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#vgqghggoum .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vgqghggoum .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vgqghggoum .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#vgqghggoum .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vgqghggoum .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#vgqghggoum .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vgqghggoum .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#vgqghggoum .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vgqghggoum .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#vgqghggoum .gt_sourcenote {
+  font-size: 10px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vgqghggoum .gt_left {
+  text-align: left;
+}
+
+#vgqghggoum .gt_center {
+  text-align: center;
+}
+
+#vgqghggoum .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#vgqghggoum .gt_font_normal {
+  font-weight: normal;
+}
+
+#vgqghggoum .gt_font_bold {
+  font-weight: bold;
+}
+
+#vgqghggoum .gt_font_italic {
+  font-style: italic;
+}
+
+#vgqghggoum .gt_super {
+  font-size: 65%;
+}
+
+#vgqghggoum .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#vgqghggoum .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#vgqghggoum .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#vgqghggoum .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#vgqghggoum .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#vgqghggoum .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#vgqghggoum .gt_indent_5 {
+  text-indent: 25px;
+}
+
+tbody tr:last-child {
+  border-bottom: 2px solid #ffffff00;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<caption>표&nbsp;9.1:  <p>제어문자와 출력가능한 아스키 문자표 알파벳 예시</p> </caption>
+  <thead><tr class="gt_col_headings">
+<th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: MaruBuri; font-weight: bold;" scope="col" id="이진법">이진법</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: MaruBuri; font-weight: bold;" scope="col" id="팔진법">팔진법</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: MaruBuri; font-weight: bold;" scope="col" id="십진법">십진법</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: MaruBuri; font-weight: bold;" scope="col" id="십육진법">십육진법</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: MaruBuri; font-weight: bold;" scope="col" id="약자">약자</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: MaruBuri; font-weight: bold;" scope="col" id="한국어_설명">한국어_설명</th>
+    </tr></thead>
+<tbody class="gt_table_body">
+<tr>
+<td headers="이진법" class="gt_row gt_right" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">000 0000</td>
+<td headers="팔진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">0</td>
+<td headers="십진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">0</td>
+<td headers="십육진법" class="gt_row gt_right" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">00</td>
+<td headers="약자" class="gt_row gt_left" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">NUL</td>
+<td headers="한국어_설명" class="gt_row gt_left" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">NULL</td>
+</tr>
+<tr>
+<td headers="이진법" class="gt_row gt_right" style="font-family: MaruBuri; font-weight: bold;">000 0001</td>
+<td headers="팔진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold;">1</td>
+<td headers="십진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold;">1</td>
+<td headers="십육진법" class="gt_row gt_right" style="font-family: MaruBuri; font-weight: bold;">01</td>
+<td headers="약자" class="gt_row gt_left" style="font-family: MaruBuri; font-weight: bold;">SOH</td>
+<td headers="한국어_설명" class="gt_row gt_left" style="font-family: MaruBuri; font-weight: bold;">헤더 시작</td>
+</tr>
+<tr>
+<td headers="이진법" class="gt_row gt_right" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">000 0010</td>
+<td headers="팔진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">2</td>
+<td headers="십진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">2</td>
+<td headers="십육진법" class="gt_row gt_right" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">02</td>
+<td headers="약자" class="gt_row gt_left" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">STX</td>
+<td headers="한국어_설명" class="gt_row gt_left" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">본문 시작, 헤더 종료</td>
+</tr>
+<tr>
+<td headers="이진법" class="gt_row gt_right" style="font-family: MaruBuri; font-weight: bold;">000 0011</td>
+<td headers="팔진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold;">3</td>
+<td headers="십진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold;">3</td>
+<td headers="십육진법" class="gt_row gt_right" style="font-family: MaruBuri; font-weight: bold;">03</td>
+<td headers="약자" class="gt_row gt_left" style="font-family: MaruBuri; font-weight: bold;">ETX</td>
+<td headers="한국어_설명" class="gt_row gt_left" style="font-family: MaruBuri; font-weight: bold;">본문 종료</td>
+</tr>
+<tr>
+<td headers="이진법" class="gt_row gt_right" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">000 0100</td>
+<td headers="팔진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">4</td>
+<td headers="십진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">4</td>
+<td headers="십육진법" class="gt_row gt_right" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">04</td>
+<td headers="약자" class="gt_row gt_left" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">EOT</td>
+<td headers="한국어_설명" class="gt_row gt_left" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">전송 종료</td>
+</tr>
+<tr>
+<td headers="이진법" class="gt_row gt_right" style="font-family: MaruBuri; font-weight: bold;">000 0101</td>
+<td headers="팔진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold;">5</td>
+<td headers="십진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold;">5</td>
+<td headers="십육진법" class="gt_row gt_right" style="font-family: MaruBuri; font-weight: bold;">05</td>
+<td headers="약자" class="gt_row gt_left" style="font-family: MaruBuri; font-weight: bold;">ENQ</td>
+<td headers="한국어_설명" class="gt_row gt_left" style="font-family: MaruBuri; font-weight: bold;">응답 요구</td>
+</tr>
+<tr>
+<td headers="이진법" class="gt_row gt_right" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">000 0110</td>
+<td headers="팔진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">6</td>
+<td headers="십진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">6</td>
+<td headers="십육진법" class="gt_row gt_right" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">06</td>
+<td headers="약자" class="gt_row gt_left" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">ACK</td>
+<td headers="한국어_설명" class="gt_row gt_left" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">긍정응답</td>
+</tr>
+<tr>
+<td headers="이진법" class="gt_row gt_right" style="font-family: MaruBuri; font-weight: bold;">000 0111</td>
+<td headers="팔진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold;">7</td>
+<td headers="십진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold;">7</td>
+<td headers="십육진법" class="gt_row gt_right" style="font-family: MaruBuri; font-weight: bold;">07</td>
+<td headers="약자" class="gt_row gt_left" style="font-family: MaruBuri; font-weight: bold;">BEL</td>
+<td headers="한국어_설명" class="gt_row gt_left" style="font-family: MaruBuri; font-weight: bold;">경고음</td>
+</tr>
+<tr>
+<td headers="이진법" class="gt_row gt_right" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">000 1000</td>
+<td headers="팔진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">10</td>
+<td headers="십진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">8</td>
+<td headers="십육진법" class="gt_row gt_right" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">08</td>
+<td headers="약자" class="gt_row gt_left" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">BS</td>
+<td headers="한국어_설명" class="gt_row gt_left" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">백스페이스</td>
+</tr>
+<tr>
+<td headers="이진법" class="gt_row gt_right" style="font-family: MaruBuri; font-weight: bold;">000 1001</td>
+<td headers="팔진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold;">11</td>
+<td headers="십진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold;">9</td>
+<td headers="십육진법" class="gt_row gt_right" style="font-family: MaruBuri; font-weight: bold;">09</td>
+<td headers="약자" class="gt_row gt_left" style="font-family: MaruBuri; font-weight: bold;">HT</td>
+<td headers="한국어_설명" class="gt_row gt_left" style="font-family: MaruBuri; font-weight: bold;">수평 탭</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div style="display: inline-block;float:right;">
+<div id="nrnjpplcjh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>@import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+#nrnjpplcjh table {
+  font-family: NanumSquare;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#nrnjpplcjh thead, #nrnjpplcjh tbody, #nrnjpplcjh tfoot, #nrnjpplcjh tr, #nrnjpplcjh td, #nrnjpplcjh th {
+  border-style: none;
+}
+
+#nrnjpplcjh p {
+  margin: 0;
+  padding: 0;
+}
+
+#nrnjpplcjh .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: none;
+  border-top-width: 3px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#nrnjpplcjh .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#nrnjpplcjh .gt_title {
+  color: #333333;
+  font-size: 26px;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#nrnjpplcjh .gt_subtitle {
+  color: #333333;
+  font-size: 16px;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#nrnjpplcjh .gt_heading {
+  background-color: rgba(255, 255, 255, 0);
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#nrnjpplcjh .gt_bottom_border {
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#nrnjpplcjh .gt_col_headings {
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #000000;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#nrnjpplcjh .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#nrnjpplcjh .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#nrnjpplcjh .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#nrnjpplcjh .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#nrnjpplcjh .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #000000;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#nrnjpplcjh .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#nrnjpplcjh .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #000000;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#nrnjpplcjh .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #000000;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #FFFFFF;
+  vertical-align: middle;
+}
+
+#nrnjpplcjh .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#nrnjpplcjh .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#nrnjpplcjh .gt_row {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 0px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#nrnjpplcjh .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-right-style: solid;
+  border-right-width: 0px;
+  border-right-color: #FFFFFF;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nrnjpplcjh .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#nrnjpplcjh .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#nrnjpplcjh .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#nrnjpplcjh .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nrnjpplcjh .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#nrnjpplcjh .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#nrnjpplcjh .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#nrnjpplcjh .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nrnjpplcjh .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#nrnjpplcjh .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#nrnjpplcjh .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#nrnjpplcjh .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#nrnjpplcjh .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#nrnjpplcjh .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nrnjpplcjh .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#nrnjpplcjh .gt_sourcenote {
+  font-size: 10px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nrnjpplcjh .gt_left {
+  text-align: left;
+}
+
+#nrnjpplcjh .gt_center {
+  text-align: center;
+}
+
+#nrnjpplcjh .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#nrnjpplcjh .gt_font_normal {
+  font-weight: normal;
+}
+
+#nrnjpplcjh .gt_font_bold {
+  font-weight: bold;
+}
+
+#nrnjpplcjh .gt_font_italic {
+  font-style: italic;
+}
+
+#nrnjpplcjh .gt_super {
+  font-size: 65%;
+}
+
+#nrnjpplcjh .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#nrnjpplcjh .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#nrnjpplcjh .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#nrnjpplcjh .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#nrnjpplcjh .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#nrnjpplcjh .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#nrnjpplcjh .gt_indent_5 {
+  text-indent: 25px;
+}
+
+tbody tr:last-child {
+  border-bottom: 2px solid #ffffff00;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead><tr class="gt_col_headings">
+<th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: MaruBuri; font-weight: bold;" scope="col" id="이진법">이진법</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: MaruBuri; font-weight: bold;" scope="col" id="팔진법">팔진법</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: MaruBuri; font-weight: bold;" scope="col" id="십진법">십진법</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: MaruBuri; font-weight: bold;" scope="col" id="십육진법">십육진법</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: MaruBuri; font-weight: bold;" scope="col" id="모양">모양</th>
+    </tr></thead>
+<tbody class="gt_table_body">
+<tr>
+<td headers="이진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">1000000</td>
+<td headers="팔진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">100</td>
+<td headers="십진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">64</td>
+<td headers="십육진법" class="gt_row gt_right" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">40</td>
+<td headers="모양" class="gt_row gt_left" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">@</td>
+</tr>
+<tr>
+<td headers="이진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold;">1000001</td>
+<td headers="팔진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold;">101</td>
+<td headers="십진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold;">65</td>
+<td headers="십육진법" class="gt_row gt_right" style="font-family: MaruBuri; font-weight: bold;">41</td>
+<td headers="모양" class="gt_row gt_left" style="font-family: MaruBuri; font-weight: bold;">A</td>
+</tr>
+<tr>
+<td headers="이진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">1000010</td>
+<td headers="팔진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">102</td>
+<td headers="십진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">66</td>
+<td headers="십육진법" class="gt_row gt_right" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">42</td>
+<td headers="모양" class="gt_row gt_left" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">B</td>
+</tr>
+<tr>
+<td headers="이진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold;">1000011</td>
+<td headers="팔진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold;">103</td>
+<td headers="십진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold;">67</td>
+<td headers="십육진법" class="gt_row gt_right" style="font-family: MaruBuri; font-weight: bold;">43</td>
+<td headers="모양" class="gt_row gt_left" style="font-family: MaruBuri; font-weight: bold;">C</td>
+</tr>
+<tr>
+<td headers="이진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">1000100</td>
+<td headers="팔진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">104</td>
+<td headers="십진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">68</td>
+<td headers="십육진법" class="gt_row gt_right" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">44</td>
+<td headers="모양" class="gt_row gt_left" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">D</td>
+</tr>
+<tr>
+<td headers="이진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold;">1000101</td>
+<td headers="팔진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold;">105</td>
+<td headers="십진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold;">69</td>
+<td headers="십육진법" class="gt_row gt_right" style="font-family: MaruBuri; font-weight: bold;">45</td>
+<td headers="모양" class="gt_row gt_left" style="font-family: MaruBuri; font-weight: bold;">E</td>
+</tr>
+<tr>
+<td headers="이진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">1000110</td>
+<td headers="팔진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">106</td>
+<td headers="십진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">70</td>
+<td headers="십육진법" class="gt_row gt_right" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">46</td>
+<td headers="모양" class="gt_row gt_left" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">F</td>
+</tr>
+<tr>
+<td headers="이진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold;">1000111</td>
+<td headers="팔진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold;">107</td>
+<td headers="십진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold;">71</td>
+<td headers="십육진법" class="gt_row gt_right" style="font-family: MaruBuri; font-weight: bold;">47</td>
+<td headers="모양" class="gt_row gt_left" style="font-family: MaruBuri; font-weight: bold;">G</td>
+</tr>
+<tr>
+<td headers="이진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">1001000</td>
+<td headers="팔진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">110</td>
+<td headers="십진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">72</td>
+<td headers="십육진법" class="gt_row gt_right" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">48</td>
+<td headers="모양" class="gt_row gt_left" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">H</td>
+</tr>
+<tr>
+<td headers="이진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold;">1001001</td>
+<td headers="팔진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold;">111</td>
+<td headers="십진법" class="gt_row gt_center" style="font-family: MaruBuri; font-weight: bold;">73</td>
+<td headers="십육진법" class="gt_row gt_right" style="font-family: MaruBuri; font-weight: bold;">49</td>
+<td headers="모양" class="gt_row gt_left" style="font-family: MaruBuri; font-weight: bold;">I</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><a href="#tbl-ascii" class="quarto-xref">표&nbsp;<span>9.1</span></a> 에 아스키 문자표에 제어문자 10개와 출력가능 아스키 문자표 중 영문 대문자 A-I까지 10개를 뽑아 사례로 보여주고 있다. 즉, 문자표는 어떤 문자가 어떤 숫자에 해당하는지를 정의하고 있다.</p>
+</section><section id="ascii-extension" class="level3" data-number="9.2.2"><h3 data-number="9.2.2" class="anchored" data-anchor-id="ascii-extension">
+<span class="header-section-number">9.2.2</span> 확장 아스키</h3>
+<p>아스키(ASCII) 방식으로 숫자 <code>2</code>, 문자 <code>q</code>, 혹은 곡절 악센트 <code>^</code> 를 표현하는데 충분하다. 하지만, 투르크어족 추바시어 <code>ĕ</code>, 그리스 문자 <code>β</code>, 러시아 키릴문자 <code>Я</code> 는 어떻게 저장하고 표현해야 할까? 7-비트를 사용하면 0 에서 127까지 숫자를 부여할 수 있지만, 8-비트(즉, 1 바이트)를 사용하게 되면 255까지 표현할 수 있다. 그렇다면, ASCII 표준을 확장해서 추가되는 128개 숫자에 대해 추가로 문자를 표현할 수 있게 된다.</p>
+<ul>
+<li>아스키: 0…127</li>
+<li>확장된 아스키: 128…255</li>
+</ul>
+<p>불행하게도, 영어문자를 사용하지 않는 세계 곳곳에서 많은 사람들이 시도를 했지만, 방식도 다르고, 호환이 되지 않는 방식으로 작업이 되어, 결과는 엉망진창이 되었다. 예를 들어, 실제 텍스트가 불가리아어로 인코딩되었는데 스페인어 규칙을 사용해서 인코딩한 것으로 프로그램이 간주하고 처리될 경우 결과는 무의미한 횡설수설 값이 출력된다. 이와는 별도로 한중일(CJK) 동아시아 국가들을 비롯한 많은 국가들이 256개 이상 기호를 사용한다. 왜냐하면 8-비트로 특히 동아시아 국가 문자를 표현하는데 부족하기 때문이다.</p>
+</section><section id="한글-완성형과-조합형" class="level3" data-number="9.2.3"><h3 data-number="9.2.3" class="anchored" data-anchor-id="한글-완성형과-조합형">
+<span class="header-section-number">9.2.3</span> 한글 완성형과 조합형</h3>
+<p>1980년대부터 컴퓨터를 사용하신 분이면 완성형과 조합형의 표준화 전쟁을 지켜봤을 것이고, 그 이면에는 한글 워드프로세서에 대한 주도권 쟁탈전이 있었던 것을 기억할 것이다. 결국 완성형과 조합형을 모두 포용하는 것으로 마무리 되었지만, 여기서 끝난게 끝난 것이 아니다. 유닉스 계열에서 <code>KSC5601</code>을 표준으로 받아들인 <code>EUC-KR</code>과 90년대와 2000년대를 호령한 마이크로소프트 <code>CP949</code> 가 있었다. 결국 대한민국 정부에서 주도한 표준화 전쟁은 유닉스/리눅스, 마이크로소프트 모두를 녹여내는 것으로 마무리 되었고, 웹과 모바일 시대는 유니코드로 넘어가서 <code>KSC5601</code>이 유니코드의 원소로 들어가는 것으로 마무리 되었다.</p>
+<p>이제 신경쓸 것은 인코딩 … <code>utf-8</code> 만 신경쓰면 된다. 그리고 남은 디지털 레거시 유산을 잘 처리하면 된다.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+유닉스/리눅스(EUC-KR), 윈도우(CP949)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>EUC-KR</code>, <code>CP949</code> 모두 2바이트 한글을 표현하는 방식으로 동일점이 있지만, <code>EUC-KR</code> 방식은 KSC5601-87 완성형을 초기 사용하였으나, KSC5601-92 조합형도 사용할 수 있도록 확장되었다. <code>CP949</code>는 확장 완성형으로도 불리며 <code>EUC-KR</code>에서 표현할 수 없는 한글글자 8,822자를 추가한 것으로 마이크로소프트 코드페이지(Code Page) 949를 사용하면서 일반화되었다.</p>
+</div>
+</div>
+</section><section id="ascii-unicode" class="level3" data-number="9.2.4"><h3 data-number="9.2.4" class="anchored" data-anchor-id="ascii-unicode">
+<span class="header-section-number">9.2.4</span> 유니코드</h3>
+<p>1990년대 나타나기 시작한 해결책을 <strong>유니코드(Unicode)</strong> 라고 부른다. 예를 들어, 영어 A 대문자는 1 바이트, 한글 가는 3 바이트다. 유니코드는 정수값을 서로 다른 수만개 문자와 기호를 표현하는데 정의한다. ’A’는 <code>U+0041</code>, ’가’는 <code>U+AC00</code>과 같이 고유한 코드 포인트를 가진다. 하지만, 파일에 혹은 메모리에 문자열로 정수값을 저장하는 방식을 정의하지는 않는다.</p>
+<p>각 문자마다 8-비트를 사용하던 방식에서 32-비트 정수를 사용하는 방식으로 전환하면 되지만, 영어, 에스토니아어, 브라질 포르투칼어 같은 알파벳 언어권에는 상당한 공간 낭비가 발생된다. 접근 속도가 중요한 경우 메모리에 문자당 32 비트를 종종 사용한다. 하지만, 파일에 데이터를 저장하거나 인터넷을 통해 전송하는 경우 대부분의 프로그램과 프로그래머는 이와는 다른 방식을 사용한다.</p>
+<p>다른 방식은 (거의) 항상 <strong>UTF-8</strong> 으로 불리는 인코딩으로, 문자 마다 가변 바이트를 사용한다. 하위 호환성을 위해, 첫 128개 문자(즉, 구 아스키 문자집합)는 바이트 1개에 저장된다. 다음 1920개 문자는 바이트 2개를 사용해서 저장된다. 다음 61,000은 바이트 3개를 사용해서 저장해 나간다.</p>
+<p>궁금하면, 동작 방식이 다음 표에 나타나 있다. “전통적” 문자열은 문자마다 1 바이트를 사용한다. 반대로, “유니코드” 문자열은 문자마다 충분한 메모리를 사용해서 어떤 텍스트 유형이든 저장한다. R, 파이썬 3.x 에서 모든 문자열은 유니코드다. 엄청난 바이트를 읽어오거나 저장하여 내보내려고 할때, 인코딩을 지정하는 것은 엄청난 고통이다.</p>
+<p>유니코드 문자열은 여는 인용부호 앞에 소문자 <code>U</code>를 붙여 표시한다. 유니코드 문자열을 바이트 문자열로 전환하려면, 인코딩을 명세해야만 된다. 항상 UTF-8을 사용해야만 되고, 그밖의 인코딩을 사용하는 경우 매우, 매우 특별히 좋은 사유가 있어야만 된다. 특별한 인코딩을 사용하는 경우 두번 생각해 보라.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/ascii_evolution.jpg" class="lightbox" title="아스키에서 유니코드로 진화과정" data-gallery="quarto-lightbox-gallery-3"><img src="images/ascii_evolution.jpg" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">아스키에서 유니코드로 진화과정</figcaption></figure>
+</div>
+<p>컴퓨터가 처음 등장할 때 미국 영어권 중심 아스키가 아니고 4바이트 전세계 모든 글자를 표현할 수 있는 유니코드가 사용되었다면 한글을 컴퓨터에 표현하기 위한 지금과 같은 번거로움은 없었을 것이다. 돌이켜보면 초기 컴퓨터가 저장용량 한계로 인해 유니코드가 표준으로 자리를 잡더라도 실용적인 이유로 인해서 한글을 컴퓨터에 표현하기 위한 다른 대안이 제시됐을 것도 분명해 보인다. 초창기 영어권을 중심으로 아스키 표준이 정립되어 현재까지 내려오고, 유니코드와 UTF-8 인코딩이 사실상 표준으로 자리잡았으며, 그 사이 유닉스/리눅스 EUC-KR, 윈도우즈 CP949가 빈틈을 한동안 매우면서 역할을 담당했다.</p>
+<table class="table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead><tr class="header">
+<th style="text-align: center;">항목</th>
+<th style="text-align: center;">ASCII (1963)</th>
+<th style="text-align: center;">EUC-KR (1980s)</th>
+<th style="text-align: center;">CP949 (1990s)</th>
+<th style="text-align: center;">Unicode (1991)</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">범위</td>
+<td style="text-align: center;">128개의 문자</td>
+<td style="text-align: center;">2,350개의 한글 문자 등</td>
+<td style="text-align: center;">약 11,172개의 완성형 한글 문자 등</td>
+<td style="text-align: center;">143,859개의 문자 (버전 13.0 기준)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">비트 수</td>
+<td style="text-align: center;">7비트</td>
+<td style="text-align: center;">8~16비트</td>
+<td style="text-align: center;">8~16비트</td>
+<td style="text-align: center;">다양한 인코딩 방식 (UTF-8, UTF-16, UTF-32 등)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">표준</td>
+<td style="text-align: center;">ANSI, ISO/IEC 646</td>
+<td style="text-align: center;">KS X 2901</td>
+<td style="text-align: center;">마이크로소프트</td>
+<td style="text-align: center;">ISO/IEC 10646</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">플랫폼</td>
+<td style="text-align: center;">다양한 시스템</td>
+<td style="text-align: center;">UNIX 계열, 일부 Windows</td>
+<td style="text-align: center;">Windows 계열</td>
+<td style="text-align: center;">다양한 플랫폼</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">문자 집합</td>
+<td style="text-align: center;">영문 알파벳, 숫자, 특수 문자</td>
+<td style="text-align: center;">한글, 영문 알파벳, 숫자, 특수 문자</td>
+<td style="text-align: center;">한글, 한자, 영문 알파벳, 숫자, 특수 문자</td>
+<td style="text-align: center;">전 세계 언어, 특수 문자, 이모티콘 등</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">확장성</td>
+<td style="text-align: center;">확장 불가능</td>
+<td style="text-align: center;">한정적</td>
+<td style="text-align: center;">더 많은 문자 지원</td>
+<td style="text-align: center;">높은 확장성</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">국제성</td>
+<td style="text-align: center;">영어 중심</td>
+<td style="text-align: center;">한국어 중심</td>
+<td style="text-align: center;">한국어 중심</td>
+<td style="text-align: center;">다국어 지원</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">유니코드 호환</td>
+<td style="text-align: center;">호환 가능 (U+0000 ~ U+007F)</td>
+<td style="text-align: center;">호환 불가, 변환 필요</td>
+<td style="text-align: center;">유니코드와 상호 변환 가능</td>
+<td style="text-align: center;">자체가 표준</td>
+</tr>
+</tbody>
+</table></section></section><section id="utf-8" class="level2" data-number="9.3"><h2 data-number="9.3" class="anchored" data-anchor-id="utf-8">
+<span class="header-section-number">9.3</span> UTF-8</h2>
+<p>UTF-8(Universal Coded Character Set + Transformation Format – 8-bit의 약자)은 유니코드 중에서 가장 널리 쓰이는 인코딩으로, 유니코드를 위한 가변 길이 문자 인코딩 방식 중 하나로 켄 톰프슨과 롭 파이크가 제작했다.</p>
+<p>UTF-8 인코딩의 가장 큰 장점은 아스키(ASCII), 라틴-1(ISO-8859-1)과 호환되어, 문서를 처리하는 경우 아스키, 라틴-1 문서를 변환 없이 그대로 처리할 수 있고 영어를 비롯한 라틴계열 문서로 저장할 때 용량이 매우 작다. 이러한 이유로 많은 오픈소스 소프트웨어와 데이터를 생산하는 미국을 비롯한 유럽언어권에서 UTF-8이 많이 사용되고 있지만, 한글은 한 글자당 3바이트 용량을 차지한다.</p>
+<section id="웹-표준-인코딩" class="level3" data-number="9.3.1"><h3 data-number="9.3.1" class="anchored" data-anchor-id="웹-표준-인코딩">
+<span class="header-section-number">9.3.1</span> 웹 표준 인코딩</h3>
+<p>스마트폰의 대중화에 따라 더이상 윈도우 운영체제에서 사용되는 문자체계가 더이상 표준이 되지 못하고 여러 문제점을 야기함에 따라 <strong>유니코드 + UTF-8</strong> 체제가 대세로 자리잡고 있는 것이 확연히 나타나고 있다.</p>
+<p>2010년 구글에서 <a href="https://googleblog.blogspot.com/2010/01/unicode-nearing-50-of-web.html">발표</a>한 자료에 의하면 2010년 UTF-8 인코딩이 웹에서 주류로 부상하기 시작한 것이 확인되었다. <span class="citation" data-cites="unicode2010">(<a href="references.html#ref-unicode2010" role="doc-biblioref">Davis, 2010</a>)</span> 웹기반 플롯 디지털 도구를 활용하여 그래프(<a href="https://apps.automeris.io/wpd/">WebPlotDigitizer</a>)에서 데이터를 추출하여 시각화면 유사한 결과를 시각적으로 표현할 수 있다. 2010년 이후 웹에서 가장 점유율이 높은 인코딩 방식은 UTF-8으로 W3Tech 웹기술조사(Web Technology Surveys)를 통해 확인을 할 수 있다. 여기서 주목할 점은, 프랑스어, 독일어, 스페인어와 같은 서유럽 언어의 문자와 기호 표현하는 ISO-8859-1 인코딩, 종종 “Latin-1”으로 불리는 8비트 문자 인코딩이 현저히 줄고 있다는 점이다.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="unicode_files/figure-html/unnamed-chunk-2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="unicode_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</section></section><section id="텍스트-표현" class="level2" data-number="9.4"><h2 data-number="9.4" class="anchored" data-anchor-id="텍스트-표현">
+<span class="header-section-number">9.4</span> 텍스트 표현</h2>
+<p>1940년대, 1950년대 펀치카드 기술로 정의된 첫번째 방식이 <strong>고정폭 레코드(fixed-width records)</strong> 를 사용하는 것으로, 각 줄마다 동일한 고정길이를 갖는다. 예를 들어, 다음 일본 전통 단시 하이쿠(haiku)를 컴퓨터로 아래와 같이 레코드 3개로 배열했다. (점 문자는 “사용되지 않음”을 의미) 이런 방식은 여전히 데이터베이스에도 사용되고 있다.</p>
+<blockquote class="blockquote">
+<p><strong>일본 전통 단시 하이쿠 예시</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>A crash reduces</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>your expensive computer</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>to a simple stone.</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</blockquote>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/regex-encoding-fixed-width.png" class="lightbox" title="고정길이 일본 전통 하이쿠 표현" data-gallery="quarto-lightbox-gallery-5"><img src="images/regex-encoding-fixed-width.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">고정길이 일본 전통 하이쿠 표현</figcaption></figure>
+</div>
+<p>이런 표기법은 N번째 행 앞으로 뒤로 건너뛰기 쉬운데 이유는 각 행이 동일한 크기를 갖기 때문이다. 하지만, 공간을 낭비하는 약점이 있고, 행마다 얼마나 긴 최대 길이를 갖느냐에 관계없이, 궁극적으로 더 긴 길이를 갖는 행을 기준으로 처리해야만 된다.</p>
+<p>시간이 흐름에 따라 개발자 대부분은 다른 표현법으로 전환했다. 전환된 표현법에 따르면 텍스트는 단지 연속된 바이트(byte)에 불과하고, 이런 연속된 바이트 일부에 “현재 라인은 여기서 종료” 라는 의미가 담겨진다. 이러한 표현법으로 일본 전통 단시 하이쿠를 다시 표현하면 다음과 같다.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/regex-encoding-variable-width.png" class="lightbox" title="변동길이 일본 전통 하이쿠 표현" data-gallery="quarto-lightbox-gallery-6"><img src="images/regex-encoding-variable-width.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">변동길이 일본 전통 하이쿠 표현</figcaption></figure>
+</div>
+<p>회색칸이 “행의 끝(end of line)”을 의미한다. 이런 표기법은 더 유연하고, 공간을 덜 낭비하지만, N번째 행 앞으로 뒤로 건너뛰는 것은 어렵게 되었다. 이유는 각각이 다른 길이를 갖기 때문이다. 물론 행 종료를 표시하는데 무엇을 사용할지 결정해야하는 문제가 남았다. 불행히도, 유닉스에서는 행의 끝으로 개행 문자(newline) 한개, <code>\n</code>으로 정했지만, 윈도우에서는 행의 끝으로 복귀문자(carriage return) 다음에 개행문자, <code>\r\n</code> 으로 정했다.</p>
+<p>편집기 대부분에서 이런 차이를 탐지하고 처리할 수 있지만, 유닉스와 윈도우를 모두 다뤄야 되는 프로그래머에게는 여전히 성가신 일이다. 윈도우 운영체제 파일에서 데이터를 불러읽어올 경우, 파이썬에서 <code>\r\n</code> 을 <code>\n</code> 으로 전환하고, 데이터를 써서 저장할 경우 반대 방식으로 전환한다. 그러나 이미지, 소리 또는 기타 이진 파일형식에서 <code>\r</code> 또는 <code>\n</code>에 해당하는 문자가 우연히 포함되어 있다면, 원치 않는 변환이 발생할 수 있다.</p>
+</section><section id="localization" class="level2" data-number="9.5"><h2 data-number="9.5" class="anchored" data-anchor-id="localization">
+<span class="header-section-number">9.5</span> 현지화/세계화</h2>
+<p>현지화(Localization)는 세계화(internationalization)의 동전의 양면과 같다. 세계화를 영어로 <code>internationalization</code>으로 길기 때문에 <code>i18n</code>으로 줄여서 현지화는 영어로 <code>Localization</code>으로 길기 때문에 동일한 로직으로 <code>L10N</code>으로 줄여 표현한다. 현지화에 해당되는 사항은 다음이 포함된다. <span class="citation" data-cites="oliver2023internationalization">(<a href="references.html#ref-oliver2023internationalization" role="doc-biblioref">Oliver, 2017</a>)</span></p>
+<ul>
+<li>문자 집합</li>
+<li>통화</li>
+<li>날씨 온도(<span class="math inline">\(^{\circ} C / ^{\circ} F\)</span>)</li>
+<li>길이 (킬로미터, 마일)</li>
+<li>날짜와 시간</li>
+<li>키보드 배열</li>
+<li>좌측에서 우축으로, 위에서 아래, 우측에서 좌측으로 텍스트 작성 방식과 문서양식</li>
+<li>…</li>
+</ul>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-unicode2010" class="csl-entry" role="listitem">
+Davis, M. (2010). <em>Unicode nearing 50</em>. <a href="https://googleblog.blogspot.com/2010/01/unicode-nearing-50-of-web.html">https://googleblog.blogspot.com/2010/01/unicode-nearing-50-of-web.html</a>
+</div>
+<div id="ref-oliver2023internationalization" class="csl-entry" role="listitem">
+Oliver, C. (2017). <em>Internationalization Part I: Unicode and Character Encodings</em>. <a href="https://slideplayer.com/slide/7684069/">https://slideplayer.com/slide/7684069/</a>
+</div>
+</div>
+</section><aside id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><hr>
+<ol>
+<li id="fn1"><p>미국정보교환표준부호(American Standard Code for Information Interchange, ASCII)는 영문 알파벳을 사용하는 대표적인 문자 인코딩으로 컴퓨터와 통신 장비를 비롯한 문자를 사용하는 많은 장치에서 사용되며, 대부분의 문자 인코딩이 아스키에 기초하고 있다.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol></aside></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "복사완료!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "복사완료!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        return container.innerHTML
+      } else {
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+      <a href="./markdown_03_advanced.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">고급 마크다운</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./fonts.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">글꼴</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","closeEffect":"zoom","openEffect":"zoom","loop":true});</script>
+
+
+</body></html>

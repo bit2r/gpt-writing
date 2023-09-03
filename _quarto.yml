@@ -33,6 +33,7 @@ book:
 
     - part: "기본요소"
       chapters:
+        - unicode.qmd
         - fonts.qmd
         - colors.qmd
 
@@ -79,7 +80,7 @@ format:
 bibliography: references.bib
 csl: apa-single-spaced.csl
 link-citations: true
-
+tbl-cap-location: bottom
 
 knitr:
   opts_chunk:
