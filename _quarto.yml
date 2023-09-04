@@ -48,6 +48,10 @@ book:
         - whole_game.qmd
         - dw_components.qmd
         - dw_pdf.qmd
+        - dw_dashboard.qmd
+        - dw_website.qmd  # 헬로월드만 제작
+        - dw_slideshow.qmd
+        - dw_blog.qmd
 
     - part: "실무"
       chapters:

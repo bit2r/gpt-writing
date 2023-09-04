@@ -1,0 +1,14 @@
+{
+  "hash": "5d5f4c016428c020a26bdee084f16418",
+  "result": {
+    "markdown": "---\noutput: html_document\neditor_options: \n  chunk_output_type: console\n---\n\n\n# 슬라이드 PPT\n\n쿼토 슬라이드(Quarto Slide) 이전에 [사륜안(`xaringan`)](https://github.com/yihui/xaringan)이 마크다운으로 웹 슬라이드를 제작할 수 있었으나 `remark.js` 에 기반을 두다보니 `pandoc`과 호환성을 이유로 `reveal.js`를 기반으로 한 쿼토 슬라이드(Quarto Slide)가 새롭게 쿼토 생태계에서 웹슬라이드 PPT 부분을 담당하게 되었다.\n\n## 헬로월드\n\n쿼토는 기본적으로 프로젝트를 기반으로 시작하기 때문에 프로젝트를 하나 생성한다. RStudio를 실행하고 우측 상단 `Project:(None)`을 클릭하여 `New Project`를 새로운 디렉토리를 만들어 생성한다.\n\n::: {#fig-slide layout=\"[[1, 1]]\"}\n![](images/dw_slide_new_project.jpg){fig-align=\"center\" width=\"280\"}\n\n![](images/dw_slide_one_image.jpg)\n\n슬라이드 제작을 위한 프로젝트 생성\n:::\n\n프로젝트가 생성되면 `File` → `New File` → `Quarto Presentation...`을 클릭하여 쿼토 슬라이드 `.qmd` 문서파일을 생성한다.\n\n::: {#fig-slide-qmd layout=\"[[1, 1]]\"}\n![](images/dw_slide_quarto_slides.jpg){fig-align=\"center\" width=\"350\"}\n\n![](images/dw_slide_quarto_slides_menu.jpg){fig-align=\"center\" width=\"350\"}\n\n쿼토 프리젠테이션 파일 생성\n:::\n\n`Ctrl` + `Shift` + `k` 단축키를 눌러 `.qmd` 파일을 웹슬라이드로 제작할 수 있다.\n웹슬라이드 파일명을 `helloworld.qmd`로 저장한다.\n\n![첫번째 웹슬라이드 제작과정](images/dw_slide_helloworld.jpg)\n\n\n::: {.cell}\n::: {.cell-output-display}\n\n```{=html}\n<a href=\"data:application/octet-stream;base64,LS0tDQp0aXRsZTogIuyxl0dQVCDrsJztkZwiDQpmb3JtYXQ6IHJldmVhbGpzDQotLS0NCg0KIyMg7L+87YagDQoNCuy/vO2GoOuKlCDrgrTsmqnqs7wg7Iuk7ZaJIOqwgOuKpe2VnCDsvZTrk5zrpbwg7ZWo6ruYIOqysO2Vqe2VmOyXrCDsmYTshLHrkJwg7ZSE66CI7KCg7YWM7J207IWY7J2EIOunjOuTpCDsiJgg7J6I6rKMIO2VtOykgOuLpC4g7L+87YagIO2UhOugiOygoO2FjOydtOyFmOyXkCDrjIDtlbQg642UIOyVjOqzoCDsi7bri6TrqbQgPGh0dHBzOi8vcXVhcnRvLm9yZy9kb2NzL3ByZXNlbnRhdGlvbnMvPuulvCDssLjsobDtlZzri6QuDQoNCiMjIOq4gOuouOumrCDquLDtmLgNCg0KKipSZW5kZXIqKiDrsoTtirzsnYQg7YG066at7ZWY66m0IOuLpOydjOydhCDtj6ztlajtlZwg66y47ISc6rCAIOyDneyEseuQnOuLpDoNCg0KLSAgIOuniO2BrOuLpOyatOycvOuhnCDsnpHshLHrkJwg64K07JqpDQotICAg7Iuk7ZaJIOqwgOuKpe2VnCDsvZTrk5zsnZgg7Lac66ClDQoNCiMjIOy9lOuTnA0KDQoqKlJlbmRlcioqIOuyhO2KvOydhCDtgbTrpq3tlZjrqbQg64K07Jqp6rO8IO2PrO2VqOuQnCDsvZTrk5zsnZgg7Lac66Cl7J2EIOuqqOuRkCDtj6ztlajtlZwg7ZSE66CI7KCg7YWM7J207IWY7J20IOyDneyEseuQnOuLpC4g7J2066CH6rKMIOy9lOuTnOulvCDsgr3snoXtlaAg7IiYIOyeiOuLpDoNCg0KYGBge3J9DQoxICsgMQ0KYGBgDQoNCg0K\" download=\"helloworld.qmd\">다운로드 예제 PPT 파일</a>\n```\n\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
