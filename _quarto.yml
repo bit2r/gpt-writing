@@ -46,7 +46,7 @@ book:
     - part: "디지털 글쓰기"
       chapters:
         - whole_game.qmd
-        - dw_fonts.qmd
+        - dw_components.qmd
         - dw_pdf.qmd
 
     - part: "실무"
