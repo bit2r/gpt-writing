@@ -36,6 +36,7 @@ book:
         - unicode.qmd
         - fonts.qmd
         - colors.qmd
+        - components.qmd
 
     - part: "템플릿과 테마"
       chapters:
@@ -46,7 +47,6 @@ book:
     - part: "디지털 글쓰기"
       chapters:
         - whole_game.qmd
-        - dw_components.qmd
         - dw_pdf.qmd
         - dw_dashboard.qmd
         - dw_website.qmd  # 헬로월드만 제작

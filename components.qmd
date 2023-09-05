@@ -1,0 +1,618 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+# 문서 구성요소
+
+
+![디지털 문서 구성요소](images/writing_document.jpg)
+
+## 그래프
+
+그래프(`ggplot`)에 사용되는 글꼴도 마찬가지로 `showtext` 패키지 웹폰트를 사용해서
+다양한 한글도 사용할 수 있다. `showtext` 패키지는 `font_add_google()` 함수를 
+통해서 구글 한글폰트를 지정하여 이를 `ggplot` 에 적용시킬 수 있다.
+
+```{r}
+#| warning: false
+#| message: false
+#| echo: true
+library(tidyverse)
+library(showtext)
+library(palmerpenguins)
+
+font_add_google("Nanum Pen Script", "nanum_pen_script")
+font_add_google("Jua", "Jua")
+showtext_auto()
+
+theme_quarto <- theme(
+  text = element_text(family = 'Jua', size = 25),
+  plot.title.position = 'plot',
+  plot.title = element_text(
+    family = 'nanum_pen_script', size = 55,
+    face = 'bold', 
+    colour = thematic::okabe_ito(8)[3],
+    margin = margin(t = 2, r = 0, b = 3, l = 0, unit = "mm")
+  ),
+  plot.subtitle = element_text(
+    family = 'Jua', size = 25,
+    face = 'bold', 
+    colour = thematic::okabe_ito(8)[5],
+    margin = margin(t = 0, r = 0, b = 0, l = 0, unit = "mm")
+  )
+  
+)
+
+theme_set(theme_minimal() + theme_quarto)
+
+mass_flipper <- ggplot(data = penguins,
+                       aes(x = flipper_length_mm,
+                           y = body_mass_g,
+                           color = species)) +
+  geom_point(size = 3,
+             alpha = 0.8) +
+  labs(title = "팔머 관측소 LTER 서식 펭귄 크기",
+       subtitle = "Adelie, Chinstrap, Gentoo 펭귄에 대한 물갈퀴 길이와 체질량",
+       x = "물갈퀴 길이(Flipper length) (mm)",
+       y = "체질량(Body mass) (g)")
+
+mass_flipper
+```
+
+
+## 표
+
+구글 폰트에서 다양한 글꼴을 표 제목, 표 칼럼명, 표 셀값에 다르게 적용하며
+크기는 물론 색상과 굵기도 적용이 가능하다.
+
+```{r}
+#| warning: false
+#| message: false
+#| echo: true
+library(gt)
+
+basic_theme <- function(data, ...){
+  data %>% 
+    tab_options(
+      column_labels.background.color = "blue",
+      table.font.size = px(12),
+      column_labels.font.size = px(20),
+      row.striping.background_color = "#9678b6",
+      heading.align = "left",
+      heading.title.font.size = px(30)
+  )
+}
+
+palmerpenguins::penguins %>% 
+  select( 펭귄종=species, 섬=island, bill_length_mm, body_mass_g) %>% 
+  slice_sample(n = 10) %>% 
+  gt() %>% 
+    tab_header(title = md("팔머 펭귄 표본 **10 마리** 측정 정보")) %>% 
+    tab_source_note(source_note = "데이터: Kristen Gorman 박사와 남국 팔머 관측소(Palmer Station, Antarctica LTER)에서 수집") %>% 
+    cols_label(bill_length_mm = "부리 길이 (mm)",
+               body_mass_g    = "체질량 (g)") %>% 
+  tab_style(
+    style = cell_text(
+      font = c(
+        google_font(name = "Nanum Pen Script"),
+        default_fonts()
+      ),
+      size = "xx-large",
+      color = "gray35",
+      weight = "bolder"
+    ),
+    locations = cells_body(columns = bill_length_mm)
+  ) %>% 
+  # 체질량 칼럼  ---------------
+  tab_style(
+    style = cell_text(
+      font = c(
+        google_font(name = "Black Han Sans"),
+        default_fonts()
+      ),
+      size = "large",
+      color = "blue",
+      weight = "bolder"
+    ),
+    locations = cells_body(columns = body_mass_g)
+  ) %>% 
+  # 표 Header 와 첫번째 칼럼  ---------------
+  tab_style(
+    style = cell_text(
+      font = google_font("Do Hyeon"), 
+      size = "large"
+    ),
+    locations = list(
+      cells_column_labels(everything()), 
+      cells_body(columns = 1)
+    )
+  ) %>%   
+  # 표 제목 ---------------
+  tab_style(
+    style = cell_text(
+      font = google_font("Dokdo"), 
+      align = "left", 
+      size = "xx-large"
+    ),
+    locations = cells_title("title")
+  ) %>%   
+  basic_theme() 
+
+```
+
+
+[kableExtra](https://cran.r-project.org/web/packages/kableExtra/), [`knitr::kable()`](https://rdrr.io/cran/knitr/man/kable.html) 함수는 통해 R마크다운 문서에 포함되는 표를 원하는 방향으로 작성할 수 있다. 내장된 `mtcars` 데이터프레임을 기본 데이터로 표를 제작해보자. [@xie2020r]
+
+
+### 헬로우 월드 표 {#rmarkdown-kable-table}
+
+`mtcars` 데이터프레임에서 시연목적으로 관측점 5개와 열 4개를 뽑아내서 `kable()`함수에 넣고 출력형식을 `markdown`으로 지정한다. `markdown`외에도 `html`, `pandoc`, `latex`, `rst`등으로 출력형식을 지정할 수 있다.
+
+```{r}
+#| label: knitr-kable-table
+library(tidyverse)
+library(knitr)
+
+mtcars %>% 
+  sample_n(5) %>% 
+  select(mpg, cyl, disp, hp) %>% 
+  kable("markdown")
+```
+
+### 표 칼럼명 지정 {#rmarkdown-table-columns}
+
+`kable()` 함수 내부에 `col.names =`에 칼럼명을 넣어주면 표의 칼럼명을 원하는 방식으로 변경시킬 수 있다.
+
+- `r names(iris)`
+- `r str_replace(names(iris), "\\.", " ")`
+
+```{r rmarkdown-table-columns}
+iris %>% 
+  sample_n(5) %>% 
+  kable(col.names = str_replace(names(iris), "\\.", " "))
+```
+
+
+### 표 칼럼 정렬 {#rmarkdown-table-columns-arrange}
+
+`align=` 인자를 조정해서 칼럼별로 정렬을 달리 할 수 있다.
+
+```{r rmarkdown-table-columns-arrange}
+iris %>% 
+  sample_n(5) %>% 
+  kable(align=c("rclcr"))
+```
+
+### 표 칼럼 캡션 {#rmarkdown-table-columns-caption}
+
+`align=` 인자를 조정해서 칼럼별로 정렬을 달리 할 수 있다. `@tbl-columns-caption`와 같이 @tbl-columns-caption 상호참조할 수 있다.
+
+```{r}
+#| label: tbl-columns-caption
+#| echo: fenced
+
+opts_current$append(list(label = "tw"))
+iris %>% 
+  sample_n(5) %>% 
+  kable(caption = "붓꽃 원자료 자막입니다.")
+```
+
+### 표를 루프 돌리기 {#rmd-kable-loop}
+
+품종별로 각각 표를 만들 필요가 있을 때 `for` 루프를 돌려 해당 품종별로 표를 제작한다. 이를 위해서 쿼도 코드덩어리 선택옵션을 넣어준다.
+
+```{r}
+#| label: show-iris-species
+#| results: asis
+#| echo: fenced
+
+library(glue)
+
+species <- unique(iris$Species)
+
+for (i in seq_along(species)) {
+  species_tbl <- iris %>% 
+    filter(Species == species[i]) %>% 
+    head() %>% 
+    kable(caption = glue('붓꽃 품종: {species[i]}'))
+  print(species_tbl)
+  cat('\n\n<!-- -->\n\n')
+}
+```
+
+
+### `kableExtra` 멋내기 {#rmd-kableExtra}
+
+[kableExtra](https://cran.r-project.org/web/packages/kableExtra/) 팩키지를 활용하여 [Create Awesome HTML Table with knitr::kable and kableExtra](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html)와 같이 멋진 표를 만들어낼 수 있다.
+
+### `gt` {#rmd-gt}
+
+그래프 문법(grammar of graphics)처럼 표 문법(grammar of table) [`gt`](https://github.com/rstudio/gt/) 팩키지가 등장했다. 표를 분해하면 다음과 같고 이를 `tibble` 혹은 데이터프레임을 입력받아 GT 객체로 변환시킨 후에 GT 표를 HTML로 출력하는 작업흐름을 갖는다.
+
+```{r}
+#| label:  gt-image
+#| eval: false
+webshot2::webshot("https://gt.rstudio.com/", selector = "#main > div:nth-child(3) > p > img", "images/gt-concept.png")
+```
+
+![표 해부도](images/gt_parts_of_a_table.svg)
+
+### `gt` 맛보기 [^gt-rstudio-blog] {#rmd-gt-taste}
+
+[^gt-rstudio-blog]: [Richard Iannone (2020-04-08), "Great Looking Tables: gt (v0.2)"](https://blog.rstudio.com/2020/04/08/great-looking-tables-gt-0-2/)
+
+`gt` 팩키지에 내장된 `exibble` 데이터셋은 $8 \times 9$ 구조를 갖는 단순한 데이터셋이지만 표와 관련된 다양한 형태를 개발에 사용할 주요한 정보를 담고 있다.
+
+```{r rmd-gt-taste-dataset}
+library(gt)
+
+exibble %>% 
+  kable()
+```
+
+`fmt_` 함수와 `tab_` 함수처럼 `tidyverse` 생태계를 구성하고 있는 다양한 팩키지와 동일한 사고체계와 문법을 따르고 있는 것을 확인할 수 있다.
+
+```{r rmd-gt-taste}
+#| eval: false
+
+exibble %>%
+  gt() %>%
+  fmt_number(columns = vars(num), decimals = 2) %>%
+  fmt_date(columns = vars(date), date_style = 6) %>%
+  fmt_time(columns = vars(time), time_style = 4) %>%
+  fmt_datetime(columns = vars(datetime), date_style = 6, time_style = 4) %>%
+  fmt_currency(columns = vars(currency), currency = "EUR") %>% 
+  tab_header(
+    title = md("This is the `exibble` dataset in **gt**"),
+    subtitle = "It is one of six datasets in the package"
+  ) %>%
+  tab_source_note(md("More information is available at `?exibble`."))
+```
+
+## 다이어그램
+
+```{mermaid}
+
+graph LR
+
+    chatGPT["챗GPT"] --> Contents
+
+    subgraph Contents["디지털 글쓰기"]
+        direction LR
+        Writing["글감"] --> Table["표"]
+        Writing --> Graph["그래프"]
+        Writing --> Code["파이썬/R/SQL<br>코드"]
+        Writing --> Figure["그림"]
+        Writing --> Diagram["도형"]        
+    end
+
+    chatGPT --> Format
+    Contents --> Format
+
+    subgraph Format["구조와 외양"]
+        direction LR
+        Theme["구조와 외양"] --> Title["문서 구조"]
+        Theme               --> Formatting["문서 서식"]
+        Theme               --> Layout["문서 레이아웃"]
+        Theme               --> reference["문서 참조"]
+    end
+
+    chatGPT --> Deployment
+    Format --> Deployment
+
+    subgraph Deployment["배포와 공유"]
+        direction LR
+        Deploy --> Reader["독자(사람)"]
+        Deploy --> Author["독자(저작자)"]
+        Deploy --> Machine["독자(기계)"]
+    end
+
+
+    style chatGPT fill:#f5f5f5,stroke:#333,stroke-width:3px
+    style Contents fill:#059fff,stroke:#333,stroke-width:1px
+    style Format fill:#fc0303,stroke:#333,stroke-width:1px
+    style Deployment fill:#03fc30,stroke:#333,stroke-width:1px
+```
+
+
+
+## 보고서
+
+데이터 사이언스 한글 출판 문서 제작을 위해서 다음 글꼴을 선택한다.
+제목으로 산스 세리프 폰트로 구글 폰트에서 "노토 산스 세리프"를 선정하고,
+본문은 눈누 웹사이트에서 "마루부리"를 선정하고 코딩 글꼴 폰트로 눈누에서
+`D2Coding` 폰트를 지정한다.
+
+- 산스 세리프(제목): Noto Sans Serif
+- 세리프(본문): 마루부리 
+- 등간격(코딩): D2Coding   
+ 
+
+```{r}
+#| warning: false
+#| message: false
+#| echo: true
+#| eval: false
+
+library(tidyverse)
+
+mass_flipper <- ggplot(data = penguins,
+                       aes(x = flipper_length_mm,
+                           y = body_mass_g)) +
+  geom_point(size = 3,
+             alpha = 0.8) +
+  theme_minimal() +
+  labs(title = "팔머 관측소 LTER 서식 펭귄 크기",
+       subtitle = "Adelie, Chinstrap, Gentoo 펭귄에 대한 물갈퀴 길이와 체질량",
+       x = "물갈퀴 길이(Flipper length) (mm)",
+       y = "체질량(Body mass) (g)") +
+  theme_minimal()
+
+```
+  
+ 
+### css 파일
+
+출판문서 제작에 사용된 글꼴 관련 사항을 `css/quarto-fonts.css` 파일에 지정해둔다.
+
+
+```{css}
+/* 글꼴 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR');
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR');
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+
+@font-face {
+    font-family: 'MaruBuri-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'D2Coding';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/D2Coding.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* HTML */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+body {
+  font-family: "Nanum Myeongjo", "MaruBuri-Regular", "Noto Serif KR", serif;
+  font-size: 15px;
+}
+
+tt, code, pre {
+  font-family: "D2Coding", Consolas, monospace;
+  font-size: 15px;
+}
+```
+
+## 수식
+
+### LaTeX를 이용한 수학적 표현
+
+수학은 공학, 물리학, 컴퓨터 과학, 경제학 등 다양한 분야에서 중심 역할을 하는 학문으로 
+정확하고 명료한 수학적 표기는 매우 중요하다. $\LaTeX$은 수학적 표현을 깔끔하고 정확하게 표현할 수 있는 도구 중 하나로 $\LaTeX$를 이용해 다양한 수학적 표현법을 살펴보자.
+
+$\LaTeX$은 기본적인 사칙연산에서부터 지수, 삼각함수, 적분, 행렬, 그리스 문자, 무한대 등 광범위한 수학적 표현이 가능하여 전문가 느낌의 문서나 논문, 프레젠테이션에 즉시 적용할 수 있는 고급스럽고 미련한 수식표현이 가능하다.
+
+기본적인 덧셈과 뺄셈은 `\begin{equation} a + b = c \end{equation}`처럼 표현할 수 있고, 
+복잡한 적분도 `\begin{equation} \int_{0}^{\infty} e^{-x^2} dx = \frac{\sqrt{\pi}}{2} \end{equation}`와 같이 명료하게 표현할 수 있을 뿐만 아니라, 
+행렬이나 그리스 문자도 `\begin{pmatrix} a & b \\ c & d \end{pmatrix}`와 `\alpha, \beta, \gamma, \Gamma, \pi, \Pi, \phi, \Phi, \mu` 등의 명령어를 통해 표현할 수 있다.
+
+### 기본 연산자와 수
+
+:::::{.columns}
+:::{.column}
+
+```latex
+\begin{equation}
+a + b = c
+\end{equation}
+```
+
+:::
+
+:::{.column}
+
+$$
+\begin{equation}
+a + b = c
+\end{equation}
+$$
+
+:::
+:::::
+
+
+### 제곱근과 지수
+
+:::::{.columns}
+:::{.column}
+```latex
+\begin{equation}
+\sqrt{a^2 + b^2} = c
+\end{equation}
+```
+:::
+  
+:::{.column}
+$$
+\begin{equation}
+\sqrt{a^2 + b^2} = c
+\end{equation}
+$$
+:::
+:::::
+  
+
+
+
+### 삼각함수
+
+:::::{.columns}
+:::{.column}
+```latex
+\begin{equation}
+\sin^2 \theta + \cos^2 \theta = 1
+\end{equation}
+```
+:::
+  
+:::{.column}
+$$
+\begin{equation}
+\sin^2 \theta + \cos^2 \theta = 1
+\end{equation}
+$$
+
+:::
+:::::
+  
+
+### 적분
+
+:::::{.columns}
+:::{.column}
+```latex
+\begin{equation}
+\int_{0}^{\infty} e^{-x^2} dx = \frac{\sqrt{\pi}}{2}
+\end{equation}
+```
+
+:::
+  
+:::{.column}
+$$
+\begin{equation}
+\int_{0}^{\infty} e^{-x^2} dx = \frac{\sqrt{\pi}}{2}
+\end{equation}
+$$
+
+:::
+:::::
+  
+
+### 행렬
+
+:::::{.columns}
+:::{.column}
+```latex
+\begin{equation}
+\begin{pmatrix}
+a & b \\
+c & d
+\end{pmatrix}
+\end{equation}
+```
+
+:::
+  
+:::{.column}
+
+$$
+\begin{equation}
+\begin{pmatrix}
+a & b \\
+c & d
+\end{pmatrix}
+\end{equation}
+$$
+
+:::
+:::::
+  
+
+
+### 그리스 문자
+
+:::::{.columns}
+:::{.column}
+```latex
+\begin{equation}
+\alpha, \beta, \gamma, \Gamma, \pi, \Pi, \phi, \Phi, \mu
+\end{equation}
+```
+
+:::
+  
+:::{.column}
+$$
+\begin{equation}
+\alpha, \beta, \gamma, \Gamma, \pi, \Pi, \phi, \Phi, \mu
+\end{equation}
+$$
+
+:::
+:::::
+  
+
+
+### 무한대
+
+:::::{.columns}
+:::{.column}
+```latex
+\begin{equation}
+\lim_{{n \to \infty}} \frac{1}{n} = 0
+\end{equation}
+```
+
+:::
+  
+:::{.column}
+$$
+\begin{equation}
+\lim_{{n \to \infty}} \frac{1}{n} = 0
+\end{equation}
+$$
+
+:::
+:::::
+  
+
+### 합과 곱
+
+`MathJax`에서 줄바꿈(`\\`)이 반영되지 않아 `aligned`를 사용했지만,
+`MathJax` v4 에서 기능이 구현되어 구문이 훨씬 간결해질 것으로 보인다.
+
+:::::{.columns}
+:::{.column}
+```latex
+\begin{equation}
+\begin{aligned}[t]
+\sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6} \\
+\prod_{i=1}^{n} a_i = a_1 \times a_2 \times \cdots \times a_n
+\end{aligned} 
+\end{equation}
+```
+
+:::
+  
+:::{.column}
+$$
+\begin{equation}
+\begin{aligned}[t]
+\sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6} \\
+\prod_{i=1}^{n} a_i = a_1 \times a_2 \times \cdots \times a_n
+\end{aligned} 
+\end{equation}
+$$
+
+:::
+:::::
+  
+
+이 외에도 $\LaTeX$로 더 복잡한 수식표현도 얼마든지 가능하다.
+
+
