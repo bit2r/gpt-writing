@@ -4,7 +4,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-# 편집기
+# 편집기와 출판
 
 디지털 전환(Digital Transformation) 전 글쓰기는 착상 후 종이와 연필을 가지고 글을 작성하고 수차례 수정작업을 거쳐 타자기로 탈고를 하고 이를 출판사에 넘겨 책이나 보고서로 고객에게 전달하게 된다. 하지만, **디지털 전환(Digital Transformation)** 시대 도래로 글쓰기 방식도 크게 변화하게 된다. 아래한글이나 마이크로소프트 워드, 리브레 Write와 같은 워드 프로세서(Word Processor)를 넘어, Vim, Emacs, VS 코드와 같은 코딩 편집기에서 마크다운을 사용하거나 직접 HTML을 코딩하여 글쓰기를 하게 된다.
 
@@ -90,68 +90,72 @@ RStudio 코드 편집기는 자동 완성, 구문 강조, 맞춤법 검사 등 �
 
 ### [맞춤법 검사](https://statkclee.github.io/comp_document/cd-rstudio-wp.html){#spelling-check}
 
-
 ## 쿼토 설치
+
+[쿼토(Quarto)](https://quarto.org/) 웹사이트에서 Quarto CLI 엔진과 통합개발도구(IDE)를 설치한다. 쿼토 CLI를 지원하는 IDE는 VS Code, RStudio, Jupyter, VIM/Emacs 와 같은 텍스트 편집기가 포함된다. IDE까지 설치를 했다면 문학적 프로그래밍(literate programming)을 통해 사람이 저작하는 마크다운(Markdown)과 기계가 저작하는 프로그래밍 언어(R/Python/SQL/줄리아/자바스크립트)를 결합한 다양한 문서저작을 시작할 수 있다.
+
+![쿼토 도구모음](images/quarto-toolchain.png)
 
 ### 윈도우 설치
 
-[Quarto](https://quarto.org/)를 운영체제에 맞춰 설치한다. 
-Quarto 는 기본적으로 CLI 라서 설치 후 제대로 설정이 되었는지는 
-환경설정에 경로를 등록해줘야 한다. 
+[쿼토(Quarto)](https://quarto.org/)를 윈도우 운영체제에 설치하기 위해서는 몇 가지 단계를 거쳐야 한다.
 
+### 쿼토 다운로드
 
-#### Quarto 다운로드
+먼저 Quarto 공식 웹사이트에서 윈도우용 설치 파일을 다운로드한다. 웹사이트 ["Download Quarto CLI"](https://quarto.org/docs/get-started/) 윈도우 버전을 선택하여 다운로드한다.
 
-![](images/quarto-download.png)
+![쿼토 다운로드 화면](images/quarto-download.png){fig-align="center" width="400"}
 
-#### Quarto 설치
+#### 쿼토 설치
 
-![](images/quarto-install.png)
+다운로드한 파일을 더블클릭 실행하여 설치를 진행한다. 설치 마법사가 나타나면 지시에 따라 설치를 완료하면 된다. 설치가 완료되면 환경 변수에 쿼토 설치 경로를 등록해야 한다. '제어판'을 열고 '시스템과 보안'으로 이동한 다음 '시스템'을 선택한다. '고급 시스템 설정'을 클릭한 후 '환경 변수' 버튼을 누른다. '시스템 변수'에서 'Path' 변수를 찾아 Quarto의 설치 경로를 추가한다. 일반적인 경로는 `C:\Users\<사용자계정명>\AppData\Local\Programs\Quarto\bin`과 같을 수 있다.
 
-#### Quarto CLI
+![쿼토 설치완료](images/quarto-install.png){fig-align="center" width="350"}
 
-![](images/quarto-cli.png)
+### 쿼토 CLI
 
+마지막으로 환경 변수 설정이 올바르게 이루어졌는지 확인하기 위해 명령 프롬프트나 터미널을 열어 `quarto --version` 혹은 `quarto --help` 명령을 입력한다. 올바른 버전 번호가 출력되면 설치가 성공적으로 완료된 것이다.
 
+![쿼토 CLI 실행화면](images/quarto-cli.png)
 
-:::{.callout-tip}
-
-윈도우 시스템의 경우 `quarto.exe`가 아니고 `quarto.cmd` 라 이에 유의한다.
-즉, 제어판 &rarr; 환경 변수 설정 ... 에서 `"C:\Users\사용자명\AppData\Local\Programs\Quarto\bin` 디렉토리를 등록한 후 
-`quarto.cmd` 을 사용해서 출판한다.
+::: callout-tip
+윈도우 시스템의 경우 초기 윈도우에서 쿼토 실행명령이 `quarto.cmd` 이였으나 `quarto.exe`도 지원된다. 즉, 제어판 → 환경 변수 설정 ... 에서 `"C:\Users\사용자명\AppData\Local\Programs\Quarto\bin` 디렉토리를 등록한 후 `quarto` 명령어를 사용한다.
 
 ```{r}
-#| eval = FALSE
+#| eval: FALSE
 Sys.which("quarto")
                                                                   quarto 
-"C:\\Users\\STATKC~1\\AppData\\Local\\Programs\\Quarto\\bin\\quarto.cmd" 
+"C:\\Users\\사용자명\\AppData\\Local\\Programs\\Quarto\\bin\\quarto.exe" 
 ```
-
 :::
 
+## 부조종사
 
-### 설치방법
+[GitHub 부조종사(Copilot)](https://github.com/features/copilot)를 Rstudio에서 사용하기 위해서는 특별한 버전 Rstudio, 즉 [일일 빌드 (Daily Builds)](https://dailies.rstudio.com/)가 필요하여 각자 운영체제에 맞는 RStudio Desktop 버전을 다운로드한 후 설치한다.
 
-[quarto](https://quarto.org/) 웹사이트에서 Quarto CLI 엔진을 설치한다. 통합개발도구(IDE)를 설치한다. Quarto CLI를 지원하는 IDE는 VS Code, RStudio, Jupyter, VIM/Emacs 와 같은 텍스트 편집기가 포함된다. IDE까지 설치를 했다면 literate programming 방식으로 마크다운과 프로그래밍 언어를 결합하여 출판을 위한 전문 문서 저작을 시작한다.
+> `Tools -> Global Options -> Copilot -> Enable Github Copilot`
 
-![](images/quarto-toolchain.png)
+설치가 완료되면 Rstudio를 실행하고 상단 메뉴에서 'Tools'를 선택한 다음 'Global Options'을 클릭하면, 왼쪽 사이드바에서 'Copilot'을 선택하고 'Enable GitHub Copilot' 체크박스를 선택한 다음 'Sign In'을 클릭하고 나타나는 링크에서 인증 코드를 입력한다. 'Authorize Github Copilot Plugin'을 클릭하여 인증 과정을 완료하면 설정이 완료된다.
+
+![GitHub 부주종사 설치과정](images/rstudio_copilot.jpg)
+
+GitHub Copilot를 Rstudio에서 사용해보면, 작성하려는 코드가 회색으로 예측되어 나타난다. 'Tab' 키를 눌러 탭완성(Tab Completion) 기능으로 제시한 코드를 수락하여 개발을 이어간다.
 
 ## 출판 플랫폼
 
-데이터 사이언스 저작물을 제작하게 되면 그 다음 단계로 출판을 해야하는데 다양한 문서를 모아 프로젝트로 담아 [`Quarto Pub`](https://quartopub.com/)에 전자출판한다.
-다른 출판 플랫폼으로 [netlify](https://netlify.com/), [GitHub Pages](https://github.com/), [RStudio Connect](https://www.rstudio.com/products/connect/)가 많이 사용된다.
+데이터 과학 분야에서 산출물을 공유하고 출판하는 것은 매우 중요한 단계로 효과적인 출판과 비용적인 면을 고려하여 최적 플랫폼과 도구를 선정한다. 데이터 과학 분야를 개척한 RStudio IDE로 과거 R 마크다운 산출물을 [RPubs](https://rpubs.com/)에 출판한 경험이 있다면, [`Quarto Pub`](https://quartopub.com/)은 그와 유사한 경험을 제공한다. 다른 대안으로는 [netlify](https://netlify.com/), [GitHub Pages](https://github.com/), [RStudio Connect](https://www.rstudio.com/products/connect/) 등이 있다.
 
-![](images/quarto-publishing.png)
+![쿼토 출판](images/quarto-publishing.png)
 
-### Quarto Pub 출판 [^quarto-pub]
+### Quarto Pub 출판
 
-[^quarto-pub]: [Quarto Pub](https://quarto.org/docs/publishing/quarto-pub.html)
+[`Quarto Pub`](https://quartopub.com/) 출판과정은 Quarto CLI를 통해 이뤄진다. `RStudio`의 내부 터미널을 사용하는 것을 권장하는데, 이유는 `RStudio`와 `Quarto`가 잘 통합되어 있어, 간편하게 출판 작업을 진행할 수 있기 때문이다. [^editor-4]
 
-[`Quarto Pub`](https://quartopub.com/) 웹사이트에 출판하는 방식은 Quarto CLI 를 사용한다. **필히 RStudio 내부 Terminal**을 사용해서 `Quarto Pub`으로 출판한다.
+[^editor-4]: [Quarto Pub](https://quarto.org/docs/publishing/quarto-pub.html)
 
 ```{bash}
-#| eval = FALSE
-quarto.cmd publish quarto-pub
+#| eval: false
+$ quarto publish quarto-pub
 ? Authorize (Y/n) › 
 ❯ In order to publish to Quarto Pub you need to
   authorize your account. Please be sure you are
@@ -160,23 +164,20 @@ quarto.cmd publish quarto-pub
   'Y' to authorize.
 ```
 
-첫번째 출판하게 되면 인증작업을 수행하고 나면 `_publish.yml` 파일이 하나 생성된다. 
+첫번째 출판하게 되면 인증작업을 수행하고 나면 `_publish.yml` 파일이 하나 생성된다.
 
 ```{yaml}
-#| eval = FALSE
+#| eval: false
 - source: project
   quarto-pub:
     - id: 1fa3ab1f-c010-453a-aaf2-f462bd074a66
       url: 'https://quartopub.com/sites/statkclee/quarto-ds'
 ```
 
-이제 모든 준비가 되었기 때문에 다음 명령어로 작성한 출판 문서를 포함한 웹사이트를 
-로컬에서 미리 확인 한 후에 [`Quarto Pub`](https://quartopub.com/)으로 전자출판한다.
-윈도우에서는 **RStudio 내부 Terminal CLI**를 사용하는 것을 권장한다.
+이제 모든 준비가 되었기 때문에 다음 명령어로 작성한 출판 문서를 포함한 웹사이트를 로컬에서 미리 확인 한 후에 [`Quarto Pub`](https://quartopub.com/)으로 전자출판한다. 윈도우에서는 **RStudio 내부 Terminal CLI**를 사용하는 것을 권장한다.
 
 ```{bash}
-#| eval = FALSE
-quarto.cmd preview
-quarto.cmd publish quarto-pub
+#| eval: false
+$ quarto preview
+$ quarto publish quarto-pub
 ```
-

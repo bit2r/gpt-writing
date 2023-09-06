@@ -9,14 +9,14 @@
   {
     "objectID": "editor.html#paradigm",
     "href": "editor.html#paradigm",
-    "title": "\n3  편집기\n",
+    "title": "\n3  편집기와 출판\n",
     "section": "\n3.1 저작방식 패러다임",
     "text": "3.1 저작방식 패러다임\n위지위그(WYSIWYG: What You See Is What You Get)는 “보는 대로 얻는다”는 의미로, 사용자가 문서를 편집할 때 화면에 보이는 형태가 최종 출력물과 동일하게 나오는 편집 방식이다. 대다수 현대 워드 프로세서에서 위지위그 방식을 사용하고 있다. 사용자에게 직관적이고 쉽게 접근할 수 있는 인터페이스를 제공하기 때문이다.\n그러나 위지위그 방식에도 단점은 있다. 마크다운, TeX 같은 텍스트 기반 편집 방식은 문서 호환성과 범용성을 위해 쓰이는 반면, 위지위그 저작방식은 호환성과 범용성을 다소 희생할 수 밖에 없다. 특히 복잡한 문서나 웹 페이지를 작성하는 경우, 코딩방식으로 전환하여 수작업으로 최적화를 시도하더라도 완벽한 해결이 어렵다. 예를 들어, 위지위그 편집기에서 문서를 작성하면 뒷단에 불필요한 코드나 태그가 자동으로 생성되어 문서 최적화를 방해하며, 시간이 지남에 따라 누적되어 호환성과 재현성에 심각한 문제를 야기한다. 1 2\n위지윔(WYSIWYM: What You See Is What You Mean)은 “당신이 보는 것은 당신이 뜻하는 것이다”라는 의미로, 위지위그(WYSIWYG) 방식의 한계를 극복하기 위해 나온 대안 편집 방식이다. 위지윔 방식에서는 사용자가 무엇을 의미하는지를 중점으로 두어, 본래의 코드 구조를 더 명확하게 알 수 있다. 코드 의미를 직접적으로 반영하여, 불필요한 요소 없이 효율적으로 문서를 작성할 수 있는 장점이 있다.\nRStudio의 Visual 편집 기능은 위지윔 지향점을 잘 반영하고 있다. 사용자는 복잡한 코드나 태그 없이도 의미 있는 문서 구조를 쉽게 생성하고 관리할 수 있어 문서 최적화와 호환성을 높일 수 있으며, 더욱 높은 문서 저작 생산성을 달성할 수 있다.\n오픈 소스 LaTeX 편집기인 LyX는 위지윔 방식을 초기부터 채택하여 사용자에게 코드 본래 구조와 의미를 명확하게 파악할 수 있는 인터페이스를 제공했다. 이러한 접근법은 복잡한 수식이나 과학적인 문서를 작성할 때 특히 유용하며, \\(\\LaTeX\\) 복잡성을 낮추면서도 강력한 기능을 최대한 활용할 수 함으로써 위지위그 한계를 극복했다는 평가를 받고 있다.\n\n\n문서 컴파일\n위지위그"
   },
   {
     "objectID": "editor.html#main-features",
     "href": "editor.html#main-features",
-    "title": "\n3  편집기\n",
+    "title": "\n3  편집기와 출판\n",
     "section": "\n3.2 워드 프로세서 3\n",
     "text": "3.2 워드 프로세서 3\n\n워드 프로세서(Word Processor)는 문서 제작을 위한 소프트웨어로, 시각적으로 잘 구성된 인터페이스와 다양한 편집 기능을 제공한다. 사용자는 이러한 기능을 통해 원하는 형태와 구조를 갖는 문서를 쉽게 저작할 수 있다. 워드 프로세서는 글자 스타일, 문단 구성, 이미지 삽입, 표 만들기 등 다양한 기능이 포괄적으로 제공되며, 윈도우에 기본 제공되는 메모장(Notepad) 텍스트 편집기보다 훨씬 더 풍부한 문서 작성이 가능하다. 2023년 9월 1일부로 윈도우에서 무료로 제공되던 워드패드(WordPad)에 대한 지원도 없어지고 윈도우에서도 제거될 것이라는 발표가 있었다. 따라서, 서식이 필요한 문서를 저작할 경우 MS 워드(Word)나 아래한글과 같은 워드 프로세서를 사용해야 된다.\n아래한글은 국내에서 널리 사용되는 워드 프로세서 중 하나로, 한국 문화와 업무 환경에 맞춰 특화된 기능을 제공한다. 정부나 공공기관에서 사용하는 특별한 문서 양식을 미리 저장해 두어, 사용자가 양식을 찾는 데 시간을 쓰지 않고 글쓰기에 바로 집중할 수 있도록 큰 도움을 주었다.\n\n\n국산 워드 프로세서\n해외 워드 프로세서"
   },
@@ -30,30 +30,30 @@
   {
     "objectID": "editor.html#latex-editor",
     "href": "editor.html#latex-editor",
-    "title": "\n3  편집기\n",
+    "title": "\n3  편집기와 출판\n",
     "section": "\n3.3 \\(\\LaTeX\\) 편집기",
     "text": "3.3 \\(\\LaTeX\\) 편집기\n\\(\\LaTeX\\) 편집기는 운영체제나 사용자의 필요에 따라 다양한 선택옵션이 존재한다. 특히, 클라우드 기반 Overleaf, 설치형 TeXstudio, 데이터 과학에 특화된 RStudio IDE가 대표적이다. 편집기들은 \\(\\LaTeX\\)에 특화되었거나, 일부 \\(\\LaTeX\\) 기능을 분리하여 사용자 요구에 맞춰 활용할 수 있다.\n\n\n\\(\\LaTeX\\) 편집기 다양성\n\nOverleaf는 초기에 ShareLaTeX 서비스로 시작해 현재는 클라우드 기반의 \\(\\LaTeX\\) 편집 기능을 제공한다. 클라우드 특성을 살려 문서의 공유와 협업이 용이하다는 점이 큰 장점이다.\nTeXstudio는 Texmaker 후속으로 오픈 소스 \\(\\LaTeX\\) 편집기로 제공된다. 사용자는 TeXstudio 웹사이트에서 다운로드 받아 설치할 수 있으며, GitHub texstudio 저장소를 통해 한국어 현지화 작업에도 참여할 수 있다.\n\n\n클라우드 편집기\n설치형 편집기"
   },
   {
     "objectID": "editor.html#rstudio-ide",
     "href": "editor.html#rstudio-ide",
-    "title": "\n3  편집기\n",
+    "title": "\n3  편집기와 출판\n",
     "section": "\n3.4 RStudio IDE 편집기",
     "text": "3.4 RStudio IDE 편집기\nRStudio IDE는 처음 데이터 과학 R 프로그래밍 언어를 위한 통합개발환경으로 시작하였으나 이제는 파이썬을 비롯하여 SQL, Observable JS 등 데이터 과학 전분야를 담당하고 있다. 특히, 데이터 분석, 시각화 및 문서 작업을 간편하게 할 수 있도록 다양한 도구와 기능을 제공할 뿐만 아니라, Shiny 웹 애플리케이션 개발, Plumber를 통한 API 개발, 쿼토(Quarto)/R 마크다운을 활용해 다양한 데이터 과학 산출물을 제작할 수 있다. 또한, Git 버전 관리 시스템과 통합되어 코드 이력을 쉽게 추적하고 관리할 수 있고 GitHub과 연결하여 협업기능도 지원한다.\nRStudio 코드 편집기는 자동 완성, 구문 강조, 맞춤법 검사 등 기능을 제공하여 개발자 편의를 향상시켰고, GUI 데이터 뷰어를 통해 데이터프레임과 데이터 객체를 직접적으로 시각적으로 살펴볼 수 있으며, 내장 패키지 관리 시스템을 통해 R 패키지도 손쉽게 설치하고 관리할 수 있다.\n웹앱 Shiny 애플리케이션 개발과 테스트도 가능하고, 문서화 프로그래밍을 차세대 R 마크다운 쿼토(Quarto)를 이용하여 코드, 데이터, 그래프를 하나의 문서로 통합하여 구현할 수 있을 뿐만 아니라 팬독(Pandoc)을 통해 다양한 형태 문서를 자동으로 생성할 수 있다.\n\n\nRStudio 문서화 프로그래밍 사례\n\n\n3.4.1 Visual 마크다운 편집기\nVisual 마크다운 기능을 사용하게 되면 과학/기술 문서 작성의 용이성 뿐만 아니라 인용(Citation), 문학적 프로그래밍(literate programming) 을 통한 재현가능한 과학문서 구현, 팬독(Pandoc)을 사용하여 텍스트와 코드로 PDF, HTML, 워드 등 다양한 문서 동시 생성이 가능하다.\n\n\nRStudio Visual 마크다운 편집기능\n\n\n3.4.2 맞춤법 검사"
   },
   {
     "objectID": "editor.html#쿼토-설치",
     "href": "editor.html#쿼토-설치",
-    "title": "\n3  편집기\n",
+    "title": "\n3  편집기와 출판\n",
     "section": "\n3.5 쿼토 설치",
-    "text": "3.5 쿼토 설치\n\n3.5.1 윈도우 설치\nQuarto를 운영체제에 맞춰 설치한다. Quarto 는 기본적으로 CLI 라서 설치 후 제대로 설정이 되었는지는 환경설정에 경로를 등록해줘야 한다.\nQuarto 다운로드\n\n\n\n\nQuarto 설치\n\n\n\n\nQuarto CLI\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n윈도우 시스템의 경우 quarto.exe가 아니고 quarto.cmd 라 이에 유의한다. 즉, 제어판 → 환경 변수 설정 … 에서 \"C:\\Users\\사용자명\\AppData\\Local\\Programs\\Quarto\\bin 디렉토리를 등록한 후 quarto.cmd 을 사용해서 출판한다.\n\nSys.which(\"quarto\")\n                                                                  quarto \n\"C:\\\\Users\\\\STATKC~1\\\\AppData\\\\Local\\\\Programs\\\\Quarto\\\\bin\\\\quarto.cmd\" \n\n\n\n\n3.5.2 설치방법\nquarto 웹사이트에서 Quarto CLI 엔진을 설치한다. 통합개발도구(IDE)를 설치한다. Quarto CLI를 지원하는 IDE는 VS Code, RStudio, Jupyter, VIM/Emacs 와 같은 텍스트 편집기가 포함된다. IDE까지 설치를 했다면 literate programming 방식으로 마크다운과 프로그래밍 언어를 결합하여 출판을 위한 전문 문서 저작을 시작한다."
+    "text": "3.5 쿼토 설치\n쿼토(Quarto) 웹사이트에서 Quarto CLI 엔진과 통합개발도구(IDE)를 설치한다. 쿼토 CLI를 지원하는 IDE는 VS Code, RStudio, Jupyter, VIM/Emacs 와 같은 텍스트 편집기가 포함된다. IDE까지 설치를 했다면 문학적 프로그래밍(literate programming)을 통해 사람이 저작하는 마크다운(Markdown)과 기계가 저작하는 프로그래밍 언어(R/Python/SQL/줄리아/자바스크립트)를 결합한 다양한 문서저작을 시작할 수 있다.\n\n\n쿼토 도구모음\n\n\n3.5.1 윈도우 설치\n쿼토(Quarto)를 윈도우 운영체제에 설치하기 위해서는 몇 가지 단계를 거쳐야 한다.\n\n3.5.2 쿼토 다운로드\n먼저 Quarto 공식 웹사이트에서 윈도우용 설치 파일을 다운로드한다. 웹사이트 “Download Quarto CLI” 윈도우 버전을 선택하여 다운로드한다.\n\n\n쿼토 다운로드 화면\n\n쿼토 설치\n다운로드한 파일을 더블클릭 실행하여 설치를 진행한다. 설치 마법사가 나타나면 지시에 따라 설치를 완료하면 된다. 설치가 완료되면 환경 변수에 쿼토 설치 경로를 등록해야 한다. ‘제어판’을 열고 ’시스템과 보안’으로 이동한 다음 ’시스템’을 선택한다. ’고급 시스템 설정’을 클릭한 후 ’환경 변수’ 버튼을 누른다. ‘시스템 변수’에서 ’Path’ 변수를 찾아 Quarto의 설치 경로를 추가한다. 일반적인 경로는 C:\\Users\\&lt;사용자계정명&gt;\\AppData\\Local\\Programs\\Quarto\\bin과 같을 수 있다.\n\n\n쿼토 설치완료\n\n\n3.5.3 쿼토 CLI\n마지막으로 환경 변수 설정이 올바르게 이루어졌는지 확인하기 위해 명령 프롬프트나 터미널을 열어 quarto --version 혹은 quarto --help 명령을 입력한다. 올바른 버전 번호가 출력되면 설치가 성공적으로 완료된 것이다.\n\n\n쿼토 CLI 실행화면\n\n\n\n\n\n\n\n\n\n\n\n윈도우 시스템의 경우 초기 윈도우에서 쿼토 실행명령이 quarto.cmd 이였으나 quarto.exe도 지원된다. 즉, 제어판 → 환경 변수 설정 … 에서 \"C:\\Users\\사용자명\\AppData\\Local\\Programs\\Quarto\\bin 디렉토리를 등록한 후 quarto 명령어를 사용한다.\n\nSys.which(\"quarto\")\n                                                                  quarto \n\"C:\\\\Users\\\\사용자명\\\\AppData\\\\Local\\\\Programs\\\\Quarto\\\\bin\\\\quarto.exe\""
   },
   {
     "objectID": "editor.html#출판-플랫폼",
     "href": "editor.html#출판-플랫폼",
-    "title": "\n3  편집기\n",
-    "section": "\n3.6 출판 플랫폼",
-    "text": "3.6 출판 플랫폼\n데이터 사이언스 저작물을 제작하게 되면 그 다음 단계로 출판을 해야하는데 다양한 문서를 모아 프로젝트로 담아 Quarto Pub에 전자출판한다. 다른 출판 플랫폼으로 netlify, GitHub Pages, RStudio Connect가 많이 사용된다.\n\n\n\n\n\n3.6.1 Quarto Pub 출판 4\n\nQuarto Pub 웹사이트에 출판하는 방식은 Quarto CLI 를 사용한다. 필히 RStudio 내부 Terminal을 사용해서 Quarto Pub으로 출판한다.\n\nquarto.cmd publish quarto-pub\n? Authorize (Y/n) › \n❯ In order to publish to Quarto Pub you need to\n  authorize your account. Please be sure you are\n  logged into the correct Quarto Pub account in \n  your default web browser, then press Enter or \n  'Y' to authorize.\n\n첫번째 출판하게 되면 인증작업을 수행하고 나면 _publish.yml 파일이 하나 생성된다.\n\n- source: project\n  quarto-pub:\n    - id: 1fa3ab1f-c010-453a-aaf2-f462bd074a66\n      url: 'https://quartopub.com/sites/statkclee/quarto-ds'\n\n이제 모든 준비가 되었기 때문에 다음 명령어로 작성한 출판 문서를 포함한 웹사이트를 로컬에서 미리 확인 한 후에 Quarto Pub으로 전자출판한다. 윈도우에서는 RStudio 내부 Terminal CLI를 사용하는 것을 권장한다.\n\nquarto.cmd preview\nquarto.cmd publish quarto-pub"
+    "title": "\n3  편집기와 출판\n",
+    "section": "\n3.7 출판 플랫폼",
+    "text": "3.7 출판 플랫폼\n데이터 과학 분야에서 산출물을 공유하고 출판하는 것은 매우 중요한 단계로 효과적인 출판과 비용적인 면을 고려하여 최적 플랫폼과 도구를 선정한다. 데이터 과학 분야를 개척한 RStudio IDE로 과거 R 마크다운 산출물을 RPubs에 출판한 경험이 있다면, Quarto Pub은 그와 유사한 경험을 제공한다. 다른 대안으로는 netlify, GitHub Pages, RStudio Connect 등이 있다.\n\n\n쿼토 출판\n\n\n3.7.1 Quarto Pub 출판\nQuarto Pub 출판과정은 Quarto CLI를 통해 이뤄진다. RStudio의 내부 터미널을 사용하는 것을 권장하는데, 이유는 RStudio와 Quarto가 잘 통합되어 있어, 간편하게 출판 작업을 진행할 수 있기 때문이다. 4\n\n$ quarto publish quarto-pub\n? Authorize (Y/n) › \n❯ In order to publish to Quarto Pub you need to\n  authorize your account. Please be sure you are\n  logged into the correct Quarto Pub account in \n  your default web browser, then press Enter or \n  'Y' to authorize.\n\n첫번째 출판하게 되면 인증작업을 수행하고 나면 _publish.yml 파일이 하나 생성된다.\n\n- source: project\n  quarto-pub:\n    - id: 1fa3ab1f-c010-453a-aaf2-f462bd074a66\n      url: 'https://quartopub.com/sites/statkclee/quarto-ds'\n\n이제 모든 준비가 되었기 때문에 다음 명령어로 작성한 출판 문서를 포함한 웹사이트를 로컬에서 미리 확인 한 후에 Quarto Pub으로 전자출판한다. 윈도우에서는 RStudio 내부 Terminal CLI를 사용하는 것을 권장한다.\n\n$ quarto preview\n$ quarto publish quarto-pub"
   },
   {
     "objectID": "index.html",
@@ -397,5 +397,138 @@
     "title": "\n12  문서 구성요소\n",
     "section": "\n12.5 수식",
     "text": "12.5 수식\n\n12.5.1 LaTeX를 이용한 수학적 표현\n수학은 공학, 물리학, 컴퓨터 과학, 경제학 등 다양한 분야에서 중심 역할을 하는 학문으로 정확하고 명료한 수학적 표기는 매우 중요하다. \\(\\LaTeX\\)은 수학적 표현을 깔끔하고 정확하게 표현할 수 있는 도구 중 하나로 \\(\\LaTeX\\)를 이용해 다양한 수학적 표현법을 살펴보자.\n\\(\\LaTeX\\)은 기본적인 사칙연산에서부터 지수, 삼각함수, 적분, 행렬, 그리스 문자, 무한대 등 광범위한 수학적 표현이 가능하여 전문가 느낌의 문서나 논문, 프레젠테이션에 즉시 적용할 수 있는 고급스럽고 미련한 수식표현이 가능하다.\n기본적인 덧셈과 뺄셈은 \\begin{equation} a + b = c \\end{equation}처럼 표현할 수 있고, 복잡한 적분도 \\begin{equation} \\int_{0}^{\\infty} e^{-x^2} dx = \\frac{\\sqrt{\\pi}}{2} \\end{equation}와 같이 명료하게 표현할 수 있을 뿐만 아니라, 행렬이나 그리스 문자도 \\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix}와 \\alpha, \\beta, \\gamma, \\Gamma, \\pi, \\Pi, \\phi, \\Phi, \\mu 등의 명령어를 통해 표현할 수 있다.\n\n12.5.2 기본 연산자와 수\n\n\n\\begin{equation}\na + b = c\n\\end{equation}\n\n\\[\n\\begin{equation}\na + b = c\n\\end{equation}\n\\]\n\n\n\n12.5.3 제곱근과 지수\n\n\n\\begin{equation}\n\\sqrt{a^2 + b^2} = c\n\\end{equation}\n\n\\[\n\\begin{equation}\n\\sqrt{a^2 + b^2} = c\n\\end{equation}\n\\]\n\n\n\n12.5.4 삼각함수\n\n\n\\begin{equation}\n\\sin^2 \\theta + \\cos^2 \\theta = 1\n\\end{equation}\n\n\\[\n\\begin{equation}\n\\sin^2 \\theta + \\cos^2 \\theta = 1\n\\end{equation}\n\\]\n\n\n\n12.5.5 적분\n\n\n\\begin{equation}\n\\int_{0}^{\\infty} e^{-x^2} dx = \\frac{\\sqrt{\\pi}}{2}\n\\end{equation}\n\n\\[\n\\begin{equation}\n\\int_{0}^{\\infty} e^{-x^2} dx = \\frac{\\sqrt{\\pi}}{2}\n\\end{equation}\n\\]\n\n\n\n12.5.6 행렬\n\n\n\\begin{equation}\n\\begin{pmatrix}\na & b \\\\\nc & d\n\\end{pmatrix}\n\\end{equation}\n\n\\[\n\\begin{equation}\n\\begin{pmatrix}\na & b \\\\\nc & d\n\\end{pmatrix}\n\\end{equation}\n\\]\n\n\n\n12.5.7 그리스 문자\n\n\n\\begin{equation}\n\\alpha, \\beta, \\gamma, \\Gamma, \\pi, \\Pi, \\phi, \\Phi, \\mu\n\\end{equation}\n\n\\[\n\\begin{equation}\n\\alpha, \\beta, \\gamma, \\Gamma, \\pi, \\Pi, \\phi, \\Phi, \\mu\n\\end{equation}\n\\]\n\n\n\n12.5.8 무한대\n\n\n\\begin{equation}\n\\lim_{{n \\to \\infty}} \\frac{1}{n} = 0\n\\end{equation}\n\n\\[\n\\begin{equation}\n\\lim_{{n \\to \\infty}} \\frac{1}{n} = 0\n\\end{equation}\n\\]\n\n\n\n12.5.9 합과 곱\nMathJax에서 줄바꿈(\\\\)이 반영되지 않아 aligned를 사용했지만, MathJax v4 에서 기능이 구현되어 구문이 훨씬 간결해질 것으로 보인다.\n\n\n\\begin{equation}\n\\begin{aligned}[t]\n\\sum_{n=1}^{\\infty} \\frac{1}{n^2} = \\frac{\\pi^2}{6} \\\\\n\\prod_{i=1}^{n} a_i = a_1 \\times a_2 \\times \\cdots \\times a_n\n\\end{aligned} \n\\end{equation}\n\n\\[\n\\begin{equation}\n\\begin{aligned}[t]\n\\sum_{n=1}^{\\infty} \\frac{1}{n^2} = \\frac{\\pi^2}{6} \\\\\n\\prod_{i=1}^{n} a_i = a_1 \\times a_2 \\times \\cdots \\times a_n\n\\end{aligned}\n\\end{equation}\n\\]\n\n\n이 외에도 \\(\\LaTeX\\)로 더 복잡한 수식표현도 얼마든지 가능하다.\n\n\n\n\nXie, Y., Dervieux, C., & Riederer, E. (2020). R markdown cookbook. CRC Press."
+  },
+  {
+    "objectID": "editor.html#부조종사",
+    "href": "editor.html#부조종사",
+    "title": "\n3  편집기와 출판\n",
+    "section": "\n3.6 부조종사",
+    "text": "3.6 부조종사\nGitHub 부조종사(Copilot)를 Rstudio에서 사용하기 위해서는 특별한 버전 Rstudio, 즉 일일 빌드 (Daily Builds)가 필요하여 각자 운영체제에 맞는 RStudio Desktop 버전을 다운로드한 후 설치한다.\n\nTools -&gt; Global Options -&gt; Copilot -&gt; Enable Github Copilot\n\n설치가 완료되면 Rstudio를 실행하고 상단 메뉴에서 ‘Tools’를 선택한 다음 ’Global Options’을 클릭하면, 왼쪽 사이드바에서 ’Copilot’을 선택하고 ’Enable GitHub Copilot’ 체크박스를 선택한 다음 ’Sign In’을 클릭하고 나타나는 링크에서 인증 코드를 입력한다. ’Authorize Github Copilot Plugin’을 클릭하여 인증 과정을 완료하면 설정이 완료된다.\n\n\nGitHub 부주종사 설치과정\n\nGitHub Copilot를 Rstudio에서 사용해보면, 작성하려는 코드가 회색으로 예측되어 나타난다. ‘Tab’ 키를 눌러 탭완성(Tab Completion) 기능으로 제시한 코드를 수락하여 개발을 이어간다."
+  },
+  {
+    "objectID": "writing.html#재현가능-글쓰기",
+    "href": "writing.html#재현가능-글쓰기",
+    "title": "4  쿼토",
+    "section": "4.1 재현가능 글쓰기",
+    "text": "4.1 재현가능 글쓰기\n과학의 근본적인 원칙 중 하나는 연구의 결과가 독립적으로 재현가능해야 한다는 것이다. 이 원칙은 연구 타당성을 확인하고, 그 결과가 일반화 가능한지 검증하는 데 필수적이다. 그러나 2010년 전후, 다양한 학문 분야에서 재현할 수 없는 연구 결과가 다수 발표됨에 따라 과학 커뮤니티 내에서 큰 우려가 발생하였고, 이러한 현상을 재현성 위기(Reproducibity Crisis)라고 부르며, 과학연구 신뢰성을 크게 훼손시켰다.\n이 위기에 대응하여, 전 세계 연구자들과 전문가들은 재현가능한 연구 저작을 촉진하고 지원하기 위한 다양한 방안을 모색하기 시작했다. 연구방법론 표준화, 데이터 공유, 연구 소프트웨어 투명성 강화 등 다양한 활동이 들불처럼 일어났고, 기술 커뮤니티 형성과 더불어 다양한 도구와 플랫폼 개발을 통해 재현성 문제를 해결하고자 하는 움직임이 확산되고 있다.\n데이터 과학에서 재현성은 핵심적인 요소로 간주된다. 연구 결과의 신뢰성과 타당성을 검증하는 데 있어, 다른 연구자나 전문가들이 동일한 결과를 도출할 수 있도록 연구 과정을 투명하게 공유하는 것은 필수적이다. 이러한 맥락에서 R 팩키지는 재현가능한 데이터 분석 프로젝트를 지원하는 데 중요한 역할을 한다.\n\n\n\n그림 4.1: 재현가능한 과학기술 문서 제작과정\n\n\n특히, R 팩키지를 활용한 연구 개요서(research compendia)는 재현성을 강화하는 훌륭한 도구로 간주된다. 연구 개요서는 연구의 모든 요소(코드, 데이터, 출력 결과물, 환경 등)을 포괄적으로 담고 있어, 연구의 전체 과정을 투명하게 추적하고 검증할 수 있다. 한 사례로 그림 4.1 에 코드부터 단계별로 재현가능한 과학기술 문서 제작과정을 보여주고 있다."
+  },
+  {
+    "objectID": "writing.html#디지털-글쓰기",
+    "href": "writing.html#디지털-글쓰기",
+    "title": "4  쿼토",
+    "section": "4.2 디지털 글쓰기",
+    "text": "4.2 디지털 글쓰기\n글쓰기는 인류의 역사와 함께한 중요한 소통 도구로서, 그 방식과 형태는 시대별로 지속적으로 변화해왔다. 최근의 글쓰기 환경은 그 전보다 훨씬 복잡하고 다양한 요소를 요구한다. 과거에는 원고지에 텍스트를 작성하는 것만으로도 충분했다. 한글이나 영어로 이루어진 문장들은 감정을 전달하거나 사실을 나열하며, 이를 통해 독자와의 소통을 이루었다. 그러나 현대의 글쓰기 환경에서는 단순한 텍스트 정보 전달만으로는 부족하다. 이미지, 그래픽, 그리고 인터랙티브한 요소들이 텍스트와 함께 통합되어야 하며, 이를 통해 독자의 관심을 끌고 정보의 흡수를 증진시킨다.\n가독성 또한 중요한 고려사항이다. 디자인적인 측면에서 효과적인 글꼴 선택은 텍스트의 내용을 더욱 돋보이게 하며, 독자의 읽기 경험을 향상시킨다. 현대의 글쓰기는 단순한 정보 전달을 넘어서, 그 과정과 결과의 재현성에도 중점을 둔다. 특히 과학연구나 기술문서에서 두드러진다. 자동화 도구와 버전 관리 시스템의 도입을 통해 재현성을 지원하고, 글쓰기 효율성과 투명성을 동시에 높이고 있다.\n최근의 눈에 띄는 추세 중 하나는 인공지능 발전과 그에 따른 기계 저작물의 폭증을 들 수 있다. 기계가 작성한 텍스트를 포함한 콘텐츠가 인간 저자와 비슷하거나 오히려 생산 속도나 경제적인 면에서 확실한 우위를 보이면서 이에 대한 연구와 기술적 시도가 활발히 이루어지고 있다.\n\n\n\n현대의 글쓰기: 기술적 도전과 진화의 중심"
+  },
+  {
+    "objectID": "writing.html#latex-philosophy",
+    "href": "writing.html#latex-philosophy",
+    "title": "4  쿼토",
+    "section": "4.3 \\(\\LaTeX\\) 철학",
+    "text": "4.3 \\(\\LaTeX\\) 철학\n\\(\\LaTeX\\)은 한마디로 정의하게 되면 “논리적인 디자인”이라고 볼 수 있다. 저작물이 만들어지는 과정은 저작자가 원고를 손으로 쓰거나 타자기로 쳐서 출판사에 넘겨주면, 출판사의 편집디자이너는 원고를 보고 세부적인 출력형식을 결정하여 인쇄소에 넘긴다. 인쇄소는 이를 토대로 과거 식자공이 식자판을 만들었다면 현재는 컴퓨터가 파일을 만든다. \\(\\LaTeX\\) 과 \\(\\TeX\\) 이 하는 업무가 다소 차이가 난다. (김영록, 2017)\n\n\\(\\LaTeX\\) 은 편집디자이너에 해당되는 업무를 수행\n\\(\\TeX\\) 은 식자공에 해당되는 업무를 수행\n\n\n\n\n문서의 논리적 구조와 디자인\n\n\n컴퓨터를 활용하여 전자조판을 넘긴 이유는 문서를 좀 더 읽기 쉽게 만들어 독자에게 저작자의 생각을 잘 이해시키는 것이다. 이러한 목적을 달성하기 위해서는 문서의 디자인이 그 문서의 논리적 구조를 잘 반영시켜야 하고, 반대로 문서의 논리적 구조를 잘 반영시키기 위해서는 문서 디자이너가 문서의 논리적 구조를 잘 이해해야만 된다. \\(\\LaTeX\\)의 명령어는 기본적으로 문서의 논리적 구조를 기술하는 것이다. 이렇게 기술된 명령어를 \\(\\TeX\\)으로 전달하여 조판하게 되어 원하는 최종 결과물을 얻게 된다.\n\\(\\LaTeX\\)에서 채택하는 논리적 디자인의 가장 큰 장점은 글을 더 잘 쓰게 된다는 점에 있다. \\(\\LaTeX\\) 으로 글을 작성하게 되면 점점 \\(\\LaTeX\\)이 채택하고 있는 논리적 디자인에 맞추게 되고 이를 통해서 글쓰기 실력이 향상된다.\n아마도 \\(\\LaTeX\\)의 가장 큰 장점은 자동화에 있다. 시각적 디자인(Wysiwig)을 채택하여 작성한 문서를 다른 형식으로 변환하거나 문서의 수식의 일련번호를 로마자에서 아라비아 숫자로 모두 변경시키거나 표나 그래프 번호를 일괄번경하는 등 이러한 사례는 자주 발견된다. 특히, 국내외 저널에 제출할 논문을 \\(\\LaTeX\\) 으로 작성한 경우 템플릿만 바꾸면 쉽게 고품질 논문을 만들 수 있는데 워드를 이용하여 작성할 경우 수작업을 하게 되어 비생산적인 시간낭비도 크고 미려한 문서를 얻을 수도 없다.\n따라서, \\(\\LaTeX\\) 으로 글을 쓰게 되면 글쓰기 본질에 집중할 수 있어 저작자의 생각과 의견을 좀더 진솔하게 가감없이 독자에게 전달시킬 수 있게 된다."
+  },
+  {
+    "objectID": "writing.html#wysiwyg",
+    "href": "writing.html#wysiwyg",
+    "title": "4  쿼토",
+    "section": "4.4 시각적 디자인",
+    "text": "4.4 시각적 디자인\n문서를 논리적으로 디자인하는 반대 개념으로 있는 것이 위즈윅(WSYIWIG, What You See Is What You Get) 으로 대표적인 것이 아래한글, MS 워드와 같은 워드 프로세서다. 시각적 디자인을 하게 되면 논리적이지 못한 애매한 조판을 하기 쉽다. 또한, PDF 파일로도 출력을 할 때 미세하나마 출력물에 일관성이 실종되기도 한다."
+  },
+  {
+    "objectID": "writing.html#latex-engine",
+    "href": "writing.html#latex-engine",
+    "title": "4  쿼토",
+    "section": "4.5 \\(\\LaTeX\\) 엔진",
+    "text": "4.5 \\(\\LaTeX\\) 엔진\n\\(\\LaTeX\\) 을 실제 문서작성에 사용하기 위해서는 텍 배포판을 선택해야 하는데 KTUG 한국 \\(\\TeX\\) 사용자 그룹에서 \\(ko.TeX\\) Live를 추천하고 있다. 이유는 다음과 같다. (이호재, 2017)\n\npdfLaTeX, XeLaTeX, LuaLaTeX 3종 \\(\\LaTeX\\) 엔진이 있는데 XeLaTeX 이 유니코드 텍 엔진이라 CJK 동아시아권 언어를 잘 지원하고 트루타입 및 오픈타입 폰트도 자유롭게 선택할 수 있기 때문에 인기가 많다.\n운영체제에 따라 차이가 나지만 안정적으로 \\(\\LaTeX\\) 을 설치하여 실제 문서작업에 이용하기에는 \\(\\TeX\\) Live 가 MikTeX 보다 안정성이나 여러가지 사용자 지원 측면에서 낫다.\n\\(\\TeX\\) 소스파일에서 PDF 파일로 탐색을 하던가 반대로 PDF 파일에서 \\(\\TeX\\) 소스파일로 탐색을 하게 되는 기능을 TexStudio IDE를 활용하여 바로 가능하게 됨\n\n과거 latex+divps+pspdf 를 활용한 가장 전통적인 작업흐름을 가졌다. 즉, pstricks를 활용하여 PDF 파일을 제작하는 방식으로 시간이 오래 걸리고 이미지로 eps 파일만 사용한다는 한계가 있다. 또 다른 latex+dvipdfmx 작업흐름은 중간에 .dvi 파일을 생성하고 dvipdfmx를 사용하여 PDF 파일을 제작하는 방식이다. 마지막으로 pdfLaTeX, XeLaTeX, LuaLaTeX 을 활용한 작업흐름이 있는데 .tex 소스파일에서 .pdf 파일을 즉시 생성한다는 점에서 인기가 있다.\n이외에도 논문 제작이 아닌 문서를 제작하는 경우 한단계 더 들어가 memoir 혹은 oblivoir 클래스를 이용하는 것이 이미 검증된 문서 템플릿을 바탕으로 PDF 문서를 뽑아내는 신속한 방법이다.\n\n\n\n한글지원 LaTeX 엔진과 작업흐름\n\n\n\n\n\n\n김영록. (2017). 교육 현장에서의 텍의 활용. TeX: 조판, 그 이상의 가능성.\n\n\n이호재. (2017). 레이텍을 빨리 쓸 수 있는 방법. TeX: 조판, 그 이상의 가능성."
+  },
+  {
+    "objectID": "quarto.html",
+    "href": "quarto.html",
+    "title": "5  쿼토 소개",
+    "section": "",
+    "text": "6 Single Sourcing 출판저작\n데이터 사이언스 출판저작에 다소 차이는 있지만 출판에 대한 대체적인 방식은 유사할 것으로 보인다. 즉, Single Sourcing 을 콘텐츠 저작, 디자인, 최종 출판물 관리까지 일원화되어 자동화되어 체계적으로 관리된다면 중복되는 낭비는 물론 재현가능성도 높여 과학기술 출판저작물로 가장 이상적으로 간주되고 있다."
+  },
+  {
+    "objectID": "quarto.html#작업흐름",
+    "href": "quarto.html#작업흐름",
+    "title": "5  쿼토 소개",
+    "section": "6.1 작업흐름",
+    "text": "6.1 작업흐름\n기존 R .Rmd, 파이썬 .ipynb 확장자를 갖는 작업흐름이 .qmd 파일로 단일화되는 것이 가장 큰 특징이다. 따라서 마크다운으로 콘텐츠를 작성하고 프로그래밍 코드를 R, 파이썬, 자바스크립트, 쥴리아 로 작성하게 되면 자동으로 계산을 수행하고 결과물을 마크다운으로 변환시키기 때문에 후속 작업을 신경쓰지 않고 원하는 결과물을 얻을 수 있는 장점이 있다."
+  },
+  {
+    "objectID": "quarto.html#r-.rmd",
+    "href": "quarto.html#r-.rmd",
+    "title": "5  쿼토 소개",
+    "section": "6.2 R (.Rmd)",
+    "text": "6.2 R (.Rmd)"
+  },
+  {
+    "objectID": "quarto.html#파이썬-주피터",
+    "href": "quarto.html#파이썬-주피터",
+    "title": "5  쿼토 소개",
+    "section": "6.3 파이썬 (주피터)",
+    "text": "6.3 파이썬 (주피터)"
+  },
+  {
+    "objectID": "quarto.html#quarto---r",
+    "href": "quarto.html#quarto---r",
+    "title": "5  쿼토 소개",
+    "section": "6.4 Quarto - R",
+    "text": "6.4 Quarto - R"
+  },
+  {
+    "objectID": "quarto.html#quarto---파이썬",
+    "href": "quarto.html#quarto---파이썬",
+    "title": "5  쿼토 소개",
+    "section": "6.5 Quarto - 파이썬",
+    "text": "6.5 Quarto - 파이썬"
+  },
+  {
+    "objectID": "quarto.html#주요-기능",
+    "href": "quarto.html#주요-기능",
+    "title": "5  쿼토 소개",
+    "section": "6.6 주요 기능",
+    "text": "6.6 주요 기능\n\n\n\nFeature\nR Markdown\nQuarto\n\n\n\n\nBasic Formats\n\nhtml_document\npdf_document\nword_document\n\n\nhtml\npdf\ndocx\n\n\n\nBeamer\n\nbeamer_presentation\n\n\nbeamer\n\n\n\nPowerPoint\n\npowerpoint_presentation\n\n\npptx\n\n\n\nHTML Slides\n\nxaringan\nrevealjs\n\n\nrevealjs\n\n\n\nAdvanced Layout\n\ntufte\ndistill\n\n\nQuarto Article Layout\n\n\n\nCross References\n\nhtml_document2\npdf_document2\nword_document2\n\n\nQuarto Crossrefs\n\n\n\nWebsites & Blogs\n\nblogdown\ndistill\n\nQuarto Websites\nQuarto Blogs\n\n\nBooks\n\nbookdown\n\nQuarto Books\n\n\nInteractivity\nShiny Documents\nQuarto Interactive Documents\n\n\nPaged HTML\npagedown\nSummer 2022\n\n\nJournal Articles\nrticles\nSummer 2022\n\n\nDashboards\nflexdashboard |\nFall 2022"
+  },
+  {
+    "objectID": "quarto.html#위지윅-vs-위지윔",
+    "href": "quarto.html#위지윅-vs-위지윔",
+    "title": "5  쿼토 소개",
+    "section": "6.7 위지윅 vs 위지윔",
+    "text": "6.7 위지윅 vs 위지윔\n신속하고 빠르게 누구나 짧은 학습을 통해서 문서를 저작하고 출판할 수 있는 방식은 아래한글 혹은 MS워드 워드프로세서를 사용하는데 이는 위지위그(WYSIWYG: What You See Is What You Get, “보는 대로 얻는다”)에 기초한 것으로 문서 편집 과정에서 화면에 포맷된 낱말, 문장이 출력물과 동일하게 나오는 방식을 말한다. 위지윅의 대척점에 있는 것이 위지윔(WYSIWYM, What You See Is What You Mean)으로 대표적인 것인 \\(\\LaTeX\\) 으로 구조화된 방식으로 문서를 작성하면 컴파일을 통해서 최종 문서가 미려한 출판가능한 PDF, PS, DVI 등 확장자를 갖는 출판결과물을 얻을 수 있다.\n\n\n\n\n\n\n6.7.1 블로그 저작 소프트웨어\n개인용 컴퓨터가 보급되면서 아래한글과 같은 워드 프로세서를 사용해서 저작을 하는 것이 일반화되었지만 곧이어 인터넷이 보급되면서 웹에 문서를 저작하는 것이 이제는 더욱 중요하게 되었다. 전문 개발자가 아닌 일반인이 HTML, CSS, JavaScript를 학습하여 웹에 문서를 제작하고 출판하는 것은 난이도가 있다보니 워드프레스와 티스토리 같은 위지위그 패러다임을 채택한 저작도구가 사용되고 있으나 상대적으로 HTML, CSS, JavaScript을 조합한 방식과 비교하여 고급스러운 면과 함께 정교함에 있어 아쉬움이 있는 것도 사실이다.\n\n\n6.7.2 워드프레스와 티스토리\n\n\n\n\n\n\n\n6.7.3 HTML + CSS + 자바스크립트"
+  },
+  {
+    "objectID": "quarto.html#quarto",
+    "href": "quarto.html#quarto",
+    "title": "5  쿼토 소개",
+    "section": "6.8 Quarto",
+    "text": "6.8 Quarto\nQuarto 는 10년전부터 시작된 knitr 경험을 많이 녹여냈고 위지윔 패러다임에 기초를 하고 있다고 볼 수 있다. RStudio를 IDE로 Quarto CLI와 함께 출판물을 저작한다면 편집기에 있는 Visual 모드가 있어 위지윅 패러다임도 문서저작에 사용이 가능하다. 특히, R, 파이썬, SQL, 자바스크립트 등 컴퓨팅 엔진을 달리하여 문서에 그래프, 표, 인터랙티브 결과물도 함께 담을 수 있는 것은 커다란 장점이다."
+  },
+  {
+    "objectID": "quarto.html#quarto-해부",
+    "href": "quarto.html#quarto-해부",
+    "title": "5  쿼토 소개",
+    "section": "6.9 Quarto 해부",
+    "text": "6.9 Quarto 해부\nQuarto 저작은 크게 3가지 구성요소로 되어 있다.\n\n메타데이터: YAML\n텍스트: 마크다운\n코드: knitr, jupyter\n\n상기 구성요소를 조합하게 되면 다양한 데이터 사이언스 웹사이트를 비롯한 출판물을 제작하게 된다.\n\n\n\nQuarto 문서 구성요소\n\n\n\n6.9.1 YAML\n메타데이터는 YAML인데 GNU처럼 “Yet Another Markup Language” 혹은 “YAML Ain’t Markup Language”을 줄인단어다.\n\n키값\n---\nkey: value\n---\n\n\n\n6.9.2 출력옵션\n---\nformat: something\n---\n. . .\n---\nformat: pdf\n---\n---\nformat: pdf\n---\n---\nformat: revealjs\n---\n\n\n6.9.3 상세 출력옵션\n---\nformat: \n  html:\n    toc: true\n    code-fold: true\n---\n왜 YAML이 필요하게 된 것인가? YAML은 단순히 KEY: Value 에 불과한데 CLI를 이해하게 되면 왜 YAML을 사용하는 것이 유용한지 이해할 수 있다. 먼저 간단한 CLI 명령어를 YAML로 변환해보자.\n\n\nterminal\n\nquarto render document.qmd --to html\n\n---\nformat: pdf\n---\n한단계 더 들어가서 좀더 많은 선택옵션을 넣어 고급 기능을 넣는 사례를 살펴본다.\n\n\nterminal\n\nquarto render document.qmd --to html -M code fold:true\n\n---\nformat: \n  html:\n    toc: true\n    code-fold: true\n---"
+  },
+  {
+    "objectID": "quarto.html#마크다운",
+    "href": "quarto.html#마크다운",
+    "title": "5  쿼토 소개",
+    "section": "6.10 마크다운",
+    "text": "6.10 마크다운\n데이터 과학 문서 웹사이트에 “마크다운 기초”, “고급 마크다운”, “R 마크다운 실무” 를 참조한다."
+  },
+  {
+    "objectID": "quarto.html#코드",
+    "href": "quarto.html#코드",
+    "title": "5  쿼토 소개",
+    "section": "6.11 코드",
+    "text": "6.11 코드\nR, 파이썬, SQL, 자바스크립트 등 버그 없이 정상 동작하는 프로그램을 작성하여 포함시킨다."
+  },
+  {
+    "objectID": "quarto.html#yaml-코드편집",
+    "href": "quarto.html#yaml-코드편집",
+    "title": "5  쿼토 소개",
+    "section": "6.12 YAML 코드편집",
+    "text": "6.12 YAML 코드편집\nRStudio, VSCode IDE는 탭-자동완성(tab-completion)을 제공한다. 즉, 첫단어를 타이핑하고 탭을 연결하여 키보드를 치게되면 연관 명령어가 나와 선택하면 된다. 혹은 Ctrl + space 단축키를 치게되면 전체 명령어가 나온다.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHyde, A. (2021, 8월 16). Single Source Publishing - A investigation of what Single Source Publishing is and how this ’holy grail’ can be achieved. https://coko.foundation/articles/single-source-publishing.html"
   }
 ]
