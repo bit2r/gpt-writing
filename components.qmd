@@ -64,22 +64,195 @@ mass_flipper
 
 ## 표
 
-구글 폰트에서 다양한 글꼴을 표 제목, 표 칼럼명, 표 셀값에 다르게 적용하며
-크기는 물론 색상과 굵기도 적용이 가능하다.
+문서에 표를 넣게 되면 정보를 효과적으로 요약할 뿐만 아니라 가독성을 높이는 중요한 커뮤니케이션 도구 중 하나다. 마크다운(Markdown), `gt` 패키지, $\LaTeX$는 자료를 표 형식으로 표현할 때 각각의 장점이 있다. 
+마크다운은 기본적이며 간단한 방법으로, 복잡한 설치나 추가 패키지 없이도 빠르게 내용에 충실한 기본표를 작성할 수 있다. `gt` 패키지는 그래프 문법을 참고하여 표문법을 충실히 준수하며 데이터에 기반한 표제작에 필요한 거의 모든 기능을 제공한다. $\LaTeX$는 가장 전문적인 표를 만들 수 있는 도구로, 논문이나 학술 자료에 적합한 고품질의 표를 제작하는데 유용하다.
+
+![표제작 세가지 방식](images/table_three.jpg)
+
+### 마크다운 표 {#rmarkdown-kable-table}
+
+`mtcars` 데이터프레임에서 시연목적으로 관측점 5개와 열 4개를 뽑아내서 `kable()`함수에 넣고 출력형식을 `markdown`으로 지정한다. `markdown`외에도 `html`, `pandoc`, `latex`, `rst`등으로 출력형식을 지정할 수 있다.
+
+:::::{.columns}
+:::{.column width=45%}
+```{r}
+#| label: knitr-kable-table
+#| eval: false
+library(tidyverse)
+library(knitr)
+
+mtcars %>% 
+  sample_n(5) %>% 
+  select(mpg, cyl, disp) %>% 
+  kable("markdown")
+```
+:::
+
+:::{.column width=5%}
+
+:::
+  
+:::{.column}
 
 ```{r}
-#| warning: false
-#| message: false
-#| echo: true
+#| echo: false
+library(tidyverse)
+library(knitr)
+
+mtcars %>% 
+  sample_n(5) %>% 
+  select(mpg, cyl, disp) %>% 
+  kable("markdown")
+```
+:::
+:::::
+  
+
+### `gt` {#rmd-gt}
+
+그래프 문법(grammar of graphics)처럼 표 문법(grammar of table) [`gt`](https://github.com/rstudio/gt/) 팩키지가 등장했다. 표를 분해하면 다음과 같고 이를 `tibble` 혹은 데이터프레임을 입력받아 GT 객체로 변환시킨 후에 GT 표를 HTML로 출력하는 작업흐름을 갖는다.
+
+```{r}
+#| label: gt-image
+#| eval: false
+#| echo: false
+webshot2::webshot("https://gt.rstudio.com/", selector = "#main > div:nth-child(3) > p > img", "images/gt-concept.png")
+```
+
+![표 해부도](images/gt_parts_of_a_table.svg)
+
+`gt` 팩키지에 내장된 `exibble` 데이터셋은 $8 \times 9$ 구조를 갖는 단순한 데이터셋이지만 표와 관련된 다양한 형태를 개발에 사용할 주요한 정보를 담고 있다. [^gt-rstudio-blog]
+
+[^gt-rstudio-blog]: [Richard Iannone (2020-04-08), "Great Looking Tables: gt (v0.2)"](https://blog.rstudio.com/2020/04/08/great-looking-tables-gt-0-2/)
+
+:::::{.columns}
+:::{.column width=45%}
+```{r}
+#| label: rmd-gt-taste-dataset
+#| eval: false
+library(gt)
+
+mtcars %>% 
+  sample_n(5) %>% 
+  select(mpg, cyl, disp) %>% 
+  gt() |> 
+  tab_header(
+    title = md("**mtcars** 데이터셋 표"),
+    subtitle = md("디지털 글쓰기 `gt` 패키지")
+  ) %>%
+  tab_source_note("표제작: 한국 R 사용자회 오픈소스 소프트웨어 개발자")
+```
+
+:::
+
+:::{.column width=5%}
+
+:::
+  
+:::{.column}
+```{r}
+#| echo: false
+library(gt)
+
+mtcars %>% 
+  sample_n(5) %>% 
+  select(mpg, cyl, disp) %>% 
+  gt() |> 
+  tab_header(
+    title = md("**mtcars** 데이터셋 표"),
+    subtitle = md("디지털 글쓰기 `gt` 패키지")
+  ) %>%
+  tab_source_note("표제작: 한국 R 사용자회 오픈소스 소프트웨어 개발자")
+```
+
+:::
+:::::
+
+### $\LaTeX$ 표
+
+$\LaTeX$은 수식 뿐만 아니라 복잡하고 미려한 표도 코드를 통해 제작할 수 있다. 
+쿼토에서 $\LaTeX$ 표를 제작하기 위해서는 먼저 표제작을 위한 $\LaTeX$ 표코드를 준비하고, GitHub에서 팬독-필터 [tarleb/parse-latex](https://github.com/tarleb/parse-latex)를 다음 명령어로 설치한다.
+
+```bash
+$ quarto install extension tarleb/parse-latex
+```
+
+쿼토 확장팩이 설치되면 YAML에 다음과 같이 `parse-latex`을 등록하여 사용한다.
+
+```yaml
+---
+filters:
+  - parse-latex
+---
+```
+
+:::::{.columns}
+:::{.column width=45%}
+
+```{latex}
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|c|c|c|}
+\hline
+Car Model & mpg & cyl & disp \\
+\hline
+Lotus Europa & 30.4 & 4 & 95.1 \\
+Merc 230 & 22.8 & 4 & 140.8 \\
+Fiat 128 & 32.4 & 4 & 78.7 \\
+Pontiac Firebird & 19.2 & 8 & 400.0 \\
+Merc 450SL & 17.3 & 8 & 275.8 \\
+\hline
+\end{tabular}
+\caption{mtcars 데이터셋}
+\end{table}
+```
+
+:::
+
+:::{.column width=5%}
+
+:::
+  
+:::{.column}
+
+```{=latex}
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|c|c|c|}
+\hline
+Car Model & mpg & cyl & disp \\
+\hline
+Lotus Europa & 30.4 & 4 & 95.1 \\
+Merc 230 & 22.8 & 4 & 140.8 \\
+Fiat 128 & 32.4 & 4 & 78.7 \\
+Pontiac Firebird & 19.2 & 8 & 400.0 \\
+Merc 450SL & 17.3 & 8 & 275.8 \\
+\hline
+\end{tabular}
+\caption{mtcars 데이터셋}
+\end{table}
+```
+
+:::
+:::::
+
+### 표 제작 사례
+
+펭귄 데이터를 기반으로 `gt` 패키지를 사용하여  표 제목, 칼럼명, 셀값에 다양한 글꼴, 크기, 색상, 굵기를 적용한 사례가 @tbl-gt-penguins 에 코드로 나와 있다. 미국 웨스 앤더슨 영화 색상(`Darjeeling1`)을 표에 적용하고, 글꼴로 웹글꼴 구글 글꼴을 활용하여 `gt` 패키지로 다양한 글꼴을 적용하고, `fmt_integer()` 함수를 사용해서 숫자 가독성을 높이기 위해 천단위 구분자를 넣고 부가적인 디자인도 표에 적용한다.
+
+
+```{r}
+#| label: tbl-gt-penguins
+#| tbl-cap: "글꼴, 색상, 서식을 반영한 표 제작 사례"
 library(gt)
 
 basic_theme <- function(data, ...){
   data %>% 
     tab_options(
-      column_labels.background.color = "blue",
+      column_labels.background.color = "#F98400",
       table.font.size = px(12),
       column_labels.font.size = px(20),
-      row.striping.background_color = "#9678b6",
+      row.striping.background_color = "#F2AD00",
       heading.align = "left",
       heading.title.font.size = px(30)
   )
@@ -113,11 +286,12 @@ palmerpenguins::penguins %>%
         default_fonts()
       ),
       size = "large",
-      color = "blue",
+      color = "#00A08A",
       weight = "bolder"
     ),
     locations = cells_body(columns = body_mass_g)
   ) %>% 
+  fmt_integer(body_mass_g) |> 
   # 표 Header 와 첫번째 칼럼  ---------------
   tab_style(
     style = cell_text(
@@ -134,7 +308,8 @@ palmerpenguins::penguins %>%
     style = cell_text(
       font = google_font("Dokdo"), 
       align = "left", 
-      size = "xx-large"
+      size = "xx-large",
+      color = "#FF0000"
     ),
     locations = cells_title("title")
   ) %>%   
@@ -143,138 +318,11 @@ palmerpenguins::penguins %>%
 ```
 
 
-[kableExtra](https://cran.r-project.org/web/packages/kableExtra/), [`knitr::kable()`](https://rdrr.io/cran/knitr/man/kable.html) 함수는 통해 R마크다운 문서에 포함되는 표를 원하는 방향으로 작성할 수 있다. 내장된 `mtcars` 데이터프레임을 기본 데이터로 표를 제작해보자. [@xie2020r]
-
-
-### 헬로우 월드 표 {#rmarkdown-kable-table}
-
-`mtcars` 데이터프레임에서 시연목적으로 관측점 5개와 열 4개를 뽑아내서 `kable()`함수에 넣고 출력형식을 `markdown`으로 지정한다. `markdown`외에도 `html`, `pandoc`, `latex`, `rst`등으로 출력형식을 지정할 수 있다.
-
-```{r}
-#| label: knitr-kable-table
-library(tidyverse)
-library(knitr)
-
-mtcars %>% 
-  sample_n(5) %>% 
-  select(mpg, cyl, disp, hp) %>% 
-  kable("markdown")
-```
-
-### 표 칼럼명 지정 {#rmarkdown-table-columns}
-
-`kable()` 함수 내부에 `col.names =`에 칼럼명을 넣어주면 표의 칼럼명을 원하는 방식으로 변경시킬 수 있다.
-
-- `r names(iris)`
-- `r str_replace(names(iris), "\\.", " ")`
-
-```{r rmarkdown-table-columns}
-iris %>% 
-  sample_n(5) %>% 
-  kable(col.names = str_replace(names(iris), "\\.", " "))
-```
-
-
-### 표 칼럼 정렬 {#rmarkdown-table-columns-arrange}
-
-`align=` 인자를 조정해서 칼럼별로 정렬을 달리 할 수 있다.
-
-```{r rmarkdown-table-columns-arrange}
-iris %>% 
-  sample_n(5) %>% 
-  kable(align=c("rclcr"))
-```
-
-### 표 칼럼 캡션 {#rmarkdown-table-columns-caption}
-
-`align=` 인자를 조정해서 칼럼별로 정렬을 달리 할 수 있다. `@tbl-columns-caption`와 같이 @tbl-columns-caption 상호참조할 수 있다.
-
-```{r}
-#| label: tbl-columns-caption
-#| echo: fenced
-
-opts_current$append(list(label = "tw"))
-iris %>% 
-  sample_n(5) %>% 
-  kable(caption = "붓꽃 원자료 자막입니다.")
-```
-
-### 표를 루프 돌리기 {#rmd-kable-loop}
-
-품종별로 각각 표를 만들 필요가 있을 때 `for` 루프를 돌려 해당 품종별로 표를 제작한다. 이를 위해서 쿼도 코드덩어리 선택옵션을 넣어준다.
-
-```{r}
-#| label: show-iris-species
-#| results: asis
-#| echo: fenced
-
-library(glue)
-
-species <- unique(iris$Species)
-
-for (i in seq_along(species)) {
-  species_tbl <- iris %>% 
-    filter(Species == species[i]) %>% 
-    head() %>% 
-    kable(caption = glue('붓꽃 품종: {species[i]}'))
-  print(species_tbl)
-  cat('\n\n<!-- -->\n\n')
-}
-```
-
-
-### `kableExtra` 멋내기 {#rmd-kableExtra}
-
-[kableExtra](https://cran.r-project.org/web/packages/kableExtra/) 팩키지를 활용하여 [Create Awesome HTML Table with knitr::kable and kableExtra](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html)와 같이 멋진 표를 만들어낼 수 있다.
-
-### `gt` {#rmd-gt}
-
-그래프 문법(grammar of graphics)처럼 표 문법(grammar of table) [`gt`](https://github.com/rstudio/gt/) 팩키지가 등장했다. 표를 분해하면 다음과 같고 이를 `tibble` 혹은 데이터프레임을 입력받아 GT 객체로 변환시킨 후에 GT 표를 HTML로 출력하는 작업흐름을 갖는다.
-
-```{r}
-#| label:  gt-image
-#| eval: false
-webshot2::webshot("https://gt.rstudio.com/", selector = "#main > div:nth-child(3) > p > img", "images/gt-concept.png")
-```
-
-![표 해부도](images/gt_parts_of_a_table.svg)
-
-### `gt` 맛보기 [^gt-rstudio-blog] {#rmd-gt-taste}
-
-[^gt-rstudio-blog]: [Richard Iannone (2020-04-08), "Great Looking Tables: gt (v0.2)"](https://blog.rstudio.com/2020/04/08/great-looking-tables-gt-0-2/)
-
-`gt` 팩키지에 내장된 `exibble` 데이터셋은 $8 \times 9$ 구조를 갖는 단순한 데이터셋이지만 표와 관련된 다양한 형태를 개발에 사용할 주요한 정보를 담고 있다.
-
-```{r rmd-gt-taste-dataset}
-library(gt)
-
-exibble %>% 
-  kable()
-```
-
-`fmt_` 함수와 `tab_` 함수처럼 `tidyverse` 생태계를 구성하고 있는 다양한 팩키지와 동일한 사고체계와 문법을 따르고 있는 것을 확인할 수 있다.
-
-```{r rmd-gt-taste}
-#| eval: false
-
-exibble %>%
-  gt() %>%
-  fmt_number(columns = vars(num), decimals = 2) %>%
-  fmt_date(columns = vars(date), date_style = 6) %>%
-  fmt_time(columns = vars(time), time_style = 4) %>%
-  fmt_datetime(columns = vars(datetime), date_style = 6, time_style = 4) %>%
-  fmt_currency(columns = vars(currency), currency = "EUR") %>% 
-  tab_header(
-    title = md("This is the `exibble` dataset in **gt**"),
-    subtitle = "It is one of six datasets in the package"
-  ) %>%
-  tab_source_note(md("More information is available at `?exibble`."))
-```
-
 ## 다이어그램
 
-```{mermaid}
 
+
+```{mermaid}
 graph LR
 
     chatGPT["챗GPT"] --> Contents

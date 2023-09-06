@@ -34,9 +34,9 @@ book:
     - part: "기본요소"
       chapters:
         - unicode.qmd
+        - components.qmd
         - fonts.qmd
         - colors.qmd
-        - components.qmd
 
     - part: "템플릿과 테마"
       chapters:
@@ -61,7 +61,8 @@ book:
     - references.qmd
 
 filters:
-   - lightbox
+  - lightbox
+  - parse-latex
 lightbox: auto
 
 format:
