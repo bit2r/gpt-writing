@@ -297,57 +297,57 @@
     "objectID": "whole_game.html#챗gpt-디지털-글쓰기",
     "href": "whole_game.html#챗gpt-디지털-글쓰기",
     "title": "15  디지털 글쓰기",
-    "section": "15.2 (챗GPT) 디지털 글쓰기",
-    "text": "15.2 (챗GPT) 디지털 글쓰기\n챗GPT가 이목을 집중하고 있는 가장 근본적인 이유는 디지털 글쓰기를 사람보다 신속하고 빠르게 하기 때문이다. 전통적인 글쓰기와 달리 디지털 글쓰기에는 다양한 종류의 글쓰기, 코딩, 추론 등이 포함되고 있다. “챗GPT 디지털 글쓰기”를 통해 챗GPT 출현 이전과 이후 확연히 달라진 글쓰기 방법에 관심을 가져야만 된다. 1\n\n\n\n챗GPT 디지털 글쓰기 진화과정\n\n\n\n\n\n\ngraph LR\n\n    chatGPT[\"챗GPT\"] --&gt; Contents\n\n    subgraph Contents[\"디지털 글쓰기\"]\n        direction LR\n        Writing[\"글감\"] --&gt; Table[\"표\"]\n        Writing --&gt; Graph[\"그래프\"]\n        Writing --&gt; Code[\"파이썬/R/SQL&lt;br&gt;코드\"]\n        Writing --&gt; Figure[\"그림\"]\n        Writing --&gt; Diagram[\"도형\"]        \n    end\n\n    chatGPT --&gt; Format\n    Contents --&gt; Format\n\n    subgraph Format[\"구조와 외양\"]\n        direction LR\n        Theme[\"구조와 외양\"] --&gt; Title[\"문서 구조\"]\n        Theme               --&gt; Formatting[\"문서 서식\"]\n        Theme               --&gt; Layout[\"문서 레이아웃\"]\n        Theme               --&gt; reference[\"문서 참조\"]\n    end\n\n    chatGPT --&gt; Deployment\n    Format --&gt; Deployment\n\n    subgraph Deployment[\"배포와 공유\"]\n        direction LR\n        Deploy --&gt; Reader[\"독자(사람)\"]\n        Deploy --&gt; Author[\"독자(저작자)\"]\n        Deploy --&gt; Machine[\"독자(기계)\"]\n    end\n\n\n    style chatGPT fill:#f5f5f5,stroke:#333,stroke-width:3px\n\n    style Contents fill:#059fff,stroke:#333,stroke-width:1px\n    style Format fill:#fc0303,stroke:#333,stroke-width:1px\n    style Deployment fill:#03fc30,stroke:#333,stroke-width:1px"
+    "section": "16.5 (챗GPT) 디지털 글쓰기",
+    "text": "16.5 (챗GPT) 디지털 글쓰기\n챗GPT가 이목을 집중하고 있는 가장 근본적인 이유는 디지털 글쓰기를 사람보다 신속하고 빠르게 하기 때문이다. 전통적인 글쓰기와 달리 디지털 글쓰기에는 다양한 종류의 글쓰기, 코딩, 추론 등이 포함되고 있다. “챗GPT 디지털 글쓰기”를 통해 챗GPT 출현 이전과 이후 확연히 달라진 글쓰기 방법에 관심을 가져야만 된다. 1\n\n\n\n챗GPT 디지털 글쓰기 진화과정\n\n\n\n\n\n\ngraph LR\n\n    chatGPT[\"챗GPT\"] --&gt; Contents\n\n    subgraph Contents[\"디지털 글쓰기\"]\n        direction LR\n        Writing[\"글감\"] --&gt; Table[\"표\"]\n        Writing --&gt; Graph[\"그래프\"]\n        Writing --&gt; Code[\"파이썬/R/SQL&lt;br&gt;코드\"]\n        Writing --&gt; Figure[\"그림\"]\n        Writing --&gt; Diagram[\"도형\"]        \n    end\n\n    chatGPT --&gt; Format\n    Contents --&gt; Format\n\n    subgraph Format[\"구조와 외양\"]\n        direction LR\n        Theme[\"구조와 외양\"] --&gt; Title[\"문서 구조\"]\n        Theme               --&gt; Formatting[\"문서 서식\"]\n        Theme               --&gt; Layout[\"문서 레이아웃\"]\n        Theme               --&gt; reference[\"문서 참조\"]\n    end\n\n    chatGPT --&gt; Deployment\n    Format --&gt; Deployment\n\n    subgraph Deployment[\"배포와 공유\"]\n        direction LR\n        Deploy --&gt; Reader[\"독자(사람)\"]\n        Deploy --&gt; Author[\"독자(저작자)\"]\n        Deploy --&gt; Machine[\"독자(기계)\"]\n    end\n\n\n    style chatGPT fill:#f5f5f5,stroke:#333,stroke-width:3px\n\n    style Contents fill:#059fff,stroke:#333,stroke-width:1px\n    style Format fill:#fc0303,stroke:#333,stroke-width:1px\n    style Deployment fill:#03fc30,stroke:#333,stroke-width:1px"
   },
   {
     "objectID": "whole_game.html#챗gpt-글감-작성",
     "href": "whole_game.html#챗gpt-글감-작성",
-    "title": "15  디지털 글쓰기",
-    "section": "15.3 챗GPT 글감 작성",
-    "text": "15.3 챗GPT 글감 작성\n사전 자료조사를 통해서 한국영화 10선 중 국제시장과 펭귄 데이터를 통해 흥행과 현재 우리가 당면한 ESG 문제를 다룬 뭉클한 감동을 주는 영화 시놉시스 작성을 목표로 하자.\n\n\n\n\ngraph LR\n\n    chatGPT[\"챗GPT\"] --&gt; Survey\n\n    subgraph Survey[\"자료 조사\"]\n        direction LR\n        Top10[\"한국영화&lt;br&gt;10선\"] --&gt; OpenAI[\"챗GPT\"]\n        Top10                    --&gt; Bard[\"구글 바드\"]\n        Top10                    --&gt; KOBIS[\"역대&lt;br&gt;박스오피스\"]\n    end\n\n    Survey --&gt; Synopsis\n\n    subgraph Synopsis[\"시놉시스\"]\n        direction LR\n        Movie_A[\"명량\"]     -.-&gt; New_Movie[\"새로운 영화&lt;br&gt;시놉시스\"]\n        Movie_B[\"극한직업\"] --&gt; New_Movie\n        Movie_C[\"신과함께\"] -.-&gt; New_Movie\n        Market[\"국제시장\"] --&gt; New_Movie        \n        Movie_E[\"...\"] -.-&gt; New_Movie\n        Penguins[\"펭귄 데이터\"] --&gt; New_Movie\n    end\n\n    Synopsis --&gt; Synopsis_fin[\"최종&lt;br&gt;시놉시스\"]\n\n    style chatGPT fill:#f5f5f5,stroke:#333,stroke-width:3px\n\n    style Survey fill:#059fff,stroke:#333,stroke-width:1px\n    style Synopsis fill:#fc0303,stroke:#333,stroke-width:1px\n    style Synopsis_fin fill:#03fc30,stroke:#333,stroke-width:1px\n\n    style Penguins fill:#03fc30,stroke:#333,stroke-width:3px\n    style Market fill:#03fc30,stroke:#333,stroke-width:3px"
+    "title": "15  챗GPT 글쓰기 맛보기",
+    "section": "15.1 챗GPT 글감 작성",
+    "text": "15.1 챗GPT 글감 작성\n사전 자료조사를 통해서 한국영화 10선 중 국제시장과 펭귄 데이터를 통해 흥행과 현재 우리가 당면한 ESG 문제를 다룬 뭉클한 감동을 주는 영화 시놉시스 작성을 목표로 하자.\n\n\n\n\ngraph LR\n\n    chatGPT[\"챗GPT\"] --&gt; Survey\n\n    subgraph Survey[\"자료 조사\"]\n        direction LR\n        Top10[\"한국영화&lt;br&gt;10선\"] --&gt; OpenAI[\"챗GPT\"]\n        Top10                    --&gt; Bard[\"구글 바드\"]\n        Top10                    --&gt; KOBIS[\"역대&lt;br&gt;박스오피스\"]\n    end\n\n    Survey --&gt; Synopsis\n\n    subgraph Synopsis[\"시놉시스\"]\n        direction LR\n        Movie_A[\"명량\"]     -.-&gt; New_Movie[\"새로운 영화&lt;br&gt;시놉시스\"]\n        Movie_B[\"극한직업\"] --&gt; New_Movie\n        Movie_C[\"신과함께\"] -.-&gt; New_Movie\n        Market[\"국제시장\"] --&gt; New_Movie        \n        Movie_E[\"...\"] -.-&gt; New_Movie\n        Penguins[\"펭귄 데이터\"] --&gt; New_Movie\n    end\n\n    Synopsis --&gt; Synopsis_fin[\"최종&lt;br&gt;시놉시스\"]\n\n    style chatGPT fill:#f5f5f5,stroke:#333,stroke-width:3px\n\n    style Survey fill:#059fff,stroke:#333,stroke-width:1px\n    style Synopsis fill:#fc0303,stroke:#333,stroke-width:1px\n    style Synopsis_fin fill:#03fc30,stroke:#333,stroke-width:1px\n\n    style Penguins fill:#03fc30,stroke:#333,stroke-width:3px\n    style Market fill:#03fc30,stroke:#333,stroke-width:3px"
   },
   {
     "objectID": "whole_game.html#구조와-외양",
     "href": "whole_game.html#구조와-외양",
-    "title": "15  디지털 글쓰기",
-    "section": "15.4 구조와 외양",
-    "text": "15.4 구조와 외양\n글감이 준비되면 그 다음으로 가독성을 높이고 효과적인 콘텐츠 제작을 위해서 그림, 표, 그래프, 수식, 도형 등 다양한 문서 객체 뿐만 아니라 색상을 달리하여 시각적인 효과도 극대화하여 고품질 문서를 저작하게 된다.\n\n마크다운 기본 글쓰기\n\n대중소 제목\n굵은 글씨, 밑줄, ..\n단락 구분\n\n그림 (Figure)\n그래프 (Graph)\n표 (Table)\n도형 (Diagrams)\n수식 (LaTeX)\n호출 블록 (Callout Blocks)\n기사 레이아웃 (Article Layout)\n학술저작 (Scholarly Writing)\n다단편집(Side-by-Side Layout)\n…"
+    "title": "15  챗GPT 글쓰기 맛보기",
+    "section": "15.2 구조와 외양",
+    "text": "15.2 구조와 외양\n글감이 준비되면 그 다음으로 가독성을 높이고 효과적인 콘텐츠 제작을 위해서 그림, 표, 그래프, 수식, 도형 등 다양한 문서 객체 뿐만 아니라 색상을 달리하여 시각적인 효과도 극대화하여 고품질 문서를 저작하게 된다.\n\n마크다운 기본 글쓰기\n\n대중소 제목\n굵은 글씨, 밑줄, ..\n단락 구분\n\n그림 (Figure)\n그래프 (Graph)\n표 (Table)\n도형 (Diagrams)\n수식 (LaTeX)\n호출 블록 (Callout Blocks)\n기사 레이아웃 (Article Layout)\n학술저작 (Scholarly Writing)\n다단편집(Side-by-Side Layout)\n…"
   },
   {
     "objectID": "whole_game.html#배포와-공유",
     "href": "whole_game.html#배포와-공유",
-    "title": "15  디지털 글쓰기",
-    "section": "15.5 배포와 공유",
-    "text": "15.5 배포와 공유\n디지털 글쓰기 저작물을 제작하게 되면 그 다음 단계로 출판을 해야하는데 다양한 문서를 모아 프로젝트로 담아 Quarto Pub에 전자출판한다. 다른 출판 플랫폼으로 netlify, GitHub Pages, RStudio Connect가 많이 사용된다."
+    "title": "15  챗GPT 글쓰기 맛보기",
+    "section": "15.3 배포와 공유",
+    "text": "15.3 배포와 공유\n디지털 글쓰기 저작물을 제작하게 되면 그 다음 단계로 출판을 해야하는데 다양한 문서를 모아 프로젝트로 담아 Quarto Pub에 전자출판한다. 다른 출판 플랫폼으로 netlify, GitHub Pages, RStudio Connect가 많이 사용된다."
   },
   {
     "objectID": "dw_pdf.html#출판-디지털-전환",
     "href": "dw_pdf.html#출판-디지털-전환",
-    "title": "\n17  한글 PDF\n",
-    "section": "\n17.1 출판 디지털 전환",
-    "text": "17.1 출판 디지털 전환\n200자 원고지 4장은 통상 A4 용지 한장에 해당한다. 만약 A4 용지 10장 보고서나 논문을 작성한다고 하면, 종이 200자 원고지 40장에 연필이나 볼펜을 가지고 작성하게 된다. 최종본을 얻기까지 빨간색으로 선생님이나 주변의 첨삭지도를 받아 최종본을 만들기까지 여러번의 반복과정을 거치게 된다.\n최종 원고가 200자 원고지 40장에 담겨 탈고를 마치게 되면, 독자에게 다가갈 준비를 한다. 그림을 넣거나 아름다운 글씨체를 적용해 보고 종이 재질을 바꿔보기도 하고 영혼이 담긴 원고를 독자가 보기 좋고, 이해하기 쉽고, 때로는 감동과 재미를 줄 수 있도록 출판 단계에서 많은 사람들의 노력이 들어간다.\n탈고를 마친 원고에 글씨체를 비롯한 디자인 작업이 완료되면 출판장비를 갖춘 출판소에서 인쇄장비를 거쳐 종이책 혹은 보고서가 완성되고, 이렇게 대량으로 출력되면 각 서점으로 배송되어 독자가 서점에서 구독을 하게 된다.\n저자의 생각을 글로 표현하면 현재도 대부분 편집 및 디자인, 출판, 배송, 서점 등 각 단계에 사람이 관여하고 필요에 따라서는 컴퓨터가 작업을 지원하는데 사용되어 최종 독자에게 전달된다.\n책과 보고서 제작하는 과정은 워드 프로세스를 기본으로 두고, 숫자 계산이 필요하면 엑셀, 이미지가 필요하면 그래픽 전문 소프트웨어, 정보 검색도 웹브라우져를 사용한다. 글자, 단어, 문장, 문단, 장/절/항으로 생각의 단위를 서문, 본문, 결어 및 참고문헌, 주석, 그림, 그래프, 도표 등도 함께 체계적으로 작성해 나간다.\n다양한 소프트웨어를 통해서 원고를 탈고하게 되면 서식, 문장 문단 모양, 색인, 참조문헌 등 보기 좋고 가독성 높은 형태로 외양을 입히는 과정을 거치게 되는데 이 과정도 소프트웨어가 핵심적인 역할을 하게 된다. 책과 보고서에 대한 디자인 작업이 완료되면 다양한 형태로 배포하기 위한 프로그래밍 과정을 거쳐 PDF, 전자책(ePUB), 웹(HTML), 출판책 형태로 독자에게 전달된다.\n글을 써서 이를 독자에게 전달되는 과정은 과거에 전문작가, 디자인 전문가, 출판전문가, 서점운영자 등 수많은 전문가가 연관되어 있고 타자기, 디자인 기계, 인쇄기 등 수많은 기계가 필요했으며 이를 사업적으로 기술적으로 연결할 수 있는 다양한 통신 방법이 필요했다. 비전문가가 밖에서 보면 복잡하고 어려워 보이지만, 컴퓨팅 사고의 시각으로 보면 단순할 수 있다.\n\n\n\n\n\n\n\n\n\n\n\n\nPDF 작업흐름\n\n\n\n아날로그 출판\n\n\n\n디지털 출판\n\n\n그림 17.1: 디지털 출판 방식"
+    "title": "\n16  한글 PDF\n",
+    "section": "\n16.2 출판 디지털 전환",
+    "text": "16.2 출판 디지털 전환\n200자 원고지 4장은 통상 A4 용지 한장에 해당한다. 만약 A4 용지 10장 보고서나 논문을 작성한다고 하면, 종이 200자 원고지 40장에 연필이나 볼펜을 가지고 작성하게 된다. 최종본을 얻기까지 빨간색으로 선생님이나 주변의 첨삭지도를 받아 최종본을 만들기까지 여러번의 반복과정을 거치게 된다.\n최종 원고가 200자 원고지 40장에 담겨 탈고를 마치게 되면, 독자에게 다가갈 준비를 한다. 그림을 넣거나 아름다운 글씨체를 적용해 보고 종이 재질을 바꿔보기도 하고 영혼이 담긴 원고를 독자가 보기 좋고, 이해하기 쉽고, 때로는 감동과 재미를 줄 수 있도록 출판 단계에서 많은 사람들의 노력이 들어간다.\n탈고를 마친 원고에 글씨체를 비롯한 디자인 작업이 완료되면 출판장비를 갖춘 출판소에서 인쇄장비를 거쳐 종이책 혹은 보고서가 완성되고, 이렇게 대량으로 출력되면 각 서점으로 배송되어 독자가 서점에서 구독을 하게 된다.\n저자의 생각을 글로 표현하면 현재도 대부분 편집 및 디자인, 출판, 배송, 서점 등 각 단계에 사람이 관여하고 필요에 따라서는 컴퓨터가 작업을 지원하는데 사용되어 최종 독자에게 전달된다.\n책과 보고서 제작하는 과정은 워드 프로세스를 기본으로 두고, 숫자 계산이 필요하면 엑셀, 이미지가 필요하면 그래픽 전문 소프트웨어, 정보 검색도 웹브라우져를 사용한다. 글자, 단어, 문장, 문단, 장/절/항으로 생각의 단위를 서문, 본문, 결어 및 참고문헌, 주석, 그림, 그래프, 도표 등도 함께 체계적으로 작성해 나간다.\n다양한 소프트웨어를 통해서 원고를 탈고하게 되면 서식, 문장 문단 모양, 색인, 참조문헌 등 보기 좋고 가독성 높은 형태로 외양을 입히는 과정을 거치게 되는데 이 과정도 소프트웨어가 핵심적인 역할을 하게 된다. 책과 보고서에 대한 디자인 작업이 완료되면 다양한 형태로 배포하기 위한 프로그래밍 과정을 거쳐 PDF, 전자책(ePUB), 웹(HTML), 출판책 형태로 독자에게 전달된다.\n글을 써서 이를 독자에게 전달되는 과정은 과거에 전문작가, 디자인 전문가, 출판전문가, 서점운영자 등 수많은 전문가가 연관되어 있고 타자기, 디자인 기계, 인쇄기 등 수많은 기계가 필요했으며 이를 사업적으로 기술적으로 연결할 수 있는 다양한 통신 방법이 필요했다. 비전문가가 밖에서 보면 복잡하고 어려워 보이지만, 컴퓨팅 사고의 시각으로 보면 단순할 수 있다.\n\n\n\n\n\n\n\n\n\n\n\n\nPDF 작업흐름\n\n\n\n아날로그 출판\n\n\n\n디지털 출판\n\n\n그림 16.1: 디지털 출판 방식"
   },
   {
     "objectID": "dw_pdf.html#latex-knuth",
     "href": "dw_pdf.html#latex-knuth",
-    "title": "\n17  한글 PDF\n",
-    "section": "\n17.2 \\(LaTeX\\) 개요",
-    "text": "17.2 \\(LaTeX\\) 개요\n미국 스탠포트 대학 크누스(Donald Knuth) 교수가 1977년에 만든 문서조판 프로그램을 \\(TeX\\)(“텍”이라고 읽음)이라고 하고, Leslie Lamport 교수가 만든 TeX 매크로 팩키지를 LaTeX(“레이텍”이라고 읽음)이라고 한다. 수학과 교수였던 크누스 교수는 문서 식자체계를 통해 수식도 사용하기 쉽게 개발했고 METAFONT 폰트도 개발하여 양질의 글자체를 제작했다. 이후 레슬리 램포트가 \\(LaTeX\\)을 쉽게 쓸 수 있도록 다양한 매크로를 작성하여 공개했다. 이를 바탕으로 일반인도 고품질의 문서를 \\(LaTeX\\)으로 작성할 수 있게 되었다. 버클리 마이클 스피백(Michael Spivak) 교수는 수식을 쉽게 문서화시킬 수 있는 AMS-TeX을 매크로로 작성하여 공개하여 “The Joy of TeX” 책을 출간하기도 했다.\npdftex과 e-TeX이 합쳐져서 사실상(de factor) 표준 TeX이 되었고, XeTeX과 LuaTeX이 기존TeX을 대체하면서 발전하고 특히, 한글 폰트 때문에 XeTeX[“지텍”이라고 읽음]을 한글처리를 위해서 많이 사용하고 있다.1\n\\(LaTeX\\)의 동작원리는 Salomon이 도식화한 것에 영감을 받아, Kees van der Laan 2이 1994년 정리한 논문에 잘 정리되어 있다. 기본적으로 고품질 전자출판을 위해서 폰트와 더블어 TeX이 필요하고 이를 하나로 묶어서 고품질 출력물을 얻게된다. 저자가 편집기(editor)로 작업한 .tex 파일이 폰트(Fonts) 작업과정과 조판(Typesetting)과정이 하나로 합쳐져 출력물이 산출된다. TeX 기본 엔진을 지원하는 다양한 TeX 팩키지, AMS-(La)TeX, LaTeX, manmac가 눈에 띈다.\n문서에 들어가는 다양한 구성요소, 목차, 색인, 참고문헌, 그림과 표 등은 모듈화되어 관리되고, 폰트나 구조 스타일과 관련된 것도 별도로 구분되어 관리되고 있으며, TeXWorks같이 위지윅을 지원하는 은 편집기는 구문강조 및 맞춤범 검사등 고품질 LaTeX 저작물 작성을 위해 저작자를 지원하고 있다.\n\n\n\n\n기본적인 LaTeX 작동방식 및 주요 모듈에 대해 살펴본 후에 효과적인 LaTeX 문서을 위한 구성요소를 세부적으로 살펴보자.\n\n\n배포판: 과거 다양한 배포판이 윈도, 리눅스, 맥에 사용되었으나 현재는 TeX Live 가 유일의 LaTeX 작업환경이 되었다. 물론 MikTeX이 독자적으로 유지되고 있으나 별차이가 없다.\n\n폰트: 과거 폰트 메트릭(tfm), 메타폰트(MetaFont)를 사용하였으나, Type 1 을 걸쳐 트루타입과 오픈타입을 사용하도록 확대되었다.\n\n폰트를 식품으로 표현하면 밥과 같이 거의 항상 평타를 칠 수 있는 폰트를 선택하는 것이 중요하다. 물론 특식 필요한 경우 그에 맞게 적절한 폰트를 선택하는 것이 중요하다.\n폰트는 Serif와 San Serif를 한짝으로 삼아 한글로 보면 명조체(삐침이 있는 글꼴)과 고딕체를 동일한 폰트로 선택하는게 전체적으로 균형이 맞는다. 예를 들어, 나눔고딕-나눔명조, KoPub돋움-KoPub바탕, 함초롬도움-함초롬바탕 조합을 선택한다.\n글자 크기는 10~12 포인트를 선택하는데 이유는 장시간 글을 읽게 되도 피로감을 줄일 수 있다.\n\n\n\n그래픽: TeX/LaTeX은 기본적으로 그림은 TeX/LaTeX의 영역이 아닌 것으로 간주하고 있다. dvips를 사용하여 과거 EPS그림을 주로 사용했으나, 현재는 .jpg, .png, .pdf도 잘 처리한다.\n\n\n문자와 입력: 컴퓨터가 미국에서 개발되어 발전되어 주로 ASCII 코드가 주를 이뤘으나 2바이트 문자권인 한중일도 컴퓨터에서 자유로이 문자를 표현하고 입력할 수 있는 방식으로 UTF-8을 권장하고 있다. 특히, \\usepackage[utf8x]{inputenc} 사용이 필요한 경우가 많이 있다.\n\n색인과 참고문헌: makeindex와 bibtex가 색인과 참고문헌 처리를 위한 표준이지만, 유니코드를 좀더 잘 처리하고자 xindy와 biber도 주목받고 있다.\n\n수식: 수학표현관련 미국수학회에서 발전시킨 amsmath가 표준이다.\n\n출력: 과거 .dvi가 기본이였으나, 현재는 .pdf가 기본이고, 웹을 위한 다양한 .html 출력 생성도 지원한다. 즉, 과거에는 책 형태가 최종문서 산출물의 기본이였지만, 현재는 그리고 앞으로는 웹이 과거 책 형태의 위치를 차지하여 기본이 되고 책은 보조적인 역할로 남을 것으로 보인다."
+    "title": "\n16  한글 PDF\n",
+    "section": "\n16.3 \\(LaTeX\\) 개요",
+    "text": "16.3 \\(LaTeX\\) 개요\n미국 스탠포트 대학 크누스(Donald Knuth) 교수가 1977년에 만든 문서조판 프로그램을 \\(TeX\\)(“텍”이라고 읽음)이라고 하고, Leslie Lamport 교수가 만든 TeX 매크로 팩키지를 LaTeX(“레이텍”이라고 읽음)이라고 한다. 수학과 교수였던 크누스 교수는 문서 식자체계를 통해 수식도 사용하기 쉽게 개발했고 METAFONT 폰트도 개발하여 양질의 글자체를 제작했다. 이후 레슬리 램포트가 \\(LaTeX\\)을 쉽게 쓸 수 있도록 다양한 매크로를 작성하여 공개했다. 이를 바탕으로 일반인도 고품질의 문서를 \\(LaTeX\\)으로 작성할 수 있게 되었다. 버클리 마이클 스피백(Michael Spivak) 교수는 수식을 쉽게 문서화시킬 수 있는 AMS-TeX을 매크로로 작성하여 공개하여 “The Joy of TeX” 책을 출간하기도 했다.\npdftex과 e-TeX이 합쳐져서 사실상(de factor) 표준 TeX이 되었고, XeTeX과 LuaTeX이 기존TeX을 대체하면서 발전하고 특히, 한글 폰트 때문에 XeTeX[“지텍”이라고 읽음]을 한글처리를 위해서 많이 사용하고 있다.1\n\\(LaTeX\\)의 동작원리는 Salomon이 도식화한 것에 영감을 받아, Kees van der Laan 2이 1994년 정리한 논문에 잘 정리되어 있다. 기본적으로 고품질 전자출판을 위해서 폰트와 더블어 TeX이 필요하고 이를 하나로 묶어서 고품질 출력물을 얻게된다. 저자가 편집기(editor)로 작업한 .tex 파일이 폰트(Fonts) 작업과정과 조판(Typesetting)과정이 하나로 합쳐져 출력물이 산출된다. TeX 기본 엔진을 지원하는 다양한 TeX 팩키지, AMS-(La)TeX, LaTeX, manmac가 눈에 띈다.\n문서에 들어가는 다양한 구성요소, 목차, 색인, 참고문헌, 그림과 표 등은 모듈화되어 관리되고, 폰트나 구조 스타일과 관련된 것도 별도로 구분되어 관리되고 있으며, TeXWorks같이 위지윅을 지원하는 은 편집기는 구문강조 및 맞춤범 검사등 고품질 LaTeX 저작물 작성을 위해 저작자를 지원하고 있다.\n\n\n\n\n기본적인 LaTeX 작동방식 및 주요 모듈에 대해 살펴본 후에 효과적인 LaTeX 문서을 위한 구성요소를 세부적으로 살펴보자.\n\n\n배포판: 과거 다양한 배포판이 윈도, 리눅스, 맥에 사용되었으나 현재는 TeX Live 가 유일의 LaTeX 작업환경이 되었다. 물론 MikTeX이 독자적으로 유지되고 있으나 별차이가 없다.\n\n폰트: 과거 폰트 메트릭(tfm), 메타폰트(MetaFont)를 사용하였으나, Type 1 을 걸쳐 트루타입과 오픈타입을 사용하도록 확대되었다.\n\n폰트를 식품으로 표현하면 밥과 같이 거의 항상 평타를 칠 수 있는 폰트를 선택하는 것이 중요하다. 물론 특식 필요한 경우 그에 맞게 적절한 폰트를 선택하는 것이 중요하다.\n폰트는 Serif와 San Serif를 한짝으로 삼아 한글로 보면 명조체(삐침이 있는 글꼴)과 고딕체를 동일한 폰트로 선택하는게 전체적으로 균형이 맞는다. 예를 들어, 나눔고딕-나눔명조, KoPub돋움-KoPub바탕, 함초롬도움-함초롬바탕 조합을 선택한다.\n글자 크기는 10~12 포인트를 선택하는데 이유는 장시간 글을 읽게 되도 피로감을 줄일 수 있다.\n\n\n\n그래픽: TeX/LaTeX은 기본적으로 그림은 TeX/LaTeX의 영역이 아닌 것으로 간주하고 있다. dvips를 사용하여 과거 EPS그림을 주로 사용했으나, 현재는 .jpg, .png, .pdf도 잘 처리한다.\n\n\n문자와 입력: 컴퓨터가 미국에서 개발되어 발전되어 주로 ASCII 코드가 주를 이뤘으나 2바이트 문자권인 한중일도 컴퓨터에서 자유로이 문자를 표현하고 입력할 수 있는 방식으로 UTF-8을 권장하고 있다. 특히, \\usepackage[utf8x]{inputenc} 사용이 필요한 경우가 많이 있다.\n\n색인과 참고문헌: makeindex와 bibtex가 색인과 참고문헌 처리를 위한 표준이지만, 유니코드를 좀더 잘 처리하고자 xindy와 biber도 주목받고 있다.\n\n수식: 수학표현관련 미국수학회에서 발전시킨 amsmath가 표준이다.\n\n출력: 과거 .dvi가 기본이였으나, 현재는 .pdf가 기본이고, 웹을 위한 다양한 .html 출력 생성도 지원한다. 즉, 과거에는 책 형태가 최종문서 산출물의 기본이였지만, 현재는 그리고 앞으로는 웹이 과거 책 형태의 위치를 차지하여 기본이 되고 책은 보조적인 역할로 남을 것으로 보인다."
   },
   {
     "objectID": "dw_pdf.html#quarto-pdf",
     "href": "dw_pdf.html#quarto-pdf",
-    "title": "\n17  한글 PDF\n",
-    "section": "\n17.3 Quarto PDF",
-    "text": "17.3 Quarto PDF\nPDF는 기술적, 학술적, 사업적으로 혁신적인 문서 양식이다. PDF가 개발된 것은 오랜 역사를 자랑하지만 아래한글, 워드퍼펙트, MS 워드, 리브레 워드 등에 가려 그 진가를 발휘하지 못했다. 하지만 이제 PDF는 문서 출판의 최고봉이라는데 이의를 제기하는 사람은 없을 것이다.\nPDF 를 통해 아도비(Adobe) 회사는 엄청난 성공을 이어나가고 있고, 과학기술 저작에도 필수적인 파일 형태라 PDF에 대한 기본소양은 인공지능 시대를 살고 있는 시민으로 누구나 갖춰야하는 소양이다.\n\n17.3.1 \\(LaTeX\\) 엔진\n보통 TexLive에 기반을 둔 tinytex 를 사용하는데 한글을 사용하는 입장에서는 kotex를 설치하는 방법도 모색이 필요하다. 유니코드 문자를 처리하기 위해서 xelatex이 Quarto \\(LaTeX\\) 기본엔진이다. 달리 특정하지 않게 되면 xelatex을 통해 CJK 문자가 포함된 PDF 파일 제작이 가능하다.\nquarto install tool tinytex\nkotex 이 갖는 장점은 한글관련 이슈가 될만한 거의 모든 \\(LaTeX\\) 패키지와 기본 한글글꼴도 내장하고 있다는 점이다. 하지만, tidytex를 기본 \\(LaTeX\\) 엔진으로 사용하는 경우 빠진 패키지로 인해 후속 작업이 어려운 경우 tinytex::parse_install() 함수를 사용하게 되면 다음과 같이 오류난 텍스트를 붙여넣게 되면 자동으로 설치해준다.\n\ntinytex::parse_install(\n  text = \"! LaTeX Error: File `titlepic.sty' not found.\"\n)\n\n\n17.3.2 YAML 파일\n문서를 구성하는 기본사항을 적어둔다. PDF 문서를 저작하는 것이라 \\(LaTeX\\) 에 대한 기본 지식은 Quarto PDF 문서를 생성하는데 많은 도움이 된다. 글꼴 지정관련하여 로컬 컴퓨터에 폰트 디렉토리에 관련 글꼴 정보가 운영체제와 연결되어 있어야 한다.\nPandoc 문서에 메타데이터 variables for LaTeX을 참조하여 필요한 상세설정작업을 수행한다.\n---\ntitle: \"한글 PDF\"\nformat: \n  pdf:\n    documentclass: report\n    papersize: a4\n    toc: true\n    toc-depth: 2\n    number-sections: true\n    colorlinks: true\n    include-in-header: \n      text: |\n        \\usepackage{pdfpages} \nbibliography: bibliography.bib\nlink-citations: yes\ncsl: apa-single-spaced.csl\nmainfont: \"NanumMyeongjo\"\nsansfont: \"NanumGothic\"\nmonofont: \"D2Coding\"\n---\nQuarto 가 문서 변환 핵심 엔진으로 사용하고 있는 Pandoc 은 \\(LaTeX\\) 외에도 ConTeXt, roff ms, HTML (via wkhtmltopdf) 을 사용해서 PDF 파일을 제작할 수 있다. 기존 Pandoc을 이런 방식으로 PDF 를 제작하신 분은 다음 내용을 건너뛰는 것도 좋을 듯 싶다.\n\n17.3.3 저작\n마크다운으로 이미지, 표, 텍스트, 서식, 수식 등 다양한 저작사항을 .qmd 파일에 담아내면 \\(LaTeX\\) 엔진이 PDF로 변환작업을 수행해준다.\n이미지\n\\(LaTeX\\)에 이미지도 삽입가능하다.\n\n\n\n\n그림 17.2: Allison Horst 박사가 그린 펭귄 3종 도식화\n\n\n\n그림 17.3: 펭귄 부리(bill) 변수 설명\n\n\n\nR 코드\n\\(LaTeX\\)에 R 파이썬 코드를 통해 계산된 결과를 그래프, 표, 요약통계량 등으로 뽑아내 삽입가능하다.\n\nmass_flipper &lt;- ggplot(data = penguins,\n                       aes(x = flipper_length_mm,\n                           y = body_mass_g)) +\n  geom_point(size = 3,\n             alpha = 0.8) +\n  theme_minimal() +\n  labs(title = \"팔머 관측소 LTER 서식 펭귄 크기\",\n       subtitle = \"Adelie, Chinstrap, Gentoo 펭귄에 대한 물갈퀴 길이와 체질량\",\n       x = \"물갈퀴 길이(Flipper length) (mm)\",\n       y = \"체질량(Body mass) (g)\") +\n  theme_minimal()\n\nmass_flipper\n\n표\n\\(LaTeX\\)에 \\(LaTeX\\) 표를 넣을 수도 있고 R 혹은 파이썬에서 나온 표를 PDF 파일에 넣을 수도 있다.\nLaTeX 표\n\n\ngt 표\n\nknitr::kable(\n  mtcars[1:6, 1:10]\n)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmpg\ncyl\ndisp\nhp\ndrat\nwt\nqsec\nvs\nam\ngear\n\n\n\nMazda RX4\n21.0\n6\n160\n110\n3.90\n2.620\n16.46\n0\n1\n4\n\n\nMazda RX4 Wag\n21.0\n6\n160\n110\n3.90\n2.875\n17.02\n0\n1\n4\n\n\nDatsun 710\n22.8\n4\n108\n93\n3.85\n2.320\n18.61\n1\n1\n4\n\n\nHornet 4 Drive\n21.4\n6\n258\n110\n3.08\n3.215\n19.44\n1\n0\n3\n\n\nHornet Sportabout\n18.7\n8\n360\n175\n3.15\n3.440\n17.02\n0\n0\n3\n\n\nValiant\n18.1\n6\n225\n105\n2.76\n3.460\n20.22\n1\n0\n3\n\n\n\n\n\n데이터\n\n\n\n\n\n\n데이터 수집에 대해 궁금하신 분은 클릭하여 추가 학습하세요\n\n\n\n\n\n팔머펭귄 데이터는 Kristen Gorman 박사와 남국 팔머 관측소(Palmer Station, Antarctica LTER)에서 수집되어 공공에 이용가능하게 공개되었습니다.\n\n\n\n{palmerpenguins} 패키지 (palmer-penguins?)를 통해 R에서 손쉽게 이용가능하게 되었고 원데이터는 (Gorman-2014?) 에서 최초 공개되었다.\nPDF 겉면\nfitpaper \\(LaTeX\\) 패키지를 사용해서 책 첫장(\\frontmatter)과 마지막장(\\backmatter) 겉면을 장식할 수 있다.\n\\includepdf[fitpaper]{book/canva-backmatter}"
+    "title": "\n16  한글 PDF\n",
+    "section": "\n16.4 Quarto PDF",
+    "text": "16.4 Quarto PDF\nPDF는 기술적, 학술적, 사업적으로 혁신적인 문서 양식이다. PDF가 개발된 것은 오랜 역사를 자랑하지만 아래한글, 워드퍼펙트, MS 워드, 리브레 워드 등에 가려 그 진가를 발휘하지 못했다. 하지만 이제 PDF는 문서 출판의 최고봉이라는데 이의를 제기하는 사람은 없을 것이다.\nPDF 를 통해 아도비(Adobe) 회사는 엄청난 성공을 이어나가고 있고, 과학기술 저작에도 필수적인 파일 형태라 PDF에 대한 기본소양은 인공지능 시대를 살고 있는 시민으로 누구나 갖춰야하는 소양이다.\n\n16.4.1 \\(LaTeX\\) 엔진\n보통 TexLive에 기반을 둔 tinytex 를 사용하는데 한글을 사용하는 입장에서는 kotex를 설치하는 방법도 모색이 필요하다. 유니코드 문자를 처리하기 위해서 xelatex이 Quarto \\(LaTeX\\) 기본엔진이다. 달리 특정하지 않게 되면 xelatex을 통해 CJK 문자가 포함된 PDF 파일 제작이 가능하다.\nquarto install tool tinytex\nkotex 이 갖는 장점은 한글관련 이슈가 될만한 거의 모든 \\(LaTeX\\) 패키지와 기본 한글글꼴도 내장하고 있다는 점이다. 하지만, tidytex를 기본 \\(LaTeX\\) 엔진으로 사용하는 경우 빠진 패키지로 인해 후속 작업이 어려운 경우 tinytex::parse_install() 함수를 사용하게 되면 다음과 같이 오류난 텍스트를 붙여넣게 되면 자동으로 설치해준다.\n\ntinytex::parse_install(\n  text = \"! LaTeX Error: File `titlepic.sty' not found.\"\n)\n\n\n16.4.2 YAML 파일\n문서를 구성하는 기본사항을 적어둔다. PDF 문서를 저작하는 것이라 \\(LaTeX\\) 에 대한 기본 지식은 Quarto PDF 문서를 생성하는데 많은 도움이 된다. 글꼴 지정관련하여 로컬 컴퓨터에 폰트 디렉토리에 관련 글꼴 정보가 운영체제와 연결되어 있어야 한다.\nPandoc 문서에 메타데이터 variables for LaTeX을 참조하여 필요한 상세설정작업을 수행한다.\n---\ntitle: \"한글 PDF\"\nformat: \n  pdf:\n    documentclass: report\n    papersize: a4\n    toc: true\n    toc-depth: 2\n    number-sections: true\n    colorlinks: true\n    include-in-header: \n      text: |\n        \\usepackage{pdfpages} \nbibliography: bibliography.bib\nlink-citations: yes\ncsl: apa-single-spaced.csl\nmainfont: \"NanumMyeongjo\"\nsansfont: \"NanumGothic\"\nmonofont: \"D2Coding\"\n---\nQuarto 가 문서 변환 핵심 엔진으로 사용하고 있는 Pandoc 은 \\(LaTeX\\) 외에도 ConTeXt, roff ms, HTML (via wkhtmltopdf) 을 사용해서 PDF 파일을 제작할 수 있다. 기존 Pandoc을 이런 방식으로 PDF 를 제작하신 분은 다음 내용을 건너뛰는 것도 좋을 듯 싶다.\n\n16.4.3 저작\n마크다운으로 이미지, 표, 텍스트, 서식, 수식 등 다양한 저작사항을 .qmd 파일에 담아내면 \\(LaTeX\\) 엔진이 PDF로 변환작업을 수행해준다.\n이미지\n\\(LaTeX\\)에 이미지도 삽입가능하다.\n\n\n\n\n그림 16.2: Allison Horst 박사가 그린 펭귄 3종 도식화\n\n\n\n그림 16.3: 펭귄 부리(bill) 변수 설명\n\n\n\nR 코드\n\\(LaTeX\\)에 R 파이썬 코드를 통해 계산된 결과를 그래프, 표, 요약통계량 등으로 뽑아내 삽입가능하다.\n\nmass_flipper &lt;- ggplot(data = penguins,\n                       aes(x = flipper_length_mm,\n                           y = body_mass_g)) +\n  geom_point(size = 3,\n             alpha = 0.8) +\n  theme_minimal() +\n  labs(title = \"팔머 관측소 LTER 서식 펭귄 크기\",\n       subtitle = \"Adelie, Chinstrap, Gentoo 펭귄에 대한 물갈퀴 길이와 체질량\",\n       x = \"물갈퀴 길이(Flipper length) (mm)\",\n       y = \"체질량(Body mass) (g)\") +\n  theme_minimal()\n\nmass_flipper\n\n표\n\\(LaTeX\\)에 \\(LaTeX\\) 표를 넣을 수도 있고 R 혹은 파이썬에서 나온 표를 PDF 파일에 넣을 수도 있다.\nLaTeX 표\n\n\n연령\n빈도수\n\n\n\n18–25\n15\n\n\n26–35\n33\n\n\n36–45\n22\n\n\n\ngt 표\n\nknitr::kable(\n  mtcars[1:6, 1:10]\n)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmpg\ncyl\ndisp\nhp\ndrat\nwt\nqsec\nvs\nam\ngear\n\n\n\nMazda RX4\n21.0\n6\n160\n110\n3.90\n2.620\n16.46\n0\n1\n4\n\n\nMazda RX4 Wag\n21.0\n6\n160\n110\n3.90\n2.875\n17.02\n0\n1\n4\n\n\nDatsun 710\n22.8\n4\n108\n93\n3.85\n2.320\n18.61\n1\n1\n4\n\n\nHornet 4 Drive\n21.4\n6\n258\n110\n3.08\n3.215\n19.44\n1\n0\n3\n\n\nHornet Sportabout\n18.7\n8\n360\n175\n3.15\n3.440\n17.02\n0\n0\n3\n\n\nValiant\n18.1\n6\n225\n105\n2.76\n3.460\n20.22\n1\n0\n3\n\n\n\n\n\n데이터\n\n\n\n\n\n\n데이터 수집에 대해 궁금하신 분은 클릭하여 추가 학습하세요\n\n\n\n\n\n팔머펭귄 데이터는 Kristen Gorman 박사와 남국 팔머 관측소(Palmer Station, Antarctica LTER)에서 수집되어 공공에 이용가능하게 공개되었습니다.\n\n\n\n{palmerpenguins} 패키지 (palmer-penguins?)를 통해 R에서 손쉽게 이용가능하게 되었고 원데이터는 (Gorman-2014?) 에서 최초 공개되었다.\nPDF 겉면\nfitpaper \\(LaTeX\\) 패키지를 사용해서 책 첫장(\\frontmatter)과 마지막장(\\backmatter) 겉면을 장식할 수 있다.\n\\includepdf[fitpaper]{book/canva-backmatter}"
   },
   {
     "objectID": "dw_pdf.html#한글-글꼴",
     "href": "dw_pdf.html#한글-글꼴",
-    "title": "\n17  한글 PDF\n",
-    "section": "\n17.4 한글 글꼴",
-    "text": "17.4 한글 글꼴\nQuarto PDF Engines에서 \\(LaTeX\\) 엔진을 별도 다룰 정도로 \\(LaTeX\\) 엔진은 중요하다. Quarto 에서는 TinyTeX를 기반엔진으로 사용되는데 TeX Live 배포판에 기반하고 Pandoc 에서 가장 많이 사용되는 대략 200 여개 패키지를 포함시켜 사용성은 좋게하면서 크기는 대폭 줄였다.\n.qmd 파일 YAML 헤더에 로컬 컴퓨터에 등록된 글꼴을 지정하는 방식도 있다.\nmainfont: \"NanumMyeongjo\"\nsansfont: \"NanumGothic\"\nmonofont: \"D2Coding\"\nCJKmainfont: \"NanumGothic\"\n다른 방식은 글꼴 관련 사항은 packages.tex \\(TeX\\) 파일에 지정하는 것이다.\nformat:\n  pdf:\n    include-in-header:\n      - packages.tex\n      - macros.tex\n    include-before-body: before.tex\n예를 들어 packages.tex 에 한글 글꼴을 다음과 같이 지정한다.\n% 한글 폰트 ----------------------------\n\\setmainhangulfont{NanumMyeongjo} % 나눔명조\n\\setsanshangulfont{NanumGothic}   % 나눔고딕\n\\setmonohangulfont{D2Coding}      % D2코딩\n\n\n\n\n\n\n\n\n\n\n\n\n이광춘, “글을 쓰는 것은 소프트웨어 개발이다!”, 강서양천신문 특집기고(’15년 9월) 와 LaTeX, PDF, 문서, 그리고 사고에서 관련 내용을 발췌한 것임을 밝혀둡니다. 그리고, Quarto PDF 문서를 많이 참고 했습니다."
+    "title": "\n16  한글 PDF\n",
+    "section": "\n16.5 한글 글꼴",
+    "text": "16.5 한글 글꼴\nQuarto PDF Engines에서 \\(LaTeX\\) 엔진을 별도 다룰 정도로 \\(LaTeX\\) 엔진은 중요하다. Quarto 에서는 TinyTeX를 기반엔진으로 사용되는데 TeX Live 배포판에 기반하고 Pandoc 에서 가장 많이 사용되는 대략 200 여개 패키지를 포함시켜 사용성은 좋게하면서 크기는 대폭 줄였다.\n.qmd 파일 YAML 헤더에 로컬 컴퓨터에 등록된 글꼴을 지정하는 방식도 있다.\nmainfont: \"NanumMyeongjo\"\nsansfont: \"NanumGothic\"\nmonofont: \"D2Coding\"\nCJKmainfont: \"NanumGothic\"\n다른 방식은 글꼴 관련 사항은 packages.tex \\(TeX\\) 파일에 지정하는 것이다.\nformat:\n  pdf:\n    include-in-header:\n      - packages.tex\n      - macros.tex\n    include-before-body: before.tex\n예를 들어 packages.tex 에 한글 글꼴을 다음과 같이 지정한다.\n% 한글 폰트 ----------------------------\n\\setmainhangulfont{NanumMyeongjo} % 나눔명조\n\\setsanshangulfont{NanumGothic}   % 나눔고딕\n\\setmonohangulfont{D2Coding}      % D2코딩\n\n\n\n\n\n\n\n\n\n\n\n\n이광춘, “글을 쓰는 것은 소프트웨어 개발이다!”, 강서양천신문 특집기고(’15년 9월) 와 LaTeX, PDF, 문서, 그리고 사고에서 관련 내용을 발췌한 것임을 밝혀둡니다. 그리고, Quarto PDF 문서를 많이 참고 했습니다.\n\n\n\n\n\n\n\n이호재. (2017). 레이텍을 빨리 쓸 수 있는 방법. TeX: 조판, 그 이상의 가능성."
   },
   {
     "objectID": "dw_slideshow.html",
@@ -408,30 +408,30 @@
   {
     "objectID": "writing.html#재현가능-글쓰기",
     "href": "writing.html#재현가능-글쓰기",
-    "title": "4  쿼토",
-    "section": "4.1 재현가능 글쓰기",
-    "text": "4.1 재현가능 글쓰기\n과학의 근본적인 원칙 중 하나는 연구의 결과가 독립적으로 재현가능해야 한다는 것이다. 이 원칙은 연구 타당성을 확인하고, 그 결과가 일반화 가능한지 검증하는 데 필수적이다. 그러나 2010년 전후, 다양한 학문 분야에서 재현할 수 없는 연구 결과가 다수 발표됨에 따라 과학 커뮤니티 내에서 큰 우려가 발생하였고, 이러한 현상을 재현성 위기(Reproducibity Crisis)라고 부르며, 과학연구 신뢰성을 크게 훼손시켰다.\n이 위기에 대응하여, 전 세계 연구자들과 전문가들은 재현가능한 연구 저작을 촉진하고 지원하기 위한 다양한 방안을 모색하기 시작했다. 연구방법론 표준화, 데이터 공유, 연구 소프트웨어 투명성 강화 등 다양한 활동이 들불처럼 일어났고, 기술 커뮤니티 형성과 더불어 다양한 도구와 플랫폼 개발을 통해 재현성 문제를 해결하고자 하는 움직임이 확산되고 있다.\n데이터 과학에서 재현성은 핵심적인 요소로 간주된다. 연구 결과의 신뢰성과 타당성을 검증하는 데 있어, 다른 연구자나 전문가들이 동일한 결과를 도출할 수 있도록 연구 과정을 투명하게 공유하는 것은 필수적이다. 이러한 맥락에서 R 팩키지는 재현가능한 데이터 분석 프로젝트를 지원하는 데 중요한 역할을 한다.\n\n\n\n그림 4.1: 재현가능한 과학기술 문서 제작과정\n\n\n특히, R 팩키지를 활용한 연구 개요서(research compendia)는 재현성을 강화하는 훌륭한 도구로 간주된다. 연구 개요서는 연구의 모든 요소(코드, 데이터, 출력 결과물, 환경 등)을 포괄적으로 담고 있어, 연구의 전체 과정을 투명하게 추적하고 검증할 수 있다. 한 사례로 그림 4.1 에 코드부터 단계별로 재현가능한 과학기술 문서 제작과정을 보여주고 있다."
+    "title": "8  디지털 글쓰기",
+    "section": "9.1 재현가능 글쓰기",
+    "text": "9.1 재현가능 글쓰기\n과학의 근본적인 원칙 중 하나는 연구의 결과가 독립적으로 재현가능해야 한다는 것이다. 이 원칙은 연구 타당성을 확인하고, 그 결과가 일반화 가능한지 검증하는 데 필수적이다. 그러나 2010년 전후, 다양한 학문 분야에서 재현할 수 없는 연구 결과가 다수 발표됨에 따라 과학 커뮤니티 내에서 큰 우려가 발생하였고, 이러한 현상을 재현성 위기(Reproducibity Crisis)라고 부르며, 과학연구 신뢰성을 크게 훼손시켰다.\n이 위기에 대응하여, 전 세계 연구자들과 전문가들은 재현가능한 연구 저작을 촉진하고 지원하기 위한 다양한 방안을 모색하기 시작했다. 연구방법론 표준화, 데이터 공유, 연구 소프트웨어 투명성 강화 등 다양한 활동이 들불처럼 일어났고, 기술 커뮤니티 형성과 더불어 다양한 도구와 플랫폼 개발을 통해 재현성 문제를 해결하고자 하는 움직임이 확산되고 있다.\n데이터 과학에서 재현성은 핵심적인 요소로 간주된다. 연구 결과의 신뢰성과 타당성을 검증하는 데 있어, 다른 연구자나 전문가들이 동일한 결과를 도출할 수 있도록 연구 과정을 투명하게 공유하는 것은 필수적이다. 이러한 맥락에서 R 팩키지는 재현가능한 데이터 분석 프로젝트를 지원하는 데 중요한 역할을 한다.\n\n\n\n그림 9.1: 재현가능한 과학기술 문서 제작과정\n\n\n특히, R 팩키지를 활용한 연구 개요서(research compendia)는 재현성을 강화하는 훌륭한 도구로 간주된다. 연구 개요서는 연구의 모든 요소(코드, 데이터, 출력 결과물, 환경 등)을 포괄적으로 담고 있어, 연구의 전체 과정을 투명하게 추적하고 검증할 수 있다. 한 사례로 그림 9.1 에 코드부터 단계별로 재현가능한 과학기술 문서 제작과정을 보여주고 있다."
   },
   {
     "objectID": "writing.html#디지털-글쓰기",
     "href": "writing.html#디지털-글쓰기",
-    "title": "4  쿼토",
-    "section": "4.2 디지털 글쓰기",
-    "text": "4.2 디지털 글쓰기\n글쓰기는 인류의 역사와 함께한 중요한 소통 도구로서, 그 방식과 형태는 시대별로 지속적으로 변화해왔다. 최근의 글쓰기 환경은 그 전보다 훨씬 복잡하고 다양한 요소를 요구한다. 과거에는 원고지에 텍스트를 작성하는 것만으로도 충분했다. 한글이나 영어로 이루어진 문장들은 감정을 전달하거나 사실을 나열하며, 이를 통해 독자와의 소통을 이루었다. 그러나 현대의 글쓰기 환경에서는 단순한 텍스트 정보 전달만으로는 부족하다. 이미지, 그래픽, 그리고 인터랙티브한 요소들이 텍스트와 함께 통합되어야 하며, 이를 통해 독자의 관심을 끌고 정보의 흡수를 증진시킨다.\n가독성 또한 중요한 고려사항이다. 디자인적인 측면에서 효과적인 글꼴 선택은 텍스트의 내용을 더욱 돋보이게 하며, 독자의 읽기 경험을 향상시킨다. 현대의 글쓰기는 단순한 정보 전달을 넘어서, 그 과정과 결과의 재현성에도 중점을 둔다. 특히 과학연구나 기술문서에서 두드러진다. 자동화 도구와 버전 관리 시스템의 도입을 통해 재현성을 지원하고, 글쓰기 효율성과 투명성을 동시에 높이고 있다.\n최근의 눈에 띄는 추세 중 하나는 인공지능 발전과 그에 따른 기계 저작물의 폭증을 들 수 있다. 기계가 작성한 텍스트를 포함한 콘텐츠가 인간 저자와 비슷하거나 오히려 생산 속도나 경제적인 면에서 확실한 우위를 보이면서 이에 대한 연구와 기술적 시도가 활발히 이루어지고 있다.\n\n\n\n현대의 글쓰기: 기술적 도전과 진화의 중심"
+    "title": "8  디지털 글쓰기",
+    "section": "9.2 디지털 글쓰기",
+    "text": "9.2 디지털 글쓰기\n글쓰기는 인류의 역사와 함께한 중요한 소통 도구로서, 그 방식과 형태는 시대별로 지속적으로 변화해왔다. 최근의 글쓰기 환경은 그 전보다 훨씬 복잡하고 다양한 요소를 요구한다. 과거에는 원고지에 텍스트를 작성하는 것만으로도 충분했다. 한글이나 영어로 이루어진 문장들은 감정을 전달하거나 사실을 나열하며, 이를 통해 독자와의 소통을 이루었다. 그러나 현대의 글쓰기 환경에서는 단순한 텍스트 정보 전달만으로는 부족하다. 이미지, 그래픽, 그리고 인터랙티브한 요소들이 텍스트와 함께 통합되어야 하며, 이를 통해 독자의 관심을 끌고 정보의 흡수를 증진시킨다.\n가독성 또한 중요한 고려사항이다. 디자인적인 측면에서 효과적인 글꼴 선택은 텍스트의 내용을 더욱 돋보이게 하며, 독자의 읽기 경험을 향상시킨다. 현대의 글쓰기는 단순한 정보 전달을 넘어서, 그 과정과 결과의 재현성에도 중점을 둔다. 특히 과학연구나 기술문서에서 두드러진다. 자동화 도구와 버전 관리 시스템의 도입을 통해 재현성을 지원하고, 글쓰기 효율성과 투명성을 동시에 높이고 있다.\n최근의 눈에 띄는 추세 중 하나는 인공지능 발전과 그에 따른 기계 저작물의 폭증을 들 수 있다. 기계가 작성한 텍스트를 포함한 콘텐츠가 인간 저자와 비슷하거나 오히려 생산 속도나 경제적인 면에서 확실한 우위를 보이면서 이에 대한 연구와 기술적 시도가 활발히 이루어지고 있다.\n\n\n\n현대의 글쓰기: 기술적 도전과 진화의 중심"
   },
   {
     "objectID": "writing.html#latex-philosophy",
     "href": "writing.html#latex-philosophy",
-    "title": "4  쿼토",
-    "section": "4.3 \\(\\LaTeX\\) 철학",
-    "text": "4.3 \\(\\LaTeX\\) 철학\n\\(\\LaTeX\\)은 한마디로 정의하게 되면 “논리적인 디자인”이라고 볼 수 있다. 저작물이 만들어지는 과정은 저작자가 원고를 손으로 쓰거나 타자기로 쳐서 출판사에 넘겨주면, 출판사의 편집디자이너는 원고를 보고 세부적인 출력형식을 결정하여 인쇄소에 넘긴다. 인쇄소는 이를 토대로 과거 식자공이 식자판을 만들었다면 현재는 컴퓨터가 파일을 만든다. \\(\\LaTeX\\) 과 \\(\\TeX\\) 이 하는 업무가 다소 차이가 난다. (김영록, 2017)\n\n\\(\\LaTeX\\) 은 편집디자이너에 해당되는 업무를 수행\n\\(\\TeX\\) 은 식자공에 해당되는 업무를 수행\n\n\n\n\n문서의 논리적 구조와 디자인\n\n\n컴퓨터를 활용하여 전자조판을 넘긴 이유는 문서를 좀 더 읽기 쉽게 만들어 독자에게 저작자의 생각을 잘 이해시키는 것이다. 이러한 목적을 달성하기 위해서는 문서의 디자인이 그 문서의 논리적 구조를 잘 반영시켜야 하고, 반대로 문서의 논리적 구조를 잘 반영시키기 위해서는 문서 디자이너가 문서의 논리적 구조를 잘 이해해야만 된다. \\(\\LaTeX\\)의 명령어는 기본적으로 문서의 논리적 구조를 기술하는 것이다. 이렇게 기술된 명령어를 \\(\\TeX\\)으로 전달하여 조판하게 되어 원하는 최종 결과물을 얻게 된다.\n\\(\\LaTeX\\)에서 채택하는 논리적 디자인의 가장 큰 장점은 글을 더 잘 쓰게 된다는 점에 있다. \\(\\LaTeX\\) 으로 글을 작성하게 되면 점점 \\(\\LaTeX\\)이 채택하고 있는 논리적 디자인에 맞추게 되고 이를 통해서 글쓰기 실력이 향상된다.\n아마도 \\(\\LaTeX\\)의 가장 큰 장점은 자동화에 있다. 시각적 디자인(Wysiwig)을 채택하여 작성한 문서를 다른 형식으로 변환하거나 문서의 수식의 일련번호를 로마자에서 아라비아 숫자로 모두 변경시키거나 표나 그래프 번호를 일괄번경하는 등 이러한 사례는 자주 발견된다. 특히, 국내외 저널에 제출할 논문을 \\(\\LaTeX\\) 으로 작성한 경우 템플릿만 바꾸면 쉽게 고품질 논문을 만들 수 있는데 워드를 이용하여 작성할 경우 수작업을 하게 되어 비생산적인 시간낭비도 크고 미려한 문서를 얻을 수도 없다.\n따라서, \\(\\LaTeX\\) 으로 글을 쓰게 되면 글쓰기 본질에 집중할 수 있어 저작자의 생각과 의견을 좀더 진솔하게 가감없이 독자에게 전달시킬 수 있게 된다."
+    "title": "8  디지털 글쓰기",
+    "section": "9.3 \\(\\LaTeX\\) 철학",
+    "text": "9.3 \\(\\LaTeX\\) 철학\n\\(\\LaTeX\\)은 한마디로 정의하게 되면 “논리적인 디자인”이라고 볼 수 있다. 저작물이 만들어지는 과정은 저작자가 원고를 손으로 쓰거나 타자기로 쳐서 출판사에 넘겨주면, 출판사의 편집디자이너는 원고를 보고 세부적인 출력형식을 결정하여 인쇄소에 넘긴다. 인쇄소는 이를 토대로 과거 식자공이 식자판을 만들었다면 현재는 컴퓨터가 파일을 만든다. \\(\\LaTeX\\) 과 \\(\\TeX\\) 이 하는 업무가 다소 차이가 난다. (김영록, 2017)\n\n\\(\\LaTeX\\) 은 편집디자이너에 해당되는 업무를 수행\n\\(\\TeX\\) 은 식자공에 해당되는 업무를 수행\n\n\n\n\n문서의 논리적 구조와 디자인\n\n\n컴퓨터를 활용하여 전자조판을 넘긴 이유는 문서를 좀 더 읽기 쉽게 만들어 독자에게 저작자의 생각을 잘 이해시키는 것이다. 이러한 목적을 달성하기 위해서는 문서의 디자인이 그 문서의 논리적 구조를 잘 반영시켜야 하고, 반대로 문서의 논리적 구조를 잘 반영시키기 위해서는 문서 디자이너가 문서의 논리적 구조를 잘 이해해야만 된다. \\(\\LaTeX\\)의 명령어는 기본적으로 문서의 논리적 구조를 기술하는 것이다. 이렇게 기술된 명령어를 \\(\\TeX\\)으로 전달하여 조판하게 되어 원하는 최종 결과물을 얻게 된다.\n\\(\\LaTeX\\)에서 채택하는 논리적 디자인의 가장 큰 장점은 글을 더 잘 쓰게 된다는 점에 있다. \\(\\LaTeX\\) 으로 글을 작성하게 되면 점점 \\(\\LaTeX\\)이 채택하고 있는 논리적 디자인에 맞추게 되고 이를 통해서 글쓰기 실력이 향상된다.\n아마도 \\(\\LaTeX\\)의 가장 큰 장점은 자동화에 있다. 시각적 디자인(Wysiwig)을 채택하여 작성한 문서를 다른 형식으로 변환하거나 문서의 수식의 일련번호를 로마자에서 아라비아 숫자로 모두 변경시키거나 표나 그래프 번호를 일괄번경하는 등 이러한 사례는 자주 발견된다. 특히, 국내외 저널에 제출할 논문을 \\(\\LaTeX\\) 으로 작성한 경우 템플릿만 바꾸면 쉽게 고품질 논문을 만들 수 있는데 워드를 이용하여 작성할 경우 수작업을 하게 되어 비생산적인 시간낭비도 크고 미려한 문서를 얻을 수도 없다.\n따라서, \\(\\LaTeX\\) 으로 글을 쓰게 되면 글쓰기 본질에 집중할 수 있어 저작자의 생각과 의견을 좀더 진솔하게 가감없이 독자에게 전달시킬 수 있게 된다."
   },
   {
     "objectID": "writing.html#wysiwyg",
     "href": "writing.html#wysiwyg",
-    "title": "4  쿼토",
-    "section": "4.4 시각적 디자인",
-    "text": "4.4 시각적 디자인\n문서를 논리적으로 디자인하는 반대 개념으로 있는 것이 위즈윅(WSYIWIG, What You See Is What You Get) 으로 대표적인 것이 아래한글, MS 워드와 같은 워드 프로세서다. 시각적 디자인을 하게 되면 논리적이지 못한 애매한 조판을 하기 쉽다. 또한, PDF 파일로도 출력을 할 때 미세하나마 출력물에 일관성이 실종되기도 한다."
+    "title": "8  디지털 글쓰기",
+    "section": "9.4 시각적 디자인",
+    "text": "9.4 시각적 디자인\n문서를 논리적으로 디자인하는 반대 개념으로 있는 것이 위즈윅(WSYIWIG, What You See Is What You Get) 으로 대표적인 것이 아래한글, MS 워드와 같은 워드 프로세서다. 시각적 디자인을 하게 되면 논리적이지 못한 애매한 조판을 하기 쉽다. 또한, PDF 파일로도 출력을 할 때 미세하나마 출력물에 일관성이 실종되기도 한다.\n\n\n\n\n김영록. (2017). 교육 현장에서의 텍의 활용. TeX: 조판, 그 이상의 가능성."
   },
   {
     "objectID": "writing.html#latex-engine",
@@ -443,93 +443,93 @@
   {
     "objectID": "quarto.html",
     "href": "quarto.html",
-    "title": "5  쿼토 소개",
+    "title": "4  쿼토 소개",
     "section": "",
-    "text": "6 Single Sourcing 출판저작\n데이터 사이언스 출판저작에 다소 차이는 있지만 출판에 대한 대체적인 방식은 유사할 것으로 보인다. 즉, Single Sourcing 을 콘텐츠 저작, 디자인, 최종 출판물 관리까지 일원화되어 자동화되어 체계적으로 관리된다면 중복되는 낭비는 물론 재현가능성도 높여 과학기술 출판저작물로 가장 이상적으로 간주되고 있다."
+    "text": "5 Single Sourcing 출판저작\n데이터 사이언스 출판저작에 다소 차이는 있지만 출판에 대한 대체적인 방식은 유사할 것으로 보인다. 즉, Single Sourcing 을 콘텐츠 저작, 디자인, 최종 출판물 관리까지 일원화되어 자동화되어 체계적으로 관리된다면 중복되는 낭비는 물론 재현가능성도 높여 과학기술 출판저작물로 가장 이상적으로 간주되고 있다."
   },
   {
     "objectID": "quarto.html#작업흐름",
     "href": "quarto.html#작업흐름",
-    "title": "5  쿼토 소개",
-    "section": "6.1 작업흐름",
-    "text": "6.1 작업흐름\n기존 R .Rmd, 파이썬 .ipynb 확장자를 갖는 작업흐름이 .qmd 파일로 단일화되는 것이 가장 큰 특징이다. 따라서 마크다운으로 콘텐츠를 작성하고 프로그래밍 코드를 R, 파이썬, 자바스크립트, 쥴리아 로 작성하게 되면 자동으로 계산을 수행하고 결과물을 마크다운으로 변환시키기 때문에 후속 작업을 신경쓰지 않고 원하는 결과물을 얻을 수 있는 장점이 있다."
+    "title": "4  쿼토 소개",
+    "section": "5.1 작업흐름",
+    "text": "5.1 작업흐름\n기존 R .Rmd, 파이썬 .ipynb 확장자를 갖는 작업흐름이 .qmd 파일로 단일화되는 것이 가장 큰 특징이다. 따라서 마크다운으로 콘텐츠를 작성하고 프로그래밍 코드를 R, 파이썬, 자바스크립트, 쥴리아 로 작성하게 되면 자동으로 계산을 수행하고 결과물을 마크다운으로 변환시키기 때문에 후속 작업을 신경쓰지 않고 원하는 결과물을 얻을 수 있는 장점이 있다."
   },
   {
     "objectID": "quarto.html#r-.rmd",
     "href": "quarto.html#r-.rmd",
-    "title": "5  쿼토 소개",
-    "section": "6.2 R (.Rmd)",
-    "text": "6.2 R (.Rmd)"
+    "title": "4  쿼토 소개",
+    "section": "5.2 R (.Rmd)",
+    "text": "5.2 R (.Rmd)"
   },
   {
     "objectID": "quarto.html#파이썬-주피터",
     "href": "quarto.html#파이썬-주피터",
-    "title": "5  쿼토 소개",
-    "section": "6.3 파이썬 (주피터)",
-    "text": "6.3 파이썬 (주피터)"
+    "title": "4  쿼토 소개",
+    "section": "5.3 파이썬 (주피터)",
+    "text": "5.3 파이썬 (주피터)"
   },
   {
     "objectID": "quarto.html#quarto---r",
     "href": "quarto.html#quarto---r",
-    "title": "5  쿼토 소개",
-    "section": "6.4 Quarto - R",
-    "text": "6.4 Quarto - R"
+    "title": "4  쿼토 소개",
+    "section": "5.4 Quarto - R",
+    "text": "5.4 Quarto - R"
   },
   {
     "objectID": "quarto.html#quarto---파이썬",
     "href": "quarto.html#quarto---파이썬",
-    "title": "5  쿼토 소개",
-    "section": "6.5 Quarto - 파이썬",
-    "text": "6.5 Quarto - 파이썬"
+    "title": "4  쿼토 소개",
+    "section": "5.5 Quarto - 파이썬",
+    "text": "5.5 Quarto - 파이썬"
   },
   {
     "objectID": "quarto.html#주요-기능",
     "href": "quarto.html#주요-기능",
-    "title": "5  쿼토 소개",
-    "section": "6.6 주요 기능",
-    "text": "6.6 주요 기능\n\n\n\nFeature\nR Markdown\nQuarto\n\n\n\n\nBasic Formats\n\nhtml_document\npdf_document\nword_document\n\n\nhtml\npdf\ndocx\n\n\n\nBeamer\n\nbeamer_presentation\n\n\nbeamer\n\n\n\nPowerPoint\n\npowerpoint_presentation\n\n\npptx\n\n\n\nHTML Slides\n\nxaringan\nrevealjs\n\n\nrevealjs\n\n\n\nAdvanced Layout\n\ntufte\ndistill\n\n\nQuarto Article Layout\n\n\n\nCross References\n\nhtml_document2\npdf_document2\nword_document2\n\n\nQuarto Crossrefs\n\n\n\nWebsites & Blogs\n\nblogdown\ndistill\n\nQuarto Websites\nQuarto Blogs\n\n\nBooks\n\nbookdown\n\nQuarto Books\n\n\nInteractivity\nShiny Documents\nQuarto Interactive Documents\n\n\nPaged HTML\npagedown\nSummer 2022\n\n\nJournal Articles\nrticles\nSummer 2022\n\n\nDashboards\nflexdashboard |\nFall 2022"
+    "title": "4  쿼토 소개",
+    "section": "5.6 주요 기능",
+    "text": "5.6 주요 기능\n\n\n\nFeature\nR Markdown\nQuarto\n\n\n\n\nBasic Formats\n\nhtml_document\npdf_document\nword_document\n\n\nhtml\npdf\ndocx\n\n\n\nBeamer\n\nbeamer_presentation\n\n\nbeamer\n\n\n\nPowerPoint\n\npowerpoint_presentation\n\n\npptx\n\n\n\nHTML Slides\n\nxaringan\nrevealjs\n\n\nrevealjs\n\n\n\nAdvanced Layout\n\ntufte\ndistill\n\n\nQuarto Article Layout\n\n\n\nCross References\n\nhtml_document2\npdf_document2\nword_document2\n\n\nQuarto Crossrefs\n\n\n\nWebsites & Blogs\n\nblogdown\ndistill\n\nQuarto Websites\nQuarto Blogs\n\n\nBooks\n\nbookdown\n\nQuarto Books\n\n\nInteractivity\nShiny Documents\nQuarto Interactive Documents\n\n\nPaged HTML\npagedown\nSummer 2022\n\n\nJournal Articles\nrticles\nSummer 2022\n\n\nDashboards\nflexdashboard |\nFall 2022"
   },
   {
     "objectID": "quarto.html#위지윅-vs-위지윔",
     "href": "quarto.html#위지윅-vs-위지윔",
-    "title": "5  쿼토 소개",
-    "section": "6.7 위지윅 vs 위지윔",
-    "text": "6.7 위지윅 vs 위지윔\n신속하고 빠르게 누구나 짧은 학습을 통해서 문서를 저작하고 출판할 수 있는 방식은 아래한글 혹은 MS워드 워드프로세서를 사용하는데 이는 위지위그(WYSIWYG: What You See Is What You Get, “보는 대로 얻는다”)에 기초한 것으로 문서 편집 과정에서 화면에 포맷된 낱말, 문장이 출력물과 동일하게 나오는 방식을 말한다. 위지윅의 대척점에 있는 것이 위지윔(WYSIWYM, What You See Is What You Mean)으로 대표적인 것인 \\(\\LaTeX\\) 으로 구조화된 방식으로 문서를 작성하면 컴파일을 통해서 최종 문서가 미려한 출판가능한 PDF, PS, DVI 등 확장자를 갖는 출판결과물을 얻을 수 있다.\n\n\n\n\n\n\n6.7.1 블로그 저작 소프트웨어\n개인용 컴퓨터가 보급되면서 아래한글과 같은 워드 프로세서를 사용해서 저작을 하는 것이 일반화되었지만 곧이어 인터넷이 보급되면서 웹에 문서를 저작하는 것이 이제는 더욱 중요하게 되었다. 전문 개발자가 아닌 일반인이 HTML, CSS, JavaScript를 학습하여 웹에 문서를 제작하고 출판하는 것은 난이도가 있다보니 워드프레스와 티스토리 같은 위지위그 패러다임을 채택한 저작도구가 사용되고 있으나 상대적으로 HTML, CSS, JavaScript을 조합한 방식과 비교하여 고급스러운 면과 함께 정교함에 있어 아쉬움이 있는 것도 사실이다.\n\n\n6.7.2 워드프레스와 티스토리\n\n\n\n\n\n\n\n6.7.3 HTML + CSS + 자바스크립트"
+    "title": "4  쿼토 소개",
+    "section": "5.7 위지윅 vs 위지윔",
+    "text": "5.7 위지윅 vs 위지윔\n신속하고 빠르게 누구나 짧은 학습을 통해서 문서를 저작하고 출판할 수 있는 방식은 아래한글 혹은 MS워드 워드프로세서를 사용하는데 이는 위지위그(WYSIWYG: What You See Is What You Get, “보는 대로 얻는다”)에 기초한 것으로 문서 편집 과정에서 화면에 포맷된 낱말, 문장이 출력물과 동일하게 나오는 방식을 말한다. 위지윅의 대척점에 있는 것이 위지윔(WYSIWYM, What You See Is What You Mean)으로 대표적인 것인 \\(\\LaTeX\\) 으로 구조화된 방식으로 문서를 작성하면 컴파일을 통해서 최종 문서가 미려한 출판가능한 PDF, PS, DVI 등 확장자를 갖는 출판결과물을 얻을 수 있다.\n\n\n\n\n\n\n5.7.1 블로그 저작 소프트웨어\n개인용 컴퓨터가 보급되면서 아래한글과 같은 워드 프로세서를 사용해서 저작을 하는 것이 일반화되었지만 곧이어 인터넷이 보급되면서 웹에 문서를 저작하는 것이 이제는 더욱 중요하게 되었다. 전문 개발자가 아닌 일반인이 HTML, CSS, JavaScript를 학습하여 웹에 문서를 제작하고 출판하는 것은 난이도가 있다보니 워드프레스와 티스토리 같은 위지위그 패러다임을 채택한 저작도구가 사용되고 있으나 상대적으로 HTML, CSS, JavaScript을 조합한 방식과 비교하여 고급스러운 면과 함께 정교함에 있어 아쉬움이 있는 것도 사실이다.\n\n\n5.7.2 워드프레스와 티스토리\n\n\n\n\n\n\n\n5.7.3 HTML + CSS + 자바스크립트"
   },
   {
     "objectID": "quarto.html#quarto",
     "href": "quarto.html#quarto",
-    "title": "5  쿼토 소개",
-    "section": "6.8 Quarto",
-    "text": "6.8 Quarto\nQuarto 는 10년전부터 시작된 knitr 경험을 많이 녹여냈고 위지윔 패러다임에 기초를 하고 있다고 볼 수 있다. RStudio를 IDE로 Quarto CLI와 함께 출판물을 저작한다면 편집기에 있는 Visual 모드가 있어 위지윅 패러다임도 문서저작에 사용이 가능하다. 특히, R, 파이썬, SQL, 자바스크립트 등 컴퓨팅 엔진을 달리하여 문서에 그래프, 표, 인터랙티브 결과물도 함께 담을 수 있는 것은 커다란 장점이다."
+    "title": "4  쿼토 소개",
+    "section": "5.8 Quarto",
+    "text": "5.8 Quarto\nQuarto 는 10년전부터 시작된 knitr 경험을 많이 녹여냈고 위지윔 패러다임에 기초를 하고 있다고 볼 수 있다. RStudio를 IDE로 Quarto CLI와 함께 출판물을 저작한다면 편집기에 있는 Visual 모드가 있어 위지윅 패러다임도 문서저작에 사용이 가능하다. 특히, R, 파이썬, SQL, 자바스크립트 등 컴퓨팅 엔진을 달리하여 문서에 그래프, 표, 인터랙티브 결과물도 함께 담을 수 있는 것은 커다란 장점이다."
   },
   {
     "objectID": "quarto.html#quarto-해부",
     "href": "quarto.html#quarto-해부",
-    "title": "5  쿼토 소개",
-    "section": "6.9 Quarto 해부",
-    "text": "6.9 Quarto 해부\nQuarto 저작은 크게 3가지 구성요소로 되어 있다.\n\n메타데이터: YAML\n텍스트: 마크다운\n코드: knitr, jupyter\n\n상기 구성요소를 조합하게 되면 다양한 데이터 사이언스 웹사이트를 비롯한 출판물을 제작하게 된다.\n\n\n\nQuarto 문서 구성요소\n\n\n\n6.9.1 YAML\n메타데이터는 YAML인데 GNU처럼 “Yet Another Markup Language” 혹은 “YAML Ain’t Markup Language”을 줄인단어다.\n\n키값\n---\nkey: value\n---\n\n\n\n6.9.2 출력옵션\n---\nformat: something\n---\n. . .\n---\nformat: pdf\n---\n---\nformat: pdf\n---\n---\nformat: revealjs\n---\n\n\n6.9.3 상세 출력옵션\n---\nformat: \n  html:\n    toc: true\n    code-fold: true\n---\n왜 YAML이 필요하게 된 것인가? YAML은 단순히 KEY: Value 에 불과한데 CLI를 이해하게 되면 왜 YAML을 사용하는 것이 유용한지 이해할 수 있다. 먼저 간단한 CLI 명령어를 YAML로 변환해보자.\n\n\nterminal\n\nquarto render document.qmd --to html\n\n---\nformat: pdf\n---\n한단계 더 들어가서 좀더 많은 선택옵션을 넣어 고급 기능을 넣는 사례를 살펴본다.\n\n\nterminal\n\nquarto render document.qmd --to html -M code fold:true\n\n---\nformat: \n  html:\n    toc: true\n    code-fold: true\n---"
+    "title": "4  쿼토 소개",
+    "section": "5.9 Quarto 해부",
+    "text": "5.9 Quarto 해부\nQuarto 저작은 크게 3가지 구성요소로 되어 있다.\n\n메타데이터: YAML\n텍스트: 마크다운\n코드: knitr, jupyter\n\n상기 구성요소를 조합하게 되면 다양한 데이터 사이언스 웹사이트를 비롯한 출판물을 제작하게 된다.\n\n\n\nQuarto 문서 구성요소\n\n\n\n5.9.1 YAML\n메타데이터는 YAML인데 GNU처럼 “Yet Another Markup Language” 혹은 “YAML Ain’t Markup Language”을 줄인단어다.\n\n키값\n---\nkey: value\n---\n\n\n\n5.9.2 출력옵션\n---\nformat: something\n---\n. . .\n---\nformat: pdf\n---\n---\nformat: pdf\n---\n---\nformat: revealjs\n---\n\n\n5.9.3 상세 출력옵션\n---\nformat: \n  html:\n    toc: true\n    code-fold: true\n---\n왜 YAML이 필요하게 된 것인가? YAML은 단순히 KEY: Value 에 불과한데 CLI를 이해하게 되면 왜 YAML을 사용하는 것이 유용한지 이해할 수 있다. 먼저 간단한 CLI 명령어를 YAML로 변환해보자.\n\n\nterminal\n\nquarto render document.qmd --to html\n\n---\nformat: pdf\n---\n한단계 더 들어가서 좀더 많은 선택옵션을 넣어 고급 기능을 넣는 사례를 살펴본다.\n\n\nterminal\n\nquarto render document.qmd --to html -M code fold:true\n\n---\nformat: \n  html:\n    toc: true\n    code-fold: true\n---"
   },
   {
     "objectID": "quarto.html#마크다운",
     "href": "quarto.html#마크다운",
-    "title": "5  쿼토 소개",
-    "section": "6.10 마크다운",
-    "text": "6.10 마크다운\n데이터 과학 문서 웹사이트에 “마크다운 기초”, “고급 마크다운”, “R 마크다운 실무” 를 참조한다."
+    "title": "4  쿼토 소개",
+    "section": "5.10 마크다운",
+    "text": "5.10 마크다운\n데이터 과학 문서 웹사이트에 “마크다운 기초”, “고급 마크다운”, “R 마크다운 실무” 를 참조한다."
   },
   {
     "objectID": "quarto.html#코드",
     "href": "quarto.html#코드",
-    "title": "5  쿼토 소개",
-    "section": "6.11 코드",
-    "text": "6.11 코드\nR, 파이썬, SQL, 자바스크립트 등 버그 없이 정상 동작하는 프로그램을 작성하여 포함시킨다."
+    "title": "4  쿼토 소개",
+    "section": "5.11 코드",
+    "text": "5.11 코드\nR, 파이썬, SQL, 자바스크립트 등 버그 없이 정상 동작하는 프로그램을 작성하여 포함시킨다."
   },
   {
     "objectID": "quarto.html#yaml-코드편집",
     "href": "quarto.html#yaml-코드편집",
-    "title": "5  쿼토 소개",
-    "section": "6.12 YAML 코드편집",
-    "text": "6.12 YAML 코드편집\nRStudio, VSCode IDE는 탭-자동완성(tab-completion)을 제공한다. 즉, 첫단어를 타이핑하고 탭을 연결하여 키보드를 치게되면 연관 명령어가 나와 선택하면 된다. 혹은 Ctrl + space 단축키를 치게되면 전체 명령어가 나온다.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHyde, A. (2021, 8월 16). Single Source Publishing - A investigation of what Single Source Publishing is and how this ’holy grail’ can be achieved. https://coko.foundation/articles/single-source-publishing.html"
+    "title": "4  쿼토 소개",
+    "section": "5.12 YAML 코드편집",
+    "text": "5.12 YAML 코드편집\nRStudio, VSCode IDE는 탭-자동완성(tab-completion)을 제공한다. 즉, 첫단어를 타이핑하고 탭을 연결하여 키보드를 치게되면 연관 명령어가 나와 선택하면 된다. 혹은 Ctrl + space 단축키를 치게되면 전체 명령어가 나온다.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHyde, A. (2021, 8월 16). Single Source Publishing - A investigation of what Single Source Publishing is and how this ’holy grail’ can be achieved. https://coko.foundation/articles/single-source-publishing.html"
   },
   {
     "objectID": "colors.html#color-mechanism",
@@ -572,5 +572,61 @@
     "title": "\n11  색상\n",
     "section": "\n11.6 이미지 → 색상",
     "text": "11.6 이미지 → 색상\n이미지에서 색상을 출력한 후에 이를 팔레트로 만들어서 시각화한 사례를 만들어보자. 태극기에서 가장 많은 색상을 선택하여 16진수 색상코드를 추출한다. magick 패키지와 생상에서 데이터프레임 변환을 위해 imager 패키지를 사용해서 변환한다. 6\n\nlibrary(scales)\nlibrary(imager)\nlibrary(magick)\n\nflag_svg &lt;- image_read_svg(\"images/korean_flag.svg\")\n\nflag_palette &lt;- flag_svg |&gt; \n  image_resize(\"500\") |&gt; \n  image_quantize(max = 4, colorspace=\"RGB\") |&gt; \n  magick2cimg() |&gt; \n  RGBtoHSV() |&gt; \n  as.data.frame(wide=\"c\") %&gt;%  #3 making it wide makes it easier to output hex colour\n  mutate(hex=hsv(rescale(c.1, from=c(0,360)),c.2,c.3),\n         hue = c.1,\n         sat = c.2,\n         value = c.3) %&gt;%\n  count(hex, hue, sat,value, sort=T) %&gt;% \n  mutate(colorspace = \"RGB\") |&gt; \n  pull(hex)\n\nflag_colors_gg &lt;- tibble(colors = flag_palette) |&gt; \n  ggplot(aes(x = 1, y = 1:length(flag_palette), fill = colors)) + \n    geom_tile() +\n    scale_fill_identity() +\n    theme_void() + \n    coord_fixed(ratio = 0.2) +\n    geom_text(aes(label = str_glue(\"{colors}\")))  \n\n태극기 이미지를 ggplot으로 시각화한다.\n\nlibrary(ggimage)\n\nflag_image_gg &lt;- ggplot() +\n  geom_image(aes(x=0, y=0, image=\"images/korean_flag.svg\"), size=1) +\n  coord_cartesian(xlim=c(-1, 1), ylim=c(-1, 1)) +\n  theme_void()  \n\n태극기에서 추출한 색상을 바탕으로 막대그래프에 색상을 입혀 시각화한다.\n\nflag_penguin_gg &lt;- penguins |&gt; \n  count(island) |&gt; \n  mutate(island = if_else(island ==  \"Torgersen\", NA_character_, island)) |&gt; \n  ggplot(aes( x = island, y = n, fill = island)) +\n    geom_col() +\n    scale_fill_manual(values = flag_palette[2:4], na.value=\"grey50\") +\n    theme(legend.position = \"top\")\n\n태극기, 태극기 색상, 막대그래프 시각화를 한번에 요약하여 시각화한다.\n\nlibrary(patchwork)\n\nprint((flag_image_gg + flag_colors_gg) / flag_penguin_gg)"
+  },
+  {
+    "objectID": "dw_pdf.html#latex-engine",
+    "href": "dw_pdf.html#latex-engine",
+    "title": "\n16  한글 PDF\n",
+    "section": "\n16.1 \\(\\LaTeX\\) 엔진",
+    "text": "16.1 \\(\\LaTeX\\) 엔진\n\\(\\LaTeX\\) 을 실제 문서작성에 사용하기 위해서는 텍 배포판을 선택해야 하는데 KTUG 한국 \\(\\TeX\\) 사용자 그룹에서 \\(ko.TeX\\) Live를 추천하고 있다. 이유는 다음과 같다. (이호재, 2017)\n\npdfLaTeX, XeLaTeX, LuaLaTeX 3종 \\(\\LaTeX\\) 엔진이 있는데 XeLaTeX 이 유니코드 텍 엔진이라 CJK 동아시아권 언어를 잘 지원하고 트루타입 및 오픈타입 폰트도 자유롭게 선택할 수 있기 때문에 인기가 많다.\n운영체제에 따라 차이가 나지만 안정적으로 \\(\\LaTeX\\) 을 설치하여 실제 문서작업에 이용하기에는 \\(\\TeX\\) Live 가 MikTeX 보다 안정성이나 여러가지 사용자 지원 측면에서 낫다.\n\n\\(\\TeX\\) 소스파일에서 PDF 파일로 탐색을 하던가 반대로 PDF 파일에서 \\(\\TeX\\) 소스파일로 탐색을 하게 되는 기능을 TexStudio IDE를 활용하여 바로 가능하게 됨\n\n과거 latex+divps+pspdf 를 활용한 가장 전통적인 작업흐름을 가졌다. 즉, pstricks를 활용하여 PDF 파일을 제작하는 방식으로 시간이 오래 걸리고 이미지로 eps 파일만 사용한다는 한계가 있다. 또 다른 latex+dvipdfmx 작업흐름은 중간에 .dvi 파일을 생성하고 dvipdfmx를 사용하여 PDF 파일을 제작하는 방식이다. 마지막으로 pdfLaTeX, XeLaTeX, LuaLaTeX 을 활용한 작업흐름이 있는데 .tex 소스파일에서 .pdf 파일을 즉시 생성한다는 점에서 인기가 있다.\n이외에도 논문 제작이 아닌 문서를 제작하는 경우 한단계 더 들어가 memoir 혹은 oblivoir 클래스를 이용하는 것이 이미 검증된 문서 템플릿을 바탕으로 PDF 문서를 뽑아내는 신속한 방법이다.\n\n\n한글지원 LaTeX 엔진과 작업흐름"
+  },
+  {
+    "objectID": "whole_game.html",
+    "href": "whole_game.html",
+    "title": "15  디지털 글쓰기",
+    "section": "",
+    "text": "16 쿼토\nQuarto Guide 웹사이트에 과학기술을 위한 문서 저작에 대한 전체적인 사항이 조망되어 있다. 최근 과학기술 저작물은 다양한 출판형식과 더불어 문학적 프로그래밍(literate programming) 패러다임을 도입하고 가독성과 커뮤니케이션 강화를 위해 상호작용 인터랙티브한 기능도 내장되어 있다.\n최근 과학기술 저작물은 전통적인 출판 패러다임을 떠나 급격한 변화를 경험하고 있다. 이러한 변화의 중심에는 다양한 출판 형식의 출현과 함께 문학적 프로그래밍(literate programming)이라는 새로운 패러다임의 도입이 큰 역할을 하고 있다. 문학적 프로그래밍은 코드와 설명을 결합하여 보다 이해하기 쉽고 읽기 좋은 문서를 생성하는 방식을 의미한다. 이러한 변화의 배경에는 빅데이터, 데이터 과학, 인공지능으로 이어지는 과학기술 정보 전달과 공유를 보다 효율적으로 하기 위한 필요성이 크다. 또한, 인터랙티브 상호작용 기능은 다양한 문서 가독성과 커뮤니케이션 능력을 한층 강화했다. 인공지능 시대 R마크다운(R Markdown)이 10년 넘는 기간 동안 책(bookdown), 블로그(blogdown), 패키지 매뉴얼(pkgdown), PPT(xaringan), 대쉬보드(flexdashboard) 등 재현가능하고 추적가능한 과학기술 문서저작에 가능성을 보였고 이를 차세대 R마크다운이라는 별명을 갖고 있는 쿼토(Quarto)로 기존에 축적한 지식과 경험을 좋은 점은 계승하고 인공지능시대 새로운 패러다임을 적극 도입하여 새로운 과학기술 문서저작도구로 재탄생했다."
+  },
+  {
+    "objectID": "whole_game.html#재현가능-글쓰기",
+    "href": "whole_game.html#재현가능-글쓰기",
+    "title": "15  디지털 글쓰기",
+    "section": "16.1 재현가능 글쓰기",
+    "text": "16.1 재현가능 글쓰기\n과학의 근본적인 원칙 중 하나는 연구의 결과가 독립적으로 재현가능해야 한다는 것이다. 이 원칙은 연구 타당성을 확인하고, 그 결과가 일반화 가능한지 검증하는 데 필수적이다. 그러나 2010년 전후, 다양한 학문 분야에서 재현할 수 없는 연구 결과가 다수 발표됨에 따라 과학 커뮤니티 내에서 큰 우려가 발생하였고, 이러한 현상을 재현성 위기(Reproducibity Crisis)라고 부르며, 과학연구 신뢰성을 크게 훼손시켰다.\n이 위기에 대응하여, 전 세계 연구자들과 전문가들은 재현가능한 연구 저작을 촉진하고 지원하기 위한 다양한 방안을 모색하기 시작했다. 연구방법론 표준화, 데이터 공유, 연구 소프트웨어 투명성 강화 등 다양한 활동이 들불처럼 일어났고, 기술 커뮤니티 형성과 더불어 다양한 도구와 플랫폼 개발을 통해 재현성 문제를 해결하고자 하는 움직임이 확산되고 있다.\n데이터 과학에서 재현성은 핵심적인 요소로 간주된다. 연구 결과의 신뢰성과 타당성을 검증하는 데 있어, 다른 연구자나 전문가들이 동일한 결과를 도출할 수 있도록 연구 과정을 투명하게 공유하는 것은 필수적이다. 이러한 맥락에서 R 팩키지는 재현가능한 데이터 분석 프로젝트를 지원하는 데 중요한 역할을 한다.\n\n\n\n그림 16.1: 재현가능한 과학기술 문서 제작과정\n\n\n특히, R 팩키지를 활용한 연구 개요서(research compendia)는 재현성을 강화하는 훌륭한 도구로 간주된다. 연구 개요서는 연구의 모든 요소(코드, 데이터, 출력 결과물, 환경 등)을 포괄적으로 담고 있어, 연구의 전체 과정을 투명하게 추적하고 검증할 수 있다. 한 사례로 그림 16.1 에 코드부터 단계별로 재현가능한 과학기술 문서 제작과정을 보여주고 있다."
+  },
+  {
+    "objectID": "whole_game.html#디지털-글쓰기",
+    "href": "whole_game.html#디지털-글쓰기",
+    "title": "15  디지털 글쓰기",
+    "section": "16.2 디지털 글쓰기",
+    "text": "16.2 디지털 글쓰기\n글쓰기는 인류의 역사와 함께한 중요한 소통 도구로서, 그 방식과 형태는 시대별로 지속적으로 변화해왔다. 최근의 글쓰기 환경은 그 전보다 훨씬 복잡하고 다양한 요소를 요구한다. 과거에는 원고지에 텍스트를 작성하는 것만으로도 충분했다. 한글이나 영어로 이루어진 문장들은 감정을 전달하거나 사실을 나열하며, 이를 통해 독자와의 소통을 이루었다. 그러나 현대의 글쓰기 환경에서는 단순한 텍스트 정보 전달만으로는 부족하다. 이미지, 그래픽, 그리고 인터랙티브한 요소들이 텍스트와 함께 통합되어야 하며, 이를 통해 독자의 관심을 끌고 정보의 흡수를 증진시킨다.\n가독성 또한 중요한 고려사항이다. 디자인적인 측면에서 효과적인 글꼴 선택은 텍스트의 내용을 더욱 돋보이게 하며, 독자의 읽기 경험을 향상시킨다. 현대의 글쓰기는 단순한 정보 전달을 넘어서, 그 과정과 결과의 재현성에도 중점을 둔다. 특히 과학연구나 기술문서에서 두드러진다. 자동화 도구와 버전 관리 시스템의 도입을 통해 재현성을 지원하고, 글쓰기 효율성과 투명성을 동시에 높이고 있다.\n최근의 눈에 띄는 추세 중 하나는 인공지능 발전과 그에 따른 기계 저작물의 폭증을 들 수 있다. 기계가 작성한 텍스트를 포함한 콘텐츠가 인간 저자와 비슷하거나 오히려 생산 속도나 경제적인 면에서 확실한 우위를 보이면서 이에 대한 연구와 기술적 시도가 활발히 이루어지고 있다.\n\n\n\n현대의 글쓰기: 기술적 도전과 진화의 중심"
+  },
+  {
+    "objectID": "whole_game.html#latex-philosophy",
+    "href": "whole_game.html#latex-philosophy",
+    "title": "15  디지털 글쓰기",
+    "section": "16.3 \\(\\LaTeX\\) 철학",
+    "text": "16.3 \\(\\LaTeX\\) 철학\n\\(\\LaTeX\\)은 한마디로 정의하게 되면 “논리적인 디자인”이라고 볼 수 있다. 저작물이 만들어지는 과정은 저작자가 원고를 손으로 쓰거나 타자기로 쳐서 출판사에 넘겨주면, 출판사의 편집디자이너는 원고를 보고 세부적인 출력형식을 결정하여 인쇄소에 넘긴다. 인쇄소는 이를 토대로 과거 식자공이 식자판을 만들었다면 현재는 컴퓨터가 파일을 만든다. \\(\\LaTeX\\) 과 \\(\\TeX\\) 이 하는 업무가 다소 차이가 난다. (김영록, 2017)\n\n\\(\\LaTeX\\) 은 편집디자이너에 해당되는 업무를 수행\n\\(\\TeX\\) 은 식자공에 해당되는 업무를 수행\n\n\n\n\n문서의 논리적 구조와 디자인\n\n\n컴퓨터를 활용하여 전자조판을 넘긴 이유는 문서를 좀 더 읽기 쉽게 만들어 독자에게 저작자의 생각을 잘 이해시키는 것이다. 이러한 목적을 달성하기 위해서는 문서의 디자인이 그 문서의 논리적 구조를 잘 반영시켜야 하고, 반대로 문서의 논리적 구조를 잘 반영시키기 위해서는 문서 디자이너가 문서의 논리적 구조를 잘 이해해야만 된다. \\(\\LaTeX\\)의 명령어는 기본적으로 문서의 논리적 구조를 기술하는 것이다. 이렇게 기술된 명령어를 \\(\\TeX\\)으로 전달하여 조판하게 되어 원하는 최종 결과물을 얻게 된다.\n\\(\\LaTeX\\)에서 채택하는 논리적 디자인의 가장 큰 장점은 글을 더 잘 쓰게 된다는 점에 있다. \\(\\LaTeX\\) 으로 글을 작성하게 되면 점점 \\(\\LaTeX\\)이 채택하고 있는 논리적 디자인에 맞추게 되고 이를 통해서 글쓰기 실력이 향상된다.\n아마도 \\(\\LaTeX\\)의 가장 큰 장점은 자동화에 있다. 시각적 디자인(Wysiwig)을 채택하여 작성한 문서를 다른 형식으로 변환하거나 문서의 수식의 일련번호를 로마자에서 아라비아 숫자로 모두 변경시키거나 표나 그래프 번호를 일괄번경하는 등 이러한 사례는 자주 발견된다. 특히, 국내외 저널에 제출할 논문을 \\(\\LaTeX\\) 으로 작성한 경우 템플릿만 바꾸면 쉽게 고품질 논문을 만들 수 있는데 워드를 이용하여 작성할 경우 수작업을 하게 되어 비생산적인 시간낭비도 크고 미려한 문서를 얻을 수도 없다.\n따라서, \\(\\LaTeX\\) 으로 글을 쓰게 되면 글쓰기 본질에 집중할 수 있어 저작자의 생각과 의견을 좀더 진솔하게 가감없이 독자에게 전달시킬 수 있게 된다."
+  },
+  {
+    "objectID": "whole_game.html#wysiwyg",
+    "href": "whole_game.html#wysiwyg",
+    "title": "15  디지털 글쓰기",
+    "section": "16.4 시각적 디자인",
+    "text": "16.4 시각적 디자인\n문서를 논리적으로 디자인하는 반대 개념으로 있는 것이 위즈윅(WSYIWIG, What You See Is What You Get) 으로 대표적인 것이 아래한글, MS 워드와 같은 워드 프로세서다. 시각적 디자인을 하게 되면 논리적이지 못한 애매한 조판을 하기 쉽다. 또한, PDF 파일로도 출력을 할 때 미세하나마 출력물에 일관성이 실종되기도 한다."
+  },
+  {
+    "objectID": "writing.html",
+    "href": "writing.html",
+    "title": "8  디지털 글쓰기",
+    "section": "",
+    "text": "9 쿼토\nQuarto Guide 웹사이트에 과학기술을 위한 문서 저작에 대한 전체적인 사항이 조망되어 있다. 최근 과학기술 저작물은 다양한 출판형식과 더불어 문학적 프로그래밍(literate programming) 패러다임을 도입하고 가독성과 커뮤니케이션 강화를 위해 상호작용 인터랙티브한 기능도 내장되어 있다.\n최근 과학기술 저작물은 전통적인 출판 패러다임을 떠나 급격한 변화를 경험하고 있다. 이러한 변화의 중심에는 다양한 출판 형식의 출현과 함께 문학적 프로그래밍(literate programming)이라는 새로운 패러다임의 도입이 큰 역할을 하고 있다. 문학적 프로그래밍은 코드와 설명을 결합하여 보다 이해하기 쉽고 읽기 좋은 문서를 생성하는 방식을 의미한다. 이러한 변화의 배경에는 빅데이터, 데이터 과학, 인공지능으로 이어지는 과학기술 정보 전달과 공유를 보다 효율적으로 하기 위한 필요성이 크다. 또한, 인터랙티브 상호작용 기능은 다양한 문서 가독성과 커뮤니케이션 능력을 한층 강화했다. 인공지능 시대 R마크다운(R Markdown)이 10년 넘는 기간 동안 책(bookdown), 블로그(blogdown), 패키지 매뉴얼(pkgdown), PPT(xaringan), 대쉬보드(flexdashboard) 등 재현가능하고 추적가능한 과학기술 문서저작에 가능성을 보였고 이를 차세대 R마크다운이라는 별명을 갖고 있는 쿼토(Quarto)로 기존에 축적한 지식과 경험을 좋은 점은 계승하고 인공지능시대 새로운 패러다임을 적극 도입하여 새로운 과학기술 문서저작도구로 재탄생했다."
+  },
+  {
+    "objectID": "writing.html#글쓰기-비교",
+    "href": "writing.html#글쓰기-비교",
+    "title": "8  디지털 글쓰기",
+    "section": "8.1 글쓰기 비교",
+    "text": "8.1 글쓰기 비교\n디지털 글쓰기와 전통적인 글쓰기는 몇 가지 차이점이 있다. 디지털 글쓰기는 검색 엔진에 의해 쉽게 찾아질 수 있도록 설계되어 있으며, 다양한 미디어가 쉽게 통합될 수 있고, 디지털 글쓰기는 발행 후에도 언제든지 쉽게 조작할 수 있어 더 동적이고 생동감을 넣을 수도 있고, 깃(Git)과 같은 버전제어 도구와 연결시켜 글쓰기를 하게 되면 추적도 가능하여 재현가능한 글쓰기가 가능하게 된다. 디지털 글쓰기의 가장 큰 장점 중의 하나는 사람만이 저작을 하는 것이 아니라 기계가 저작한 프로그램도 글쓰기에 담을 수 있어 더욱 풍성한 글쓰기가 가능하다는 점이다.\n반면 전통적인 글쓰기는 발행 후 개발이 중단될 뿐만 아니라 한정된 지면(예를 들어 A4, B5)에 다양한 색상을 넣어 강조와 가독성을 높일 수 있으나 인쇄 난이도의 증가로 인해 비용도 급격히 증가하게 되고 무엇보다 정적인 정보만 담을 수 있어 최신 기술 흐름을 반영하는데 한계가 있다.\n또한 커뮤니케이션 관점에서 보면 디지털 글쓰기는 온라인 도구를 사용하여 작성 과정의 초기부터 광범위한 청중과 거의 실시간으로 텍스트를 공유할 수 있어 작성 과정이 공개적이고 다수다 저작과정에 별다른 장벽없이 참여할 수 있다는 점에서 전통적인 글쓰기가 소수의 저자가 집필을 마무리해야 후속 디자인 작업을 비롯한 후속 출판작업이 진행된다는 면에서 큰 차이가 있다. 특히 전통 글쓰기 결과물이 책과 같은 물리적 매체에 담기게 되면 이를 다시 디지털로 되돌리기 위해 광학문자인식(OCR) 과정을 거쳐야 하며 책속에 담긴 그래프, 표, 이미지 등 데이터는 별도 과정을 거쳐 디지털화 해야하는 한계도 명확하다."
   }
 ]

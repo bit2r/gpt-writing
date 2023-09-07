@@ -22,7 +22,6 @@ book:
     - part: "글쓰기 환경"
       chapters:
         - editor.qmd
-        - writing.qmd
         - quarto.qmd
 
     - part: "글쓰기"
@@ -30,6 +29,7 @@ book:
         - markdown_01_mess.qmd
         - markdown_02_markdown.qmd
         - markdown_03_advanced.qmd
+        - writing.qmd
 
     - part: "기본요소"
       chapters:
