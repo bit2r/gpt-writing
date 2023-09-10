@@ -1,0 +1,57 @@
+---
+title: "안녕 쿼토(Quarto)"
+subtitle: "한국에 온 것을 환영합니다!"
+output:
+  pdf: 
+    latex-engine: xelatex
+bibliography: references.bib
+---
+
+# 소개
+
+이 문서는 Quarto로 만든 헬로 월드 문서이다.
+
+# 표
+
+간단한 표를 보여줍니다:
+
+| 과일       | 가격   |
+|------------|--------|
+| 사과       | $1.2   |
+| 바나나     | $0.5   |
+| 체리       | $2.0   |
+
+# 이미지
+
+![Quarto 로고](images/quarto_logo.png)
+
+# Python 코드
+
+```{python}
+print("파이썬에서 헬로 월드!")
+```
+
+
+# R 코드
+
+```{r}
+print("R에서 헬로 월드!")
+```
+
+# 수식
+
+간단한 수식을 보여줍니다:
+
+$$
+\int_0^\infty e^{-x^2} dx = \frac{\sqrt{\pi}}{2}
+$$
+
+[@Smith2021]에서 언급한 것처럼 이것은 예시 문서입니다.
+
+# 참고문헌 {#references}
+
+
+
+
+
+

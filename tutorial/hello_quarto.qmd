@@ -1,0 +1,217 @@
+---
+title: "안녕 쿼토(Quarto)"
+subtitle: "한국에 온 것을 환영합니다!"
+author:
+  - name: 이광춘
+    orcid: 0000-0003-1689-0557
+    email: victor@r2bit.com
+    affiliations:
+      - name: 한국 R 사용자회
+        address: 서초구 법원로 X 길
+        state: 서울특별시
+        country: 대한민국
+        postal-code: 98109-4631
+format:
+  html:
+    theme: flatly
+    code-fold: true
+    code-overflow: wrap
+    toc: true
+    toc-depth: 3
+    toc-title: 목차
+    number-sections: true
+    highlight-style: github    
+    self-contained: true
+    default-image-extension: jpg    
+  
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+    cite-method: biblatex
+    pdf-engine: xelatex
+    keep-tex: true    
+    include-in-header:
+      - file: init.tex
+      - text: |
+          %% 폰트 사이즈 정의
+          \newcommand{\changesize}{%
+            \fontsize{8}{10}\selectfont
+          }
+          %% 머리글 바닥글의 위한 폰트 스타일 정의
+          % 장/절 번호 파트: 볼드 돋움체
+          \newcommand{\numberfont}{%
+            \hangulfontspec[ExternalLocation=_extensions/bit2r/bitPublish/fonts/KOPUBWORLD_OTF_FONTS/]{KoPubWorld Dotum_Pro Light.otf}\bfseries\selectfont
+          }
+          % 장/절 라벨 파트: 돋움체
+          \newcommand{\labelfont}{%
+            \hangulfontspec[ExternalLocation=_extensions/bit2r/bitPublish/fonts/KOPUBWORLD_OTF_FONTS/]{KoPubWorld Dotum_Pro Light.otf}\selectfont
+          }
+          %% 페이지 번호 파트
+          \newcommand*\pagefont{\normalfont\bfseries\sffamily}      
+          %% 국영문 색인
+          %\makeindex
+          %\printindex          
+bibliography: references.bib
+language:
+  en:
+    toc-title-document: "목 차"
+    crossref-fig-title: "그림"
+    crossref-tbl-title: "표"
+editor_options: 
+  chunk_output_type: console
+---
+
+# 소개
+
+이 문서는 Quarto로 만든 헬로 월드 문서이다.
+
+# 표
+
+@tbl-bucket 에 최근 우크라이나 전쟁으로 인한 고물가 간단한 표를 보여줍니다. 
+
+| 과일       | 가격   |
+|------------|--------|
+| 사과       | 1,200  |
+| 바나나     | 500    |
+| 체리       | 200    |
+
+: 장바구니 물가 {#tbl-bucket}
+
+# 그래프와 이미지
+
+## 이미지
+
+![Quarto 로고](images/quarto_logo.png)
+
+## 그래프
+
+```{r}
+#| warning: false
+#| eval: false
+library(tidyverse)
+library(showtext)
+library(palmerpenguins)
+
+font_add_google("Nanum Pen Script", "nanum_pen_script")
+font_add_google("Jua", "Jua")
+showtext_auto()
+
+theme_quarto <- theme(
+  text = element_text(family = 'Jua', size = 25),
+  plot.title.position = 'plot',
+  plot.title = element_text(
+    family = 'nanum_pen_script', size = 55,
+    face = 'bold', 
+    colour = thematic::okabe_ito(8)[3],
+    margin = margin(t = 2, r = 0, b = 3, l = 0, unit = "mm")
+  ),
+  plot.subtitle = element_text(
+    family = 'Jua', size = 25,
+    face = 'bold', 
+    colour = thematic::okabe_ito(8)[5],
+    margin = margin(t = 0, r = 0, b = 0, l = 0, unit = "mm")
+  )
+  
+)
+
+theme_set(theme_minimal() + theme_quarto)
+
+mass_flipper <- ggplot(data = penguins,
+                       aes(x = flipper_length_mm,
+                           y = body_mass_g,
+                           color = species)) +
+  geom_point(size = 3,
+             alpha = 0.8) +
+  labs(title = "팔머 관측소 LTER 서식 펭귄 크기",
+       subtitle = "Adelie, Chinstrap, Gentoo 펭귄에 대한 물갈퀴 길이와 체질량",
+       x = "물갈퀴 길이(Flipper length) (mm)",
+       y = "체질량(Body mass) (g)")
+
+
+ragg::agg_png("penguins.png", width = 5, height = 5, units = "in", res = 300, scaling = 0.5)
+mass_flipper
+dev.off()
+
+```
+
+![펭귄 시각화 사례](images/penguins.png)
+
+
+
+# 코드
+
+## 파이썬 코드
+
+```{python}
+print("파이썬에서 헬로 월드!")
+```
+
+
+## R 코드
+
+```{r}
+print("R에서 헬로 월드!")
+```
+
+# 수식
+
+간단한 수식을 보여줍니다:
+
+$$
+\int_0^\infty e^{-x^2} dx = \frac{\sqrt{\pi}}{2}
+$$
+
+[@Smith2021]에서 언급한 것처럼 이것은 예시 문서입니다.
+
+
+# 글씨 크기
+
+Huge > huge > LARGE > Large > large > normalsize > small > footnotesize > scriptsize > tiny
+
+\Huge
+쿼토(Quarto)가 글쓰기 미래다
+
+\huge
+쿼토(Quarto)가 글쓰기 미래다
+
+\LARGE
+쿼토(Quarto)가 글쓰기 미래다
+
+\normalsize
+쿼토(Quarto)가 글쓰기 미래다
+
+\small
+쿼토(Quarto)가 글쓰기 미래다
+
+\footnotesize
+
+쿼토(Quarto)가 글쓰기 미래다
+
+\tiny
+쿼토(Quarto)가 글쓰기 미래다
+
+\normalsize
+
+# 다이어그램
+
+```{mermaid}
+graph LR
+  A("1. 가상환경 구축") --> B("2. API KEY 발급과 저장")
+  B --> C("3. openai 패키지 설치")
+  style A fill:#f9d5e5,stroke:#333,stroke-width:2px
+  style B fill:#eeac99,stroke:#333,stroke-width:2px
+  style C fill:#e06377,stroke:#333,stroke-width:2px
+  classDef default fill:#f9f7f7,stroke:#333,stroke-width:2px;
+```
+
+
+# 참고문헌
+
+참고 문헌 인용과 목록 생성 실험을 합니다.\index{참고 문헌}\index{인용}\index{citation} 한국어 문헌과 구미어 문헌은 그 목록형성과 인용 방법이 다릅니다. 한국어 문헌의 예를 들면, [@kimuycwung_hankwukphan_2003]\과 같고, 영어 문헌은 예를 들면, [@Allport:1992:OND]\과 같습니다. \index{타당도}\index{신뢰도}\index{한국어 문헌}\index{korean}  
+
+
+# 문헌목록
+
+
+
