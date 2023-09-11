@@ -6,6 +6,7 @@ project:
   render:
     - "*.qmd"
     - "!*.Rmd"
+    - "!util.qmd"
 
 lang: ko-KR
 date-format: "YYYY년 MM월 DD일"
@@ -22,6 +23,7 @@ book:
     - part: "글쓰기 환경"
       chapters:
         - editor.qmd
+        - latex_pdf.qmd
         - quarto.qmd
 
     - part: "글쓰기"
@@ -81,6 +83,10 @@ format:
   pdf:
     documentclass: scrreprt
     cite-method: biblatex
+    include-in-header:
+      - text: |
+          \usepackage{smartdiagram}
+      - file: hangul_quarto.tex
 
 bibliography: references.bib
 csl: apa-single-spaced.csl
