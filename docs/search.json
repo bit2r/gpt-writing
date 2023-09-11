@@ -450,9 +450,9 @@
   {
     "objectID": "quarto.html#작업흐름",
     "href": "quarto.html#작업흐름",
-    "title": "4  쿼토(Quarto)",
-    "section": "4.2 작업흐름",
-    "text": "4.2 작업흐름\n기존 R .Rmd, 파이썬 .ipynb 확장자를 갖는 작업흐름이 .qmd 파일로 단일화되는 것이 가장 큰 특징이다. 따라서 마크다운으로 콘텐츠를 작성하고 프로그래밍 코드를 R, 파이썬, 자바스크립트, 쥴리아 로 작성하게 되면 자동으로 계산을 수행하고 결과물을 마크다운으로 변환시키기 때문에 후속 작업을 신경쓰지 않고 원하는 결과물을 얻을 수 있는 장점이 있다.\n\n4.2.1 R (.Rmd)\n\n\n\n\n\n\n\n4.2.2 파이썬 (주피터)\n\n\n\n\n\n\n\n4.2.3 Quarto - R\n\n\n\n\n\n\n\n4.2.4 Quarto - 파이썬"
+    "title": "5  쿼토(Quarto)",
+    "section": "5.2 작업흐름",
+    "text": "5.2 작업흐름\n기존 R .Rmd, 파이썬 .ipynb 확장자를 갖는 작업흐름이 .qmd 파일로 단일화되는 것이 가장 큰 특징이다. 따라서 마크다운으로 콘텐츠를 작성하고 프로그래밍 코드를 R, 파이썬, 자바스크립트, 쥴리아 로 작성하게 되면 자동으로 계산을 수행하고 결과물을 마크다운으로 변환시키기 때문에 후속 작업을 신경쓰지 않고 원하는 결과물을 얻을 수 있는 장점이 있다.\n\n5.2.1 R (.Rmd)\n\n\n\n\n\n\n\n5.2.2 파이썬 (주피터)\n\n\n\n\n\n\n\n5.2.3 Quarto - R\n\n\n\n\n\n\n\n5.2.4 Quarto - 파이썬"
   },
   {
     "objectID": "quarto.html#r-.rmd",
@@ -639,23 +639,23 @@
   {
     "objectID": "quarto.html#single-sourcing-출판저작",
     "href": "quarto.html#single-sourcing-출판저작",
-    "title": "4  쿼토(Quarto)",
-    "section": "4.1 Single Sourcing 출판저작",
-    "text": "4.1 Single Sourcing 출판저작\n데이터 사이언스 출판저작에 다소 차이는 있지만 출판에 대한 대체적인 방식은 유사할 것으로 보인다. 즉, Single Sourcing 을 콘텐츠 저작, 디자인, 최종 출판물 관리까지 일원화되어 자동화되어 체계적으로 관리된다면 중복되는 낭비는 물론 재현가능성도 높여 과학기술 출판저작물로 가장 이상적으로 간주되고 있다.\n\n4.1.1 문제점\n\n\n\n그림 4.1: 문제점\n\n\n\n\n4.1.2 개념\n\n\n\n그림 4.2: Single Sourcing 개념\n\n\n\n\n4.1.3 Single Sourcing Multi-Use\n\n\n\n그림 4.3: Single Sourcing Multi-Use"
+    "title": "5  쿼토(Quarto)",
+    "section": "5.1 Single Sourcing 출판저작",
+    "text": "5.1 Single Sourcing 출판저작\n데이터 사이언스 출판저작에 다소 차이는 있지만 출판에 대한 대체적인 방식은 유사할 것으로 보인다. 즉, Single Sourcing 을 콘텐츠 저작, 디자인, 최종 출판물 관리까지 일원화되어 자동화되어 체계적으로 관리된다면 중복되는 낭비는 물론 재현가능성도 높여 과학기술 출판저작물로 가장 이상적으로 간주되고 있다.\n\n5.1.1 문제점\n\n\n\n그림 5.1: 문제점\n\n\n\n\n5.1.2 개념\n\n\n\n그림 5.2: Single Sourcing 개념\n\n\n\n\n5.1.3 Single Sourcing Multi-Use\n\n\n\n그림 5.3: Single Sourcing Multi-Use"
   },
   {
     "objectID": "quarto.html#쿼토-해부",
     "href": "quarto.html#쿼토-해부",
-    "title": "4  쿼토(Quarto)",
-    "section": "4.3 쿼토 해부",
-    "text": "4.3 쿼토 해부\n쿼토는 데이터 과학 문서 작성 패러다임을 바꾼 R마크다운의 후속작으로 볼 수 있다. 쿼토는 10년 이상의 knitr 경험을 바탕으로 개발되었으며, 최근에는 위지윅(What You See Is What You Get) 패러다임도 RStudio Visual 편집에 도입하여 복잡한 코드 작성 없이 직관적으로 문서를 작성할 수 있다. R 사용자는 RStudio IDE, 파이썬 등 개발 경험이 풍부하신 분들은 파이참, VS코드, 이맥스/VIM 등 통합개발환경(IDE)을 쿼토 CLI를 통해 출판물을 쉽게 저작할 수 있다.\n쿼토는 다양한 프로그래밍 언어를 통해 계산(Computation) 기능을 문서에 담을 수 있도록 지원한다. R, 파이썬, SQL, 자바스크립트 등 다양한 프로그래밍 언어로 문서 내에 그래프, 표, 인터랙티브 결과물을 쉽게 삽입할 수 있다. 이러한 장점들이 모여 문서를 제작하고 유통하고 소비하는 데이터 과학자, 개발자, 과학기술 연구원, 사무노동자 분들의 시간을 줄여주고 업무 생산성을 크게 높여주는 도구로 자리매김하고 있다.\n\n\n\n쿼토 작업흐름\n\n\n쿼토 저작은 메타데이터(전문, front matter), 텍스트, 코드라는 세 가지 주요 구성요소로 이뤄진다.\n\n메타데이터 (YAML): YAML은 “YAML Ain’t Markup Language”의 약자로, 데이터를 구조화하기 위한 언어로, 쿼토에서 문서에서 전문(Front Matter)을 구성하는 문서 제목, 작성자, 날짜, 문서 형식 등을 정의한다. 메타데이터는 보통 문서 상단에 위치하며, 문서의 전반적인 설정과 구성을 담당한다.\n텍스트 (마크다운): 마크다운도 언어로, 2004년 아론 스워츠와 존 그루버가 주도하여 탄생했다. HTML 같은 복잡한 마크업 언어 대신, 간단한 형식의 문서를 빠르고 효율적으로 작성할 수 있는 도구로 복잡한 디자인보다는 내용의 구조와 의미에 중점을 두기 때문에 문서 작성자는 외양보다 내용에 더 집중할 수 있다는 장점이 있다.\n코드 (knitr, jupyter): knitr는 R 코드를 문서에 통합을 가능케하고, jupyter는 파이썬 사용자에게 인기있는 패키지다. 쿼토에서 knitr, jupyter에서 작성된 코드를 문서에 포함시킬 수 있어 데이터 분석 통계값, 그래프, 다이어그램, 지도 등 다양한 결과물을 문서에 삽입할 수 있다.\n\n\n\n\nQuarto 문서 구성요소\n\n\n\n4.3.1 YAML\nYAML(발음은 야믈)은 쿼토파일 메타데이터로 문서 본문보다 먼저 제시되는 전문(front matter)으로 문서를 구조화하기 R 마크다운, 쿼토에서 도입된 경량언어로 쿼토에서는 문서 제목, 작성자, 날짜, 문서 형식, 레이아웃 등을 정의한다. 보통 키값(key-value) 쌍을 이루는데, 키는 콜론(:)으로 값과 구분한다.\n\n\n\n\n키값 쌍\n---\nkey: value\n---\n\n\n\n\n\n문서출력형식 PDF 지정\n---\nformat: pdf\n---\n\n\n\nYAML로 문서 전문을 작성하게 되면 가독성이 뛰어나 읽고 이해하기 쉽다. 복잡한 문서 구조나 설정을 지정할 때 특히 유용하다. 중첩된 선택옵션과 같은 복잡한 문서구조도 들여쓰기(indent)를 통해 명확히 표현된다. 재사용성도 뛰어나 같은 설정 값을 여러 곳에서 사용해야 할 경우, YAML 파일 하나를 수정하면 모든 곳에 적용될 수 있어 시간과 노력을 절약해준다. 또한, 텍스트 기반이라 Git과 같은 버전 제어 시스템과 잘 통합되어 여러 저자가 공동 작업 진가를 발휘한다. 하지만, 들여쓰기에 민감하여 실수로 공백을 잘못 넣었을 경우 오류가 발생할 수 있으므로 주의가 요구된다.\nYAML은 단순히 KEY: Value 에 불과한데 사례를 통해 YAML의 편리성과 유용함을 살펴보자.\n\n\n\nCLI PDF 지정\n$ quarto render document.qmd --to pdf\n\n\n\n\n\nYAML 문서형식 PDF\n---\nformat: pdf\n---\n\n\n\n다음 예시에서 quarto render 명령을 사용하여 document.qmd 파일을 HTML 형식 문서로 제작하는데 CLI에서 옵션에서 -M code fold:true을 통해 코드 섹션을 접을 수 있는 형태로 제작함을 나타내고 있다.\n동일한 의도를 YAML 설정으로 바꾸면, 설정 파일에 format 섹션을 만들고 그 안에 html을 정의하고 나서, html 포맷에 목차 생성(toc: true)과 코드 접기 기능(code-fold: true)을 추가로 설정했다.\n동일한 의도를 CLI에 넣는 것보다 YAML 파일에 담게되면 훨씬 깔끔하고 우아하다. 많은 선택옵션들이 명령어로 직접 들어가면 명령어가 길어져 가독성이 떨어지고, 나중에 어떤 옵션을 사용했는지 파악하기도 어렵다. 반면 YAML 파일이 도입되면, 설정을 한 곳에서 명확하게 관리할 수 있어 유지보수도 편리하고, 공동 저작자들과 쉽게 공유되기 때문에 협업에도 유리하다.\n\n\n\nCLI 코드접기\n$ quarto render document.qmd --to html -M code fold:true\n\n\n\n\n\nYAML 코드접기\n---\nformat: \n  html:\n    toc: true\n    code-fold: true\n---\n\n\n\n문서저작 통합개발환경(IDE) RStudio나 VSCode 에서 제공하는 탭-자동완성(Tab Completion) 기능은 YAML 전문코드를 작성할 때 큰 도움이 된다. 첫 글자나 몇몇 글자를 타이핑한 후에 탭 키를 누르면, IDE가 가능한 모든 명령어나 변수, 함수 이름 등을 보여주기 때문에 저작자는 오타를 줄이고 빠르게 문서를 저작할 수 있다. RStudio에서 Ctrl + space 단축키를 사용하면, YAML 전문코드를 작성할 때 키값을 선택할 수 있는 목록을 보여준다.\n\n\n\n\n\n\nYAML 키 설정\n\n\n\n \n\n\n\n\n탭 자동완성 선택확정\n\n\n\n그림 4.4: RStudio YAML 자동완성\n\n\n\n4.3.2 마크다운\n\n\n4.3.3 프로그래밍 언어"
+    "title": "5  쿼토(Quarto)",
+    "section": "5.3 쿼토 해부",
+    "text": "5.3 쿼토 해부\n쿼토는 데이터 과학 문서 작성 패러다임을 바꾼 R마크다운의 후속작으로 볼 수 있다. 쿼토는 10년 이상의 knitr 경험을 바탕으로 개발되었으며, 최근에는 위지윅(What You See Is What You Get) 패러다임도 RStudio Visual 편집에 도입하여 복잡한 코드 작성 없이 직관적으로 문서를 작성할 수 있다. R 사용자는 RStudio IDE, 파이썬 등 개발 경험이 풍부하신 분들은 파이참, VS코드, 이맥스/VIM 등 통합개발환경(IDE)을 쿼토 CLI를 통해 출판물을 쉽게 저작할 수 있다.\n쿼토는 다양한 프로그래밍 언어를 통해 계산(Computation) 기능을 문서에 담을 수 있도록 지원한다. R, 파이썬, SQL, 자바스크립트 등 다양한 프로그래밍 언어로 문서 내에 그래프, 표, 인터랙티브 결과물을 쉽게 삽입할 수 있다. 이러한 장점들이 모여 문서를 제작하고 유통하고 소비하는 데이터 과학자, 개발자, 과학기술 연구원, 사무노동자 분들의 시간을 줄여주고 업무 생산성을 크게 높여주는 도구로 자리매김하고 있다.\n\n\n\n쿼토 작업흐름\n\n\n쿼토 저작은 메타데이터(전문, front matter), 텍스트, 코드라는 세 가지 주요 구성요소로 이뤄진다.\n\n메타데이터 (YAML): YAML은 “YAML Ain’t Markup Language”의 약자로, 데이터를 구조화하기 위한 언어로, 쿼토에서 문서에서 전문(Front Matter)을 구성하는 문서 제목, 작성자, 날짜, 문서 형식 등을 정의한다. 메타데이터는 보통 문서 상단에 위치하며, 문서의 전반적인 설정과 구성을 담당한다.\n텍스트 (마크다운): 마크다운도 언어로, 2004년 아론 스워츠와 존 그루버가 주도하여 탄생했다. HTML 같은 복잡한 마크업 언어 대신, 간단한 형식의 문서를 빠르고 효율적으로 작성할 수 있는 도구로 복잡한 디자인보다는 내용의 구조와 의미에 중점을 두기 때문에 문서 작성자는 외양보다 내용에 더 집중할 수 있다는 장점이 있다.\n코드 (knitr, jupyter): knitr는 R 코드를 문서에 통합을 가능케하고, jupyter는 파이썬 사용자에게 인기있는 패키지다. 쿼토에서 knitr, jupyter에서 작성된 코드를 문서에 포함시킬 수 있어 데이터 분석 통계값, 그래프, 다이어그램, 지도 등 다양한 결과물을 문서에 삽입할 수 있다.\n\n\n\n\nQuarto 문서 구성요소\n\n\n\n5.3.1 YAML\nYAML(발음은 야믈)은 쿼토파일 메타데이터로 문서 본문보다 먼저 제시되는 전문(front matter)으로 문서를 구조화하기 R 마크다운, 쿼토에서 도입된 경량언어로 쿼토에서는 문서 제목, 작성자, 날짜, 문서 형식, 레이아웃 등을 정의한다. 보통 키값(key-value) 쌍을 이루는데, 키는 콜론(:)으로 값과 구분한다.\n\n\n\n\n키값 쌍\n---\nkey: value\n---\n\n\n\n\n\n문서출력형식 PDF 지정\n---\nformat: pdf\n---\n\n\n\nYAML로 문서 전문을 작성하게 되면 가독성이 뛰어나 읽고 이해하기 쉽다. 복잡한 문서 구조나 설정을 지정할 때 특히 유용하다. 중첩된 선택옵션과 같은 복잡한 문서구조도 들여쓰기(indent)를 통해 명확히 표현된다. 재사용성도 뛰어나 같은 설정 값을 여러 곳에서 사용해야 할 경우, YAML 파일 하나를 수정하면 모든 곳에 적용될 수 있어 시간과 노력을 절약해준다. 또한, 텍스트 기반이라 Git과 같은 버전 제어 시스템과 잘 통합되어 여러 저자가 공동 작업 진가를 발휘한다. 하지만, 들여쓰기에 민감하여 실수로 공백을 잘못 넣었을 경우 오류가 발생할 수 있으므로 주의가 요구된다.\nYAML은 단순히 KEY: Value 에 불과한데 사례를 통해 YAML의 편리성과 유용함을 살펴보자.\n\n\n\nCLI PDF 지정\n$ quarto render document.qmd --to pdf\n\n\n\n\n\nYAML 문서형식 PDF\n---\nformat: pdf\n---\n\n\n\n다음 예시에서 quarto render 명령을 사용하여 document.qmd 파일을 HTML 형식 문서로 제작하는데 CLI에서 옵션에서 -M code fold:true을 통해 코드 섹션을 접을 수 있는 형태로 제작함을 나타내고 있다.\n동일한 의도를 YAML 설정으로 바꾸면, 설정 파일에 format 섹션을 만들고 그 안에 html을 정의하고 나서, html 포맷에 목차 생성(toc: true)과 코드 접기 기능(code-fold: true)을 추가로 설정했다.\n동일한 의도를 CLI에 넣는 것보다 YAML 파일에 담게되면 훨씬 깔끔하고 우아하다. 많은 선택옵션들이 명령어로 직접 들어가면 명령어가 길어져 가독성이 떨어지고, 나중에 어떤 옵션을 사용했는지 파악하기도 어렵다. 반면 YAML 파일이 도입되면, 설정을 한 곳에서 명확하게 관리할 수 있어 유지보수도 편리하고, 공동 저작자들과 쉽게 공유되기 때문에 협업에도 유리하다.\n\n\n\nCLI 코드접기\n$ quarto render document.qmd --to html -M code fold:true\n\n\n\n\n\nYAML 코드접기\n---\nformat: \n  html:\n    toc: true\n    code-fold: true\n---\n\n\n\n문서저작 통합개발환경(IDE) RStudio나 VSCode 에서 제공하는 탭-자동완성(Tab Completion) 기능은 YAML 전문코드를 작성할 때 큰 도움이 된다. 첫 글자나 몇몇 글자를 타이핑한 후에 탭 키를 누르면, IDE가 가능한 모든 명령어나 변수, 함수 이름 등을 보여주기 때문에 저작자는 오타를 줄이고 빠르게 문서를 저작할 수 있다. RStudio에서 Ctrl + space 단축키를 사용하면, YAML 전문코드를 작성할 때 키값을 선택할 수 있는 목록을 보여준다.\n\n\n\n\n\n\nYAML 키 설정\n\n\n\n \n\n\n\n\n탭 자동완성 선택확정\n\n\n\n그림 5.4: RStudio YAML 자동완성\n\n\n\n5.3.2 마크다운\n\n\n5.3.3 프로그래밍 언어"
   },
   {
     "objectID": "quarto.html#r-마크다운과-비교",
     "href": "quarto.html#r-마크다운과-비교",
-    "title": "4  쿼토(Quarto)",
-    "section": "4.4 R 마크다운과 비교",
-    "text": "4.4 R 마크다운과 비교\nFAQ for R Markdown Users\n쿼토는 “차세대 R 마크다운”이라는 별명답게 R 마크다운 생태계의 다양한 패키지와 기능을 지원한다. 쿼토가 시작이 R 마크다운보다 길지 않아 아직 R 마크다운 생태계의 모든 기능을 지원하지는 않지만, 점차 지원 범위를 넓혀나가고 있으며 고유한 기능도 추가로 제공하기 시작했다.\n\n\n\n기능\nR 마크다운\n쿼토(Quarto)\n\n\n\n\n파일형식\n\nhtml_document\npdf_document\nword_document\n\n\nhtml\npdf\ndocx\n\n\n\n비머(Beamer)\n\nbeamer_presentation\n\n\nbeamer\n\n\n\n파워포인트(PPT)\n\npowerpoint_presentation\n\n\npptx\n\n\n\n웹 슬라이드\n\nxaringan\nioslides\nrevealjs\n\n\nrevealjs\n\n\n\nAdvanced Layout\n\ntufte\ndistill\n\n\nQuarto Article Layout\n\n\n\nCross References\n\nhtml_document2\npdf_document2\nword_document2\n\n\nQuarto Crossrefs\n\n\n\nWebsites & Blogs\n\nblogdown\ndistill\n\nQuarto Websites\nQuarto Blogs\n\n\nBooks\nbookdown\nQuarto Books\n\n\nInteractivity\nShiny Documents\nQuarto Interactive Documents\n\n\nPaged HTML\npagedown\n출시 예정\n\n\nJournal Articles\nrticles\nQuarto Journal Articles\n\n\nDashboards\nflexdashboard |\n출시 예정\n\n\nInteractive Tutorials\nlearnr\n계획 없음\n\n\n\n\n\n\n\nHyde, A. (2021, 8월 16). Single Source Publishing - A investigation of what Single Source Publishing is and how this ’holy grail’ can be achieved. https://coko.foundation/articles/single-source-publishing.html"
+    "title": "5  쿼토(Quarto)",
+    "section": "5.4 R 마크다운과 비교",
+    "text": "5.4 R 마크다운과 비교\nFAQ for R Markdown Users\n쿼토는 “차세대 R 마크다운”이라는 별명답게 R 마크다운 생태계의 다양한 패키지와 기능을 지원한다. 쿼토가 시작이 R 마크다운보다 길지 않아 아직 R 마크다운 생태계의 모든 기능을 지원하지는 않지만, 점차 지원 범위를 넓혀나가고 있으며 고유한 기능도 추가로 제공하기 시작했다.\n\n\n\n기능\nR 마크다운\n쿼토(Quarto)\n\n\n\n\n파일형식\n\nhtml_document\npdf_document\nword_document\n\n\nhtml\npdf\ndocx\n\n\n\n비머(Beamer)\n\nbeamer_presentation\n\n\nbeamer\n\n\n\n파워포인트(PPT)\n\npowerpoint_presentation\n\n\npptx\n\n\n\n웹 슬라이드\n\nxaringan\nioslides\nrevealjs\n\n\nrevealjs\n\n\n\nAdvanced Layout\n\ntufte\ndistill\n\n\nQuarto Article Layout\n\n\n\nCross References\n\nhtml_document2\npdf_document2\nword_document2\n\n\nQuarto Crossrefs\n\n\n\nWebsites & Blogs\n\nblogdown\ndistill\n\nQuarto Websites\nQuarto Blogs\n\n\nBooks\nbookdown\nQuarto Books\n\n\nInteractivity\nShiny Documents\nQuarto Interactive Documents\n\n\nPaged HTML\npagedown\n출시 예정\n\n\nJournal Articles\nrticles\nQuarto Journal Articles\n\n\nDashboards\nflexdashboard |\n출시 예정\n\n\nInteractive Tutorials\nlearnr\n계획 없음\n\n\n\n\n\n\n\nHyde, A. (2021, 8월 16). Single Source Publishing - A investigation of what Single Source Publishing is and how this ’holy grail’ can be achieved. https://coko.foundation/articles/single-source-publishing.html"
   },
   {
     "objectID": "preface.html",
@@ -719,5 +719,96 @@
     "title": "4  \\(\\LaTeX\\)과 PDF",
     "section": "4.2 \\(\\LaTeX\\) 구성요소",
     "text": "4.2 \\(\\LaTeX\\) 구성요소\n수학과 교수였던 도널드 크누스는 문서 조판 시스템을 개발하면서 수식 처리를 간편하게 할 수 있도록 하면서, 메타폰트(METAFONT)라는 글꼴 시스템도 개발하여 고품질 글자체를 구현할 수 있도록 했다. 이러한 기초 위에 레슬리 램포트는 \\(\\TeX\\)을 더욱 사용하기 쉽게 만들기 위해 다양한 매크로를 \\(\\LaTeX\\)으로 묶어 공개했다. 그 결과 일반인도 \\(\\LaTeX\\)을 이용해 고품질의 문서를 쉽게 작성할 수 있게 되었다. 버클리 대학 마이클 스피백 교수는 수식을 간편하게 문서에 적용할 수 있도록 AMS-TeX라는 매크로를 개발하고, 이에 대한 설명을 “The Joy of TeX”이라는 책에서도 공개했다. (Spivak, 1990)\npdftex와 e-TeX이 결합하여 사실상 표준 TeX이 되었고, 이를 기반으로 XeTeX과 LuaTeX이 발전하고 있다. 특히, 한글 폰트 처리에 있어서 XeTeX(지텍으로 읽음)이 널리 사용되고 있다.\n\\(\\LaTeX\\) 동작 원리는 Salomon의 도식화에 영감을 받아 Kees van der Laan이 1994년에 정리한 논문에서 상세하게 설명되어 있다. (Laan, 1994) 기본적으로 고품질의 전자 출판을 위해 글꼴과 \\(\\TeX\\)이 필요하며, 이 두 요소가 결합하여 고품질의 출력물을 생성한다. 이러한 \\(\\TeX\\) 엔진을 지원하는 다양한 패키지 중에서 AMS-(La)TeX, LaTeX, manmac 등이 주목을 받고 있다.\n문서의 다양한 구성 요소, 예를 들어 목차, 색인, 참고문헌, 그림과 표 등은 모듈화되어 관리되며, 글꼴 및 구조적인 스타일과 관련된 부분도 별도로 관리되고 있다. TeXWorks와 같은 위지윅(WYSIWYG)을 지원하는 편집기는 구문 강조, 맞춤법 검사 등을 통해 고품질의 \\(\\LaTeX\\) 문서 작성을 지원하고 있다.\n\n\n\n편집기, 엔진, 글꼴을 중심으로 본 \\(\\LaTeX\\) 내부\n\n\n\\(\\LaTeX\\) 문서 작성을 위해 기본적인 구성요소는 다음과 같다.\n\n배포판: 과거에는 다양한 배포판이 윈도우, 리눅스, 맥에서 사용되었지만, 현재는 TeX Live가 대표적인 LaTeX 작업 환경이다. MikTeX도 있지만, 큰 차이는 없다.\n글꼴: 초기에는 글꼴로 폰트 메트릭(tfm)과 메타폰트(MetaFont)가 주로 사용되었으나, 현재는 트루타입과 오픈타입이 널리 쓰인다.\n\n폰트 선택은 밥처럼 기본적이면서도 안정적인 것이 좋다. 특별한 상황에서는 그에 맞는 폰트를 선택하는 것이 중요하다.\n일반적으로 Serif와 San Serif 폰트를 한 쌍으로 사용하는 것이 균형감이 있다. 예를 들어, 나눔고딕과 나눔명조, KoPub돋움과 KoPub바탕, 함초롬도움과 함초롬바탕 등이 있다.\n글자 크기는 10~12 포인트가 적절하며, 이는 장시간 동안의 읽기 피로를 줄이기 위함이다.\n\n그래픽: TeX/LaTeX 자체는 그래픽을 주요 영역으로 보지 않는다. 과거에는 dvips와 EPS 형식을 주로 사용했으나, 현재는 .jpg, .png, .pdf 등도 잘 처리한다.\n문자와 입력: 초기에는 ASCII 코드가 주를 이루었으나, 현재는 UTF-8을 권장하고 있다. 특히, \\usepackage[utf8x]{inputenc}가 필요한 경우가 많다.\n색인과 참고문헌: makeindex와 bibtex는 색인과 참고문헌 처리의 표준이다. 그러나 유니코드 처리를 위해 texindy와 biber도 주목을 받고 있다.\n수식: 수학 표현과 관련해서는 미국 수학회가 발전시킨 amsmath가 표준이다.\n출력: 과거에는 .dvi 형식이 기본이었으나, 현재는 .pdf가 기본이다. 또한, 웹을 위한 다양한 .html 출력도 지원한다. 이에 따라, 웹이 책 형태의 문서보다 더 중요한 위치를 차지하게 될 것으로 예상된다.\n\n\\(\\LaTeX\\)을 통한 PDF 파일 제작 과정은 몇 가지 주요 단계로 이루어진다. \\(\\LaTeX\\) 전용 TexStudio 같은 통합개발환경(IDE), RStudio 같은 데이터 과학 IDE, 범용 소프트웨어 개발 VS코드 같은 IDE에서 텍스트 편집기를 열어 신규 \\(\\LaTeX\\) 파일을 생성하는데 파일 확장자는 .tex이다. 파일 시작 부분에 \\documentclass 명령어를 사용하여 문서의 종류와 옵션을 설정하는데, 학술 논문을 작성한다면 article 클래스를, 책을 작성한다면 book 클래스 등을 선택한다.\n\\usepackage 명령어를 사용하여 필요한 패키지를 불러와서 특별한 기능이나 스타일을 추가한다. 예를 들어, 수식을 표현하기 위해 amsmath 패키지를, 그림을 삽입하기 위해 graphicx 패키지 등이 사용된다.\n문서의 본문은 \\begin{document}와 \\end{document} 사이에 작성되고, 영역 안에서 텍스트, 표, 그림, 수식 등을 자유롭게 배치할 수 있다. 본문 작성 중에 참고문헌 서지관리를 위해 BibTeX texindy, biber를 사용하고, 색인 생성을 위해 makeindex를 사용한다.\n본문 작성이 완료되면, \\(\\LaTeX\\) 컴파일러를 실행하여 .tex 파일을 PDF로 변환한다. 영어는 pdflatex, 한글은 xelatex 을 \\(\\LaTeX\\) 엔진으로 사용하고, 참고문헌과 색인이 포함된 경우 컴파일 과정이 수차례 이어진다.\n\n\n\n\\(\\LaTeX\\) 작업흐름\n\n\n\n\n\n\nLaan, K. van der. (1994). What is TEX and Metafont all about?\n\n\nSpivak, M. (1990). The Joy of\\(\\backslash\\)TeX \\(\\{\\)\\(\\}\\), a Gourmet Guide to Typesetting with the\\(\\backslash\\)AmSTeX \\(\\{\\)\\(\\}\\) Macro Package: A Gourmet Guide to Typesetting with the AMS-TEX Macro Package. American Mathematical Soc.\n\n\n김영록. (2017). 교육 현장에서의 텍의 활용. TeX: 조판, 그 이상의 가능성.\n\n\n이호재. (2017). 레이텍을 빨리 쓸 수 있는 방법. TEX: 조판, 그 이상의 가능성."
+  },
+  {
+    "objectID": "publishing.html",
+    "href": "publishing.html",
+    "title": "23  출판",
+    "section": "",
+    "text": "24 법인 출판사 신청\n개인이 아닌 법인으로 출판사를 설립하거나 법인 업종에 “출판업”을 추가하는 경우 목적은 출판사 신고확인증을 발급받는 것이다. 책을 출판하는 경우 먼저 관할 지자체에 신고를 준비해야 한다. 이를 위해서 “출판사(신고서, 변경신고서)”를 작성하고 다음 서류를 준비하여 관할 지자체(구시군청)를 내방하여 제출한다. 출판사 신고서는 출판문화산업 진흥법 시행규칙에 별지 서식으로 다운로드 가능하다.\n출판사 등록제출서류 제출 후 3일 내 처리하는 것이 원칙이고 출판등록신고증은 등기(서류제출 시 수령주소 명시)로도 수령이 가능하다. 출판등록신고증이 완료되면 세무서를 사업자등록증에 이를 업종에 반영하여 마무리한다.\n국립중앙도서관에서 책을 출판하는 경우 “ISBN” 번호를 출판사가 부여받아야 한다. 이를 위해서 국립중앙도서관 ISBN ISSN 납본시스템에 접속하여 안내에 맞춰 후속 절차를 진행한다. 먼저 국립중앙도서관 ISBN ISSN 납본시스템 상단 계정등록 작업을 수행하여 앞서 발급받은 출판사 신고확인증을 증빙으로 계정등록을 한다.\n출판사가 출판할 책이 정해지면 다음 단계로 수익창출을 위해 인쇄소와 계약을 하여 종이형태 책을 500권, 1,000권 등 수요 구독자를 감안하여 인쇄소에서 출판한다.\n다양한 출판채널을 통해 독자를 만나고 책을 판매하여 수익을 출판사와 저자, 그리고 서점과 분배한다."
+  },
+  {
+    "objectID": "publishing.html#발행자번호-신청",
+    "href": "publishing.html#발행자번호-신청",
+    "title": "23  출판",
+    "section": "25.1 발행자번호 신청",
+    "text": "25.1 발행자번호 신청\n발행자번호 신청을 통해 출판사 신고확인증에 기재된 출판사명과 대응되는 ISBN 발행자번호를 부여받는 작업을 수행한다. 처리기간은 업무일 기준 3일이 소요된다."
+  },
+  {
+    "objectID": "publishing.html#isbn-번호-신청",
+    "href": "publishing.html#isbn-번호-신청",
+    "title": "23  출판",
+    "section": "25.2 ISBN 번호 신청",
+    "text": "25.2 ISBN 번호 신청\n출판사 발행자번호가 발급되면 출판할 책의 ISBN 번호를 부여할 수 있다."
+  },
+  {
+    "objectID": "publishing.html#출판-디지털-전환",
+    "href": "publishing.html#출판-디지털-전환",
+    "title": "23  출판",
+    "section": "27.1 출판 디지털 전환",
+    "text": "27.1 출판 디지털 전환\n200자 원고지 4장은 통상 A4 용지 한장에 해당한다. 만약 A4 용지 10장 보고서나 논문을 작성한다고 하면, 종이 200자 원고지 40장에 연필이나 볼펜을 가지고 작성하게 된다. 최종본을 얻기까지 빨간색으로 선생님이나 주변의 첨삭지도를 받아 최종본을 만들기까지 여러번의 반복과정을 거치게 된다.\n최종 원고가 200자 원고지 40장에 담겨 탈고를 마치게 되면, 독자에게 다가갈 준비를 한다. 그림을 넣거나 아름다운 글씨체를 적용해 보고 종이 재질을 바꿔보기도 하고 영혼이 담긴 원고를 독자가 보기 좋고, 이해하기 쉽고, 때로는 감동과 재미를 줄 수 있도록 출판 단계에서 많은 사람들의 노력이 들어간다.\n탈고를 마친 원고에 글씨체를 비롯한 디자인 작업이 완료되면 출판장비를 갖춘 출판소에서 인쇄장비를 거쳐 종이책 혹은 보고서가 완성되고, 이렇게 대량으로 출력되면 각 서점으로 배송되어 독자가 서점에서 구독을 하게 된다.\n저자의 생각을 글로 표현하면 현재도 대부분 편집 및 디자인, 출판, 배송, 서점 등 각 단계에 사람이 관여하고 필요에 따라서는 컴퓨터가 작업을 지원하는데 사용되어 최종 독자에게 전달된다.\n책과 보고서 제작하는 과정은 워드 프로세스를 기본으로 두고, 숫자 계산이 필요하면 엑셀, 이미지가 필요하면 그래픽 전문 소프트웨어, 정보 검색도 웹브라우져를 사용한다. 글자, 단어, 문장, 문단, 장/절/항으로 생각의 단위를 서문, 본문, 결어 및 참고문헌, 주석, 그림, 그래프, 도표 등도 함께 체계적으로 작성해 나간다.\n다양한 소프트웨어를 통해서 원고를 탈고하게 되면 서식, 문장 문단 모양, 색인, 참조문헌 등 보기 좋고 가독성 높은 형태로 외양을 입히는 과정을 거치게 되는데 이 과정도 소프트웨어가 핵심적인 역할을 하게 된다. 책과 보고서에 대한 디자인 작업이 완료되면 다양한 형태로 배포하기 위한 프로그래밍 과정을 거쳐 PDF, 전자책(ePUB), 웹(HTML), 출판책 형태로 독자에게 전달된다.\n글을 써서 이를 독자에게 전달되는 과정은 과거에 전문작가, 디자인 전문가, 출판전문가, 서점운영자 등 수많은 전문가가 연관되어 있고 타자기, 디자인 기계, 인쇄기 등 수많은 기계가 필요했으며 이를 사업적으로 기술적으로 연결할 수 있는 다양한 통신 방법이 필요했다. 비전문가가 밖에서 보면 복잡하고 어려워 보이지만, 컴퓨팅 사고의 시각으로 보면 단순할 수 있다.\n\n\n\n\n\n\n종이 출판\n\n\n\n\n\n\n\n디지털 출판\n\n\n\n그림 27.1: 디지털 출판 방식"
+  },
+  {
+    "objectID": "dw_website.html",
+    "href": "dw_website.html",
+    "title": "\n19  웹사이트\n",
+    "section": "",
+    "text": "20 외양 - 폰트, 색상 등 (alison2020blog?)\n지금까지 전반적인 블로그 게시글 작성과 관련된 전반적인 작업흐름에 집중했다면 글꼴, 색상 등 외양을 꾸며 좀더 과학기술 게시글이 더욱 친근하게 다가설 수 있도록 하자.\ndistill::create_theme(\"tidyverse\") 명령어를 사용하면 tidyverse.css 파일이 자동생성되고 폰트와 색상을 원하는 방식대로 변경시키면 된다. 다음 웹사이트를 참고하여 적절한 CSS 파일 변경을 통해 본인이 원하는 웹사이트를 구축한다.\n&gt; distill::create_theme(\"tidyverse\")\nv Created CSS file at theme.css\no TODO: Customize it to suit your needs\no TODO: Add 'theme' entry to your`site/article YAML\n\nSee docs at https://rstudio.github.io/distill/website.html#theming\n폰트만 한글로 바꿔 tidyverse.css를 저장한다. 기본 아이디어는 구글 폰트 웹사이트 https://fonts.google.com/ 에서 한글 폰트를 가져와서 이를 블로그 주요 텍스트의 글꼴을 저작자의 선택에 맞춰 반영시키는 것이다. 수정한 tidyverse.css 파일의 일부는 다음과 같다.\n/* Optional: embed custom fonts here with `@import`          */\n/* This must remain at the top of this file.                 */\n\n@import url('https://fonts.googleapis.com/css2?family=Sunflower:wght@500&display=swap');\n@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300&family=Sunflower:wght@500&display=swap');\n@import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@700&family=Noto+Sans+KR:wght@100;300&family=Sunflower:wght@500&display=swap');\n\nhtml {\n  /*-- Main font sizes --*/\n  --title-size:      50px;\n  --body-size:       1.06rem;\n  --code-size:       14px;\n  --aside-size:      12px;\n  --fig-cap-size:    13px;\n  /*-- Main font colors --*/\n  --title-color:     #000000;\n  --header-color:    rgba(0, 0, 0, 0.8);\n  --body-color:      rgba(0, 0, 0, 0.8);\n  --aside-color:     rgba(0, 0, 0, 0.6);\n  --fig-cap-color:   rgba(0, 0, 0, 0.6);\n  /*-- Specify custom fonts ~~~ must be imported above   --*/\n  --heading-font:    'Sunflower', sans-serif;\n  --mono-font:       \"DM Mono\", monospace;\n  --body-font:       'Noto Sans KR', sans-serif;\n  --navbar-font:     'Gaegu', cursive;\n}"
+  },
+  {
+    "objectID": "dw_website.html#project-setup",
+    "href": "dw_website.html#project-setup",
+    "title": "19  웹사이트",
+    "section": "19.1 프로젝트 생성",
+    "text": "19.1 프로젝트 생성\n쿼토(quarto) 설치하고 정적 웹사이트 제작을 위한 프로젝트를 준비한다. 문서로 웹사이트 개발을 위한 RStudio IDE를 통합개발환경으로 선택한 경우 File → New Project ... → Project Type 에서 Quarto Website를 선택한다.\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n그림 19.1: (정적) 웹사이트 프로젝트 선택과정\n\n\n다음 단계로 웹사이트가 담길 디렉토리를 지정하고 웹사이트 디렉토리를 생성하고 Create Project 버튼을 를 클릭한다. 쿼토 웹사이트 프로젝트가 생성되면 웹사이트 제작을 위한 기본 골격이 제시된다. _quarto.yml 파일에 웹사이트 기본 정보가 담겨지고 각 웹페이지는 index.qmd, about.qmd 파일로 저작한다.\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n그림 19.2: 쿼토 웹사이트 프로젝트 생성"
+  },
+  {
+    "objectID": "dw_website.html#deployment-setup",
+    "href": "dw_website.html#deployment-setup",
+    "title": "19  웹사이트",
+    "section": "19.4 웹사이트 배포",
+    "text": "19.4 웹사이트 배포\n\n19.4.1 GitHub Pages 출판\nhttps://&lt;사용자명&gt;.github.io/ 저장소는 매우 특별한 GitHub 저장소다. 따라서, GitHub 저장소 명칭을 &lt;사용자명&gt;.github.io 으로 생성해야 한다. 예를 들어, statkclee.github.io 와 같이 사용자계정을 github.io와 붙여 먼저 판다. 그리고 나서, 상단 Settings로 들어간 다음 GitHub Pages 설정을 한다. 이때 GitHub 저장소의 특정 디렉토리 docs/ 디렉토리에 담긴 내용 전부가 정적 웹사이트에 게시되는 내용이 된다. 즉, docs/index.html → https://&lt;사용자명&gt;.github.io/&lt;저장소명&gt;/index.html로 바뀌어 웹사이트 생성 및 배포가 완료된다.\n\n\n\n정적 웹사이트 GitHub Pages 연결\n\n\n\n\n19.4.2 Quarto Pub 출판\nQuarto Pub 출판과정은 Quarto CLI를 통해 이뤄진다. RStudio의 내부 터미널을 사용하는 것을 권장하는데, 이유는 RStudio와 Quarto가 잘 통합되어 있어, 간편하게 출판 작업을 진행할 수 있기 때문이다. 1\n#| eval: false\n$ quarto publish quarto-pub\n? Authorize (Y/n) › \n❯ In order to publish to Quarto Pub you need to\n  authorize your account. Please be sure you are\n  logged into the correct Quarto Pub account in \n  your default web browser, then press Enter or \n  'Y' to authorize.\n첫번째 출판하게 되면 인증작업을 수행하고 나면 _publish.yml 파일이 하나 생성된다.\n#| eval: false\n- source: project\n  quarto-pub:\n    - id: 1fa3ab1f-c010-453a-aaf2-f462bd074a66\n      url: 'https://quartopub.com/sites/statkclee/quarto-ds'\n이제 모든 준비가 되었기 때문에 다음 명령어로 작성한 출판 문서를 포함한 웹사이트를 로컬에서 미리 확인 한 후에 Quarto Pub으로 전자출판한다. 윈도우에서는 RStudio 내부 Terminal CLI를 사용하는 것을 권장한다.\n#| eval: false\n$ quarto preview\n$ quarto publish quarto-pub"
+  },
+  {
+    "objectID": "dw_website.html#writing-blog",
+    "href": "dw_website.html#writing-blog",
+    "title": "\n19  웹사이트\n",
+    "section": "\n19.3 블로그글 작성",
+    "text": "19.3 블로그글 작성\ndistill::create_post() 명령어를 사용해서 블로그를 작성한다. 예를 들어 distill::create_post(\"reticulate-python-and-r\") 명령어를 실행하게 되면, 작성 날짜 2020-01-12가 붙은 폴더가 _posts/2021-01-12-reticulate-python-and-r와 같이 생성되고 폴더 내부에 reticulate-python-and-r.Rmd 파일이 위치한다.\n이제 파일을 R마크다운 문서 작성하듯이 작성하고 나서 뜨게질(Knit) 하게 되면 컴파일 되어 HTML 문서가 생성된다.\n\nREADME.html' does not exist.\nerror with pandoc and title #52을 참조하여 README.html 파일 관련 이슈를 해결한다.\n\nrmarkdown::render(\"README.Rmd\", output_format = \"github_document\")"
+  },
+  {
+    "objectID": "dw_website.html#create-blog",
+    "href": "dw_website.html#create-blog",
+    "title": "\n19  웹사이트\n",
+    "section": "\n19.4 블로그 웹사이트 생성",
+    "text": "19.4 블로그 웹사이트 생성\n블로그 글 작성이 완료되면 이를 블로그 웹사이트에 반영시키기 위해서 CTRL + SHIFT + B 키를 입력하여 작성한 블로그글이 웹사이트에 올라오도록 준비한다."
+  },
+  {
+    "objectID": "dw_website.html#connect-github-repo",
+    "href": "dw_website.html#connect-github-repo",
+    "title": "\n19  웹사이트\n",
+    "section": "\n19.5 GitHub 저장소 연결",
+    "text": "19.5 GitHub 저장소 연결\nGitHub 저장소를 연결시켜야 하는데 &lt;사용자명&gt;.github.io 와 같이 지정하여 Repository를 GitHub 상단 + 버튼을 클릭하여 생성시킨다.\n\n다음으로 Git 작업흐름에 맞춰 순차적으로 작업하는데 로컬 컴퓨터에서 작업한 distill 블로그 웹저장소와 &lt;사용자명&gt;.github.io을 연결시킨다.\n\n$ git add -A\n$ git commit -m\"첫번째 블로그 게시글 배포\"\n$ git remote add origin git@github.com:statkclee/statkclee.github.io.git\n$ git pull origin master --allow-unrelated-histories"
+  },
+  {
+    "objectID": "dw_website.html#congratulation-github-repo",
+    "href": "dw_website.html#congratulation-github-repo",
+    "title": "\n19  웹사이트\n",
+    "section": "\n19.6 격려와 축하",
+    "text": "19.6 격려와 축하\nhttps://&lt;사용자명&gt;.github.io/index.html 혹은 https://&lt;사용자명&gt;.github.io/ 웹사이트에 접속하게 되면 그동안 노력했던 결과물을 확인할 수 있다."
+  },
+  {
+    "objectID": "dw_website.html#project-writing",
+    "href": "dw_website.html#project-writing",
+    "title": "19  웹사이트",
+    "section": "19.2 웹사이트 저작",
+    "text": "19.2 웹사이트 저작\n문서의 구조를 정의하는 _quarto.yml 파일에 웹사이트 문법을 적용하여 웹페이지는 .qmd 파일, 외양은 .css 혹은 .scss 파일에 정리한다. 관련하여 웹사이트를 구성하는 이미지, 동영상, 소리를 비롯한 각종 자산(assets)도 웹페이지에 잘 담기도록 저작한다.\n쿼토 웹사이트 프로젝트는 웹사이트 기본골격을 다음 파일과 디렉토리를 통해 제공된다. _site/ 디렉토리는 쿼토 웹사이트를 컴파일하게 되면 자동 생성된다. _site/ 디렉토리에 index.qmd 파일을 컴파일한 index.html 파일을 비롯한 정적 웹사이트 저작을 위한 각종 파일과 디렉토리로 채워진다.\n쿼토 웹사이트를 컴파일하는 방식은 Ctrl + Shift + K 단축키를 누르거나, 상단 Render 버튼을 클릭하거나, CTRL + SHIFT + B 단축키를 누르거나, Build에 Render Website를 클릭한다.\n\n_quarto.yml\nindex.rmd\nabout.rmd\n_site/\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n그림 19.3: 로컬 웹사이트 컴파일\n\n\n_site/ 디렉토리는 정적 웹사이트가 배포되는 디렉토리로,\n기본적으로 http://netlify.com/를 상정한 경우 _site/를 사용하지만, docs/로 바꿔주게 되면 GitHub Pages 웹호스팅으로 사용하여 배포할 수 있게 된다. GitHub Pages 배포를 위해 _quarto.yaml 파일에 output-dir: docs을 추가하게 되면 정적 웹사이트가 _docs 폴더에 담기게 된다.\n요약하면 _quarto.yml 파일을 열어 output_dir: 설정이 없는 경우 output_dir: docs로 지정하고, 이미 존재하는 경우 output_dir: 값을 _site → docs으로 변경한다. 그리고 나서 쿼토 웹사이트를 빌드시키면 웹사이트 전체가 docs/ 디렉토리에 저장된다. 이것을 GitHub 저장소에 업로드하거나 push 해서 올리게 되면 블로그 웹사이트가 https://&lt;사용자명&gt;.github.io/&lt;저장소명&gt;/index.html을 통해 배포된다.\n\n\nproject:\n  type: website\n\n\n\nproject:\n  type: website\n  output-dir: docs"
+  },
+  {
+    "objectID": "dw_website.html#theme-distill",
+    "href": "dw_website.html#theme-distill",
+    "title": "19  웹사이트",
+    "section": "19.3 외양 - 폰트, 색상 등",
+    "text": "19.3 외양 - 폰트, 색상 등\n지금까지 전반적인 웹사이트 생성과 웹페이지 콘텐츠 작성과 관련된 전반적인 작업흐름에 집중했다면 글꼴, 색상 등 외양을 바꾸면 근사한 웹사이트로 탈바꿈시킬 수 있다. 특히 쿼토는 부츠트랩 5(Bootstrap 5)를 지원하기 때문에 SCSS 변수 설정을 통해 멋진 웹사이트를 꾸밀 수 있다.\n글꼴만 한글로 바꿔 tidyverse.css를 저장한다. 기본 아이디어는 구글 글꼴 웹사이트 https://fonts.google.com/ 에서 한글 글꼴을 가져와서 웹사이트 제목과 텍스트에 글꼴을 저작자의 선택에 맞춰 반영한다. 수정한 tidyverse.css 파일 일부는 다음과 같다.\n@import url('https://fonts.googleapis.com/css2?family=Sunflower');\n@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR');\n@import url('https://fonts.googleapis.com/css2?family=Gaegu');\n\nhtml {\n  /*-- Main font sizes --*/\n  --title-size:      50px;\n  --body-size:       1.06rem;\n  --code-size:       14px;\n  --aside-size:      12px;\n  --fig-cap-size:    13px;\n  /*-- Main font colors --*/\n  --title-color:     #000000;\n  --header-color:    rgba(0, 0, 0, 0.8);\n  --body-color:      rgba(0, 0, 0, 0.8);\n  --aside-color:     rgba(0, 0, 0, 0.6);\n  --fig-cap-color:   rgba(0, 0, 0, 0.6);\n  /*-- Specify custom fonts ~~~ must be imported above   --*/\n  --heading-font:    'Sunflower', sans-serif;\n  --mono-font:       \"DM Mono\", monospace;\n  --body-font:       'Noto Sans KR', sans-serif;\n  --navbar-font:     'Gaegu', cursive;\n}"
   }
 ]
