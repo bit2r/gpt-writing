@@ -1,0 +1,69 @@
+
+# 문서 클래스
+
+
+$\LaTeX$ 문서 클래스(document class)로 `article`, `report`, `book` 이 기본으로 제공되는 문서 클래스다. KOMA-Script는 또다른 $\LaTeX$ 패키지 모음으로 기본 $\LaTeX$ 문서 클래스(`article`, `report`, `book` 등) 확장 버전으로, 주로 유럽에서 널리 사용되며, 유럽의 타이포그래피와 문서 규격에 더 적합하게 설계되었다.
+
+1. `scrartcl`: `article` 문서 클래스 확장이며, 과학 학술지, 프리젠테이션, 짧은 보고서, 프로그램 문서, 초대장 등에 쓰이며 1~30페이지 정도 분량을 갖는 문서 작성에 좋다. 추가적인 사용자 설정 옵션과 유럽 스타일 레이아웃을 지원한다.
+
+2. `scrreprt`: `report` 문서 클래스 확장이며 중간 길이 보고서나 학위 논문 작성에 적합하고, 대략 30~200 페이지 문서 작성에 좋다. `scrartcl`와 마찬가지로 추가적인 사용자 설정 옵션과 유럽 스타일 레이아웃을 제공한다.
+
+3. `scrbook`: `book` 문서 클래스 확장으로, 책이나 큰 프로젝트에 적합하고, 대략 200 페이지 이상 문서 작성에 적합하다. 양쪽 페이지 레이아웃과 추가적인 사용자 설정 옵션도 지원한다.
+
+```{r}
+#| echo: false
+
+library(tidyverse)
+library(gt)
+library(gtExtras)
+
+latex_tbl <- data.frame(
+  FeatureGroup = c("명령어와 환경", "명령어와 환경", "명령어와 환경", "명령어와 환경", "명령어와 환경",
+                   "기본 설정", "기본 설정", "기본 설정", "기본 설정", "기본 설정", "기본 설정", "기본 설정", "기본 설정"),
+  
+  FeatureKorean = c("장(Chapter) 명령어", "부록(Appendix) 스타일링", "부분(Parts)에 대한 새 페이지", 
+                    "전문/본문/후문(Front/Main/Back matter)", "요약(Abstract) 환경", 
+                    "양면 옵션(Twoside vs Oneside)", "열기 위치(Openright vs Openany)", 
+                    "페이지 스타일(Pagestyle)", "제목 페이지(Titlepage)", "최하위 섹션(Lowest-level sectioning)",
+                    "상단 제목(Running headings)", "번호 매김(Numbering scope)", 
+                    "참고문헌 표시(Bibliography heading)"),
+  
+  Book = c("사용 가능", "부록 X", "새 페이지", "사용 가능", 
+           "사용 불가", "양면(Twoside)", "열기 위치: 오른쪽(Openright)", "헤딩(Headings)",
+           "제목 페이지 사용", "하위 섹션(Subsection)", "장과 섹션", "장 단위",
+           "Bibliography"),
+  
+  Report = c("사용 가능", "부록 X", "새 페이지", "사용 불가",
+             "사용 가능", "단면(Oneside)", "열기 위치: 어디든(Openany)", "일반(Plain)",
+             "제목 페이지 사용", "하위 섹션(Subsection)", "장과 섹션", "장 단위",
+             "Bibliography"),
+             
+  Article = c("사용 불가", "해당 없음", "새 페이지 없음", "사용 불가",
+              "사용 가능", "단면(Oneside)", "해당 없음", "일반(Plain)",
+              "제목 페이지 없음", "하위-하위 섹션(Subsubsection)", "섹션과 하위 섹션", "연속적",
+              "References")
+)
+
+latex_tbl |> 
+  select(FeatureGroup, FeatureKorean, Article, Report, Book) |> 
+  gt(groupname_col = "FeatureGroup") |> 
+    cols_label(
+    FeatureKorean = "기능",
+    Article = "짧은 보고서(article)",
+    Report  = "보고서(report)",
+    Book    = "책(book)"
+    ) |> 
+    gt_theme_pff() |> 
+    cols_align(columns = FeatureKorean,
+               "center") |> 
+    cols_align(columns = -FeatureKorean,
+               "center") |> 
+    fmt_markdown() |> 
+  tab_options(
+    table.width = "100%",
+    heading.title.font.size = px(12)
+  )
+  
+
+```
+

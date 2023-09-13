@@ -377,12 +377,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul>
 </li>
   <li><a href="#%EB%B6%80%EC%A1%B0%EC%A2%85%EC%82%AC" id="toc-부조종사" class="nav-link" data-scroll-target="#%EB%B6%80%EC%A1%B0%EC%A2%85%EC%82%AC"><span class="header-section-number">3.6</span> 부조종사</a></li>
-  <li>
-<a href="#%EC%B6%9C%ED%8C%90-%ED%94%8C%EB%9E%AB%ED%8F%BC" id="toc-출판-플랫폼" class="nav-link" data-scroll-target="#%EC%B6%9C%ED%8C%90-%ED%94%8C%EB%9E%AB%ED%8F%BC"><span class="header-section-number">3.7</span> 출판 플랫폼</a>
-  <ul class="collapse">
-<li><a href="#quarto-pub-%EC%B6%9C%ED%8C%90" id="toc-quarto-pub-출판" class="nav-link" data-scroll-target="#quarto-pub-%EC%B6%9C%ED%8C%90"><span class="header-section-number">3.7.1</span> Quarto Pub 출판</a></li>
-  </ul>
-</li>
+  <li><a href="#%EC%B6%9C%ED%8C%90-%ED%94%8C%EB%9E%AB%ED%8F%BC" id="toc-출판-플랫폼" class="nav-link" data-scroll-target="#%EC%B6%9C%ED%8C%90-%ED%94%8C%EB%9E%AB%ED%8F%BC"><span class="header-section-number">3.7</span> 출판 플랫폼</a></li>
   </ul></nav>
     </div>
 <!-- main -->
@@ -560,38 +555,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <figure class="figure"><p><a href="images/quarto-publishing.png" class="lightbox" title="쿼토 출판" data-gallery="quarto-lightbox-gallery-16"><img src="images/quarto-publishing.png" class="img-fluid figure-img"></a></p>
 <figcaption class="figure-caption">쿼토 출판</figcaption></figure>
 </div>
-<section id="quarto-pub-출판" class="level3" data-number="3.7.1"><h3 data-number="3.7.1" class="anchored" data-anchor-id="quarto-pub-출판">
-<span class="header-section-number">3.7.1</span> Quarto Pub 출판</h3>
-<p><a href="https://quartopub.com/"><code>Quarto Pub</code></a> 출판과정은 Quarto CLI를 통해 이뤄진다. <code>RStudio</code>의 내부 터미널을 사용하는 것을 권장하는데, 이유는 <code>RStudio</code>와 <code>Quarto</code>가 잘 통합되어 있어, 간편하게 출판 작업을 진행할 수 있기 때문이다. <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> quarto publish quarto-pub</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">?</span> Authorize <span class="er">(</span><span class="ex">Y/n</span><span class="kw">)</span> <span class="ex">›</span> </span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">❯</span> In order to publish to Quarto Pub you need to</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="ex">authorize</span> your account. Please be sure you are</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="ex">logged</span> into the correct Quarto Pub account in </span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="ex">your</span> default web browser, then press Enter or </span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">'Y'</span> to authorize.</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>첫번째 출판하게 되면 인증작업을 수행하고 나면 <code>_publish.yml</code> 파일이 하나 생성된다.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">source</span><span class="kw">:</span><span class="at"> project</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">quarto-pub</span><span class="kw">:</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> 1fa3ab1f-c010-453a-aaf2-f462bd074a66</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">url</span><span class="kw">:</span><span class="at"> </span><span class="st">'https://quartopub.com/sites/statkclee/quarto-ds'</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>이제 모든 준비가 되었기 때문에 다음 명령어로 작성한 출판 문서를 포함한 웹사이트를 로컬에서 미리 확인 한 후에 <a href="https://quartopub.com/"><code>Quarto Pub</code></a>으로 전자출판한다. 윈도우에서는 <strong>RStudio 내부 Terminal CLI</strong>를 사용하는 것을 권장한다.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> quarto preview</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> quarto publish quarto-pub</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 
 
-</section></section><aside id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><hr>
+</section><aside id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><hr>
 <ol>
 <li id="fn1"><p><a href="https://ko.wikipedia.org/wiki/%EC%9C%84%EC%A7%80%EC%9C%84%EA%B7%B8">위키백과, “위지위그”</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p><a href="https://namu.wiki/w/WYSIWYG">나무위키, “WYSIWYG”</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p><a href="https://www.educba.com/microsoft-word-features/">Jesal Shethna, “Microsoft Word Features”, EDUCBA</a><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p><a href="https://quarto.org/docs/publishing/quarto-pub.html">Quarto Pub</a><a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol></aside></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -920,7 +890,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","loop":true,"selector":".lightbox","descPosition":"bottom"});</script>
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","closeEffect":"zoom","loop":true,"openEffect":"zoom"});</script>
 
 
 </body></html>

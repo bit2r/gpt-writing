@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ko-KR" xml:lang="ko-KR"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.4.288">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
 <meta name="author" content="이광춘">
-
-<title>챗GPT 디지털 글쓰기</title>
+<title>챗GPT 디지털 글쓰기 - 14&nbsp; 문서 클래스</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,7 +20,6 @@ ul.task-list li input[type="checkbox"] {
 }
 </style>
 
-
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
@@ -31,8 +27,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./history.html" rel="next">
-<link href="./preface.html" rel="prev">
+<link href="./themes_ggplot.html" rel="next">
+<link href="./colors.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -42,11 +38,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.css" rel="stylesheet">
-<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
-<script id="quarto-search-options" type="application/json">{
+<link href="site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -70,36 +62,25 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "검색",
     "search-label": "검색"
   }
-}</script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
+}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 </head>
-
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">글쓰기</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./unicode.html">기본요소</a></li><li class="breadcrumb-item"><a href="./document_class.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">문서 클래스</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">챗GPT 디지털 글쓰기</a> 
     </div>
@@ -111,7 +92,7 @@ ul.task-list li input[type="checkbox"] {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./preface.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">서문</span></a>
@@ -119,7 +100,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">글쓰기</span></span></a>
   </div>
 </li>
@@ -137,8 +118,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./editor.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">편집기와 출판</span></span></a>
@@ -157,7 +138,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
@@ -166,8 +147,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./markdown_01_mess.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">심각한 현재 상황</span></span></a>
@@ -192,7 +173,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
@@ -201,8 +182,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./unicode.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">유니코드와 UTF-8</span></span></a>
@@ -228,12 +209,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./document_class.html" class="sidebar-item-text sidebar-link">
+  <a href="./document_class.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">문서 클래스</span></span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
@@ -242,8 +223,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./themes_ggplot.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">그래프 테마</span></span></a>
@@ -262,7 +243,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
@@ -271,8 +252,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./whole_game.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">챗GPT 글쓰기 맛보기</span></span></a>
@@ -309,7 +290,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
@@ -318,8 +299,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./publishing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">출판</span></span></a>
@@ -332,7 +313,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
@@ -340,137 +321,684 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">목차</h2>
-   
-  <ul>
-  <li><a href="#글쓰기" id="toc-글쓰기" class="nav-link active" data-scroll-target="#글쓰기"><span class="header-section-number">1</span> 글쓰기</a>
-  <ul class="collapse">
-  <li><a href="#디지털-문서-제작-패러다임" id="toc-디지털-문서-제작-패러다임" class="nav-link" data-scroll-target="#디지털-문서-제작-패러다임"><span class="header-section-number">1.1</span> 디지털 문서 제작 패러다임</a></li>
-  <li><a href="#문서로-보는-민주주의" id="toc-문서로-보는-민주주의" class="nav-link" data-scroll-target="#문서로-보는-민주주의"><span class="header-section-number">1.2</span> 문서로 보는 민주주의</a></li>
-  <li><a href="#디지털-문서-저작" id="toc-디지털-문서-저작" class="nav-link" data-scroll-target="#디지털-문서-저작"><span class="header-section-number">1.3</span> 디지털 문서 저작</a></li>
-  <li><a href="#과학문서-저작" id="toc-과학문서-저작" class="nav-link" data-scroll-target="#과학문서-저작"><span class="header-section-number">1.4</span> 과학문서 저작</a></li>
-  <li><a href="#사례-한국-r-컨퍼런스2021" id="toc-사례-한국-r-컨퍼런스2021" class="nav-link" data-scroll-target="#사례-한국-r-컨퍼런스2021"><span class="header-section-number">1.5</span> 사례: 한국 R 컨퍼런스(2021)</a></li>
-  </ul></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">챗GPT 디지털 글쓰기</h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./unicode.html">기본요소</a></li><li class="breadcrumb-item"><a href="./document_class.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">문서 클래스</span></a></li></ol></nav><div class="quarto-title">
+<h1 class="title">
+<span class="chapter-number">14</span>&nbsp; <span class="chapter-title">문서 클래스</span>
+</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">저자</div>
-    <div class="quarto-title-meta-contents">
-             <p>이광춘 </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">공개</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">2023년 09월 13일</p>
-    </div>
-  </div>
   
     
   </div>
   
 
 
-</header>
-
-<section id="글쓰기" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> 글쓰기</h1>
-<p>글쓰기(Writing)는 언어를 사용하여 생각이나 정보를 표현하는 과정이다. 글쓰기는 말하기와 다르게 물리적인 형태로 기록되어 남겨지며, 시간과 공간의 제약을 받지 않아 글쓰기 결과물로 다양한 (디지털) 문서형태로 담아 지적유산으로 후대에 남길 수 있다. 정보 전달, 감정 표현, 이야기 전달 등 글쓰기는 다양한 목적을 갖고 있으며 최근에는 기계와 의사소통을 위해 강조되고 있는 교육용 파이썬, 데이터 과학 및 과학연구를 위한 R 프로그래밍도 글쓰기 범주에 포함되고 있다.</p>
-<p>글쓰기는 정보 전달의 가장 기본적인 방법 중 하나로, 시간과 공간의 제약을 받지 않는 특징이 있다. 물론 글쓰기 결과물에 담긴 문서에는 그 시대 시간적 공간적 특성도 담겨있다.</p>
-<p>글쓰기를 통해 우리는 지식을 전달하고, 이야기를 전달하며, 감정을 표현할 수 있다. 또한 글쓰기를 통해 우리는 법률 문서와 계약서 등을 작성하여 사회적인 규칙과 약속을 정할 수 있고, 현대 사회를 지탱하는 과학기술지식도 글쓰기가 시작점이 된다. 인공지능 기술의 비약적인 발전으로 프로그래밍을 통한 코딩도 기계와 규칙을 정해 상호 커뮤니케이션하는 글쓰기로 부각되고 있다. 이러한 이유로 글쓰기는 매우 중요한 역할을 하고, 글쓰기 없이 고도화된 현대 사회생존은 불가능하다.</p>
-<section id="디지털-문서-제작-패러다임" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="디지털-문서-제작-패러다임"><span class="header-section-number">1.1</span> 디지털 문서 제작 패러다임</h2>
-<p>신속하고 빠르게 누구나 짧은 학습을 통해서 문서를 저작하고 출판할 수 있는 방식으로 인기를 얻은 아래한글 혹은 MS워드 워드프로세서를 사용하는데 이는 <strong>위지위그(WYSIWYG: What You See Is What You Get, “보는 대로 얻는다”)</strong>에 기초한 것으로 문서 편집 과정에서 화면에 포맷된 낱말, 문장이 출력물과 동일하게 나오는 방식이다. 이전 타자기 대비 경쟁력이 있었고 이를 바탕으로 문서편집기 소프트웨어가 대세로 떠올랐다.</p>
-<p>위지윅의 대척점에 있는 것이 <strong>위지윔(WYSIWYM, What You See Is What You Mean)</strong>으로 대표적인 것인 <span class="math inline">\(LaTeX\)</span> 으로 구조화된 방식으로 문서를 작성하면 컴파일을 통해서 최종 문서가 미려한 출판가능한 PDF, PS, DVI 등 확장자를 갖는 출판결과물을 얻을 수 있다.</p>
-<p><span class="math inline">\(LaTeX\)</span>이 갖는 장점은 이제 프로그래밍 코드(R / 파이썬 / SQL / 쉘스크립트 / 자바스크립트 등)을 문서저작에 포함되며 <strong>literate programming</strong> 패러다임이 대세로 떠올랐고 현존하는 다양한 문서저작 문제에 대한 응답으로 자리를 매김하고 있다. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="images/digital-writing-paradigm-shift.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/digital-writing-paradigm-shift.png" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
-</section>
-<section id="문서로-보는-민주주의" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="문서로-보는-민주주의"><span class="header-section-number">1.2</span> 문서로 보는 민주주의</h2>
-<p>대한민국은 권력을 입법권, 행정권, 사법권으로 나눠 권력을 나누었다. 세부적으보 보면 다소 차이는 있겠지만 법을 만드는 것은 결국 문서를 저작하는 것이고 대한민국 정부는 법에 담긴 문서를 실행하는 기관이고 사법부는 법 문서를 해석하는 기관으로 볼 수 있다. 결국 민주주의는 문서를 기반으로 존립하는 사회체계라고 볼 수 있다. 최근 들어 인공지능이 부상하면서 문서저작을 보조하던 수단에서 이제는 사람보다 더 나은 통찰력을 보이는 분야도 속속 등장하고 있다. 이런 측면에서 인공지능 기계를 현 민주주의 체계 내에 어떻게 녹여낼 것인지 관심이 높아지고 있다.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="images/three-pillar.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/three-pillar.png" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
-</section>
-<section id="디지털-문서-저작" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="디지털-문서-저작"><span class="header-section-number">1.3</span> 디지털 문서 저작</h2>
-<p>과거 둘로 쪼개져서 과학기술 문서저작 즉 논문 등은 <span class="math inline">\(LaTeX\)</span> 기반 위지윔(WYSIWYM) 패러다임이 확고한 자리를 잡았지만 위지위그(WYSIWYG) 패러다임 기반 아래한글 워드와 같은 문서저작편집기 성능이 높아지면서 사실상 둘 사이 경계도 허물어졌다.</p>
-<p>하지만, 과학기술 논문 저작에 진실성, 재현성 등이 강조되고 빅데이터 기반 과학연구가 큰 성과를 보이고 프로그래밍이 과학기술 논문 저작에 주요한 역할을 하면서 이런 추세를 반영한 과학기술 저작 패러다임이 떠오르고 있다.</p>
-<p>이러한 추세를 반영한 도구의 발전도 함께 이뤄지면서 과학기술 저작은 물론 거의 모든 문서 저작분야에 큰 변화가 일어나고 있다.</p>
-<!-- ![](images/digital-writing.gif) -->
-</section>
-<section id="과학문서-저작" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="과학문서-저작"><span class="header-section-number">1.4</span> 과학문서 저작</h2>
-<ul>
-<li><a href="http://statkclee.github.io/modern-scientific-authoring/01-mess-kr.html">심각한 현재상황</a></li>
-<li><a href="http://statkclee.github.io/modern-scientific-authoring/02-markdown-kr.html">마크다운 기초</a></li>
-<li><a href="http://statkclee.github.io/modern-scientific-authoring/03-advanced-kr.html">고급 마크다운</a></li>
-<li><a href="http://aispiration.com/comp_document/rmarkdown-in-production.html">문서저작 실무</a></li>
-<li><a href="http://aispiration.com/comp_document/cd-latex.html">수학 수식</a></li>
-</ul>
-</section>
-<section id="사례-한국-r-컨퍼런스2021" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="사례-한국-r-컨퍼런스2021"><span class="header-section-number">1.5</span> 사례: 한국 R 컨퍼런스(2021)</h2>
-<ul>
-<li><a href="https://github.com/tidyverse-korea/rconf">컨퍼런스 웹사이트</a></li>
-<li>컨퍼런스 전 기획
-<ul>
-<li><a href="https://github.com/tidyverse-korea/poster">컨퍼런스 포스터</a></li>
-<li><a href="https://github.com/tidyverse-korea/sponsor">컨퍼런스 후원</a></li>
-</ul></li>
-<li>컨퍼런스 본 행사
-<ul>
-<li><a href="http://aispiration.com/ds-authoring/useR-r-user-community.html#1">발표 슬라이드</a></li>
-<li><a href="https://github.com/tidyverse-korea/templates">발표 템플릿</a></li>
-</ul></li>
-<li>컨퍼런스 후 설문
-<ul>
-<li><a href="https://github.com/tidyverse-korea/rconf-2021-survey">설문조사 보고서</a></li>
-</ul></li>
-<li>기타
-<ul>
-<li><a href="https://github.com/tidyverse-korea/renewable">탄소중립 신재생 에너지 캠프</a></li>
-</ul></li>
-</ul>
-
-
-</section>
-</section>
-<aside id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn1"><p>[출처: http://www.cbinews.co.kr/news/articleView.html?idxno=36859]<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</header><p><span class="math inline">\(\LaTeX\)</span> 문서 클래스(document class)로 <code>article</code>, <code>report</code>, <code>book</code> 이 기본으로 제공되는 문서 클래스다. KOMA-Script는 또다른 <span class="math inline">\(\LaTeX\)</span> 패키지 모음으로 기본 <span class="math inline">\(\LaTeX\)</span> 문서 클래스(<code>article</code>, <code>report</code>, <code>book</code> 등) 확장 버전으로, 주로 유럽에서 널리 사용되며, 유럽의 타이포그래피와 문서 규격에 더 적합하게 설계되었다.</p>
+<ol type="1">
+<li><p><code>scrartcl</code>: <code>article</code> 문서 클래스 확장이며, 과학 학술지, 프리젠테이션, 짧은 보고서, 프로그램 문서, 초대장 등에 쓰이며 1~30페이지 정도 분량을 갖는 문서 작성에 좋다. 추가적인 사용자 설정 옵션과 유럽 스타일 레이아웃을 지원한다.</p></li>
+<li><p><code>scrreprt</code>: <code>report</code> 문서 클래스 확장이며 중간 길이 보고서나 학위 논문 작성에 적합하고, 대략 30~200 페이지 문서 작성에 좋다. <code>scrartcl</code>와 마찬가지로 추가적인 사용자 설정 옵션과 유럽 스타일 레이아웃을 제공한다.</p></li>
+<li><p><code>scrbook</code>: <code>book</code> 문서 클래스 확장으로, 책이나 큰 프로젝트에 적합하고, 대략 200 페이지 이상 문서 작성에 적합하다. 양쪽 페이지 레이아웃과 추가적인 사용자 설정 옵션도 지원한다.</p></li>
 </ol>
-</aside>
+<div class="cell">
+<div class="cell-output-display">
+<div id="bmkvnarunz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+#bmkvnarunz table {
+  font-family: Roboto, system-ui, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+#bmkvnarunz thead, #bmkvnarunz tbody, #bmkvnarunz tfoot, #bmkvnarunz tr, #bmkvnarunz td, #bmkvnarunz th {
+  border-style: none;
+}
+
+#bmkvnarunz p {
+  margin: 0;
+  padding: 0;
+}
+
+#bmkvnarunz .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 100%;
+  border-top-style: solid;
+  border-top-width: 3px;
+  border-top-color: rgba(255, 255, 255, 0);
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#bmkvnarunz .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#bmkvnarunz .gt_title {
+  color: #333333;
+  font-size: 12px;
+  font-weight: bold;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#bmkvnarunz .gt_subtitle {
+  color: #333333;
+  font-size: 16px;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#bmkvnarunz .gt_heading {
+  background-color: #FFFFFF;
+  text-align: left;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#bmkvnarunz .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bmkvnarunz .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 3px;
+  border-top-color: rgba(255, 255, 255, 0);
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  border-bottom-color: rgba(255, 255, 255, 0);
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#bmkvnarunz .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 6px;
+  padding-bottom: 7px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#bmkvnarunz .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#bmkvnarunz .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#bmkvnarunz .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#bmkvnarunz .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  border-bottom-color: rgba(255, 255, 255, 0);
+  vertical-align: bottom;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#bmkvnarunz .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#bmkvnarunz .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#bmkvnarunz .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#bmkvnarunz .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#bmkvnarunz .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#bmkvnarunz .gt_row {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: rgba(255, 255, 255, 0);
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#bmkvnarunz .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bmkvnarunz .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#bmkvnarunz .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#bmkvnarunz .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#bmkvnarunz .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bmkvnarunz .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#bmkvnarunz .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#bmkvnarunz .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bmkvnarunz .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bmkvnarunz .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#bmkvnarunz .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bmkvnarunz .gt_striped {
+  background-color: #F5F5F5;
+}
+
+#bmkvnarunz .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bmkvnarunz .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#bmkvnarunz .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bmkvnarunz .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#bmkvnarunz .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bmkvnarunz .gt_left {
+  text-align: left;
+}
+
+#bmkvnarunz .gt_center {
+  text-align: center;
+}
+
+#bmkvnarunz .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#bmkvnarunz .gt_font_normal {
+  font-weight: normal;
+}
+
+#bmkvnarunz .gt_font_bold {
+  font-weight: bold;
+}
+
+#bmkvnarunz .gt_font_italic {
+  font-style: italic;
+}
+
+#bmkvnarunz .gt_super {
+  font-size: 65%;
+}
+
+#bmkvnarunz .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#bmkvnarunz .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#bmkvnarunz .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#bmkvnarunz .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#bmkvnarunz .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#bmkvnarunz .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#bmkvnarunz .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead><tr class="gt_col_headings">
+<th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="background-color: #585D63; color: #FFFFFF; font-size: 10px; font-weight: bold; border-bottom-width: 2.5px; border-bottom-style: solid; border-bottom-color: #585d63;" scope="col" id="기능">기능</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="background-color: #585D63; color: #FFFFFF; font-size: 10px; font-weight: bold; border-bottom-width: 2.5px; border-bottom-style: solid; border-bottom-color: #585d63;" scope="col" id="짧은 보고서(article)">짧은 보고서(article)</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="background-color: #585D63; color: #FFFFFF; font-size: 10px; font-weight: bold; border-bottom-width: 2.5px; border-bottom-style: solid; border-bottom-color: #585d63;" scope="col" id="보고서(report)">보고서(report)</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="background-color: #585D63; color: #FFFFFF; font-size: 10px; font-weight: bold; border-bottom-width: 2.5px; border-bottom-style: solid; border-bottom-color: #585d63;" scope="col" id="책(book)">책(book)</th>
+    </tr></thead>
+<tbody class="gt_table_body">
+<tr class="gt_group_heading_row">
+<th colspan="4" class="gt_group_heading" scope="colgroup" id="명령어와 환경">명령어와 환경</th>
+    </tr>
+<tr class="gt_row_group_first">
+<td headers="명령어와 환경  FeatureKorean" class="gt_row gt_center"><div class="gt_from_md">
+<p>장(Chapter) 명령어</p>
+</div></td>
+<td headers="명령어와 환경  Article" class="gt_row gt_center"><div class="gt_from_md">
+<p>사용 불가</p>
+</div></td>
+<td headers="명령어와 환경  Report" class="gt_row gt_center"><div class="gt_from_md">
+<p>사용 가능</p>
+</div></td>
+<td headers="명령어와 환경  Book" class="gt_row gt_center"><div class="gt_from_md">
+<p>사용 가능</p>
+</div></td>
+</tr>
+<tr>
+<td headers="명령어와 환경  FeatureKorean" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>부록(Appendix) 스타일링</p>
+</div></td>
+<td headers="명령어와 환경  Article" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>해당 없음</p>
+</div></td>
+<td headers="명령어와 환경  Report" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>부록 X</p>
+</div></td>
+<td headers="명령어와 환경  Book" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>부록 X</p>
+</div></td>
+</tr>
+<tr>
+<td headers="명령어와 환경  FeatureKorean" class="gt_row gt_center"><div class="gt_from_md">
+<p>부분(Parts)에 대한 새 페이지</p>
+</div></td>
+<td headers="명령어와 환경  Article" class="gt_row gt_center"><div class="gt_from_md">
+<p>새 페이지 없음</p>
+</div></td>
+<td headers="명령어와 환경  Report" class="gt_row gt_center"><div class="gt_from_md">
+<p>새 페이지</p>
+</div></td>
+<td headers="명령어와 환경  Book" class="gt_row gt_center"><div class="gt_from_md">
+<p>새 페이지</p>
+</div></td>
+</tr>
+<tr>
+<td headers="명령어와 환경  FeatureKorean" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>전문/본문/후문(Front/Main/Back matter)</p>
+</div></td>
+<td headers="명령어와 환경  Article" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>사용 불가</p>
+</div></td>
+<td headers="명령어와 환경  Report" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>사용 불가</p>
+</div></td>
+<td headers="명령어와 환경  Book" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>사용 가능</p>
+</div></td>
+</tr>
+<tr>
+<td headers="명령어와 환경  FeatureKorean" class="gt_row gt_center"><div class="gt_from_md">
+<p>요약(Abstract) 환경</p>
+</div></td>
+<td headers="명령어와 환경  Article" class="gt_row gt_center"><div class="gt_from_md">
+<p>사용 가능</p>
+</div></td>
+<td headers="명령어와 환경  Report" class="gt_row gt_center"><div class="gt_from_md">
+<p>사용 가능</p>
+</div></td>
+<td headers="명령어와 환경  Book" class="gt_row gt_center"><div class="gt_from_md">
+<p>사용 불가</p>
+</div></td>
+</tr>
+<tr class="gt_group_heading_row">
+<th colspan="4" class="gt_group_heading" scope="colgroup" id="기본 설정">기본 설정</th>
+    </tr>
+<tr class="gt_row_group_first">
+<td headers="기본 설정  FeatureKorean" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>양면 옵션(Twoside vs Oneside)</p>
+</div></td>
+<td headers="기본 설정  Article" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>단면(Oneside)</p>
+</div></td>
+<td headers="기본 설정  Report" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>단면(Oneside)</p>
+</div></td>
+<td headers="기본 설정  Book" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>양면(Twoside)</p>
+</div></td>
+</tr>
+<tr>
+<td headers="기본 설정  FeatureKorean" class="gt_row gt_center"><div class="gt_from_md">
+<p>열기 위치(Openright vs Openany)</p>
+</div></td>
+<td headers="기본 설정  Article" class="gt_row gt_center"><div class="gt_from_md">
+<p>해당 없음</p>
+</div></td>
+<td headers="기본 설정  Report" class="gt_row gt_center"><div class="gt_from_md">
+<p>열기 위치: 어디든(Openany)</p>
+</div></td>
+<td headers="기본 설정  Book" class="gt_row gt_center"><div class="gt_from_md">
+<p>열기 위치: 오른쪽(Openright)</p>
+</div></td>
+</tr>
+<tr>
+<td headers="기본 설정  FeatureKorean" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>페이지 스타일(Pagestyle)</p>
+</div></td>
+<td headers="기본 설정  Article" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>일반(Plain)</p>
+</div></td>
+<td headers="기본 설정  Report" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>일반(Plain)</p>
+</div></td>
+<td headers="기본 설정  Book" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>헤딩(Headings)</p>
+</div></td>
+</tr>
+<tr>
+<td headers="기본 설정  FeatureKorean" class="gt_row gt_center"><div class="gt_from_md">
+<p>제목 페이지(Titlepage)</p>
+</div></td>
+<td headers="기본 설정  Article" class="gt_row gt_center"><div class="gt_from_md">
+<p>제목 페이지 없음</p>
+</div></td>
+<td headers="기본 설정  Report" class="gt_row gt_center"><div class="gt_from_md">
+<p>제목 페이지 사용</p>
+</div></td>
+<td headers="기본 설정  Book" class="gt_row gt_center"><div class="gt_from_md">
+<p>제목 페이지 사용</p>
+</div></td>
+</tr>
+<tr>
+<td headers="기본 설정  FeatureKorean" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>최하위 섹션(Lowest-level sectioning)</p>
+</div></td>
+<td headers="기본 설정  Article" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>하위-하위 섹션(Subsubsection)</p>
+</div></td>
+<td headers="기본 설정  Report" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>하위 섹션(Subsection)</p>
+</div></td>
+<td headers="기본 설정  Book" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>하위 섹션(Subsection)</p>
+</div></td>
+</tr>
+<tr>
+<td headers="기본 설정  FeatureKorean" class="gt_row gt_center"><div class="gt_from_md">
+<p>상단 제목(Running headings)</p>
+</div></td>
+<td headers="기본 설정  Article" class="gt_row gt_center"><div class="gt_from_md">
+<p>섹션과 하위 섹션</p>
+</div></td>
+<td headers="기본 설정  Report" class="gt_row gt_center"><div class="gt_from_md">
+<p>장과 섹션</p>
+</div></td>
+<td headers="기본 설정  Book" class="gt_row gt_center"><div class="gt_from_md">
+<p>장과 섹션</p>
+</div></td>
+</tr>
+<tr>
+<td headers="기본 설정  FeatureKorean" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>번호 매김(Numbering scope)</p>
+</div></td>
+<td headers="기본 설정  Article" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>연속적</p>
+</div></td>
+<td headers="기본 설정  Report" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>장 단위</p>
+</div></td>
+<td headers="기본 설정  Book" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>장 단위</p>
+</div></td>
+</tr>
+<tr>
+<td headers="기본 설정  FeatureKorean" class="gt_row gt_center"><div class="gt_from_md">
+<p>참고문헌 표시(Bibliography heading)</p>
+</div></td>
+<td headers="기본 설정  Article" class="gt_row gt_center"><div class="gt_from_md">
+<p>References</p>
+</div></td>
+<td headers="기본 설정  Report" class="gt_row gt_center"><div class="gt_from_md">
+<p>Bibliography</p>
+</div></td>
+<td headers="기본 설정  Book" class="gt_row gt_center"><div class="gt_from_md">
+<p>Bibliography</p>
+</div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+
+</main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -786,22 +1314,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./preface.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">서문</span>
+</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+      <a href="./colors.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">색상</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./history.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">문자와 종이 역사</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./themes_ggplot.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">그래프 테마</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom","loop":true});</script>
-
 
 
 

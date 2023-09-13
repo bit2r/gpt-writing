@@ -147,37 +147,3 @@ GitHub Copilot를 Rstudio에서 사용해보면, 작성하려는 코드가 회�
 
 ![쿼토 출판](images/quarto-publishing.png)
 
-### Quarto Pub 출판
-
-[`Quarto Pub`](https://quartopub.com/) 출판과정은 Quarto CLI를 통해 이뤄진다. `RStudio`의 내부 터미널을 사용하는 것을 권장하는데, 이유는 `RStudio`와 `Quarto`가 잘 통합되어 있어, 간편하게 출판 작업을 진행할 수 있기 때문이다. [^editor-4]
-
-[^editor-4]: [Quarto Pub](https://quarto.org/docs/publishing/quarto-pub.html)
-
-```{bash}
-#| eval: false
-$ quarto publish quarto-pub
-? Authorize (Y/n) › 
-❯ In order to publish to Quarto Pub you need to
-  authorize your account. Please be sure you are
-  logged into the correct Quarto Pub account in 
-  your default web browser, then press Enter or 
-  'Y' to authorize.
-```
-
-첫번째 출판하게 되면 인증작업을 수행하고 나면 `_publish.yml` 파일이 하나 생성된다.
-
-```{yaml}
-#| eval: false
-- source: project
-  quarto-pub:
-    - id: 1fa3ab1f-c010-453a-aaf2-f462bd074a66
-      url: 'https://quartopub.com/sites/statkclee/quarto-ds'
-```
-
-이제 모든 준비가 되었기 때문에 다음 명령어로 작성한 출판 문서를 포함한 웹사이트를 로컬에서 미리 확인 한 후에 [`Quarto Pub`](https://quartopub.com/)으로 전자출판한다. 윈도우에서는 **RStudio 내부 Terminal CLI**를 사용하는 것을 권장한다.
-
-```{bash}
-#| eval: false
-$ quarto preview
-$ quarto publish quarto-pub
-```
