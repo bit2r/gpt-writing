@@ -99,7 +99,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "검색",
     "search-label": "검색"
   }
-}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+}</script><script src="site_libs/quarto-diagram/mermaid.min.js"></script><script src="site_libs/quarto-diagram/mermaid-init.js"></script><link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 </head>
 <body class="nav-sidebar floating">
 
@@ -372,6 +373,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#korean-lipsum" id="toc-korean-lipsum" class="nav-link" data-scroll-target="#korean-lipsum"><span class="header-section-number">14.1.2</span> 한글 입숨</a></li>
   </ul>
 </li>
+  <li><a href="#%EB%AC%B8%EC%84%9C-%ED%81%B4%EB%9E%98%EC%8A%A4" id="toc-문서-클래스" class="nav-link" data-scroll-target="#%EB%AC%B8%EC%84%9C-%ED%81%B4%EB%9E%98%EC%8A%A4"><span class="header-section-number">14.2</span> 문서 클래스</a></li>
+  <li>
+<a href="#%EC%84%9C%EC%A7%80-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4" id="toc-서지-데이터베이스" class="nav-link" data-scroll-target="#%EC%84%9C%EC%A7%80-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4"><span class="header-section-number">14.3</span> 서지 데이터베이스</a>
+  <ul class="collapse">
+<li><a href="#%EC%98%81%EB%AC%B8-%EC%B0%B8%EA%B3%A0%EB%AC%B8%ED%97%8C" id="toc-영문-참고문헌" class="nav-link" data-scroll-target="#%EC%98%81%EB%AC%B8-%EC%B0%B8%EA%B3%A0%EB%AC%B8%ED%97%8C"><span class="header-section-number">14.3.1</span> 영문 참고문헌</a></li>
+  <li><a href="#%EA%B5%AD%EB%AC%B8-%EC%B0%B8%EA%B3%A0%EB%AC%B8%ED%97%8C" id="toc-국문-참고문헌" class="nav-link" data-scroll-target="#%EA%B5%AD%EB%AC%B8-%EC%B0%B8%EA%B3%A0%EB%AC%B8%ED%97%8C"><span class="header-section-number">14.3.2</span> 국문 참고문헌</a></li>
+  </ul>
+</li>
   </ul></nav>
     </div>
 <!-- main -->
@@ -392,7 +401,121 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><p><span class="math inline">\(\LaTeX\)</span> 문서 클래스(document class)로 <code>article</code>, <code>report</code>, <code>book</code> 이 기본으로 제공되는 문서 클래스다. KOMA-Script는 또다른 <span class="math inline">\(\LaTeX\)</span> 패키지 모음으로 기본 <span class="math inline">\(\LaTeX\)</span> 문서 클래스(<code>article</code>, <code>report</code>, <code>book</code> 등) 확장 버전으로, 주로 유럽에서 널리 사용되며, 유럽의 타이포그래피와 문서 규격에 더 적합하게 설계되었다.</p>
+</header><section id="lorem-ipsum" class="level2" data-number="14.1"><h2 data-number="14.1" class="anchored" data-anchor-id="lorem-ipsum">
+<span class="header-section-number">14.1</span> 로렘 입숨</h2>
+<p>로렘 입숨(Lorem Ipsum, 줄여서 립숨, lipsum)은 출판과 그래픽 디자인 분야에서 널리 사용되는 <strong>채우기 텍스트(dummy text)</strong>로 글꼴, 타이포그래피, 레이아웃과 같은 그래픽 요소나 시각적 연출을 검토하고 싶을 때 유용하게 쓰인다. 로렘 입숨은 최종 결과물에 들어갈 실제 텍스트가 아직 준비되지 않았을 때, 기계적으로 디자인 전반적인 느낌을 파악하기 위한 임시 채움 글로 활용된다.</p>
+<p>사람들은 텍스트가 보일 경우 그 내용에 집중하는 경향 때문에 로렘 입숨이 특히 진가를 발휘한다. 전형적인 로렘 입숨 텍스트는 라틴어 문장의 일부를 변형한 “Lorem ipsum dolor sit amet, consectetur adipiscing elit…”와 같은 형태로 시작된다. 디자인의 ‘보이는’ 부분을 검토할 때 방해가 되지 않는 중립적인 내용을 제공하여 디자인이나 서체 특성을 강조하고자 할 때, 로렘 입숨을 사용하면 사람들이 디자인 자체에 더 집중할 수 있게 되어, 출판사나 디자이너가 인쇄출판 시각적 요소에만 초점을 맞출 때 매우 유용하다. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+로렘 입숨 (영문) 사례
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+</div>
+<section id="english-lipsum" class="level3" data-number="14.1.1"><h3 data-number="14.1.1" class="anchored" data-anchor-id="english-lipsum">
+<span class="header-section-number">14.1.1</span> 영문 입숨</h3>
+<p>영문 입숨 <span class="math inline">\(\LaTeX\)</span> 패키지로 <code>lipsum</code>, <code>blindtext</code>, <code>kantlipsum</code>, <code>mwe</code> 등이 있다. <code>lipsum</code> 패키지는 로렘 입숨(Lorem Ipsum) 텍스트를 쉽게 생성할 수 있어서 가장 널리 사용되는 텍스트 채우기 패키지 중 하나다. 특히, 문단 수를 지정할 수 있는 기능이 있어서 문서의 길이나 복잡성에 따라 유연하게 적용할 수 있다. 예를 들어, <code>\lipsum[1-5]</code> 명령어를 사용하면 5개의 로렘 입숨 문단을 생성한다.</p>
+<div class="columns">
+<div class="column" style="width:55%;">
+<div class="sourceCode" id="cb1" data-code-line-numbers=""><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>[twocolumn]{<span class="ex">article</span>}</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">lipsum</span>} <span class="co">% lipsum 패키지 불러오기</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">\title</span>{Two-Sided Lipsum Example}</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">\author</span>{Example Author}</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">\date</span>{<span class="fu">\today</span>}</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">\maketitle</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="kw">\section</span>{Introduction}</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">\lipsum</span>[1] <span class="co">% 첫 번째 로렘 입숨 문단 생성</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="kw">\section</span>{Main Body}</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">\lipsum</span>[2-3] <span class="co">% 2~3 번째 로렘 입숨 문단 생성</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="kw">\section</span>{Conclusion}</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">\lipsum</span>[4] <span class="co">% 4번째 로렘 입숨 문단 생성</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/pdf_ipsum_eng.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="영문 입숨 2단 문서 사례"><img src="images/pdf_ipsum_eng.jpg" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">영문 입숨 2단 문서 사례</figcaption></figure>
+</div>
+</div>
+</div>
+</section><section id="korean-lipsum" class="level3" data-number="14.1.2"><h3 data-number="14.1.2" class="anchored" data-anchor-id="korean-lipsum">
+<span class="header-section-number">14.1.2</span> 한글 입숨</h3>
+<p><a href="http://wiki.ktug.org/wiki/wiki.php/jiwonlipsum"><code>jiwonlipsum</code></a> 패키지는 라틴 계열 문자를 위한 <code>lipsum</code> 패키지와 동일한 목표를 갖지만, 한글 및 한자에 특화된 글꼴, 레이아웃 등 타이포그래피의 요소를 예제로 채우기 텍스트(dummy text)를 생성하는 패키지로 김강수님이 제작했다. <code>jiwonlipsum</code> 팩키지는 <a href="http://wiki.ktug.org/wiki/wiki.php/KtugPrivateRepository">KTUG Private Repository</a>에 저장되어 있어 이를 설치한 후 한글 lipsum을 사용할 수 있다. <code>jiwonlipsum</code> 팩키지가 저장된 <a href="http://wiki.ktug.org/wiki/wiki.php/KtugPrivateRepository">KTUG Private Repository</a> 저장소를 활용하는 방식은 다음과 같다.</p>
+<ol type="1">
+<li><p><strong>저장소 추가</strong>: TeX Live 또는 MiKTeX의 패키지 관리자에서 KTUG Private Repository를 추가한다.</p></li>
+<li><p><strong>패키지 설치</strong>: 패키지 관리자를 통해 <code>jiwonlipsum</code> 패키지를 검색하고 설치한다.</p></li>
+<li><p><strong>LaTeX 문서에 적용</strong>: 설치가 완료되면, LaTeX 문서의 preamble(서문) 부분에 <code>\usepackage{jiwonlipsum}</code>을 추가한다.</p></li>
+<li><p><strong>텍스트 생성</strong>: 문서 내에서 <code>\jiwonlipsum</code> 명령어를 사용하여 한글로 된 로렘 입숨 텍스트를 생성한다.</p></li>
+</ol>
+<div class="sourceCode" id="cb2" data-code-line-numbers=""><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tlmgr repository add http://ftp.ktug.org/KTUG/texlive/tlnet/ ktug</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tlmgr pinning add ktug <span class="st">"*"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tlmgr install jiwonlipsum</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">tlmgr.pl:</span> package repositories</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        <span class="ex">main</span> = https://mirror.navercorp.com/CTAN/systems/texlive/tlnet <span class="er">(</span><span class="ex">verified</span><span class="kw">)</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        <span class="ex">ktug</span> = http://ftp.ktug.org/KTUG/texlive/tlnet/ <span class="er">(</span><span class="ex">not</span> verified: pubkey missing<span class="kw">)</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ex">For</span> more about verification, see https://texlive.info/verification.html.</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="ex">[1/1,</span> <span class="pp">??</span>:<span class="pp">??</span>/<span class="pp">??</span>:<span class="pp">??</span>] install: jiwonlipsum @ktug <span class="pp">[</span><span class="ss">245k</span><span class="pp">]</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="ex">running</span> mktexlsr ...</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span> <span class="ex">running</span> mktexlsr.</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="ex">running</span> mtxrun <span class="at">--generate</span> ...</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span> <span class="ex">running</span> mtxrun <span class="at">--generate.</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="ex">tlmgr.pl:</span> package log updated: C:/texlive/2020/texmf-var/web2c/tlmgr.log</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>jiwonlipsum</code> 패키지를 사용하여 한글로 된 채우기 텍스트 사례를 보여주는 예제다. 문서형식을 두 칼럼 형식 짧은 보고서(article) 형식으로 지정하고 나서, ‘NanumGothic’ 글꼴을 사용해서 한글을 표현하기 위한 준비를 한다. 제목, 저자, 수정일 정보를 포함한 제목 페이지를 만든 후, <code>jiwonlipsum</code> 패키지를 활용해 한 문단의 요약(abstract)과 ‘들어가며’ 섹션에 채우기 텍스트로 텍스트를 삽입한다.</p>
+<div class="columns">
+<div class="column" style="width:55%;">
+<div class="sourceCode" id="cb3" data-code-line-numbers=""><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>[twocolumn]{<span class="ex">article</span>}</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">fontspec</span>}</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">\setmainfont</span>{NanumGothic} <span class="co">% NanumGothic 글꼴이 설치되어야 함</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">jiwonlipsum</span>}</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">\title</span>{멋진 <span class="fu">\LaTeX</span> 제목 페이지}</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">\author</span>{홍길동}</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">\date</span>{<span class="fu">\today</span>}</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="fu">\maketitle</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">abstract</span>}</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="fu">\jiwon</span>[1]</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">abstract</span>}</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="kw">\section</span>{들어가며}</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="fu">\jiwon</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/pdf_ipsum_kor.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="한글 입숨 2단 문서 사례"><img src="images/pdf_ipsum_kor.jpg" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">한글 입숨 2단 문서 사례</figcaption></figure>
+</div>
+</div>
+</div>
+</section></section><section id="문서-클래스" class="level2" data-number="14.2"><h2 data-number="14.2" class="anchored" data-anchor-id="문서-클래스">
+<span class="header-section-number">14.2</span> 문서 클래스</h2>
+<p><span class="math inline">\(\LaTeX\)</span> 문서 클래스(document class)로 <code>article</code>, <code>report</code>, <code>book</code> 이 기본으로 제공되는 문서 클래스다. KOMA-Script는 또다른 <span class="math inline">\(\LaTeX\)</span> 패키지 모음으로 기본 <span class="math inline">\(\LaTeX\)</span> 문서 클래스(<code>article</code>, <code>report</code>, <code>book</code> 등) 확장 버전으로, 주로 유럽에서 널리 사용되며, 유럽의 타이포그래피와 문서 규격에 더 적합하게 설계되었다.</p>
 <ol type="1">
 <li><p><code>scrartcl</code>: <code>article</code> 문서 클래스 확장이며, 과학 학술지, 프리젠테이션, 짧은 보고서, 프로그램 문서, 초대장 등에 쓰이며 1~30페이지 정도 분량을 갖는 문서 작성에 좋다. 추가적인 사용자 설정 옵션과 유럽 스타일 레이아웃을 지원한다.</p></li>
 <li><p><code>scrreprt</code>: <code>report</code> 문서 클래스 확장이며 중간 길이 보고서나 학위 논문 작성에 적합하고, 대략 30~200 페이지 문서 작성에 좋다. <code>scrartcl</code>와 마찬가지로 추가적인 사용자 설정 옵션과 유럽 스타일 레이아웃을 제공한다.</p></li>
@@ -400,24 +523,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <div class="cell">
 <div class="cell-output-display">
-<div id="utbxwbmaca" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="pegtnnabnu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-#utbxwbmaca table {
+#pegtnnabnu table {
   font-family: Roboto, system-ui, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#utbxwbmaca thead, #utbxwbmaca tbody, #utbxwbmaca tfoot, #utbxwbmaca tr, #utbxwbmaca td, #utbxwbmaca th {
+#pegtnnabnu thead, #pegtnnabnu tbody, #pegtnnabnu tfoot, #pegtnnabnu tr, #pegtnnabnu td, #pegtnnabnu th {
   border-style: none;
 }
 
-#utbxwbmaca p {
+#pegtnnabnu p {
   margin: 0;
   padding: 0;
 }
 
-#utbxwbmaca .gt_table {
+#pegtnnabnu .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -443,12 +566,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#utbxwbmaca .gt_caption {
+#pegtnnabnu .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#utbxwbmaca .gt_title {
+#pegtnnabnu .gt_title {
   color: #333333;
   font-size: 12px;
   font-weight: bold;
@@ -460,7 +583,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#utbxwbmaca .gt_subtitle {
+#pegtnnabnu .gt_subtitle {
   color: #333333;
   font-size: 16px;
   font-weight: initial;
@@ -472,7 +595,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#utbxwbmaca .gt_heading {
+#pegtnnabnu .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -484,13 +607,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#utbxwbmaca .gt_bottom_border {
+#pegtnnabnu .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#utbxwbmaca .gt_col_headings {
+#pegtnnabnu .gt_col_headings {
   border-top-style: solid;
   border-top-width: 3px;
   border-top-color: rgba(255, 255, 255, 0);
@@ -505,7 +628,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#utbxwbmaca .gt_col_heading {
+#pegtnnabnu .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 80%;
@@ -525,7 +648,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#utbxwbmaca .gt_column_spanner_outer {
+#pegtnnabnu .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 80%;
@@ -537,15 +660,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#utbxwbmaca .gt_column_spanner_outer:first-child {
+#pegtnnabnu .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#utbxwbmaca .gt_column_spanner_outer:last-child {
+#pegtnnabnu .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#utbxwbmaca .gt_column_spanner {
+#pegtnnabnu .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 3px;
   border-bottom-color: rgba(255, 255, 255, 0);
@@ -557,11 +680,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#utbxwbmaca .gt_spanner_row {
+#pegtnnabnu .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#utbxwbmaca .gt_group_heading {
+#pegtnnabnu .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -587,7 +710,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#utbxwbmaca .gt_empty_group_heading {
+#pegtnnabnu .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -602,15 +725,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#utbxwbmaca .gt_from_md > :first-child {
+#pegtnnabnu .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#utbxwbmaca .gt_from_md > :last-child {
+#pegtnnabnu .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#utbxwbmaca .gt_row {
+#pegtnnabnu .gt_row {
   padding-top: 6px;
   padding-bottom: 6px;
   padding-left: 5px;
@@ -629,7 +752,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#utbxwbmaca .gt_stub {
+#pegtnnabnu .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 80%;
@@ -642,7 +765,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#utbxwbmaca .gt_stub_row_group {
+#pegtnnabnu .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -656,15 +779,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#utbxwbmaca .gt_row_group_first td {
+#pegtnnabnu .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#utbxwbmaca .gt_row_group_first th {
+#pegtnnabnu .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#utbxwbmaca .gt_summary_row {
+#pegtnnabnu .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -674,16 +797,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#utbxwbmaca .gt_first_summary_row {
+#pegtnnabnu .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#utbxwbmaca .gt_first_summary_row.thick {
+#pegtnnabnu .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#utbxwbmaca .gt_last_summary_row {
+#pegtnnabnu .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -693,7 +816,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#utbxwbmaca .gt_grand_summary_row {
+#pegtnnabnu .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -703,7 +826,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#utbxwbmaca .gt_first_grand_summary_row {
+#pegtnnabnu .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -713,7 +836,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#utbxwbmaca .gt_last_grand_summary_row_top {
+#pegtnnabnu .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -723,11 +846,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#utbxwbmaca .gt_striped {
+#pegtnnabnu .gt_striped {
   background-color: #F5F5F5;
 }
 
-#utbxwbmaca .gt_table_body {
+#pegtnnabnu .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -736,7 +859,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#utbxwbmaca .gt_footnotes {
+#pegtnnabnu .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -750,7 +873,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#utbxwbmaca .gt_footnote {
+#pegtnnabnu .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -759,7 +882,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#utbxwbmaca .gt_sourcenotes {
+#pegtnnabnu .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -773,7 +896,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#utbxwbmaca .gt_sourcenote {
+#pegtnnabnu .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -781,63 +904,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#utbxwbmaca .gt_left {
+#pegtnnabnu .gt_left {
   text-align: left;
 }
 
-#utbxwbmaca .gt_center {
+#pegtnnabnu .gt_center {
   text-align: center;
 }
 
-#utbxwbmaca .gt_right {
+#pegtnnabnu .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#utbxwbmaca .gt_font_normal {
+#pegtnnabnu .gt_font_normal {
   font-weight: normal;
 }
 
-#utbxwbmaca .gt_font_bold {
+#pegtnnabnu .gt_font_bold {
   font-weight: bold;
 }
 
-#utbxwbmaca .gt_font_italic {
+#pegtnnabnu .gt_font_italic {
   font-style: italic;
 }
 
-#utbxwbmaca .gt_super {
+#pegtnnabnu .gt_super {
   font-size: 65%;
 }
 
-#utbxwbmaca .gt_footnote_marks {
+#pegtnnabnu .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#utbxwbmaca .gt_asterisk {
+#pegtnnabnu .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#utbxwbmaca .gt_indent_1 {
+#pegtnnabnu .gt_indent_1 {
   text-indent: 5px;
 }
 
-#utbxwbmaca .gt_indent_2 {
+#pegtnnabnu .gt_indent_2 {
   text-indent: 10px;
 }
 
-#utbxwbmaca .gt_indent_3 {
+#pegtnnabnu .gt_indent_3 {
   text-indent: 15px;
 }
 
-#utbxwbmaca .gt_indent_4 {
+#pegtnnabnu .gt_indent_4 {
   text-indent: 20px;
 }
 
-#utbxwbmaca .gt_indent_5 {
+#pegtnnabnu .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1042,115 +1165,124 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<section id="lorem-ipsum" class="level2" data-number="14.1"><h2 data-number="14.1" class="anchored" data-anchor-id="lorem-ipsum">
-<span class="header-section-number">14.1</span> 로렘 입숨</h2>
-<p>로렘 입숨(Lorem Ipsum, 줄여서 립숨, lipsum)은 출판과 그래픽 디자인 분야에서 널리 사용되는 <strong>채우기 텍스트(dummy text)</strong>로 글꼴, 타이포그래피, 레이아웃과 같은 그래픽 요소나 시각적 연출을 검토하고 싶을 때 유용하게 쓰인다. 로렘 입숨은 최종 결과물에 들어갈 실제 텍스트가 아직 준비되지 않았을 때, 기계적으로 디자인 전반적인 느낌을 파악하기 위한 임시 채움 글로 활용된다.</p>
-<p>사람들은 텍스트가 보일 경우 그 내용에 집중하는 경향 때문에 로렘 입숨이 특히 진가를 발휘한다. 전형적인 로렘 입숨 텍스트는 라틴어 문장의 일부를 변형한 “Lorem ipsum dolor sit amet, consectetur adipiscing elit…”와 같은 형태로 시작된다. 디자인의 ‘보이는’ 부분을 검토할 때 방해가 되지 않는 중립적인 내용을 제공하여 디자인이나 서체 특성을 강조하고자 할 때, 로렘 입숨을 사용하면 사람들이 디자인 자체에 더 집중할 수 있게 되어, 출판사나 디자이너가 인쇄출판 시각적 요소에만 초점을 맞출 때 매우 유용하다. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<div class="callout callout-style-simple callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+</section><section id="서지-데이터베이스" class="level2" data-number="14.3"><h2 data-number="14.3" class="anchored" data-anchor-id="서지-데이터베이스">
+<span class="header-section-number">14.3</span> 서지 데이터베이스</h2>
+<p><span class="math inline">\(\LaTeX\)</span> 문서 컴파일 과정은 몇 단계에 걸쳐 이뤄진다. 먼저 <code>xelatex</code> 명령을 사용하여 원본 <span class="math inline">\(\LaTeX\)</span> 코드를 컴파일하면 <code>.aux</code>와 <code>.log</code> 파일이 생성되고, <code>biber</code> 또는 <code>bibtex</code> 명령을 실행하여 참고문헌 정보를 처리하면서 <code>.bbl</code> 및 <code>.blg</code> 파일이 생성된다. 그 다음 다시 <code>xelatex</code>을 두 번 실행하여 참고문헌과 인용 정보를 최종적으로 처리하고 완성된 PDF 파일이 생성된다.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">graph LR;
+    style A fill:#f9d71c,stroke:#333,stroke-width:2px;
+    style B fill:#42f5e6,stroke:#333,stroke-width:2px;
+    style C fill:#f542e9,stroke:#333,stroke-width:2px;
+    style D fill:#42f54b,stroke:#333,stroke-width:2px;
+    style E fill:#f54242,stroke:#333,stroke-width:2px;
+
+    A[LaTeX&lt;br&gt;소스코드] --&gt;|xelatex| B{.aux,&lt;br&gt; .log}
+    B --&gt;|biber &lt;br&gt; bibtex| C{.bbl,&lt;br&gt; .blg}
+    C --&gt;|xelatex| D{.aux,&lt;br&gt; .log,&lt;br&gt;.pdf}
+    D --&gt;|xelatex| E[PDF]
+
+</pre>
 </div>
-<div class="callout-title-container flex-fill">
-로렘 입숨 (영문) 사례
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 </div>
-</div>
-<section id="english-lipsum" class="level3" data-number="14.1.1"><h3 data-number="14.1.1" class="anchored" data-anchor-id="english-lipsum">
-<span class="header-section-number">14.1.1</span> 영문 입숨</h3>
-<p>영문 입숨 <span class="math inline">\(\LaTeX\)</span> 패키지로 <code>lipsum</code>, <code>blindtext</code>, <code>kantlipsum</code>, <code>mwe</code> 등이 있다. <code>lipsum</code> 패키지는 로렘 입숨(Lorem Ipsum) 텍스트를 쉽게 생성할 수 있어서 가장 널리 사용되는 텍스트 채우기 패키지 중 하나다. 특히, 문단 수를 지정할 수 있는 기능이 있어서 문서의 길이나 복잡성에 따라 유연하게 적용할 수 있다. 예를 들어, <code>\lipsum[1-5]</code> 명령어를 사용하면 5개의 로렘 입숨 문단을 생성한다.</p>
+<section id="영문-참고문헌" class="level3" data-number="14.3.1"><h3 data-number="14.3.1" class="anchored" data-anchor-id="영문-참고문헌">
+<span class="header-section-number">14.3.1</span> 영문 참고문헌</h3>
 <div class="columns">
 <div class="column" style="width:55%;">
-<div class="sourceCode" id="cb1" data-code-line-numbers=""><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>[twocolumn]{<span class="ex">article</span>}</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">lipsum</span>} <span class="co">% lipsum 패키지 불러오기</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">\title</span>{Two-Sided Lipsum Example}</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">\author</span>{Example Author}</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">\date</span>{<span class="fu">\today</span>}</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">\maketitle</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="kw">\section</span>{Introduction}</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">\lipsum</span>[1] <span class="co">% 첫 번째 로렘 입숨 문단 생성</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="kw">\section</span>{Main Body}</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">\lipsum</span>[2-3] <span class="co">% 2~3 번째 로렘 입숨 문단 생성</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="kw">\section</span>{Conclusion}</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">\lipsum</span>[4] <span class="co">% 4번째 로렘 입숨 문단 생성</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4" data-code-line-numbers=""><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>[twocolumn]{<span class="ex">article</span>}</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">lipsum</span>} <span class="co">% lipsum 패키지 불러오기</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">% 참고문헌</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[backend=biber]{<span class="ex">biblatex</span>}</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">\addbibresource</span>{references.bib}</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">% 문서 전문</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="fu">\title</span>{Two-Sided Lipsum Example}</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="fu">\author</span>{John Lee}</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="fu">\date</span>{<span class="fu">\today</span>}</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}    </span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\maketitle</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">\section</span>{Introduction}</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    This is a citation~<span class="kw">\cite</span>{<span class="ex">dummy2023</span>}.</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\lipsum</span>[11] <span class="co">% 첫 번째 로렘 입숨 문단 생성  </span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    <span class="kw">\section</span>{Main Body}</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\lipsum</span>[2-3] <span class="co">% 2~3 번째 로렘 입숨 문단 생성</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>    <span class="kw">\section</span>{Conclusion}</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>    This is a book citation~<span class="kw">\cite</span>{<span class="ex">ipsum2021</span>}.</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\lipsum</span>[4] <span class="co">% 4번째 로렘 입숨 문단 생성</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="fu">\printbibliography</span></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:5%;">
 
 </div><div class="column" style="width:40%;">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/pdf_ipsum_eng.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="영문 입숨 2단 문서 사례"><img src="images/pdf_ipsum_eng.jpg" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">영문 입숨 2단 문서 사례</figcaption></figure>
+<figure class="figure"><p><a href="images/pdf_english_reference.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="영문 참고문헌 사례"><img src="images/pdf_english_reference.jpg" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">영문 참고문헌 사례</figcaption></figure>
 </div>
 </div>
 </div>
-</section><section id="korean-lipsum" class="level3" data-number="14.1.2"><h3 data-number="14.1.2" class="anchored" data-anchor-id="korean-lipsum">
-<span class="header-section-number">14.1.2</span> 한글 입숨</h3>
-<p><a href="http://wiki.ktug.org/wiki/wiki.php/jiwonlipsum"><code>jiwonlipsum</code></a> 패키지는 라틴 계열 문자를 위한 <code>lipsum</code> 패키지와 동일한 목표를 갖지만, 한글 및 한자에 특화된 글꼴, 레이아웃 등 타이포그래피의 요소를 예제로 채우기 텍스트(dummy text)를 생성하는 패키지로 김강수님이 제작했다. <code>jiwonlipsum</code> 팩키지는 <a href="http://wiki.ktug.org/wiki/wiki.php/KtugPrivateRepository">KTUG Private Repository</a>에 저장되어 있어 이를 설치한 후 한글 lipsum을 사용할 수 있다. <code>jiwonlipsum</code> 팩키지가 저장된 <a href="http://wiki.ktug.org/wiki/wiki.php/KtugPrivateRepository">KTUG Private Repository</a> 저장소를 활용하는 방식은 다음과 같다.</p>
-<ol type="1">
-<li><p><strong>저장소 추가</strong>: TeX Live 또는 MiKTeX의 패키지 관리자에서 KTUG Private Repository를 추가한다.</p></li>
-<li><p><strong>패키지 설치</strong>: 패키지 관리자를 통해 <code>jiwonlipsum</code> 패키지를 검색하고 설치한다.</p></li>
-<li><p><strong>LaTeX 문서에 적용</strong>: 설치가 완료되면, LaTeX 문서의 preamble(서문) 부분에 <code>\usepackage{jiwonlipsum}</code>을 추가한다.</p></li>
-<li><p><strong>텍스트 생성</strong>: 문서 내에서 <code>\jiwonlipsum</code> 명령어를 사용하여 한글로 된 로렘 입숨 텍스트를 생성한다.</p></li>
-</ol>
-<div class="sourceCode" id="cb2" data-code-line-numbers=""><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tlmgr repository add http://ftp.ktug.org/KTUG/texlive/tlnet/ ktug</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tlmgr pinning add ktug <span class="st">"*"</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tlmgr install jiwonlipsum</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">tlmgr.pl:</span> package repositories</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        <span class="ex">main</span> = https://mirror.navercorp.com/CTAN/systems/texlive/tlnet <span class="er">(</span><span class="ex">verified</span><span class="kw">)</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        <span class="ex">ktug</span> = http://ftp.ktug.org/KTUG/texlive/tlnet/ <span class="er">(</span><span class="ex">not</span> verified: pubkey missing<span class="kw">)</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ex">For</span> more about verification, see https://texlive.info/verification.html.</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="ex">[1/1,</span> <span class="pp">??</span>:<span class="pp">??</span>/<span class="pp">??</span>:<span class="pp">??</span>] install: jiwonlipsum @ktug <span class="pp">[</span><span class="ss">245k</span><span class="pp">]</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="ex">running</span> mktexlsr ...</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span> <span class="ex">running</span> mktexlsr.</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="ex">running</span> mtxrun <span class="at">--generate</span> ...</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span> <span class="ex">running</span> mtxrun <span class="at">--generate.</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="ex">tlmgr.pl:</span> package log updated: C:/texlive/2020/texmf-var/web2c/tlmgr.log</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><code>jiwonlipsum</code> 패키지를 사용하여 한글로 된 채우기 텍스트 사례를 보여주는 예제다. 문서형식을 두 칼럼 형식 짧은 보고서(article) 형식으로 지정하고 나서, ‘NanumGothic’ 글꼴을 사용해서 한글을 표현하기 위한 준비를 한다. 제목, 저자, 수정일 정보를 포함한 제목 페이지를 만든 후, <code>jiwonlipsum</code> 패키지를 활용해 한 문단의 요약(abstract)과 ‘들어가며’ 섹션에 채우기 텍스트로 텍스트를 삽입한다.</p>
+</section><section id="국문-참고문헌" class="level3" data-number="14.3.2"><h3 data-number="14.3.2" class="anchored" data-anchor-id="국문-참고문헌">
+<span class="header-section-number">14.3.2</span> 국문 참고문헌</h3>
 <div class="columns">
 <div class="column" style="width:55%;">
-<div class="sourceCode" id="cb3" data-code-line-numbers=""><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>[twocolumn]{<span class="ex">article</span>}</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">fontspec</span>}</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">\setmainfont</span>{NanumGothic} <span class="co">% NanumGothic 글꼴이 설치되어야 함</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">jiwonlipsum</span>}</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">\title</span>{멋진 <span class="fu">\LaTeX</span> 제목 페이지}</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">\author</span>{홍길동}</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">\date</span>{<span class="fu">\today</span>}</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="fu">\maketitle</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">abstract</span>}</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="fu">\jiwon</span>[1]</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">abstract</span>}</span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="kw">\section</span>{들어가며}</span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="fu">\jiwon</span></span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5" data-code-line-numbers=""><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>[twocolumn]{<span class="ex">oblivoir</span>}</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">% 한글 글꼴 적용 ---------------------------</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">fontspec</span>}</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">\setmainfont</span>{NanumGothic} <span class="co">% NanumGothic 글꼴이 설치되어야 함</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co">% 채우기 텍스트 입숨 적용 ------------------</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">jiwonlipsum</span>}</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co">% 참고문헌 설정 ----------------------------</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[backend=bibtex, style=numeric]{<span class="ex">biblatex</span>} <span class="co">% bibtex을 백엔드로 설정</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="fu">\addbibresource</span>{references.bib}</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="co">% 문서의 제목, 저자, 날짜 설정</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="fu">\title</span>{한글 입숨 예제}</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="fu">\author</span>{홍길동}</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="fu">\date</span>{<span class="fu">\today</span>}</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}    </span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\maketitle</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>    <span class="kw">\section</span>{서론}</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>    참고문헌을 연구를 했습니다.~<span class="kw">\cite</span>{<span class="ex">kim2023</span>}</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\jiwon</span>[11] <span class="co">% 첫 번째 로렘 입숨 문단을 생성한다.</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>    <span class="kw">\section</span>{본문}</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>    또 영문 참고문헌 보고서를 연구했습니다.~<span class="kw">\cite</span>{<span class="ex">ipsum2021</span>}</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\jiwon</span>[1] <span class="co">% 두 번째와 세 번째 로렘 입숨 문단을 생성한다.</span></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>    <span class="kw">\section</span>{결론}</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>    마지막 연구했습니다.~<span class="kw">\cite</span>{<span class="ex">lee2021</span>}</span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\jiwon</span>[25] <span class="co">% 네 번째 로렘 입숨 문단을 생성한다.</span></span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\printbibliography</span>[title=참고문헌]</span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:5%;">
 
 </div><div class="column" style="width:40%;">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/pdf_ipsum_kor.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="한글 입숨 2단 문서 사례"><img src="images/pdf_ipsum_kor.jpg" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">한글 입숨 2단 문서 사례</figcaption></figure>
+<figure class="figure"><p><a href="images/pdf_korean_reference.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="한글 참고문헌 사례"><img src="images/pdf_korean_reference.jpg" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">한글 참고문헌 사례</figcaption></figure>
 </div>
 </div>
 </div>
@@ -1487,7 +1619,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom","selector":".lightbox","loop":true});</script>
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","loop":true,"openEffect":"zoom","descPosition":"bottom"});</script>
 
 
 <script src="site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.js" defer="true"></script>
