@@ -2,7 +2,7 @@
 ## 2 단 나누기 (가운데 공백)
 
 :::::{.columns}
-:::{.column width=45%}
+:::{.column width=65%}
 
 :::
 
@@ -10,7 +10,7 @@
 
 :::
 
-:::{.column}
+:::{.column width=30%}
 
 :::
 :::::

@@ -18,6 +18,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -38,7 +72,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.css" rel="stylesheet">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -325,7 +362,17 @@ ul.task-list li input[type="checkbox"] {
 </nav><div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">목차</h2>
+   
+  <ul>
+<li>
+<a href="#lorem-ipsum" id="toc-lorem-ipsum" class="nav-link active" data-scroll-target="#lorem-ipsum"><span class="header-section-number">14.1</span> 로렘 입숨</a>
+  <ul class="collapse">
+<li><a href="#english-lipsum" id="toc-english-lipsum" class="nav-link" data-scroll-target="#english-lipsum"><span class="header-section-number">14.1.1</span> 영문 입숨</a></li>
+  <li><a href="#korean-lipsum" id="toc-korean-lipsum" class="nav-link" data-scroll-target="#korean-lipsum"><span class="header-section-number">14.1.2</span> 한글 입숨</a></li>
+  </ul>
+</li>
+  </ul></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./unicode.html">기본요소</a></li><li class="breadcrumb-item"><a href="./document_class.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">문서 클래스</span></a></li></ol></nav><div class="quarto-title">
@@ -353,24 +400,24 @@ ul.task-list li input[type="checkbox"] {
 </ol>
 <div class="cell">
 <div class="cell-output-display">
-<div id="bmkvnarunz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="utbxwbmaca" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-#bmkvnarunz table {
+#utbxwbmaca table {
   font-family: Roboto, system-ui, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#bmkvnarunz thead, #bmkvnarunz tbody, #bmkvnarunz tfoot, #bmkvnarunz tr, #bmkvnarunz td, #bmkvnarunz th {
+#utbxwbmaca thead, #utbxwbmaca tbody, #utbxwbmaca tfoot, #utbxwbmaca tr, #utbxwbmaca td, #utbxwbmaca th {
   border-style: none;
 }
 
-#bmkvnarunz p {
+#utbxwbmaca p {
   margin: 0;
   padding: 0;
 }
 
-#bmkvnarunz .gt_table {
+#utbxwbmaca .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -396,12 +443,12 @@ ul.task-list li input[type="checkbox"] {
   border-left-color: #D3D3D3;
 }
 
-#bmkvnarunz .gt_caption {
+#utbxwbmaca .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#bmkvnarunz .gt_title {
+#utbxwbmaca .gt_title {
   color: #333333;
   font-size: 12px;
   font-weight: bold;
@@ -413,7 +460,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-width: 0;
 }
 
-#bmkvnarunz .gt_subtitle {
+#utbxwbmaca .gt_subtitle {
   color: #333333;
   font-size: 16px;
   font-weight: initial;
@@ -425,7 +472,7 @@ ul.task-list li input[type="checkbox"] {
   border-top-width: 0;
 }
 
-#bmkvnarunz .gt_heading {
+#utbxwbmaca .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -437,13 +484,13 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#bmkvnarunz .gt_bottom_border {
+#utbxwbmaca .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#bmkvnarunz .gt_col_headings {
+#utbxwbmaca .gt_col_headings {
   border-top-style: solid;
   border-top-width: 3px;
   border-top-color: rgba(255, 255, 255, 0);
@@ -458,7 +505,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#bmkvnarunz .gt_col_heading {
+#utbxwbmaca .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 80%;
@@ -478,7 +525,7 @@ ul.task-list li input[type="checkbox"] {
   overflow-x: hidden;
 }
 
-#bmkvnarunz .gt_column_spanner_outer {
+#utbxwbmaca .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 80%;
@@ -490,15 +537,15 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 4px;
 }
 
-#bmkvnarunz .gt_column_spanner_outer:first-child {
+#utbxwbmaca .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#bmkvnarunz .gt_column_spanner_outer:last-child {
+#utbxwbmaca .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#bmkvnarunz .gt_column_spanner {
+#utbxwbmaca .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 3px;
   border-bottom-color: rgba(255, 255, 255, 0);
@@ -510,11 +557,11 @@ ul.task-list li input[type="checkbox"] {
   width: 100%;
 }
 
-#bmkvnarunz .gt_spanner_row {
+#utbxwbmaca .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#bmkvnarunz .gt_group_heading {
+#utbxwbmaca .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -540,7 +587,7 @@ ul.task-list li input[type="checkbox"] {
   text-align: left;
 }
 
-#bmkvnarunz .gt_empty_group_heading {
+#utbxwbmaca .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -555,15 +602,15 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 
-#bmkvnarunz .gt_from_md > :first-child {
+#utbxwbmaca .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#bmkvnarunz .gt_from_md > :last-child {
+#utbxwbmaca .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#bmkvnarunz .gt_row {
+#utbxwbmaca .gt_row {
   padding-top: 6px;
   padding-bottom: 6px;
   padding-left: 5px;
@@ -582,7 +629,7 @@ ul.task-list li input[type="checkbox"] {
   overflow-x: hidden;
 }
 
-#bmkvnarunz .gt_stub {
+#utbxwbmaca .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 80%;
@@ -595,7 +642,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#bmkvnarunz .gt_stub_row_group {
+#utbxwbmaca .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -609,15 +656,15 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: top;
 }
 
-#bmkvnarunz .gt_row_group_first td {
+#utbxwbmaca .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#bmkvnarunz .gt_row_group_first th {
+#utbxwbmaca .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#bmkvnarunz .gt_summary_row {
+#utbxwbmaca .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -627,16 +674,16 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#bmkvnarunz .gt_first_summary_row {
+#utbxwbmaca .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#bmkvnarunz .gt_first_summary_row.thick {
+#utbxwbmaca .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#bmkvnarunz .gt_last_summary_row {
+#utbxwbmaca .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -646,7 +693,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#bmkvnarunz .gt_grand_summary_row {
+#utbxwbmaca .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -656,7 +703,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#bmkvnarunz .gt_first_grand_summary_row {
+#utbxwbmaca .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -666,7 +713,7 @@ ul.task-list li input[type="checkbox"] {
   border-top-color: #D3D3D3;
 }
 
-#bmkvnarunz .gt_last_grand_summary_row_top {
+#utbxwbmaca .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -676,11 +723,11 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#bmkvnarunz .gt_striped {
+#utbxwbmaca .gt_striped {
   background-color: #F5F5F5;
 }
 
-#bmkvnarunz .gt_table_body {
+#utbxwbmaca .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -689,7 +736,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#bmkvnarunz .gt_footnotes {
+#utbxwbmaca .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -703,7 +750,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#bmkvnarunz .gt_footnote {
+#utbxwbmaca .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -712,7 +759,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#bmkvnarunz .gt_sourcenotes {
+#utbxwbmaca .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -726,7 +773,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#bmkvnarunz .gt_sourcenote {
+#utbxwbmaca .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -734,63 +781,63 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#bmkvnarunz .gt_left {
+#utbxwbmaca .gt_left {
   text-align: left;
 }
 
-#bmkvnarunz .gt_center {
+#utbxwbmaca .gt_center {
   text-align: center;
 }
 
-#bmkvnarunz .gt_right {
+#utbxwbmaca .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#bmkvnarunz .gt_font_normal {
+#utbxwbmaca .gt_font_normal {
   font-weight: normal;
 }
 
-#bmkvnarunz .gt_font_bold {
+#utbxwbmaca .gt_font_bold {
   font-weight: bold;
 }
 
-#bmkvnarunz .gt_font_italic {
+#utbxwbmaca .gt_font_italic {
   font-style: italic;
 }
 
-#bmkvnarunz .gt_super {
+#utbxwbmaca .gt_super {
   font-size: 65%;
 }
 
-#bmkvnarunz .gt_footnote_marks {
+#utbxwbmaca .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#bmkvnarunz .gt_asterisk {
+#utbxwbmaca .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#bmkvnarunz .gt_indent_1 {
+#utbxwbmaca .gt_indent_1 {
   text-indent: 5px;
 }
 
-#bmkvnarunz .gt_indent_2 {
+#utbxwbmaca .gt_indent_2 {
   text-indent: 10px;
 }
 
-#bmkvnarunz .gt_indent_3 {
+#utbxwbmaca .gt_indent_3 {
   text-indent: 15px;
 }
 
-#bmkvnarunz .gt_indent_4 {
+#utbxwbmaca .gt_indent_4 {
   text-indent: 20px;
 }
 
-#bmkvnarunz .gt_indent_5 {
+#utbxwbmaca .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -995,10 +1042,124 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
+<section id="lorem-ipsum" class="level2" data-number="14.1"><h2 data-number="14.1" class="anchored" data-anchor-id="lorem-ipsum">
+<span class="header-section-number">14.1</span> 로렘 입숨</h2>
+<p>로렘 입숨(Lorem Ipsum, 줄여서 립숨, lipsum)은 출판과 그래픽 디자인 분야에서 널리 사용되는 <strong>채우기 텍스트(dummy text)</strong>로 글꼴, 타이포그래피, 레이아웃과 같은 그래픽 요소나 시각적 연출을 검토하고 싶을 때 유용하게 쓰인다. 로렘 입숨은 최종 결과물에 들어갈 실제 텍스트가 아직 준비되지 않았을 때, 기계적으로 디자인 전반적인 느낌을 파악하기 위한 임시 채움 글로 활용된다.</p>
+<p>사람들은 텍스트가 보일 경우 그 내용에 집중하는 경향 때문에 로렘 입숨이 특히 진가를 발휘한다. 전형적인 로렘 입숨 텍스트는 라틴어 문장의 일부를 변형한 “Lorem ipsum dolor sit amet, consectetur adipiscing elit…”와 같은 형태로 시작된다. 디자인의 ‘보이는’ 부분을 검토할 때 방해가 되지 않는 중립적인 내용을 제공하여 디자인이나 서체 특성을 강조하고자 할 때, 로렘 입숨을 사용하면 사람들이 디자인 자체에 더 집중할 수 있게 되어, 출판사나 디자이너가 인쇄출판 시각적 요소에만 초점을 맞출 때 매우 유용하다. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+로렘 입숨 (영문) 사례
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+</div>
+<section id="english-lipsum" class="level3" data-number="14.1.1"><h3 data-number="14.1.1" class="anchored" data-anchor-id="english-lipsum">
+<span class="header-section-number">14.1.1</span> 영문 입숨</h3>
+<p>영문 입숨 <span class="math inline">\(\LaTeX\)</span> 패키지로 <code>lipsum</code>, <code>blindtext</code>, <code>kantlipsum</code>, <code>mwe</code> 등이 있다. <code>lipsum</code> 패키지는 로렘 입숨(Lorem Ipsum) 텍스트를 쉽게 생성할 수 있어서 가장 널리 사용되는 텍스트 채우기 패키지 중 하나다. 특히, 문단 수를 지정할 수 있는 기능이 있어서 문서의 길이나 복잡성에 따라 유연하게 적용할 수 있다. 예를 들어, <code>\lipsum[1-5]</code> 명령어를 사용하면 5개의 로렘 입숨 문단을 생성한다.</p>
+<div class="columns">
+<div class="column" style="width:55%;">
+<div class="sourceCode" id="cb1" data-code-line-numbers=""><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>[twocolumn]{<span class="ex">article</span>}</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">lipsum</span>} <span class="co">% lipsum 패키지 불러오기</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">\title</span>{Two-Sided Lipsum Example}</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">\author</span>{Example Author}</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">\date</span>{<span class="fu">\today</span>}</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">\maketitle</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="kw">\section</span>{Introduction}</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">\lipsum</span>[1] <span class="co">% 첫 번째 로렘 입숨 문단 생성</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="kw">\section</span>{Main Body}</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">\lipsum</span>[2-3] <span class="co">% 2~3 번째 로렘 입숨 문단 생성</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="kw">\section</span>{Conclusion}</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">\lipsum</span>[4] <span class="co">% 4번째 로렘 입숨 문단 생성</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/pdf_ipsum_eng.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="영문 입숨 2단 문서 사례"><img src="images/pdf_ipsum_eng.jpg" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">영문 입숨 2단 문서 사례</figcaption></figure>
+</div>
+</div>
+</div>
+</section><section id="korean-lipsum" class="level3" data-number="14.1.2"><h3 data-number="14.1.2" class="anchored" data-anchor-id="korean-lipsum">
+<span class="header-section-number">14.1.2</span> 한글 입숨</h3>
+<p><a href="http://wiki.ktug.org/wiki/wiki.php/jiwonlipsum"><code>jiwonlipsum</code></a> 패키지는 라틴 계열 문자를 위한 <code>lipsum</code> 패키지와 동일한 목표를 갖지만, 한글 및 한자에 특화된 글꼴, 레이아웃 등 타이포그래피의 요소를 예제로 채우기 텍스트(dummy text)를 생성하는 패키지로 김강수님이 제작했다. <code>jiwonlipsum</code> 팩키지는 <a href="http://wiki.ktug.org/wiki/wiki.php/KtugPrivateRepository">KTUG Private Repository</a>에 저장되어 있어 이를 설치한 후 한글 lipsum을 사용할 수 있다. <code>jiwonlipsum</code> 팩키지가 저장된 <a href="http://wiki.ktug.org/wiki/wiki.php/KtugPrivateRepository">KTUG Private Repository</a> 저장소를 활용하는 방식은 다음과 같다.</p>
+<ol type="1">
+<li><p><strong>저장소 추가</strong>: TeX Live 또는 MiKTeX의 패키지 관리자에서 KTUG Private Repository를 추가한다.</p></li>
+<li><p><strong>패키지 설치</strong>: 패키지 관리자를 통해 <code>jiwonlipsum</code> 패키지를 검색하고 설치한다.</p></li>
+<li><p><strong>LaTeX 문서에 적용</strong>: 설치가 완료되면, LaTeX 문서의 preamble(서문) 부분에 <code>\usepackage{jiwonlipsum}</code>을 추가한다.</p></li>
+<li><p><strong>텍스트 생성</strong>: 문서 내에서 <code>\jiwonlipsum</code> 명령어를 사용하여 한글로 된 로렘 입숨 텍스트를 생성한다.</p></li>
+</ol>
+<div class="sourceCode" id="cb2" data-code-line-numbers=""><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tlmgr repository add http://ftp.ktug.org/KTUG/texlive/tlnet/ ktug</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tlmgr pinning add ktug <span class="st">"*"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tlmgr install jiwonlipsum</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">tlmgr.pl:</span> package repositories</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        <span class="ex">main</span> = https://mirror.navercorp.com/CTAN/systems/texlive/tlnet <span class="er">(</span><span class="ex">verified</span><span class="kw">)</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        <span class="ex">ktug</span> = http://ftp.ktug.org/KTUG/texlive/tlnet/ <span class="er">(</span><span class="ex">not</span> verified: pubkey missing<span class="kw">)</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ex">For</span> more about verification, see https://texlive.info/verification.html.</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="ex">[1/1,</span> <span class="pp">??</span>:<span class="pp">??</span>/<span class="pp">??</span>:<span class="pp">??</span>] install: jiwonlipsum @ktug <span class="pp">[</span><span class="ss">245k</span><span class="pp">]</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="ex">running</span> mktexlsr ...</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span> <span class="ex">running</span> mktexlsr.</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="ex">running</span> mtxrun <span class="at">--generate</span> ...</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span> <span class="ex">running</span> mtxrun <span class="at">--generate.</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="ex">tlmgr.pl:</span> package log updated: C:/texlive/2020/texmf-var/web2c/tlmgr.log</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>jiwonlipsum</code> 패키지를 사용하여 한글로 된 채우기 텍스트 사례를 보여주는 예제다. 문서형식을 두 칼럼 형식 짧은 보고서(article) 형식으로 지정하고 나서, ‘NanumGothic’ 글꼴을 사용해서 한글을 표현하기 위한 준비를 한다. 제목, 저자, 수정일 정보를 포함한 제목 페이지를 만든 후, <code>jiwonlipsum</code> 패키지를 활용해 한 문단의 요약(abstract)과 ‘들어가며’ 섹션에 채우기 텍스트로 텍스트를 삽입한다.</p>
+<div class="columns">
+<div class="column" style="width:55%;">
+<div class="sourceCode" id="cb3" data-code-line-numbers=""><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>[twocolumn]{<span class="ex">article</span>}</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">fontspec</span>}</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">\setmainfont</span>{NanumGothic} <span class="co">% NanumGothic 글꼴이 설치되어야 함</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">jiwonlipsum</span>}</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">\title</span>{멋진 <span class="fu">\LaTeX</span> 제목 페이지}</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">\author</span>{홍길동}</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">\date</span>{<span class="fu">\today</span>}</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="fu">\maketitle</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">abstract</span>}</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="fu">\jiwon</span>[1]</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">abstract</span>}</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="kw">\section</span>{들어가며}</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="fu">\jiwon</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/pdf_ipsum_kor.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="한글 입숨 2단 문서 사례"><img src="images/pdf_ipsum_kor.jpg" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">한글 입숨 2단 문서 사례</figcaption></figure>
+</div>
+</div>
+</div>
 
 
-
-</main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></section><aside id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><hr>
+<ol>
+<li id="fn1"><p><a href="https://ko.wikipedia.org/wiki/%EB%A1%9C%EB%A0%98_%EC%9E%85%EC%88%A8">위키백과, “로렘 입숨”</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol></aside></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1326,7 +1487,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom","selector":".lightbox","loop":true});</script>
 
 
 <script src="site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.js" defer="true"></script>
