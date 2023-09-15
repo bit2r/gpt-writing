@@ -210,8 +210,89 @@ latex_tbl |>
 
 
 
+### 짧은 보고서
+
+짧은 보고서는 `article` 문서 클래스(`documentclass`)로 다음과 같은 구문을 갇고 컴파일하게 되면 짧은 보고서 문서형식을 갖는 PDF 파일을 얻게 된다.
 
 
+```{r}
+#| echo: false
+library(magick)
+library(tidyverse)
+
+article_pdf <- magick::image_read_pdf("data/class_article.pdf")
+
+article_pdf |> 
+  image_resize(geometry = "800x") |> 
+  image_append(stack=FALSE)
+
+```
+
+
+### 보고서
+
+보고서는 `report` 문서 클래스(`documentclass`)로 다음과 같은 구문을 갇고 컴파일하게 되면 보고서 문서형식을 갖는 PDF 파일을 얻게 된다.
+
+
+```{r}
+#| echo: false
+
+report_pdf <- magick::image_read_pdf("data/class_report.pdf")
+
+report_front_pdf <- report_pdf[1:4]
+report_back_pdf <- report_pdf[5:7]
+
+report_front_stack <- report_front_pdf |> 
+  image_resize(geometry = "800x") |> 
+  image_append(stack=FALSE)
+
+report_back_stack <- report_back_pdf |> 
+  image_resize(geometry = "800x") |> 
+  image_append(stack=FALSE)
+
+image_append(c(report_front_stack, report_back_stack), stack=TRUE)
+
+```
+
+### 책
+
+책은 `book` 문서 클래스(`documentclass`)로 다음과 같은 구문을 갇고 컴파일하게 되면 보고서 문서형식을 갖는 PDF 파일을 얻게 된다.
+
+
+```{r}
+#| echo: false
+
+book_pdf <- magick::image_read_pdf("data/class_book.pdf")
+
+book_front_pdf <- book_pdf[1:12]
+book_back_pdf <- book_pdf[13:24]
+
+book_front_stack <- book_front_pdf |> 
+  image_resize(geometry = "800x") |> 
+  image_append(stack=FALSE)
+
+book_back_stack <- book_back_pdf |> 
+  image_resize(geometry = "800x") |> 
+  image_append(stack=FALSE)
+
+image_append(c(book_front_stack, book_back_stack), stack=TRUE)
+```
+
+
+### 한글문서 클래스
+
+`oblivoir` 문서 클래스(`documentclass`)는 한글 문서 특성을 잘 반영하여 개발되었다. 다음과 같은 구문을 갇고 컴파일하게 되면 한글 문서형식을 갖는 PDF 파일을 얻게 된다.
+
+
+```{r}
+#| echo: false
+
+hangul_pdf <- magick::image_read_pdf("data/class_oblivoir.pdf")
+
+hangul_pdf |> 
+  image_resize(geometry = "800x") |> 
+  image_append(stack=FALSE)
+```
 
 
 
