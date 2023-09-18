@@ -4,6 +4,12 @@ editor_options:
   chunk_output_type: console
 ---
 
+```{r}
+#| include: false
+
+source("_common.R")
+```
+
 
 # 책과 편집 용어
 

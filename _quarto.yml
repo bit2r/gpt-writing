@@ -34,33 +34,33 @@ book:
         - markdown_03_advanced.qmd   # OK
         - writing.qmd                # OK
 
-    # - part: "기본요소"
-    #   chapters:
-        # - unicode.qmd
-        # - components.qmd             # OK
-        # - fonts.qmd
-        # - colors.qmd
-        # - document_class.qmd
-    #
-    # - part: "템플릿과 테마"
-    #   chapters:
-    #     - themes_ggplot.qmd
-    #     - themes_gt.qmd
-    #     - templates.qmd
-    #
-    # - part: "디지털 글쓰기"
-    #   chapters:
-    #     - whole_game.qmd
-    #     - dw_pdf.qmd
-    #     - dw_website.qmd  # 헬로월드만 제작
-    #     - dw_slideshow.qmd
-    #     - dw_blog.qmd
-    #     - dw_dashboard.qmd
-#
-#     - part: "실무"
-#       chapters:
-#         - publishing.qmd
-#         - about_book.qmd
+    - part: "기본요소"
+      chapters:
+        - unicode.qmd                # OK
+        - components.qmd             # OK
+        - fonts.qmd                  # OK
+        - colors.qmd                 # OK
+        - document_class.qmd         # OK
+
+    - part: "템플릿과 테마"
+      chapters:
+        - themes_ggplot.qmd          # OK
+        - themes_gt.qmd              # OK
+        - templates.qmd              # OK
+
+    - part: "디지털 글쓰기"
+      chapters:
+        - whole_game.qmd          # OK
+        - dw_pdf.qmd              # OK
+        - dw_website.qmd          # OK
+        - dw_slideshow.qmd        # OK
+        - dw_blog.qmd             # OK
+        - dw_dashboard.qmd        # OK
+
+    - part: "실무"
+      chapters:
+        - publishing.qmd          # OK
+        - about_book.qmd          # OK
 
     - references.qmd
 

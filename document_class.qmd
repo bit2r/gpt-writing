@@ -23,7 +23,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 
 ### 영문 입숨 {#english-lipsum}
 
-영문 입숨 $\LaTeX$ 패키지로 `lipsum`, `blindtext`, `kantlipsum`, `mwe` 등이 있다. 
+영문 입숨 [\LaTeX](http://example.org) 패키지로 `lipsum`, `blindtext`, `kantlipsum`, `mwe` 등이 있다. 
 `lipsum` 패키지는 로렘 입숨(Lorem Ipsum) 텍스트를 쉽게 생성할 수 있어서 가장 널리 사용되는 텍스트 채우기 패키지 중 하나다. 특히, 문단 수를 지정할 수 있는 기능이 있어서 문서의 길이나 복잡성에 따라 유연하게 적용할 수 있다. 예를 들어, `\lipsum[1-5]` 명령어를 사용하면 5개의 로렘 입숨 문단을 생성한다.
 
 :::::{.columns}
@@ -145,7 +145,7 @@ tlmgr.pl: package log updated: C:/texlive/2020/texmf-var/web2c/tlmgr.log
 
 ## 문서 클래스
 
-$\LaTeX$ 문서 클래스(document class)로 `article`, `report`, `book` 이 기본으로 제공되는 문서 클래스다. KOMA-Script는 또다른 $\LaTeX$ 패키지 모음으로 기본 $\LaTeX$ 문서 클래스(`article`, `report`, `book` 등) 확장 버전으로, 주로 유럽에서 널리 사용되며, 유럽의 타이포그래피와 문서 규격에 더 적합하게 설계되었다.
+[\LaTeX](http://example.org) 문서 클래스(document class)로 `article`, `report`, `book` 이 기본으로 제공되는 문서 클래스다. KOMA-Script는 또다른 [\LaTeX](http://example.org) 패키지 모음으로 기본 [\LaTeX](http://example.org) 문서 클래스(`article`, `report`, `book` 등) 확장 버전으로, 주로 유럽에서 널리 사용되며, 유럽의 타이포그래피와 문서 규격에 더 적합하게 설계되었다.
 
 1. `scrartcl`: `article` 문서 클래스 확장이며, 과학 학술지, 프리젠테이션, 짧은 보고서, 프로그램 문서, 초대장 등에 쓰이며 1~30페이지 정도 분량을 갖는 문서 작성에 좋다. 추가적인 사용자 설정 옵션과 유럽 스타일 레이아웃을 지원한다.
 

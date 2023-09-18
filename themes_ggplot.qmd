@@ -7,6 +7,8 @@
 
 
 ```{r}
+#| label: ggplot_base
+
 library(tidyverse)
 library(palmerpenguins)
 
@@ -34,6 +36,8 @@ base_penguins_gg
 다양한 테마를 `draw_themes()` 함수에 인자로 넘기기 위해 `themes_name`과 `themes_vector`에 테마명과 테마 함수를 저장장 한 후  `map2()` 함수로 테마를 달리한 `ggplot` 그래프를 저장한다. 마지막으로, `patchwork::wrap_plots()` 함수를 사용하여 모든 그래프를 결합하여 하나의 그래프로 출력한다.
 
 ```{r}
+#| label: ggplot_theme
+
 draw_themes <- function(theme_name, theme_choice) {
   penguins |> 
     ggplot(aes(x = flipper_length_mm, y = body_mass_g)) +
@@ -71,6 +75,9 @@ patchwork::wrap_plots(theme_output)
 밥 루디스가 제작한 `hrbrthemes` 테마 패키지는 특히 텍스트가 많은 비즈니스 유형의 프레젠테이션에 적합한 테마와 테마 구성 요소를 제공한다.
 
 ```{r}
+#| label: ggplot_hrbrtheme
+#| eval: false
+
 library(hrbrthemes)
 
 hrbr_themes_name <- c("theme_ipsum", "theme_ipsum_ps", "theme_ipsum_es", "theme_ipsum_rc", "theme_ipsum_ps", "theme_ipsum_pub", "theme_ipsum_tw", "theme_modern_rc", "theme_ft_rc")
@@ -79,8 +86,12 @@ hrbr_themes_vector <- c(theme_ipsum, theme_ipsum_ps, theme_ipsum_es, theme_ipsum
 
 hrbr_theme_output <- map2(hrbr_themes_name, hrbr_themes_vector, draw_themes)
 
-patchwork::wrap_plots(hrbr_theme_output)
+hrbrtheme_gg <- patchwork::wrap_plots(hrbr_theme_output)
+
+ggsave("images/hrbrtheme_gg.png")
 ```
+
+![](images/hrbrtheme_gg.png)
 
 
 ### `ggthemes`
@@ -88,6 +99,8 @@ patchwork::wrap_plots(hrbr_theme_output)
 제프리 아놀드(Jeffrey Arnold)가 제작한 `ggthemes` 테마 패키지는 소프트웨어, 데이터 시각화 선구자 및 다양한 곳에서 영감을 얻은 다양한 테마를 제공한다.
 
 ```{r}
+#| label: ggplot_ggthemes
+
 library(ggthemes)
 
 ggthemes_name <- c("theme_base()","theme_calc()","theme_clean()","theme_economist()", "theme_economist_white()","theme_excel()","theme_excel_new()","theme_few()","theme_fivethirtyeight()","theme_foundation()","theme_gdocs()","theme_hc()","theme_igray()","theme_map()","theme_pander()","theme_solarized_2()","theme_solid()","theme_stata()","theme_tufte()","theme_wsj()")
@@ -105,6 +118,8 @@ patchwork::wrap_plots(ggtheme_output)
 웨스 앤더슨(Wes Anderson) 영화의 독특하고 눈에 띄는 스타일을 기반으로 한 색상 팔레트를 제공하는 패키지다.
 
 ```{r}
+#| label: ggplot_wesanderson
+
 library(wesanderson)
 
 draw_wesanderson <- function(palette_name, wesanderson_palette ="Darjeeling1") {
@@ -136,6 +151,9 @@ patchwork::wrap_plots(wes_theme_output)
 색상은 `wesanderson` 패키지에서 `Darjeeling1` 5가지 색상을 사용하여 시각화한다.
 
 ```{r}
+#| label: ggplot_penguins
+#| eval: false
+
 extrafont::loadfonts("win")
 
 theme_penguin <- function() {
@@ -157,7 +175,7 @@ theme_penguin <- function() {
 
 darjeeling1_palette <- wes_palette("Darjeeling1", n = 5)
 
-penguins |> 
+ggplot_penguins_gg <- penguins |> 
   ggplot(aes(x = flipper_length_mm, y = body_mass_g)) +
     geom_point(aes(color = species, shape = species), size = 3) +
     geom_smooth(method = "lm", se = FALSE, color = "black")  +
@@ -172,8 +190,14 @@ penguins |>
   guides(shape = "none") +
   scale_color_manual(values =  darjeeling1_palette) +
   theme_penguin()
+
+ggplot_penguins_gg
+
+ggsave("images/ggplot_penguins_gg.png")
 ```
 
+
+![](images/ggplot_penguins_gg.png)
 
 ## 그래프 자동 설정
 

@@ -54,8 +54,8 @@ hex_tbl <- hex_raw %>%
   pivot_wider(names_from = hex, values_from = decimal)
   
 hex_tbl %>% 
-  kableExtra::kbl("html") %>% 
-  kableExtra::kable_styling()
+  kableExtra::kbl() %>% 
+  kableExtra::kable_styling( latex_options = c("striped", "hold_position", "repeat_header"))
 
 ```
 
@@ -77,8 +77,8 @@ rgb_tbl <- tibble(색상 = c("blue", "green", "red"),
                   파란색 = c(255, 0, 0))
 
 rgb_tbl %>% 
-  kableExtra::kbl("html") %>% 
-  kableExtra::kable_styling()
+  kableExtra::kbl() %>% 
+  kableExtra::kable_styling( latex_options = c("striped", "hold_position", "repeat_header"))
 ```
 
 
@@ -95,8 +95,8 @@ bw_tbl <- tibble(색상 = c("white, gray100", "gray67",
                   파란색 = j_intensity)
 
 bw_tbl %>% 
-  kableExtra::kbl("html") %>% 
-  kableExtra::kable_styling()
+  kableExtra::kbl() %>% 
+  kableExtra::kable_styling( latex_options = c("striped", "hold_position", "repeat_header"))
 ```
 
 "gray" 회색으로 치환하게 되면, "gray"를 보게되는 어느 곳에서나 동일한 결과를 얻게 됨에 주목한다.
@@ -196,8 +196,9 @@ RGB 생상과 CMYK 생상을 PDF 파일로 찍어 상호 비교해보자. [^rgb-
 
 [^rgb-cmyk-comp]: [One Tipe Per Day, "draw figures in CMYK mode in R"](http://onetipperday.sterding.com/2012/10/draw-figures-in-cmyk-mode-in-r.html)
 
-<div class = "row">
-  <div class = "col-md-6">
+::::: columns
+::: column
+
 **RGB 색상 출력**
 
 ```{r color-rgb, eval = FALSE}
@@ -209,8 +210,10 @@ dev.off()
 
 ![](data/color_rgb.pdf){#id .class height="300px" width="300px"}
 
-  </div>
-  <div class = "col-md-6">
+:::
+
+::: column
+
 **CMYK 색상 출력**
 
 ```{r color-cmyk, eval = FALSE}
@@ -221,9 +224,8 @@ dev.off()
 
 ![](data/color_cmyk.pdf){#id .class height="300px" width="300px"}
 
-  </div>
-</div>
-
+:::
+:::::
 
 ## `RColorBrewer` 와 `viridis` {#dataviz-color-brewer-viridis}
 
@@ -261,14 +263,13 @@ display.brewer.pal(n = 8, name = 'Dark2')
 `viridis` 팩키지로 인해 R에 4가지 신규 팔레트가 추가되었다. [CRAN](https://cran.r-project.org/web/packages/viridis/index.html)과,
 [GitHub](https://github.com/sjmgarnier/viridis)에서 팩키지를 만날 수 있다.
 
-<style>
-div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 10px;}
-</style>
-<div class = "blue">
+
+
+:::{.callout-note}
 
 `viridis` 색상표는 완벽하게 균등하게 지각되도록 설계되었고, 정규형식에서나 흑백으로 전환되었을 때도 마찬가지다. 또한 색망을 갖는 독자도 올바르게 지각될 수 있도록 설계되었다.
 
-</div>
+:::
 
 
 아직 나온지 얼마되지 않아서, 자세한 사항은 `viridis` 팩키지를 설치하고 [소품문](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html_document)을
@@ -474,6 +475,8 @@ flag_image_gg <- ggplot() +
 태극기에서 추출한 색상을 바탕으로 막대그래프에 색상을 입혀 시각화한다.
 
 ```{r}
+#| label: color_penguins
+
 flag_penguin_gg <- penguins |> 
   count(island) |> 
   mutate(island = if_else(island ==  "Torgersen", NA_character_, island)) |> 
@@ -486,6 +489,7 @@ flag_penguin_gg <- penguins |>
 태극기, 태극기 색상, 막대그래프 시각화를 한번에 요약하여 시각화한다.
 
 ```{r}
+#| eval: true
 library(patchwork)
 
 print((flag_image_gg + flag_colors_gg) / flag_penguin_gg)

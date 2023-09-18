@@ -36,24 +36,24 @@ $ quarto --version
 1.3.450
 ```
 
-### $\LaTeX$ 설치
+### [\LaTeX](http://example.org) 설치
 
-$Tiny\TeX$은 `TeX Live`를 기반으로 한 경량, 이식성 좋고, 사용하기 쉬운
-$\LaTeX$ 배포판으로 $\LaTeX$ 설치와 관련된 일반적인 불편함을 해결하기
+`TinyTeX`은 `TeX Live`를 기반으로 한 경량, 이식성 좋고, 사용하기 쉬운
+[\LaTeX](http://example.org) 배포판으로 [\LaTeX](http://example.org) 설치와 관련된 일반적인 불편함을 해결하기
 위해 만들어졌고, 특히 "이휘 쉬에(Yihui Xie)"가 개발하여 R과 R 마크다운
 통합이 잘 되어 있다.
 
-다른 $\LaTeX$ 배포판들이 수 기가바이트(GB)의 크기를 갖지만, $Tiny\TeX$은
+다른 [\LaTeX](http://example.org) 배포판들이 수 기가바이트(GB)의 크기를 갖지만, `TinyTeX`은
 설치 크기가 작고 간단한 설치 과정을 제공으로 쉽지만 미려한 문서를 원하는
-사용자들에게 인기가 많다. 특히, R과의 통합도 잘 이루어져 있어, $\LaTeX$
-문서를 컴파일할 때 누락된 $\LaTeX$ 패키지도 자동으로 설치해주는 기능이
+사용자들에게 인기가 많다. 특히, R과의 통합도 잘 이루어져 있어, [\LaTeX](http://example.org)
+문서를 컴파일할 때 누락된 [\LaTeX](http://example.org) 패키지도 자동으로 설치해주는 기능이
 많은 사랑을 받고 있다.
 
 보통 TexLive에 기반을 둔 `tinytex` 를 사용하는데 한글을 사용하는
 입장에서는 `kotex`를 설치하는 방법도 모색이 필요하다. 유니코드 문자를
 처리하기 위해서 `xelatex`을 쿼토 $LaTeX$ 기본엔진으로 지정하면 `xelatex`을 통해 CJK 문자가 포함된 PDF 파일 제작이 가능하다.
 
-쿼토를 설치하면 `quarto install tinytex` 명령어로 $Tiny\TeX$을 쉽게
+쿼토를 설치하면 `quarto install tinytex` 명령어로 `TinyTeX`을 쉽게
 설치할 수 있고, 설치 정보는 `quarto tools info tinytex`으로 파악이
 가능하다.
 
@@ -81,8 +81,8 @@ $ quarto tools info tinytex
 ```
 
 
-`kotex` 패키지 주요 장점 중 하나는 한글 관련 문제를 해결할 수 있는 다양한 $\LaTeX$ 패키지와 기본 한글 글꼴을 내장하고 있어 한글 문서 작성이 훨씬 편리하다. 
-하지만, `tinytex`를 기본 $\LaTeX$ 엔진으로 사용할 경우, 누락된 패키지로 인해 추가 작업이 어려울 수 있다. 이러한 문제를 해결하기 위해 `tinytex::parse_install()` 함수를 사용하면, 오류가 발생한 텍스트를 붙여넣을 때 자동으로 필요한 패키지를 설치해 준다. 설치과정에서 오류 사항이 담긴 `.log` 파일을 `tinytex::parse_install()` 함수에 인자로 넣어주면, 
+`kotex` 패키지 주요 장점 중 하나는 한글 관련 문제를 해결할 수 있는 다양한 [\LaTeX](http://example.org) 패키지와 기본 한글 글꼴을 내장하고 있어 한글 문서 작성이 훨씬 편리하다. 
+하지만, `tinytex`를 기본 [\LaTeX](http://example.org) 엔진으로 사용할 경우, 누락된 패키지로 인해 추가 작업이 어려울 수 있다. 이러한 문제를 해결하기 위해 `tinytex::parse_install()` 함수를 사용하면, 오류가 발생한 텍스트를 붙여넣을 때 자동으로 필요한 패키지를 설치해 준다. 설치과정에서 오류 사항이 담긴 `.log` 파일을 `tinytex::parse_install()` 함수에 인자로 넣어주면, 
 자동으로 필요한 패키지를 설치해 준다.
 
 ```{r}
@@ -99,8 +99,8 @@ tinytex::parse_install(
 
 ## 헬로월드
 
-기본적인 $\LaTeX$ 문서 구조에 표, 수식, 다이어그램, 주석을 추가한 
-$\LaTeX$ 기본 문서를 작성한다.
+기본적인 [\LaTeX](http://example.org) 문서 구조에 표, 수식, 다이어그램, 주석을 추가한 
+[\LaTeX](http://example.org) 기본 문서를 작성한다.
 
 ```tex
 \documentclass{article}  % 문서 클래스 지정. article은 학술 논문, 보고서 등에 적합하다.
@@ -151,11 +151,11 @@ Here is a simple diagram:
 \end{document}  % 문서의 본문 종료
 ```
 
-RStudio로 $\LaTeX$을 이용해 PDF 문서를 생성할 때, 먼저 새로운 `.tex` 문서를 생성하고 표, 수식, 다이어그램, 주석이 포함된 $\LaTeX$ 코드를 복사-붙여넣는다.  RStudio의 `Compile PDF` 버튼을 클릭하여 컴파하고, 완료되면 PDF 문서가 자동으로 열린다. 
+RStudio로 [\LaTeX](http://example.org)을 이용해 PDF 문서를 생성할 때, 먼저 새로운 `.tex` 문서를 생성하고 표, 수식, 다이어그램, 주석이 포함된 [\LaTeX](http://example.org) 코드를 복사-붙여넣는다.  RStudio의 `Compile PDF` 버튼을 클릭하여 컴파하고, 완료되면 PDF 문서가 자동으로 열린다. 
 
 :::::{.columns}
 :::{.column width=65%}
-![$\LaTeX$ 문서 컴파일](images/pdf_english_rstudio.jpg)
+![[\LaTeX](http://example.org) 문서 컴파일](images/pdf_english_rstudio.jpg)
 :::
 
 :::{.column width=5%}
@@ -163,7 +163,7 @@ RStudio로 $\LaTeX$을 이용해 PDF 문서를 생성할 때, 먼저 새로운 `
 :::
 
 :::{.column width=30%}
-![$\LaTeX$ 헬로월드 기본 문서](images/pdf_english.jpg)
+![[\LaTeX](http://example.org) 헬로월드 기본 문서](images/pdf_english.jpg)
 :::
 :::::
 
@@ -237,7 +237,7 @@ RStudio로 $\LaTeX$을 이용해 PDF 문서를 생성할 때, 먼저 새로운 `
 
 :::::
 
-한글이 PDF 문서에 표현되지 않는 문제는 글꼴을 `.tex` 파일에 지정함으로써 해결된다. 먼저 전제조건으로 한글 글꼴(예를 들어, 나눔고딕 글꼴)이 설치되어 있고 이를 $\LaTeX$ 에서 컴파일하는 방식으로 작업한다.
+한글이 PDF 문서에 표현되지 않는 문제는 글꼴을 `.tex` 파일에 지정함으로써 해결된다. 먼저 전제조건으로 한글 글꼴(예를 들어, 나눔고딕 글꼴)이 설치되어 있고 이를 [\LaTeX](http://example.org) 에서 컴파일하는 방식으로 작업한다.
 
 
 ```{tex}
@@ -295,7 +295,7 @@ RStudio로 $\LaTeX$을 이용해 PDF 문서를 생성할 때, 먼저 새로운 `
 ```
 
 
-![$\LaTeX$에서 한글문제를 해결한 PDF 문서](images/pdf_korean_hangul.jpg)
+![\LaTeX 에서 한글문제를 해결한 PDF 문서](images/pdf_korean_hangul.jpg)
 
 
 
