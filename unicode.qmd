@@ -6,6 +6,12 @@ editor_options:
 
 # 유니코드와 UTF-8
 
+```{r}
+#| echo: false
+
+source("_common.R")
+```
+
 사람 간의 의사소통은 다양한 기호 체계를 통해 이루어진다. 영어 알파벳, 한글, 한자 등 문자가 의사소통에 사용되는 좋은 예다. 디지털 환경에서 이러한 의사소통을 가능하게 하는 기술적 장치가 바로 문자집합과 문자 인코딩과 디코딩이다.
 
 컴퓨터 시스템은 이진수 바이트를 기본 단위로 사용한다. 바이트는 파일 형태로 묶이거나 네트워크를 통해 전송되어 다른 시스템에 도달한다. 이 데이터가 사람에게 의미 있는 정보로 전달되기 위해서는 인코딩(부호화)과 디코딩(복호화) 과정을 거쳐야 한다.
@@ -40,8 +46,11 @@ editor_options:
 
 [^unicode-1]: 미국정보교환표준부호(American Standard Code for Information Interchange, ASCII)는 영문 알파벳을 사용하는 대표적인 문자 인코딩으로 컴퓨터와 통신 장비를 비롯한 문자를 사용하는 많은 장치에서 사용되며, 대부분의 문자 인코딩이 아스키에 기초하고 있다.
 
+::: {.content-visible when-format="html"}
+
 ```{r}
 #| echo: false
+#| eval: false
 #| label: tbl-ascii
 #| tbl-cap: "제어문자와 출력가능한 아스키 문자표 알파벳 예시"
 
@@ -66,9 +75,18 @@ ascii_control <- ascii_table[[1]]  |>
   gt() |> 
   gt_theme_hangul()
 
-gtExtras::gt_two_column_layout(list(ascii_control, ascii_printable))
+ascii_gt <- gtExtras::gt_two_column_layout(list(ascii_control, ascii_printable))
 
+ascii_gt
+
+# ascii_gt |> 
+#   gtsave_extra("images/ascii_gt.png")
 ```
+
+:::
+
+![제어문자와 출력가능한 아스키 문자표 알파벳 예시](images/ascii_gt.png)
+
 
 @tbl-ascii 에 아스키 문자표에 제어문자 10개와 출력가능 아스키 문자표 중 영문 대문자 A-I까지 10개를 뽑아 사례로 보여주고 있다. 즉, 문자표는 어떤 문자가 어떤 숫자에 해당하는지를 정의하고 있다.
 
@@ -132,8 +150,11 @@ UTF-8 인코딩의 가장 큰 장점은 아스키(ASCII), 라틴-1(ISO-8859-1)�
 
 2010년 구글에서 [발표](https://googleblog.blogspot.com/2010/01/unicode-nearing-50-of-web.html)한 자료에 의하면 2010년 UTF-8 인코딩이 웹에서 주류로 부상하기 시작한 것이 확인되었다. [@unicode2010] 웹기반 플롯 디지털 도구를 활용하여 그래프([WebPlotDigitizer](https://apps.automeris.io/wpd/))에서 데이터를 추출하여 시각화면 유사한 결과를 시각적으로 표현할 수 있다. 2010년 이후 웹에서 가장 점유율이 높은 인코딩 방식은 UTF-8으로 W3Tech 웹기술조사(Web Technology Surveys)를 통해 확인을 할 수 있다. 여기서 주목할 점은, 프랑스어, 독일어, 스페인어와 같은 서유럽 언어의 문자와 기호 표현하는 ISO-8859-1 인코딩, 종종 "Latin-1"으로 불리는 8비트 문자 인코딩이 현저히 줄고 있다는 점이다.
 
+::: {.content-visible when-format="html"}
+
 ```{r}
 #| echo: false
+#| eval: false
 
 library(tidyverse)
 extrafont::loadfonts()
@@ -220,8 +241,22 @@ encoding_2022_g <- encoding_web %>%
 ## 3. 시각화 요약 ------------------
 library(patchwork)
 
-encoding_2010_g + encoding_2022_g
+encoding_utf_gg <- encoding_2010_g + encoding_2022_g
+
+encoding_utf_gg
+
+# ragg::agg_jpeg("images/encoding_utf_gg.jpg",
+#                width = 10, height = 7, units = "in", res = 600)
+# encoding_utf_gg
+# dev.off()
+
+# ggsave("images/encoding_utf_gg.png")
 ```
+
+:::
+
+![2010 ~ 2012 웹에서 UTF-8 성장세](images/encoding_utf_gg.jpg)
+
 
 ## 텍스트 표현
 

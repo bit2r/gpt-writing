@@ -10,7 +10,7 @@ editor_options:
 
 ![디지털 글쓰기 통합개발환경(IDE) 편집기](images/ide_writing.jpg)
 
-중간 단계로 $\LaTeX$을 사용하여 수식을 포함한 학위 논문이나 학술 저널, 컨퍼런스 발표를 위한 논문을 작성하기도 한다. 이를 위해 `TeXStudio`와 같은 $\LaTeX$에 특화된 통합개발환경(IDE)를 사용하여 생산성을 높이기도 한다. RStudio의 Visual 마크다운 편집기가 RStudio v1.4에 도입되면서, 문서 작성 방식에 혁명적 변화가 일어나고 있다. 이러한 변화를 통해 글쓰기의 생산성과 효율성이 대폭 향상되며, 다양한 포맷과 플랫폼에서의 유연한 작업이 가능해진다.
+중간 단계로 [\LaTeX](http://example.org)을 사용하여 수식을 포함한 학위 논문이나 학술 저널, 컨퍼런스 발표를 위한 논문을 작성하기도 한다. 이를 위해 `TeXStudio`와 같은 [\LaTeX](http://example.org)에 특화된 통합개발환경(IDE)를 사용하여 생산성을 높이기도 한다. RStudio의 Visual 마크다운 편집기가 RStudio v1.4에 도입되면서, 문서 작성 방식에 혁명적 변화가 일어나고 있다. 이러한 변화를 통해 글쓰기의 생산성과 효율성이 대폭 향상되며, 다양한 포맷과 플랫폼에서의 유연한 작업이 가능해진다.
 
 ::: callout-note
 ## 통합개발환경
@@ -40,7 +40,7 @@ Git과 같은 버전 관리 시스템과 통합이 가능하므로 국내외 협
 
 RStudio의 Visual 편집 기능은 위지윔 지향점을 잘 반영하고 있다. 사용자는 복잡한 코드나 태그 없이도 의미 있는 문서 구조를 쉽게 생성하고 관리할 수 있어 문서 최적화와 호환성을 높일 수 있으며, 더욱 높은 문서 저작 생산성을 달성할 수 있다.
 
-오픈 소스 LaTeX 편집기인 [LyX](https://www.lyx.org/)는 위지윔 방식을 초기부터 채택하여 사용자에게 코드 본래 구조와 의미를 명확하게 파악할 수 있는 인터페이스를 제공했다. 이러한 접근법은 복잡한 수식이나 과학적인 문서를 작성할 때 특히 유용하며, $\LaTeX$ 복잡성을 낮추면서도 강력한 기능을 최대한 활용할 수 함으로써 위지위그 한계를 극복했다는 평가를 받고 있다.
+오픈 소스 LaTeX 편집기인 [LyX](https://www.lyx.org/)는 위지윔 방식을 초기부터 채택하여 사용자에게 코드 본래 구조와 의미를 명확하게 파악할 수 있는 인터페이스를 제공했다. 이러한 접근법은 복잡한 수식이나 과학적인 문서를 작성할 때 특히 유용하며, [\LaTeX](http://example.org) 복잡성을 낮추면서도 강력한 기능을 최대한 활용할 수 함으로써 위지위그 한계를 극복했다는 평가를 받고 있다.
 
 |                  문서 컴파일                  |                 위지위그                 |
 |:------------------------------------:|:--------------------------------:|
@@ -56,17 +56,17 @@ RStudio의 Visual 편집 기능은 위지윔 지향점을 잘 반영하고 있�
 
 |                        국산 워드 프로세서                        |                      해외 워드 프로세서                       |
 |:------------------------------------:|:--------------------------------:|
-| ![아래 한글 워드 프로세서](images/hangul_word.webp){width="500"} | ![마이크로소프트 워드(Word)](images/word_ms.jpg){width="500"} |
+| ![아래 한글 워드 프로세서](images/hangul_word.jpg){width="500"} | ![마이크로소프트 워드(Word)](images/word_ms.jpg){width="500"} |
 
-## $\LaTeX$ 편집기 {#latex-editor}
+## [\LaTeX](http://example.org) 편집기 {#latex-editor}
 
-$\LaTeX$ 편집기는 운영체제나 사용자의 필요에 따라 다양한 선택옵션이 존재한다. 특히, 클라우드 기반 [Overleaf](https://www.overleaf.com/), 설치형 [TeXstudio](https://www.texstudio.org/), 데이터 과학에 특화된 RStudio IDE가 대표적이다. 편집기들은 $\LaTeX$에 특화되었거나, 일부 $\LaTeX$ 기능을 분리하여 사용자 요구에 맞춰 활용할 수 있다.
+[\LaTeX](http://example.org) 편집기는 운영체제나 사용자의 필요에 따라 다양한 선택옵션이 존재한다. 특히, 클라우드 기반 [Overleaf](https://www.overleaf.com/), 설치형 [TeXstudio](https://www.texstudio.org/), 데이터 과학에 특화된 RStudio IDE가 대표적이다. 편집기들은 [\LaTeX](http://example.org)에 특화되었거나, 일부 [\LaTeX](http://example.org) 기능을 분리하여 사용자 요구에 맞춰 활용할 수 있다.
 
-![$\LaTeX$ 편집기 다양성](images/latex-editor.png){fig-align="center" width="1151"}
+![[\LaTeX](http://example.org) 편집기 다양성](images/latex-editor.png){fig-align="center" width="1151"}
 
-[Overleaf](https://www.overleaf.com/)는 초기에 `ShareLaTeX` 서비스로 시작해 현재는 클라우드 기반의 $\LaTeX$ 편집 기능을 제공한다. 클라우드 특성을 살려 문서의 공유와 협업이 용이하다는 점이 큰 장점이다.
+[Overleaf](https://www.overleaf.com/)는 초기에 `ShareLaTeX` 서비스로 시작해 현재는 클라우드 기반의 [\LaTeX](http://example.org) 편집 기능을 제공한다. 클라우드 특성을 살려 문서의 공유와 협업이 용이하다는 점이 큰 장점이다.
 
-`TeXstudio`는 `Texmaker` 후속으로 오픈 소스 $\LaTeX$ 편집기로 제공된다. 사용자는 [TeXstudio](https://www.texstudio.org/) 웹사이트에서 다운로드 받아 설치할 수 있으며, GitHub [`texstudio`](https://github.com/texstudio-org/texstudio) 저장소를 통해 한국어 현지화 작업에도 참여할 수 있다.
+`TeXstudio`는 `Texmaker` 후속으로 오픈 소스 [\LaTeX](http://example.org) 편집기로 제공된다. 사용자는 [TeXstudio](https://www.texstudio.org/) 웹사이트에서 다운로드 받아 설치할 수 있으며, GitHub [`texstudio`](https://github.com/texstudio-org/texstudio) 저장소를 통해 한국어 현지화 작업에도 참여할 수 있다.
 
 |                                   클라우드 편집기                                    |                                     설치형 편집기                                      |
 |:------------------------------------:|:--------------------------------:|

@@ -1,6 +1,7 @@
 project:
   type: book
-  output-dir: docs
+  output-dir: docs # HTML
+  # output-dir: pdfs # PDF
   resources:
     - "data/*.mp3"
   render:
@@ -13,53 +14,53 @@ date-format: "YYYY년 MM월 DD일"
 
 book:
   title: "챗GPT 디지털 글쓰기"
-  author: "이광춘"
+  author: "이광춘, 신종화"
   date: last-modified
   chapters:
-    - preface.qmd
-    - index.qmd
-    - history.qmd
+    - preface.qmd   # OK
+    - index.qmd     # OK
+    - history.qmd   # OK
 
     - part: "글쓰기 환경"
       chapters:
-        - editor.qmd
-        - latex_pdf.qmd
-        - quarto.qmd
+        - editor.qmd        # OK
+        - latex_pdf.qmd     # OK
+        - quarto.qmd        # OK
 
     - part: "글쓰기"
       chapters:
-        - markdown_01_mess.qmd
-        - markdown_02_markdown.qmd
-        - markdown_03_advanced.qmd
-        - writing.qmd
+        - markdown_01_mess.qmd       # OK
+        - markdown_02_markdown.qmd   # OK
+        - markdown_03_advanced.qmd   # OK
+        - writing.qmd                # OK
 
-    - part: "기본요소"
-      chapters:
-        - unicode.qmd
-        - components.qmd
-        - fonts.qmd
-        - colors.qmd
-        - document_class.qmd
-
-    - part: "템플릿과 테마"
-      chapters:
-        - themes_ggplot.qmd
-        - themes_gt.qmd
-        - templates.qmd
-
-    - part: "디지털 글쓰기"
-      chapters:
-        - whole_game.qmd
-        - dw_pdf.qmd
-        - dw_website.qmd  # 헬로월드만 제작
-        - dw_slideshow.qmd
-        - dw_blog.qmd
-        - dw_dashboard.qmd
-
-    - part: "실무"
-      chapters:
-        - publishing.qmd
-        - about_book.qmd
+    # - part: "기본요소"
+    #   chapters:
+        # - unicode.qmd
+        # - components.qmd             # OK
+        # - fonts.qmd
+        # - colors.qmd
+        # - document_class.qmd
+    #
+    # - part: "템플릿과 테마"
+    #   chapters:
+    #     - themes_ggplot.qmd
+    #     - themes_gt.qmd
+    #     - templates.qmd
+    #
+    # - part: "디지털 글쓰기"
+    #   chapters:
+    #     - whole_game.qmd
+    #     - dw_pdf.qmd
+    #     - dw_website.qmd  # 헬로월드만 제작
+    #     - dw_slideshow.qmd
+    #     - dw_blog.qmd
+    #     - dw_dashboard.qmd
+#
+#     - part: "실무"
+#       chapters:
+#         - publishing.qmd
+#         - about_book.qmd
 
     - references.qmd
 

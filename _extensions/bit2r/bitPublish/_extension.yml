@@ -10,17 +10,17 @@ contributes:
     pdf:
       documentclass: book
       geometry:                            # 4x6 배판 도서를 위한 설정
-        # 이하 재단선이 없는 조판 ----------------------------------------------     
+        # 이하 재단선이 없는 조판 ----------------------------------------------
         # - paper=b5paper
         - paperheight=257mm
         - paperwidth=188mm
-        - top=25mm    
-        - headsep=10mm  
-        - bottom=30mm     
-        - footskip=15mm           
+        - top=25mm
+        - headsep=10mm
+        - bottom=30mm
+        - footskip=15mm
         - left=25mm
         - right=25mm
-        - centering     
+        - centering
         # 이하 재단선을 넣는 조판 ----------------------------------------------
         # - paper=a4paper
         # - layoutwidth=190mm
@@ -34,7 +34,7 @@ contributes:
         # - footskip=15mm
         # - left=25mm
         # - right=25mm
-        # - centering            
+        # - centering
       fig-cap-location: bottom
       tbl-cap-location: bottom
       toc-title: "목차"
@@ -76,8 +76,8 @@ contributes:
             \makeatother
 
             \fancyhf{}
-            \fancyhead[EL]{\changesize \numberfont --- bitPublish를 이용하여}
-            \fancyhead[OR]{\changesize \numberfont 한글 책 조판하기 ---}
+            \fancyhead[EL]{\changesize \numberfont 챗GPT 디지털 글쓰기}
+            \fancyhead[OR]{\changesize \numberfont 쿼토 (Quarto)}
             \fancyfoot[EL]{{\pagefont\thepage}{\hskip4mm}{\changesize \leftmark}}
             \fancyfoot[OR]{{\changesize \rightmark}{\hskip4mm}{\pagefont\thepage}}
 

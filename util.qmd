@@ -33,3 +33,5 @@
 $\LaTeX$
 
 $\TeX$
+
+[\LaTeX](http://example.org)
