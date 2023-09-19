@@ -4,7 +4,115 @@ editor_options:
   chunk_output_type: console
 ---
 
-# 문자와 종이
+# 글쓰기와 반도체
+
+```{r}
+#| include: false
+
+source("_common.R")
+```
+
+
+## 언어와 문자
+
+위키백과 따르면 전세계 인구는 약 80억명(2030년 기준)에 이르며, 
+화자들에게 본토어로 성경을 제공할 목적으로 기독교 언어학 봉사단체 에스놀로그 통계에 따르면 7,168개(2023년 기준) 언어가 사용되고 있다. 이 중에서도 영어, 중국어, 힌디어, 스페인어, 프랑스어, 아랍어, 벵골어, 러시아어, 포르투갈어, 인도네시아어가 가장 많은 사용자를 보유하고 있다. [^language]
+
+[^language]: 자료출처: https://en.wikipedia.org/wiki/List_of_languages_by_total_number_of_speakers
+
+```{r}
+library(tidyverse)
+library(rvest)
+
+lang_raw <- read_html("https://en.wikipedia.org/wiki/List_of_languages_by_total_number_of_speakers")  |> 
+  html_node(".wikitable") |> 
+  html_table() 
+
+lang_tbl <- lang_raw |> 
+  janitor::clean_names() |> 
+  set_names(c("언어", "family", "branch", "모국어", 
+"제2언어", "전체")) |> 
+  mutate(언어 = str_extract(언어, '([\\w\\s]+)\\s?\\(?') |> 
+              str_remove("\\($")) |> 
+  mutate(모국어 = if_else(str_detect(모국어, "million"), 
+                       parse_number(모국어) *10^6, 
+                       parse_number(모국어) *10^9)) |> 
+  mutate(제2언어 = if_else(str_detect(제2언어, "million"), 
+                       parse_number(제2언어) *10^6, 
+                       parse_number(제2언어) *10^9)) |> 
+  mutate(전체 = if_else(str_detect(전체, "million"), 
+                       parse_number(전체) *10^6, 
+                       parse_number(전체) *10^9)) |> 
+  mutate(순위 = row_number()) |> 
+  select(순위, 언어, 모국어, 제2언어, 전체)
+
+# lang_tbl |> 
+#   write_csv("data/lang_tbl.csv")
+```
+
+```{r}
+lang_tbl <- 
+  read_csv("data/lang_tbl.csv")
+
+lang_tbl |> 
+  slice(c(1:10, 13, 21, 24, 29)) |> 
+  gt() |> 
+  fmt_integer(columns = 모국어:전체) |> 
+  cols_align("center") |> 
+  gt_theme_hangul() |> 
+  tab_spanner(label = "구분", columns = c(모국어, 제2언어))
+```
+
+
+
+전세계에는 7,000개가 넘는 언어가 존재하나, 이를 표현하는 문자 체계는 대략 50개 정도에 불과하다. 한국어(제주어 포함)는 한글을 문자 체계로 사용하고 있지만, 이처럼 모든 언어가 고유의 **문자(Writing System)**를 가진 것은 아니다. 실제로 여러 언어가 동일한 문자 체계를 공유하는 경우가 많다. 예를 들어, 알파벳은 라틴어를 기반으로 하며, 영어, 불어, 독어, 이태리어 등 다양한 언어에서 사용되고 있다. 이 외에도 셀틱어, 발틱어, 슬로박어 등도 알파벳이 활용된다. 한자는 중국어와 대만어에서 주로 사용되며, 아랍문자는 아랍어뿐만 아니라 인도-이란 어족(페르시아어, 펀잡어 등)에도 쓰인다. 일본어는 가나(仮名)라는 문자 체계가 사용된다.
+
+
+
+```{r}
+#| eval: false
+writing_raw <- read_html("https://en.wikipedia.org/wiki/List_of_writing_systems")  |> 
+  html_node(".wikitable") |> 
+  html_table() 
+
+writing_tbl <- writing_raw |> 
+  janitor::clean_names() |> 
+  set_names(c("스크립트_명칭", "문자유형", "인구수", 
+"languages_associated_with", "regions_using_script_de_facto")) |> 
+  select(스크립트_명칭, 문자유형, 인구수) |> 
+  mutate(인구수 = parse_number(인구수) *10^6) |> 
+  mutate(스크립트_명칭 = str_squish(스크립트_명칭)) |> 
+  arrange(desc(인구수))
+
+writing_tbl |> 
+  write_csv("data/writing_tbl.csv")
+```
+
+
+```{r}
+writing_tbl <- 
+  read_csv("data/writing_tbl.csv")
+
+writing_tbl |> 
+  slice(1:10) |> 
+  gt() |> 
+  fmt_integer(columns = 인구수) |> 
+  cols_align("center") |> 
+  gt_theme_hangul() 
+```
+
+
+
+문자가 존재하기 위한 전제조건이 있는데 크게 다음 세가지를 들고 있다.
+
+- 언어 : 한국어, 영어, 중국어, ...
+- 아이디어: 생각, 콘텐츠,...
+- 기호: 숫자, 문자, 그림, ...
+  - 언어
+  - 숫자와 수식
+  - 교통표지 등 표식
+- 매체: 종이, 파피루스, 디스플레이
+
 
 ## 문자와 언어
 
@@ -57,28 +165,6 @@ editor_options:
 
 역사를 통틀어 다양한 문자 체계가 진화하고 적응하며 서로 영향을 주고받았습니다. 오늘날에는 전 세계 사람들의 다양한 언어적 요구를 충족하는 수많은 문자 체계와 알파벳이 존재합니다.
 
-## 언어와 문자
-
-전세계인구는 77.5억(2020년 기준)명이며 언어는 대략 7,100개 언어가 존재하고 있는 것으로 파악되고 있으며 영어, 중국어, 힌디어, 스페인어, 프랑스어, 아랍어, 벵골어, 러시아어, 포르투갈어, 인도네시아어 순으로 많은 언어인구를 갖고 있다.
-
-한국어 언어는 한글을 문자로 갖고 있지만 모든 언어가 **문자(Writing System)**를 갖는 것은 아니다. 다르게 보면 동일한 뿌리를 갖는 문자를 공유하는 언어도 많다. 예를 들어,
-
-- 알파벳: 라틴어(영어, 불어, 독어, 이태리어 등), 셀틱, 발틱, 슬로박, 등
-- 한자: 중국어, 대만어
-- 아랍문자: 아랍, 인도-이란 어족(페르시아, 펀잡 등)
-- 가나: 일본
-- ...
-
-
-문자가 존재하기 위한 전제조건이 있는데 크게 다음 세가지를 들고 있다.
-
-- 언어 : 한국어, 영어, 중국어, ...
-- 아이디어: 생각, 콘텐츠,...
-- 기호: 숫자, 문자, 그림, ...
-  - 언어
-  - 숫자와 수식
-  - 교통표지 등 표식
-- 매체: 종이, 파피루스, 디스플레이
 
 ## 매체 역사
 
@@ -147,8 +233,6 @@ editor_options:
 그림문자와 표의문자를 결합하게 되면 다음과 같이 흡연을 금지하는 의미를 명확히 전달할 수 있다.
 
 ![흡연과 금지가 결합된 표의문자](images/pictogram_ideogram.jpg)
-
-
 
 
 

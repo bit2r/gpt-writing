@@ -1,5 +1,10 @@
 set.seed(1014)
 
+library(tidyverse)
+library(rvest)
+library(gt)
+library(gtExtras)
+
 knitr::opts_chunk$set(
   comment = "#>",
   collapse = TRUE,
