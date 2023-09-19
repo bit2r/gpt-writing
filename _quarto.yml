@@ -17,15 +17,15 @@ book:
   author: "이광춘, 신종화"
   date: last-modified
   chapters:
-    - preface.qmd   # OK
-    - index.qmd     # OK
-    - history.qmd   # OK
+    - preface.qmd                    # OK
+    - index.qmd                      # OK
+    - history.qmd                    # OK
 
     - part: "글쓰기 환경"
       chapters:
-        - editor.qmd        # OK
-        - latex_pdf.qmd     # OK
-        - quarto.qmd        # OK
+        - editor.qmd                 # OK
+        - latex_pdf.qmd              # OK
+        - quarto.qmd                 # OK
 
     - part: "글쓰기"
       chapters:
