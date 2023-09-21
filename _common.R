@@ -1,3 +1,7 @@
+library(tidyverse)
+library(gt)
+library(gtExtras)
+
 set.seed(1014)
 
 library(tidyverse)
@@ -53,8 +57,6 @@ theme_korean <- function() {
 ggplot2::theme_set(theme_korean())
 
 # 2. gt 표 ------------------------
-library(gt)
-library(gtExtras)
 
 gt_theme_hangul <- function(gt_tbl) {
 
