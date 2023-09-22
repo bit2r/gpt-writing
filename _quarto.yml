@@ -19,48 +19,48 @@ book:
   chapters:
     - preface.qmd                    # OK
     - index.qmd                      # OK
-    - history.qmd                    # OK
+    - whole_game.qmd                 # OK
 
     - part: "글쓰기 환경"
       chapters:
+        - history.qmd                # OK
         - editor.qmd                 # OK
+        - unicode.qmd                # OK
         - latex_pdf.qmd              # OK
         - quarto.qmd                 # OK
 
     - part: "글쓰기"
       chapters:
         - markdown_01_mess.qmd       # OK
-        - markdown_02_markdown.qmd   # OK
-        - markdown_03_advanced.qmd   # OK
         - writing.qmd                # OK
 
     - part: "기본요소"
       chapters:
-        - unicode.qmd                # OK
         - components.qmd             # OK
-        - fonts.qmd                  # OK
-        - colors.qmd                 # OK
+        - markdown.qmd               # OK
         - document_class.qmd         # OK
+        - about_book.qmd          # OK
 
     - part: "템플릿과 테마"
       chapters:
+        - fonts.qmd                  # OK
+        - colors.qmd                 # OK
         - themes_ggplot.qmd          # OK
         - themes_gt.qmd              # OK
         - templates.qmd              # OK
 
-    - part: "디지털 글쓰기"
+    - part: "출판물"
       chapters:
-        - whole_game.qmd          # OK
+        - publishing.qmd          # OK
         - dw_pdf.qmd              # OK
         - dw_website.qmd          # OK
         - dw_slideshow.qmd        # OK
         - dw_blog.qmd             # OK
         - dw_dashboard.qmd        # OK
 
-    - part: "실무"
+    - part: "챗GPT"
       chapters:
-        - publishing.qmd          # OK
-        - about_book.qmd          # OK
+        - chatGPT.qmd             # OK
 
     - references.qmd
 

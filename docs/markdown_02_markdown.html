@@ -8,7 +8,7 @@
 
 <meta name="author" content="이광춘">
 
-<title>챗GPT 디지털 글쓰기 - 7&nbsp; 마크다운 기초</title>
+<title>챗GPT 디지털 글쓰기 - 7&nbsp; 마크다운</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -77,6 +77,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.css" rel="stylesheet">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -155,7 +158,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./history.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">문자와 종이</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">글쓰기와 반도체</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -176,7 +179,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./latex_pdf.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title"></span></span></a><a href="http://example.org">LaTeX</a>과 PDF
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">LaTeX과 PDF</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -392,6 +395,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#견본-템플릿" id="toc-견본-템플릿" class="nav-link" data-scroll-target="#견본-템플릿"><span class="header-section-number">7.3.2</span> 견본 템플릿</a></li>
   <li><a href="#선택옵션-플래그" id="toc-선택옵션-플래그" class="nav-link" data-scroll-target="#선택옵션-플래그"><span class="header-section-number">7.3.3</span> 선택옵션 플래그</a></li>
   </ul></li>
+  <li><a href="#고급-마크다운" id="toc-고급-마크다운" class="nav-link" data-scroll-target="#고급-마크다운"><span class="header-section-number">7.4</span> 고급 마크다운</a>
+  <ul class="collapse">
+  <li><a href="#수식" id="toc-수식" class="nav-link" data-scroll-target="#수식"><span class="header-section-number">7.4.1</span> 수식</a></li>
+  <li><a href="#표" id="toc-표" class="nav-link" data-scroll-target="#표"><span class="header-section-number">7.4.2</span> 표</a></li>
+  <li><a href="#그림" id="toc-그림" class="nav-link" data-scroll-target="#그림"><span class="header-section-number">7.4.3</span> 그림</a></li>
+  <li><a href="#참고문헌" id="toc-참고문헌" class="nav-link" data-scroll-target="#참고문헌"><span class="header-section-number">7.4.4</span> 참고문헌</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -400,7 +410,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./markdown_01_mess.html">글쓰기</a></li><li class="breadcrumb-item"><a href="./markdown_02_markdown.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">마크다운 기초</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">마크다운 기초</span></h1>
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">마크다운</span></h1>
 </div>
 
 
@@ -559,6 +569,104 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="선택옵션-플래그" class="level3" data-number="7.3.3">
 <h3 data-number="7.3.3" class="anchored" data-anchor-id="선택옵션-플래그"><span class="header-section-number">7.3.3</span> 선택옵션 플래그</h3>
 <p>선택옵션 플래그를 통해서 <code>pandoc</code>에 추가적인 인자를 전달한다. <code>pandoc</code> 에서 지원하는 인자가 상당히 많은데, 자세한 정보는 쉘를 열고 <code>man pandoc</code> 도움말을 참조하거나, 인터넷 온라인 문서를 참조한다. 본 학습에서는 참고문헌과 관련된 두가지 선택옵션 플래그에 집중한다.</p>
+</section>
+</section>
+<section id="고급-마크다운" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="고급-마크다운"><span class="header-section-number">7.4</span> 고급 마크다운</h2>
+<p>학술적 논문은 단순 텍스트보다 많은 정보가 담긴다. 이번 학습에서 참고문헌, 표, 그림, 수식을 추가하는 방법을 다룬다. 기억할 한가지 중요한 점은 <code>LaTeX</code> 명령어가 다른 형식으로 변환할 때 (최소한 <code>pandoc</code>을 사용할 때 그런데, <code>pandoc</code>은 가장 일반적인 프로그램이다), 그대로 먹힌다는 사실이다. 이런 점이 수식 사용을 상당히 단순화시킨다.</p>
+<section id="수식" class="level3" data-number="7.4.1">
+<h3 data-number="7.4.1" class="anchored" data-anchor-id="수식"><span class="header-section-number">7.4.1</span> 수식</h3>
+<p>수식을 <code>LaTeX</code> 구문으로 작성할 수 있다. 예를 들어, 아래 코드 덩어리는 적법한 <code>마크다운</code> 구문이다:</p>
+<div class="sourceCode" id="cb13" data-code-line-numbers=""><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="at">The equation for a polynomial function is $y(x) = ax^2 + bx +c$.</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>그리고 다음도 적법하다:</p>
+<div class="sourceCode" id="cb14" data-code-line-numbers=""><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="at">The sum of a vector of numbers ($\mathbf{v}$) is noted</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="at">\begin{equation}</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="at">\sum_{x=1}^n\mathbf{v}_i</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="at">\end{equation}</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="표" class="level3" data-number="7.4.2">
+<h3 data-number="7.4.2" class="anchored" data-anchor-id="표"><span class="header-section-number">7.4.2</span> 표</h3>
+<p>마크다운이 갖는 이슈중 하나는 표에 대한 지원이 미약하다는 점이다. (하지만, <code>LaTeX</code> 구문을 사용하는 것은 가능) 그럼에도 불구하고, 상대적으로 간단한 표를 작성하는 방법은 있다.</p>
+<div class="sourceCode" id="cb15" data-code-line-numbers=""><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="at">|  교과목  |    담당자 |     선수 교과목 |</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="at">|:---------|:-----------|------------------:|</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="at">| 마크다운 | xwMOOC        | 쉘, Git, Makefiles |</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>상기 구문을 적용하면 다음에 나온 표가 작성된다.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">교과목</th>
+<th style="text-align: left;">담당자</th>
+<th style="text-align: right;">선수 교과목</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">마크다운</td>
+<td style="text-align: left;">xwMOOC</td>
+<td style="text-align: right;">쉘, Git, Makefiles</td>
+</tr>
+</tbody>
+</table>
+<p>표를 구성하는 요소가 몇개 있다. 첫번째 줄은 <em>헤더</em> 로 표제목, 두번째 줄은 <em>정렬</em>, 그 다음 줄이 표에 기술되는 <em>내용물</em> 이 된다.</p>
+<p>칼럼은 파이프(<code>|</code>) 기호로 구분한다. 파이프를 수직방향으로 정렬할 필요는 없다. (하지만, 원문서를 읽을 때 가독성을 상당히 높힌다 – 편집기 대부분에는 이런 기능을 플러그인으로 지원한다)</p>
+<p>기본디폴트 설정으로 칼럼은 <em>좌측 정렬</em> 된다. 정렬을 명세하려면, 두번째 행에 다음과 같이 <code>:</code> 세미콜론을 사용해서 지정한다.</p>
+<div class="sourceCode" id="cb16" data-code-line-numbers=""><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="at">|   좌측정렬  |  중앙정렬  |    우측정렬   | 기본 설정 (좌측) |</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="at">|:-------------|:--------:|--------------:|:---------------|</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="at">| `:---`       |  `:--:`  |        `---:` | `----`         |</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>상기 구문을 적용하면 다음에 나온 표가 작성된다.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">좌측정렬</th>
+<th style="text-align: center;">중앙정렬</th>
+<th style="text-align: right;">우측정렬</th>
+<th style="text-align: left;">기본 설정 (좌측)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>:---</code></td>
+<td style="text-align: center;"><code>:--:</code></td>
+<td style="text-align: right;"><code>---:</code></td>
+<td style="text-align: left;"><code>----</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="그림" class="level3" data-number="7.4.3">
+<h3 data-number="7.4.3" class="anchored" data-anchor-id="그림"><span class="header-section-number">7.4.3</span> 그림</h3>
+<p>그림은 마크다운에서 잘 지원되고 있다. 표기법은 링크에 사용된 표기법을 따르지만, 느낌표(<code>!</code>)를 앞에 위치시킬 필요가 있다.</p>
+<p>예를 들어,</p>
+<div class="sourceCode" id="cb17" data-code-line-numbers=""><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="at">![소프트웨어 카펜트리 로고](images/swc-logo-blue.png)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>상기 구문을 적용하면 다음과 같이 그림이 삽입된다.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/swc-logo-blue.png" class="lightbox" title="소프트웨어 카펜트리 로고" data-gallery="quarto-lightbox-gallery-1"><img src="images/swc-logo-blue.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">소프트웨어 카펜트리 로고</figcaption>
+</figure>
+</div>
+<p>다른 방법으로 다음과 같이 그림 삽입 구문을 작성해도 된다.</p>
+<div class="sourceCode" id="cb18" data-code-line-numbers=""><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="at">![소프트웨어 카펜트리 로고][swc]</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="kw">[</span><span class="at">swc</span><span class="kw">]:</span><span class="at"> (images/swc-logo-blue.png)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>LaTeX</code> 명령어, <code>\label{f:swc}</code> 라벨을 넣은 것에 주목한다. <code>\autoref{f:swc}</code>를 사용해서 텍스트에 그림을 참조하게 한다. <code>LaTeX</code>에 <code>autoref</code> 팩키지는 놀랍도록 유용한데, 참조하는 객체 유형을 식별해서, 사람이 관여하지 않고도 <code>Fig. 1</code>, <code>Tab. 2</code>, <code>Eqn. 3</code>, 혹은 기타 필요한 것을 자동으로 완성시킨다.</p>
+</section>
+<section id="참고문헌" class="level3" data-number="7.4.4">
+<h3 data-number="7.4.4" class="anchored" data-anchor-id="참고문헌"><span class="header-section-number">7.4.4</span> 참고문헌</h3>
+<p>학술논문에 있는 최종 요건은 <strong>참고문헌</strong>이다. <code>pandoc</code>과 <code>pandoc-citeproc</code> 확장기능을 통해 마크다운이 참고문헌 기능을 매우 우아하게 처리한다. <code>pandoc</code> 서지관리 모듈은 다양한 형식으로부터 인용을 불러올 수 있다. 최초 <code>CSL JSON</code> 와 <code>CSL YAML</code>로 설계되어, bibtex과 RIS를 수용할 수 있다.</p>
+<p>참고문헌을 참조하는 방식은 인용키, <code>@CitationKey</code>를 이용한다. 예를 들어, (bibtex) 라이브러리에 다음 참고문헌이 담겨 있다면:</p>
+<div class="sourceCode" id="cb19" data-code-line-numbers=""><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="at">@ARTICLE{thom99,</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="at">    title = {The raw material for coevolution},</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="at">    journal = {Oikos},</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="at">    author = {Thompson, John N},</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="at">    number = {1},</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="at">    volume = {84},</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="at">    year = {1999},</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="at">    pages = {5--16},</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="at">}</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>텍스트에 <code>@thom99</code> 을 넣어 참조한다. 모든 참고문헌 관리 소프트웨어를 사용해서 <code>pandoc</code>에서 지원되는 형식 중 하나로 내보내기 한다. 인용키가 보여주는 방식을 사용자 정의에 맞추면 된다.</p>
+<p>참고문헌을 (<code>[@John2012; @Jack2014]</code>)와 같이 결합할 수 있고, <em>인라인</em> 으로 “저자-년도” 스타일을 지정해서 사용하고 있다면 <code>@Doe2013</code> 작성하게 되면 <code>Doe (2013)</code>와 같이 표시되고, 괄호를 사용해서 <code>[@Doe2013]</code>와 같이 사용하면 <code>(Doe, 2013)</code> 산출물을 얻게 된다. 또한, 텍스트를 추가하는 것도 가능하다: <code>[검토를 위해 @Billy2015 참조]</code> 와 같이 작성하면, <code>(검토를 위해 Billy et al., 2015 참조)</code>와 같이 나타난다.</p>
+<p>참고문헌이 문서 끝에 자동으로 삽입된다. 저널 요건에 맞춰 서식을 바꾼 수천가지 방법이 있다.</p>
 
 
 </section>
@@ -895,6 +1003,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","openEffect":"zoom","loop":true,"selector":".lightbox"});</script>
 
 
 

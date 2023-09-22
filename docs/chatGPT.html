@@ -8,7 +8,7 @@
 
 <meta name="author" content="이광춘">
 
-<title>챗GPT 디지털 글쓰기 - 8&nbsp; 고급 마크다운</title>
+<title>챗GPT 디지털 글쓰기 - 25&nbsp; 챗GPT</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,40 +21,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -65,8 +31,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./writing.html" rel="next">
-<link href="./markdown_02_markdown.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./dw_dashboard.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -77,9 +43,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.css" rel="stylesheet">
-<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -118,7 +81,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./markdown_01_mess.html">글쓰기</a></li><li class="breadcrumb-item"><a href="./markdown_03_advanced.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">고급 마크다운</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chatGPT.html">챗GPT</a></li><li class="breadcrumb-item"><a href="./chatGPT.html"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">챗GPT</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -157,8 +120,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./history.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">글쓰기와 반도체</span></span></a>
+  <a href="./whole_game.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">챗GPT 글쓰기 맛보기</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -172,20 +135,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./history.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">언어와 문자</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./editor.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">편집기와 출판</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">편집기와 출판</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unicode.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">유니코드와 UTF-8</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./latex_pdf.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">LaTeX과 PDF</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">LaTeX과 PDF</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./quarto.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">쿼토(Quarto)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">쿼토(Quarto)</span></span></a>
   </div>
 </li>
       </ul>
@@ -202,19 +177,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./markdown_01_mess.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">심각한 현재 상황</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./markdown_02_markdown.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">마크다운 기초</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./markdown_03_advanced.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">고급 마크다운</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">심각한 현재 상황</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -236,32 +199,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./unicode.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">유니코드와 UTF-8</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./components.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">문서 구성요소</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">문서 구성요소</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./fonts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">글꼴</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./colors.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">색상</span></span></a>
+  <a href="./markdown.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">마크다운</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./document_class.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">문서 클래스</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">문서 클래스</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./about_book.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">책과 편집 용어</span></span></a>
   </div>
 </li>
       </ul>
@@ -277,20 +234,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./fonts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">글꼴</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./colors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">색상</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./themes_ggplot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">그래프 테마</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">그래프 테마</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./themes_gt.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">표 테마</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">표 테마</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./templates.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">템플릿</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">템플릿</span></span></a>
   </div>
 </li>
       </ul>
@@ -298,7 +267,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
- <span class="menu-text">디지털 글쓰기</span></a>
+ <span class="menu-text">출판물</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="토글 섹션">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -306,38 +275,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./whole_game.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">챗GPT 글쓰기 맛보기</span></span></a>
+  <a href="./publishing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">출판</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dw_pdf.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">쿼토 PDF</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">쿼토 PDF</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dw_website.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">웹사이트</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">웹사이트</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dw_slideshow.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">슬라이드 PPT</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">슬라이드 PPT</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dw_blog.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">블로그</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">블로그</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dw_dashboard.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">대쉬보드</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">대쉬보드</span></span></a>
   </div>
 </li>
       </ul>
@@ -345,7 +314,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
- <span class="menu-text">실무</span></a>
+ <span class="menu-text">챗GPT</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="토글 섹션">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -353,14 +322,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./publishing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">출판</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./about_book.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">책과 편집 용어</span></span></a>
+  <a href="./chatGPT.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">챗GPT</span></span></a>
   </div>
 </li>
       </ul>
@@ -377,23 +340,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">목차</h2>
-   
-  <ul>
-  <li><a href="#수식" id="toc-수식" class="nav-link active" data-scroll-target="#수식"><span class="header-section-number">8.1</span> 수식</a></li>
-  <li><a href="#표" id="toc-표" class="nav-link" data-scroll-target="#표"><span class="header-section-number">8.2</span> 표</a></li>
-  <li><a href="#그림" id="toc-그림" class="nav-link" data-scroll-target="#그림"><span class="header-section-number">8.3</span> 그림</a></li>
-  <li><a href="#참고문헌의-표현" id="toc-참고문헌의-표현" class="nav-link" data-scroll-target="#참고문헌의-표현"><span class="header-section-number">8.4</span> 참고문헌의 표현</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./markdown_01_mess.html">글쓰기</a></li><li class="breadcrumb-item"><a href="./markdown_03_advanced.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">고급 마크다운</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chatGPT.html">챗GPT</a></li><li class="breadcrumb-item"><a href="./chatGPT.html"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">챗GPT</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">고급 마크다운</span></h1>
+<h1 class="title"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">챗GPT</span></h1>
 </div>
 
 
@@ -409,103 +363,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>학술적 논문은 단순 텍스트보다 많은 정보가 담긴다. 이번 학습에서 참고문헌, 표, 그림, 수식을 추가하는 방법을 다룬다. 기억할 한가지 중요한 점은 <code>LaTeX</code> 명령어가 다른 형식으로 변환할 때 (최소한 <code>pandoc</code>을 사용할 때 그런데, <code>pandoc</code>은 가장 일반적인 프로그램이다), 그대로 먹힌다는 사실이다. 이런 점이 수식 사용을 상당히 단순화시킨다.</p>
-<section id="수식" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="수식"><span class="header-section-number">8.1</span> 수식</h2>
-<p>수식을 <code>LaTeX</code> 구문으로 작성할 수 있다. 예를 들어, 아래 코드 덩어리는 적법한 <code>마크다운</code> 구문이다:</p>
-<div class="sourceCode" id="cb1" data-code-line-numbers=""><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="at">The equation for a polynomial function is $y(x) = ax^2 + bx +c$.</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>그리고 다음도 적법하다:</p>
-<div class="sourceCode" id="cb2" data-code-line-numbers=""><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="at">The sum of a vector of numbers ($\mathbf{v}$) is noted</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="at">\begin{equation}</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="at">\sum_{x=1}^n\mathbf{v}_i</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="at">\end{equation}</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="표" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="표"><span class="header-section-number">8.2</span> 표</h2>
-<p>마크다운이 갖는 이슈중 하나는 표에 대한 지원이 미약하다는 점이다. (하지만, <code>LaTeX</code> 구문을 사용하는 것은 가능) 그럼에도 불구하고, 상대적으로 간단한 표를 작성하는 방법은 있다.</p>
-<div class="sourceCode" id="cb3" data-code-line-numbers=""><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="at">|  교과목  |    담당자 |     선수 교과목 |</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">|:---------|:-----------|------------------:|</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">| 마크다운 | xwMOOC        | 쉘, Git, Makefiles |</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>상기 구문을 적용하면 다음에 나온 표가 작성된다.</p>
-<table class="table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">교과목</th>
-<th style="text-align: left;">담당자</th>
-<th style="text-align: right;">선수 교과목</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">마크다운</td>
-<td style="text-align: left;">xwMOOC</td>
-<td style="text-align: right;">쉘, Git, Makefiles</td>
-</tr>
-</tbody>
-</table>
-<p>표를 구성하는 요소가 몇개 있다. 첫번째 줄은 <em>헤더</em> 로 표제목, 두번째 줄은 <em>정렬</em>, 그 다음 줄이 표에 기술되는 <em>내용물</em> 이 된다.</p>
-<p>칼럼은 파이프(<code>|</code>) 기호로 구분한다. 파이프를 수직방향으로 정렬할 필요는 없다. (하지만, 원문서를 읽을 때 가독성을 상당히 높힌다 – 편집기 대부분에는 이런 기능을 플러그인으로 지원한다)</p>
-<p>기본디폴트 설정으로 칼럼은 <em>좌측 정렬</em> 된다. 정렬을 명세하려면, 두번째 행에 다음과 같이 <code>:</code> 세미콜론을 사용해서 지정한다.</p>
-<div class="sourceCode" id="cb4" data-code-line-numbers=""><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="at">|   좌측정렬  |  중앙정렬  |    우측정렬   | 기본 설정 (좌측) |</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="at">|:-------------|:--------:|--------------:|:---------------|</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="at">| `:---`       |  `:--:`  |        `---:` | `----`         |</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>상기 구문을 적용하면 다음에 나온 표가 작성된다.</p>
-<table class="table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">좌측정렬</th>
-<th style="text-align: center;">중앙정렬</th>
-<th style="text-align: right;">우측정렬</th>
-<th style="text-align: left;">기본 설정 (좌측)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><code>:---</code></td>
-<td style="text-align: center;"><code>:--:</code></td>
-<td style="text-align: right;"><code>---:</code></td>
-<td style="text-align: left;"><code>----</code></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="그림" class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="그림"><span class="header-section-number">8.3</span> 그림</h2>
-<p>그림은 마크다운에서 잘 지원되고 있다. 표기법은 링크에 사용된 표기법을 따르지만, 느낌표(<code>!</code>)를 앞에 위치시킬 필요가 있다.</p>
-<p>예를 들어,</p>
-<div class="sourceCode" id="cb5" data-code-line-numbers=""><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="at">![소프트웨어 카펜트리 로고](images/swc-logo-blue.png)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>상기 구문을 적용하면 다음과 같이 그림이 삽입된다.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="images/swc-logo-blue.png" class="lightbox" title="소프트웨어 카펜트리 로고" data-gallery="quarto-lightbox-gallery-1"><img src="images/swc-logo-blue.png" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">소프트웨어 카펜트리 로고</figcaption>
-</figure>
-</div>
-<p>다른 방법으로 다음과 같이 그림 삽입 구문을 작성해도 된다.</p>
-<div class="sourceCode" id="cb6" data-code-line-numbers=""><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="at">![소프트웨어 카펜트리 로고][swc]</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">[</span><span class="at">swc</span><span class="kw">]:</span><span class="at"> (images/swc-logo-blue.png)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><code>LaTeX</code> 명령어, <code>\label{f:swc}</code> 라벨을 넣은 것에 주목한다. <code>\autoref{f:swc}</code>를 사용해서 텍스트에 그림을 참조하게 한다. <code>LaTeX</code>에 <code>autoref</code> 팩키지는 놀랍도록 유용한데, 참조하는 객체 유형을 식별해서, 사람이 관여하지 않고도 <code>Fig. 1</code>, <code>Tab. 2</code>, <code>Eqn. 3</code>, 혹은 기타 필요한 것을 자동으로 완성시킨다.</p>
-</section>
-<section id="참고문헌의-표현" class="level2" data-number="8.4">
-<h2 data-number="8.4" class="anchored" data-anchor-id="참고문헌의-표현"><span class="header-section-number">8.4</span> 참고문헌의 표현</h2>
-<p>학술논문에 있는 최종 요건은 <strong>참고문헌</strong>이다. <code>pandoc</code>과 <code>pandoc-citeproc</code> 확장기능을 통해 마크다운이 참고문헌 기능을 매우 우아하게 처리한다. <code>pandoc</code> 서지관리 모듈은 다양한 형식으로부터 인용을 불러올 수 있다. 최초 <code>CSL JSON</code> 와 <code>CSL YAML</code>로 설계되어, bibtex과 RIS를 수용할 수 있다.</p>
-<p>참고문헌을 참조하는 방식은 인용키, <code>@CitationKey</code>를 이용한다. 예를 들어, (bibtex) 라이브러리에 다음 참고문헌이 담겨 있다면:</p>
-<div class="sourceCode" id="cb7" data-code-line-numbers=""><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="at">@ARTICLE{thom99,</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="at">    title = {The raw material for coevolution},</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="at">    journal = {Oikos},</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="at">    author = {Thompson, John N},</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="at">    number = {1},</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="at">    volume = {84},</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="at">    year = {1999},</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="at">    pages = {5--16},</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="at">}</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>텍스트에 <code>@thom99</code> 을 넣어 참조한다. 모든 참고문헌 관리 소프트웨어를 사용해서 <code>pandoc</code>에서 지원되는 형식 중 하나로 내보내기 한다. 인용키가 보여주는 방식을 사용자 정의에 맞추면 된다.</p>
-<p>참고문헌을 (<code>[@John2012; @Jack2014]</code>)와 같이 결합할 수 있고, <em>인라인</em> 으로 “저자-년도” 스타일을 지정해서 사용하고 있다면 <code>@Doe2013</code> 작성하게 되면 <code>Doe (2013)</code>와 같이 표시되고, 괄호를 사용해서 <code>[@Doe2013]</code>와 같이 사용하면 <code>(Doe, 2013)</code> 산출물을 얻게 된다. 또한, 텍스트를 추가하는 것도 가능하다: <code>[검토를 위해 @Billy2015 참조]</code> 와 같이 작성하면, <code>(검토를 위해 Billy et al., 2015 참조)</code>와 같이 나타난다.</p>
-<p>참고문헌이 문서 끝에 자동으로 삽입된다. 저널 요건에 맞춰 서식을 바꾼 수천가지 방법이 있다.</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -827,18 +686,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./markdown_02_markdown.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">마크다운 기초</span></span>
+      <a href="./dw_dashboard.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">대쉬보드</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./writing.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">디지털 글쓰기</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link">
+        <span class="nav-page-text">참고문헌</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","loop":true,"descPosition":"bottom","closeEffect":"zoom"});</script>
 
 
 
