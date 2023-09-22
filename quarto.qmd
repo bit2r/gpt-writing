@@ -11,91 +11,112 @@ editor:
 
 # 쿼토(Quarto)
 
-쿼토(Quarto)는 다양한 프로그래밍 언어와 통합된 오픈소스 출판시스템이다.
-[Pandoc](https://pandoc.org/)에 기반을 두고 있으며, 프로그래밍 언어로 R, 파이썬, 줄리아, 자바스크립트(Observable JS) 등을 지원한다.
-사용자는 다양한 출판 저작물을 생성할 수 있고, "차세대 R마크다운(Next-Generation R Markdown)"이라는 별명을 가지고 있는데 약 10년에 걸친 R 마크다운 성공과 실패 경험을 바탕으로 전혀 새로운 아키텍처로 재탄생했다.
-쿼토의 개발 및 유지보수 팀이 잘 구성되어 있어 프로젝트의 지속 가능성과 신뢰성이 높다.
-무료로 제공되기 때문에 누구나 쉽게 접근하고 기여할 수 있다.
+쿼토(Quarto)는 다양한 프로그래밍 언어를 지원하는 오픈소스 출판 시스템으로, [Pandoc](https://pandoc.org/)에 기반을 두고 있다.
+쿼토는 R, 파이썬, 줄리아, 자바스크립트(Observable JS) 등의 프로그래밍 언어를 지원하며, 사용자는 싱글 소싱(Single Sourcing)을 통해 신속하게 다양한 출판 저작물을 생성할 수 있다.
+"차세대 R마크다운(Next-Generation R Markdown)"이라는 별명을 가진 쿼토는 약 10년 동안의 R 마크다운의 성공과 실패 경험을 바탕으로 새로운 아키텍처로 재탄생했다.
+개발 및 유지보수 팀이 잘 구성되어 있어, 프로젝트의 지속 가능성과 신뢰성이 높고, 무료로 제공되므로 누구나 쉽게 접근할 수 있을 뿐만 아니라 누구나 오픈소스 프로젝트에 기여할 수 있다.
 [@hyde2021single]
 
-디지털 글쓰기 출판시스템에 대한 고민은 크게 세 가지로 나뉜다.
+디지털 글쓰기와 출판에 대한 고민은 콘텐츠, 디자인, 형식의 세 가지로 나뉜다.
 
--   **콘텐츠(Content)**: 저작물과 관련된 실질적인 내용
--   **디자인(Design)**: 출판물 외양, 즉 'Look and Feel'
--   **형식(Format)**: 출판물 최종 형태나 산출물
+-   **콘텐츠(Content)**: 저작물의 실질적인 내용으로 글쓰기 핵심이며, 정보 정확성, 완전성, 통찰력을 제공해야 한다.
+-   **디자인(Design)**: 저작물의 외양이나 'Look and Feel'을 의미하며 사용자 경험에 큰 영향을 미치며, 정보를 효과적으로 전달하는 데 중요한 역할을 한다.
+-   **형식(Format)**: 저작물의 최종 형태나 산출물이 담기는 매체(디지털, 인쇄 등)를 의미하며, 어떻게 배포되고 소비될 것인지 결정한다.
 
-쿼토는 세 가지 요소를 충족시키기 위해 다양한 기능을 제공한다.
-팬독(Pandoc)과 마크다운을 활용하여 수식, 인용, 서지관리, 콜아웃(callout), 고급 레이아웃 등을 문서 저작을 지원하고, 고품질 논문, 보고서, 발표슬라이드(PPT), 웹사이트, 블로그, 전자책 등 다양한 형태 출판 산출물을 HTML, PDF, MS 워드, ePub 등 다양한 디지털 형식로 제작할 수 있다.
-특히, 프로그래밍 언어와 문서 저작, 출판 산출물 사이의 연결고리로서 쿼토는 매우 유용한 도구로 평가받고 있으며, 버전 제어와 협업, 재현가능 과학기술 문서와 비즈니스에서 요구되는 자동화된 생산성 높은 문서저작에 큰 장점이 있다.
+쿼토는 세 가지 요소를 충족시키기 위한 다양한 기능을 제공한다.
+팬독(Pandoc)과 마크다운을 활용해 수식, 인용, 서지 관리, 콜아웃, 고급 레이아웃 기능 등을 고품질 논문, 보고서, 발표 슬라이드(PPT), 웹사이트, 블로그, 전자책 등 다양한 형태 출판 산출물로 저작하여 인쇄매체 뿐만 아니라 HTML, PDF, MS 워드, ePub 등 다양한 디지털 매체를 통해 독자에게 전달할 수 있다.
+특히, 쿼토는 프로그래밍 언어(R, 파이썬 등)와 문서 저작, 출판 산출물 사이 핵심 연결고리로 동작하여 버전 제어, 협업, 재현 가능한 과학기술 문서나 비즈니스에서 자동화된 생산성 높은 문서 저작에 큰 장점을 제공한다.
 
-+---------------------------------+-----------------------------+------------------------------------+
-| 프로그래밍(계산)                | 문서 저작                   | 출력물                             |
-+:===============================:+:===========================:+:==================================:+
-| Python, R, Julia, Observable JS | Pandoc, 마크다운 (Markdown) | 문서, 웹사이트, PPT, 책, 블로그 등 |
-+---------------------------------+-----------------------------+------------------------------------+
+|        프로그래밍(계산)         |                   문서 저작                    |                  출력물                  |
+|:------------------:|:--------------------------:|:----------------------:|
+| Python, R, Julia, Observable JS | Pandoc, 마크다운, [\LaTeX](http://example.org) | 문서, 웹사이트, PPT, (전자)책, 블로그 등 |
 
-## Single Sourcing 출판저작
+## 싱글 소싱 출판저작
 
-데이터 사이언스 출판저작에 다소 차이는 있지만 출판에 대한 대체적인 방식은 유사할 것으로 보인다.
-즉, Single Sourcing 을 콘텐츠 저작, 디자인, 최종 출판물 관리까지 일원화되어 자동화되어 체계적으로 관리된다면 중복되는 낭비는 물론 재현가능성도 높여 과학기술 출판저작물로 가장 이상적으로 간주되고 있다.
+데이터 과학을 비롯한 과학기술 분야 출판저작이 다른 분야와 약간 다를 수 있지만, 출판의 기본적인 접근 방식은 대체로 유사하다고 볼 수 있다.
+특히, 싱글 소싱(Single Sourcing)[^quarto-1] 방식을 통해 콘텐츠 저작부터 디자인, 협업, 검수, 최종 출판물 관리까지 일원화하고 자동화한다면, 중복작업과 낭비를 줄이는 동시에 재현 가능성을 높일 수 있어 과학기술 출판저작물에 있어 가장 이상적인 방법으로 평가받고 있다.
 
-### 문제점
+[^quarto-1]: "싱글 소싱(Single Sourcing)"은 하나의 원본 콘텐츠를 여러 형식이나 채널에 적용할 수 있도록 하는 문서 작성 및 관리 방법이다.
+    콘텐츠를 한 번만 작성하고 다양한 출력 형식(예: PDF, 웹 페이지, PPT, 모바일 앱 등)으로 변환하게 되면, 콘텐츠 일관성 유지 및 업데이트와 관리가 훨씬 효율적이다.
 
-![문제점](images/single-sourcing-problem.jpg){#fig-problem}
+싱글 소싱 저작 방식은 데이터, 코드, 수식, 다이어그램, 텍스트 등 다양한 저작물 구성요소를 하나의 소스에서 관리함으로써, 수정이나 업데이트가 필요할 때 일관성을 유지하면서 효율적으로 저작작업을 수행할 수 있어 연구 결과의 정확성과 신뢰성을 높이기 위한 재현가능한 글쓰기를 중시하는 과학기술 분야에서 특히 강조되고 있으며, 싱글 소싱을 통한 자동화 생산성을 중시하는 비즈니스 글쓰기에서도 점차 글로벌 표준으로 자리를 잡아가고 있다.
 
-### 개념
+```{mermaid}
+graph LR;
+    style A fill:#f9d71c,stroke:#333,stroke-width:2px;
+    style B fill:#1fc8db,stroke:#333,stroke-width:2px;
+    style C fill:#ff6b6b,stroke:#333,stroke-width:2px;
+    style J fill:#c4e17f,stroke:#333,stroke-width:2px;
+    style K fill:#1c8adb,stroke:#333,stroke-width:2px;
+    style L fill:#8e44ad,stroke:#333,stroke-width:2px;
 
-![Single Sourcing 개념](images/single-sourcing-concept.jpg){#fig-concept}
+    classDef officeStyle fill:#f9d71c,stroke:#333,stroke-width:2px;
+    class L,AA,AB officeStyle;
 
-### Single Sourcing Multi-Use
-
-![Single Sourcing Multi-Use](images/single-sourcing-publishing.jpg){#fig-publishing}
+    A[콘텐츠 저작] --> B[디자인]
+    B --> C[출판]
+    
+    C --> J[PDF]
+    C --> K[HTML]
+    C --> L[워드/한글/PPT]
+  
+   
+    J --> W[논문/보고서]
+    J --> X["(전자)책"]
+    
+    K --> Y[웹사이트/블로그]
+    K --> Z[대쉬보드]
+    
+    L --> AA[비즈니스 문서]
+    L --> AB[과학기술 문서]
+```
 
 ## 작업흐름
 
-기존 R `.Rmd`, 파이썬 `.ipynb` 확장자를 갖는 작업흐름이 `.qmd` 파일로 단일화되는 것이 가장 큰 특징이다.
-따라서 마크다운으로 콘텐츠를 작성하고 프로그래밍 코드를 R, 파이썬, 자바스크립트, 쥴리아 로 작성하게 되면 자동으로 계산을 수행하고 결과물을 마크다운으로 변환시키기 때문에 후속 작업을 신경쓰지 않고 원하는 결과물을 얻을 수 있는 장점이 있다.
+기존 R `.Rmd` 파일과 파이썬 `.ipynb` 파일을 `.qmd` 파일로 통일시킨 것은 쿼토의 주요 특징 중 하나이다.
+이러한 통합은 다양한 프로그래밍 언어를 사용하는 복잡한 작업 흐름을 단순화시킬 수 있고 협업을 촉진한다.
+저작자는 마크다운을 사용하여 콘텐츠를 작성하고, 프로그래밍 코드는 R, 파이썬, 자바스크립트, 줄리아 등 프로그래밍 언어로 작성한다.
+텍스트와 프로그래밍 코드는 팬독(pandoc)을 통해 마크다운 변환이 자동으로 이루어지기 때문에 후속 작업에 대해 걱정할 필요가 없다.
+싱글 소싱 개념이 팬독을 통해 자동화되어 원하는 저작 결과물을 효율적이고 빠르게 얻을 수 있어 저작작업 생산성을 크게 향상시키는 장점이 있다.
 
-### R (`.Rmd`)
+::: {#fig-single-sourcing layout-nrow="2"}
+![쿼토 - R](images/qmd-knitr.png)
 
-![](images/rmd-knitr.png)
+![쿼토 - 파이썬](images/qmd-jupyter.png)
 
-### 파이썬 (주피터)
-
-![](images/jupyter-alone.png)
-
-### Quarto - R
-
-![](images/qmd-knitr.png)
-
-### Quarto - 파이썬
-
-![](images/qmd-jupyter.png)
+쿼토 R, 파이썬 싱글소싱
+:::
 
 ## 쿼토 해부
 
-쿼토는 데이터 과학 문서 작성 패러다임을 바꾼 R마크다운의 후속작으로 볼 수 있다.
-쿼토는 10년 이상의 `knitr` 경험을 바탕으로 개발되었으며, 최근에는 위지윅(What You See Is What You Get) 패러다임도 RStudio **Visual 편집**에 도입하여 복잡한 코드 작성 없이 직관적으로 문서를 작성할 수 있다.
-R 사용자는 RStudio IDE, 파이썬 등 개발 경험이 풍부하신 분들은 파이참, VS코드, 이맥스/VIM 등 통합개발환경(IDE)을 쿼토 CLI를 통해 출판물을 쉽게 저작할 수 있다.
+쿼토는 데이터 과학 문서 작성의 새로운 패러다임을 제시하며, R마크다운의 후속임을 자처하고 있다.
+10년 이상의 `knitr` 경험을 바탕으로 개발되었고, 최근에는 RStudio **Visual 편집** 기능을 통해 위지위그(What You See Is What You Get) 패러다임도 적극 수용함으로써 저작자는 복잡한 코드 작성 없이도 직관적으로 문서를 작성할 수 있게 되었다.
 
-쿼토는 다양한 프로그래밍 언어를 통해 계산(Computation) 기능을 문서에 담을 수 있도록 지원한다.
-R, 파이썬, SQL, 자바스크립트 등 다양한 프로그래밍 언어로 문서 내에 그래프, 표, 인터랙티브 결과물을 쉽게 삽입할 수 있다.
-이러한 장점들이 모여 문서를 제작하고 유통하고 소비하는 데이터 과학자, 개발자, 과학기술 연구원, 사무노동자 분들의 시간을 줄여주고 업무 생산성을 크게 높여주는 도구로 자리매김하고 있다.
+쿼토는 다양한 통합개발환경(IDE)과 호환성을 지원하고 있다.
+R 사용자는 RStudio IDE를, 파이썬 경험이 풍부한 사용자는 파이참, 범용 소프트웨어 개발 경험을 가지신 분은 VS코드, 이맥스/VIM 등과 통합하여 사용할 수 있고, 쿼토 CLI를 통해 IDE에서 쉽게 저작물을 다양한 형태로 출판할 수 있다.
+
+쿼토는 다양한 프로그래밍 언어를 지원하여 문서 내에 계산(Computation) 기능을 쉽게 통합할 수 있는 현존하는 얼마 안되는 문학적 프로그래밍 저작도구다.
+R, 파이썬, SQL, 자바스크립트 등을 활용해 그래프, 표, 다이어그램, 인터랙티브 산출물을 문서에 반영하여 한층 진화된 디지털 문서 저작을 지원한다.
+
+쿼토는 데이터 과학자, 개발자, 과학기술 연구원, 사무노동자 등 다양한 분야의 종사자분들로부터 챗GPT 인공지능 시대 자동화를 통한 사무업무 생산성 도구로 자리매김하고 있다.
 
 ![쿼토 작업흐름](images/quarto-unification.png)
 
 쿼토 저작은 메타데이터(전문, front matter), 텍스트, 코드라는 세 가지 주요 구성요소로 이뤄진다.
+쿼토는 문학적 프로그래밍과 자동화 패러다임을 적극 반영하여 데이터 과학 프로그래밍과 과학기술 문서 작성을 더 효율적이고 일관된 방식으로 저작하고 출판할 수 있도록 지원한다.
 
--   메타데이터 (YAML): YAML은 "YAML Ain't Markup Language"의 약자로, 데이터를 구조화하기 위한 언어로, 쿼토에서 문서에서 전문(Front Matter)을 구성하는 문서 제목, 작성자, 날짜, 문서 형식 등을 정의한다. 메타데이터는 보통 문서 상단에 위치하며, 문서의 전반적인 설정과 구성을 담당한다.
--   텍스트 (마크다운): 마크다운도 언어로, 2004년 아론 스워츠와 존 그루버가 주도하여 탄생했다. HTML 같은 복잡한 마크업 언어 대신, 간단한 형식의 문서를 빠르고 효율적으로 작성할 수 있는 도구로 복잡한 디자인보다는 내용의 구조와 의미에 중점을 두기 때문에 문서 작성자는 외양보다 내용에 더 집중할 수 있다는 장점이 있다.
--   코드 (`knitr`, `jupyter`): `knitr`는 R 코드를 문서에 통합을 가능케하고, `jupyter`는 파이썬 사용자에게 인기있는 패키지다. 쿼토에서 `knitr`, `jupyter`에서 작성된 코드를 문서에 포함시킬 수 있어 데이터 분석 통계값, 그래프, 다이어그램, 지도 등 다양한 결과물을 문서에 삽입할 수 있다.
+-   **메타데이터 (YAML)**: YAML은 "YAML Ain't Markup Language"의 약자로, 데이터를 구조화하는 언어이다. 쿼토에서 이를 활용하여 문서 전문(Front Matter)을 구성한다. 문서 상단에 위치하며 문서 제목, 작성자, 날짜, 문서 형식 등을 포함하며 문서의 전반적인 설정과 구성을 담당한다.
+-   **텍스트 (마크다운)**: 마크다운은 2004년에 아론 스워츠와 존 그루버에 의해 개발된 언어로, HTML과 같은 복잡한 마크업 언어 대신 사용되는 간단한 형식의 문서 작성 도구다. 복잡한 디자인보다 콘텐츠 구조와 의미에 중점을 두기 때문에, 문서 저작자는 외양보다 내용에 더 집중할 수 있다.
+-   **코드 (`knitr`, `jupyter`)**: `knitr`는 R 코드를 문서에 통합할 수 있는 패키지, `jupyter`는 파이썬 사용자에게 인기 있는 패키지이다. 쿼토에서는 이 두 패키지를 활용하여 작성된 코드를 문서에 포함시킬 수 있다. 데이터 분석, 통계값, 그래프, 다이어그램, 지도 등 다양한 코딩 결과물을 문서에 반영시킬 수 있다.
 
-![Quarto 문서 구성요소](images/quarto-anatomy.png){fig-align="center" width="450"}
+![쿼토 문서 구성요소](images/quarto-anatomy.png){fig-align="center" width="450"}
 
 ### YAML
 
-YAML(발음은 야믈)은 쿼토파일 메타데이터로 문서 본문보다 먼저 제시되는 전문(front matter)으로 문서를 구조화하기 R 마크다운, 쿼토에서 도입된 경량언어로 쿼토에서는 문서 제목, 작성자, 날짜, 문서 형식, 레이아웃 등을 정의한다.
-보통 키값(key-value) 쌍을 이루는데, 키는 콜론(:)으로 값과 구분한다.
+YAML(발음은 야믈)은 R 마크다운과 쿼토에서 주로 사용되는 경량언어다.
+YAML은 문서 전문(front matter) 부분에 위치해 코드와 텍스트로 구성된 문서 본문보다 먼저 위치하며, 문서 메타데이터를 설정하는 역할을 수행한다.
+쿼토에서 YAML을 이용해 문서 제목, 작성자, 날짜, 문서 형식, 레이아웃 등을 정의한다.
+YAML은 키와 값이 콜론(:)으로 구분되는 키값(key-value) 쌍을 사용해 각종 문서 설정정보를 표현하여 전반적인 문서 설정과 구성을 쉽게 관리한다.
 
 ::: columns
 ::: {.column width="45%"}
@@ -122,14 +143,13 @@ format: pdf
 :::
 :::
 
-YAML로 문서 전문을 작성하게 되면 가독성이 뛰어나 읽고 이해하기 쉽다.
-복잡한 문서 구조나 설정을 지정할 때 특히 유용하다.
-중첩된 선택옵션과 같은 복잡한 문서구조도 들여쓰기(indent)를 통해 명확히 표현된다.
-재사용성도 뛰어나 같은 설정 값을 여러 곳에서 사용해야 할 경우, YAML 파일 하나를 수정하면 모든 곳에 적용될 수 있어 시간과 노력을 절약해준다.
-또한, 텍스트 기반이라 Git과 같은 버전 제어 시스템과 잘 통합되어 여러 저자가 공동 작업 진가를 발휘한다.
-하지만, 들여쓰기에 민감하여 실수로 공백을 잘못 넣었을 경우 오류가 발생할 수 있으므로 주의가 요구된다.
+YAML을 이용한 문서 전문 작성은 가독성이 뛰어나 읽고 이해하기 쉽다는 장점이 있다.
+특히 복잡한 문서 구조나 설정을 지정할 때 유용하며, 중첩된 선택옵션 같은 복잡한 구조도 들여쓰기를 통해 명확하게 표현할 수 있다.
+YAML은 재사용성이 뛰어나서 같은 설정 값을 여러 곳에서 사용해야 할 경우, 하나의 YAML 파일만 수정하면 모든 곳에 적용될 수 있어 시간과 노력을 크게 절약할 수 있다.
+텍스트 기반인 만큼 Git과 같은 버전 제어 시스템과도 잘 통합되어, 여러 저자가 공동으로 작업할 때 진가를 발휘하지만, 들여쓰기에 민감하여 실수로 공백을 잘못 넣었을 경우 오류가 발생할 수 있어 주의가 필요하다.
 
-YAML은 단순히 `KEY: Value` 에 불과한데 사례를 통해 YAML의 편리성과 유용함을 살펴보자.
+YAML은 기본적으로 `KEY: Value` 형태로 구성되어 있지만, 이러한 단순한 구조 덕분에 매우 편리하고 유용하다.
+YAML을 통한 문서 저작을 경험하게 되면 YAML의 편리성과 유용함을 더 깊게 이해하게 된다.
 
 ::: columns
 ::: {.column width="45%"}
@@ -154,13 +174,13 @@ format: pdf
 :::
 :::
 
-다음 예시에서 `quarto render` 명령을 사용하여 `document.qmd` 파일을 `HTML` 형식 문서로 제작하는데 CLI에서 옵션에서 `-M code fold:true`을 통해 코드 섹션을 접을 수 있는 형태로 제작함을 나타내고 있다.
+`quarto render` 명령을 사용하여 `document.qmd` 파일을 `HTML` 형식으로 제작하는 예시에서 CLI 옵션 `-M code fold:true`을 사용하여 코드 섹션을 접을 수 있게 만들었다.
+이러한 설정을 `YAML`로 바꾸면, 설정 파일 내에 `format` 섹션을 생성하고 그 안에 `html`을 정의한다.
+그 후, `html` 포맷 설정에 목차 생성(`toc: true`)과 코드 접기 기능(`code-fold: true`)을 추가한다.
 
-동일한 의도를 `YAML` 설정으로 바꾸면, 설정 파일에 `format` 섹션을 만들고 그 안에 `html`을 정의하고 나서, `html` 포맷에 목차 생성(`toc: true`)과 코드 접기 기능(`code-fold: true`)을 추가로 설정했다.
-
-동일한 의도를 CLI에 넣는 것보다 YAML 파일에 담게되면 훨씬 깔끔하고 우아하다.
-많은 선택옵션들이 명령어로 직접 들어가면 명령어가 길어져 가독성이 떨어지고, 나중에 어떤 옵션을 사용했는지 파악하기도 어렵다.
-반면 `YAML` 파일이 도입되면, 설정을 한 곳에서 명확하게 관리할 수 있어 유지보수도 편리하고, 공동 저작자들과 쉽게 공유되기 때문에 협업에도 유리하다.
+CLI 옵션을 직접 입력하는 것과 비교하여 `YAML` 파일에 설정을 담는 것이 훨씬 깔끔하고 우아하다.
+CLI에서 많은 선택옵션을 직접 입력하면 명령어가 길어져 가독성이 떨어지고, 나중에 어떤 옵션을 사용했는지 확인하기 어렵다.
+하지만 `YAML` 파일을 사용하면, 모든 설정을 한 곳에서 명확하게 관리할 수 있어 유지보수가 쉽고, 공동 저작자들과 공유와 협업에도 유리하다.
 
 ::: columns
 ::: {.column width="45%"}
@@ -188,9 +208,11 @@ format:
 :::
 :::
 
-문서저작 통합개발환경(IDE) RStudio나 VSCode 에서 제공하는 탭-자동완성(Tab Completion) 기능은 YAML 전문코드를 작성할 때 큰 도움이 된다.
-첫 글자나 몇몇 글자를 타이핑한 후에 탭 키를 누르면, IDE가 가능한 모든 명령어나 변수, 함수 이름 등을 보여주기 때문에 저작자는 오타를 줄이고 빠르게 문서를 저작할 수 있다.
-RStudio에서 <kbd>`Ctrl + space`</kbd> 단축키를 사용하면, YAML 전문코드를 작성할 때 키값을 선택할 수 있는 목록을 보여준다.
+RStudio나 VSCode와 같은 통합개발환경(IDE)에서 제공하는 탭-자동완성(Tab Completion) 기능은 YAML 전문코드를 작성할 때 매우 유용하다.
+이 기능을 사용하면, 저작자는 첫 글자나 몇몇 글자를 타이핑한 후에 탭 키를 눌러 가능한 모든 명령어, 변수, 함수 이름 등을 볼 수 있다.
+이로 인해 오타의 가능성이 줄어들고 문서 저작 속도가 향상된다.
+특히 RStudio에서는 `Ctrl + space` 단축키를 사용하여 YAML 전문코드를 작성할 때 가능한 키값을 선택할 수 있는 목록을 제공한다.
+이러한 기능은 문서 저작 과정을 효율적으로 만들어 준다.
 
 ::: {#fig-yaml layout="[45,-5,45]"}
 ![YAML 키 설정](images/yaml_before.png){fig-align="center"}
@@ -200,57 +222,30 @@ RStudio에서 <kbd>`Ctrl + space`</kbd> 단축키를 사용하면, YAML 전문�
 RStudio YAML 자동완성
 :::
 
-### 마크다운
+## R 마크다운과 쿼토
 
-### 프로그래밍 언어
+[[FAQ for R Markdown Users](https://quarto.org/docs/faq/rmarkdown.html)]{.aside}
 
-## R 마크다운과 비교
+쿼토는 "차세대 R 마크다운"이라는 별명에 걸맞게 R 마크다운의 다양한 패키지와 기능을 지원하고 있다.
+그러나 쿼토의 개발 기간이 R 마크다운보다 상대적으로 짧기 때문에 아직은 R 마크다운의 모든 기능을 지원하지 않는다.
+그럼에도 불구하고, 쿼토는 지속적으로 지원 범위를 확장하고 있으며, 고유한 기능도 추가하고 있다.
+이러한 점들은 쿼토가 R 마크다운 생태계에 어떤 새로운 가치를 더하고 있는지를 잘 보여준다.
+다음 @tbl-quarto-rmarkdown 에서 쿼토와 R 마크다운을 다양한 문서 기능별로 비교하고 있다.
 
-[[FAQ for R Markdown Users](https://quarto.org/docs/faq/rmarkdown.html#i-use-x-bookdown-blogdown-etc..-what-is-the-quarto-equivalent)]{.aside}
+|       기능        | R 마크다운                                                                                                                                                                                                                                           | 쿼토(Quarto)                                                                                                                                                                                  |
+|:-------------:|:-------------------------------|:------------------------|
+|     파일형식      | [html_document](https://pkgs.rstudio.com/rmarkdown/reference/html_document.html) / [pdf_document](https://pkgs.rstudio.com/rmarkdown/reference/pdf_document.html) / [word_document](https://pkgs.rstudio.com/rmarkdown/reference/word_document.html) | [html](https://quarto.org/docs/output-formats/html-basics.html) / [pdf](https://quarto.org/docs/output-formats/pdf-basics.html) / [docx](https://quarto.org/docs/output-formats/ms-word.html) |
+|   비머(Beamer)    | [beamer_presentation](https://pkgs.rstudio.com/rmarkdown/reference/beamer_presentation.html)                                                                                                                                                         | [beamer](https://quarto.org/docs/presentations/beamer.html)                                                                                                                                   |
+|  파워포인트(PPT)  | [powerpoint_presentation](https://pkgs.rstudio.com/rmarkdown/reference/powerpoint_presentation.html)                                                                                                                                                 | [pptx](https://quarto.org/docs/presentations/powerpoint.html)                                                                                                                                 |
+|    웹 슬라이드    | [xaringan](https://bookdown.org/yihui/rmarkdown/xaringan.html) / [ioslides](https://bookdown.org/yihui/rmarkdown/ioslides-presentation.html) / [revealjs](https://bookdown.org/yihui/rmarkdown/revealjs.html)                                        | [revealjs](https://quarto.org/docs/presentations/revealjs/)                                                                                                                                   |
+|   고급 레이아웃   | [tufte](https://bookdown.org/yihui/rmarkdown/tufte-handouts.html) / [distill](https://rstudio.github.io/distill/figures.html)                                                                                                                        | [Quarto Article Layout](https://quarto.org/docs/authoring/article-layout.html)                                                                                                                |
+|     상호 참조     | [html_document2](https://bookdown.org/yihui/bookdown/a-single-document.html) / [pdf_document2](https://bookdown.org/yihui/bookdown/a-single-document.html) / [word_document2](https://bookdown.org/yihui/bookdown/a-single-document.html)            | [Quarto Crossrefs](https://quarto.org/docs/authoring/cross-references.html)                                                                                                                   |
+|  웹사이트/블로그  | [blogdown](https://pkgs.rstudio.com/blogdown/) / [distill](https://pkgs.rstudio.com/distill/)                                                                                                                                                        | [Quarto Websites](https://quarto.org/docs/websites/) / [Quarto Blogs](https://quarto.org/docs/websites/website-blog.html)                                                                     |
+|        책         | [bookdown](https://pkgs.rstudio.com/bookdown/)                                                                                                                                                                                                       | [Quarto Books](https://quarto.org/docs/books/)                                                                                                                                                |
+|  인터랙티브 문서  | [Shiny Documents](https://bookdown.org/yihui/rmarkdown/shiny-documents.html)                                                                                                                                                                         | [Quarto Interactive Documents](https://quarto.org/docs/interactive/shiny/)                                                                                                                    |
+|    페이지 HTML    | [pagedown](https://github.com/rstudio/pagedown)                                                                                                                                                                                                      | 출시 예정                                                                                                                                                                                     |
+|     학술 논문     | [rticles](https://pkgs.rstudio.com/rticles/)                                                                                                                                                                                                         | [Quarto Journal Articles](https://quarto.org/docs/journals/)                                                                                                                                  |
+|     대쉬보드      | [flexdashboard](https://pkgs.rstudio.com/flexdashboard/) \|                                                                                                                                                                                          | 출시 예정                                                                                                                                                                                     |
+| 인터랙티브 자습서 | [learnr](https://pkgs.rstudio.com/learnr/)                                                                                                                                                                                                           | 계획 없음                                                                                                                                                                                     |
 
-쿼토는 "차세대 R 마크다운"이라는 별명답게 R 마크다운 생태계의 다양한 패키지와 기능을 지원한다.
-쿼토가 시작이 R 마크다운보다 길지 않아 아직 R 마크다운 생태계의 모든 기능을 지원하지는 않지만, 점차 지원 범위를 넓혀나가고 있으며 고유한 기능도 추가로 제공하기 시작했다.
-
-+-----------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
-| 기능                  | R 마크다운                                                                                               | 쿼토(Quarto)                                                                       |
-+:=====================:+:=========================================================================================================+:===================================================================================+
-| 파일형식              | -   [html_document](https://pkgs.rstudio.com/rmarkdown/reference/html_document.html)                     | -   [html](https://quarto.org/docs/output-formats/html-basics.html)                |
-|                       |                                                                                                          |                                                                                    |
-|                       | -   [pdf_document](https://pkgs.rstudio.com/rmarkdown/reference/pdf_document.html)                       | -   [pdf](https://quarto.org/docs/output-formats/pdf-basics.html)                  |
-|                       |                                                                                                          |                                                                                    |
-|                       | -   [word_document](https://pkgs.rstudio.com/rmarkdown/reference/word_document.html)                     | -   [docx](https://quarto.org/docs/output-formats/ms-word.html)                    |
-+-----------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
-| 비머(Beamer)          | -   [beamer_presentation](https://pkgs.rstudio.com/rmarkdown/reference/beamer_presentation.html)         | -   [beamer](https://quarto.org/docs/presentations/beamer.html)                    |
-+-----------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
-| 파워포인트(PPT)       | -   [powerpoint_presentation](https://pkgs.rstudio.com/rmarkdown/reference/powerpoint_presentation.html) | -   [pptx](https://quarto.org/docs/presentations/powerpoint.html)                  |
-+-----------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
-| 웹 슬라이드           | -   [xaringan](https://bookdown.org/yihui/rmarkdown/xaringan.html)                                       | -   [revealjs](https://quarto.org/docs/presentations/revealjs/)                    |
-|                       |                                                                                                          |                                                                                    |
-|                       | -   [ioslides](https://bookdown.org/yihui/rmarkdown/ioslides-presentation.html)                          |                                                                                    |
-|                       |                                                                                                          |                                                                                    |
-|                       | -   [revealjs](https://bookdown.org/yihui/rmarkdown/revealjs.html)                                       |                                                                                    |
-+-----------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
-| Advanced Layout       | -   [tufte](https://bookdown.org/yihui/rmarkdown/tufte-handouts.html)                                    | -   [Quarto Article Layout](https://quarto.org/docs/authoring/article-layout.html) |
-|                       |                                                                                                          |                                                                                    |
-|                       | -   [distill](https://rstudio.github.io/distill/figures.html)                                            |                                                                                    |
-+-----------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
-| Cross References      | -   [html_document2](https://bookdown.org/yihui/bookdown/a-single-document.html)                         | -   [Quarto Crossrefs](https://quarto.org/docs/authoring/cross-references.html)    |
-|                       | -   [pdf_document2](https://bookdown.org/yihui/bookdown/a-single-document.html)                          |                                                                                    |
-|                       | -   [word_document2](https://bookdown.org/yihui/bookdown/a-single-document.html)                         |                                                                                    |
-+-----------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
-| Websites & Blogs      | -   [blogdown](https://pkgs.rstudio.com/blogdown/)                                                       | [Quarto Websites](https://quarto.org/docs/websites/)                               |
-|                       |                                                                                                          |                                                                                    |
-|                       | -   [distill](https://pkgs.rstudio.com/distill/)                                                         | [Quarto Blogs](https://quarto.org/docs/websites/website-blog.html)                 |
-+-----------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
-| Books                 | [bookdown](https://pkgs.rstudio.com/bookdown/)                                                           | [Quarto Books](https://quarto.org/docs/books/)                                     |
-+-----------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
-| Interactivity         | [Shiny Documents](https://bookdown.org/yihui/rmarkdown/shiny-documents.html)                             | [Quarto Interactive Documents](https://quarto.org/docs/interactive/shiny/)         |
-+-----------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
-| Paged HTML            | [pagedown](https://github.com/rstudio/pagedown)                                                          | 출시 예정                                                                          |
-+-----------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
-| Journal Articles      | [rticles](https://pkgs.rstudio.com/rticles/)                                                             | [Quarto Journal Articles](https://quarto.org/docs/journals/)                       |
-+-----------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
-| Dashboards            | [flexdashboard](https://pkgs.rstudio.com/flexdashboard/) \|                                              | 출시 예정                                                                          |
-+-----------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
-| Interactive Tutorials | [learnr](https://pkgs.rstudio.com/learnr/)                                                               | 계획 없음                                                                          |
-+-----------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
+: R 마크다운과 쿼토 비교 {#tbl-quarto-rmarkdown}

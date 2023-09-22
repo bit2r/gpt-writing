@@ -97,7 +97,7 @@ R 언어와 같은 프로그래밍 언어들이 글쓰기의 새로운 영역으
 마련하고 도입을 추진해야 된다.
 
 ![글쓰기와 삼권분립](images/three-pillar.png){fig-align="center"
-width="547"}
+width="273"}
 
 ## 글쓰기 역사
 
@@ -166,8 +166,7 @@ R/Python, [\LaTeX](http://example.org) 엔진 등 단위기술 발전과 함께
 있다는 것을 최초로 선보였다. 1985년에 레슬리 램포트가
 [\TeX](http://example.org)을 기반으로 [\LaTeX](http://example.org)을
 개발하여 수학과 과학 분야에서 널리 사용되는 문서저작 도구로 자리잡았다.
-[@knuth84; @spivak1990joy] \index{\LaTeX}
-\index{문학적 프로그래밍}
+[@knuth84; @spivak1990joy] \index{\LaTeX} \index{문학적 프로그래밍}
 
 1988년에 울프람 박사가 매쓰매티카 노트북(Mathematica Notebooks)을
 개발하여 수학과 과학 연구를 위한 고급 작업 환경을 제공했지만 한동안
