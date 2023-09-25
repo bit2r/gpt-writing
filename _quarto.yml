@@ -39,7 +39,7 @@ book:
         - components.qmd             # OK
         - markdown.qmd               # OK
         - document_class.qmd         # OK
-        - about_book.qmd          # OK
+        - about_book.qmd             # OK
 
     - part: "템플릿과 테마"
       chapters:
@@ -55,12 +55,13 @@ book:
         - dw_pdf.qmd              # OK
         - dw_website.qmd          # OK
         - dw_slideshow.qmd        # OK
-        - dw_blog.qmd             # OK
         - dw_dashboard.qmd        # OK
 
     - part: "챗GPT"
       chapters:
         - chatGPT.qmd             # OK
+        - prompt.qmd              # OK
+        - text_to_X.qmd           # OK
 
     - references.qmd
 

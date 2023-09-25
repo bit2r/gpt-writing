@@ -7,7 +7,7 @@ editor:
     wrap: 72
 ---
 
-# 웹사이트
+# 웹사이트와 블로그
 
 저작물을 파일형태 뿐만 아니라 웹사이트에 공유하는 것은 코로나19로 촉발된
 디지털 전환(Digital Transformation) 시대에 과학기술 종사자 뿐만 아니라
@@ -216,5 +216,9 @@ $ quarto publish quarto-pub
 $ quarto preview
 $ quarto publish quarto-pub
 ```
+
+
+## 블로그
+
 
 
