@@ -49,4 +49,6 @@ rsconnect/
 
 publishing/
 pdfs/
+docs/*.pdf
+
 
