@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko-KR" xml:lang="ko-KR"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.288">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="이광춘">
+
+<title>챗GPT 디지털 글쓰기 - 25&nbsp; 프롬프트 공학</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./text_to_X.html" rel="next">
+<link href="./chatGPT.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.css" rel="stylesheet">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "일치 없음",
+    "search-matching-documents-text": "일치된 문서",
+    "search-copy-link-title": "검색 링크 복사",
+    "search-hide-matches-text": "추가 검색 결과 숨기기",
+    "search-more-match-text": "추가 검색결과",
+    "search-more-matches-text": "추가 검색결과",
+    "search-clear-button-title": "제거",
+    "search-detached-cancel-button-title": "취소",
+    "search-submit-button-title": "검색",
+    "search-label": "검색"
+  }
+}</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chatGPT.html">챗GPT</a></li><li class="breadcrumb-item"><a href="./prompt.html"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">프롬프트 공학</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">챗GPT 디지털 글쓰기</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="검색"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">서문</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">글쓰기</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./whole_game.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">챗GPT 글쓰기 맛보기</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">글쓰기 환경</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./history.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">언어와 문자</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./editor.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">편집기와 출판</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unicode.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">유니코드와 UTF-8</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./latex_pdf.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">LaTeX과 PDF</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quarto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">쿼토(Quarto)</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">글쓰기</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./markdown_01_mess.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">심각한 현재 상황</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./writing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">글쓰기와 반도체</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">기본요소</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./components.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">문서 구성요소</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./markdown.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">마크다운</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./document_class.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">문서 클래스</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./about_book.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">책과 편집 용어</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">템플릿과 테마</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./fonts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">글꼴</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./colors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">색상</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./themes_ggplot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">그래프 테마</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./themes_gt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">표 테마</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./templates.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">템플릿</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+ <span class="menu-text">출판물</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./publishing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">출판</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dw_pdf.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">쿼토 PDF</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dw_website.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">웹사이트와 블로그</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dw_slideshow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">슬라이드 PPT</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dw_dashboard.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">대쉬보드</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+ <span class="menu-text">챗GPT</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chatGPT.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">챗GPT</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./prompt.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">프롬프트 공학</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./text_to_X.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">생성형 AI</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">챗GPT 응용사례</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">참고문헌</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">목차</h2>
+   
+  <ul>
+  <li><a href="#채팅-인터페이스" id="toc-채팅-인터페이스" class="nav-link active" data-scroll-target="#채팅-인터페이스"><span class="header-section-number">25.1</span> 채팅 인터페이스</a></li>
+  <li><a href="#프롬프트-안내지침" id="toc-프롬프트-안내지침" class="nav-link" data-scroll-target="#프롬프트-안내지침"><span class="header-section-number">25.2</span> 프롬프트 안내지침</a></li>
+  <li><a href="#프롬프트-구성요소" id="toc-프롬프트-구성요소" class="nav-link" data-scroll-target="#프롬프트-구성요소"><span class="header-section-number">25.3</span> 프롬프트 구성요소</a></li>
+  <li><a href="#프롬프트-작성사례" id="toc-프롬프트-작성사례" class="nav-link" data-scroll-target="#프롬프트-작성사례"><span class="header-section-number">25.4</span> 프롬프트 작성사례</a>
+  <ul class="collapse">
+  <li><a href="#식물-광합성" id="toc-식물-광합성" class="nav-link" data-scroll-target="#식물-광합성"><span class="header-section-number">25.4.1</span> 식물 광합성</a></li>
+  <li><a href="#국가-수도" id="toc-국가-수도" class="nav-link" data-scroll-target="#국가-수도"><span class="header-section-number">25.4.2</span> 국가 수도</a></li>
+  <li><a href="#과학자" id="toc-과학자" class="nav-link" data-scroll-target="#과학자"><span class="header-section-number">25.4.3</span> 과학자</a></li>
+  <li><a href="#요리법" id="toc-요리법" class="nav-link" data-scroll-target="#요리법"><span class="header-section-number">25.4.4</span> 요리법</a></li>
+  </ul></li>
+  <li><a href="#프롬프트-작업흐름" id="toc-프롬프트-작업흐름" class="nav-link" data-scroll-target="#프롬프트-작업흐름"><span class="header-section-number">25.5</span> 프롬프트 작업흐름</a></li>
+  <li><a href="#프롬프트-템플릿" id="toc-프롬프트-템플릿" class="nav-link" data-scroll-target="#프롬프트-템플릿"><span class="header-section-number">25.6</span> 프롬프트 템플릿</a>
+  <ul class="collapse">
+  <li><a href="#역할-프롬프트" id="toc-역할-프롬프트" class="nav-link" data-scroll-target="#역할-프롬프트"><span class="header-section-number">25.6.1</span> 역할 프롬프트</a></li>
+  <li><a href="#감성-분류" id="toc-감성-분류" class="nav-link" data-scroll-target="#감성-분류"><span class="header-section-number">25.6.2</span> 감성 분류</a></li>
+  <li><a href="#텍스트-분류" id="toc-텍스트-분류" class="nav-link" data-scroll-target="#텍스트-분류"><span class="header-section-number">25.6.3</span> 텍스트 분류</a></li>
+  <li><a href="#개체명-추출" id="toc-개체명-추출" class="nav-link" data-scroll-target="#개체명-추출"><span class="header-section-number">25.6.4</span> 개체명 추출</a></li>
+  <li><a href="#질의응답" id="toc-질의응답" class="nav-link" data-scroll-target="#질의응답"><span class="header-section-number">25.6.5</span> 질의응답</a></li>
+  <li><a href="#객관식-문제" id="toc-객관식-문제" class="nav-link" data-scroll-target="#객관식-문제"><span class="header-section-number">25.6.6</span> 객관식 문제</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chatGPT.html">챗GPT</a></li><li class="breadcrumb-item"><a href="./prompt.html"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">프롬프트 공학</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">프롬프트 공학</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+<p>테슬라에서 인공지능(AI) 사업과 오토파일럿 기술책임자를 역임하고 현재 OpenAI에서 근무하고 있는 안드레아 카르파티(Andrej Karpathy)는 현재 가장 인기있는 새로운 프로그래밍 언어로 “영어”를 소개하며 챗GPT가 화려하게 개창한 생성형 AI 시대 프롬프트의 중요성을 설파했다.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/andrej.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="안드레아 카르파티 트윗"><img src="images/andrej.jpg" class="img-fluid figure-img" width="1004"></a></p>
+<figcaption class="figure-caption">안드레아 카르파티 트윗</figcaption>
+</figure>
+</div>
+<p><strong>프롬프트 공학(Prompt Engineering)</strong>은 사용자 질문이나 명령을 AI 언어 모형에게 더 정확하게 전달하고, 모형로부터 더 유용한 응답을 얻기 위한 중요한 과정으로 프롬프트 구조, 문법, 키워드 등을 신중하게 선택하고 작성한다. “날씨 어때?”라는 프롬프트 작성보다 “오늘의 날씨를 알려줘”라고 프롬프트를 작성하는 것이 낫다. 그러나 더 구체적인 정보, 예를 들어 풍속이나 습도까지 알고 싶다면 “오늘의 날씨에 대한 자세한 정보를 알려줘”라고 프롬프트를 작성하면 사용자 의도에 더 부합되는 결과를 얻게 된다.</p>
+<p>프롬프트 공학은 챗GPT와 같은 AI 언어 모형로부터 구체적이고 정확하며 관련성 있는 응답을 도출하기 위해 <strong>프롬프트(Prompt, 지시명령어)</strong>를 설계하고 개선하는 과정이다. 프롬프트 품질이 GPT 모형 출력결과에 큰 영향을 미치기 때문에 이 작업은 매우 중요하다. 프롬프트 공학의 목표는 사용자와 AI 모형 사이 커뮤니케이션을 최적화하여 AI 시스템의 유용성과 효율성을 향상시키는 것이다.</p>
+<p>프롬프트 공학을 학습하면 AI 언어 모델의 효율성과 효과를 개선하고, 커뮤니케이션을 강화하며, 빠르게 진화하는 인공지능 분야에서 고소득 전문직으로 전환도 가능하다. 프롬프트 엔지니어는 다음과 같은 기여를 할 수 있다.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<ul>
+<li><p>AI 응답 개선: 효과적인 지시명령어(프롬프트) 작성은 GPTL 거대 언어 모델(LLM)로부터 보다 정확하고 관련성이 높으며 구체적인 응답을 유도하여 AI 시스템의 전반적인 유용성과 효율성을 향상시키는데 기여한다.</p></li>
+<li><p>효율적인 의사소통: 잘 만들어진 프롬프트는 원하는 정보나 출력을 얻기 위해 필요한 반복 횟수를 줄여 시간을 절약하고 사용자 경험을 개선하는 데 도움이 된다.</p></li>
+<li><p>AI 한계에 대한 이해도 향상: 프롬프트 공학에 참여하면 AI 모델의 강점과 한계를 더 깊이 이해하게 된다. 이러한 지식은 AI 시스템을 사용할 때 현실적인 기대치를 설정하고 사람이 여전히 필요한 영역을 식별하는 데 유용하다.</p></li>
+<li><p>AI 도입 가속: AI 시스템이 다양한 산업에 점점 더 많이 통합됨에 따라 이러한 모델과 효과적으로 소통하는 방법을 이해하는 것이 중요하다. 숙련된 프롬프트 엔지니어는 이러한 시스템이 의미 있고 실행 가능한 인사이트를 생성하도록 보장함으로써 AI 솔루션의 도입을 촉진한다.</p></li>
+<li><p>새로운 일자리: AI 기반 솔루션에 대한 수요가 증가함에 따라 AI 모델의 기능을 효과적으로 활용할 수 있는 전문가에 대한 수요도 증가하고 있다. 프롬프트 엔지니어링에 능숙하면 AI 연구, 데이터 과학, 자연어 처리, AI 컨설팅과 같은 분야에서 새로운 일자리 기회도 얻을 수 있다.</p></li>
+</ul>
+<section id="채팅-인터페이스" class="level2" data-number="25.1">
+<h2 data-number="25.1" class="anchored" data-anchor-id="채팅-인터페이스"><span class="header-section-number">25.1</span> 채팅 인터페이스</h2>
+<p>챗GPT는 거대언어모형(GPT-3.5/GPT-4) AI 채팅 인터페이스를 통해 제공한다. 사용자는 좌측편에 나타나는 프롬프트 채팅 이력을 통해 이전 채팅 대화기록을 확인할 수 있다. 좌측 상단 ‘+ New Chat’ 버튼을 클릭하면 하단에 위치한 채팅 박스에서 ’Send a message …’라는 화면이 나타나고, 이곳에 새로운 메시지를 입력하여 거대언어모형과 프롬프트를 통해 대화를 시작할 수 있다. 채팅 인터페이스는 다른 인터페이스보다 사용자가 AI 언어모형과 의사소통을 원활하게 할 수 있다는 장점이 있다.</p>
+<div id="fig-prompt-start" class="quarto-layout-panel">
+<figure class="figure">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-figure quarto-figure-center" style="flex-basis: 47.5%;justify-content: center;">
+<figure class="figure">
+<p><a href="images/chatGPT_prompt.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="프롬프트 명령 대기 상태"><img src="images/chatGPT_prompt.jpg" class="img-fluid figure-img" width="476"></a></p>
+<figcaption class="figure-caption">프롬프트 명령 대기 상태</figcaption>
+</figure>
+</div>
+<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 5.0%;justify-content: center;">
+<p>&nbsp;</p>
+</div>
+<div class="quarto-figure quarto-figure-center" style="flex-basis: 47.5%;justify-content: center;">
+<figure class="figure">
+<p><a href="images/chatGPT_result.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="명령 실행 결과"><img src="images/chatGPT_result.jpg" class="img-fluid figure-img" width="476"></a></p>
+<figcaption class="figure-caption">명령 실행 결과</figcaption>
+</figure>
+</div>
+</div>
+<p></p><figcaption class="figure-caption">그림&nbsp;25.1: <strong>?(caption)</strong></figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="프롬프트-안내지침" class="level2" data-number="25.2">
+<h2 data-number="25.2" class="anchored" data-anchor-id="프롬프트-안내지침"><span class="header-section-number">25.2</span> 프롬프트 안내지침</h2>
+<p>프롬프트 공학은 AI 언어 모형과 효과적인 상호작용을 위한 중요한 과정으로 프롬프트를 설계할 때 고려해야 할 여러 구성 요소가 있는데, 프롬프트를 다음 지침을 준수하여 신중하게 선택하고 적용하면, AI 언어 모형을 통해 사용자 요구에 더 부합하는 답변을 받을 수 있다.</p>
+<ul>
+<li><p>명확성: 프롬프트는 명확하고 이해하기 쉬워야 한다. 즉, AI 언어모델이 혼동할 수 있는 전문 용어, 은어 또는 모호한 언어는 사용하지 않는다.</p></li>
+<li><p>맥락(Context): AI 언어모델이 해결해야 할 주제나 지시 업무를 파악하는 데 도움이 되는 충분한 <strong>맥락(Context)</strong>를 제공한다. 질문 혹은 요청과 관련된 배경 정보, 구체적인 세부 정보 또는 예시가 포함된다.</p></li>
+<li><p>구체성: AI 언어모델이 원하는 답변으로 안내할 수 있도록 프롬프트를 최대한 구체적으로 작성한다. 답변의 형식, 정보의 범위 또는 집중적으로 다루고 싶은 주제의 특정 측면을 지정하는 행위가 포함된다.</p></li>
+<li><p>모호성 제거: AI 언어모델이 질문을 오해하거나 관련 없는 답변을 제공할 가능성을 줄이려면 프롬프트에 모호성이 있는지 확인한다. 프롬프트가 여러 가지 의미로 해석될 수 있는 경우, 모호함이 없도록 프롬프트를 다시 작성한다.</p></li>
+<li><p>제약 조건: 단어 수 제한이나 주제의 특정 측면과 같은 제약 조건을 포함하면 AI 언어모델이 보다 집중적이고 관련성 높은 답변을 제공하도록 유도할 수 있다. 특히, 광범위한 주제에 대한 정보를 찾거나 간결한 답변을 찾을 때 유용하다.</p></li>
+<li><p>지시사항: AI 언어모델이 특정 작업을 수행하거나 특정 방식으로 동작하도록 하려면 프롬프트에 명시적인 지침을 포함한다. 예를 들어, AI에게 장단점을 나열하거나, 두 항목을 비교하거나, 특정 관점을 고려하도록 요청한다.</p></li>
+<li><p><strong>문법과 철자</strong>: AI 언어모형이 수행 작업을 해석할 때 문법 정보를 사용하기 때문에 올바른 문법과 철자법을 맞게 작성하는 것은 중요하다.</p></li>
+</ul>
+</section>
+<section id="프롬프트-구성요소" class="level2" data-number="25.3">
+<h2 data-number="25.3" class="anchored" data-anchor-id="프롬프트-구성요소"><span class="header-section-number">25.3</span> 프롬프트 구성요소</h2>
+<p>프롬프트 공학은 프롬프트를 매개로하여 사용자와 AI 언어모형과 효과적인 상호작용을 위한 중요한 역할을 수행한다. 잘 구성된 프롬프트는 언어모형이 정확하고 유용한 응답을 생성하는 데 큰 도움을 준다. 일반적으로 효과적인 프롬프트는 다음과 같은 구성요소를 포함한다.</p>
+<ul>
+<li><p><strong>도입부</strong>: 프롬프트 시작 부분에서는 AI 언어모형에게 수행해야 할 작업에 대한 전반적인 맥락을 제공하여 언어모형이 작업을 정확하게 이해하고 적절한 응답을 생성하는 데 도움을 준다.</p></li>
+<li><p><strong>작업(Task)</strong>: AI 언어모형이 수행해야 할 작업을 명확하고 간결하게 지시한다. “텍스트를 요약하라” 또는 “텍스트 감정을 분석하라”와 같은 지시가 이에 해당한다.</p></li>
+<li><p><strong>안내지침(Instruction)</strong>: AI 언어모형이 텍스트를 생성할 때 따라야 할 지침을 하달한다. “요약할 때 중요한 핵심만 포함하라” 또는 “감정 분석 시 긍정과 부정을 명확하게 구분하라”와 같은 안내지침이 이에 해당한다.</p></li>
+<li><p><strong>역할(Role)</strong>: AI 언어모형이 수행해야 하는 역할을 명시한다. 언어모형이 데이터 과학자, 고객 서비스 대표, 심리상담사, 광고 마케터 역할을 수행해야 함을 역학을 부여하여 명확하게 전달한다.</p></li>
+<li><p><strong>출력결과</strong>: 프롬프트는 원하는 출력 결과 형식을 명시한다. “답변은 목록 형태로 제공하라” 또는 “결과를 단락으로 구분하라”, “마크다운 표 형식으로 작성해라”와 같은 지침이 이에 해당한다.</p></li>
+<li><p><strong>출력방식</strong>: 언어모형이 정보를 어떻게 전달할지에 대한 지침을 제공한다. 예를 들어, “숨을 깊이 들이쉬고 차분히 단계적으로 답변을 간결하게 작성해줘” 또는 “필요한 경우 예시를 들어 설명해줘” 등이 있다.</p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/prompt_anatomy.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="프롬프트 구성요소"><img src="images/prompt_anatomy.jpg" class="img-fluid figure-img" width="1292"></a></p>
+<figcaption class="figure-caption">프롬프트 구성요소</figcaption>
+</figure>
+</div>
+<p>AI 언어모형을 프롬프트 구성요소들을 적절히 조합하여 프롬프트를 작성하면 사용자 요구에 맞는 정확하고 유용한 텍스트를 생성할 수 있다.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+프롬프트: 다음 텍스트는 인공지능의 역사와 발전에 대한 내용을 담고 있다. 정보 분석가로서 중요한 포인트만을 포함하여 2~3문장으로 간결하게 요약하라.
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>챗GPT 응답: 인공지능은 1950년대부터 시작되어 현재까지 다양한 분야에서 활용되고 있다. 최근에는 딥러닝 기술의 발전으로 더욱 빠른 성장을 이루고 있다라고 응답했다.</p>
+</div>
+</div>
+</section>
+<section id="프롬프트-작성사례" class="level2" data-number="25.4">
+<h2 data-number="25.4" class="anchored" data-anchor-id="프롬프트-작성사례"><span class="header-section-number">25.4</span> 프롬프트 작성사례</h2>
+<p>좋은 프롬프트와 나쁜(?) 프롬프트를 사용하여 생성된 AI 응답을 통해 프롬프트 공학의 중요성을 파악할 수 있다. 응답은 GPT AI 모형과 학습 데이터, 사용자에 따라 달라질 수 있다. 다음 사례를 통해서 잘 작성된 프롬프트는 보다 구체적이고 관련성 있는 응답을 유도하는 반면, 잘못된 프롬프트는 ’밥을 먹으면 배부르다’와 같은 일반적인 답변을 주기 때문에 이에 대해 한두번 손이 더가는 문제가 있다. 반복적인 프롬프트 테스트 및 개선: 다양한 프롬프트 변형을 테스트하고 응답을 분석하면 주어진 목적에 가장 효과적인 프롬프트를 식별하는 데 도움이 될 수 있다.</p>
+<ul>
+<li><p>맥락 특정: 명확한 문맥(context)을 제공하면 ChatGPT와 같은 AI 언어 모형이 적절한 응답을 생성하도록 안내하는 데 도움이 된다. 예를 들어 “유럽 국가의 수도”가 아닌 “프랑스의 수도는 어디인가요?”라고 묻는다면 더 정확한 결과를 얻을 수 있다.</p></li>
+<li><p>모호성 제거: 프롬프트가 명확해야 모델이 질문을 잘못 이해하거나 관련 없는 답변을 제공할 가능성을 줄일 수 있다.</p></li>
+<li><p>단계별 설명 요청: 단계별 또는 자세한 설명을 요청하면 AI 모델이 보다 유익한 답변을 생성하는 데 도움이 된다.</p></li>
+<li><p>명시적 제약 조건: 단어 수 제한이나 주제의 특정 측면을 고려하도록 AI에 요청하는 것같은 제약 조건을 지정하면 보다 집중적인 답변을 얻을 수 있다.</p></li>
+</ul>
+<section id="식물-광합성" class="level3" data-number="25.4.1">
+<h3 data-number="25.4.1" class="anchored" data-anchor-id="식물-광합성"><span class="header-section-number">25.4.1</span> 식물 광합성</h3>
+<p>다음 잘못된 프롬프트는 너무 모호해서 AI가 무작위 또는 관련 없는 응답을 생성할 가능성이 높다. 좋은 프롬프트는 보다 구체적이고 집중적이므로 AI가 관련성 있는 답변을 제공하도록 유도한다.</p>
+<div class="columns">
+<div class="column" style="width:37.5%;">
+<ul>
+<li>잘못된 프롬프트: “뭐라도 말해줘.”</li>
+<li>AI 응답: “바나나는 동남아시아가 원산지인 인기 과일이지만 지금은 세계 여러 곳에서 재배되고 있습니다.”</li>
+</ul>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:57.5%;">
+<ul>
+<li>좋은 프롬프트: “식물의 광합성 과정을 설명하세요.”</li>
+<li>AI 응답: “광합성은 식물, 조류 및 일부 박테리아가 빛 에너지를 포도당 형태의 화학 에너지로 변환하는 과정입니다. 광합성에는 빛에 의존하는 반응과 빛에 독립적인 반응(캘빈 주기)의 두 가지 주요 단계가 포함됩니다. 빛에 의존하는 반응 동안 엽록소와 다른 색소는 빛 에너지를 흡수하여 ATP와 NADPH를 생성하는 데 사용됩니다. 광 독립 반응에서 CO2는 광 의존성 단계에서 생성된 ATP와 NADPH를 사용하여 일련의 효소 촉매 반응을 통해 유기 분자로 고정됩니다. 광합성의 최종 생성물은 포도당으로, 식물이 성장, 번식 및 기타 과정에 사용할 수 있습니다.”</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="국가-수도" class="level3" data-number="25.4.2">
+<h3 data-number="25.4.2" class="anchored" data-anchor-id="국가-수도"><span class="header-section-number">25.4.2</span> 국가 수도</h3>
+<p>잘못 작성된 프롬프트는 어느 국가의 수도를 요청하는지 명시하지 않아 모호하다. 좋은 프롬프트는 국가를 명확하게 명시하여 AI가 정확한 정보를 제공할 수 있다.</p>
+<div class="columns">
+<div class="column" style="width:37.5%;">
+<ul>
+<li>잘못된 프롬프트: “수도를 말해줘”</li>
+<li>AI 응답: “세계에는 많은 수도가 있습니다. 질문하는 국가를 지정해 주세요.”</li>
+</ul>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:57.5%;">
+<ul>
+<li>좋은 프롬프트: “독일의 수도는 어디인가요?”</li>
+<li>AI 응답: “독일의 수도는 베를린입니다.”</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="과학자" class="level3" data-number="25.4.3">
+<h3 data-number="25.4.3" class="anchored" data-anchor-id="과학자"><span class="header-section-number">25.4.3</span> 과학자</h3>
+<p>잘못 작성된 프롬프트는 사용자가 어떤 과학자를 언급하고 있는지 불분명하므로 관련성이 없거나 잘못된 응답으로 이어질 수 있다. 잘 작성된 프롬프트는 과학자의 이름을 명시하고 간략한 개요와 요청사항을 명확히 하여 AI가 원하는 정보를 제공하도록 안내한다.</p>
+<div class="columns">
+<div class="column" style="width:37.5%;">
+<ul>
+<li>잘못된 프롬프트: “유명한 과학자에 대해 말해줘.”</li>
+<li>AI 응답: “아이작 뉴턴, 알버트 아인슈타인, 마리 퀴리 등 역사상 유명한 과학자가 많이 있습니다. 관심 있는 과학자에 대한 자세한 정보를 제공하세요.”</li>
+</ul>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:57.5%;">
+<ul>
+<li>좋은 프롬프트: “알버트 아인슈타인의 생애와 과학에 대한 공헌에 대한 간략한 개요를 제공하세요.”</li>
+<li>AI 응답: “알버트 아인슈타인(1879-1955)은 독일 태생의 이론 물리학자로 역사상 가장 영향력 있는 과학자 중 한 명으로 널리 알려져 있습니다. 그는 공간, 시간, 중력에 대한 우리의 이해에 혁명을 일으킨 상대성 이론으로 가장 잘 알려져 있습니다. 아인슈타인의 유명한 방정식 E=mc^2는 질량과 에너지의 등가성을 증명합니다. 1921년에는 양자 이론의 발전에 기여한 광전 효과의 발견으로 노벨 물리학상을 수상했습니다. 아인슈타인의 연구는 천문학, 핵물리학에서 재료 과학, 우주론에 이르기까지 다양한 분야에 지대한 영향을 미쳤습니다.”</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="요리법" class="level3" data-number="25.4.4">
+<h3 data-number="25.4.4" class="anchored" data-anchor-id="요리법"><span class="header-section-number">25.4.4</span> 요리법</h3>
+<p>잘못 작성된 프롬프트는 너무 일반적이어서 AI가 너무 많은 해석을 가능하게 하여 응답의 경우의 수가 많아지게 된다. 잘 작성된 프롬프트는 주제를 특정 요리로 좁히고, 단계별 설명을 요청하므로 AI의 응답이 더 유용하고 관련성이 높게 유도할 수 있다.</p>
+<div class="columns">
+<div class="column" style="width:37.5%;">
+<ul>
+<li>잘못된 프롬프트: “음식을 요리하는 방법?”</li>
+<li>AI 응답: “음식 요리에는 다양한 기술, 재료, 레시피가 필요합니다. 관심 있는 요리 유형이나 요리 방법에 대해 더 구체적인 정보를 제공하세요.”</li>
+</ul>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:57.5%;">
+<ul>
+<li>좋은 프롬프트: “기본적인 파스타 요리를 준비하는 단계를 설명해 주세요.”</li>
+<li>AI 응답: “기본적인 파스타 요리를 준비하려면 다음 단계를 따르세요:</li>
+</ul>
+<p>큰 냄비에 소금물을 넣고 끓입니다. <br> 스파게티, 펜네, 페투치니 등 원하는 파스타를 끓는 물에 넣고 포장지 지침에 따라 알 덴테 식감이 될 때까지 약 8~12분간 조리합니다.<br> 파스타가 익는 동안 간단한 소스를 준비합니다. 기본 토마토 소스는 팬에 올리브 오일을 두르고 다진 마늘을 향이 날 때까지 볶습니다. 으깬 토마토, 소금, 후추, 말린 바질 또는 오레가노를 넣고 10~15분간 끓입니다.<br> 익힌 파스타의 물기를 빼고 파스타 물 한 컵을 남겨둡니다.<br> 파스타를 소스에 넣고 골고루 섞이도록 버무립니다. 소스가 너무 걸쭉하면 남은 파스타 물을 약간 추가하여 묽게 만듭니다.<br> 원하는 경우 파마산 치즈와 신선한 바질로 장식하여 파스타 요리를 뜨겁게 제공합니다.”</p>
+</div>
+</div>
+</section>
+</section>
+<section id="프롬프트-작업흐름" class="level2" data-number="25.5">
+<h2 data-number="25.5" class="anchored" data-anchor-id="프롬프트-작업흐름"><span class="header-section-number">25.5</span> 프롬프트 작업흐름</h2>
+<p>프롬프트를 잘 작성하기 위해서는 목표 정의부터 시작하여 초기 프롬프트 초안 작성, 제약 조건 추가, 프롬프트 테스트, 만족스러운 응답을 얻을 때까지 반복적으로 프롬프트를 평가 및 개선하는 프로세스가 일반적이다. 만족스러운 응답을 GPT AI 모델로부터 얻은 후에는 나중에 참조할 수 있도록 최종 프롬프트를 문서화하는 것을 잊으면 안 된다.</p>
+<div class="columns">
+<div class="column" style="width:35%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">graph TB
+A[목표 정의] --&gt; B[프롬프트 초안 작성]
+B --&gt; C[제약 조건 또는 사양 추가]
+C --&gt; D[프롬프트 테스트]
+D --&gt; E[평가 및 개선]
+E --&gt; F{응답이 만족스러운가?}
+F -- Yes --&gt; G[성공한 프롬프트를 문서화]
+F -- No --&gt; E
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:65%;">
+<p>AI 언어 모델로부터 정확하고 적절한 응답을 유도하는 프롬프트를 설계하고 개선하는 프롬프트 엔지니어링 작업흐름을 다음 같이 단계별로 구성할 수 있다:</p>
+<ol type="1">
+<li><p>목표 정의: AI 모델에서 얻고자 하는 정보 또는 출력을 명확하게 정의하는 것이 시작점이 된다. 원하는 응답의 범위와 구체성을 결정한다.</p></li>
+<li><p>프롬프트 초안 작성: 목표에 직접적으로 도달할 수 있는 명확하고 간결한 프롬프트를 작성한다. 모호하지 않게 AI 언어모델(LLM)이 질문이나 작업을 충분히 이해할 수 있도록 맥락(Context)을 충분히 제공한다.</p></li>
+<li><p>제약 조건 또는 사양 추가: 필요한 경우 단어 수 제한이나 AI 언어모델이 집중해야 되는 주제의 특정 측면을 부각하는 제약 조건을 추가한다. 이렇게 하면 모델이 상대적으로 집중적으로 관련성 높은 응답을 뽑아낼 확률이 높다.</p></li>
+<li><p>프롬프트 테스트: AI 언어모델에 프롬프트를 입력하고 생성된 응답을 분석한다. 출력의 정확성, 관련성 및 구체성에 특히 주의를 기울인다.</p></li>
+<li><p>평가 및 개선: AI의 응답을 바탕으로 프롬프트에 추가 개선이 필요한지 평가한다. 응답이 만족스럽지 않은 경우 모호하거나 명확성이 부족한 부분을 파악하고 그에 따라 프롬프트를 수정 보완한다. 더 많은 맥락을 추가하거나, 질문을 더 구체적으로 만들거나, 단계별 설명을 요청하는 등 추가작업이 수반된다.</p></li>
+<li><p>반복: 필요에 따라 4단계와 5단계를 반복하여 원하는 결과를 얻을 때까지 프롬프트를 테스트하고 가다듬는다. 이러한 반복 프로세스는 사용자와 AI 언어모델 간 커뮤니케이션을 최적화하는데 꼭 필요하다.</p></li>
+<li><p>성공한 프롬프트를 문서화: 성공적으로 작성한 프롬프트와 프롬프트를 만드는 데 사용된 기술을 기록으로 남겨 문서화시킨다. 이를 통해 모범 사례를 수립하고 향후 프롬프트 엔지니어링 프로세스를 간소화하여 생산성을 높일 수 있다.</p></li>
+</ol>
+</div>
+</div>
+</section>
+<section id="프롬프트-템플릿" class="level2" data-number="25.6">
+<h2 data-number="25.6" class="anchored" data-anchor-id="프롬프트-템플릿"><span class="header-section-number">25.6</span> 프롬프트 템플릿</h2>
+<p>가장 기본적인 프롬프트는 언어모형이 수행할 “[작업]”을 지정하고 다음과 같이 생성하라고 지시명령문을 작성한다.</p>
+<blockquote class="blockquote">
+<p>프롬프트: “[작업]을 생성하라” <br> 예: 다음 뉴스기사를 한 문장으로 요약해 주세요!</p>
+</blockquote>
+<p>챗GPT 플러그인 확장기능을 사용하지 않는 경우 외부 URL을 인식하지 못하기 때문에 프롬프트에 해당 기사를 복사하여 붙여넣기해야한다. 농민신문 <a href="https://www.nongmin.com/article/20230329500494">버젓이 수입·재배된 LMO 종자…검역당국 뭐했나</a>에 실린 오피니언 사설을 요약해보자.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+프롬프트: 다음 뉴스기사를 한 문장으로 요약해 주세요!
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>미국의 유전자변형생물체(LMO) 종자가 버젓이 수입돼 8년이나 재배돼온 사실이 드러났다. 품목은 주키니호박이다. 제조·가공하면 유전자변형 DNA가 안 남아 식품가공용으로 승인받은 원료 작물에 대해서도 유전자변형농산물(GMO) 표시를 하라고 할 정도로 국민적 반감이 거센데, 재배를 통해 얼마든지 증식할 수 있는 LMO 종자가 해외 직구라는 어엿한 경로를 통해 들어와 장기간 재배됐으니 검역망 허술하기가 한심하기 짝이 없다.</p>
+<p>종자가 함부로 국경을 넘나들어서는 안되는 이유는 국내법은 물론 국제 규약에도 명시됐다. 우리나라 ‘종자산업법’은 생태계 보호 및 자원 보존에 지장을 줄 우려가 있는 종자는 수입을 제한할 수 있다고 했으며, ’LMO의 국가간 이동 등에 관한 법률’(LMO법)은 생물다양성의 보전 및 지속적 이용에 부정적 영향을 끼칠 수 있는 LMO의 위해를 방지하기 위한 국가의 책무를 적시하고 있다. LMO법은 LMO의 국가간 이동을 규제하는 국제협약인 ’바이오안전성에 관한 카르타헤나 의정서’를 기반으로 하는 만큼 LMO에 대한 우려는 세계 각국이 공히 인정하는 바이기도 하다. 이런데도 LMO 종자가 무사 통관했다는 건 검역당국의 방임이나 능력 부족으로밖에 보이지 않는다.</p>
+<p>LMO 주키니호박 재배·판매 사실이 알려진 후 농림축산식품부가 해당 종자 회수에 나서고 교육부가 학교급식에 주키니호박 사용을 중단한 것은 그만큼 사태가 위중해서다. GMO에 대한 국민적 불신이 반영된 조치다. 양심을 속이고 수입 규정을 어긴 업자를 우선 탓해야 하겠지만, 이런 상황을 막기 위해 검역당국이 존재하는 것 아닌가. 종자는 낱알 크기가 작은 데다 속이려고 작정하면 걸러내기 어렵다는 점을 모르지 않으나 그런 해명이 국민의 공감을 얻기는 어렵다.</p>
+<p>현행 제도상 빈틈이나 구멍을 완벽히 메우기 어렵다면 응당 검역·통관 시스템을 개선하고 위법자에 대한 처벌도 크게 강화하는 것이 마땅하다. 카르타헤나 의정서에도 나와 있듯 LMO의 국가간 이동이 향후 해당국의 생물다양성은 물론 인체 건강에 어떤 부정적 영향을 줄지 알 수 없기 때문이다. 더구나 지금 상태라면 GMO 관련 장벽을 대폭 완화해야 할 것으로 예상되는 인도·태평양 경제프레임워크(IPEF) 시대에 대한 전망도 암울하다. 문턱이 낮아질수록 넘나듦이 쉬운 건 불문가지다.</p>
+<section id="ai-응답" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="ai-응답">AI 응답:</h4>
+<blockquote class="blockquote">
+<p>미국 유전자변형생물체(LMO) 종자인 주키니호박이 무사통관돼 국내에서 8년간 재배되어 왔는데, 이는 국내법과 국제 규약을 위반한 것으로 검역망의 부족과 능력 부족으로 보인다는 것과 GMO에 대한 국민적 불신이 반영된 사태이며, 검역·통관 시스템 개선과 위법자에 대한 강화된 처벌이 필요하다는 것이 지적되고 있다.</p>
+</blockquote>
+</section>
+</div>
+</div>
+</div>
+<p>표준 프롬프트 작성 기법에 역할을 추가하면 좀더 의미있는 기사를 작성하게 된다.</p>
+<ul>
+<li><strong>작업</strong>: 삼성 갤럭시 23 핸드폰 후기 작성</li>
+<li><strong>작성지침</strong>: 후기는 객관적이며 유익한 정보를 담고 있어야 하며 전작과 비교하여 특별히 추가된 기능을 강조해야 된다.</li>
+<li><strong>역할</strong>: 구매 소비자</li>
+</ul>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+프롬프트: “휴대폰을 구매하는 소비자로서 이전 모델과 비교하여 새로운 삼성 갤럭시 23 휴대폰의 고유한 기능을 강조하는 객관적이고 유익한 정보를 담고 있는 휴대폰 리뷰를 작성하세요.”
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
+<section id="ai-응답-1" class="level4 unnumbered callout-body-container callout-body">
+<h4 class="unnumbered anchored" data-anchor-id="ai-응답-1">AI 응답:</h4>
+<blockquote class="blockquote">
+<p>최근에 새로운 삼성 갤럭시 23 휴대폰을 구매한 소비자로서, 이전 모델과 비교해 보았을 때 큰 업그레이드가 이루어졌다는 것을 확신할 수 있습니다. 그 중에서 가장 눈에 띄는 특징은 향상된 저조도 성능과 개선된 광학 줌이 있는 강력한 트리플 렌즈 카메라 시스템입니다. 또한, 최신 스냅드래곤 프로세서를 장착해 처리 속도가 향상되어 반응성과 사용자 경험이 더욱 빠르고 더욱 원활해졌습니다.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>갤럭시 23에는 이전 삼성 모델과 구별되는 여러 가지 고유한 기능이 있습니다. 그 중 하나는 다이나믹 AMOLED 120Hz 디스플레이인데, 화려한 색상과 선명한 대비로 눈에 띄는 시각적 효과를 제공합니다. 또한, 휴대폰의 배터리 크기가 커졌으며 빠른 충전 기능을 갖추고 있어 항상 바쁘게 사용하는 사용자에게 적합합니다.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>종합적으로, 새로운 삼성 갤럭시 23은 최첨단 기능을 갖춘 최고급 휴대폰을 찾고 있는 분들에게 추천할 만한 가치가 있습니다. 강력한 카메라 시스템, 빠른 처리 속도 및 디스플레이 품질로 인해 경쟁이 치열한 시장에서 뛰어난 장치로 떠오르고 있습니다.</p>
+</blockquote>
+</section>
+</div>
+</div>
+<section id="역할-프롬프트" class="level3" data-number="25.6.1">
+<h3 data-number="25.6.1" class="anchored" data-anchor-id="역할-프롬프트"><span class="header-section-number">25.6.1</span> 역할 프롬프트</h3>
+<p>AI 언어모델에 특정 역할을 부여해서 원하는 챗GPT 결과를 도출하도록 지시명령문을 작성한다.</p>
+<blockquote class="blockquote">
+<p>프롬프트: “[역할]로서 [작업]을 생성하라” <br> 예: “통신회사 콜센터 상담원으로 고객문의에 대해 응답을 생성하시오”</p>
+</blockquote>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+프롬프트: 너는 지금부터 케이블 TV 회사의 고객 서비스 담당자로 역할을 수행할 것입니다. 고객이 콜센터로 삼성 갤럭시 23 핸드폰에 문제가 있다고 전화를 걸어왔습니다. 고객에게 응대를 해야하는데 어떻게 응대할지 작성해보세요.
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse show">
+<section id="ai-응답-2" class="level4 unnumbered callout-body-container callout-body">
+<h4 class="unnumbered anchored" data-anchor-id="ai-응답-2">AI 응답:</h4>
+<blockquote class="blockquote">
+<p>네, 고객 서비스 담당자로 역할을 수행하겠습니다.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>고객: 삼성 갤럭시 23 핸드폰을 사용하고 있는데, 전화를 걸거나 문자를 보내려고 할 때마다 화면이 꺼져요.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>고객 서비스 담당자: 안녕하세요, 삼성 갤럭시 23 핸드폰 고객 서비스입니다. 불편을 드려 죄송합니다. 해당 문제를 해결하기 위해서 몇 가지 질문을 드릴게요. 먼저, 핸드폰을 재부팅해보셨나요? 그리고 핸드폰이 충전이 잘 되고 있는지 확인해 보세요. 만약 이러한 조치가 문제를 해결하지 못한다면, 화면이 자주 꺼지는 경우에는 배터리 절약 모드를 사용하고 있는지 확인해 보세요. 그리고 설정에서 화면 시간을 더 길게 조정해보세요. 만약에 이러한 조치가 문제를 해결하지 못한다면, 저희는 펌웨어 업데이트나 고장 신고 등 추가적인 조치를 취할 수 있도록 도와드리겠습니다. 어떤 조치를 취해 드릴까요?</p>
+</blockquote>
+</section>
+</div>
+</div>
+</section>
+<section id="감성-분류" class="level3" data-number="25.6.2">
+<h3 data-number="25.6.2" class="anchored" data-anchor-id="감성-분류"><span class="header-section-number">25.6.2</span> 감성 분류</h3>
+<p>텍스트에 내재된 감성도 긍부정 혹은 긍정, 부정, 중립으로 나눠 분류하는 작업도 가능하다.</p>
+<blockquote class="blockquote">
+<p>프롬프트: “[텍스트]의 감성을 긍정과 부정 둘 중 하나로 분류하라” <br> 예: “다음 텍스트의 감성을 긍정과 부정 둘 중 하나로 분류합니다. ‘1%라도 기대했던 내가 죄인입니다 죄인입니다….’”</p>
+</blockquote>
+<p><a href="https://github.com/e9t/nsmc/">네이버 영화 감성 말뭉치</a>에서 영화 후기 긍정과 부정을 각각 하나씩 뽑아내서 감성분류 작업을 수행한다.</p>
+<table class="table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 69%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>id</th>
+<th>document</th>
+<th>label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>5912145</td>
+<td>왜케 평점이 낮은건데? 꽤 볼만한데.. 헐리우드식 화려함에만 너무 길들여져 있나?</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>9671124</td>
+<td>1%라도 기대했던 내가 죄인입니다 죄인입니다….</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+프롬프트: 다음 텍스트의 감성을 긍정과 부정 둘 중 하나로 분류합니다. 답변은 긍정, 부정 중 하나입니다.
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>“왜케 평점이 낮은건데? 꽤 볼만한데.. 헐리우드식 화려함에만 너무 길들여져 있나?”</p>
+<section id="ai-응답-3" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="ai-응답-3">AI 응답:</h4>
+<blockquote class="blockquote">
+<p>답변: 긍정</p>
+</blockquote>
+</section>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+프롬프트: 다음 텍스트의 감성을 긍정과 부정 둘 중 하나로 분류합니다. 그리고 이유도 제시하여 주세요.
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>“1%라도 기대했던 내가 죄인입니다 죄인입니다….”</p>
+<section id="ai-응답-4" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="ai-응답-4">AI 응답:</h4>
+<blockquote class="blockquote">
+<p>이 텍스트는 부정적인 감성을 나타냅니다. 이유는 “죄인입니다”라는 문구가 있어서 입니다. 이 문구는 자신에 대한 부정적인 평가를 나타내고 있으며, “1%라도 기대했던”이라는 표현은 자신이 어떤 일을 할 때 기대와 다르게 결과가 나온 것으로 추정됩니다. 이러한 표현들은 부정적인 감정을 나타내고 있으며, 따라서 이 텍스트는 부정적인 감성을 가지고 있습니다.</p>
+</blockquote>
+</section>
+</div>
+</div>
+</div>
+</section>
+<section id="텍스트-분류" class="level3" data-number="25.6.3">
+<h3 data-number="25.6.3" class="anchored" data-anchor-id="텍스트-분류"><span class="header-section-number">25.6.3</span> 텍스트 분류</h3>
+<p>네이버 뉴스기사를 각 뉴스 범주별로 나눠 분류하는 것도 가능하다.</p>
+<blockquote class="blockquote">
+<p>프롬프트: “[텍스트]를 다음 중 하나의 범주로 분류하라; A, B, C” <br> 예: “뉴스기사를 다음 중 하나 범주로 분류해야 합니다; 정치, 경제, 사회, 생활/문화, 세계, 기술/IT, 연예, 스포츠. ‘뉴스 기사’”</p>
+</blockquote>
+<p>다음 사례는 <a href="https://drive.google.com/drive/folders/1EHYsVtcgpcacM2Ta33pTLYfp6CznaUX3?usp=sharing">네이버 뉴스 카테고리 데이터셋</a>에서 정치뉴스기사 하나를 가져왔다. 압축파일을 풀면 정치(0), 경제(1), 사회(2), 생활/문화(3), 세계(4), 기술/IT(5), 연예(6), 스포츠(7) 총 8개 범주로 나눠 디렉토리에 텍스트 뉴스기사가 포함되어 있다.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+프롬프트: 뉴스기사를 다음 중 하나 범주로 분류해야 합니다; 정치, 경제, 사회, 생활/문화, 세계, 기술/IT, 연예, 스포츠.
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>동남아 담당’ 北 최희철 부상 베이징 도착…싱가포르행 주목 최 부상, 행선지·방문 목적 질문에는 ‘묵묵부답’</p>
+<p>(베이징=연합뉴스) 김진방 특파원 = 북한이 북미 정상회담 무산 가능성까지 거론하며 강경한 태도를 보이는 가운데 동남아시아 외교를 담당하는 최희철 북한 외무성 부상이 19일 중국 베이징 서우두(首都) 공항에 모습을 드러냈다.</p>
+<p>최 부상은 이날 오전 평양발 고려항공 JS151편을 이용해 베이징 서우두 공항에 도착했다.</p>
+<p>최 부상은 최종 목적지를 묻는 취재진의 질문에 아무런 답변을 하지 않고, 북한 대사관 관계자들과 함께 공항을 빠져나갔다.</p>
+<p>북미 정상회담을 20여 일 앞둔 상황에서 동남아 외교통인 최 부상이 정상회담 준비 등을 위해 회담 개최 예정지인 싱가포르를 방문할 가능성도 제기되고 있다.</p>
+<p>최 부상은 지난 3월에도 아세안(ASEAN·동남아시아국가연합) 의장국이기도 한 싱가포르를 방문해 양국관계와 올해 8월 열리는 아세안지역안보포럼(ARF) 의제 등을 논의한 바 있다.</p>
+<p>또 지난해 북핵 문제를 두고 북미 간 긴장관계가 형성됐을 때도 ARF에 참석해 아세안을 상대로 여론전을 펼쳤다. 북한의 초청으로 비자이 쿠마르 싱 인도 외교부 국무장관이 방북했을 때도 최 부상은 싱 국무장관을 직접 영접하고, 한반도 문제를 논의하기도 했다.</p>
+<p>베이징 소식통은 “최 부상이 대(對)미 외교담당이 아니기 때문에 싱가포르로 갈 가능성이 큰 것은 아니다”며 “만약 싱가포르에 간다면 정상회담과 관련한 지원 작업 준비 등을 위한 것일 가능성이 크다”고 말했다.</p>
+<section id="ai-응답-5" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="ai-응답-5">AI 응답:</h4>
+<blockquote class="blockquote">
+<p>해당 뉴스는 북한의 외교 정책과 관련된 내용이 있어 정치 범주에 속합니다.</p>
+</blockquote>
+</section>
+</div>
+</div>
+</div>
+</section>
+<section id="개체명-추출" class="level3" data-number="25.6.4">
+<h3 data-number="25.6.4" class="anchored" data-anchor-id="개체명-추출"><span class="header-section-number">25.6.4</span> 개체명 추출</h3>
+<p>텍스트에서 사람, 지명, 브랜드 등 기계가 인식해서 추출하는 작업을 통상 개체명인식(NER, Named Entity Recognition) 이라고 한다. GPT-3.5, GPT-4에 따라 성능차이가 다소 있지만 기존 접근법과 비교하여 손색이 없다고 할 수 있다.</p>
+<blockquote class="blockquote">
+<p>프롬프트: “다음 [텍스트]에 대해서 개체명 인식 작업을 수행하고 인물, 조직, 장소로 구분하라.” <br> 예: “다음 뉴스기사에서 개체명을 추출해 주세요. 출력 형식: 인물: &lt;출력결과를 콤마 구분자로 구분&gt; 조직: &lt;출력결과를 콤마 구분자로 구분&gt; 장소: &lt;출력결과를 콤마 구분자로 구분&gt;”</p>
+</blockquote>
+<p><a href="https://drive.google.com/drive/folders/1EHYsVtcgpcacM2Ta33pTLYfp6CznaUX3?usp=sharing">네이버 뉴스 카테고리 데이터셋</a>에서 정치뉴스기사 하나를 가져왔다.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+프롬프트: 다음 뉴스기사에서 개체명을 추출해 주세요.
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>출력 형식: 인물: <code>&lt;출력결과를 콤마 구분자로 구분&gt;</code> <br> 조직: <code>&lt;출력결과를 콤마 구분자로 구분&gt;</code> <br> 장소: <code>&lt;출력결과를 콤마 구분자로 구분&gt;</code> <br> 날짜: <code>&lt;출력결과를 콤마 구분자로 구분&gt;</code></p>
+<p>동남아 담당’ 北 최희철 부상 베이징 도착…싱가포르행 주목 최 부상, 행선지·방문 목적 질문에는 ‘묵묵부답’</p>
+<p>(베이징=연합뉴스) 김진방 특파원 = 북한이 북미 정상회담 무산 가능성까지 거론하며 강경한 태도를 보이는 가운데 동남아시아 외교를 담당하는 최희철 북한 외무성 부상이 19일 중국 베이징 서우두(首都) 공항에 모습을 드러냈다.</p>
+<p>최 부상은 이날 오전 평양발 고려항공 JS151편을 이용해 베이징 서우두 공항에 도착했다.</p>
+<p>최 부상은 최종 목적지를 묻는 취재진의 질문에 아무런 답변을 하지 않고, 북한 대사관 관계자들과 함께 공항을 빠져나갔다.</p>
+<p>북미 정상회담을 20여 일 앞둔 상황에서 동남아 외교통인 최 부상이 정상회담 준비 등을 위해 회담 개최 예정지인 싱가포르를 방문할 가능성도 제기되고 있다.</p>
+<p>최 부상은 지난 3월에도 아세안(ASEAN·동남아시아국가연합) 의장국이기도 한 싱가포르를 방문해 양국관계와 올해 8월 열리는 아세안지역안보포럼(ARF) 의제 등을 논의한 바 있다.</p>
+<p>또 지난해 북핵 문제를 두고 북미 간 긴장관계가 형성됐을 때도 ARF에 참석해 아세안을 상대로 여론전을 펼쳤다. 북한의 초청으로 비자이 쿠마르 싱 인도 외교부 국무장관이 방북했을 때도 최 부상은 싱 국무장관을 직접 영접하고, 한반도 문제를 논의하기도 했다.</p>
+<p>베이징 소식통은 “최 부상이 대(對)미 외교담당이 아니기 때문에 싱가포르로 갈 가능성이 큰 것은 아니다”며 “만약 싱가포르에 간다면 정상회담과 관련한 지원 작업 준비 등을 위한 것일 가능성이 크다”고 말했다.</p>
+<section id="ai-응답-6" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="ai-응답-6">AI 응답:</h4>
+<blockquote class="blockquote">
+<p>인물: 최희철, 김진방, 비자이 쿠마르 싱 <br> 조직: 연합뉴스, 북한 외무성, 고려항공, 아세안(ASEAN·동남아시아국가연합), 아세안지역안보포럼(ARF), 인도 외교부 <br> 장소: 베이징, 서우두(首都) 공항, 평양, 싱가포르, 북한 대사관 <br> 날짜: 19일, 20여 일, 지난 3월, 올해 8월, 지난해</p>
+</blockquote>
+</section>
+</div>
+</div>
+</div>
+</section>
+<section id="질의응답" class="level3" data-number="25.6.5">
+<h3 data-number="25.6.5" class="anchored" data-anchor-id="질의응답"><span class="header-section-number">25.6.5</span> 질의응답</h3>
+<p>지문이 주어진 상태에서 사람이 질문을 하면 기계가 답을 하는 상황이다. 전문적이고 매우 긴 지문에서 원하는 답을 찾기 위해 질문을 하는 상황에서 유용하다.</p>
+<blockquote class="blockquote">
+<p>프롬프트: “다음 [지문]에서 [질문]에 답하시오” <br> 예: “다음 지문을 읽고 답을 찾으세요. 질문: 김현웅은 서울고등검찰청 검사장 재직 중에 몇대 법무부 장관에 임용되었나?</p>
+<p>지문: 김현웅(金賢雄, 1959년 5월 4일 ~ , 전남 고흥)은 … ”</p>
+</blockquote>
+<p><a href="https://korquad.github.io/">KorQuAD 2.0</a>는 KorQuAD 1.0에서 질문답변 20,000+ 쌍을 포함하여 총 100,000+ 쌍으로 구성된 한국어 Machine Reading Comprehension 데이터셋으로, KorQuAD 1.0과는 다르게 1~2 문단이 아닌 Wikipedia article 전체에서 답을 찾아야 한다. KorQuAD 데이터셋에서 사례를 하나 가져와서 질의응답을 풀어본다.</p>
+<blockquote class="blockquote">
+<p><strong>실제 정답 라벨: <code>[{'text': '제64대', 'answer_start': 209}]</code></strong></p>
+</blockquote>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+프롬프트: 다음 지문을 읽고 답을 찾으세요.
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>질문: 김현웅은 서울고등검찰청 검사장 재직 중에 몇대 법무부 장관에 임용되었나?</p>
+<p>지문: 김현웅(金賢雄, 1959년 5월 4일 ~ , 전남 고흥)은 대한민국의 법률가이다. 사법연수원 16기 수료 후 검사 생활을 했으며 특히 서울중앙지검 특수1부 부장검사로 재직할 때는 법조브로커 김홍수씨(58·구속)로부터 금품을 받은 혐의(알선수재)로 사상 최초로 전직 고등 법원 부장판사급 법관 A씨에 대해 사전 구속영장을 청구했다. 이후 제46대 서울고등검찰청 검사장 재직 중 제64대 법무부 장관에 임용되었다. 대한변호사협회(회장 김현)가 김현웅(58·사법연수원 16기) 전 법무부 장관에게 변호사 개업을 자제할 것을 권고했다. 변협은 보 도자료를 통해 “김현웅 전 장관은 지난 4월27일 변호사 등록을 신청했고, 현행 변호사법상 등록 거부 사유가 없다”라며 “변호사법은 등록 신청일로부터 3개월간 등록을 하지 않을 경우 등록이 간주된다고 규정하고 있다”라고 설명했다.</p>
+<section id="ai-응답-7" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="ai-응답-7">AI 응답:</h4>
+<blockquote class="blockquote">
+<p>김현웅은 서울고등검찰청 검사장 재직 중에 제64대 법무부 장관에 임용되었다.</p>
+</blockquote>
+</section>
+</div>
+</div>
+</div>
+</section>
+<section id="객관식-문제" class="level3" data-number="25.6.6">
+<h3 data-number="25.6.6" class="anchored" data-anchor-id="객관식-문제"><span class="header-section-number">25.6.6</span> 객관식 문제</h3>
+<p>주어진 4개 중에서 정답을 하나 고르는 문제를 사지선다(四枝選多)형 시험문제로 학창시절부터 접해 친숙하다. 사지선다 문제를 풀고 문제도 생성하는 프롬프트를 제작해보자.</p>
+<blockquote class="blockquote">
+<p>프롬프트: “다음 [선택지] 중에서 정답을 하나 고르세요.” <br> 예: “다음 문제에서 정답을 하나 고르세요. 문제: 통계에서 모든 경우의 수를 포함하는 집합을 일컷는 용어는?</p>
+<ol type="1">
+<li>표본 공간(Sample Space)</li>
+<li>포함집합(Super Set)</li>
+<li>포함공간(Super Space)</li>
+<li>표본집합(Sample Set) ”</li>
+</ol>
+</blockquote>
+<blockquote class="blockquote">
+<p>정답과 이유도 추가하고 유사한 사지선다형 문제를 몇개 만들어 지시한다.</p>
+</blockquote>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+프롬프트: 통계에서 두 변수 간의 상관 관계를 나타내는 지수는?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>중앙값(Median)</li>
+<li>평균(Average)</li>
+<li>분산(Variance)</li>
+<li>상관계수(Correlation Coefficient)</li>
+</ol>
+<section id="ai-응답-8" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="ai-응답-8">AI 응답:</h4>
+<blockquote class="blockquote">
+<p>정답: 4. 상관계수(Correlation Coefficient) 이유: 통계에서 두 변수 간의 관련성을 측정하는 방법 중 하나가 상관계수입니다. 상관계수는 -1에서 1 사이의 값을 가지며, 1에 가까울수록 양의 상관관계, -1에 가까울수록 음의 상관관계, 0에 가까울수록 상관관계가 없다는 것을 의미합니다.</p>
+</blockquote>
+</section>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
+<aside id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p><a href="https://learnprompting.org/">Learn Prompting</a>, <a href="https://www.promptingguide.ai/">Prompt Engineering Guide</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</aside>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "복사완료!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "복사완료!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        return container.innerHTML
+      } else {
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./chatGPT.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">챗GPT</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./text_to_X.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">생성형 AI</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","loop":true});</script>
+
+
+
+
+<script src="site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.js" defer="true"></script>
+</body></html>
