@@ -426,3 +426,210 @@ graph TD
 10. 모니터링 및 유지 관리: 배포된 모형의 성능을 지속적으로 모니터링하고 필요에 따라 새로운 학습데이터로 업데이트하여 정확성과 효율성을 유지한다.
 :::
 :::
+
+
+## GPT-4 성능과 가격
+
+GPT-4는 대규모 멀티 모달(Multi Modal) 언어모형으로 트랜스포머(Transformer) 기반 사전훈련되어 텍스트에서 다음 토큰을 생성하는 생성형 AI다. 이전 버전 GPT-3.5와 비교하여 더 뛰어난 성능을 보이며 멀티 모달을 지원하여 컴퓨터와 여러가지 형태(텍스트, 이미지 등)로 의사소통하는 채널을 통해 상호작용할 수 있다.
+
+### GPT-4 성능
+ 
+GPT-4는 인공지능 성장과 능력을 객관적으로 평가하기 위해 다양한 시험과 평가를 수행한다. 모형의 언어 이해, 문제 해결 능력, 논리적 추론 등 다양한 능력을 측정하여 결과를 반영한다. Advanced Placement (AP), AMC 10, AMC 12와 같은 시험들은 원래 학생들의 지식과 능력을 측정하기 위해 만들어졌지만, 인공지능이 시험을 풀게함으로써 GPT-4 능력을 객관적으로 평가할 수도 있다. 시험을 통해, 인공지능이 어려운 문제를 얼마나 효과적으로 해결할 수 있는지, 또 다양한 주제와 문맥에서 어떻게 작동하는지 평가 결과를 통해 객관적으로 확인할 수 있다.
+ 
+Advanced Placement (AP)는 미국 College Board에 의해 운영되는 프로그램으로 고등학생에게 대학 수준의 교육 과정과 평가를 제공한다. 높은 점수를 얻은 학생은 미국의 다양한 대학에서 학점 인정을 받을 수 있다. 고등학생은 AP를 통해 고등학교 재학기간 동안 대학 수준의 학업을 경험하고, 학점을 얻을 수 있는 기회가 제공된다.
+
+AMC 10은 미국 수학 협회가 주관하는 수학 대회이며, 미국기준 10학년 이하의 학생을 대상으로 한다. 고등학교 교육 과정 중 10학년까지 수학문제를 다루며, 미국에서 국제 수학 올림피아드 (IMO)에 참가하는 팀을 선발하는 일련의 시험 중 첫번째 시험이다.
+
+AMC 12도 마찬가지로 미국 수학 협회가 주관하는 수학 대회로 12학년 이하 학생들을 대상으로 하며, 고등학교 전체 교육 과정을 다루지만, 미적분학은 제외된다. AMC 12는 AMC 10과 함께 국제 수학 올림피아드 (IMO) 참가 팀을 선발하기 위한 시험 중 하나이다.
+
+GPT-4는 다양한 시험에서 이전 GPT-3.5보다 전반적으로 높은 성능을 보였다.
+법률, 대학 입학 시험, 과학 시험 등에서 특히 뛰어난 결과를 보였지만 코딩 능력에 대한 시험에서는 상대적으로 낮은 성능을 보였다.
+
+특히 미국 변호사 시험(Uniform Bar Exam)에서 상위 10% 점수를 얻어 GPT-3.5보다 훨씬 나아졌고, LSAT과 SAT 같은 대학 입학 시험에서도 상위 20% 이상 점수를 기록했다. 대학원 입학 시험인 GRE에서 수리영역(Quantitative)과 언어영역(Verbal) 부분에서 상위를 차지했고, 과학 관련 시험인 USABO와 USNCO에서도 높은 백분위를 기록했다. 의학 지식을 평가하는 자가 평가 프로그램(Medical Knowledge Self-Assessment Program, MK-SAP)에서는 75% 점수를 얻었다.
+
+코딩 능력을 평가하는 코드포스(Codeforces)와 리트 코드(Leetcode)에서 상대적으로 낮은 점수를 보였지만, 대부분의 AP 시험에서 상위 20% 이상의 높은 점수를 얻었고 소믈리에 관련 시험에서도 이론 지식 부분에서 77% ~ 92% 사이 점수를 얻었다. [@openai2023gpt4]
+
+
+```{r}
+#| eval: true
+#| echo: false
+
+# PDF --> DOCX 변환 ------------------------------
+library(Convert2Docx)
+# Converter(pdf_file = "data/2303.08774.pdf",
+#           docx_filename = "data/2303.08774.docx")
+
+# DOCX --> 표추출 --------------------------------
+library(docxtractr)
+
+gpt_docx <- docxtractr::read_docx("data/2303.08774.docx")
+
+tbl_01 <- docx_extract_tbl(gpt_docx, 3) %>% 
+    janitor::clean_names()
+
+# GT 표 제작 --------------------------------
+library(tidyverse)
+library(gt)
+library(gtExtras)
+
+tbl_01 %>% 
+  select(-3) %>% 
+  mutate(type = case_when( str_detect(exam, "Bar|LSAT") ~ "법",
+                           str_detect(exam, "SAT ") ~ "수능",
+                           str_detect(exam, "GRE") ~ "대학원",
+                           str_detect(exam, "USABO|USNCO") ~ "고등 경진대회",
+                           str_detect(exam, "Medical") ~ "헬스케어",
+                           str_detect(exam, "Codeforces|Leetcode") ~ "코딩",
+                           str_detect(exam, "Sommelier") ~ "소믈리에",
+                           str_detect(exam, "^AP ") ~ "AP 시험",
+                           str_detect(exam, "^AMC ") ~ "수학시험",
+                           TRUE ~ "기타"
+                           )) %>% 
+  group_by(type) %>%
+  gt( rowname_col = "exam") %>% 
+  gt_theme_nytimes() %>% 
+  tab_header(
+    title = "GPT-4 성능",
+    subtitle = "OpenAI GPT-4 Technical Report") %>% 
+     cols_align(
+      align = "center",
+      columns = everything()) %>% 
+   gt_highlight_rows(
+     rows = type == "코딩",
+     fill = "lightgrey",
+     bold_target_only = TRUE,
+     target_col = gpt_4
+   )  %>% 
+   gt_highlight_rows(
+     rows = type == "수학시험",
+     fill = "lightgrey",
+     bold_target_only = TRUE,
+     target_col = gpt_4
+   )  %>% 
+   gt_highlight_rows(
+     rows = str_detect(exam, "English|\\) Writing|USNCO"),
+     fill = "lightgrey",
+     bold_target_only = TRUE,
+     target_col = gpt_4
+   ) %>% 
+    opt_table_font(
+    font = list(
+      google_font(name = 'Gowun Dodum')
+    )
+  )
+```
+
+### 로스쿨 입학시험
+
+GPT-4 LSAT(미국 로스쿨 입학 시험) 성적은 163으로, 대략 88번째 백분위에 해당되어 미국 로스쿨 대학별 입학점수[^lsat]와 비교하면, 상위 10개 대학을 제외하고는 대부분의 로스쿨에 입학하는 데 큰 문제가 없을 것으로 보이기 때문에 GPT-4가 로스쿨 입학 시험을 잘 풀고 있다는 반증이다.
+
+[^lsat]: publiclegal 웹사이트 [2020 Raw Data Law School Rankings](https://www.ilrg.com/rankings/law/) 데이터와 결합
+
+반면에, GPT-3.5 LSAT 성적은 149로, 대략 40번째 백분위에 해당하여 GPT-4와 비교하면 상대적으로 낮아 대부분의 미국 로스쿨에 입학하기에는 충분한 실력을 갖췄다고 보기 어렵다.
+
+Uniform Bar Exam(미국 변호사 자격증 시험)의 경우, GPT-4는 298/400으로 약 90번째 백분위 성적을 보이고 있어 변호사 자격증을 얻기 위한 충분한 실력을 보여주고 있지만, GPT-3.5는 213/400으로 GPT-4에 훨씬 미치지 못하고 있다.
+
+```{r}
+#| eval: false
+#| echo: false
+library(rvest)
+extrafont::loadfonts()
+
+lsat_raw <- read_html('https://www.ilrg.com/rankings/law/')
+
+lsat_tbl <- lsat_raw %>% 
+  html_elements('.table-responsive') %>% 
+  html_table(header = TRUE) %>% 
+  .[[1]] %>% 
+  janitor::row_to_names(1) %>% 
+  janitor::clean_names()
+
+lsat_rank <- lsat_tbl %>% 
+  pull(law_school) %>% dput()
+
+lsat_g <- lsat_tbl %>% 
+  select(no, law_school, lsat_low, lsat_median, lsat_high) %>% 
+  mutate(law_school = factor(law_school, levels = lsat_rank) %>% fct_rev) %>%   
+  mutate_if(is.character, as.integer) %>% 
+  ggplot(aes(x = law_school, y = lsat_median, group=law_school)) +
+    geom_point() +
+    geom_linerange(aes(ymin = lsat_low, ymax=  lsat_high), colour = "blue") +
+    geom_hline(yintercept=163, linetype='dotted', col = 'red')+
+    annotate("text", x = "New York University", y = 163, size =5, label = "GPT-4", hjust = 1.1,
+             color = "red") +
+    coord_flip() +
+    theme_bw(base_family = "MaruBuri Bold") +
+    labs(x = "",
+         y = "",
+         title = "미국 변호사 입학시험 점수(LSAT)",
+         subtitle = "LSAT 중위점수 및 하한과 상한",
+         caption = "2020  Law School Rankings, https://www.ilrg.com/rankings/law/")
+
+ragg::agg_png("images/lsat_g.png", width = 297, height = 210, units = "mm", res = 600)
+lsat_g
+dev.off()
+```
+
+![미국 변호사 입학시험 GPT-4 성능](images/lsat_g.png)
+
+
+### GPT-4 가격
+
+2023년 7월 기준으로 OpenAI API의 가격을 원화(1,300원)로 환산해 보면 여러 특징을 파악할 수 있다. GPT-4는 8K와 32K 컨텍스트(context)에서 1K 토큰당 각각 39원과 78원의 가격을 가지며, 이는 높은 성능과 대용량 처리 능력을 반영한 고가의 언어 모델이다. 반면에 GPT-3.5 터보는 4K와 16K 컨텍스트에서 1K 토큰당 3.9원과 5.2원의 비교적 저렴한 가격을 가지고 있으며, 이는 중간 수준의 성능을 가성비 좋게 제공한다. 
+
+세부 튜닝 모형(Fine-tuning models)에는 Ada, Babbage, Curie, Davinci 등이 있으며, 이들은 특정 작업에 최적화되어 성능별로 다양한 가격대를 보인다. 특히 텍스트 임베딩에 특화된 Ada v2 모형은 1K 토큰당 0.13원으로 매우 저렴한 가격으로 제공된다.
+
+이미지 모형 DALL·E 시리즈는 이미지 크기에 따라 20.8원에서 26원 사이의 가격을 가지며, 텍스트 프롬프트에 따른 이미지 생성 작업에 사용된다. 오디오 모형 위스퍼(Whisper)는 분당 7.8원의 가격을 가지고 있으며, 다양한 언어 음성 오디오 처리 작업에 특화되어 있다.
+
+```{r}
+#| eval: false
+#| echo: false
+
+library(readxl)
+library(tidyverse)
+
+price_today <- read_excel("data/openai_pricing.xlsx", sheet="price_230721")
+
+price_tbl <- price_today %>% 
+  janitor::clean_names(ascii = FALSE) %>% 
+  separate(가격, into = c("가격", "단위"), sep = "/") %>% 
+  mutate(가격 = parse_number(가격) *1300, # 환율 1,300 / 달러 적용
+         단위 = str_squish(단위)) 
+
+# price_tbl %>% 
+#   gt::gt() %>% 
+#   gtExtras::gt_theme_espn()
+
+
+extrafont::loadfonts()
+
+pricing_20230621_g <- price_tbl %>% 
+  mutate(모형상세 = glue::glue("{모형구분} / {model} / {작업}") %>% as.character(.)) %>%
+  mutate(모형구분 = factor(모형구분, levels=c("GPT-4", "GPT-3.5 Turbo", "Fine-tuning models", 
+                                      "Embedding models",
+                                      "Image models", "Audio models") )) %>% 
+  ggplot(aes(x = fct_reorder(모형상세, 가격), y = 가격, fill = 모형구분)) +
+    geom_col(width = 0.5) +
+    # facet_wrap(~모형구분, scales = "free_y") +
+    coord_flip() +
+    geom_text(aes(x = 모형상세, y = 가격, label = glue::glue("{가격} 원") ), nudge_y = 5) +
+    theme_bw(base_family = "MaruBuri Bold") +
+    labs(title = "OpenAI 챗GPT API 호출 가격", 
+         subtitle = "환율 1,300 원/달러 적용 (텍스트 1,000 토큰, 이미지는 크기별, 오디오는 1분 기준)",
+         x = "",
+         y = "가격(원)",
+         caption = "OpenAI 가격표: https://openai.com/pricing") +
+    theme(legend.position = c(0.8, 0.3),
+          legend.title=element_text(size=rel(2.5), family = "MaruBuri"),
+          legend.text=element_text(size=rel(1.5), family = "MaruBuri"))
+
+ragg::agg_png("images/pricing_20230621_g.png", width = 297, height = 210, units = "mm", res = 600)
+pricing_20230621_g
+dev.off()
+```
+
+![OpenAI API별 가격](images/pricing_20230621_g.png)
+
+
+
+
