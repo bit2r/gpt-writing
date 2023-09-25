@@ -2,5 +2,596 @@
 # 생성형 AI
 
 
+## 논문 초록
+
+제주대 안도현 교수가 페이스북에 공개한 챗GPT를 활용한 논문 초록 작성 비법은 
+영문초록을 효과적으로 빠른 시간내에 방법하는 방법을 제시하고 있다. 작업흐름과 지시명령어(Prompt)를 포함한 비법은 해외 학술지 작성에 영어초록이 필요하신 분들께 큰 도움이 될 것이다. 특히, 영문초록 작성은 국문 학술지에 논문을 제출할 때 중요한 요소 중 하나로, 논문의 국제적 가시성을 높이는 데도 기여할 것이다. 
+
+[딥엘(DeepL)](https://www.deepl.com)과 챗GPT를 이용하면 학술지 영문초록 작성 과정에서 영문 교정을 크게 줄일 수 있다. 딥엘과 챗GPT를 활용하여 문법적으로 정확하고 의미론적으로 일관된 텍스트를 생성할 수 있어 전문 영문 교정 서비스를 이용하지 않아도 높은 품질의 영문초록을 작성할 수 있어 시간과 비용을 크게 줄일 것으로 기대된다.
+
+:::{.callout-important}
+
+## 딥엘과 챗GPT 학술지 영문초록 작성 작업흐름
+
+1. 국문초록 작성
+2. 딥엘로 국문을 영문으로 번역. 
+3. 번역한 영문을 ChatGPT로 윤문.
+  - 프롬프트에 다음과 같이 입력:
+
+>  Revise the abstract to follow APA style guidelines and ensure that it falls within the word count range of 400 to 500 words.
+
+:::
+
+### 사례
+
+한글 초록 작성 후 딥엘을 사용하여 국문초록을 영어로 번역한다. 딥엘은 자연어 처리 기술을 활용하여 높은 정확도의 번역을 제공하므로, 이 단계에서 얻은 영어 초록은 대체로 문법적으로 정확하고 의미도 잘 전달된다. 다음으로, 챗GPT에 앞서 준비한 프롬프트에 딥엘로 번역한 영문초록을 더 자연스럽고 전문적으로 다듬도록 지시한다. "Revise the abstract below to follow APA style guidelines and ensure that it falls within the word count range of 400 to 500 words."
+
+챗GPT는 프롬프트에 따라 영문초록을 윤문하는데 챗GPT 언어모형(GPT-3.5/GPT-4)은 문장 구조를 개선하고, 필요한 경우 전문 용어를 추가하며, 전반적으로 더 자연스럽고 전문적인 표현을 사용하여 초록을 다듬는다. 완성된 영문초록은 원래의 한글초록이 가진 의미를 정확하게 전달하면서도, 국제 학술지에 제출하기에 적합한 수준의 언어와 구조를 갖추게 된다. 이 과정을 2020년에 출간된 논문[@lee2020]의 한글 초록에 적용하여 실제 저자가 작성한 영문 초록과 비교해보자. [^lee-papers]
+
+[^lee-papers]: 논문 소스코드 [바로가기](https://statkclee.github.io/comp_document/automation-kasdba.html), PDF 출판 논문 [다운로드](https://statkclee.github.io/comp_document/data/00006_002_39.pdf)
+
+
+::: {.callout-tip appearance="simple"}
+### 1. 한글 초록 원문
+
+알파고가 2016년 바둑 인간 챔피언 이세돌 9단을 현격한 기량차이로 격파하면서 인공지능에 대한 관심이 급격히 증가하였다. 그와 동시에 기계가 인간의 일자리 잠식을 가속화하면서 막연한 불안감이 삽시간에 전파되었다. 기계와의 일자리 경쟁은 컴퓨터의 출현이전부터 시작되었지만 인간만의 고유한 영역으로 알고 있던 인지, 창작 등 다양한 분야에서 오히려 인간보다 더 우수한 성능과 저렴한 가격 경쟁력을 보여주면서 기존 인간의 일자리가 기계에 대체되는 것이 가시권에 들었다.
+  이번 문헌조사와 실증 데이터 분석을 통해서 기계가 인간의 일자리를 대체하는 자동화의 본질에  대해서 살펴보고, 인간과 기계의 업무 분장을 통해 더 생산성을 높일 수 있는 방안을 제시하고자 한다.
+
+:::
+
+::: {.callout-tip appearance="simple"}
+### 2. 딥엘 영문초록 번역
+
+Interest in artificial intelligence skyrocketed in 2016 when AlphaGo defeated human Go champion Lee Sedol 9 by a stunning margin. At the same time, a vague sense of anxiety was quickly spread as machines accelerated the erosion of human jobs. Although the competition for jobs with machines began before the advent of computers, the replacement of existing human jobs by machines became visible as machines showed better performance and lower price competitiveness than humans in various fields such as cognition and creation, which were thought to be unique to humans.
+  Through this literature review and empirical data analysis, we examine the nature of automation in which machines replace human jobs.  and suggest ways to increase productivity through the division of labor between humans and machines.
+
+Translated with www.DeepL.com/Translator (free version)
+:::
+
+
+::: {.callout-tip appearance="simple"}
+### 3. 챗GPT 프롬프트
+
+Revise the abstract to follow APA style guidelines and ensure that it falls within the word count range of 400 to 500 words.
+
+Interest in artificial intelligence skyrocketed in 2016 when AlphaGo defeated human Go champion Lee Sedol 9 by a stunning margin. At the same time, a vague sense of anxiety was quickly spread as machines accelerated the erosion of human jobs. Although the competition for jobs with machines began before the advent of computers, the replacement of existing human jobs by machines became visible as machines showed better performance and lower price competitiveness than humans in various fields such as cognition and creation, which were thought to be unique to humans.
+  Through this literature review and empirical data analysis, we examine the nature of automation in which machines replace human jobs.  and suggest ways to increase productivity through the division of labor between humans and machines.
+
+:::
+
+
+:::::{.columns}
+:::{.column width=54.5%}
+**챗GPT 윤문한 영문초록**
+
+The rise of artificial intelligence (AI) has garnered significant attention since 2016 when AlphaGo, an AI program, defeated the human Go champion Lee Sedol. However, the growing use of machines in various fields has also fueled concerns about the displacement of human jobs. This paper presents a literature review and empirical data analysis to explore the nature of automation and suggest ways to enhance productivity by optimizing the division of labor between humans and machines.
+
+While machines have been replacing human jobs for centuries, the rapid development of AI has made it possible for machines to outperform humans in fields previously considered uniquely human, such as cognition and creation. As a result, there is a growing awareness of the impact of automation on employment opportunities. This paper aims to provide insights into this issue through a comprehensive review of relevant literature and analysis of empirical data.
+
+Our analysis indicates that automation can lead to the displacement of jobs that require low-level skills, but it can also create new opportunities that require higher-level skills. Furthermore, automation can enhance productivity and lower costs, thus benefiting both consumers and firms. Therefore, there is a need to strike a balance between the potential benefits and challenges of automation.
+
+To maximize the advantages of automation, we propose an optimal division of labor between humans and machines. In this approach, humans are responsible for tasks that require creativity, emotional intelligence, and social skills, while machines are responsible for tasks that require precision and efficiency. This approach can lead to better job quality and increased productivity.
+
+In conclusion, this paper highlights the potential impact of automation on employment and the need to optimize the division of labor between humans and machines. While automation can lead to job displacement, it can also create new opportunities and improve job quality. Therefore, policymakers and firms must consider ways to optimize the use of automation to benefit both society and the economy.
+:::
+
+:::{.column width=1%}
+
+:::
+
+:::{.column width=44.5%}
+**영문초록 원문**
+
+Machines have been used simply for arithmetic operations and documentation. However, with the development
+of technology, a new generation of artificial intelligence has begun. Machines are not just tools that can be
+calculated, but they have been commercialized in various fields, such as natural language processing technology
+that can understand and communicate human language, or video fields, where human dependence was high. Since
+2016, the AI game, “Alphago,” has defeated Lee Se-dol with a significant difference in skill, interest in AI has
+increased sharply. Machines have started to replace human jobs because of their excellent performance, low cost
+and competitive edge. In this paper, I would like to present a plan on how to use artificial intelligence to affect
+human jobs and how to improve productivity effectively by cooperating with machines and humans in the future.
+
+:::
+:::::
+
+
+영문초록을 비교하면, 챗GPT로 윤문한 영문초록이 원문보다 더 구조적이고 상세하다는 것을 알 수 있다. 챗GPT 초록은 문제 정의부터 해결 방안까지 체계적으로 다루고 있으며, 인공지능과 인간 노동 간의 최적의 역할 분배에 대한 구체적인 제안까지 포함하고 있지만, 원문 초록은 비교적 간단하고 일반적인 내용만을 다루고 있다. 원문은 인공지능이 인간의 일자리에 어떤 영향을 미칠 수 있는지와 미래에 어떻게 협력할 수 있는지에 대한 개요를 제공하지만, 구체적인 분석이나 제안은 부족하다.
+
+
+
+
+## 계산기 프로그램
+
+
+
+
+![](images/calculator.jpg)
+
+::: panel-tabset
+
+## 지시명령어
+
+::: {.callout-note collapse="true"}
+### write python code of calculator
+
+![](images/coding_calculator.jpg)
+:::
+
+## 소스코드
+
+```{python}
+#| eval: false
+
+# Simple calculator program
+
+# Function to add two numbers
+def add(x, y):
+    return x + y
+
+# Function to subtract two numbers
+def subtract(x, y):
+    return x - y
+
+# Function to multiply two numbers
+def multiply(x, y):
+    return x * y
+
+# Function to divide two numbers
+def divide(x, y):
+    return x / y
+
+# Display menu
+print("Select operation.")
+print("1. Add")
+print("2. Subtract")
+print("3. Multiply")
+print("4. Divide")
+
+# Take input from the user
+choice = input("Enter choice (1/2/3/4): ")
+
+num1 = float(input("Enter first number: "))
+num2 = float(input("Enter second number: "))
+
+# Perform operation based on user's choice
+if choice == '1':
+    print(num1, "+", num2, "=", add(num1, num2))
+
+elif choice == '2':
+    print(num1, "-", num2, "=", subtract(num1, num2))
+
+elif choice == '3':
+    print(num1, "*", num2, "=", multiply(num1, num2))
+
+elif choice == '4':
+    print(num1, "/", num2, "=", divide(num1, num2))
+
+else:
+    print("Invalid input")
+```
+
+## &rarr;
+
+## 실행 지시명령어
+
+::: {.callout-note collapse="false"}
+### how to run this python code
+
+Python 코드를 실행하려면 시스템에 Python이 설치되어 있어야 합니다. 다음 단계에 따라 간단한 계산기를 위한 Python 코드를 실행할 수 있습니다:
+
+1. 메모장이나 서브라인 텍스트와 같은 텍스트 편집기를 열고 Python 코드를 새 파일에 붙여넣습니다.
+1. 파일 확장명을 .py로 지정하여 저장합니다(예: calculator.py).
+1. 터미널 또는 명령 프롬프트 창을 엽니다.
+1. `cd` 명령을 사용하여 파일이 저장된 디렉토리로 이동합니다(예: `cd Documents\Python`).
+1. `python calculator.py`를 입력하고 Enter 키를 눌러 프로그램을 실행합니다.
+
+그러면 프로그램이 실행되고 메뉴가 표시되며 사용자에게 원하는 연산과 숫자 두 개를 입력하라는 메시지가 표시됩니다. 사용자가 필요한 입력을 입력하면 프로그램이 해당 산술 연산을 수행하고 결과를 표시합니다.
+:::
+
+## 실행 사례
+
+<!-- ![](images/coding_calculator_run.gif) -->
+
+:::
+
+
+```{r}
+# xfun::embed_file("code/calculator.py", text = "계산기 소스코드 다운로드")
+```
+
+
+
+# GUI 계산기
+
+
+이번에는 계산기에 GUI를 입혀 사용자가 좀더 쉽게 사용할 수 있도록 한다.
+다양한 GUI 패키지가 있지만 그중에서 `tkinter` 패키지 하나를 선정하여 개발을 이어나간다.
+chatGPT에 지시명령어로 계산기 프로그램을 파이썬 언어로 작성하라는 하명을 내린다.
+계산기를 동작시키는 방식도 알려달라는 하명도 이어서 내린다.
+
+
+::: panel-tabset
+
+## 지시명령어
+
+::: {.callout-note collapse="true"}
+### please add gui with tkinter 
+
+Sure, here is an example of the same calculator program using the Tkinter library to create a graphical user interface (GUI):
+
+...
+
+In this code, we first import the Tkinter library using the alias tk. Then we define four functions add(), subtract(), multiply(), and divide() that perform the corresponding arithmetic operations on the numbers entered by the user. Each function retrieves the input values from the Entry widgets using the get() method, performs the arithmetic operation, and updates the text of the Label widget to display the result.
+
+We then create the main window using the Tk() constructor and set its title using the title() method. Next, we create two Label widgets and two Entry widgets to allow the user to enter the two numbers.
+
+We also create four Button widgets, one for each arithmetic operation, and set their text and width. The command parameter is used to specify the function that should be called when the button is clicked.
+
+Finally, we create a Label widget to display the result of the arithmetic operation, and call the mainloop() method to start the event loop and display the GUI.
+
+:::
+
+## 소스코드
+
+```{python}
+#| eval: false
+
+import tkinter as tk
+
+# Function to perform addition
+def add():
+    try:
+        num1 = float(entry_num1.get())
+        num2 = float(entry_num2.get())
+        result = num1 + num2
+        label_result.config(text="Result: " + str(result))
+    except ValueError:
+        label_result.config(text="Invalid input")
+
+# Function to perform subtraction
+def subtract():
+    try:
+        num1 = float(entry_num1.get())
+        num2 = float(entry_num2.get())
+        result = num1 - num2
+        label_result.config(text="Result: " + str(result))
+    except ValueError:
+        label_result.config(text="Invalid input")
+
+# Function to perform multiplication
+def multiply():
+    try:
+        num1 = float(entry_num1.get())
+        num2 = float(entry_num2.get())
+        result = num1 * num2
+        label_result.config(text="Result: " + str(result))
+    except ValueError:
+        label_result.config(text="Invalid input")
+
+# Function to perform division
+def divide():
+    try:
+        num1 = float(entry_num1.get())
+        num2 = float(entry_num2.get())
+        result = num1 / num2
+        label_result.config(text="Result: " + str(result))
+    except ValueError:
+        label_result.config(text="Invalid input")
+    except ZeroDivisionError:
+        label_result.config(text="Cannot divide by zero")
+
+# Create the main window
+window = tk.Tk()
+window.title("Simple Calculator")
+
+# Create the number input fields
+label_num1 = tk.Label(window, text="Number 1:")
+label_num1.pack()
+entry_num1 = tk.Entry(window)
+entry_num1.pack()
+
+label_num2 = tk.Label(window, text="Number 2:")
+label_num2.pack()
+entry_num2 = tk.Entry(window)
+entry_num2.pack()
+
+# Create the operation buttons
+button_add = tk.Button(window, text="+", width=10, command=add)
+button_add.pack()
+
+button_subtract = tk.Button(window, text="-", width=10, command=subtract)
+button_subtract.pack()
+
+button_multiply = tk.Button(window, text="*", width=10, command=multiply)
+button_multiply.pack()
+
+button_divide = tk.Button(window, text="/", width=10, command=divide)
+button_divide.pack()
+
+# Create the result label
+label_result = tk.Label(window, text="Result: ")
+label_result.pack()
+
+# Run the main loop
+window.mainloop()
+```
+
+## &rarr;
+
+## 실행 지시명령어
+
+::: {.callout-note collapse="false"}
+### how to run this python code
+
+Python 코드를 실행하려면 시스템에 Python이 설치되어 있어야 합니다. 다음 단계에 따라 간단한 계산기를 위한 Python 코드를 실행할 수 있습니다:
+
+1. 메모장이나 서브라인 텍스트와 같은 텍스트 편집기를 열고 Python 코드를 새 파일에 붙여넣습니다.
+1. 파일 확장명을 .py로 지정하여 저장합니다(예: calculator.py).
+1. 터미널 또는 명령 프롬프트 창을 엽니다.
+1. `cd` 명령을 사용하여 파일이 저장된 디렉토리로 이동합니다(예: `cd Documents\Python`).
+1. `python calculator.py`를 입력하고 Enter 키를 눌러 프로그램을 실행합니다.
+
+그러면 프로그램이 실행되고 메뉴가 표시되며 사용자에게 원하는 연산과 숫자 두 개를 입력하라는 메시지가 표시됩니다. 사용자가 필요한 입력을 입력하면 프로그램이 해당 산술 연산을 수행하고 결과를 표시합니다.
+:::
+
+## 실행 사례
+
+<!-- ![](images/coding_calculator_gui_run.gif) -->
+
+:::
+
+
+```{r}
+# xfun::embed_file("code/calculator_gui.py", text = "계산기 소스코드 GUI 버전 다운로드")
+```
+
+
+# 테스트
+
+계산기 프로그램이 정상동작하는지 확인하는 코드를 작성하자.
+만약 단위 테스트 결과가 모두 정상동작한다면 믿고 현업에서 사용하게 된다.
+
+::: panel-tabset
+
+## 지시명령어
+
+::: {.callout-note collapse="true"}
+### first write python program for calculator and then test result from execution
+
+Here's the Python code for a simple calculator that supports addition, subtraction, multiplication, and division. We'll create a separate file for the test cases, which will import and run the calculator functions.
+
+Save the following code as calculator.py:
+
+```python
+class Calculator:
+    def add(self, a, b):
+        return a + b
+
+    def subtract(self, a, b):
+        return a - b
+
+    def multiply(self, a, b):
+        return a * b
+
+    def divide(self, a, b):
+        if b == 0:
+            raise ValueError("Cannot divide by zero")
+        return a / b
+```
+
+Now, create a new file named test_calculator.py and save the following code in it:
+
+```python
+from calculator import Calculator
+
+def test_calculator():
+    calc = Calculator()
+
+    # Test addition
+    assert calc.add(2, 3) == 5, "Test case 1 failed"
+    assert calc.add(-2, 3) == 1, "Test case 2 failed"
+
+    # Test subtraction
+    assert calc.subtract(5, 3) == 2, "Test case 3 failed"
+    assert calc.subtract(0, -5) == 5, "Test case 4 failed"
+
+    # Test multiplication
+    assert calc.multiply(3, 4) == 12, "Test case 5 failed"
+    assert calc.multiply(-2, 5) == -10, "Test case 6 failed"
+
+    # Test division
+    assert calc.divide(10, 2) == 5, "Test case 7 failed"
+    assert calc.divide(-10, 5) == -2, "Test case 8 failed"
+
+    # Test division by zero
+    try:
+        calc.divide(10, 0)
+    except ValueError as e:
+        assert str(e) == "Cannot divide by zero", "Test case 9 failed"
+
+    print("All test cases passed")
+
+if __name__ == "__main__":
+    test_calculator()
+```
+
+To execute the test cases, open a terminal or command prompt and navigate to the directory containing both calculator.py and test_calculator.py. Then run the following command:
+
+```bash
+python test_calculator.py
+```
+
+If all test cases pass, you'll see "All test cases passed" printed on the console.
+
+:::
+
+## 실행결과
+
+<!-- ![](images/coding_calculator_test.jpg) -->
+
+:::
+
+
+# `.exe` 배포
+
+CLI를 통해 기능을 검증한 후 GUI로 사용자가 사용하기 쉬운 인터페이스를 구현하였다면 
+다음 단계로 배포를 한다. 다양한 배포 프로그램이 존재하지만 가장 쉽게 `.exe` 파일을 만드는 방법을 살펴보자.
+
+
+::: panel-tabset
+
+## 지시명령어
+
+::: {.callout-note collapse="true"}
+### I am a pyhton developer. I have a simple python calculator. I'd like to deploy this program into Windows. **let me know how to create a standalone executable file**
+
+To create a standalone executable file for your Python calculator, you can use a tool like PyInstaller or cx_Freeze. Here are the general steps to follow:
+
+Install PyInstaller: You can use pip to install PyInstaller. Open a command prompt or terminal and run the following command:
+
+```
+pip install pyinstaller
+```
+
+Create a spec file: PyInstaller requires a spec file that describes your Python program and its dependencies. To create a spec file with PyInstaller, run the following command:
+
+```
+pyinstaller --name=calculator --onefile calculator.py
+```
+
+Build the executable: To build the executable file with PyInstaller, run the following command:
+
+```
+pyinstaller calculator.spec
+```
+
+This will create a standalone executable file in the dist directory.
+Test the executable file: Run the executable file on a Windows machine to make sure it works as expected.
+
+By following these steps, you can create a standalone executable file for your Python calculator using PyInstaller.
+
+:::
+
+## 실행결과
+
+<!-- ![](images/calculator_exe.jpg) -->
+
+## 파이썬 코드
+
+```{python}
+#| eval: false
+
+import tkinter as tk
+
+class Calculator:
+    def __init__(self, master):
+        self.master = master
+        self.master.title("Calculator")
+
+        # Create display
+        self.display = tk.Entry(self.master, width=30, borderwidth=5, justify=tk.RIGHT)
+        self.display.grid(row=0, column=0, columnspan=4, padx=10, pady=10)
+
+        # Define buttons
+        button_list = ["7", "8", "9", "/", "4", "5", "6", "*", "1", "2", "3", "-", "0", ".", "C", "+"]
+
+        # Create buttons
+        row = 1
+        col = 0
+        for button in button_list:
+            command = lambda x=button: self.button_click(x)
+            tk.Button(self.master, text=button, padx=20, pady=10, command=command).grid(row=row, column=col)
+            col += 1
+            if col > 3:
+                row += 1
+                col = 0
+
+        # Create equals button
+        tk.Button(self.master, text="=", padx=50, pady=10, command=self.calculate).grid(row=row, column=0, columnspan=4)
+
+    def button_click(self, button):
+        if button == "C":
+            self.display.delete(0, tk.END)
+        else:
+            self.display.insert(tk.END, button)
+
+    def calculate(self):
+        try:
+            result = eval(self.display.get())
+            self.display.delete(0, tk.END)
+            self.display.insert(0, result)
+        except:
+            self.display.delete(0, tk.END)
+            self.display.insert(0, "Error")
+
+# Create window
+root = tk.Tk()
+
+# Create calculator
+calculator = Calculator(root)
+
+# Run window
+root.mainloop()
+```
+
+## `.spec` 파일
+
+```{python}
+#| eval: false
+
+# -*- mode: python ; coding: utf-8 -*-
+
+block_cipher = None
+
+
+a = Analysis(
+    ['calculator.py'],
+    pathex=[],
+    binaries=[],
+    datas=[],
+    hiddenimports=[],
+    hookspath=[],
+    hooksconfig={},
+    runtime_hooks=[],
+    excludes=[],
+    win_no_prefer_redirects=False,
+    win_private_assemblies=False,
+    cipher=block_cipher,
+    noarchive=False,
+)
+pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
+
+exe = EXE(
+    pyz,
+    a.scripts,
+    a.binaries,
+    a.zipfiles,
+    a.datas,
+    [],
+    name='calculator',
+    debug=False,
+    bootloader_ignore_signals=False,
+    strip=False,
+    upx=True,
+    upx_exclude=[],
+    runtime_tmpdir=None,
+    console=True,
+    disable_windowed_traceback=False,
+    argv_emulation=False,
+    target_arch=None,
+    codesign_identity=None,
+    entitlements_file=None,
+)
+```
+
+## 디렉토리 구조
+
+```{r}
+# fs::dir_tree('code/calculator_exe/')
+```
+
+:::
+
+
 
 
