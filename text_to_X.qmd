@@ -6,6 +6,11 @@
 
 [딥엘(DeepL)](https://www.deepl.com)과 챗GPT를 이용하면 학술지 영문초록 작성 과정에서 영문 교정을 크게 줄일 수 있다. 딥엘과 챗GPT를 활용하여 문법적으로 정확하고 의미론적으로 일관된 텍스트를 생성할 수 있어 전문 영문 교정 서비스를 이용하지 않아도 높은 품질의 영문초록을 작성할 수 있어 시간과 비용을 크게 줄일 것으로 기대된다.
 
+
+### 작업흐름
+
+딥엘과 챗GPT를 활용한 학술지 영문초록 작성의 작업흐름은 다음과 같다. 먼저 국문초록을 작성한다. 이후 딥엘을 사용하여 국문초록을 영문으로 번역한다. 번역된 영문초록은 ChatGPT로 윤문을 진행한다. 이때, 프롬프트에 "Revise the abstract to follow APA style guidelines and ensure that it falls within the word count range of 400 to 500 words."라고 입력하여, APA 스타일 가이드라인을 따르고 단어 수가 400에서 500 단어 사이가 되도록 수정한다. 이렇게 하면 품질 높은 영문초록을 효율적으로 작성할 수 있다.
+
 ::: callout-important
 ## 딥엘과 챗GPT 학술지 영문초록 작성 작업흐름
 
@@ -187,8 +192,7 @@ Python 코드를 실행하려면 시스템에 Python이 설치되어 있어야 �
 
 챗GPT에 파이썬 언어로 계산기 프로그램을 작성하라는 지시명령어를 내린다. 지시명령어는 `please add gui with tkinter`와 같이 작성하면 된다. CLI 계산기 프로그램보다 GUI 계산기는 사용자에게는 편리하지만 개발해야 되는 코드는 더욱 복잡해진다.
 
-::: {.callout-note collapse="true"} 
-### please add gui with tkinter
+::: {.callout-note collapse="true"} \### please add gui with tkinter
 
 Sure, here is an example of the same calculator program using the Tkinter library to create a graphical user interface (GUI):
 
@@ -302,42 +306,39 @@ CLI 계산기는 텍스트 기반의 인터페이스를 제공하므로 개발�
 
 #### 프롬프트 작성
 
-챗GPT에 웹 계산기 프로그램을 작성하라는 지시명령어를 내린다. 
-지시명령어는 `웹 계산기 코드 작성해줘`와 같이 작성하면 된다. 
-챗GPT 초기 영문으로 프롬프트를 작성할 경우 더 좋은 코드가 나왔으나 
-간단한 코드 작성은 영문이나 국문이나 큰 차이가 나지 않는다.
+챗GPT에 웹 계산기 프로그램을 작성하라는 지시명령어를 내린다. 지시명령어는 `웹 계산기 코드 작성해줘`와 같이 작성하면 된다. 챗GPT 초기 영문으로 프롬프트를 작성할 경우 더 좋은 코드가 나왔으나 간단한 코드 작성은 영문이나 국문이나 큰 차이가 나지 않는다.
 
-::: {.callout-note collapse="false"} 
+::: {.callout-note collapse="false"}
 ### 웹 계산기 코드 작성해줘
 
 웹 계산기를 만들기 위해 HTML, CSS, 그리고 JavaScript를 사용할 수 있다. 아래는 간단한 예시 코드다.
 
-```html
+``` html
 <!DOCTYPE html>
 <html>
 <head>
   <title>Simple Calculator</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
   <div class="calculator">
-    <input type="text" id="display" disabled />
+    <input type="text" id="display" readonly>
     <div class="buttons">
-      <button onclick="clearDisplay()">C</button>
       <button onclick="appendToDisplay('1')">1</button>
       <button onclick="appendToDisplay('2')">2</button>
-      <button onclick="appendToDisplay('+')">+</button>
       <button onclick="appendToDisplay('3')">3</button>
+      <button onclick="clearDisplay()">C</button>
       <button onclick="appendToDisplay('4')">4</button>
       <button onclick="appendToDisplay('5')">5</button>
-      <button onclick="appendToDisplay('-')">-</button>
       <button onclick="appendToDisplay('6')">6</button>
+      <button onclick="appendToDisplay('+')">+</button>
       <button onclick="appendToDisplay('7')">7</button>
       <button onclick="appendToDisplay('8')">8</button>
-      <button onclick="appendToDisplay('*')">*</button>
       <button onclick="appendToDisplay('9')">9</button>
+      <button onclick="appendToDisplay('-')">-</button>
       <button onclick="appendToDisplay('0')">0</button>
       <button onclick="calculate()">=</button>
+      <button onclick="appendToDisplay('*')">*</button>
       <button onclick="appendToDisplay('/')">/</button>
     </div>
   </div>
@@ -348,10 +349,14 @@ CLI 계산기는 텍스트 기반의 인터페이스를 제공하므로 개발�
 
 CSS (styles.css)
 
-```css
+``` css
 .calculator {
-  width: 200px;
+  width: 300px;
   margin: auto;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px gray;
 }
 
 .buttons {
@@ -360,21 +365,25 @@ CSS (styles.css)
 }
 
 button {
-  width: 50px;
-  height: 50px;
+  width: 68px;
+  height: 68px;
   font-size: 24px;
+  margin: 5px;
+  cursor: pointer;
 }
 
 input {
-  width: 100%;
+  width: 95%;
   font-size: 24px;
+  padding: 10px;
   text-align: right;
+  margin-bottom: 20px;
 }
 ```
 
 JavaScript (script.js)
 
-```javascript
+``` javascript
 let currentInput = "";
 let previousInput = "";
 let operator = "";
@@ -431,11 +440,10 @@ function calculate() {
 
 #### 웹 계산기 실행
 
-챗GPT에 웹 계산기를 실행하려면 웹 브라우져를 열고 index.html 파일을 열거나
-`index.html` 파일을 파일탐색기로 찾아가서 두번 클릭하여 실행하면 웹브라워저가 열리면서 웹 계산기가 실행된다.
+챗GPT에 웹 계산기를 실행하려면 웹 브라우져를 열고 index.html 파일을 열거나 `index.html` 파일을 파일탐색기로 찾아가서 두번 클릭하여 실행하면 웹브라워저가 열리면서 웹 계산기가 실행된다.
 
-:::::{.columns}
-:::{.column width=55%}
+::: columns
+::: {.column width="55%"}
 ```{python}
 #| eval: false
 #| echo: true
@@ -450,17 +458,107 @@ $ tree
 ```
 :::
 
-:::{.column width=5%}
-
+::: {.column width="5%"}
 :::
 
-:::{.column width=40%}
+::: {.column width="40%"}
 ![웹 전자계산기](images/calculator_web.jpg)
 :::
-:::::
-
+:::
 
 ## 이미지 생성
 
+**TTI(텍스트-투-이미지)**는 텍스트를 입력으로 받아 그에 맞는 이미지를 생성하는 기술이다. 예를 들어, "해변에서 일몰을 보는 사람"이라는 프롬프트를 입력하면, 해당하는 일몰과 해변, 사람이 함께하는 이미지를 생성한다. 이런 방식으로, 사용자는 자신이 원하는 시나리오나 객체, 장면을 텍스트로 기술하면, TTI 알고리즘이 텍스트를 이미지로 변환한다. 이미지 생성은 GAN(Generative Adversarial Network)와 VAE(Variational Autoencoder) 같은 생성 모형의 발전을 통해 시작되었고 텍스트-이미지 모형은 컴퓨터 비전과 자연어 처리를 결합하면서 성큼 상용화에 가까워졌으며, 최근 GPT-3와 같은 언어 모형을 텍스트-이미지 모형에 적용하여 텍스트를 이미지로 변환하는 기술이 급속히 발전하고 있다.
 
+![Text-to-Image 이미지 생성과정](images/anyang_t2i.jpg)
+
+::: callout-note
+### 텍스트에서 이미지로 진화
+
+**프롬프트(Prompt)**는 이전에 학습된 모형 가중치(weight)를 새로운 맥락에서 재사용할 수 있는 메커니즘으로, 새롭게 등장한 극단적인 형태의 **전이학습(Transfer Learning)**으로 볼 수 있다. 수년 동안 자연어 처리(NLP) 작업에 특화된 모델을 개발하면서, 미리 학습된 가중치를 더 효율적으로 재사용하는 방법이 점차 발전해왔다. 2013년에 등장한 `word2vec`은 범용적인 단어 임베딩을 정적 라이브러리 형태로 제공하게 되면서, 이 임베딩을 다양한 NLP 모형의 입력으로 활용되기 시작했다.
+
+2010년대 후반 ELMo와 BERT 같은 모형이 미세조정(Fine-Tuning) 기능을 도입함으로써 사전 학습된 모형의 전체 구조를 재활용하면서 특정 작업에 필요한 최소한의 가중치만 추가하는 방식이 자연어처리(NLP() 분야 표준이 되었다.
+
+2020년에 등장한 GPT-3는 프롬프트를 통해 전이 학습의 새로운 장을 열었다. 이제 추가적인 매개변수나 재학습 없이도, 단순한 텍스트 입력만으로 거의 모든 NLP 작업을 수행할 수 있게 되었다. 이러한 NLP 모형뿐만 아니라 Stable Diffusion, DALL-E와 같은 텍스트-이미지 변환(Text-to-Image) 모형도 전이 학습 스펙트럼의 한 자리를 당당히 차지하고 있다. [@Turc_2022]
+:::
+
+### 뉴스 이미지 사례
+
+TTI(Text-to-Image) 기술을 활용하여 뉴스기사에 적합한 이미지를 생성할 수 있다. 예를 들어, 뉴스기사 "[누리호, 힘차게 날아올랐다...美도 달성하지 못한 진기록](https://v.daum.net/v/20230525184307343)"에서는 한국이 독자 기술로 개발한 로켓 '누리호'가 성공적으로 발사되어 우주로 향한 것을 다루고 있다. 이러한 주제에 맞는 이미지를 TTI 기술을 통해 생성할 수 있다.
+
+이미지 생성 엔진을 특정하고 적절한 텍스트 프롬프트를 입력하면, 해당 설명에 부합하는 이미지가 생성될 것이다. 뉴스기사에 실릴 이미지는 뉴스기사의 시각적인 요소를 풍부하게 해주며, 독자들이 기사의 내용을 더 쉽게 이해할 수 있게 도와준다. 하지만, 뉴스기사는 사실도 중요하기 때문에 필히 생성형 AI가 제작한 이미지라는 사실을 밝히고 독자의 이해를 돕기 위한 이미지라는 것을 명기해야 한다.
+
+::: {.callout-note collapse="false"}
+### 프롬프트: 아래 뉴스기사는 백틱기호(\`) 세개 사이에 담겨져 있습니다. 다음 뉴스기사를 이미지로 나타내기 위해 midjourney text prompt를 작성해세요.
+
+```html
+누리호, 힘차게 날아올랐다…美도 달성하지 못한 진기록
+
+김진원입력 2023. 5. 25. 18:43수정 2023. 5. 25. 21:14
+
+한국이 독자 기술로 개발한 로켓 ‘누리호’가 25일 우주로 향했다. 실용위성을 탑재한 발사체를 쏘아 올린 첫 사례다. 누리호는 차세대 소형위성 2호를 목표 궤도인 고도 550㎞에 정확하게 올려놨다. 남극 세종기지에서 위성 신호를 정상 수신했다. 작년 6월 누리호 2차 발사에 이어 이번 3차 발사 프로젝트까지 성공적으로 수행하면서 한국은 세계적인 우주 과학 강국으로 우뚝 서게 됐다. 첫 로켓 개발 후 연속 발사 성공은 미국과 러시아, 중국도 달성하지 못한 진기록이다. 
+
+누리호는 이날 오후 6시24분 전남 고흥군 나로우주센터 전용 발사대에서 우주로 날아올랐다. 오전 11시 발사를 결정한 이후 오후 5시께 연료와 산화제 주입을 차례로 완료했다. 누리호는 오후 6시24분 정각에 3500도 초고온 고압가스의 힘을 받아 하늘로 힘차게 솟구쳤다.
+
+
+누리호는 발사 뒤 1단과 위성을 감싼 덮개인 페어링, 2단을 차례로 떼어냈다. 고도 550㎞에선 주탑재 위성인 차세대 소형위성 2호를 분리했다. 이후 20초 간격으로 부탑재 위성인 큐브위성을 차례로 내보냈다. 다만 7기의 큐브위성 중 1기에 대해선 사출 성공 여부를 판단 중이다.
+
+누리호는 과학기술정보통신부와 한국항공우주연구원이 2010년부터 개발한 토종 발사체다. 한국이 지난 2차에 이어 3차 발사까지 성공하면서 50여 년의 세계 우주개발사(史)에서 찾아보기 힘든 발자취를 남기게 됐다. 윤석열 대통령은 “달에 가는 것이 쉽기 때문이 아니라 어렵기 때문에 도전한다”며 “어렵기 때문에 우리의 도전이 되고 꿈이 되는 것”이라고 말했다. 이어 “우리나라가 우주강국 G7에 들어가는 쾌거를 이뤘다”고 강조했다.
+
+고흥(나로우주센터)=김진원 기자 jin1@hankyung.com
+```
+
+네, 한국형발사체 누리호 발사 성공에 대한 Midjourney 텍스트 프롬프트는 다음과 같습니다.
+
+-   한국형발사체 누리호가 우주로 발사되는 모습을 나타내는 이미지를 생성해 주세요.
+-   **한국형발사체 누리호가 성공적으로 발사되어 목표 궤도에 진입하는 모습**을 나타내는 이미지를 생성해 주세요.
+-   한국형발사체 누리호가 성공적으로 발사되어 위성을 궤도에 올리는 모습을 나타내는 이미지를 생성해 주세요.
+
+이 프롬프트를 사용하여 한국형발사체 누리호 발사 성공에 대한 이미지를 생성할 수 있습니다.
+:::
+
+아직 한글을 이미지 생성 AI 프롬프트로 사용하면 이미지 품질이 영문을 사용할 때와 비교하여 좋지 않기 때문에 챗GPT에서 미드저니 프롬프트를 생성한 후에 딥엘(deepl) 혹은 파파고 한영번역기를 사용하여 영문로 번역한 후에 이미지 생성 프롬프트로 사용할 것을 것을 추천한다.
+
+::: {#fig-nuri layout="[[49,-2,49], [1]]"}
+![프롬프트(스타일 적용 전): South Korean launch vehicle Nuri successfully launches and enters its target orbit](images/nuri_image_01.jpg)
+
+![프롬프트(스타일 적용 후): South Korean launch vehicle Nuri successfully launches and enters its target orbit, cinematic light, extreme detail, panoramic, Craig Mullins](images/nuri_image_02.jpg)
+
+![프롬프트: South Korean launch vehicle Nuri successfully launches and enters its target orbit, Max Ernst, volumetric light](images/nuri_finail.jpg){fig-align="center" width="350"}
+
+미드저니 프롬프트를 사용하여 이미지 생성과정
+:::
+
+### 이미지 생성 프로세스
+
+프롬프트를 넣어 이미지를 생성하는 것은 쉽지만, 원하는 이미지를 텍스트 프롬프트만으로 생성하는 것은 어려운 일이다. 이미지를 생성하는 과정은 복잡한 작업이며 경우에 따라 다양한 기술과 방법이 필요하지만, 과정을 크게 세 가지 주요 단계로 구분할 수 있다. 
+
+첫 번째 단계는 이미지를 생성할 엔진을 선택한다. AI가 생성하는 이미지가 사람마다 평가가 달라 주관적으로 갈리지만 다음과 같이 엔진의 특성을 가늠할 수 있다. 달리(DALL-E)는 텍스트를 기반으로 다양한 스타일과 형태의 이미지를 생성할 수 있으며, 미드저니(Midjourney)는 특정 주제나 컨셉에 초점을 맞춘 이미지 생성이 가능하고, 오픈소스 스테이블 디퓨젼(Stable Diffusion)은 시간에 따른 이미지 변화를 고려한 복잡한 이미지를 생성할 수 있다. 각 엔진마다 고유한 특성과 장점을 가지고 비용도 발생할 수 있으니, 생성하려는 이미지 목적과 요구 사항에 따라 적절한 엔진을 선택한다. 
+
+두 번째 단계는 프롬프트를 작성한다. 프롬프트는 생성하려는 이미지에 대한 설명이나 컨셉을 잘 작성하여 이미지 생성엔진에 전달한다. 동일한 프롬프트를 작성해도 엔진마다 생성되는 이미지는 다를 수 있으므로, 프롬프트 작성에 주의해야 한다. 예를 들어, 가장 기본적인 이미지 생성을 위해 "누리호 로켓이 하늘을 향해 발사되는 모습"와 같이 프롬프트를 작성할 수 있다. 
+
+마지막으로, 이미지가 생성된 후에는 추가적인 후처리 과정을 거쳐 최종 이미지를 완성한다. AI 가 생성한 이미지는 가로와 세로 길이가 동일한 정사각형 이미지가 대부분으로 '아웃페인팅'(Out-Painting) 기법으로 이미지 프레임의 바깥 부분을 인공지능이 상상해서 그려주는 이미지 확장 기능을 사용하는 등 후처리 과정을 거쳐 최종 이미지를 완성한다.
+
+![생성형 AI 이미지 생성과정](images/kakao_bedit_creator.jpg)
+
+### 이미지 생성 프롬프트
+
+생성형 AI로 고품질 이미지를 빠르게 얻는 비법은 프롬프트 작성에 있다. 
+프롬프트는 AI가 이미지를 생성할 때 참조하는 지침이기 때문에, 이를 잘 구성하면 원하는 스타일과 특성을 가진 이미지를 쉽고 빠르게 얻을 수 있다. 모든 요소를 고려하여 프롬프트를 작성하면, 더욱 정교하고 다양한 이미지를 생성할 수 있지만, 대체로 대상, 질감, 카메라 각도, 사용할 사진기나 렌즈의 종류, 이미지의 종횡비, 스타일, 화가나 감독의 스타일, 효과, 빛의 종류 등을 프롬프트를 작성할 때 주로 포함시킨다.
+
+![이미지 생성 프롬프트 고려사항](images/image_prompt_overview.jpg)
+
+예를 들어, 고품질의 사진 형식의 자동차 이미지를 원한다면 프롬프트를 "DSRL로 촬영한 금속 표면의 스포츠 자동차, 16:9 비율, Cinematic 라이팅"과 같이 작성할 수 있다. 이렇게 하면 AI는 DSRL 카메라로 촬영된 것처럼 보이는 금속 표면의 스포츠 자동차 이미지를 16:9의 종횡비와 Cinematic 라이팅으로 생성한다.
+
+또는, 웹툰 스타일의 곰 이미지를 원한다면 "웹툰 스타일의 털이 빳빳한 곰, 1:1 비율, Fairy lighting"이라고 프롬프트를 설정할 수 있다. 이 경우, AI는 웹툰 스타일로 털이 빳빳한 곰을 1:1 비율과 Fairy lighting으로 그릴 것이다.
+
+::: {#fig-nuri layout="[[49,-2,49]]"}
+
+![고품질 자동차 사진 이미지](images/image_prompt_car.jpg)
+
+![웹툰 스타일의 곰 이미지](images/image_prompt_bear.jpg)
+
+뉴빙 이미지 생성자(Image Creator)를 기반엔진으로 생성한 이미지
+
+:::
 
