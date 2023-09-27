@@ -62,7 +62,7 @@ book:
         - chatGPT.qmd             # OK
         - prompt.qmd              # OK
         - text_to_X.qmd           # OK
-        - application.qmd         # OK
+        - plugin.qmd              # OK
 
     - references.qmd
 
