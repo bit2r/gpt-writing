@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ko-KR" xml:lang="ko-KR"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.4.288">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
 <meta name="author" content="이광춘">
-
 <title>챗GPT 디지털 글쓰기 - 27&nbsp; 챗GPT 플러그인</title>
 <style>
 code{white-space: pre-wrap;}
@@ -21,8 +18,60 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
-
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
@@ -43,7 +92,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.css" rel="stylesheet">
-<script id="quarto-search-options" type="application/json">{
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -67,17 +118,13 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "검색",
     "search-label": "검색"
   }
-}</script>
-
-
+}</script><script src="site_libs/quarto-diagram/mermaid.min.js"></script><script src="site_libs/quarto-diagram/mermaid-init.js"></script><link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 </head>
-
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -88,13 +135,9 @@ ul.task-list li input[type="checkbox"] {
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">챗GPT 디지털 글쓰기</a> 
     </div>
@@ -106,7 +149,7 @@ ul.task-list li input[type="checkbox"] {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./preface.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">서문</span></a>
@@ -132,8 +175,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./history.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">언어와 문자</span></span></a>
@@ -164,7 +207,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
@@ -173,8 +216,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./markdown_01_mess.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">심각한 현재 상황</span></span></a>
@@ -187,7 +230,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
@@ -196,8 +239,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./components.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">문서 구성요소</span></span></a>
@@ -222,7 +265,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
@@ -231,8 +274,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./fonts.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">글꼴</span></span></a>
@@ -263,7 +306,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
@@ -272,8 +315,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./publishing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">출판</span></span></a>
@@ -304,7 +347,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
@@ -313,8 +356,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chatGPT.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">챗GPT</span></span></a>
@@ -339,7 +382,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
@@ -347,19 +390,37 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">목차</h2>
+   
+  <ul>
+<li><a href="#%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8" id="toc-플러그인" class="nav-link active" data-scroll-target="#%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8"><span class="header-section-number">27.1</span> 플러그인</a></li>
+  <li>
+<a href="#%EC%A7%80%EC%98%A4%EC%BD%94%EB%94%A9" id="toc-지오코딩" class="nav-link" data-scroll-target="#%EC%A7%80%EC%98%A4%EC%BD%94%EB%94%A9"><span class="header-section-number">27.2</span> 지오코딩</a>
+  <ul class="collapse">
+<li><a href="#%EC%A7%80%EC%98%A4%EC%BD%94%EB%94%A9-api-%EC%BD%94%EB%93%9C" id="toc-지오코딩-api-코드" class="nav-link" data-scroll-target="#%EC%A7%80%EC%98%A4%EC%BD%94%EB%94%A9-api-%EC%BD%94%EB%93%9C"><span class="header-section-number">27.2.1</span> 지오코딩 API 코드</a></li>
+  <li><a href="#%EC%BD%94%EB%93%9C-%EC%88%98%EC%A0%95" id="toc-코드-수정" class="nav-link" data-scroll-target="#%EC%BD%94%EB%93%9C-%EC%88%98%EC%A0%95"><span class="header-section-number">27.2.2</span> 코드 수정</a></li>
+  <li><a href="#%EA%B0%80%ED%86%A8%EB%A6%AD%EA%B4%80%EB%8F%99%EB%8C%80-%EC%9C%84%EC%B9%98" id="toc-가톨릭관동대-위치" class="nav-link" data-scroll-target="#%EA%B0%80%ED%86%A8%EB%A6%AD%EA%B4%80%EB%8F%99%EB%8C%80-%EC%9C%84%EC%B9%98"><span class="header-section-number">27.2.3</span> 가톨릭관동대 위치</a></li>
+  </ul>
+</li>
+  <li><a href="#%ED%8F%AC%EC%8A%A4%ED%84%B0-%EC%A0%9C%EC%9E%91" id="toc-포스터-제작" class="nav-link" data-scroll-target="#%ED%8F%AC%EC%8A%A4%ED%84%B0-%EC%A0%9C%EC%9E%91"><span class="header-section-number">27.3</span> 포스터 제작</a></li>
+  <li>
+<a href="#%EC%82%AC%EC%8B%A4%ED%99%95%EC%9D%B8%EA%B3%BC-%EC%88%98%ED%95%99" id="toc-사실확인과-수학" class="nav-link" data-scroll-target="#%EC%82%AC%EC%8B%A4%ED%99%95%EC%9D%B8%EA%B3%BC-%EC%88%98%ED%95%99"><span class="header-section-number">27.4</span> 사실확인과 수학</a>
+  <ul class="collapse">
+<li><a href="#%EC%82%AC%EC%8B%A4-%ED%99%95%EC%9D%B8" id="toc-사실-확인" class="nav-link" data-scroll-target="#%EC%82%AC%EC%8B%A4-%ED%99%95%EC%9D%B8"><span class="header-section-number">27.4.1</span> 사실 확인</a></li>
+  <li><a href="#%EC%88%98%EB%8A%A5%EB%AC%B8%EC%A0%9C-%ED%92%80%EC%9D%B4" id="toc-수능문제-풀이" class="nav-link" data-scroll-target="#%EC%88%98%EB%8A%A5%EB%AC%B8%EC%A0%9C-%ED%92%80%EC%9D%B4"><span class="header-section-number">27.4.2</span> 수능문제 풀이</a></li>
+  </ul>
+</li>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chatGPT.html">챗GPT</a></li><li class="breadcrumb-item"><a href="./plugin.html"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">챗GPT 플러그인</span></a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">챗GPT 플러그인</span></h1>
+<main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chatGPT.html">챗GPT</a></li><li class="breadcrumb-item"><a href="./plugin.html"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">챗GPT 플러그인</span></a></li></ol></nav><div class="quarto-title">
+<h1 class="title">
+<span class="chapter-number">27</span>&nbsp; <span class="chapter-title">챗GPT 플러그인</span>
+</h1>
 </div>
 
 
@@ -373,13 +434,397 @@ ul.task-list li input[type="checkbox"] {
   
 
 
-</header>
+</header><p>1950년대부터 본격적으로 컴퓨터가 도입되면서 CLI를 필두로 다양한 사용자 인터페이스(User Interface)가 적용되었다. 스티브 잡스의 애플사는 매킨토시 GUI에 이어 아이폰 모바일 인터페이스를 일반화시켰다면, 최근 챗GPT는 언어 사용자 인터페이스(LUI)를 통해 각 분야에 혁신을 예고하고 있다. 챗GPT 데이터 과학도 사용자 관점에서 보자. 기존 R, 파이썬, SQL, 엑셀 등 데이터 과학 구문을 머리속에 암기하고 있거나 구글이나 네이버를 통해 중요 키워드를 통해 문제를 해결해야 했었다. 하지만, 이제 챗GPT가 자연어를 이해하기 때문에 글쓰기, 수식, 이미지 생성, 다이어그램, 표, 그래프, 데이터 분석 등 글쓰기 전반에 변화는 필연적이다. <span class="citation" data-cites="wickham2023r">(<a href="references.html#ref-wickham2023r" role="doc-biblioref">Wickham 기타, 2023</a>)</span> <span class="citation" data-cites="wickham2019welcome">(<a href="references.html#ref-wickham2019welcome" role="doc-biblioref">Wickham 기타, 2019</a>)</span> <span class="citation" data-cites="gozalo2023chatgpt">(<a href="references.html#ref-gozalo2023chatgpt" role="doc-biblioref">Gozalo-Brizuela &amp; Garrido-Merchan, 2023</a>)</span></p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-ui-evolution" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><div>
+<pre class="mermaid mermaid-js" data-label="fig-ui-evolution">flowchart TB
+    
+    subgraph A["사용자 인터페이스"]
+    direction LR
+        CLI["CLI 1950~&lt;br&gt;Command Line Interface&lt;br&gt; GUI 1970~&lt;br&gt; Graphic User Inferface"]     --&gt; WIMI
+        WIMI["Web Interface &lt;br&gt; 1994~ &lt;br&gt; Mobile Interface &lt;br&gt; 2007~"] --&gt; NUI["LUI 2023~&lt;br&gt; Language &lt;br&gt; User Interface"]
+    end
+
+classDef default fill:#f9f7f7,stroke:#333,stroke-width:2px;
+classDef A font-size:16px;
+
+</pre>
+</div>
+<figcaption class="figure-caption">그림&nbsp;27.1: 사용자 인터페이스 진화</figcaption></figure>
+</div>
+</div>
+</div>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">출처: <a href="https://openai.com/blog/chatgpt-plugins">ChatGPT plugins</a></span></div></div>
+<section id="플러그인" class="level2" data-number="27.1"><h2 data-number="27.1" class="anchored" data-anchor-id="플러그인">
+<span class="header-section-number">27.1</span> 플러그인</h2>
+<p>챗GPT <strong>플러그인(Plugin)</strong>은 GPT 언어 모형에 특별히 설계된 도구로 안전성 제공을 핵심 원칙으로 삼고 있다. 플러그인은 챗GPT가 최신 정보에 접근하거나 수학계산을 실행하고, 포스터 제작 같은 제3자 서비스를 챗GPT 인터페이스를 통해 이용하는 기능을 제공한다. 현재 기준(2023년 09월 기준) 부가세 포함 22 달러를 결재해야 플러그인을 사용할 수 있지만, 챗GPT 플러그인을 통해 사용자 요구에 맞는 더 유용한 정보와 서비스 제공이 가능하다.</p>
+<p>챗GPT 플러그인은 데이터 과학자, 개발자, 일반 사용자, 디자이너 등 다양한 사람들에게 활용될 수 있는데, 데이터 과학자는 복잡한 쿼리나 코드 작성 없이도 데이터를 챗GPT에 업로드하고 분석 프롬프트를 함께 전달하면 챗GPT 고급 데이터 분석(Advanced Data Analysis, 구 Code Interpreter) 플러그인을 통해 고급 데이터 분석을 파이썬/R/SQL 코드 작성없이 수행할 수 있으며, 개발자는 챗GPT를 통해 코드 조각(code snippet)을 생성하거나 문제를 해결하는 데 도움을 받을 수 있고, 일반 사용자는 챗GPT를 통해 일상적인 질문에 대한 답을 얻을 수 있고, 수험생이나 학부모는 가정교사처럼 수학문제풀이에 챗GPT 플러그인(울프람)을 사용하고, 그래픽 디자이너는 이미지 생성/편집 플로그인(캔바 등)을 통해 빠른 시간내에 디자인 생성물을 작업할 수 있다.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/chatGPT_plugins.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="챗GPT 플러그인"><img src="images/chatGPT_plugins.jpg" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">챗GPT 플러그인</figcaption></figure>
+</div>
+</section><section id="지오코딩" class="level2 page-columns page-full" data-number="27.2"><h2 data-number="27.2" class="anchored" data-anchor-id="지오코딩">
+<span class="header-section-number">27.2</span> 지오코딩</h2>
+<p><strong>지오코딩(Geocoding)</strong>은 주소, 지명, 우편 번호 등의 위치 정보를 위도와 경도로 변환하는 것으로 이를 통해 특정 위치를 지도 상에 표시하거나, 위치 기반 서비스를 제공할 수 있다. 예를 들어, “서울특별시 강남구 테헤란로 212”라는 주소를 위도 37.5012746, 경도 127.0395857와 같은 좌표로 변환하는 일종의 함수로 볼 수 있다.</p>
+<p>지오코딩은 주소나 지명을 위도와 경도로 변환하는 과정으로, 일반적으로 사용자가 주소나 지명을 입력하면 이를 API 요청으로 전달한다. 서버는 이 요청을 처리하여 해당 위치의 위도와 경도 정보를 반환한다. 이렇게 얻은 위도와 경도는 지도 상에 표시하거나 위치 기반 서비스를 제공하는 데 사용된다. 반대로, 위도와 경도를 주소나 지명으로 변환하는 것을 <strong>역방향 지오코딩</strong>이라고 한다. Google Maps API, Kakao Maps API, Naver Maps API 등 서비스 제공업체가 다수 존재하지만 일정 횟수 이상의 요청 제한, 정확도 문제, 데이터 갱신주기 등 제한사항을 파악하고 적절한 API를 선택하여 업무에 적용한다.</p>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class=""><a href="https://chat.openai.com/share/dcfee23a-0853-454b-9d8c-f76fc4474cb6">ShareGPT: 챗GPT Plugin - 지도API</a></span></div></div>
+<p>카카오 지도 API <a href="https://apis.map.kakao.com/web/documentation/">기술문서</a>를 챗GPT 플러그인 “Link Reader”을 사용하여 좌표를 찍고 이를 지도위에 출력하는 코드를 작성해보자.</p>
+<section id="지오코딩-api-코드" class="level3" data-number="27.2.1"><h3 data-number="27.2.1" class="anchored" data-anchor-id="지오코딩-api-코드">
+<span class="header-section-number">27.2.1</span> 지오코딩 API 코드</h3>
+<p>카카오 지도 API를 호출해서 주소를 넘기는 프롬프트를 챗GPT 플로그인을 사용해서 위경도 좌표를 반환하는 생성한다.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+웹사이트를 읽고 다음 지령을 준비해 https://apis.map.kakao.com/web/documentation/
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb1" data-code-line-numbers=""><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Kakao 지도 API 문서는 다양한 지도 관련 기능을 제공한다. 이 문서는 지도 객체 생성, 이벤트, 메서드 등에 대한 상세한 정보를 담고 있다. 아래는 주요 내용의 요약이다.</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">### 지도 객체 생성</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`kakao.maps.Map(container, options)`</span>: 지도를 생성한다.</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="in">`container`</span>: 지도가 표시될 HTML element</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="in">`options`</span>: 중심 좌표, 확대 수준, 지도 종류 등을 설정할 수 있다.</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">### 주요 메서드</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`setCenter(latlng)`</span>: 지도의 중심 좌표를 설정한다.</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`getCenter()`</span>: 지도의 중심 좌표를 반환한다.</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`setLevel(level, options)`</span>: 지도의 확대 수준을 설정한다.</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`getLevel()`</span>: 지도의 확대 수준을 반환한다.</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`setMapTypeId(mapTypeId)`</span>: 지도의 타입을 설정한다.</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`getMapTypeId()`</span>: 지도의 타입을 반환한다.</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">### 이벤트</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`center_changed`</span>: 중심 좌표가 변경되면 발생한다.</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`zoom_start`</span>: 확대 수준이 변경되기 직전에 발생한다.</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`zoom_changed`</span>: 확대 수준이 변경되면 발생한다.</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`click`</span>: 지도를 클릭하면 발생한다.</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`dblclick`</span>: 지도를 더블클릭하면 발생한다.</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>이 외에도 다양한 메서드와 이벤트가 있어, 개발자가 원하는 기능을 쉽게 구현할 수 있다.</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+주소를 넘기면 위경도 좌표를 반환하는 R 코드를 작성해줘.
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>R에서 주소를 위경도 좌표로 변환하기 위해 <code>httr</code> 패키지를 사용하여 Kakao API를 호출할 수 있다. 아래는 간단한 예시 코드이다.</p>
+<div class="sourceCode" id="cb2" data-code-line-numbers=""><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># 필요한 패키지를 설치하고 불러온다</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"httr"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"jsonlite"</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://httr.r-lib.org/">httr</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://jeroen.r-universe.dev/jsonlite">jsonlite</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># 주소를 위경도로 변환하는 함수를 정의한다</span></span>
+<span><span class="va">get_latlng</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">address</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="co"># Kakao API 키를 설정한다 (본인의 API 키로 교체해야 한다)</span></span>
+<span>  <span class="va">api_key</span> <span class="op">&lt;-</span> <span class="st">"YOUR_KAKAO_API_KEY"</span></span>
+<span>  </span>
+<span>  <span class="co"># API URL과 파라미터를 설정한다</span></span>
+<span>  <span class="va">url</span> <span class="op">&lt;-</span> <span class="st">"https://dapi.kakao.com/v2/local/search/address.json"</span></span>
+<span>  <span class="va">params</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>query <span class="op">=</span> <span class="va">address</span><span class="op">)</span></span>
+<span>  <span class="va">headers</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://httr.r-lib.org/reference/add_headers.html">add_headers</a></span><span class="op">(</span><span class="st">"Authorization"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"KakaoAK"</span>, <span class="va">api_key</span><span class="op">)</span><span class="op">)</span></span>
+<span>  </span>
+<span>  <span class="co"># API를 호출한다</span></span>
+<span>  <span class="va">response</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://httr.r-lib.org/reference/GET.html">GET</a></span><span class="op">(</span><span class="va">url</span>, query <span class="op">=</span> <span class="va">params</span>, <span class="va">headers</span><span class="op">)</span></span>
+<span>  </span>
+<span>  <span class="co"># 응답을 확인하고 JSON을 파싱한다</span></span>
+<span>  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://httr.r-lib.org/reference/status_code.html">status_code</a></span><span class="op">(</span><span class="va">response</span><span class="op">)</span> <span class="op">==</span> <span class="fl">200</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="va">content</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://httr.r-lib.org/reference/content.html">content</a></span><span class="op">(</span><span class="va">response</span>, <span class="st">"text"</span>, encoding <span class="op">=</span> <span class="st">"UTF-8"</span><span class="op">)</span></span>
+<span>    <span class="va">json_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/jsonlite/man/fromJSON.html">fromJSON</a></span><span class="op">(</span><span class="va">content</span><span class="op">)</span></span>
+<span>    </span>
+<span>    <span class="co"># 위경도를 추출한다</span></span>
+<span>    <span class="kw">if</span> <span class="op">(</span><span class="va">json_data</span><span class="op">$</span><span class="va">meta</span><span class="op">$</span><span class="va">total_count</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span> <span class="op">{</span></span>
+<span>      <span class="va">lat</span> <span class="op">&lt;-</span> <span class="va">json_data</span><span class="op">$</span><span class="va">documents</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">$</span><span class="va">y</span></span>
+<span>      <span class="va">lng</span> <span class="op">&lt;-</span> <span class="va">json_data</span><span class="op">$</span><span class="va">documents</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">$</span><span class="va">x</span></span>
+<span>      <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>lat <span class="op">=</span> <span class="va">lat</span>, lng <span class="op">=</span> <span class="va">lng</span><span class="op">)</span><span class="op">)</span></span>
+<span>    <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
+<span>      <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="cn">NULL</span><span class="op">)</span></span>
+<span>    <span class="op">}</span></span>
+<span>  <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
+<span>    <span class="kw"><a href="https://rdrr.io/r/base/stop.html">stop</a></span><span class="op">(</span><span class="st">"API request failed"</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="co"># 함수를 테스트한다</span></span>
+<span><span class="va">address</span> <span class="op">&lt;-</span> <span class="st">"서울특별시 강남구 테헤란로 212"</span></span>
+<span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu">get_latlng</span><span class="op">(</span><span class="va">address</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"Latitude:"</span>, <span class="va">result</span><span class="op">$</span><span class="va">lat</span>, <span class="st">"Longitude:"</span>, <span class="va">result</span><span class="op">$</span><span class="va">lng</span><span class="op">)</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>이 코드에서 <code>YOUR_KAKAO_API_KEY</code> 부분을 본인의 Kakao API 키로 교체해야 한다. 이 함수는 주소(<code>address</code>)를 입력으로 받아 위도(<code>lat</code>)와 경도(<code>lng</code>)를 리스트로 반환한다.</p>
+<p>주의: API 키를 공개하지 않도록 주의해야 한다.</p>
+</div>
+</div>
+</div>
+</section><section id="코드-수정" class="level3" data-number="27.2.2"><h3 data-number="27.2.2" class="anchored" data-anchor-id="코드-수정">
+<span class="header-section-number">27.2.2</span> 코드 수정</h3>
+<p>챗GPT가 제시한 “API 키를 공개하지 않도록 주의해야 한다”를 반영하여 <code>api_key &lt;- "YOUR_KAKAO_API_KEY"</code> 부분을 <code>api_key &lt;- Sys.getenv("KAKAO_MAP_API_KEY")</code> 바꿔 외부에 카카오 지도 API키를 숨긴다. “가톨릭관동대학교” 주소 “강원도 강릉시 범일로579번길 24”를 넣어 위경도 좌표를 얻어낸다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># 필요한 패키지를 설치하고 불러온다</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="co"># install.packages("httr")</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="co"># install.packages("jsonlite")</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="fu">library</span>(httr)</span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="fu">library</span>(jsonlite)</span>
+<span id="cb3-6"><a href="#cb3-6"></a></span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="co"># 주소를 위경도로 변환하는 함수를 정의한다</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a>get_latlng <span class="ot">&lt;-</span> <span class="cf">function</span>(address) {</span>
+<span id="cb3-9"><a href="#cb3-9"></a>  <span class="co"># Kakao API 키를 설정한다 (본인의 API 키로 교체해야 한다)</span></span>
+<span id="cb3-10"><a href="#cb3-10"></a>  api_key <span class="ot">&lt;-</span> <span class="fu">Sys.getenv</span>(<span class="st">"KAKAO_MAP_API_KEY"</span>)</span>
+<span id="cb3-11"><a href="#cb3-11"></a>  </span>
+<span id="cb3-12"><a href="#cb3-12"></a>  <span class="co"># API URL과 파라미터를 설정한다</span></span>
+<span id="cb3-13"><a href="#cb3-13"></a>  url <span class="ot">&lt;-</span> <span class="st">"https://dapi.kakao.com/v2/local/search/address.json"</span></span>
+<span id="cb3-14"><a href="#cb3-14"></a>  params <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">query =</span> address)</span>
+<span id="cb3-15"><a href="#cb3-15"></a>  headers <span class="ot">&lt;-</span> <span class="fu">add_headers</span>(<span class="st">"Authorization"</span> <span class="ot">=</span> <span class="fu">paste</span>(<span class="st">"KakaoAK"</span>, api_key))</span>
+<span id="cb3-16"><a href="#cb3-16"></a>  </span>
+<span id="cb3-17"><a href="#cb3-17"></a>  <span class="co"># API를 호출한다</span></span>
+<span id="cb3-18"><a href="#cb3-18"></a>  response <span class="ot">&lt;-</span> <span class="fu">GET</span>(url, <span class="at">query =</span> params, headers)</span>
+<span id="cb3-19"><a href="#cb3-19"></a>  </span>
+<span id="cb3-20"><a href="#cb3-20"></a>  <span class="co"># 응답을 확인하고 JSON을 파싱한다</span></span>
+<span id="cb3-21"><a href="#cb3-21"></a>  <span class="cf">if</span> (<span class="fu">status_code</span>(response) <span class="sc">==</span> <span class="dv">200</span>) {</span>
+<span id="cb3-22"><a href="#cb3-22"></a>    content <span class="ot">&lt;-</span> <span class="fu">content</span>(response, <span class="st">"text"</span>, <span class="at">encoding =</span> <span class="st">"UTF-8"</span>)</span>
+<span id="cb3-23"><a href="#cb3-23"></a>    json_data <span class="ot">&lt;-</span> <span class="fu">fromJSON</span>(content)</span>
+<span id="cb3-24"><a href="#cb3-24"></a>    </span>
+<span id="cb3-25"><a href="#cb3-25"></a>    <span class="co"># 위경도를 추출한다</span></span>
+<span id="cb3-26"><a href="#cb3-26"></a>    <span class="cf">if</span> (json_data<span class="sc">$</span>meta<span class="sc">$</span>total_count <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb3-27"><a href="#cb3-27"></a>      lat <span class="ot">&lt;-</span> json_data<span class="sc">$</span>documents[[<span class="dv">1</span>]]<span class="sc">$</span>y</span>
+<span id="cb3-28"><a href="#cb3-28"></a>      lng <span class="ot">&lt;-</span> json_data<span class="sc">$</span>documents[[<span class="dv">1</span>]]<span class="sc">$</span>x</span>
+<span id="cb3-29"><a href="#cb3-29"></a>      <span class="fu">return</span>(<span class="fu">list</span>(<span class="at">lat =</span> lat, <span class="at">lng =</span> lng))</span>
+<span id="cb3-30"><a href="#cb3-30"></a>    } <span class="cf">else</span> {</span>
+<span id="cb3-31"><a href="#cb3-31"></a>      <span class="fu">return</span>(<span class="cn">NULL</span>)</span>
+<span id="cb3-32"><a href="#cb3-32"></a>    }</span>
+<span id="cb3-33"><a href="#cb3-33"></a>  } <span class="cf">else</span> {</span>
+<span id="cb3-34"><a href="#cb3-34"></a>    <span class="fu">stop</span>(<span class="st">"API request failed"</span>)</span>
+<span id="cb3-35"><a href="#cb3-35"></a>  }</span>
+<span id="cb3-36"><a href="#cb3-36"></a>}</span>
+<span id="cb3-37"><a href="#cb3-37"></a></span>
+<span id="cb3-38"><a href="#cb3-38"></a><span class="co"># 가톨릭관동대학교 주소</span></span>
+<span id="cb3-39"><a href="#cb3-39"></a>address <span class="ot">&lt;-</span> <span class="st">"강원도 강릉시 범일로579번길 24"</span></span>
+<span id="cb3-40"><a href="#cb3-40"></a>result <span class="ot">&lt;-</span> <span class="fu">get_latlng</span>(address)</span>
+<span id="cb3-41"><a href="#cb3-41"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Latitude:"</span>, result<span class="sc">$</span>lat, <span class="st">"Longitude:"</span>, result<span class="sc">$</span>lng))</span>
+<span id="cb3-42"><a href="#cb3-42"></a></span>
+<span id="cb3-43"><a href="#cb3-43"></a><span class="co">#&gt; [1] "Latitude: 37.7373221158143 Longitude: 128.873681611316"</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="가톨릭관동대-위치" class="level3" data-number="27.2.3"><h3 data-number="27.2.3" class="anchored" data-anchor-id="가톨릭관동대-위치">
+<span class="header-section-number">27.2.3</span> 가톨릭관동대 위치</h3>
+<p>가톨릭관동대학교 주소 정보를 지오코딩을 통해 위경도 좌표를 얻는다. 다음으로 <code>ggplot</code>으로 주소를 찍고, 대한민국지도위에 올려 정확한 위치를 시각화한다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb4" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># 필요한 패키지를 설치하고 불러온다</span></span>
+<span><span class="co"># install.packages(c("sf", "ggplot2", "ggrepel"))</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://r-spatial.github.io/sf/">sf</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/slowkow/ggrepel">ggrepel</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># 위경도 좌표와 주소를 가진 데이터 프레임을 생성한다</span></span>
+<span><span class="va">coordinates_df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span></span>
+<span>  lon <span class="op">=</span> <span class="fl">37.7373221158143</span>, <span class="co"># result$lng, # 경도</span></span>
+<span>  lat <span class="op">=</span> <span class="fl">128.873681611316</span>, <span class="co"># result$lat, # 위도</span></span>
+<span>  address <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"강원도 강릉시 범일로579번길 24"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># 데이터 프레임을 sf 객체로 변환한다</span></span>
+<span><span class="va">coordinates_sf</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_as_sf.html">st_as_sf</a></span><span class="op">(</span><span class="va">coordinates_df</span>, coords <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"lon"</span>, <span class="st">"lat"</span><span class="op">)</span>, crs <span class="op">=</span> <span class="fl">4326</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># 대한민국지도</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ropengov.github.io/giscoR/">giscoR</a></span><span class="op">)</span></span>
+<span><span class="va">cntry</span> <span class="op">&lt;-</span> <span class="va">gisco_countries</span></span>
+<span><span class="va">KOR</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">cntry</span>, <span class="va">ISO3_CODE</span> <span class="op">==</span> <span class="st">"KOR"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># ggplot2와 geom_sf()를 사용하여 시각화한다</span></span>
+<span><span class="va">coordinates_sf</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf_text</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>label <span class="op">=</span> <span class="va">address</span><span class="op">)</span>, size <span class="op">=</span> <span class="fl">2</span>, nudge_y <span class="op">=</span> <span class="fl">0.2</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"챗GPT 플로그인 사례"</span>,</span>
+<span>         x <span class="op">=</span><span class="st">""</span>,</span>
+<span>         y <span class="op">=</span><span class="st">""</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">KOR</span>, fill <span class="op">=</span> <span class="st">"transparent"</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="plugin_files/figure-html/unnamed-chunk-3-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="plugin_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</section></section><section id="포스터-제작" class="level2 page-columns page-full" data-number="27.3"><h2 data-number="27.3" class="anchored" data-anchor-id="포스터-제작">
+<span class="header-section-number">27.3</span> 포스터 제작</h2>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class=""><a href="https://chat.openai.com/share/9689351d-6f4b-475c-96e4-618e46aca82b">ShareGPT: Canva 사용사례</a></span></div></div>
+<p><a href="https://canva.com/">캔바</a>는 온라인 디자인 툴로, 사용자가 손쉽게 다양한 디자인을 생성할 수 있다. 전문적인 디자인 경험이 없는 사람들도 높은 품질의 그래픽 제작을 도와준다. 사진, 텍스트, 아이콘 등을 드래그 앤 드롭하는 방식으로 디자인을 할 수 있으며, 다양한 템플릿이 지원되어 작업을 더욱 쉽고 빠르게 그래픽 작업을 수행할 수 있으며, 소셜 미디어 포스트, 프레젠테이션, 포스터, 비즈니스 카드 등 다양한 형태의 디자인을 생성할 수 있다. 작업한 디자인은 캔바 내에서 바로 다운로드 가능하고 다른 사람과 공유할 수 있다.</p>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-figure quarto-figure-center" style="flex-basis: 33.3%;justify-content: center;">
+<figure class="figure"><p><a href="images/plugin_canva.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="images/plugin_canva.jpg" class="img-fluid figure-img" width="287"></a></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center" style="flex-basis: 33.3%;justify-content: center;">
+<figure class="figure"><p><a href="images/plugin_canva_edit.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="images/plugin_canva_edit.jpg" class="img-fluid figure-img" width="287"></a></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center" style="flex-basis: 33.3%;justify-content: center;">
+<figure class="figure"><p><a href="images/plugin_canva_poster.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="images/plugin_canva_poster.jpg" class="img-fluid figure-img" width="287"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="사실확인과-수학" class="level2 page-columns page-full" data-number="27.4"><h2 data-number="27.4" class="anchored" data-anchor-id="사실확인과-수학">
+<span class="header-section-number">27.4</span> 사실확인과 수학</h2>
+<section id="사실-확인" class="level3" data-number="27.4.1"><h3 data-number="27.4.1" class="anchored" data-anchor-id="사실-확인">
+<span class="header-section-number">27.4.1</span> 사실 확인</h3>
+<p>울프람 알파(Wolfram Alpha) 사용해서 사실관계를 확인해보자.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+“지구는 평평하다”라는 주장을 검증해줘.
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<pre data-code-line-numbers=""><code>"지구는 평평하다"라는 주장에 대해 Wolfram Alpha를 이용해 검증해보았습니다.
+
+### 입력 해석
+- 질문: 지구는 평평하다?
+
+### 결과
+- 답변: 아니다.
+  - 지역적으로만 그렇다. 그리고 그것도 특정 지역, 예를 들어 미국 중서부에서만 해당된다.
+
+자세한 정보는 [Wolfram|Alpha 웹사이트](https://www6b3.wolframalpha.com/input?i=Is+the+Earth+flat%3F)에서 확인할 수 있다.
+
+이처럼 Wolfram Alpha는 다양한 주장이나 정보에 대한 팩트체크를 할 수 있는 유용한 도구이다.</code></pre>
+<p><a href="https://www6b3.wolframalpha.com/input?i=Is+the+Earth+flat%3F">Wolfram|Alpha 웹사이트</a></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+라면을 많이 먹으면 건강에 정말 안좋은가?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Wolfram Alpha에서는 “라면을 많이 먹으면 건강에 정말 안 좋은가?”에 대한 구체적인 답변을 제공하지 못했다. 그러나 일반적으로 라면은 높은 나트륨, 지방, 인공 첨가물 등을 포함하고 있어, 과도하게 섭취할 경우 다음과 같은 건강 문제가 발생할 수 있다:</p>
+<ol type="1">
+<li><p><strong>고혈압</strong>: 라면에는 나트륨이 많이 들어있다. 나트륨 과다 섭취는 혈압을 높일 수 있다.</p></li>
+<li><p><strong>비만</strong>: 라면은 칼로리가 높고, 지방도 많이 들어있다. 지속적으로 라면을 많이 먹으면 체중 증가의 위험이 있다.</p></li>
+<li><p><strong>소화기 문제</strong>: 라면은 소화가 잘 되지 않는 식품 중 하나이다. 과도한 섭취는 소화기에 부담을 줄 수 있다.</p></li>
+<li><p><strong>영양 불균형</strong>: 라면은 영양소가 적고, 나트륨이나 지방 등의 불필요한 성분이 많다. 이로 인해 영양 불균형이 발생할 수 있다.</p></li>
+<li><p><strong>심혈관 질환</strong>: 고혈압, 높은 콜레스테롤 등은 심혈관 질환의 위험을 높인다.</p></li>
+</ol>
+<p>라면을 즐길 때는 이러한 점들을 고려하여 적당한 양과 빈도로 섭취하는 것이 중요하다.</p>
+</div>
+</div>
+</div>
+</section><section id="수능문제-풀이" class="level3 page-columns page-full" data-number="27.4.2"><h3 data-number="27.4.2" class="anchored" data-anchor-id="수능문제-풀이">
+<span class="header-section-number">27.4.2</span> 수능문제 풀이</h3>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class=""><a href="https://chat.openai.com/share/e3e57271-9956-4348-abe9-4a87bc56a984">ShareGPT: 팩트체크와 수학문제 풀이</a></span></div></div>
+<p>2023학년도 대학수학능력시험 수학영역 문제를 풀어보자.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/plugin_wolfram.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="images/plugin_wolfram.jpg" class="img-fluid figure-img"></a></p>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="math inline">\(\left(\frac{4}{2^{\sqrt{2}}}\right)^{2+\sqrt{2}}\)</span> 값은?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>식 <span class="math display">\[
+\left(\frac{4}{2^{\sqrt{2}}}\right)^{2+\sqrt{2}}
+\]</span> 의 값은 <span class="math inline">\(4\)</span>입니다.</p>
+<p>정확한 형태로는 <span class="math inline">\(2^{(2 - \sqrt{2}) (2 + \sqrt{2})}\)</span>로 표현됩니다.</p>
+<p>자세한 정보는 <a href="https://www6b3.wolframalpha.com/input?i=%284+%2F+%282%5E%28sqrt%282%29%29%29%29%5E%282+%2B+sqrt%282%29%29">Wolfram|Alpha 웹사이트</a>에서 확인할 수 있다.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+과정도 설명해줘.
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>물론이다. 주어진 식은 <span class="math display">\[
+\left(\frac{4}{2^{\sqrt{2}}}\right)^{2+\sqrt{2}}
+\]</span>이다.</p>
+<p>이 식을 단계별로 분해해보자.</p>
+<section id="단계-1-분모를-간단하게-만들기" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="단계-1-분모를-간단하게-만들기">단계 1: 분모를 간단하게 만들기</h3>
+<p>먼저, 분모인 <span class="math inline">\(2^{\sqrt{2}}\)</span>를 간단하게 만들기 위해 분자와 분모에 <span class="math inline">\(2^{\sqrt{2}}\)</span>를 곱한다. 이렇게 하면:</p>
+<p><span class="math display">\[
+\left(\frac{4 \times 2^{\sqrt{2}}}{2^{\sqrt{2}} \times 2^{\sqrt{2}}}\right)^{2+\sqrt{2}}
+\]</span></p>
+</section><section id="단계-2-분모를-합치기" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="단계-2-분모를-합치기">단계 2: 분모를 합치기</h3>
+<p>이제 분모의 <span class="math inline">\(2^{\sqrt{2}} \times 2^{\sqrt{2}}\)</span>를 합쳐 <span class="math inline">\(2^{2\sqrt{2}}\)</span>로 만든다.</p>
+<p><span class="math display">\[
+\left(\frac{4 \times 2^{\sqrt{2}}}{2^{2\sqrt{2}}}\right)^{2+\sqrt{2}}
+\]</span></p>
+</section><section id="단계-3-분자를-합치기" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="단계-3-분자를-합치기">단계 3: 분자를 합치기</h3>
+<p>분자의 <span class="math inline">\(4 \times 2^{\sqrt{2}}\)</span>를 합쳐 <span class="math inline">\(2^2 \times 2^{\sqrt{2}} = 2^{2+\sqrt{2}}\)</span>로 만든다.</p>
+<p><span class="math display">\[
+\left(\frac{2^{2+\sqrt{2}}}{2^{2\sqrt{2}}}\right)^{2+\sqrt{2}}
+\]</span></p>
+</section><section id="단계-4-지수-법칙-적용" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="단계-4-지수-법칙-적용">단계 4: 지수 법칙 적용</h3>
+<p>지수 법칙에 따라 분자와 분모의 지수를 빼준다.</p>
+<p><span class="math display">\[
+\left(2^{(2+\sqrt{2}) - 2\sqrt{2}}\right)^{2+\sqrt{2}} = \left(2^{(2 - \sqrt{2})(2 + \sqrt{2})}\right)^{2+\sqrt{2}}
+\]</span></p>
+</section><section id="단계-5-최종-계산" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="단계-5-최종-계산">단계 5: 최종 계산</h3>
+<p>마지막으로, <span class="math inline">\((2 - \sqrt{2})(2 + \sqrt{2})\)</span>를 계산하면 <span class="math inline">\(4 - 2 = 2\)</span>가 된다. 따라서 최종 결과는 <span class="math inline">\(2^2 = 4\)</span>이다.</p>
+<p>이렇게 해서 <span class="math display">\[
+\left(\frac{4}{2^{\sqrt{2}}}\right)^{2+\sqrt{2}} = 4
+\]</span>임을 확인할 수 있다.</p>
+</section>
+</div>
+</div>
+</div>
 
 
-
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-gozalo2023chatgpt" class="csl-entry" role="listitem">
+Gozalo-Brizuela, R., &amp; Garrido-Merchan, E. C. (2023). ChatGPT is not all you need. A State of the Art Review of large Generative AI models. <em>arXiv preprint arXiv:2301.04655</em>.
+</div>
+<div id="ref-wickham2019welcome" class="csl-entry" role="listitem">
+Wickham, H., Averick, M., Bryan, J., Chang, W., McGowan, L. D., François, R., Grolemund, G., Hayes, A., Henry, L., Hester, J., 기타. (2019). Welcome to the Tidyverse. <em>Journal of open source software</em>, <em>4</em>(43), 1686.
+</div>
+<div id="ref-wickham2023r" class="csl-entry" role="listitem">
+Wickham, H., Çetinkaya-Rundel, M., &amp; Grolemund, G. (2023). <em>R for data science</em>. " O’Reilly Media, Inc.".
+</div>
+</div>
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -695,9 +1140,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
+</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="./text_to_X.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">활용사례</span></span>
       </a>          
@@ -709,8 +1152,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-
-
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","openEffect":"zoom","loop":true,"closeEffect":"zoom"});</script>
 
 
 <script src="site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.js" defer="true"></script>
