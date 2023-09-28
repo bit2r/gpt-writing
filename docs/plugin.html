@@ -414,6 +414,14 @@ div.csl-indent {
   <li><a href="#%EC%88%98%EB%8A%A5%EB%AC%B8%EC%A0%9C-%ED%92%80%EC%9D%B4" id="toc-수능문제-풀이" class="nav-link" data-scroll-target="#%EC%88%98%EB%8A%A5%EB%AC%B8%EC%A0%9C-%ED%92%80%EC%9D%B4"><span class="header-section-number">27.4.2</span> 수능문제 풀이</a></li>
   </ul>
 </li>
+  <li>
+<a href="#%EC%97%AC%ED%96%89%EC%9D%BC%EC%A0%95" id="toc-여행일정" class="nav-link" data-scroll-target="#%EC%97%AC%ED%96%89%EC%9D%BC%EC%A0%95"><span class="header-section-number">27.5</span> 여행일정</a>
+  <ul class="collapse">
+<li><a href="#%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8-%ED%99%9C%EC%84%B1%ED%99%94" id="toc-플러그인-활성화" class="nav-link" data-scroll-target="#%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8-%ED%99%9C%EC%84%B1%ED%99%94"><span class="header-section-number">27.5.1</span> 플러그인 활성화</a></li>
+  <li><a href="#%EC%B1%97gpt-%EB%8C%80%ED%99%94" id="toc-챗gpt-대화" class="nav-link" data-scroll-target="#%EC%B1%97gpt-%EB%8C%80%ED%99%94"><span class="header-section-number">27.5.2</span> 챗GPT 대화</a></li>
+  <li><a href="#%EC%97%AC%ED%96%89%EC%9D%BC%EC%A0%95-%EC%A0%95%EB%A6%AC" id="toc-여행일정-정리" class="nav-link" data-scroll-target="#%EC%97%AC%ED%96%89%EC%9D%BC%EC%A0%95-%EC%A0%95%EB%A6%AC"><span class="header-section-number">27.5.3</span> 여행일정 정리</a></li>
+  </ul>
+</li>
   </ul></nav>
     </div>
 <!-- main -->
@@ -631,8 +639,8 @@ classDef A font-size:16px;
 <span></span>
 <span><span class="co"># 위경도 좌표와 주소를 가진 데이터 프레임을 생성한다</span></span>
 <span><span class="va">coordinates_df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span></span>
-<span>  lon <span class="op">=</span> <span class="fl">37.7373221158143</span>, <span class="co"># result$lng, # 경도</span></span>
-<span>  lat <span class="op">=</span> <span class="fl">128.873681611316</span>, <span class="co"># result$lat, # 위도</span></span>
+<span>  lon <span class="op">=</span> <span class="fl">128.873681611316</span>, <span class="co"># result$lng, # 경도</span></span>
+<span>  lat <span class="op">=</span> <span class="fl">37.7373221158143</span>, <span class="co"># result$lat, # 위도</span></span>
 <span>  address <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"강원도 강릉시 범일로579번길 24"</span><span class="op">)</span></span>
 <span><span class="op">)</span></span>
 <span></span>
@@ -743,7 +751,7 @@ classDef A font-size:16px;
 <div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class=""><a href="https://chat.openai.com/share/e3e57271-9956-4348-abe9-4a87bc56a984">ShareGPT: 팩트체크와 수학문제 풀이</a></span></div></div>
 <p>2023학년도 대학수학능력시험 수학영역 문제를 풀어보자.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/plugin_wolfram.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="images/plugin_wolfram.jpg" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="images/plugin_wolfram.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="images/plugin_wolfram.jpg" class="img-fluid figure-img" width="644"></a></p>
 </figure>
 </div>
 <div class="callout callout-style-simple callout-note callout-titled">
@@ -752,7 +760,7 @@ classDef A font-size:16px;
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="math inline">\(\left(\frac{4}{2^{\sqrt{2}}}\right)^{2+\sqrt{2}}\)</span> 값은?
+프롬프트 <code>\left(\frac{4}{2^{\sqrt{2}}}\right)^{2+\sqrt{2}}</code> 값은?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -772,7 +780,7 @@ classDef A font-size:16px;
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-과정도 설명해줘.
+프롬프트: 과정도 설명해줘.
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -808,6 +816,303 @@ classDef A font-size:16px;
 \left(\frac{4}{2^{\sqrt{2}}}\right)^{2+\sqrt{2}} = 4
 \]</span>임을 확인할 수 있다.</p>
 </section>
+</div>
+</div>
+</div>
+</section></section><section id="여행일정" class="level2" data-number="27.5"><h2 data-number="27.5" class="anchored" data-anchor-id="여행일정">
+<span class="header-section-number">27.5</span> 여행일정</h2>
+<p>챗GPT 언어모형의 강점이자 약점은 텍스트를 그럴듯하게 생성하지만 사실이 아니라는 점이다. 하지만 챗GPT 플러그인을 활용하면 이러한 문제를 해결할 수 있으며 기존에 비효율적이고 시간이 많이드는 작업을 손쉽게 해결할 수 있다.</p>
+<p>여행 계획을 세우거나 예산을 산출하는 데 있어서도 이 도구를 효율적으로 사용할 수 있다. 챗GPT를 활용하여 타이베이 2박 3일 여행을 계획하고 예산을 산출하는 과정을 통해 또다른 챗GPT 플러그인 활용법을 알아보자.</p>
+<section id="플러그인-활성화" class="level3" data-number="27.5.1"><h3 data-number="27.5.1" class="anchored" data-anchor-id="플러그인-활성화">
+<span class="header-section-number">27.5.1</span> 플러그인 활성화</h3>
+<p>먼저, 대만 타이페이 여행과 관련된 챗GPT 플러그인을 설치하고 활성화한다. 현재기준 최대 3개까지 플러그인 활성화가 가능하기 때문에 항공권, 호텔, 렌터카 예약에 사용할 익스피디아(Expedia) 플러그인, 맛집 식당예약에 사용할 오픈테이블(OpenTable) 플러그인, 여행경비 계산을 위한 울프람(Wolfram) 플러그인을 설치하여 활성화한다.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/travel_plugin.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="챗GPT 여행 플러그인"><img src="images/travel_plugin.jpg" class="img-fluid figure-img" width="644"></a></p>
+<figcaption class="figure-caption">챗GPT 여행 플러그인</figcaption></figure>
+</div>
+</section><section id="챗gpt-대화" class="level3" data-number="27.5.2"><h3 data-number="27.5.2" class="anchored" data-anchor-id="챗gpt-대화">
+<span class="header-section-number">27.5.2</span> 챗GPT 대화</h3>
+<p>챗GPT 플러그인을 활성화하고, 챗GPT 대화창에 먼저 전체적인 여행계획을 정리하여 프롬프트로 챗GPT에 입력한다. 전체적인 여행계획을 이해하고 ㅁㄴ저 호텔을 추천해준다.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+여행개요 프롬프트와 응답결과
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<section id="프롬프트" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="프롬프트">프롬프트</h4>
+<div class="sourceCode" id="cb6" data-code-line-numbers=""><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>10월 15부터 10월17일까지 2박 3일 대만 타이베이 여행 관광일정을 다음 사항을 고려하여 잡아줘</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>1. 숙박: 호텔 4성급이상</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>2. 차렌탈: 중형 승용차</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>3. 항공: 이코노미 클래스 3명</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>4. 오전 오후 유명 관광지를 한곳정도 도는 무난한 일정</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section><section id="응답결과" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="응답결과">응답결과</h4>
+<p>물론이다. 여행 일정을 잡는 데 도와드리겠다. 먼저 숙박에 대한 정보를 찾아보겠다. 타이베이에서 4성급 이상의 호텔을 원하신다고 하셨으니, 그에 맞는 숙박지를 추천해 드리겠다. 잠시만 기다려 주시길.</p>
+<p>숙박에 대한 정보를 찾았다. 기본적으로 4성급 이상의 호텔을 찾았으며, 체크인 날짜는 2023년 10월 15일, 체크아웃 날짜는 2023년 10월 17일로 설정하였다. 이러한 조건을 바꾸고 싶다면 알려주시면 더 정확한 추천을 할 수 있다.</p>
+</section><section id="grand-hyatt-taipei" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="grand-hyatt-taipei">1. <a href="https://apim.expedia.com/recommendations/og-redirect/97fe6b74-6c8b-4624-81e5-35ec312e25cd?brand=bex">Grand Hyatt Taipei</a>
+</h4>
+<ul>
+<li>
+<strong>설명</strong>: 이 호텔은 8개의 레스토랑, 풀 서비스 스파, 야외 수영장을 갖추고 있다. 무료 Wi-Fi와 무료 자체 주차도 제공된다.</li>
+<li>
+<strong>위치</strong>: Xinyi 지역에 위치해 있으며, TAITRA, Taipei International Convention Center, Taipei World Trade Center 등이 10분 거리에 있다.</li>
+<li>
+<strong>최대 수용 인원</strong>: 3명</li>
+<li>
+<strong>별점</strong>: 5.0</li>
+<li>
+<strong>고객 평점</strong>: 8.8 / 10.0 (리뷰 988개)</li>
+<li>
+<strong>평균 숙박 가격</strong>: $223.32 USD</li>
+</ul></section><section id="shangri-la-far-eastern-taipei" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="shangri-la-far-eastern-taipei">2. <a href="https://apim.expedia.com/recommendations/og-redirect/75c5e3e4-c525-4cbb-8d48-d54329937a86?brand=bex">Shangri-La Far Eastern, Taipei</a>
+</h4>
+<ul>
+<li>
+<strong>설명</strong>: 이 호텔은 5개의 레스토랑, 2개의 야외 수영장, 3개의 바/라운지를 갖추고 있다. 무료 Wi-Fi와 무료 자체 주차도 제공된다.</li>
+<li>
+<strong>위치</strong>: 엔터테인먼트 지구에 위치해 있으며, National Taiwan University, Eastern Shopping District, Zhongxiao Road 등이 1마일 이내에 있다.</li>
+<li>
+<strong>최대 수용 인원</strong>: 3명</li>
+<li>
+<strong>별점</strong>: 5.0</li>
+<li>
+<strong>고객 평점</strong>: 9.2 / 10.0 (리뷰 986개)</li>
+<li>
+<strong>평균 숙박 가격</strong>: $205.64 USD</li>
+</ul></section><section id="regent-taipei" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="regent-taipei">3. <a href="https://apim.expedia.com/recommendations/og-redirect/e4ca1e2c-c25d-4960-b2cd-dcaddb977b79?brand=bex">Regent Taipei</a>
+</h4>
+<ul>
+<li>
+<strong>설명</strong>: 이 호텔은 8개의 레스토랑, 풀 서비스 스파, 야외 수영장을 갖추고 있다. 무료 Wi-Fi와 무료 자체 주차도 제공된다.</li>
+<li>
+<strong>위치</strong>: 공항 근처에 위치해 있으며, Nanjing West Road와 Chifeng Street가 10분 거리에 있다.</li>
+<li>
+<strong>최대 수용 인원</strong>: 2명</li>
+<li>
+<strong>별점</strong>: 5.0</li>
+<li>
+<strong>고객 평점</strong>: 9.2 / 10.0 (리뷰 959개)</li>
+<li>
+<strong>평균 숙박 가격</strong>: $186.71 USD</li>
+<li>
+<strong>프로모션</strong>: 14% 할인</li>
+</ul>
+<p>이 중에서 어떤 호텔이 마음에 드는지 알려주시면, 다음으로 차 렌탈에 대한 정보를 찾아드리겠다. 더 자세한 정보나 다른 선택지를 원하신다면 알려주시기 바란다.</p>
+</section>
+</div>
+</div>
+<p>다음으로 항공권도 예매한다. 챗GPT가 직접 답을 하는 대신 <code>Used Expedia</code> 플러그인을 사용해서 프롬프트를 익스피디아 측에 다음과 같이 전달한다.</p>
+<div class="sourceCode" id="cb7" data-code-line-numbers=""><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"user_input_in_english"</span><span class="fu">:</span> <span class="st">"I would like to book a flight from Incheon to Taipei with a direct flight for 3 people in economy class."</span><span class="fu">,</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"keywords"</span><span class="fu">:</span> <span class="st">"flight|Incheon|Taipei|direct|3 people|economy class"</span><span class="fu">,</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"origin"</span><span class="fu">:</span> <span class="st">"Incheon"</span><span class="fu">,</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"destination"</span><span class="fu">:</span> <span class="st">"Taipei"</span><span class="fu">,</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"departure_date"</span><span class="fu">:</span> <span class="st">"2023-10-15"</span><span class="fu">,</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"number_of_stops"</span><span class="fu">:</span> <span class="dv">0</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>챗GPT가 한글을 영어로 번역하고 의도(Intent)를 파악하여 이를 정형데이터(Key-Value)로 변환하여 전달하고 익스피디아에서 전달받은 데이터를 한글로 번역하고 정형데이터를 사람이 읽기 좋은 형태로 변환하여 출력한다.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+호텔선정과 항공권 예매
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<section id="프롬프트-1" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="프롬프트-1">프롬프트</h4>
+<div class="sourceCode" id="cb8" data-code-line-numbers=""><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>Shangri-La Far Eastern, Taipei 호텔로 예약해주고 인천에서 출발하여 타이페이 직항하는 항공권도 찾아줘</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section><section id="응답결과-1" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="응답결과-1">응답결과</h4>
+<p>Shangri-La Far Eastern, Taipei 호텔을 선택하셨군요. 좋은 선택이다! 이제 항공권에 대한 정보를 찾았다. 기본적으로 인천에서 타이페이로 직항하는 항공권을 찾았으며, 출발 날짜는 2023년 10월 15일로 설정하였다. 이러한 조건을 바꾸고 싶다면 알려주시면 더 정확한 추천을 할 수 있다.</p>
+</section><section id="항공권-추천" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="항공권-추천">항공권 추천</h3>
+<ol type="1">
+<li>
+<strong>Hahn Air Systems</strong>
+<ul>
+<li>
+<strong>항공편 번호</strong>: 9869</li>
+<li>
+<strong>출발 공항</strong>: ICN (인천)</li>
+<li>
+<strong>도착 공항</strong>: TPE (타이페이)</li>
+<li>
+<strong>출발 시간</strong>: 2023-10-15, 09:05 AM</li>
+<li>
+<strong>도착 시간</strong>: 10:50 AM</li>
+<li>
+<strong>비행 시간</strong>: 2h45m</li>
+<li>
+<strong>가격</strong>: $252.90 USD</li>
+<li><a href="https://apim.expedia.com/recommendations/og-redirect/a706e76f-e215-4dd3-b180-9e20f00c0de5">예약하기</a></li>
+</ul>
+</li>
+<li>
+<strong>Asiana Airlines</strong>
+<ul>
+<li>
+<strong>항공편 번호</strong>: 713</li>
+<li>
+<strong>출발 공항</strong>: ICN (인천)</li>
+<li>
+<strong>도착 공항</strong>: TPE (타이페이)</li>
+<li>
+<strong>출발 시간</strong>: 2023-10-15, 02:20 PM</li>
+<li>
+<strong>도착 시간</strong>: 03:50 PM</li>
+<li>
+<strong>비행 시간</strong>: 2h30m</li>
+<li>
+<strong>가격</strong>: $262.00 USD</li>
+<li><a href="https://apim.expedia.com/recommendations/og-redirect/e1901b01-9303-431e-9847-ff54af4ea8a2">예약하기</a></li>
+</ul>
+</li>
+</ol>
+<p>이 중에서 어떤 항공권이 마음에 드는지 알려주시면, 다음으로 차 렌탈에 대한 정보를 찾아드리겠다. 더 자세한 정보나 다른 선택지를 원하신다면 알려주시기 바란다. 어떤 것이 마음에 드는가? 더 자세한 정보를 원하신다면 알려주시면 도와드리겠다.</p>
+</section>
+</div>
+</div>
+<p>이런 과정을 거쳐서 순차적으로 관광지와 식당도 추천을 받아보면 각 항목은 잘 정리되었으나 총소요비용을 정리할 필요가 있다. 울프람 플러그인을 사용하면 깔끔하게 여행에 소요되는 전체적인 비용을 쉽게 산출하여 대략적인 대만 타이페이 2박3일 여행일정에 대한 감을 잡게 된다.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+렌터카 선정과 비용산출
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<section id="프롬프트-2" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="프롬프트-2">프롬프트</h4>
+<div class="sourceCode" id="cb9" data-code-line-numbers=""><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>3번 Honda Fit으로 선택합니다. 이제 총 비용 산출을 위해 각 항목별 소요예산을 최소, 최대, 평균으로 계산해주세요.</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section><section id="응답결과-2" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="응답결과-2">응답결과</h4>
+<p>죄송합니다. 원하시는 정보를 정확하게 가져오지 못했다. 그러나 각 항목별 소요 예산을 계산하기 위해 수동으로 계산을 해보겠다.</p>
+</section><section id="각-항목별-소요-예산-단위-usd" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="각-항목별-소요-예산-단위-usd">각 항목별 소요 예산 (단위: USD)</h4>
+<ol type="1">
+<li>
+<strong>숙박 (Shangri-La Far Eastern, Taipei)</strong>
+<ul>
+<li>최소: $200 x 2박 = $400</li>
+<li>최대: $300 x 2박 = $600</li>
+<li>평균: ($200 + $300) / 2 x 2박 = $500</li>
+</ul>
+</li>
+<li>
+<strong>항공 (Asiana Airlines)</strong>
+<ul>
+<li>최소: $300 x 3명 = $900</li>
+<li>최대: $400 x 3명 = $1200</li>
+<li>평균: ($300 + $400) / 2 x 3명 = $1050</li>
+</ul>
+</li>
+<li>
+<strong>관광 (Small-Group Tour)</strong>
+<ul>
+<li>최소: $50 x 3명 = $150</li>
+<li>최대: $70 x 3명 = $210</li>
+<li>평균: ($50 + $70) / 2 x 3명 = $180</li>
+</ul>
+</li>
+<li>
+<strong>차 렌탈 (Honda Fit)</strong>
+<ul>
+<li>최소: $229.79</li>
+<li>최대: $241.93</li>
+<li>평균: ($229.79 + $241.93) / 2 = $235.86</li>
+</ul>
+</li>
+</ol></section><section id="총-비용" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="총-비용">총 비용</h4>
+<ul>
+<li>
+<strong>최소</strong>: $400 (숙박) + $900 (항공) + $150 (관광) + $229.79 (차 렌탈) = $1679.79</li>
+<li>
+<strong>최대</strong>: $600 (숙박) + $1200 (항공) + $210 (관광) + $241.93 (차 렌탈) = $2251.93</li>
+<li>
+<strong>평균</strong>: $500 (숙박) + $1050 (항공) + $180 (관광) + $235.86 (차 렌탈) = $1965.86</li>
+</ul>
+<p>이 정보가 도움이 되길 바란다. 추가로 궁금한 점이나 다른 정보가 필요하다면 알려주시기 바란다.</p>
+</section>
+</div>
+</div>
+</section><section id="여행일정-정리" class="level3" data-number="27.5.3"><h3 data-number="27.5.3" class="anchored" data-anchor-id="여행일정-정리">
+<span class="header-section-number">27.5.3</span> 여행일정 정리</h3>
+<p>여행 계획을 세우고 예산을 산출하는 과정은 종종 복잡하고 시간이 많이 소요되는 작업이다. 챗GPT 플러그인을 통해 정확한 대만 타이페이 여행과 관련된 호텔 예약, 항공권 예약, 차 렌탈, 관광지, 식당 등 여행에 필요한 정보를 쉽게 얻을 수 있다.</p>
+<p>특히 챗GPT의 도움을 받아 여행일정을 정리하는 과정은 더욱 간편하고 편리하다. 마크다운 표와 머메이드(mermaid) 기능을 활용한다.</p>
+<p>마크다운 표를 사용하면 여행에 소요되는 예산을 한눈에 볼 수 있다. 예를 들어, 2박 3일 타이베이 여행의 경우, 숙박, 항공, 관광, 차 렌탈 등 각 항목별로 최소, 최대, 평균 비용을 쉽게 확인할 수 있어 여행 준비를 할 때 예산을 더 효율적으로 분배할 수 있다.</p>
+<table class="table">
+<thead><tr class="header">
+<th style="text-align: center;">항목</th>
+<th style="text-align: center;">최소 (USD)</th>
+<th style="text-align: center;">최대 (USD)</th>
+<th style="text-align: center;">평균 (USD)</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">숙박</td>
+<td style="text-align: center;">400</td>
+<td style="text-align: center;">600</td>
+<td style="text-align: center;">500</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">항공</td>
+<td style="text-align: center;">900</td>
+<td style="text-align: center;">1200</td>
+<td style="text-align: center;">1050</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">관광</td>
+<td style="text-align: center;">150</td>
+<td style="text-align: center;">210</td>
+<td style="text-align: center;">180</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">차 렌탈</td>
+<td style="text-align: center;">229.79</td>
+<td style="text-align: center;">241.93</td>
+<td style="text-align: center;">235.86</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>총 비용</strong></td>
+<td style="text-align: center;"><strong>1679.79</strong></td>
+<td style="text-align: center;"><strong>2251.93</strong></td>
+<td style="text-align: center;"><strong>1965.86</strong></td>
+</tr>
+</tbody>
+</table>
+<p>머메이드(mermaid) 기능을 활용하면 여행 일정을 시각적으로 표현할 수 있어 여행 전체 흐름을 더 쉽게 파악하고, 필요한 경우 수월하게 일정을 조정할 수 있다. 머메이드 코드 작성을 위해 사용한 프롬프트는 단순하다. 코드를 <a href="https://mermaid.live/">https://mermaid.live/</a> 온라인 편집기에 붙여넣으면 간트 차트(Gantt chart)를 쉽게 작성할 수 있다.</p>
+<blockquote class="blockquote">
+<p>2박3일 타이베이 여행 계획을 mermaid code로 작성해줘.</p>
+</blockquote>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">gantt
+    dateFormat  YYYY-MM-DD
+    title 2박 3일 타이베이 여행 계획
+
+    section 숙박
+    Shangri-La Far Eastern, Taipei :a1, 2023-10-15, 3d
+
+    section 항공
+    인천 출발 :a2, 2023-10-15, 1d
+    타이베이 도착 :after a2, 1d
+    타이베이 출발 :a3, 2023-10-17, 1d
+    인천 도착 :after a3, 1d
+
+    section 관광
+    Jiufen :a4, 2023-10-15, 1d
+    Yehliu Geopark :a5, 2023-10-16, 1d
+    Shifen :a6, 2023-10-17, 1d
+
+    section 차 렌탈
+    Honda Fit 렌탈 :a7, 2023-10-15, 3d
+</pre>
+</div>
 </div>
 </div>
 </div>
@@ -1152,7 +1457,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","openEffect":"zoom","loop":true,"closeEffect":"zoom"});</script>
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","loop":true,"selector":".lightbox","closeEffect":"zoom","openEffect":"zoom"});</script>
 
 
 <script src="site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.js" defer="true"></script>
