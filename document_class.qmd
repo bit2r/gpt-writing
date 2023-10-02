@@ -223,7 +223,10 @@ library(tidyverse)
 article_pdf <- magick::image_read_pdf("data/class_article.pdf")
 
 article_pdf |> 
-  image_resize(geometry = "800x") |> 
+  image_resize(geometry = "500x") |> 
+  image_crop(geometry = "500x525+90+75") |>    
+  image_crop(geometry = "-85+0") |> 
+  image_border("blue", "3x3") |>   
   image_append(stack=FALSE)
 
 ```
@@ -243,11 +246,17 @@ report_front_pdf <- report_pdf[1:4]
 report_back_pdf <- report_pdf[5:7]
 
 report_front_stack <- report_front_pdf |> 
-  image_resize(geometry = "800x") |> 
+  image_resize(geometry = "500x") |> 
+  image_crop(geometry = "500x525+90+75") |>    
+  image_crop(geometry = "-85+0") |> 
+  image_border("blue", "1.5x1.5") |>   
   image_append(stack=FALSE)
 
 report_back_stack <- report_back_pdf |> 
-  image_resize(geometry = "800x") |> 
+  image_resize(geometry = "500x") |> 
+  image_crop(geometry = "500x525+90+75") |>    
+  image_crop(geometry = "-85+0") |> 
+  image_border("blue", "1.5x3") |>   
   image_append(stack=FALSE)
 
 image_append(c(report_front_stack, report_back_stack), stack=TRUE)
@@ -264,24 +273,41 @@ image_append(c(report_front_stack, report_back_stack), stack=TRUE)
 
 book_pdf <- magick::image_read_pdf("data/class_book.pdf")
 
-book_front_pdf <- book_pdf[1:12]
-book_back_pdf <- book_pdf[13:24]
+book_front_pdf <- book_pdf[1:8]
+book_middle_pdf <- book_pdf[9:16]
+book_back_pdf <- book_pdf[17:24]
 
-book_front_stack <- book_front_pdf |> 
-  image_resize(geometry = "800x") |> 
+book_front_stack <- book_middle_pdf |> 
+  image_resize(geometry = "500x") |> 
+  image_crop(geometry = "500x525+90+75") |>    
+  image_crop(geometry = "-85+0") |> 
+  image_border("blue", "1.5x1.5") |>   
+
+  image_append(stack=FALSE)
+
+book_middle_stack <- book_front_pdf |> 
+  image_resize(geometry = "500x") |> 
+  image_crop(geometry = "500x525+90+75") |>    
+  image_crop(geometry = "-85+0") |> 
+  image_border("blue", "1.5x1.5") |>   
   image_append(stack=FALSE)
 
 book_back_stack <- book_back_pdf |> 
-  image_resize(geometry = "800x") |> 
+  image_resize(geometry = "500x") |> 
+  image_crop(geometry = "500x525+90+75") |>    
+  image_crop(geometry = "-85+0") |> 
+  image_border("blue", "1.5x1.5") |>   
   image_append(stack=FALSE)
 
-image_append(c(book_front_stack, book_back_stack), stack=TRUE)
+image_append(c(book_front_stack, book_middle_stack, book_back_stack), stack=TRUE)
 ```
 
 
-### 한글문서 클래스
+## 한글문서 클래스
 
-`oblivoir` 문서 클래스(`documentclass`)는 한글 문서 특성을 잘 반영하여 개발되었다. 다음과 같은 구문을 갇고 컴파일하게 되면 한글 문서형식을 갖는 PDF 파일을 얻게 된다.
+`oblivoir`는 `memoir` 클래스를 기반으로 개발된 LaTeX 문서 클래스 중 하나로, 주로 한글 문서를 작성할 때 사용되며 한글 타이포그래피와 관련된 여러 가지 기능이 포함되어 있다. `oblivoir`와 후속 `xoblivoir` 문서 클래스는 한글문서 작성을 쉽고 편리하게 지원한다.
+
+`oblivoir`와 후속 `xoblivoir` 문서 클래스(`documentclass`)는 한글 문서 특성을 잘 반영하기 때문에 별도 설정없이 다음과 같은 구문을 갇고 컴파일하게 되면 한글 문서형식을 갖는 PDF 파일을 얻게 된다. 국내에서 학술 논문, 보고서, 책 등 다양한 문서를 작성할 때 널리 사용된다. [@2007oblivoir; @Kim2011]
 
 
 ```{r}
@@ -290,9 +316,19 @@ image_append(c(book_front_stack, book_back_stack), stack=TRUE)
 hangul_pdf <- magick::image_read_pdf("data/class_oblivoir.pdf")
 
 hangul_pdf |> 
-  image_resize(geometry = "800x") |> 
+  image_resize(geometry = "500x") |> 
+  image_crop(geometry = "500x525+90+75") |>    
+  image_crop(geometry = "-85+0") |> 
+  image_border("blue", "1.5x1.5") |>   
   image_append(stack=FALSE)
 ```
 
+라텍(LaTex)은 문서 모양새에 신경쓸 필용없이 문서의 논리적 구조와 내용에 집중할 수 있게 함으로써 글쓰기 본질에 집중할 수 있다는 약속을 하지만 현실에서 용지 크기, 여백, 행간 등 초심자가 신경쓸 것이 한둘이 아니다. 이러한 문제를 해결하기 위해 `oblivoir`라는 라텍 문서 클래스가 개발되었다. `oblivoir`는 기본 한글 문서 서식을 미리 설정해 놓아, 라텍을 처음 사용하는 한글 사용자에게 진입 장벽을 대폭 낮췄다는 평가를 받고 있다.
+
+![`oblivoir` 문서 클래스](images/oblivoir.jpg)
+
+워드 프로세서에 용지설정과 관련하여 '공급 용지'와 '편집 용지'라는 개념이 있다. 공급 용지는 인쇄를 위해 인쇄기에 공급되는 용지를 말하며, 편집 용지는 문서를 작성할 때 사용하는 용지를 말한다. 일반 저작자가 보통 공급 용지로 프린터에 A4 용지를 사용하고, 편집 용지는 전문서적, 만화책, 잡지 등 인쇄출판 목적에 맞춰 사륙배판, 국판, 신국판 등을 사용한다.
+
+![A4 공급 용지를 기준으로 편집용지](images/a4paper.jpg)
 
 
