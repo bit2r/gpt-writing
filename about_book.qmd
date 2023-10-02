@@ -13,34 +13,85 @@ source("_common.R")
 
 # 책과 편집 용어
 
-[[책 이해하기: 용어](https://statkclee.github.io/comp_document/bookdown-about-book.html)]{.aside}
+책의 명칭과 편집 일반용어가 필요한 곳은 일반 **책**을 비롯하여 신문, 잡지, 교과서, 사전, 리플릿, 문서, 인쇄 광고물 등 **종이 출판물**과 웹북, 웹진, 모바일 콘텐츠 등 **전자적 표기에 널리 쓰이는 모든 표현 매체**를 아우른다. 책은 일반적으로 앞/뒤 표지, 전문, 본문, 후문 4개 주요 부분으로 구성된다. [@KCI2009]
 
+앞표지는 책 가장 첫 부분으로, 책 제목, 부제목, 저자 이름, 출판사 로고 등이 주로 표시된다. 앞표지는 책을 처음 접하는 독자에게 책의 주제나 내용, 품질에 대한 첫인상을 전달하기 때문에 디자인이나 색상, 이미지 등 책의 내용이나 장르, 대상 독자층을 고려하여 결정되며, 마케팅 측면에서도 중요한 역할을 한다. 앞표지가 독자 눈길을 끌면, 책을 집어보거나 구매할 확률을 높일 수 있기 때문에 앞표지는 책의 성공에 큰 영향을 미치는 부분이라 많은 시간과 노력을 투여해야 한다.
 
-[국가기술표준원 (2009-12-28), "책의 명칭 및 편집 일반 용어", KS X 0003](https://www.standard.go.kr/KSCI/standardIntro/getStandardSearchView.do?menuId=919&topMenuId=502&upperMenuId=503&ksNo=KSX0003&tmprKsNo=KSX0003&reformNo=03) 내용을 참조하여 책에 대한 한국어 표준용어 사전을 이해한다. [@KCI2009]
+뒷표지는 책 마지막 부분에 위치하며, 주로 책 요약, 저자 소개, 출판사 정보, 바코드, 가격 등이 표시되는데 경우에 따라 책에 대한 추천문이나 리뷰, 수상 내역 등이 포함될 수 있다. 뒷표지도 독자가 책을 선택하는 데 중요한 역할을 하기 때문에, 책의 내용을 정확하고 간결하게 전달하는 것이 중요하기 때문에 여러 요소를 고려하여 전문가와 상의하여 신중하게 구성한다.
 
-책의 명칭과 편집 일반용어가 필요한 곳은 일반 **책**을 비롯하여 신문, 잡지, 교과서, 사전, 리플릿, 문서, 인쇄 광고물 등 **종이 출판물**과 웹북, 웹진, 모바일 콘텐츠 등 **전자적 표기에 널리 쓰이는 모든 표현 매체**를 아우른다.
+전문은 책 시작 부분으로 속표지, 판권지, 바치는 글, 감사 글, 목차, 머리말, 추천사로 구성된다. 
+전문은 책의 본문 앞에 위치하며 독자에게 책의 기본 정보를 제공하며 제목, 저자, 출판사, 판권 정보 등이 포함되어 책의 신뢰성과 전문성을 높이는데 기여한다. 목차도 전문에서 책의 전체 구조를 미리 파악할 수 있게 도와주고, 머리말과 서문을 통해 저자는 책을 작성한 목적이나 의도를 명확히 전달할 수 있다. 바치는 글과 감사 글에는 책 제작 과정에 참여한 이들에게 감사의 의미를 표현하며, 추천사는 책의 내용이나 저자의 신뢰성을 독자에게 전달하고, 판권 정보와 같은 법적 내용은 저작권 침해를 방지하기 위해 필수적으로 포함된다.
 
-책은 다음과 같은 구성을 갖고 있다.
+본문은 책의 핵심 내용을 담고 있는 부분으로 일반적으로 본문은 여러 장으로 구성되며, 각 장은 특정 주제나 아이디어에 집중합니다. 장들은 서로 연결되어 전체적인 흐름을 이루거나 독립적인 단위로 구성될 수도 있다. 본문에서 주제에 대한 깊은 분석, 설명, 논증이 이루어지며, 필요한 경우 그림, 표, 그래프, 수식, 도표 등 시각적 요소를 포함하여 정보를 더욱 명확하게 전달하는 역할을 수행한다. 본문의 구성은 독자가 책의 주제를 체계적이고 깊게 이해할 수 있도록 기여한다.
 
--   책의 외부 명칭(1) : 책의 명칭은 출판, 인쇄, 편집의 여러 용어 중에서 가장 기본적이고 중요한 사항으로서 표지 등 장정을 구성하고 있는 요소들로 이루어져 있다.
--   책의 외부 명칭(2) : 책의 표지를 펼치면 책의 제목, 저자명, 출판사명과 더불어 책 속의 면지, 띠지, 책날개 등이 나오는데 이 모든 것을 책의 외무 명칭(2)에서 다룬다.
--   책의 내부 명칭 : 책의 내용에 관계되는 사항들의 명칭이다. 본문 편집 순서에 따라 머릿그림, 머리말, 추천사, 차례, 본문, 부록 등 책의 내용을 구성하는 요소들이다.
--   본문 편집 판면의 명칭(1) : 제목이나 사진 등이 들어가는 본문의 내용을 편집할 때 알아야할 명칭들이다. 큰제목, 중간 제목, 캡션, 단간 등을 담고 있다.
--   본문 편집 판면의 명칭(2) : 본문의 내용을 편집할 때 알아야 할 명칭들이다. 판면의 편집에 필요한 면주, 쪽번호, 행길이, 행간, 여백 등으로 이루어져 있다.
--   편집 일반 용어 : 책을 편집할 때 기본적으로 알아야 할 용어와 현장에서 많이 쓰이고 있는 용어들이다.
+후문은 책 마지막 부분에서 찾을 수 있으며, 본문이 끝난 후에 추가적인 정보나 설명을 제공한다. 후문에는 보통 부록, 용어 풀이, 참고문헌, 찾아보기 등이 포함된다. 부록은 본문에서 다루지 않은 추가적인 정보나 자료를 제공하며, 용어 풀이는 책에서 사용된 전문 용어나 약어에 대한 설명을 담고 있으며 참고문헌은 책 작성 시 참조한 문헌이나 자료 목록을 나열하고, 찾아보기는 책 속의 주요 키워드나 주제를 쉽게 찾을 수 있도록 페이지 번호와 함께 나열된다. 또한, 후문에는 저자의 마치는 말이나 후기가 포함되어 저자가 책을 통해 전하고자 하는 메시지를 다시 한번 강조하거나, 책을 쓰는 과정에서 뒷 이야기, 감사의 말 등을 담을 수 있다.
 
-![책 해부도](images/anatomy-of-book.jpg)
+```{mermaid}
+%%| eval: false
+%%| echo: false
 
-## PDF 에서 표 추출 {#book-outer-extract}
+graph TD
+    classDef default fill:#ffff,stroke:#333,stroke-width:2px;
+    class Book,Cover,FrontMatter,Content,BackMatter,TitlePage,Copyright,Dedication,Acknowledgments,Contents,Preface,Chapter1,Chapter2,ChapterN,Appendix,Glossary,Bibliography,Index default;
+    
+    %% Main Book Structure
+    Book["일반적인 책구조"] --> Cover
+    Book --> FrontMatter
+    Book --> Content
+    Book --> BackMatter
 
-PDF에서 바로 표를 추출할 경우 기계판독 가능한 표이기는 하지만 형태가 뭉개져서 제대로 사용할 수 없다.
+    %% Cover Section
+    subgraph Cover["앞표지"]
+        direction LR
+        CoverPage["표제"]
+    end
 
-이런 문제를 PDF 파일으로 워드로 변환시킨 후에 워드에서 표를 추출하는 방식을 동원한다. 자세한 사항은 [워드 파일에서 표(table) 추출](https://statkclee.github.io/pdf/word-table-extraction.html) 하는 방식을 참고한다.
+    %% Front Matter Section
+    subgraph FrontMatter["전문"]
+        direction LR
+        TitlePage["속표지"]
+        Copyright["판권지"]
+        Dedication["바치는 글"]
+        Acknowledgments["감사 글"]
+        Contents["목차(ToC)"]
+        Preface["머리말(서문)"]
+        Foreword["추천사"]
+    end
 
-PDF를 워드파일로 변경한 후에 `officer` 팩키지의 도움으로 테이블을 추출한다. 그리고 나서, 표를 추출한다.
+    %% Content Section
+    subgraph Content["본문"]
+        direction LR
+        Chapter1["제1장"]
+        Chapter2["제2장"]
+        Chapter3["..."]
+        ChapterN["제N장"]
+    end
+
+    %% Back Matter Section
+    subgraph BackMatter["후문"]
+        direction LR
+        afterword["후기"]        
+        Appendix["부록"]
+        Glossary["용어풀이"]
+        Bibliography["참고문헌"]
+        Index["찾아보기"]
+    end
+```
+
+![책 해부도](images/anatomy_of_book.png)
+
+## 책 외부명칭 {#book-outer-extract}
+
+책에 대한 한국어 표준용어를 정확하게 이해하기 위해서 국가기술표준원에서 발표한 ["책의 명칭 및 편집 일반 용어"]((https://www.standard.go.kr/KSCI/standardIntro/getStandardSearchView.do?menuId=919&topMenuId=502&upperMenuId=503&ksNo=KSX0003&tmprKsNo=KSX0003&reformNo=03))를 참조할 수 있다. 책과 관련된 다양한 용어와 그 의미를 명확하게 표준 문서에 설명되어 있어 책을 이해하고 분석하는 데 도움이 된다.
+
+![책 외부명칭](images/book_cover.jpeg)
+
+"책의 명칭 및 편집 일반 용어"에서 PDF 파일에서 표를 직접 추출할 경우, 표 형태가 뭉개져 제대로 사용할 수 없는 경우, PDF 파일을 워드 파일로 변환한 후에 표를 추출하는 방법을 사용할 수 있다.
+워드 파일로 변환한 후에는 `officer` 패키지를 사용하여 표를 추출하면 표 형태를 보존하면서 데이터를 정확하게 추출할 수 있다. 워드 파일에서 표 뿐만 아니라 이미지도 추출할 수 있다. 이미지를 추출하는 방식은 워드 파일 압축을 풀면 된다. 예를 들어 PDF 파일을 변환시킨  `KSX0003_20091228.docx` 파일에서 확장자를 바꿔 `KSX0003_20091228.zip`와 같이 변경시킨 후에 압축을 풀다. 그러면 압축이 풀린 `word/media` 디렉토리에 이미지가 별도 저장된다.
 
 ```{r}
 #| label: page-conversion
+#| echo: false
 
 library(tidyverse)
 library(officer)
@@ -67,70 +118,26 @@ cover_first_tbl <- cover_tbl %>%
   select(1,2,4,3) 
 ```
 
-## 책 외부 (I) 명칭 {#book-outer-I}
 
-책 외부(I) 명칭을 살펴보면 다음과 같다.
-
-```{r first-cover-tbl}
+```{r}
+#| echo: false
 library(gt)
 
 cover_first_tbl |> 
   gt() |> 
-  gt_theme_hangul()
+  gt_theme_hangul() |>
+  cols_width(순 ~ px(10),
+             `용 어` ~ px(70),
+             `대응 영어` ~ px(70))
 ```
 
-워드 파일에서 이미지를 추출하는 방식은 워드 파일 압축을 풀면된다. 그렇게 하기 위해서 `KSX0003_20091228.docx` 파일명을 `KSX0003_20091228.zip`으로 바꾼 후에 압축을 풀어준다. 그러면 `word/media` 디렉토리에 이미지가 저장된다.
+## 책의 내부 명칭 {#book-outer-content}
 
-
-![](images/book_cover.jpeg)
-
-## 책 외부 (II) 명칭 {#book-outer-II}
-
-책 외부 명칭(II)을 살펴보면 다음과 같다.
-
-```{r first-cover-tbl-II}
-cover_ii_tbl <- table_cells %>% 
-  filter(doc_index == 116) %>% 
-  select(text, row_id, cell_id) %>% 
-  pivot_wider(names_from = cell_id, values_from = text) %>% 
-  select(-row_id) 
-
-cover_second_tbl <- cover_ii_tbl %>% 
-  set_names(cover_tbl %>% slice(1)) %>% 
-  filter(row_number() != 1) %>% 
-  select(1,2,4,3) 
-
-cover_second_tbl %>% 
-  reactable::reactable(
-    defaultColDef = colDef(
-    header = function(value) gsub(".", " ", value, fixed = TRUE),
-    cell = function(value) format(value, nsmall = 1),
-    align = "center",
-    minWidth = 70,
-    headerStyle = list(background = "#f7f7f8")
-    ),
-    columns = list(
-    순 = colDef(minWidth = 40),   # 50% width, 200px minimum
-    `용 어` = colDef(minWidth = 100),   # 25% width, 100px minimum
-    `대응 영어` = colDef(minWidth = 150),   # 25% width, 100px minimum    
-    `용어 정의` = colDef(minWidth = 500)  # 25% width, 100px minimum
-    ),
-    bordered = TRUE,
-    highlight = TRUE,
-    filterable = TRUE
-  )
-```
-
-워드 파일에서 이미지를 추출하는 방식은 워드 파일 압축을 풀면된다. 그렇게 하기 위해서 `KSX0003_20091228.docx` 파일명을 `KSX0003_20091228.zip`으로 바꾼 후에 압축을 풀어준다. 그러면 `word/media` 디렉토리에 이미지가 저장된다.
-
-![](images/book_cover_inside.jpeg)
-
-
-# 책의 내부 순서 및 명칭 {#book-outer-content}
-
-책의 내부 순서 및 명칭을 살펴보면 다음과 같다.
+책은 단순히 글, 표, 그림, 그래프, 도형, 수식을 모은 것이 아니라, 정교하게 구성된 정보 체계라고 볼 수 있다. 책 내부 순서와 명칭을 보면 정교하게 구성된 정보체계가 드러난다. 책 각부분은 특별한 명칭을 지니고 있으며, 세부 명칭은 해당 부분에 대한 역할과 중요성을 암시한다. 예를 들어, '판권지', '머리말', '본문', '참고문헌' 등은 모두 책을 구성하는 핵심 요소이며, 이러한 명칭을 숙지하고 있으면 책 구조와 내용을 더욱 효과적으로 이해할 수 있다. 책의 내부 순서 및 명칭이 다음 @tbl-glossary 에 자세히 나와 있다.
 
 ```{r first-cover-tbl-main}
+#| echo: false
+#| label: tbl-glossary
 content_144_tbl <- table_cells %>% 
   filter(doc_index == 144) %>% 
   select(text, row_id, cell_id) %>% 
@@ -152,5 +159,60 @@ content_tbl <- content_tbl %>%
 
 content_tbl |> 
   gt() |> 
-  gt_theme_hangul()
+  gt_theme_hangul() |> 
+  cols_align(columns = c(순, `용 어`, `대응 영어`), align = "center") |>
+  cols_width(순 ~ px(10),
+             `용 어` ~ px(100),
+             `대응 영어` ~ px(100))  
 ```
+
+
+## 책 속지 명칭 {#book-outer-II}
+
+책을 저작하거나 읽을 때, 단순히 '표지'와 '본문'으로만 이해하기엔 너무나도 많은 세부 요소가 있다. '속표지'는 본문 바로 앞에 위치하며, 표제와 저자, 출판사 정보를 담고 있다. '면지'는 표지와 본문 속장을 결속시키는 역할을 하며, 종종 두꺼운 종이를 사용한다. '반표제지'는 속표지 앞에 위치하고 책의 제목만을 표시한다. 이 외에도 '저자명', '출판사', '붙인면지', '매는쪽' 등 다양한 명칭이 존재하며, 각각이 책의 구조와 디자인, 정보 전달에 중요한 역할을 한다. 책의 속지 명칭은 다음 @tbl-glossary-II 에 자세히 나와 있다.
+
+```{r first-cover-tbl-II}
+#| echo: false
+#| label: tbl-glossary-II
+
+cover_ii_tbl <- table_cells %>% 
+  filter(doc_index == 116) %>% 
+  select(text, row_id, cell_id) %>% 
+  pivot_wider(names_from = cell_id, values_from = text) %>% 
+  select(-row_id) 
+
+cover_second_tbl <- cover_ii_tbl %>% 
+  set_names(cover_tbl %>% slice(1)) %>% 
+  filter(row_number() != 1) %>% 
+  select(1,2,4,3) 
+
+cover_second_tbl %>% 
+  gt() |> 
+  gt_theme_hangul() |> 
+  cols_align(columns = c(순, `용 어`, `대응 영어`), align = "center") |>
+  cols_width(순 ~ px(10),
+             `용 어` ~ px(100),
+             `대응 영어` ~ px(100))  
+  # reactable::reactable(
+  #   defaultColDef = colDef(
+  #   header = function(value) gsub(".", " ", value, fixed = TRUE),
+  #   cell = function(value) format(value, nsmall = 1),
+  #   align = "center",
+  #   minWidth = 70,
+  #   headerStyle = list(background = "#f7f7f8")
+  #   ),
+  #   columns = list(
+  #   순 = colDef(minWidth = 40),   # 50% width, 200px minimum
+  #   `용 어` = colDef(minWidth = 100),   # 25% width, 100px minimum
+  #   `대응 영어` = colDef(minWidth = 150),   # 25% width, 100px minimum    
+  #   `용어 정의` = colDef(minWidth = 500)  # 25% width, 100px minimum
+  #   ),
+  #   bordered = TRUE,
+  #   highlight = TRUE,
+  #   filterable = TRUE
+  # )
+```
+
+워드 파일에서 이미지를 추출하는 방식은 워드 파일 압축을 풀면된다. 그렇게 하기 위해서 `KSX0003_20091228.docx` 파일명을 `KSX0003_20091228.zip`으로 바꾼 후에 압축을 풀어준다. 그러면 `word/media` 디렉토리에 이미지가 저장된다.
+
+![](images/book_cover_inside.jpeg)
