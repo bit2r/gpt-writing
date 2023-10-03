@@ -1,0 +1,93 @@
+---
+title: "습관"
+author: "홍길동"
+format:
+  revealjs:
+    incremental: true
+---
+
+# 아침
+
+## 기상
+
+- 알람 끄기
+- 침대에서 일어나기
+
+## 아침 식사
+
+- 콩나물국 먹기
+- 커피 마시기
+
+# 저녁
+
+## 저녁 식사
+
+- 삼겹살과 된장찌개
+- 소주 마시기
+
+## 잠들기
+
+- 양치질 하기
+- 잠자리에 들기
+
+# 2 칼럼
+
+## 2 칼럼
+
+:::: {.columns}
+
+::: {.column width="40%"}
+### 왼쪽 ...
+
+텍스트
+:::
+
+::: {.column width="60%"}
+### 오른쪽 ...
+
+텍스트
+:::
+
+::::
+
+
+# 한줄씩 보여주기
+
+## 한국 R 사용자회 커뮤니티
+
+::: {.incremental}
+
+- Facebook 페북 그룹
+
+- 서울 R 미트업
+
+:::
+
+
+## Seoul R User Group
+
+::: {.nonincremental}
+
+- Facebook Group
+
+- Seoul R Meetup
+
+:::
+
+# 코드 출력결과
+
+## 코드 출력결과
+
+```{r}
+#| output-location: column
+#| echo: true
+
+library(ggplot2)
+
+mtcars |> 
+ggplot(aes(x = wt, y = mpg)) +
+  geom_point() +
+  theme_linedraw()
+```
+
+

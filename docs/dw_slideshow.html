@@ -5,7 +5,7 @@
 <meta name="generator" content="quarto-1.4.288">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="이광춘">
-<title>챗GPT 디지털 글쓰기 - 21&nbsp; 슬라이드 PPT</title>
+<title>챗GPT 디지털 글쓰기 - 22&nbsp; PPT 슬라이드</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -18,6 +18,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -27,7 +61,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./dw_blog.html" rel="next">
+<link href="./dw_dashboard.html" rel="next">
 <link href="./dw_website.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -42,11 +76,11 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 20,
   "keyboard-shortcut": [
     "f",
@@ -65,35 +99,56 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "검색",
     "search-label": "검색"
   }
-}</script>
+}</script><script type="text/javascript">
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-229551680-1', 'auto');
+
+ga('send', {
+  hitType: 'pageview',
+  'anonymizeIp': true,
+});
+</script>
 </head>
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg navbar-dark "><div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">챗GPT 디지털 글쓰기</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="검색"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="탐색 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/bit2r/gpt-writing" rel="" target=""><i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+</div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./whole_game.html">디지털 글쓰기</a></li><li class="breadcrumb-item"><a href="./dw_slideshow.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">슬라이드 PPT</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./publishing.html">출판물</a></li><li class="breadcrumb-item"><a href="./dw_slideshow.html"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">PPT 슬라이드</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">챗GPT 디지털 글쓰기</a> 
-    </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="검색"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto"><div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
@@ -109,8 +164,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./history.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">문자와 종이</span></span></a>
+  <a href="./whole_game.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">챗GPT 글쓰기 맛보기</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -124,20 +179,32 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./history.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">언어와 문자</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./editor.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">편집기와 출판</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">편집기와 출판</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unicode.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">유니코드와 UTF-8</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./latex_pdf.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title"></span></span></a><a href="http://example.org">LaTeX</a>과 PDF
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">LaTeX과 PDF</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./quarto.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">쿼토(Quarto)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">쿼토(Quarto)</span></span></a>
   </div>
 </li>
       </ul>
@@ -154,25 +221,13 @@ ul.task-list li input[type="checkbox"] {
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./markdown_01_mess.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">심각한 현재 상황</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./markdown_02_markdown.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">마크다운 기초</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./markdown_03_advanced.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">고급 마크다운</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">심각한 현재 상황</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./writing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">디지털 글쓰기</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">글쓰기와 반도체</span></span></a>
   </div>
 </li>
       </ul>
@@ -188,32 +243,26 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./unicode.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">유니코드와 UTF-8</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./components.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">문서 구성요소</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">문서 구성요소</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./fonts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">글꼴</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./colors.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">색상</span></span></a>
+  <a href="./markdown.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">마크다운</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./document_class.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">문서 클래스</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">문서 클래스</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./about_book.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">책과 다양한 문서</span></span></a>
   </div>
 </li>
       </ul>
@@ -229,20 +278,32 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./fonts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">글꼴</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./colors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">색상</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./themes_ggplot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">그래프 테마</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">그래프 테마</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./themes_gt.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">표 테마</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">표 테마</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./templates.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">템플릿</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">템플릿</span></span></a>
   </div>
 </li>
       </ul>
@@ -250,7 +311,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
- <span class="menu-text">디지털 글쓰기</span></a>
+ <span class="menu-text">출판물</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="토글 섹션">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -258,32 +319,26 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./whole_game.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">챗GPT 글쓰기 맛보기</span></span></a>
+  <a href="./publishing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">출판</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dw_pdf.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">쿼토 PDF</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">쿼토 PDF</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dw_website.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">웹사이트</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">웹사이트와 블로그</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dw_slideshow.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">슬라이드 PPT</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./dw_blog.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">블로그</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">PPT 슬라이드</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -297,7 +352,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
- <span class="menu-text">실무</span></a>
+ <span class="menu-text">챗GPT</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="토글 섹션">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -305,14 +360,26 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./publishing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">출판</span></span></a>
+  <a href="./chatGPT.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">챗GPT</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./about_book.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">책과 편집 용어</span></span></a>
+  <a href="./prompt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">프롬프트 공학</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./text_to_X.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">활용사례</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./plugin.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">챗GPT 플러그인</span></span></a>
   </div>
 </li>
       </ul>
@@ -331,13 +398,22 @@ ul.task-list li input[type="checkbox"] {
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">목차</h2>
    
   <ul>
-<li><a href="#%ED%97%AC%EB%A1%9C%EC%9B%94%EB%93%9C" id="toc-헬로월드" class="nav-link active" data-scroll-target="#%ED%97%AC%EB%A1%9C%EC%9B%94%EB%93%9C"><span class="header-section-number">21.1</span> 헬로월드</a></li>
+<li><a href="#%ED%97%AC%EB%A1%9C%EC%9B%94%EB%93%9C" id="toc-헬로월드" class="nav-link active" data-scroll-target="#%ED%97%AC%EB%A1%9C%EC%9B%94%EB%93%9C"><span class="header-section-number">22.1</span> 헬로월드</a></li>
+  <li>
+<a href="#%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C-%EB%AC%B8%EB%B2%95" id="toc-슬라이드-문법" class="nav-link" data-scroll-target="#%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C-%EB%AC%B8%EB%B2%95"><span class="header-section-number">22.2</span> 슬라이드 문법</a>
+  <ul class="collapse">
+<li><a href="#%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C-%EC%83%9D%EC%84%B1" id="toc-슬라이드-생성" class="nav-link" data-scroll-target="#%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C-%EC%83%9D%EC%84%B1"><span class="header-section-number">22.2.1</span> 슬라이드 생성</a></li>
+  <li><a href="#%EC%B9%BC%EB%9F%BC" id="toc-칼럼" class="nav-link" data-scroll-target="#%EC%B9%BC%EB%9F%BC"><span class="header-section-number">22.2.2</span> 2 칼럼</a></li>
+  <li><a href="#%ED%95%9C%EC%A4%84%EC%94%A9-%EB%B3%B4%EC%97%AC%EC%A3%BC%EA%B8%B0" id="toc-한줄씩-보여주기" class="nav-link" data-scroll-target="#%ED%95%9C%EC%A4%84%EC%94%A9-%EB%B3%B4%EC%97%AC%EC%A3%BC%EA%B8%B0"><span class="header-section-number">22.2.3</span> 한줄씩 보여주기</a></li>
+  <li><a href="#%EC%BD%94%EB%93%9C%EC%99%80-%EA%B7%B8%EB%9E%98%ED%94%84" id="toc-코드와-그래프" class="nav-link" data-scroll-target="#%EC%BD%94%EB%93%9C%EC%99%80-%EA%B7%B8%EB%9E%98%ED%94%84"><span class="header-section-number">22.2.4</span> 코드와 그래프</a></li>
+  </ul>
+</li>
   </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./whole_game.html">디지털 글쓰기</a></li><li class="breadcrumb-item"><a href="./dw_slideshow.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">슬라이드 PPT</span></a></li></ol></nav><div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./publishing.html">출판물</a></li><li class="breadcrumb-item"><a href="./dw_slideshow.html"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">PPT 슬라이드</span></a></li></ol></nav><div class="quarto-title">
 <h1 class="title">
-<span class="chapter-number">21</span>&nbsp; <span class="chapter-title">슬라이드 PPT</span>
+<span class="chapter-number">22</span>&nbsp; <span class="chapter-title">PPT 슬라이드</span>
 </h1>
 </div>
 
@@ -353,8 +429,9 @@ ul.task-list li input[type="checkbox"] {
 
 
 </header><p>쿼토 슬라이드(Quarto Slide) 이전에 <a href="https://github.com/yihui/xaringan">사륜안(<code>xaringan</code>)</a>이 마크다운으로 웹 슬라이드를 제작할 수 있었으나 <code>remark.js</code> 에 기반을 두다보니 <code>pandoc</code>과 호환성을 이유로 <code>reveal.js</code>를 기반으로 한 쿼토 슬라이드(Quarto Slide)가 새롭게 쿼토 생태계에서 웹슬라이드 PPT 부분을 담당하게 되었다.</p>
-<section id="헬로월드" class="level2" data-number="21.1"><h2 data-number="21.1" class="anchored" data-anchor-id="헬로월드">
-<span class="header-section-number">21.1</span> 헬로월드</h2>
+<p>쿼토는 PPT 슬라이드를 다양한 형식으로 지원한다. HTML을 위한 <code>reveal.js</code>, MS 오피스 파워포인트(PPT), 라텍(LaTeX) PDF 형식 비머(Beamer)가 포함된다. 각 형식마다 장단점을 가지고 있지만, 특별한 경우가 아니면 <code>reveal.js</code> 형식이 장점이 많아 적극 권장된다. <code>reveal.js</code>는 HTML 웹슬라이드 뿐만 아니라, 필요한 경우 PDF로도 인쇄하여 배포할 수 있다.</p>
+<section id="헬로월드" class="level2" data-number="22.1"><h2 data-number="22.1" class="anchored" data-anchor-id="헬로월드">
+<span class="header-section-number">22.1</span> 헬로월드</h2>
 <p>쿼토는 기본적으로 프로젝트를 기반으로 시작하기 때문에 프로젝트를 하나 생성한다. RStudio를 실행하고 우측 상단 <code>Project:(None)</code>을 클릭하여 <code>New Project</code>를 새로운 디렉토리를 만들어 생성한다.</p>
 <div id="fig-slide" class="quarto-layout-panel">
 <figure class="figure"><div class="quarto-layout-row quarto-layout-valign-top">
@@ -367,7 +444,7 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 </div>
-<p></p><figcaption class="figure-caption">그림&nbsp;21.1: 슬라이드 제작을 위한 프로젝트 생성</figcaption><p></p>
+<p></p><figcaption class="figure-caption">그림&nbsp;22.1: 슬라이드 제작을 위한 프로젝트 생성</figcaption><p></p>
 </figure>
 </div>
 <p>프로젝트가 생성되면 <code>File</code> → <code>New File</code> → <code>Quarto Presentation...</code>을 클릭하여 쿼토 슬라이드 <code>.qmd</code> 문서파일을 생성한다.</p>
@@ -382,12 +459,12 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 </div>
-<p></p><figcaption class="figure-caption">그림&nbsp;21.2: 쿼토 프리젠테이션 파일 생성</figcaption><p></p>
+<p></p><figcaption class="figure-caption">그림&nbsp;22.2: 쿼토 프리젠테이션 파일 생성</figcaption><p></p>
 </figure>
 </div>
 <p><code>Ctrl</code> + <code>Shift</code> + <code>k</code> 단축키를 눌러 <code>.qmd</code> 파일을 웹슬라이드로 제작할 수 있다. 웹슬라이드 파일명을 <code>helloworld.qmd</code>로 저장한다.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/dw_slide_helloworld.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="첫번째 웹슬라이드 제작과정"><img src="images/dw_slide_helloworld.jpg" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="images/dw_slide_helloworld.jpg" class="lightbox" title="첫번째 웹슬라이드 제작과정" data-gallery="quarto-lightbox-gallery-5"><img src="images/dw_slide_helloworld.jpg" class="img-fluid figure-img"></a></p>
 <figcaption class="figure-caption">첫번째 웹슬라이드 제작과정</figcaption></figure>
 </div>
 <div class="cell">
@@ -395,9 +472,153 @@ ul.task-list li input[type="checkbox"] {
 <a href="data:application/octet-stream;base64,LS0tDQp0aXRsZTogIuyxl0dQVCDrsJztkZwiDQpmb3JtYXQ6IHJldmVhbGpzDQotLS0NCg0KIyMg7L+87YagDQoNCuy/vO2GoOuKlCDrgrTsmqnqs7wg7Iuk7ZaJIOqwgOuKpe2VnCDsvZTrk5zrpbwg7ZWo6ruYIOqysO2Vqe2VmOyXrCDsmYTshLHrkJwg7ZSE66CI7KCg7YWM7J207IWY7J2EIOunjOuTpCDsiJgg7J6I6rKMIO2VtOykgOuLpC4g7L+87YagIO2UhOugiOygoO2FjOydtOyFmOyXkCDrjIDtlbQg642UIOyVjOqzoCDsi7bri6TrqbQgPGh0dHBzOi8vcXVhcnRvLm9yZy9kb2NzL3ByZXNlbnRhdGlvbnMvPuulvCDssLjsobDtlZzri6QuDQoNCiMjIOq4gOuouOumrCDquLDtmLgNCg0KKipSZW5kZXIqKiDrsoTtirzsnYQg7YG066at7ZWY66m0IOuLpOydjOydhCDtj6ztlajtlZwg66y47ISc6rCAIOyDneyEseuQnOuLpDoNCg0KLSAgIOuniO2BrOuLpOyatOycvOuhnCDsnpHshLHrkJwg64K07JqpDQotICAg7Iuk7ZaJIOqwgOuKpe2VnCDsvZTrk5zsnZgg7Lac66ClDQoNCiMjIOy9lOuTnA0KDQoqKlJlbmRlcioqIOuyhO2KvOydhCDtgbTrpq3tlZjrqbQg64K07Jqp6rO8IO2PrO2VqOuQnCDsvZTrk5zsnZgg7Lac66Cl7J2EIOuqqOuRkCDtj6ztlajtlZwg7ZSE66CI7KCg7YWM7J207IWY7J20IOyDneyEseuQnOuLpC4g7J2066CH6rKMIOy9lOuTnOulvCDsgr3snoXtlaAg7IiYIOyeiOuLpDoNCg0KYGBge3J9DQoxICsgMQ0KYGBgDQoNCg0K" download="helloworld.qmd">다운로드 예제 PPT 파일</a>
 </div>
 </div>
+</section><section id="슬라이드-문법" class="level2" data-number="22.2"><h2 data-number="22.2" class="anchored" data-anchor-id="슬라이드-문법">
+<span class="header-section-number">22.2</span> 슬라이드 문법</h2>
+<p>쿼토 슬라이드는 <code>pandoc</code>의 마크다운 문법을 기반으로 하고 있으며 <code>reveal.js</code>의 슬라이드 문법을 사용할 수 있다. <code>reveal.js</code>의 슬라이드 문법은 <a href="https://quarto.org/docs/presentations/">쿼토 프리젠테이션</a>을 참고한다.</p>
+<section id="슬라이드-생성" class="level3" data-number="22.2.1"><h3 data-number="22.2.1" class="anchored" data-anchor-id="슬라이드-생성">
+<span class="header-section-number">22.2.1</span> 슬라이드 생성</h3>
+<p><code>#</code> 기호는 <code>h1</code> 큰제목 슬라이드, <code>##</code> 기호는 <code>h2</code> 중간제목을 갖는 슬라이드를 생성하여 하나 사고체계를 갖는 발표장표를 구성하고 마찬가지로 또다른 <code>#</code> 기호는 <code>h1</code> 큰제목 슬라이드, <code>##</code> 기호는 <code>h2</code> 중간제목을 갖는 슬라이드를 생성하면 또 다른 사고체계를 갖는 발표장표를 구성할 수 있다.</p>
+<div class="columns">
+<div class="column" style="width:45%;">
+<div class="sourceCode" id="cb1" data-code-line-numbers=""><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "습관"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "홍길동"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> revealjs</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu"># 아침</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">## 기상</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>알람 끄기</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>침대에서 일어나기</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">## 아침 식사</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>콩나물국 먹기</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>커피 마시기</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu"># 저녁</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="fu">## 저녁 식사</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>삼겹살과 된장찌개</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>소주 마시기</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="fu">## 잠들기</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>양치질 하기</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>잠자리에 들기</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/revealjs_create.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="images/revealjs_create.jpg" class="img-fluid figure-img"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="칼럼" class="level3" data-number="22.2.2"><h3 data-number="22.2.2" class="anchored" data-anchor-id="칼럼">
+<span class="header-section-number">22.2.2</span> 2 칼럼</h3>
+<p>PPT 발표자료는 가로 길이가 세로 길이보다 넓은 경우가 대부분이라 2칼럼으로 화면을 분할하는 경우가 많다. 쿼토 슬라이드는 <code>.columns</code> 클래스와 <code>width</code> 속성을 이용하여 2칼럼을 구현한다.</p>
+<div class="columns">
+<div class="column" style="width:45%;">
+<div class="sourceCode" id="cb2" data-code-line-numbers=""><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>:::: {.columns}</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>::: {.column width="40%"}</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">### 왼쪽 ...</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>텍스트</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>::: {.column width="60%"}</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">### 오른쪽 ...</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>텍스트</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>::::</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/revealjs_2columns.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="images/revealjs_2columns.jpg" class="img-fluid figure-img"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="한줄씩-보여주기" class="level3" data-number="22.2.3"><h3 data-number="22.2.3" class="anchored" data-anchor-id="한줄씩-보여주기">
+<span class="header-section-number">22.2.3</span> 한줄씩 보여주기</h3>
+<p><code>incremental</code> 선택옵션을 사용해서 한줄씩 순차적으로 보여주는 것이 가능하다. 영어로 <code>increnetal reveal</code> 혹은 <code>increamental list</code> 기능이라고 한다. 기본설적은 슬라이드 내의 번호 및 글머리 기호 목록이 한 번에 모두 표시된다. <code>incremental</code> 옵션을 사용하면 한 번에 하나씩 표시된다. 코드에 <code>.nonincremental</code>를 넣게 되면 한줄씩 보여주는 기능을 비활성화 할 수 있다.</p>
+<div class="columns">
+<div class="column" style="width:45%;">
+<div class="sourceCode" id="cb3" data-code-line-numbers=""><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "습관"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "홍길동"</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">  revealjs:</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">    incremental: true</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu"># 한줄씩 보여주기</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="fu">## 한국 R 사용자회 커뮤니티</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>::: {.incremental}</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Facebook 페북 그룹</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>서울 R 미트업</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="fu">## Seoul R User Group</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>::: {.nonincremental}</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Facebook Group</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Seoul R Meetup</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/revealjs_incremental.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="images/revealjs_incremental.jpg" class="img-fluid figure-img"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="코드와-그래프" class="level3" data-number="22.2.4"><h3 data-number="22.2.4" class="anchored" data-anchor-id="코드와-그래프">
+<span class="header-section-number">22.2.4</span> 코드와 그래프</h3>
+<p>쿼토 슬라이드는 코드와 그래프를 한 슬라이드에 표시할 수 있다. 코드와 출력결과(표, 그래프, 실행결과 등)을 나란히 표시하거나 출력을 지연하여 다른 슬라이드에 표시하는 것은 강의나 발표에 일반적으로 사용되는 기법이다. 쿼토 슬라이드는 <code>output-location</code> 선택옵션 통해 한줄로 기능 구현이 가능하다. <code>output-location</code> 선택옵션은 <code>fragment</code>, <code>slide</code>, <code>column</code>, <code>column-fragment</code>를 지원하기 때문에 필요에 맞춰 발표자료에 적용한다. <code>output-location: column</code>을 설정하면 코드와 출력결과 그래프가 한 슬라이드에 나타나는데 코드를 중복없이 깔끔하게 작성한다는 점이 큰 장점이다.</p>
+<div class="columns">
+<div class="column" style="width:45%;">
+<div class="sourceCode" id="cb4" data-code-line-numbers=""><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## 코드 출력결과</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>#| output-location: column</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>#| echo: true</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>library(ggplot2)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>mtcars |&gt; </span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>ggplot(aes(x = wt, y = mpg)) +</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  geom_point() +</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  theme_linedraw()</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/revealjs_code.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="images/revealjs_code.jpg" class="img-fluid figure-img"></a></p>
+</figure>
+</div>
+</div>
+</div>
 
 
-</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -715,17 +936,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="./dw_website.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">웹사이트</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">웹사이트와 블로그</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./dw_blog.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">블로그</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./dw_dashboard.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">대쉬보드</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"loop":true,"selector":".lightbox","openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom"});</script>
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","openEffect":"zoom","loop":true,"selector":".lightbox"});</script>
 
 
 <script src="site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.js" defer="true"></script>
