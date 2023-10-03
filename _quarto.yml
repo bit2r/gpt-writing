@@ -13,6 +13,12 @@ lang: ko-KR
 date-format: "YYYY년 MM월 DD일"
 
 book:
+  navbar:
+    right:
+      - icon: github
+        href: https://github.com/bit2r/gpt-writing
+        aria-label: GitHub
+  google-analytics: "UA-229551680-1"
   title: "챗GPT 디지털 글쓰기"
   author: "이광춘, 신종화"
   date: last-modified
