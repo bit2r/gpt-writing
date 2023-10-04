@@ -1,0 +1,60 @@
+---
+title: "원자폭탄의 아버지들"
+author: "오펜하이머"
+date: "`r Sys.Date()`"
+format: 
+  pdf:
+    latex_engine: xelatex
+    keep_tex: false
+    header-includes:
+      - "\\usepackage{tikz}"
+      - "\\usepackage{fontspec}"
+      - "\\usepackage{tipa}"
+mainfont: "MaruBuri-Regular"
+sansfont: "NanumSquareR"
+monofont: "D2Codingligature"
+---
+
+# 소개
+
+"오펜하이머"라는 이름[^1]은 독일 기원의 성씨로 가장 유명한 사람은 미국 물리학자 J. 로버트 오펜하이머이다. 그는 "원자폭탄의 아버지"로 알려져 있다.
+
+[^1]: 오펜하이머는 영어로 /ˈɒpənˌhaɪmər/ , /\'{O}p@n\"{h}aIm@r/ 로 발음된다.
+
+# 표
+
+아래는 간단한 표이다.
+
+```{r}
+knitr::kable(
+  matrix(c("행 1, 열 1", "행 1, 열 2", "행 2, 열 1", "행 2, 열 2"), ncol = 2),
+  col.names = c("헤더 1", "헤더 2")
+)
+```
+
+
+# 수식
+
+다음은 간단한 수식이다:
+
+\[
+  f(x) = x^2
+\]
+
+# 다이어그램
+
+아래는 간단한 다이어그램이다:
+
+```{r, echo=FALSE, dev='tikz'}
+library(tikzDevice)
+tikz(console=TRUE, width=4, height=4, standalone=TRUE, packages=c("tikz")) {
+  plot(1, type='n', xlab='', ylab='', xlim=c(0,4), ylim=c(0,4), xaxs='i', yaxs='i')
+  arrows(0, 0, 4, 0)
+  arrows(0, 0, 0, 4)
+  lines(c(0, 3), c(0, 3))
+}
+```
+
+```
+이 `.qmd` 파일은 Quarto를 사용하여 PDF로 렌더링할 수 있다. LaTeX 패키지와 명령어는 YAML 메타데이터의 `header-includes` 섹션에 추가될 수 있다. 그러나 특별한 LaTeX 명령어나 환경이 필요한 경우, 이를 수동으로 `.qmd` 파일에 적용해야 할 수도 있다.
+```
