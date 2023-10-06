@@ -346,8 +346,8 @@ ga('send', {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./dw_pdf.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">쿼토 PDF</span></span></a>
+  <a href="./dw_book.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">쿼토 책</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -449,26 +449,30 @@ ga('send', {
 
 </header>
 
-<p><code>ggplot2</code>에 기본으로 제공되는 <code>theme</code>이 9개가 있어, 각 테마별로 시각화해보고 추후 가장 적합한 그래프를 선정한다. 먼저, 각 테마를 달리 적용하여 비교할 수 있는 기본 <code>ggplot</code> 그래프를 준비한다.</p>
+<p><code>ggplot2</code>는 그래프 문법에 맞춰 데이터프레임을 입력으로 받아 그래프를 생성하는 대표적인 시각화 패키지다. <code>ggplot2</code>에서 기본으로 제공되는 테마(<code>theme</code>)는 9개가 있어, 다양한 테마별로 최소의 코딩으로 시각화 하고 가장 적합한 그래프 테마를 선정한다. 먼저, 각 테마를 달리 적용하여 비교할 수 있는 기본 <code>ggplot</code> 그래프를 준비한다.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>base_penguins_gg <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> </span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species, <span class="at">shape =</span> species), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"black"</span>)  <span class="sc">+</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">"기본 테마"</span>,</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">subtitle =</span> <span class="st">"물갈퀴 길이와 체중 회귀분석"</span>,</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> <span class="st">"물갈퀴 길이 (mm)"</span>,</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> <span class="st">"체중 (g)"</span>,</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">color =</span> <span class="st">"펭귄종"</span>,</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">guides</span>(<span class="at">shape =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.90</span>, <span class="fl">0.15</span>))</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>base_penguins_gg</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>extrafont<span class="sc">::</span><span class="fu">loadfonts</span>(<span class="at">quiet =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>base_penguins_gg <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species, <span class="at">shape =</span> species), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"black"</span>)  <span class="sc">+</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">"기본 테마"</span>,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">subtitle =</span> <span class="st">"물갈퀴 길이와 체중 회귀분석"</span>,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> <span class="st">"물갈퀴 길이 (mm)"</span>,</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> <span class="st">"체중 (g)"</span>,</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">color =</span> <span class="st">"펭귄종"</span>,</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">guides</span>(<span class="at">shape =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_classic</span>(<span class="at">base_family =</span> <span class="st">"MaruBuri Bold"</span>) <span class="sc">+</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.90</span>, <span class="fl">0.25</span>))</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>base_penguins_gg</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -531,11 +535,16 @@ ga('send', {
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>hrbrtheme_gg <span class="ot">&lt;-</span> patchwork<span class="sc">::</span><span class="fu">wrap_plots</span>(hrbr_theme_output)</span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"images/hrbrtheme_gg.png"</span>)</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>hrbrtheme_gg</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>ragg<span class="sc">::</span><span class="fu">agg_jpeg</span>(<span class="st">"images/hrbrtheme_gg.jpeg"</span>,</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>               <span class="at">width =</span> <span class="dv">10</span>, <span class="at">height =</span> <span class="dv">7</span>, <span class="at">units =</span> <span class="st">"in"</span>, <span class="at">res =</span> <span class="dv">600</span>)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>hrbrtheme_gg</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="images/hrbrtheme_gg.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="images/hrbrtheme_gg.png" class="img-fluid figure-img"></a></p>
+<p><a href="images/hrbrtheme_gg.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="images/hrbrtheme_gg.jpeg" class="img-fluid figure-img"></a></p>
 </figure>
 </div>
 </section>
@@ -545,20 +554,34 @@ ga('send', {
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>ggthemes_name <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"theme_base()"</span>,<span class="st">"theme_calc()"</span>,<span class="st">"theme_clean()"</span>,<span class="st">"theme_economist()"</span>, <span class="st">"theme_economist_white()"</span>,<span class="st">"theme_excel()"</span>,<span class="st">"theme_excel_new()"</span>,<span class="st">"theme_few()"</span>,<span class="st">"theme_fivethirtyeight()"</span>,<span class="st">"theme_foundation()"</span>,<span class="st">"theme_gdocs()"</span>,<span class="st">"theme_hc()"</span>,<span class="st">"theme_igray()"</span>,<span class="st">"theme_map()"</span>,<span class="st">"theme_pander()"</span>,<span class="st">"theme_solarized_2()"</span>,<span class="st">"theme_solid()"</span>,<span class="st">"theme_stata()"</span>,<span class="st">"theme_tufte()"</span>,<span class="st">"theme_wsj()"</span>)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>ggthemes_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(theme_base, theme_calc, theme_clean, theme_economist, theme_economist_white, theme_excel, theme_excel_new, theme_few, theme_fivethirtyeight, theme_foundation, theme_gdocs, theme_hc, theme_igray, theme_map, theme_pander, theme_solarized_2, theme_solid, theme_stata, theme_tufte, theme_wsj)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>ggtheme_output <span class="ot">&lt;-</span> <span class="fu">map2</span>(ggthemes_name, ggthemes_vector, draw_themes)</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>patchwork<span class="sc">::</span><span class="fu">wrap_plots</span>(ggtheme_output)</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>ggthemes_name <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"theme_base()"</span>,<span class="st">"theme_calc()"</span>,<span class="st">"theme_clean()"</span>,<span class="st">"theme_economist()"</span>,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"theme_economist_white()"</span>,<span class="st">"theme_excel()"</span>,<span class="st">"theme_excel_new()"</span>,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"theme_few()"</span>,<span class="st">"theme_fivethirtyeight()"</span>,<span class="st">"theme_foundation()"</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"theme_gdocs()"</span>,<span class="st">"theme_hc()"</span>,<span class="st">"theme_igray()"</span>,<span class="st">"theme_map()"</span>,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"theme_pander()"</span>,<span class="st">"theme_solarized_2()"</span>,<span class="st">"theme_solid()"</span>,</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"theme_stata()"</span>,<span class="st">"theme_tufte()"</span>,<span class="st">"theme_wsj()"</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>ggthemes_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(theme_base, theme_calc, theme_clean, theme_economist, theme_economist_white,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>                     theme_excel, theme_excel_new, theme_few, theme_fivethirtyeight,</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>                     theme_foundation, theme_gdocs, theme_hc, theme_igray, theme_map,</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>                     theme_pander, theme_solarized_2, theme_solid, theme_stata, theme_tufte, </span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>                     theme_wsj)</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>ggtheme_output <span class="ot">&lt;-</span> <span class="fu">map2</span>(ggthemes_name, ggthemes_vector, draw_themes)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>ggtheme_gg <span class="ot">&lt;-</span> patchwork<span class="sc">::</span><span class="fu">wrap_plots</span>(ggtheme_output)</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>ggtheme_gg</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>ragg<span class="sc">::</span><span class="fu">agg_jpeg</span>(<span class="st">"images/ggtheme_gg.jpeg"</span>,</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>               <span class="at">width =</span> <span class="dv">10</span>, <span class="at">height =</span> <span class="dv">7</span>, <span class="at">units =</span> <span class="st">"in"</span>, <span class="at">res =</span> <span class="dv">600</span>)</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>ggtheme_gg</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="themes_ggplot_files/figure-html/ggplot_ggthemes-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="themes_ggplot_files/figure-html/ggplot_ggthemes-1.png" class="img-fluid figure-img" width="672"></a></p>
+<p><a href="images/ggtheme_gg.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="images/ggtheme_gg.jpeg" class="img-fluid figure-img"></a></p>
 </figure>
-</div>
-</div>
 </div>
 </section>
 <section id="wesanderson" class="level3" data-number="16.0.3">
@@ -587,14 +610,19 @@ ga('send', {
 <span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>wes_theme_output <span class="ot">&lt;-</span> <span class="fu">map2</span>(<span class="fu">names</span>(wes_palettes), <span class="fu">names</span>(wes_palettes), draw_wesanderson)</span>
 <span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>patchwork<span class="sc">::</span><span class="fu">wrap_plots</span>(wes_theme_output)</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>wes_theme_gg <span class="ot">&lt;-</span> patchwork<span class="sc">::</span><span class="fu">wrap_plots</span>(wes_theme_output)</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>wes_theme_gg</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>ragg<span class="sc">::</span><span class="fu">agg_jpeg</span>(<span class="st">"images/wes_theme_gg.jpeg"</span>,</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>               <span class="at">width =</span> <span class="dv">10</span>, <span class="at">height =</span> <span class="dv">7</span>, <span class="at">units =</span> <span class="st">"in"</span>, <span class="at">res =</span> <span class="dv">600</span>)</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>wes_theme_gg</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="themes_ggplot_files/figure-html/ggplot_wesanderson-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="themes_ggplot_files/figure-html/ggplot_wesanderson-1.png" class="img-fluid figure-img" width="672"></a></p>
+<p><a href="images/wes_theme_gg.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="images/wes_theme_gg.jpeg" class="img-fluid figure-img"></a></p>
 </figure>
-</div>
-</div>
 </div>
 </section>
 <section id="사용자-테마" class="level2" data-number="16.1">
@@ -715,7 +743,7 @@ ga('send', {
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="images/penguins_theme_gg.jpg" class="lightbox" title="펭귄 데이터 사용자 테마 적용 그래프" data-gallery="quarto-lightbox-gallery-7"><img src="images/penguins_theme_gg.jpg" class="img-fluid figure-img"></a></p>
+<p><a href="images/penguins_theme_gg.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="펭귄 데이터 사용자 테마 적용 그래프"><img src="images/penguins_theme_gg.jpg" class="img-fluid figure-img"></a></p>
 <figcaption class="figure-caption">펭귄 데이터 사용자 테마 적용 그래프</figcaption>
 </figure>
 </div>
@@ -970,7 +998,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","loop":true,"openEffect":"zoom","closeEffect":"zoom"});</script>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","loop":true,"descPosition":"bottom","openEffect":"zoom"});</script>
 
 
 

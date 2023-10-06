@@ -1,10 +1,15 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
 
 # 그래프 테마
 
-`ggplot2`에 기본으로 제공되는 `theme`이 9개가 있어, 
-각 테마별로 시각화해보고 추후 가장 적합한 그래프를 선정한다.
+`ggplot2`는 그래프 문법에 맞춰 데이터프레임을 입력으로 받아 그래프를 생성하는 
+대표적인 시각화 패키지다. `ggplot2`에서 기본으로 제공되는 테마(`theme`)는 9개가 있어, 
+다양한 테마별로 최소의 코딩으로 시각화 하고 가장 적합한 그래프 테마를 선정한다.
 먼저, 각 테마를 달리 적용하여 비교할 수 있는 기본 `ggplot` 그래프를 준비한다.
-
 
 ```{r}
 #| label: ggplot_base
@@ -12,7 +17,10 @@
 library(tidyverse)
 library(palmerpenguins)
 
+extrafont::loadfonts(quiet = TRUE)
+
 base_penguins_gg <- penguins |> 
+  drop_na() |> 
   ggplot(aes(x = flipper_length_mm, y = body_mass_g)) +
     geom_point(aes(color = species, shape = species), size = 3) +
     geom_smooth(method = "lm", se = FALSE, color = "black")  +
@@ -24,7 +32,8 @@ base_penguins_gg <- penguins |>
       color = "펭귄종",
     ) +
     guides(shape = "none") +
-    theme(legend.position = c(0.90, 0.15))
+    theme_classic(base_family = "MaruBuri Bold") +
+    theme(legend.position = c(0.90, 0.25))
 
 base_penguins_gg
 ```
@@ -88,10 +97,16 @@ hrbr_theme_output <- map2(hrbr_themes_name, hrbr_themes_vector, draw_themes)
 
 hrbrtheme_gg <- patchwork::wrap_plots(hrbr_theme_output)
 
-ggsave("images/hrbrtheme_gg.png")
+hrbrtheme_gg
+
+ragg::agg_jpeg("images/hrbrtheme_gg.jpeg",
+               width = 10, height = 7, units = "in", res = 600)
+hrbrtheme_gg
+dev.off()
+
 ```
 
-![](images/hrbrtheme_gg.png)
+![](images/hrbrtheme_gg.jpeg)
 
 
 ### `ggthemes`
@@ -100,18 +115,36 @@ ggsave("images/hrbrtheme_gg.png")
 
 ```{r}
 #| label: ggplot_ggthemes
+#| eval: false
 
 library(ggthemes)
 
-ggthemes_name <- c("theme_base()","theme_calc()","theme_clean()","theme_economist()", "theme_economist_white()","theme_excel()","theme_excel_new()","theme_few()","theme_fivethirtyeight()","theme_foundation()","theme_gdocs()","theme_hc()","theme_igray()","theme_map()","theme_pander()","theme_solarized_2()","theme_solid()","theme_stata()","theme_tufte()","theme_wsj()")
+ggthemes_name <- c("theme_base()","theme_calc()","theme_clean()","theme_economist()",
+                   "theme_economist_white()","theme_excel()","theme_excel_new()",
+                   "theme_few()","theme_fivethirtyeight()","theme_foundation()",
+                   "theme_gdocs()","theme_hc()","theme_igray()","theme_map()",
+                   "theme_pander()","theme_solarized_2()","theme_solid()",
+                   "theme_stata()","theme_tufte()","theme_wsj()")
 
-ggthemes_vector <- c(theme_base, theme_calc, theme_clean, theme_economist, theme_economist_white, theme_excel, theme_excel_new, theme_few, theme_fivethirtyeight, theme_foundation, theme_gdocs, theme_hc, theme_igray, theme_map, theme_pander, theme_solarized_2, theme_solid, theme_stata, theme_tufte, theme_wsj)
+ggthemes_vector <- c(theme_base, theme_calc, theme_clean, theme_economist, theme_economist_white,
+                     theme_excel, theme_excel_new, theme_few, theme_fivethirtyeight,
+                     theme_foundation, theme_gdocs, theme_hc, theme_igray, theme_map,
+                     theme_pander, theme_solarized_2, theme_solid, theme_stata, theme_tufte, 
+                     theme_wsj)
 
 ggtheme_output <- map2(ggthemes_name, ggthemes_vector, draw_themes)
 
-patchwork::wrap_plots(ggtheme_output)
+ggtheme_gg <- patchwork::wrap_plots(ggtheme_output)
+
+ggtheme_gg
+
+ragg::agg_jpeg("images/ggtheme_gg.jpeg",
+               width = 10, height = 7, units = "in", res = 600)
+ggtheme_gg
+dev.off()
 ```
 
+![](images/ggtheme_gg.jpeg)
 
 ### `wesanderson`
 
@@ -119,6 +152,7 @@ patchwork::wrap_plots(ggtheme_output)
 
 ```{r}
 #| label: ggplot_wesanderson
+#| eval: false
 
 library(wesanderson)
 
@@ -142,8 +176,18 @@ draw_wesanderson <- function(palette_name, wesanderson_palette ="Darjeeling1") {
 
 wes_theme_output <- map2(names(wes_palettes), names(wes_palettes), draw_wesanderson)
 
-patchwork::wrap_plots(wes_theme_output)
+wes_theme_gg <- patchwork::wrap_plots(wes_theme_output)
+
+wes_theme_gg
+
+ragg::agg_jpeg("images/wes_theme_gg.jpeg",
+               width = 10, height = 7, units = "in", res = 600)
+wes_theme_gg
+dev.off()
 ```
+
+![](images/wes_theme_gg.jpeg)
+
 
 ## 사용자 테마
 
