@@ -114,6 +114,9 @@ ga('send', {
   'anonymizeIp': true,
 });
 </script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
@@ -346,8 +349,8 @@ ga('send', {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./dw_pdf.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">쿼토 PDF</span></span></a>
+  <a href="./dw_book.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">쿼토 책</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -421,11 +424,18 @@ ga('send', {
     <h2 id="toc-title">목차</h2>
    
   <ul>
-  <li><a href="#기본-색상과-스타일" id="toc-기본-색상과-스타일" class="nav-link active" data-scroll-target="#기본-색상과-스타일"><span class="header-section-number">17.0.1</span> 기본 색상과 스타일</a></li>
-  <li><a href="#스타일" id="toc-스타일" class="nav-link" data-scroll-target="#스타일"><span class="header-section-number">17.0.2</span> 스타일</a></li>
-  <li><a href="#gtextra" id="toc-gtextra" class="nav-link" data-scroll-target="#gtextra"><span class="header-section-number">17.0.3</span> <code>gtExtra</code></a></li>
-  <li><a href="#사용자-테마" id="toc-사용자-테마" class="nav-link" data-scroll-target="#사용자-테마"><span class="header-section-number">17.1</span> 사용자 테마</a></li>
-  <li><a href="#표-자동-설정" id="toc-표-자동-설정" class="nav-link" data-scroll-target="#표-자동-설정"><span class="header-section-number">17.2</span> 표 자동 설정</a></li>
+  <li><a href="#gt-표-작성하기" id="toc-gt-표-작성하기" class="nav-link active" data-scroll-target="#gt-표-작성하기"><span class="header-section-number">17.1</span> <code>gt</code> 표 작성하기</a>
+  <ul class="collapse">
+  <li><a href="#기본-색상과-스타일" id="toc-기본-색상과-스타일" class="nav-link" data-scroll-target="#기본-색상과-스타일"><span class="header-section-number">17.1.1</span> 기본 색상과 스타일</a></li>
+  <li><a href="#스타일" id="toc-스타일" class="nav-link" data-scroll-target="#스타일"><span class="header-section-number">17.1.2</span> 스타일</a></li>
+  </ul></li>
+  <li><a href="#gtextra" id="toc-gtextra" class="nav-link" data-scroll-target="#gtextra"><span class="header-section-number">17.2</span> <code>gtExtra</code></a></li>
+  <li><a href="#사용자-정의-테마" id="toc-사용자-정의-테마" class="nav-link" data-scroll-target="#사용자-정의-테마"><span class="header-section-number">17.3</span> 사용자 정의 테마</a>
+  <ul class="collapse">
+  <li><a href="#gtextras-확장" id="toc-gtextras-확장" class="nav-link" data-scroll-target="#gtextras-확장"><span class="header-section-number">17.3.1</span> <code>gtExtras</code> 확장</a></li>
+  <li><a href="#gt_theme_hangul-테마" id="toc-gt_theme_hangul-테마" class="nav-link" data-scroll-target="#gt_theme_hangul-테마"><span class="header-section-number">17.3.2</span> <code>gt_theme_hangul()</code> 테마</a></li>
+  </ul></li>
+  <li><a href="#rprofile-설정작업" id="toc-rprofile-설정작업" class="nav-link" data-scroll-target="#rprofile-설정작업"><span class="header-section-number">17.4</span> <code>.Rprofile</code> 설정작업</a></li>
   </ul>
 </nav>
     </div>
@@ -449,7 +459,28 @@ ga('send', {
 
 </header>
 
-<p><code>ggplot</code> 뿐만 아니라 <code>gt</code> 패키지에도 사용자 정의 테마 설정 기능이 있다.</p>
+<p>문서에 표를 삽입하면 정보를 효율적으로 요약하고 가독성을 높이는 데 큰 역할을 한다. 표를 작성할 수 있는 도구로 마크다운(Markdown), <code>gt</code> 패키지, 라텍 모두 각각의 특장점이 있다. 마크다운은 사용하기 쉬우며 복잡한 설치나 추가 패키지 없이도 기본적인 표를 빠르게 작성할 수 있다. 라텍은 논문이나 학술 자료에 적합하게 고품질의 표를 제작할 수 있는 전문적인 도구다.</p>
+<p>웹과 PDF 출력, 테마 지정 등에서 <code>gt</code> 패키지가 뛰어나고 <code>gt</code> 패키지는 그래프 문법에 기초하여 고급 표제작도 수월히하게 작성가능하고, 특히, 데이터 중심 표를 작성할 때 필요한 다양한 기능을 제공하기 때문에 탄탄한 표문법에 기반한 <code>gt</code> 패키지가 여러가지 장점이 많다.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/table_three.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="표제작 세가지 방식"><img src="images/table_three.jpg" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">표제작 세가지 방식</figcaption>
+</figure>
+</div>
+<section id="gt-표-작성하기" class="level2" data-number="17.1">
+<h2 data-number="17.1" class="anchored" data-anchor-id="gt-표-작성하기"><span class="header-section-number">17.1</span> <code>gt</code> 표 작성하기</h2>
+<p><code>gt</code> 패키지는 R Tidyverse 생태계에 속한 표 제작 목적으로 특별히 제작된 패키지로 그래프 문법에 기반한 <code>ggplot2</code> 패키지에 친숙하신 저자는 쉽게 표도 <code>gt</code> 패키지를 사용해서 다양한 표 제작이 가능하다. 다음 예시에서는 <code>palmerpenguins</code> 데이터 패키지 <code>penguins</code> 데이터셋을 활용하여 “남극 펭귄 서식섬과 종 빈도표”를 제작한다.</p>
+<ol type="1">
+<li>라이브러리 가져오기: <code>tidyverse</code>, <code>palmerpenguins</code>, <code>gt</code>, <code>gtExtras</code>, <code>magick</code>.</li>
+<li><code>penguins</code> 데이터를 사용하여 종(species)과 서식섬(island)에 따른 빈도를 집계하고 표제작에 맞춰 피벗 테이블을 생성한다.</li>
+<li><code>gt()</code> 함수를 이용하여 <code>gt</code> 표를 초기화하고, <code>rowname_col</code> 인자로 “species”를 지정하여 행 이름을 설정한다.</li>
+<li><code>tab_header()</code> 함수로 표 제목과 부제목을 지정한다.</li>
+<li><code>grand_summary_rows()</code> 함수를 사용하여 각 서식섬(Biscoe, Dream, Torgersen) 합계를 계산한다.</li>
+<li><code>cols_align("center")</code>을 통해 텍스트를 가운데 정렬한다.</li>
+<li><code>opt_row_striping()</code> 함수로 행에 스트라이핑을 추가하여 가독성을 높인다.</li>
+<li><code>tab_source_note()</code> 함수로 표 출처를 표기한다.</li>
+</ol>
+<p><code>penguins_gt</code> 변수에 저장된 <code>gt</code> 표를 저장한다. <code>gt</code> 패키지의 다양한 기능을 활용하여 복잡한 표도 손쉽게 작성할 수 있다는 것을 다시 확인할 수 있다.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
@@ -483,23 +514,23 @@ ga('send', {
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>penguins_gt</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="oqsjiudyuc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#oqsjiudyuc table {
+<div id="ncmdneqczy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ncmdneqczy table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#oqsjiudyuc thead, #oqsjiudyuc tbody, #oqsjiudyuc tfoot, #oqsjiudyuc tr, #oqsjiudyuc td, #oqsjiudyuc th {
+#ncmdneqczy thead, #ncmdneqczy tbody, #ncmdneqczy tfoot, #ncmdneqczy tr, #ncmdneqczy td, #ncmdneqczy th {
   border-style: none;
 }
 
-#oqsjiudyuc p {
+#ncmdneqczy p {
   margin: 0;
   padding: 0;
 }
 
-#oqsjiudyuc .gt_table {
+#ncmdneqczy .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -525,12 +556,12 @@ ga('send', {
   border-left-color: #D3D3D3;
 }
 
-#oqsjiudyuc .gt_caption {
+#ncmdneqczy .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#oqsjiudyuc .gt_title {
+#ncmdneqczy .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -542,7 +573,7 @@ ga('send', {
   border-bottom-width: 0;
 }
 
-#oqsjiudyuc .gt_subtitle {
+#ncmdneqczy .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -554,7 +585,7 @@ ga('send', {
   border-top-width: 0;
 }
 
-#oqsjiudyuc .gt_heading {
+#ncmdneqczy .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -566,13 +597,13 @@ ga('send', {
   border-right-color: #D3D3D3;
 }
 
-#oqsjiudyuc .gt_bottom_border {
+#ncmdneqczy .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#oqsjiudyuc .gt_col_headings {
+#ncmdneqczy .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -587,7 +618,7 @@ ga('send', {
   border-right-color: #D3D3D3;
 }
 
-#oqsjiudyuc .gt_col_heading {
+#ncmdneqczy .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -607,7 +638,7 @@ ga('send', {
   overflow-x: hidden;
 }
 
-#oqsjiudyuc .gt_column_spanner_outer {
+#ncmdneqczy .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -619,15 +650,15 @@ ga('send', {
   padding-right: 4px;
 }
 
-#oqsjiudyuc .gt_column_spanner_outer:first-child {
+#ncmdneqczy .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#oqsjiudyuc .gt_column_spanner_outer:last-child {
+#ncmdneqczy .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#oqsjiudyuc .gt_column_spanner {
+#ncmdneqczy .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -639,11 +670,11 @@ ga('send', {
   width: 100%;
 }
 
-#oqsjiudyuc .gt_spanner_row {
+#ncmdneqczy .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#oqsjiudyuc .gt_group_heading {
+#ncmdneqczy .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -669,7 +700,7 @@ ga('send', {
   text-align: left;
 }
 
-#oqsjiudyuc .gt_empty_group_heading {
+#ncmdneqczy .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -684,15 +715,15 @@ ga('send', {
   vertical-align: middle;
 }
 
-#oqsjiudyuc .gt_from_md > :first-child {
+#ncmdneqczy .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#oqsjiudyuc .gt_from_md > :last-child {
+#ncmdneqczy .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#oqsjiudyuc .gt_row {
+#ncmdneqczy .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -711,7 +742,7 @@ ga('send', {
   overflow-x: hidden;
 }
 
-#oqsjiudyuc .gt_stub {
+#ncmdneqczy .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -724,7 +755,7 @@ ga('send', {
   padding-right: 5px;
 }
 
-#oqsjiudyuc .gt_stub_row_group {
+#ncmdneqczy .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -738,15 +769,15 @@ ga('send', {
   vertical-align: top;
 }
 
-#oqsjiudyuc .gt_row_group_first td {
+#ncmdneqczy .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#oqsjiudyuc .gt_row_group_first th {
+#ncmdneqczy .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#oqsjiudyuc .gt_summary_row {
+#ncmdneqczy .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -756,16 +787,16 @@ ga('send', {
   padding-right: 5px;
 }
 
-#oqsjiudyuc .gt_first_summary_row {
+#ncmdneqczy .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#oqsjiudyuc .gt_first_summary_row.thick {
+#ncmdneqczy .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#oqsjiudyuc .gt_last_summary_row {
+#ncmdneqczy .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -775,7 +806,7 @@ ga('send', {
   border-bottom-color: #D3D3D3;
 }
 
-#oqsjiudyuc .gt_grand_summary_row {
+#ncmdneqczy .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -785,7 +816,7 @@ ga('send', {
   padding-right: 5px;
 }
 
-#oqsjiudyuc .gt_first_grand_summary_row {
+#ncmdneqczy .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -795,7 +826,7 @@ ga('send', {
   border-top-color: #D3D3D3;
 }
 
-#oqsjiudyuc .gt_last_grand_summary_row_top {
+#ncmdneqczy .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -805,11 +836,11 @@ ga('send', {
   border-bottom-color: #D3D3D3;
 }
 
-#oqsjiudyuc .gt_striped {
+#ncmdneqczy .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#oqsjiudyuc .gt_table_body {
+#ncmdneqczy .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -818,7 +849,7 @@ ga('send', {
   border-bottom-color: #D3D3D3;
 }
 
-#oqsjiudyuc .gt_footnotes {
+#ncmdneqczy .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -832,7 +863,7 @@ ga('send', {
   border-right-color: #D3D3D3;
 }
 
-#oqsjiudyuc .gt_footnote {
+#ncmdneqczy .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -841,7 +872,7 @@ ga('send', {
   padding-right: 5px;
 }
 
-#oqsjiudyuc .gt_sourcenotes {
+#ncmdneqczy .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -855,7 +886,7 @@ ga('send', {
   border-right-color: #D3D3D3;
 }
 
-#oqsjiudyuc .gt_sourcenote {
+#ncmdneqczy .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -863,63 +894,63 @@ ga('send', {
   padding-right: 5px;
 }
 
-#oqsjiudyuc .gt_left {
+#ncmdneqczy .gt_left {
   text-align: left;
 }
 
-#oqsjiudyuc .gt_center {
+#ncmdneqczy .gt_center {
   text-align: center;
 }
 
-#oqsjiudyuc .gt_right {
+#ncmdneqczy .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#oqsjiudyuc .gt_font_normal {
+#ncmdneqczy .gt_font_normal {
   font-weight: normal;
 }
 
-#oqsjiudyuc .gt_font_bold {
+#ncmdneqczy .gt_font_bold {
   font-weight: bold;
 }
 
-#oqsjiudyuc .gt_font_italic {
+#ncmdneqczy .gt_font_italic {
   font-style: italic;
 }
 
-#oqsjiudyuc .gt_super {
+#ncmdneqczy .gt_super {
   font-size: 65%;
 }
 
-#oqsjiudyuc .gt_footnote_marks {
+#ncmdneqczy .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#oqsjiudyuc .gt_asterisk {
+#ncmdneqczy .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#oqsjiudyuc .gt_indent_1 {
+#ncmdneqczy .gt_indent_1 {
   text-indent: 5px;
 }
 
-#oqsjiudyuc .gt_indent_2 {
+#ncmdneqczy .gt_indent_2 {
   text-indent: 10px;
 }
 
-#oqsjiudyuc .gt_indent_3 {
+#ncmdneqczy .gt_indent_3 {
   text-indent: 15px;
 }
 
-#oqsjiudyuc .gt_indent_4 {
+#ncmdneqczy .gt_indent_4 {
   text-indent: 20px;
 }
 
-#oqsjiudyuc .gt_indent_5 {
+#ncmdneqczy .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -966,10 +997,13 @@ ga('send', {
 </div>
 </div>
 </div>
-<section id="기본-색상과-스타일" class="level3" data-number="17.0.1">
-<h3 data-number="17.0.1" class="anchored" data-anchor-id="기본-색상과-스타일"><span class="header-section-number">17.0.1</span> 기본 색상과 스타일</h3>
+<section id="기본-색상과-스타일" class="level3" data-number="17.1.1">
+<h3 data-number="17.1.1" class="anchored" data-anchor-id="기본-색상과-스타일"><span class="header-section-number">17.1.1</span> 기본 색상과 스타일</h3>
+<p>웹 프로그램을 제작할 때 HTML로 콘텐츠를 제작하고 CSS/SCSS 파일로 스타일을 적용하는 것처럼 유지보수성이 뛰어나고 가독성이 좋은 표를 제작하기 위해 저자가 익혀야 되는 필수적인 기본기 중 하나다. <code>penguins_gt</code> 표는 핵심 정보가 잘 요약되어 있지만, 색상이나 다른 외양 관련 설정은 기본설정값만 따르고 있다.</p>
+<p><code>gt</code> 패키지 <code>opt_stylize()</code> 함수는 표 스타일링에 다양한 선택지를 제공한다. 미리 정의된 배경색, 선 색상, 선 스타일 등을 다르게 적용할 수 있어 스타일은 총 36개에 이른다. 표 테두리, 표 요약 부분과 스텁(stub)에 더 어두운 색상을 적용, 수직선 반영여부가 포함된다.</p>
+<p>R 코드 <code>opt_colors</code> 벡터에 총 6가지 색상(파란색, 청록색, 분홍색, 녹색, 붉은색, 회색) 중 5개 색상을 지정하고, <code>draw_color_gt</code> 함수를 이용하여 이 색상들을 <code>penguins_gt</code> 표에 <code>opt_stylize</code> 함수를 호출하여 표 색상을 적용한다.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>opt_colors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"cyan"</span>, <span class="st">"pink"</span>, <span class="st">"green"</span>, <span class="st">"red"</span>, <span class="st">"gray"</span>)</span>
+<div class="sourceCode cell-code" id="cb2" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>opt_colors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"cyan"</span>, <span class="st">"green"</span>, <span class="st">"red"</span>, <span class="st">"gray"</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>draw_color_gt <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">gt_color =</span> <span class="st">"blue"</span>) {</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  penguins_gt <span class="sc">|&gt;</span> </span>
@@ -979,281 +1013,310 @@ ga('send', {
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>gt_colors_list <span class="ot">&lt;-</span> <span class="fu">map</span>(opt_colors, draw_color_gt)</span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(opt_styles)) {</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(opt_colors)) {</span>
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gtsave</span>(gt_colors_list[[i]], <span class="fu">str_glue</span>(<span class="st">"images/gt_theme_{opt_colors[i]}.png"</span>))</span>
 <span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magick)</span>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="themes_gt_files/figure-html/unnamed-chunk-3-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="themes_gt_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="735"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="스타일" class="level3" data-number="17.1.2">
+<h3 data-number="17.1.2" class="anchored" data-anchor-id="스타일"><span class="header-section-number">17.1.2</span> 스타일</h3>
+<p><code>gt</code> 패키지는 <code>opt_stylize()</code> 함수를 통해서 색상뿐만 아니라 스타일도 달리해서 표를 제작할 수 있다. <code>gt</code> 패키지 1 ~ 6까지 번호 총6가지 스타일 선택이 가능하고, 기본값은 1 로 설정되어 있고, 저자가 복잡한 설정 없이 번호를 지정함으로써 표 디자인을 빠르게 변경할 수 있다. 번호로 스타일을 선택하게 되면, 데이터 분석과정에서 다양한 표 스타일을 빠르게 시험하고 가장 적절한 표를 신속히 제작하는데 도움이 된다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>opt_styles <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>opt_colors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"cyan"</span>, <span class="st">"pink"</span>, <span class="st">"green"</span>, <span class="st">"red"</span>, <span class="st">"gray"</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>color_path_filenames <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="at">mode =</span> <span class="st">"character"</span>, <span class="at">length =</span> <span class="fu">length</span>(opt_colors))</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(opt_colors)) {</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  color_path_filenames[i] <span class="ot">&lt;-</span>  <span class="fu">str_glue</span>(<span class="st">"images/gt_theme_{opt_colors[i]}.png"</span>)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>draw_style_gt <span class="ot">&lt;-</span> <span class="cf">function</span>(opt_sytle, <span class="at">gt_color =</span> <span class="st">"blue"</span>) {</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  penguins_gt <span class="sc">|&gt;</span> </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">opt_stylize</span>(<span class="at">style =</span> opt_sytle, <span class="at">color =</span> gt_color)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>}                </span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>gt_styles_list <span class="ot">&lt;-</span> <span class="fu">map</span>(opt_sytles, draw_style_gt)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>gt_color_images_list <span class="ot">&lt;-</span> <span class="fu">map</span>(color_path_filenames, magick<span class="sc">::</span>image_read) <span class="sc">|&gt;</span> </span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map</span>(image_resize, <span class="at">geometry =</span> <span class="st">"200x200"</span>)</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>gt_color_images <span class="ot">&lt;-</span> <span class="fu">image_join</span>(gt_color_images_list)</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="fu">image_append</span>(gt_color_images, <span class="at">stack =</span> <span class="cn">FALSE</span>)</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(opt_styles)) {</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gtsave</span>(gt_styles_list[[i]], <span class="fu">str_glue</span>(<span class="st">"images/gt_theme_style_{opt_styles[i]}.png"</span>))</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="themes_gt_files/figure-html/unnamed-chunk-3-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="themes_gt_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="600"></a></p>
+<p><a href="themes_gt_files/figure-html/unnamed-chunk-5-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="themes_gt_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="734"></a></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="스타일" class="level3" data-number="17.0.2">
-<h3 data-number="17.0.2" class="anchored" data-anchor-id="스타일"><span class="header-section-number">17.0.2</span> 스타일</h3>
+</section>
+<section id="gtextra" class="level2" data-number="17.2">
+<h2 data-number="17.2" class="anchored" data-anchor-id="gtextra"><span class="header-section-number">17.2</span> <code>gtExtra</code></h2>
+<p><code>gtExtras</code> 패키지는 <code>gt</code> 패키지를 보완하여 더 아름다운 표를 생성할 수 있도록 도와주는 목적으로 개발되었다. <code>gt</code> 패키지에서 구현되지 않은 기능을 추가하거나, 반복되는 코드를 줄이기 위한 래퍼(wrapper) 함수로 작성되었다. <code>gt</code> 패키지를 확장한 다양한 기능이 있지만 테마와 관련된 사항을 집중적으로 살펴보자.</p>
+<p><code>ggplot2</code> 패키지를 활용하여 그래프 문법에 맞춰 그래프를 제작한 경험이 있다면, 자주 <code>theme_*()</code> 함수를 사용했을 것이다. 마찬가지로 <code>ggplot2</code> 그래프 테마 <code>theme_minimal()</code>, <code>theme_grey()</code>에 대응되는 테마가 <code>gtExtras</code> 패키지에 <code>gt_theme_538()</code>, <code>gt_theme_espn()</code>, <code>gt_theme_nytimes()</code>, <code>gt_theme_guardian()</code>, <code>gt_theme_dot_matrix()</code>, <code>gt_theme_dark()</code>, <code>gt_theme_excel()</code>, <code>gt_theme_pff()</code> 포함되어 있다. 주목할 점은 언론사와 단체에서 사용되는 스타일이 대거 포함되어 있다는 점이다.</p>
+<p><code>gt_theme_espn()</code> 함수는 <code>gt</code> 패키지로 생성된 표에 ESPN 테마를 적용한다. 이 함수는 <code>gt</code> 테이블 객체(<code>gt_tbl</code> 클래스)를 인자로 받으며, 선택적으로 <code>gt::table_options()</code>에 전달할 추가 인자를 받을 수 있다. 반환 값은 <code>gt_tbl</code> 클래스의 객체이다.</p>
+<p>다음은 다른 테마 함수들에 대한 간략한 설명이다:</p>
+<table class="table">
+<colgroup>
+<col style="width: 56%">
+<col style="width: 43%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>테마명</th>
+<th>테마 설명</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>gt_theme_538()</code></td>
+<td>FiveThirtyEight 스타일 테마 적용</td>
+</tr>
+<tr class="even">
+<td><code>gt_theme_espn()</code></td>
+<td>ESPN 스타일 테마 적용</td>
+</tr>
+<tr class="odd">
+<td><code>gt_theme_nytimes()</code></td>
+<td>New York Times 스타일 테마 적용</td>
+</tr>
+<tr class="even">
+<td><code>gt_theme_guardian()</code></td>
+<td>가디언진(The Guardian) 스타일 테마 적용</td>
+</tr>
+<tr class="odd">
+<td><code>gt_theme_dot_matrix()</code></td>
+<td>도트 매트릭스 스타일 테마 적용</td>
+</tr>
+<tr class="even">
+<td><code>gt_theme_dark()</code></td>
+<td>어두운 배경 테마 적용</td>
+</tr>
+<tr class="odd">
+<td><code>gt_theme_excel()</code></td>
+<td>마이크로소프트 엑셀 스타일 테마 적용</td>
+</tr>
+<tr class="even">
+<td><code>gt_theme_pff()</code></td>
+<td>PFF(Pro Football Focus, 스포츠 분석회사) 스타일 테마 적용</td>
+</tr>
+</tbody>
+</table>
+<p>언론사와 미국 풋볼 리그 스포츠 분석에 특화된 PFF 스타일을 표에 적용해보자.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>opt_sytles <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span></span>
+<div class="sourceCode cell-code" id="cb4" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>gtExtra_themes <span class="ot">&lt;-</span> <span class="fu">c</span>(gt_theme_538, gt_theme_espn, gt_theme_nytimes, gt_theme_guardian, gt_theme_pff)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>draw_style_gt <span class="ot">&lt;-</span> <span class="cf">function</span>(opt_sytle, <span class="at">gt_color =</span> <span class="st">"blue"</span>) {</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  penguins_gt <span class="sc">|&gt;</span> </span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">opt_stylize</span>(<span class="at">style =</span> opt_sytle, <span class="at">color =</span> gt_color)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>}                </span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>gt_styles_list <span class="ot">&lt;-</span> <span class="fu">map</span>(opt_sytles, draw_style_gt)</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(opt_styles)) {</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gtsave</span>(gt_styles_list[[i]], <span class="fu">str_glue</span>(<span class="st">"images/gt_theme_style_{opt_sytles[i]}.png"</span>))</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>gtExtra_themes_names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"gt_theme_538"</span>, <span class="st">"gt_theme_espn"</span>, <span class="st">"gt_theme_nytimes"</span>,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"gt_theme_guardian"</span>,<span class="st">"gt_theme_pff"</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>draw_gtExtras_theme <span class="ot">&lt;-</span> <span class="cf">function</span>(gt_theme, gtExtra_themes_names) {</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  penguins_gt <span class="sc">|&gt;</span> </span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">gt_theme</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_header</span>(</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="fu">md</span>(<span class="st">"남극 펭귄 **서식섬과 종** 빈도표"</span>),</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">subtitle =</span> gtExtra_themes_names)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="co"># draw_gtExtras_theme(gtExtra_themes[5][[1]])</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="do">## gtExtras 테마적용 표 -------------------</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>gtExtra_styles_list <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="at">mode =</span><span class="st">"list"</span>, <span class="at">length =</span> <span class="fu">length</span>(gtExtra_themes))</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(gtExtra_themes)) {</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>  gtExtra_styles_list[[i]] <span class="ot">&lt;-</span>  <span class="fu">draw_gtExtras_theme</span>(gtExtra_themes[i][[<span class="dv">1</span>]], gtExtra_themes_names[i])</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="do">## 테마 표 png 파일 저장 -------------------</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>gtExtras_path_filenames <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="at">mode =</span> <span class="st">"character"</span>, <span class="at">length =</span> <span class="fu">length</span>(gtExtra_themes))</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(gtExtra_themes)) {</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>  gtExtras_path_filenames[i] <span class="ot">&lt;-</span>  <span class="fu">str_glue</span>(<span class="st">"images/gtExtras_theme_{gtExtra_themes_names[i]}.png"</span>)</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(gtExtra_themes)) {</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gtsave</span>(gtExtra_styles_list[[i]],</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>         <span class="fu">str_glue</span>(<span class="st">"images/gtExtras_theme_{gtExtra_themes_names[i]}.png"</span>))</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>opt_sytles <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>style_path_filenames <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="at">mode =</span> <span class="st">"character"</span>, <span class="at">length =</span> <span class="fu">length</span>(opt_sytles))</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(opt_sytles)) {</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  style_path_filenames[i] <span class="ot">&lt;-</span>  <span class="fu">str_glue</span>(<span class="st">"images/gt_theme_style_{opt_sytles[i]}.png"</span>)</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>gt_style_images_list <span class="ot">&lt;-</span> <span class="fu">map</span>(style_path_filenames, magick<span class="sc">::</span>image_read) <span class="sc">|&gt;</span> </span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map</span>(image_resize, <span class="at">geometry =</span> <span class="st">"200x200"</span>) </span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>gt_style_images <span class="ot">&lt;-</span> <span class="fu">image_join</span>(gt_style_images_list)</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="fu">image_append</span>(gt_style_images, <span class="at">stack =</span> <span class="cn">FALSE</span>)</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="themes_gt_files/figure-html/unnamed-chunk-5-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="themes_gt_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="600"></a></p>
+<p><a href="themes_gt_files/figure-html/unnamed-chunk-7-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="themes_gt_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="748"></a></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="gtextra" class="level3" data-number="17.0.3">
-<h3 data-number="17.0.3" class="anchored" data-anchor-id="gtextra"><span class="header-section-number">17.0.3</span> <code>gtExtra</code></h3>
+<section id="사용자-정의-테마" class="level2" data-number="17.3">
+<h2 data-number="17.3" class="anchored" data-anchor-id="사용자-정의-테마"><span class="header-section-number">17.3</span> 사용자 정의 테마</h2>
+<p>사용자 정의 테마가 필요한 이유는 다양하지만, 보고서나 PPT 발표에서 동일한 스타일과 구성을 가진 표를 사용하면 데이터를 더 쉽고 빠르게 이해할 수 있고 동일한 일관성은 수작없이 반영할 수 있고 독자에게는 전문성을 각인시킬 수 있는 점이 크다.</p>
+<p><code>gtExtras</code>와 같은 패키지에서 제공되는 테마는 코드 한 줄로 빠르고 깔끔한 표를 만들 수 있어 시간을 절약할 수 있다는 큰 장점이 있지만, 특정 요구사항이나 브랜딩 지침을 완전히 맞춤화하기 쉽지 않고, 복잡한 데이터 구조나 특별한 시각화 요구사항을 충족시키는 데에도 한계가 있다.</p>
+<p>사용자 정의 테마를 개발함으로써 <code>gtExtras</code>에서 제공하는 테마처럼 표 제작을 빠르고 편하게 지원할 수 있으면서도, 저자가 필요로 하는 브랜드나 스타일을 반영할 수 있다. 이렇게 하면 표가 더 전문적이면서도 개성있게 작성할 수 있다.</p>
+<section id="gtextras-확장" class="level3" data-number="17.3.1">
+<h3 data-number="17.3.1" class="anchored" data-anchor-id="gtextras-확장"><span class="header-section-number">17.3.1</span> <code>gtExtras</code> 확장</h3>
+<p><code>penguins_gt</code>라는 기존 <code>gt</code> 표 객체에 <code>gt_theme_538()</code> 테마를 선택하고 글꼴, 색상, 정렬 등 세부적인 작업을 진행하고 그 결과를 <code>.png</code> 파일로 저장한다. <code>gt</code> 패키지는 <code>tidyverse</code> 생태계 일원으로 파이프 연산자를 통해 세부적인 기능을 긴밀히 조합하여 단순한 코드로 제작되지만 최종 결과물로 상당히 높은 난이도를 갖는 표를 제작할 수 있다.</p>
+<ol type="1">
+<li><p><strong>gt_theme_538()</strong>: FiveThirtyEight 스타일 테마 적용</p></li>
+<li><p><strong>tab_options()</strong>: 테이블의 글꼴, 제목 크기, 배경색 등 다양한 표 선택옵션 설정</p></li>
+<li><p><strong>cols_align()</strong>: 숫자형 열은 가운데 정렬하고, 문자형 열은 자동 정렬</p></li>
+<li><p><strong>tab_style()</strong>: “MaruBuri” 글꼴과 굵은 글씨체를 제목, 본문, 열에 적용</p></li>
+<li><p><strong>gtsave()</strong>: 최종적으로 작업한 표를 PNG 이미지로 저장</p></li>
+</ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>gtExtra_themes <span class="ot">&lt;-</span> <span class="fu">c</span>(gt_theme_538, gt_theme_espn, gt_theme_nytimes, gt_theme_guardian,</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>                    gt_theme_dot_matrix, gt_theme_dark, gt_theme_excel, gt_theme_pff)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>gtExtra_themes_names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"gt_theme_538"</span>, <span class="st">"gt_theme_espn"</span>, <span class="st">"gt_theme_nytimes"</span>,</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"gt_theme_guardian"</span>, <span class="st">"gt_theme_dot_matrix"</span>, <span class="st">"gt_theme_dark"</span>,</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"gt_theme_excel"</span>, <span class="st">"gt_theme_pff"</span>)</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>draw_gtExtras_theme <span class="ot">&lt;-</span> <span class="cf">function</span>(gt_theme) {</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  penguins_gt <span class="sc">|&gt;</span> </span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">gt_theme</span>()</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co"># draw_gtExtras_theme(gtExtra_themes[5][[1]])</span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="do">## gtExtras 테마적용 표 -------------------</span></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>gtExtra_styles_list <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="at">mode =</span><span class="st">"list"</span>, <span class="at">length =</span> <span class="fu">length</span>(gtExtra_themes))</span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(gtExtra_themes)) {</span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>  gtExtra_styles_list[[i]] <span class="ot">&lt;-</span>  <span class="fu">draw_gtExtras_theme</span>(gtExtra_themes[i][[<span class="dv">1</span>]])</span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="do">## 테마 표 png 파일 저장 -------------------</span></span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>gtExtras_path_filenames <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="at">mode =</span> <span class="st">"character"</span>, <span class="at">length =</span> <span class="fu">length</span>(gtExtra_themes))</span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(gtExtra_themes)) {</span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>  gtExtras_path_filenames[i] <span class="ot">&lt;-</span>  <span class="fu">str_glue</span>(<span class="st">"images/gtExtras_theme_{gtExtra_themes_names[i]}.png"</span>)</span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(gtExtra_themes)) {</span>
-<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gtsave</span>(gtExtra_styles_list[[i]], <span class="fu">str_glue</span>(<span class="st">"images/gtExtras_theme_{gtExtra_themes_names[i]}.png"</span>))</span>
-<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>gtExtra_themes_names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"gt_theme_538"</span>, <span class="st">"gt_theme_espn"</span>, <span class="st">"gt_theme_nytimes"</span>,</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"gt_theme_guardian"</span>, <span class="st">"gt_theme_dot_matrix"</span>, <span class="st">"gt_theme_dark"</span>,</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"gt_theme_excel"</span>, <span class="st">"gt_theme_pff"</span>)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>gtExtras_path_filenames <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="at">mode =</span> <span class="st">"character"</span>, <span class="at">length =</span> <span class="fu">length</span>(gtExtra_themes_names))</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(gtExtra_themes_names)) {</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  gtExtras_path_filenames[i] <span class="ot">&lt;-</span>  <span class="fu">str_glue</span>(<span class="st">"images/gtExtras_theme_{gtExtra_themes_names[i]}.png"</span>)</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>gtExtra_style_images_list <span class="ot">&lt;-</span> <span class="fu">map</span>(gtExtras_path_filenames, magick<span class="sc">::</span>image_read) <span class="sc">|&gt;</span> </span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map</span>(image_resize, <span class="at">geometry =</span> <span class="st">"200x200"</span>) </span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>gtExtra_style_images <span class="ot">&lt;-</span> <span class="fu">image_join</span>(gtExtra_style_images_list)</span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="fu">image_append</span>(gtExtra_style_images, <span class="at">stack =</span> <span class="cn">FALSE</span>)</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="themes_gt_files/figure-html/unnamed-chunk-7-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="themes_gt_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="800"></a></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="사용자-테마" class="level2" data-number="17.1">
-<h2 data-number="17.1" class="anchored" data-anchor-id="사용자-테마"><span class="header-section-number">17.1</span> 사용자 테마</h2>
-<p>기본 표 테마에 글꼴, 텍스트 크기, 색상을 넣어 전문적으로 표를 작성한다.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>penguins_theme_gt <span class="ot">&lt;-</span> penguins_gt <span class="sc">|&gt;</span> </span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt_theme_538</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># column_labels.background.color = '#1E61B0', # R logo 파란색</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.font.names =</span><span class="st">"NanumSquare"</span>,    </span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">heading.title.font.size =</span> <span class="fu">px</span>(<span class="dv">26</span>),</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">heading.subtitle.font.size =</span> <span class="fu">px</span>(<span class="dv">16</span>),    </span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">heading.background.color =</span> <span class="st">"transparent"</span>, </span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">column_labels.font.weight =</span> <span class="st">'bold'</span>,</span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">table_body.hlines.width =</span> <span class="fu">px</span>(<span class="dv">0</span>),</span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">data_row.padding =</span> <span class="fu">px</span>(<span class="dv">6</span>),</span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">heading.align =</span> <span class="st">'center'</span>,</span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">stub.background.color =</span> <span class="st">"#ffffff"</span>,</span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">stub.font.weight =</span> <span class="st">"bold"</span>,</span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">source_notes.font.size =</span> <span class="fu">px</span>(<span class="dv">10</span>),</span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">row.striping.include_table_body =</span> <span class="cn">TRUE</span></span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_align</span>( <span class="at">align =</span> <span class="st">"center"</span>, <span class="at">columns =</span> <span class="fu">where</span>(is.numeric)) <span class="sc">|&gt;</span> </span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_align</span>( <span class="at">align =</span> <span class="st">"auto"</span>, <span class="at">columns =</span> <span class="fu">where</span>(is.character)) <span class="sc">|&gt;</span> </span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>  <span class="do">## 글꼴 달리 적용</span></span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
-<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_text</span>(</span>
-<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">font =</span> <span class="st">"MaruBuri"</span>,      </span>
-<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">weight =</span> <span class="st">'bold'</span> </span>
-<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_title</span>(<span class="at">groups =</span> <span class="st">'subtitle'</span>)</span>
-<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
-<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_text</span>(</span>
-<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>      <span class="at">font =</span> <span class="st">"MaruBuri"</span>,      </span>
-<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>      <span class="at">weight =</span> <span class="st">'bold'</span> </span>
-<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_body</span>()</span>
-<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
-<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_text</span>(</span>
-<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a>      <span class="at">font =</span> <span class="st">"MaruBuri"</span>,      </span>
-<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a>      <span class="at">weight =</span> <span class="st">'bold'</span> </span>
-<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_column_labels</span>()</span>
-<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
-<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_text</span>(</span>
-<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a>      <span class="at">font =</span> <span class="st">"MaruBuri"</span>,      </span>
-<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_source_notes</span>()</span>
-<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a>penguins_theme_gt <span class="sc">|&gt;</span> </span>
-<span id="cb8-50"><a href="#cb8-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gtsave</span>(<span class="at">filename =</span> <span class="st">"images/penguins_theme_gt.png"</span>)</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>penguins_theme_gt <span class="ot">&lt;-</span> penguins_gt <span class="sc">|&gt;</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt_theme_538</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># column_labels.background.color = '#1E61B0', # R logo 파란색</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.font.names =</span><span class="st">"NanumSquare"</span>,    </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">heading.title.font.size =</span> <span class="fu">px</span>(<span class="dv">26</span>),</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">heading.subtitle.font.size =</span> <span class="fu">px</span>(<span class="dv">16</span>),    </span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">heading.background.color =</span> <span class="st">"transparent"</span>, </span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">column_labels.font.weight =</span> <span class="st">'bold'</span>,</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">table_body.hlines.width =</span> <span class="fu">px</span>(<span class="dv">0</span>),</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">data_row.padding =</span> <span class="fu">px</span>(<span class="dv">6</span>),</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">heading.align =</span> <span class="st">'center'</span>,</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">stub.background.color =</span> <span class="st">"#ffffff"</span>,</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">stub.font.weight =</span> <span class="st">"bold"</span>,</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">source_notes.font.size =</span> <span class="fu">px</span>(<span class="dv">10</span>),</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">row.striping.include_table_body =</span> <span class="cn">TRUE</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_align</span>( <span class="at">align =</span> <span class="st">"center"</span>, <span class="at">columns =</span> <span class="fu">where</span>(is.numeric)) <span class="sc">|&gt;</span> </span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_align</span>( <span class="at">align =</span> <span class="st">"auto"</span>, <span class="at">columns =</span> <span class="fu">where</span>(is.character)) <span class="sc">|&gt;</span> </span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>  <span class="do">## 글꼴 달리 적용</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_text</span>(</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">font =</span> <span class="st">"MaruBuri"</span>,      </span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">weight =</span> <span class="st">'bold'</span> </span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_title</span>(<span class="at">groups =</span> <span class="st">'subtitle'</span>)</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_text</span>(</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>      <span class="at">font =</span> <span class="st">"MaruBuri"</span>,      </span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>      <span class="at">weight =</span> <span class="st">'bold'</span> </span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_body</span>()</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_text</span>(</span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>      <span class="at">font =</span> <span class="st">"MaruBuri"</span>,      </span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>      <span class="at">weight =</span> <span class="st">'bold'</span> </span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_column_labels</span>()</span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_text</span>(</span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>      <span class="at">font =</span> <span class="st">"MaruBuri"</span>,      </span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_source_notes</span>()</span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a>penguins_theme_gt <span class="sc">|&gt;</span> </span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gtsave</span>(<span class="at">filename =</span> <span class="st">"images/penguins_theme_gt.png"</span>)</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="images/penguins_theme_gt.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="gt 사용자 정의 테마 적용 표"><img src="images/penguins_theme_gt.png" class="img-fluid figure-img"></a></p>
+<p><a href="images/penguins_theme_gt.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="gt 사용자 정의 테마 적용 표"><img src="images/penguins_theme_gt.png" class="img-fluid figure-img" width="446"></a></p>
 <figcaption class="figure-caption"><code>gt</code> 사용자 정의 테마 적용 표</figcaption>
 </figure>
 </div>
+</section>
+<section id="gt_theme_hangul-테마" class="level3" data-number="17.3.2">
+<h3 data-number="17.3.2" class="anchored" data-anchor-id="gt_theme_hangul-테마"><span class="header-section-number">17.3.2</span> <code>gt_theme_hangul()</code> 테마</h3>
+<p><code>gt_theme_538()</code> 함수처럼 사용자 정의 함수를 <code>gt_theme_hangul()</code> 테마명을 지정해 두면 모든 표에 통일성을 유지한 테마를 간편하게 적용시킬 수 있다.</p>
+<p><code>gt_tbl</code> 데이터프레임을 입력받아 <code>gt_theme_538()</code>을 기본표 테마로 지정하고, <code>tab_options()</code> 함수를 통해 글꼴, 제목 크기, 배경색 등을 설정하고, 나눔스퀘어(NanumSquare), 마루부리(MaruBuri) 글꼴을 사용하여 한글 표에 더 적합한 스타일을 적용하고, <code>cols_align()</code>과 <code>tab_style()</code> 함수를 사용해서 숫자형 열(칼럼)은 가운데 정렬시키고, 문자형 열은 자동 정렬토록 하고, 특정 셀에 굵은 글씨체와 각기 다른 글꼴을 적용하여 좀더 독특하고 전문적인 느낌을 심는다. <code>tab_style()</code> 기능을 이용해 표 홀수 번째 행에만 회색 배경(‘grey90’)을 적용하여 가독성을 높게 한다. 마지막으로 사용자 정의 테마 함수도 예를 들어 기억하기 좋게 <code>gt_theme_hangul()</code>으로 작명하여 문서에서 표가 필요한 부분에 별도 검색작업 없이 적용시킬 수 있도록 한다.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>gt_theme_hangul <span class="ot">&lt;-</span> <span class="cf">function</span>(gt_tbl) {</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Grab number of rows of data from gt object</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  n_rows <span class="ot">&lt;-</span> <span class="fu">nrow</span>(gt_tbl<span class="sc">$</span><span class="st">`</span><span class="at">_data</span><span class="st">`</span>)</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  gt_tbl <span class="sc">|&gt;</span> </span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">gt_theme_538</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_options</span>(</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>      <span class="co"># column_labels.background.color = '#1E61B0', # R logo 파란색</span></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">table.font.names =</span><span class="st">"NanumSquare"</span>,    </span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">heading.title.font.size =</span> <span class="fu">px</span>(<span class="dv">26</span>),</span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">heading.subtitle.font.size =</span> <span class="fu">px</span>(<span class="dv">16</span>),    </span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">heading.background.color =</span> <span class="st">"transparent"</span>, </span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">column_labels.font.weight =</span> <span class="st">'bold'</span>,</span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">table_body.hlines.width =</span> <span class="fu">px</span>(<span class="dv">0</span>),</span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">data_row.padding =</span> <span class="fu">px</span>(<span class="dv">6</span>),</span>
-<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">heading.align =</span> <span class="st">'center'</span>,</span>
-<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">stub.background.color =</span> <span class="st">"#ffffff"</span>,</span>
-<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>      <span class="at">stub.font.weight =</span> <span class="st">"bold"</span>,</span>
-<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">source_notes.font.size =</span> <span class="fu">px</span>(<span class="dv">10</span>),</span>
-<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">row.striping.include_table_body =</span> <span class="cn">FALSE</span></span>
-<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span> </span>
-<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cols_align</span>( <span class="at">align =</span> <span class="st">"center"</span>, <span class="at">columns =</span> <span class="fu">where</span>(is.numeric)) <span class="sc">|&gt;</span> </span>
-<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cols_align</span>( <span class="at">align =</span> <span class="st">"auto"</span>, <span class="at">columns =</span> <span class="fu">where</span>(is.character)) <span class="sc">|&gt;</span> </span>
-<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>    <span class="do">## 글꼴 달리 적용</span></span>
-<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_style</span>(</span>
-<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>      <span class="at">style =</span> <span class="fu">cell_text</span>(</span>
-<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>        <span class="at">font =</span> <span class="st">"MaruBuri"</span>,      </span>
-<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>        <span class="at">weight =</span> <span class="st">'bold'</span> </span>
-<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>      ),</span>
-<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>      <span class="at">locations =</span> <span class="fu">cells_title</span>(<span class="at">groups =</span> <span class="st">'subtitle'</span>)</span>
-<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span> </span>
-<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_style</span>(</span>
-<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>      <span class="at">style =</span> <span class="fu">cell_text</span>(</span>
-<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>        <span class="at">font =</span> <span class="st">"MaruBuri"</span>,      </span>
-<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a>        <span class="at">weight =</span> <span class="st">'bold'</span> </span>
-<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>      ),</span>
-<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>      <span class="at">locations =</span> <span class="fu">cells_body</span>()</span>
-<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span> </span>
-<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_style</span>(</span>
-<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a>      <span class="at">style =</span> <span class="fu">cell_text</span>(</span>
-<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a>        <span class="at">font =</span> <span class="st">"MaruBuri"</span>,      </span>
-<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a>        <span class="at">weight =</span> <span class="st">'bold'</span> </span>
-<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a>      ),</span>
-<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a>      <span class="at">locations =</span> <span class="fu">cells_column_labels</span>()</span>
-<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span> </span>
-<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_style</span>(</span>
-<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a>      <span class="at">style =</span> <span class="fu">cell_text</span>(</span>
-<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a>        <span class="at">font =</span> <span class="st">"MaruBuri"</span>,      </span>
-<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a>      ),</span>
-<span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a>      <span class="at">locations =</span> <span class="fu">cells_source_notes</span>()</span>
-<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span> </span>
-<span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_style</span>(</span>
-<span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a>      <span class="at">style =</span> <span class="fu">cell_fill</span>(<span class="at">color =</span> <span class="st">'grey90'</span>),</span>
-<span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a>      <span class="at">locations =</span> <span class="fu">cells_body</span>(<span class="at">rows =</span> <span class="fu">seq</span>(<span class="dv">1</span>, n_rows, <span class="dv">2</span>))</span>
-<span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a>    )    </span>
-<span id="cb9-57"><a href="#cb9-57" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a>penguins_gt <span class="sc">|&gt;</span> </span>
-<span id="cb9-60"><a href="#cb9-60" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt_theme_hangul</span>()</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>gt_theme_hangul <span class="ot">&lt;-</span> <span class="cf">function</span>(gt_tbl) {</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Grab number of rows of data from gt object</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  n_rows <span class="ot">&lt;-</span> <span class="fu">nrow</span>(gt_tbl<span class="sc">$</span><span class="st">`</span><span class="at">_data</span><span class="st">`</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  gt_tbl <span class="sc">|&gt;</span> </span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">gt_theme_538</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_options</span>(</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>      <span class="co"># column_labels.background.color = '#1E61B0', # R logo 파란색</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">table.font.names =</span><span class="st">"NanumSquare"</span>,    </span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">heading.title.font.size =</span> <span class="fu">px</span>(<span class="dv">26</span>),</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">heading.subtitle.font.size =</span> <span class="fu">px</span>(<span class="dv">16</span>),    </span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">heading.background.color =</span> <span class="st">"transparent"</span>, </span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">column_labels.font.weight =</span> <span class="st">'bold'</span>,</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">table_body.hlines.width =</span> <span class="fu">px</span>(<span class="dv">0</span>),</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">data_row.padding =</span> <span class="fu">px</span>(<span class="dv">6</span>),</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">heading.align =</span> <span class="st">'center'</span>,</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">stub.background.color =</span> <span class="st">"#ffffff"</span>,</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>      <span class="at">stub.font.weight =</span> <span class="st">"bold"</span>,</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">source_notes.font.size =</span> <span class="fu">px</span>(<span class="dv">10</span>),</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">row.striping.include_table_body =</span> <span class="cn">FALSE</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span> </span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cols_align</span>( <span class="at">align =</span> <span class="st">"center"</span>, <span class="at">columns =</span> <span class="fu">where</span>(is.numeric)) <span class="sc">|&gt;</span> </span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cols_align</span>( <span class="at">align =</span> <span class="st">"auto"</span>, <span class="at">columns =</span> <span class="fu">where</span>(is.character)) <span class="sc">|&gt;</span> </span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>    <span class="do">## 글꼴 달리 적용</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_style</span>(</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>      <span class="at">style =</span> <span class="fu">cell_text</span>(</span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>        <span class="at">font =</span> <span class="st">"MaruBuri"</span>,      </span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>        <span class="at">weight =</span> <span class="st">'bold'</span> </span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>      <span class="at">locations =</span> <span class="fu">cells_title</span>(<span class="at">groups =</span> <span class="st">'subtitle'</span>)</span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span> </span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_style</span>(</span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>      <span class="at">style =</span> <span class="fu">cell_text</span>(</span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>        <span class="at">font =</span> <span class="st">"MaruBuri"</span>,      </span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>        <span class="at">weight =</span> <span class="st">'bold'</span> </span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a>      <span class="at">locations =</span> <span class="fu">cells_body</span>()</span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span> </span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_style</span>(</span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a>      <span class="at">style =</span> <span class="fu">cell_text</span>(</span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a>        <span class="at">font =</span> <span class="st">"MaruBuri"</span>,      </span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>        <span class="at">weight =</span> <span class="st">'bold'</span> </span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a>      <span class="at">locations =</span> <span class="fu">cells_column_labels</span>()</span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span> </span>
+<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_style</span>(</span>
+<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a>      <span class="at">style =</span> <span class="fu">cell_text</span>(</span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a>        <span class="at">font =</span> <span class="st">"MaruBuri"</span>,      </span>
+<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a>      <span class="at">locations =</span> <span class="fu">cells_source_notes</span>()</span>
+<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span> </span>
+<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_style</span>(</span>
+<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a>      <span class="at">style =</span> <span class="fu">cell_fill</span>(<span class="at">color =</span> <span class="st">'grey90'</span>),</span>
+<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a>      <span class="at">locations =</span> <span class="fu">cells_body</span>(<span class="at">rows =</span> <span class="fu">seq</span>(<span class="dv">1</span>, n_rows, <span class="dv">2</span>))</span>
+<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a>    )    </span>
+<span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-59"><a href="#cb6-59" aria-hidden="true" tabindex="-1"></a>penguins_gt <span class="sc">|&gt;</span> </span>
+<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt_theme_hangul</span>()</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="vmfflxhgmd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="wfibziswro" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-#vmfflxhgmd table {
+@import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cairo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+#wfibziswro table {
   font-family: NanumSquare;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#vmfflxhgmd thead, #vmfflxhgmd tbody, #vmfflxhgmd tfoot, #vmfflxhgmd tr, #vmfflxhgmd td, #vmfflxhgmd th {
+#wfibziswro thead, #wfibziswro tbody, #wfibziswro tfoot, #wfibziswro tr, #wfibziswro td, #wfibziswro th {
   border-style: none;
 }
 
-#vmfflxhgmd p {
+#wfibziswro p {
   margin: 0;
   padding: 0;
 }
 
-#vmfflxhgmd .gt_table {
+#wfibziswro .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1261,7 +1324,7 @@ ga('send', {
   margin-right: auto;
   color: #333333;
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 400;
   font-style: normal;
   background-color: #FFFFFF;
   width: auto;
@@ -1279,12 +1342,12 @@ ga('send', {
   border-left-color: #D3D3D3;
 }
 
-#vmfflxhgmd .gt_caption {
+#wfibziswro .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#vmfflxhgmd .gt_title {
+#wfibziswro .gt_title {
   color: #333333;
   font-size: 26px;
   font-weight: initial;
@@ -1296,7 +1359,7 @@ ga('send', {
   border-bottom-width: 0;
 }
 
-#vmfflxhgmd .gt_subtitle {
+#wfibziswro .gt_subtitle {
   color: #333333;
   font-size: 16px;
   font-weight: initial;
@@ -1308,7 +1371,7 @@ ga('send', {
   border-top-width: 0;
 }
 
-#vmfflxhgmd .gt_heading {
+#wfibziswro .gt_heading {
   background-color: rgba(255, 255, 255, 0);
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1320,13 +1383,13 @@ ga('send', {
   border-right-color: #D3D3D3;
 }
 
-#vmfflxhgmd .gt_bottom_border {
+#wfibziswro .gt_bottom_border {
   border-bottom-style: none;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#vmfflxhgmd .gt_col_headings {
+#wfibziswro .gt_col_headings {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1341,12 +1404,12 @@ ga('send', {
   border-right-color: #D3D3D3;
 }
 
-#vmfflxhgmd .gt_col_heading {
+#wfibziswro .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
-  font-size: 80%;
+  font-size: 100%;
   font-weight: bold;
-  text-transform: uppercase;
+  text-transform: inherit;
   border-left-style: none;
   border-left-width: 1px;
   border-left-color: #D3D3D3;
@@ -1361,27 +1424,27 @@ ga('send', {
   overflow-x: hidden;
 }
 
-#vmfflxhgmd .gt_column_spanner_outer {
+#wfibziswro .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
-  font-size: 80%;
+  font-size: 100%;
   font-weight: bold;
-  text-transform: uppercase;
+  text-transform: inherit;
   padding-top: 0;
   padding-bottom: 0;
   padding-left: 4px;
   padding-right: 4px;
 }
 
-#vmfflxhgmd .gt_column_spanner_outer:first-child {
+#wfibziswro .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#vmfflxhgmd .gt_column_spanner_outer:last-child {
+#wfibziswro .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#vmfflxhgmd .gt_column_spanner {
+#wfibziswro .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #000000;
@@ -1393,20 +1456,20 @@ ga('send', {
   width: 100%;
 }
 
-#vmfflxhgmd .gt_spanner_row {
+#wfibziswro .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#vmfflxhgmd .gt_group_heading {
+#wfibziswro .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
   padding-right: 5px;
   color: #333333;
   background-color: #FFFFFF;
-  font-size: 80%;
-  font-weight: bolder;
-  text-transform: uppercase;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #000000;
@@ -1423,12 +1486,12 @@ ga('send', {
   text-align: left;
 }
 
-#vmfflxhgmd .gt_empty_group_heading {
+#wfibziswro .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
-  font-size: 80%;
-  font-weight: bolder;
+  font-size: 100%;
+  font-weight: initial;
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #000000;
@@ -1438,15 +1501,15 @@ ga('send', {
   vertical-align: middle;
 }
 
-#vmfflxhgmd .gt_from_md > :first-child {
+#wfibziswro .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#vmfflxhgmd .gt_from_md > :last-child {
+#wfibziswro .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#vmfflxhgmd .gt_row {
+#wfibziswro .gt_row {
   padding-top: 6px;
   padding-bottom: 6px;
   padding-left: 5px;
@@ -1465,12 +1528,12 @@ ga('send', {
   overflow-x: hidden;
 }
 
-#vmfflxhgmd .gt_stub {
+#wfibziswro .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
-  font-size: 80%;
+  font-size: 100%;
   font-weight: bold;
-  text-transform: uppercase;
+  text-transform: inherit;
   border-right-style: solid;
   border-right-width: 0px;
   border-right-color: #FFFFFF;
@@ -1478,7 +1541,7 @@ ga('send', {
   padding-right: 5px;
 }
 
-#vmfflxhgmd .gt_stub_row_group {
+#wfibziswro .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1492,15 +1555,15 @@ ga('send', {
   vertical-align: top;
 }
 
-#vmfflxhgmd .gt_row_group_first td {
+#wfibziswro .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#vmfflxhgmd .gt_row_group_first th {
+#wfibziswro .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#vmfflxhgmd .gt_summary_row {
+#wfibziswro .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1510,16 +1573,16 @@ ga('send', {
   padding-right: 5px;
 }
 
-#vmfflxhgmd .gt_first_summary_row {
+#wfibziswro .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#vmfflxhgmd .gt_first_summary_row.thick {
+#wfibziswro .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#vmfflxhgmd .gt_last_summary_row {
+#wfibziswro .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1529,7 +1592,7 @@ ga('send', {
   border-bottom-color: #D3D3D3;
 }
 
-#vmfflxhgmd .gt_grand_summary_row {
+#wfibziswro .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1539,7 +1602,7 @@ ga('send', {
   padding-right: 5px;
 }
 
-#vmfflxhgmd .gt_first_grand_summary_row {
+#wfibziswro .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1549,7 +1612,7 @@ ga('send', {
   border-top-color: #D3D3D3;
 }
 
-#vmfflxhgmd .gt_last_grand_summary_row_top {
+#wfibziswro .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1559,11 +1622,11 @@ ga('send', {
   border-bottom-color: #D3D3D3;
 }
 
-#vmfflxhgmd .gt_striped {
+#wfibziswro .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#vmfflxhgmd .gt_table_body {
+#wfibziswro .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1572,7 +1635,7 @@ ga('send', {
   border-bottom-color: #D3D3D3;
 }
 
-#vmfflxhgmd .gt_footnotes {
+#wfibziswro .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1586,7 +1649,7 @@ ga('send', {
   border-right-color: #D3D3D3;
 }
 
-#vmfflxhgmd .gt_footnote {
+#wfibziswro .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1595,7 +1658,7 @@ ga('send', {
   padding-right: 5px;
 }
 
-#vmfflxhgmd .gt_sourcenotes {
+#wfibziswro .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1609,7 +1672,7 @@ ga('send', {
   border-right-color: #D3D3D3;
 }
 
-#vmfflxhgmd .gt_sourcenote {
+#wfibziswro .gt_sourcenote {
   font-size: 10px;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1617,63 +1680,63 @@ ga('send', {
   padding-right: 5px;
 }
 
-#vmfflxhgmd .gt_left {
+#wfibziswro .gt_left {
   text-align: left;
 }
 
-#vmfflxhgmd .gt_center {
+#wfibziswro .gt_center {
   text-align: center;
 }
 
-#vmfflxhgmd .gt_right {
+#wfibziswro .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#vmfflxhgmd .gt_font_normal {
+#wfibziswro .gt_font_normal {
   font-weight: normal;
 }
 
-#vmfflxhgmd .gt_font_bold {
+#wfibziswro .gt_font_bold {
   font-weight: bold;
 }
 
-#vmfflxhgmd .gt_font_italic {
+#wfibziswro .gt_font_italic {
   font-style: italic;
 }
 
-#vmfflxhgmd .gt_super {
+#wfibziswro .gt_super {
   font-size: 65%;
 }
 
-#vmfflxhgmd .gt_footnote_marks {
+#wfibziswro .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#vmfflxhgmd .gt_asterisk {
+#wfibziswro .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#vmfflxhgmd .gt_indent_1 {
+#wfibziswro .gt_indent_1 {
   text-indent: 5px;
 }
 
-#vmfflxhgmd .gt_indent_2 {
+#wfibziswro .gt_indent_2 {
   text-indent: 10px;
 }
 
-#vmfflxhgmd .gt_indent_3 {
+#wfibziswro .gt_indent_3 {
   text-indent: 15px;
 }
 
-#vmfflxhgmd .gt_indent_4 {
+#wfibziswro .gt_indent_4 {
   text-indent: 20px;
 }
 
-#vmfflxhgmd .gt_indent_5 {
+#wfibziswro .gt_indent_5 {
   text-indent: 25px;
 }
 
@@ -1684,16 +1747,16 @@ tbody tr:last-child {
 <table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
   <thead>
     <tr class="gt_heading">
-      <td colspan="4" class="gt_heading gt_title gt_font_normal" style="">남극 펭귄 <strong>서식섬과 종</strong> 빈도표</td>
+      <td colspan="4" class="gt_heading gt_title gt_font_normal" style="font-family: Chivo; font-weight: 700;">남극 펭귄 <strong>서식섬과 종</strong> 빈도표</td>
     </tr>
     <tr class="gt_heading">
       <td colspan="4" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style="font-family: MaruBuri; font-weight: bold;"><code>palmerpenguins</code> 데이터 패키지</td>
     </tr>
     <tr class="gt_col_headings">
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id=""></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: MaruBuri; font-weight: bold;" scope="col" id="Biscoe">Biscoe</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: MaruBuri; font-weight: bold;" scope="col" id="Dream">Dream</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: MaruBuri; font-weight: bold;" scope="col" id="Torgersen">Torgersen</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: MaruBuri; font-size: 14px; vertical-align: bottom; font-weight: bold; text-transform: uppercase;" scope="col" id="Biscoe">Biscoe</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: MaruBuri; font-size: 14px; vertical-align: bottom; font-weight: bold; text-transform: uppercase;" scope="col" id="Dream">Dream</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: MaruBuri; font-size: 14px; vertical-align: bottom; font-weight: bold; text-transform: uppercase;" scope="col" id="Torgersen">Torgersen</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
@@ -1725,116 +1788,147 @@ tbody tr:last-child {
 </div>
 </div>
 </section>
-<section id="표-자동-설정" class="level2" data-number="17.2">
-<h2 data-number="17.2" class="anchored" data-anchor-id="표-자동-설정"><span class="header-section-number">17.2</span> 표 자동 설정</h2>
-<p>작성한 테마를 매번 코드를 “복사하여 붙여넣기” 하여 사용하는 대신 <code>.Rprofile</code> 파일에 반영하여 매번 <code>gt</code> 표 제작에 테마를 사용하는 방법을 살펴보자. <code>usethis</code> 패키지 <code>edit_r_profile()</code> 함수를 호출하여 앞서 작성한 테마를 반영한다.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">edit_r_profile</span>()</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="rprofile-설정작업" class="level2" data-number="17.4">
+<h2 data-number="17.4" class="anchored" data-anchor-id="rprofile-설정작업"><span class="header-section-number">17.4</span> <code>.Rprofile</code> 설정작업</h2>
+<p><code>.Rprofile</code> 파일에 테마 함수를 반영시키면 R 세션을 시작할 때마다 테마가 자동으로 로드되어 일일이 코드를 실행할 필요가 없어 작업 효율성을 크게 높여줌은 물론, 프로젝트 간 일관된 스타일과 브랜딩을 유지할 수 있다. 코드 작성 측면에서 테마 함수를 <code>.Rprofile</code>에 추가하여 코드 재사용성을 높이고, 테마 관련 설정을 한 곳에서 관리할 수 있게 함으로써 작업 일관성과 전문성이 높아져 시간과 노력을 크게 절약할 수 있다.</p>
+<div class="cell" data-eval="false">
+<div class="cell-output-display">
+<div>
+<div>
+
 </div>
-<p><code>gt_theme_hangul()</code> 테마를 <code>gt</code> 표 객체에 반영한다.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gtExtras)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>gt_theme_hangul <span class="ot">&lt;-</span> <span class="cf">function</span>(gt_tbl) {</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Grab number of rows of data from gt object</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  n_rows <span class="ot">&lt;-</span> <span class="fu">nrow</span>(gt_tbl<span class="sc">$</span><span class="st">`</span><span class="at">_data</span><span class="st">`</span>)</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  gt_tbl <span class="sc">|&gt;</span></span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">gt_theme_538</span>() <span class="sc">|&gt;</span></span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_options</span>(</span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>      <span class="co"># column_labels.background.color = '#1E61B0', # R logo 파란색</span></span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">table.font.names =</span><span class="st">"NanumSquare"</span>,</span>
-<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">heading.title.font.size =</span> <span class="fu">px</span>(<span class="dv">26</span>),</span>
-<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">heading.subtitle.font.size =</span> <span class="fu">px</span>(<span class="dv">16</span>),</span>
-<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">heading.background.color =</span> <span class="st">"transparent"</span>,</span>
-<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">column_labels.font.weight =</span> <span class="st">'bold'</span>,</span>
-<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">table_body.hlines.width =</span> <span class="fu">px</span>(<span class="dv">0</span>),</span>
-<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>      <span class="at">data_row.padding =</span> <span class="fu">px</span>(<span class="dv">6</span>),</span>
-<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">heading.align =</span> <span class="st">'center'</span>,</span>
-<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">stub.background.color =</span> <span class="st">"#ffffff"</span>,</span>
-<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">stub.font.weight =</span> <span class="st">"bold"</span>,</span>
-<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">source_notes.font.size =</span> <span class="fu">px</span>(<span class="dv">10</span>),</span>
-<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">row.striping.include_table_body =</span> <span class="cn">FALSE</span></span>
-<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span></span>
-<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cols_align</span>( <span class="at">align =</span> <span class="st">"center"</span>, <span class="at">columns =</span> <span class="fu">where</span>(is.numeric)) <span class="sc">|&gt;</span></span>
-<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cols_align</span>( <span class="at">align =</span> <span class="st">"auto"</span>, <span class="at">columns =</span> <span class="fu">where</span>(is.character)) <span class="sc">|&gt;</span></span>
-<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>    <span class="do">## 글꼴 달리 적용</span></span>
-<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_style</span>(</span>
-<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>      <span class="at">style =</span> <span class="fu">cell_text</span>(</span>
-<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>        <span class="at">font =</span> <span class="st">"MaruBuri"</span>,</span>
-<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a>        <span class="at">weight =</span> <span class="st">'bold'</span></span>
-<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a>      ),</span>
-<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a>      <span class="at">locations =</span> <span class="fu">cells_title</span>(<span class="at">groups =</span> <span class="st">'subtitle'</span>)</span>
-<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span></span>
-<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_style</span>(</span>
-<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a>      <span class="at">style =</span> <span class="fu">cell_text</span>(</span>
-<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a>        <span class="at">font =</span> <span class="st">"MaruBuri"</span>,</span>
-<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a>        <span class="at">weight =</span> <span class="st">'bold'</span></span>
-<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a>      ),</span>
-<span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a>      <span class="at">locations =</span> <span class="fu">cells_body</span>()</span>
-<span id="cb11-42"><a href="#cb11-42" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span></span>
-<span id="cb11-43"><a href="#cb11-43" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_style</span>(</span>
-<span id="cb11-44"><a href="#cb11-44" aria-hidden="true" tabindex="-1"></a>      <span class="at">style =</span> <span class="fu">cell_text</span>(</span>
-<span id="cb11-45"><a href="#cb11-45" aria-hidden="true" tabindex="-1"></a>        <span class="at">font =</span> <span class="st">"MaruBuri"</span>,</span>
-<span id="cb11-46"><a href="#cb11-46" aria-hidden="true" tabindex="-1"></a>        <span class="at">weight =</span> <span class="st">'bold'</span></span>
-<span id="cb11-47"><a href="#cb11-47" aria-hidden="true" tabindex="-1"></a>      ),</span>
-<span id="cb11-48"><a href="#cb11-48" aria-hidden="true" tabindex="-1"></a>      <span class="at">locations =</span> <span class="fu">cells_column_labels</span>()</span>
-<span id="cb11-49"><a href="#cb11-49" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span></span>
-<span id="cb11-50"><a href="#cb11-50" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_style</span>(</span>
-<span id="cb11-51"><a href="#cb11-51" aria-hidden="true" tabindex="-1"></a>      <span class="at">style =</span> <span class="fu">cell_text</span>(</span>
-<span id="cb11-52"><a href="#cb11-52" aria-hidden="true" tabindex="-1"></a>        <span class="at">font =</span> <span class="st">"MaruBuri"</span>,</span>
-<span id="cb11-53"><a href="#cb11-53" aria-hidden="true" tabindex="-1"></a>      ),</span>
-<span id="cb11-54"><a href="#cb11-54" aria-hidden="true" tabindex="-1"></a>      <span class="at">locations =</span> <span class="fu">cells_source_notes</span>()</span>
-<span id="cb11-55"><a href="#cb11-55" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span></span>
-<span id="cb11-56"><a href="#cb11-56" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_style</span>(</span>
-<span id="cb11-57"><a href="#cb11-57" aria-hidden="true" tabindex="-1"></a>      <span class="at">style =</span> <span class="fu">cell_fill</span>(<span class="at">color =</span> <span class="st">'grey90'</span>),</span>
-<span id="cb11-58"><a href="#cb11-58" aria-hidden="true" tabindex="-1"></a>      <span class="at">locations =</span> <span class="fu">cells_body</span>(<span class="at">rows =</span> <span class="fu">seq</span>(<span class="dv">1</span>, n_rows, <span class="dv">2</span>))</span>
-<span id="cb11-59"><a href="#cb11-59" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb11-60"><a href="#cb11-60" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><code>.Rprofile</code> 파일에 <code>gt</code> 사용자 정의 테마가 지정되어 있기 때문에 새로 R 세션을 시작하면 <code>gt_theme_hangul()</code> 테마를 사용할 수 있다.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>original_penguins_gt <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> </span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(species, sex) <span class="sc">|&gt;</span> </span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> sex, <span class="at">values_from =</span> n, <span class="at">values_fill =</span> <span class="dv">0</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  janitor<span class="sc">::</span><span class="fu">adorn_totals</span>(<span class="at">where =</span> <span class="st">"col"</span>, <span class="at">name =</span> <span class="st">"합계"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(펭귄종 <span class="ot">=</span> species, 암컷 <span class="ot">=</span> female, 수컷 <span class="ot">=</span> male) <span class="sc">|&gt;</span> </span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>(<span class="at">rowname_col =</span> <span class="st">"펭귄종"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_header</span>(</span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="fu">md</span>(<span class="st">"남극 펭귄 **암수와 종** 빈도표"</span>),</span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">subtitle =</span> <span class="fu">md</span>(<span class="st">"`palmerpenguins` 데이터 패키지"</span>)</span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span> </span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">grand_summary_rows</span>(</span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">columns =</span> <span class="fu">c</span>(펭귄종, 암컷, 수컷),</span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">fns =</span> <span class="fu">list</span>(</span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">'합계'</span> <span class="ot">=</span> <span class="er">~</span><span class="fu">sum</span>(.) </span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>      ),</span>
-<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">fmt =</span> <span class="sc">~</span> <span class="fu">fmt_number</span>(., <span class="at">use_seps =</span> <span class="cn">FALSE</span>, <span class="at">decimals =</span> <span class="dv">0</span>),</span>
-<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>      <span class="at">missing_text =</span> <span class="st">'-'</span></span>
-<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>    )  <span class="sc">|&gt;</span> </span>
-<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cols_align</span>(<span class="st">"center"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">opt_row_striping</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_source_note</span>(</span>
-<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">source_note =</span> <span class="fu">md</span>(<span class="st">"자료출처: `penguins` 데이터셋"</span>)</span>
-<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>theme_penguins_gt <span class="ot">&lt;-</span> original_penguins_gt <span class="sc">|&gt;</span> </span>
-<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt_theme_hangul</span>()</span>
-<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>gt_theme_hangul_penguins <span class="ot">&lt;-</span> gtExtras<span class="sc">::</span><span class="fu">gt_two_column_layout</span>(<span class="fu">list</span>(original_penguins_gt, theme_penguins_gt))</span>
-<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a>gt_theme_hangul_penguins <span class="sc">|&gt;</span> </span>
-<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gtsave_extra</span>(<span class="st">"images/gt_theme_hangul_penguins.png"</span>, <span class="at">expand =</span> <span class="dv">1</span>)</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="images/gt_theme_hangul_penguins.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="gt_theme_hangul() 테마 적용 전후"><img src="images/gt_theme_hangul_penguins.png" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption"><code>gt_theme_hangul()</code> 테마 적용 전후</figcaption>
+<p><a href="images/gt_theme_hangul_workflow.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="gt 표 테마 적용 작업흐름"><img src="images/gt_theme_hangul_workflow.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption"><code>gt</code> 표 테마 적용 작업흐름</figcaption>
 </figure>
+</div>
+<p>작성한 테마를 매번 코드를 “복사하여 붙여넣기” 하여 사용하는 대신 <code>.Rprofile</code> 파일에 반영하여 매번 <code>gt</code> 표를 제작할 때마다 <code>gt_theme_hangul()</code> 테마를 적용하는 방법은 다음과 같다. 먼저, <code>usethis</code> 패키지 <code>edit_r_profile()</code> 함수를 호출하여 앞서 작성한 테마를 반영한다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">edit_r_profile</span>()</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><code>gt_theme_hangul()</code> 테마를 <code>gt</code> 표 객체에 반영한다. 스크립트에서부터 시작하여 작성한 함수를 <code>.Rprofile</code> 파일에 복사하여 붙여넣는 것으로 작업은 완료된다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gtExtras)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>gt_theme_hangul <span class="ot">&lt;-</span> <span class="cf">function</span>(gt_tbl) {</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Grab number of rows of data from gt object</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  n_rows <span class="ot">&lt;-</span> <span class="fu">nrow</span>(gt_tbl<span class="sc">$</span><span class="st">`</span><span class="at">_data</span><span class="st">`</span>)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  gt_tbl <span class="sc">|&gt;</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">gt_theme_538</span>() <span class="sc">|&gt;</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_options</span>(</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>      <span class="co"># column_labels.background.color = '#1E61B0', # R logo 파란색</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">table.font.names =</span><span class="st">"NanumSquare"</span>,</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">heading.title.font.size =</span> <span class="fu">px</span>(<span class="dv">26</span>),</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">heading.subtitle.font.size =</span> <span class="fu">px</span>(<span class="dv">16</span>),</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">heading.background.color =</span> <span class="st">"transparent"</span>,</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">column_labels.font.weight =</span> <span class="st">'bold'</span>,</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">table_body.hlines.width =</span> <span class="fu">px</span>(<span class="dv">0</span>),</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>      <span class="at">data_row.padding =</span> <span class="fu">px</span>(<span class="dv">6</span>),</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">heading.align =</span> <span class="st">'center'</span>,</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">stub.background.color =</span> <span class="st">"#ffffff"</span>,</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">stub.font.weight =</span> <span class="st">"bold"</span>,</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">source_notes.font.size =</span> <span class="fu">px</span>(<span class="dv">10</span>),</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">row.striping.include_table_body =</span> <span class="cn">FALSE</span></span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cols_align</span>( <span class="at">align =</span> <span class="st">"center"</span>, <span class="at">columns =</span> <span class="fu">where</span>(is.numeric)) <span class="sc">|&gt;</span></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cols_align</span>( <span class="at">align =</span> <span class="st">"auto"</span>, <span class="at">columns =</span> <span class="fu">where</span>(is.character)) <span class="sc">|&gt;</span></span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>    <span class="do">## 글꼴 달리 적용</span></span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_style</span>(</span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>      <span class="at">style =</span> <span class="fu">cell_text</span>(</span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>        <span class="at">font =</span> <span class="st">"MaruBuri"</span>,</span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>        <span class="at">weight =</span> <span class="st">'bold'</span></span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a>      <span class="at">locations =</span> <span class="fu">cells_title</span>(<span class="at">groups =</span> <span class="st">'subtitle'</span>)</span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span></span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_style</span>(</span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a>      <span class="at">style =</span> <span class="fu">cell_text</span>(</span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a>        <span class="at">font =</span> <span class="st">"MaruBuri"</span>,</span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a>        <span class="at">weight =</span> <span class="st">'bold'</span></span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a>      <span class="at">locations =</span> <span class="fu">cells_body</span>()</span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span></span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_style</span>(</span>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a>      <span class="at">style =</span> <span class="fu">cell_text</span>(</span>
+<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a>        <span class="at">font =</span> <span class="st">"MaruBuri"</span>,</span>
+<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a>        <span class="at">weight =</span> <span class="st">'bold'</span></span>
+<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a>      <span class="at">locations =</span> <span class="fu">cells_column_labels</span>()</span>
+<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span></span>
+<span id="cb8-50"><a href="#cb8-50" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_style</span>(</span>
+<span id="cb8-51"><a href="#cb8-51" aria-hidden="true" tabindex="-1"></a>      <span class="at">style =</span> <span class="fu">cell_text</span>(</span>
+<span id="cb8-52"><a href="#cb8-52" aria-hidden="true" tabindex="-1"></a>        <span class="at">font =</span> <span class="st">"MaruBuri"</span>,</span>
+<span id="cb8-53"><a href="#cb8-53" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb8-54"><a href="#cb8-54" aria-hidden="true" tabindex="-1"></a>      <span class="at">locations =</span> <span class="fu">cells_source_notes</span>()</span>
+<span id="cb8-55"><a href="#cb8-55" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span></span>
+<span id="cb8-56"><a href="#cb8-56" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_style</span>(</span>
+<span id="cb8-57"><a href="#cb8-57" aria-hidden="true" tabindex="-1"></a>      <span class="at">style =</span> <span class="fu">cell_fill</span>(<span class="at">color =</span> <span class="st">'grey90'</span>),</span>
+<span id="cb8-58"><a href="#cb8-58" aria-hidden="true" tabindex="-1"></a>      <span class="at">locations =</span> <span class="fu">cells_body</span>(<span class="at">rows =</span> <span class="fu">seq</span>(<span class="dv">1</span>, n_rows, <span class="dv">2</span>))</span>
+<span id="cb8-59"><a href="#cb8-59" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb8-60"><a href="#cb8-60" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><code>.Rprofile</code> 파일에 <code>gt</code> 사용자 정의 테마가 지정되어 있기 때문에 새로 R 세션을 시작하면 <code>gt_theme_hangul()</code> 테마를 프로젝트 어디에서든지 사용할 수 있다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>original_penguins_gt <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(species, sex) <span class="sc">|&gt;</span> </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> sex, <span class="at">values_from =</span> n, <span class="at">values_fill =</span> <span class="dv">0</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  janitor<span class="sc">::</span><span class="fu">adorn_totals</span>(<span class="at">where =</span> <span class="st">"col"</span>, <span class="at">name =</span> <span class="st">"합계"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(펭귄종 <span class="ot">=</span> species, 암컷 <span class="ot">=</span> female, 수컷 <span class="ot">=</span> male) <span class="sc">|&gt;</span> </span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>(<span class="at">rowname_col =</span> <span class="st">"펭귄종"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_header</span>(</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="fu">md</span>(<span class="st">"남극 펭귄 **암수와 종** 빈도표"</span>),</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">subtitle =</span> <span class="fu">md</span>(<span class="st">"`palmerpenguins` 데이터 패키지"</span>)</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span> </span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">grand_summary_rows</span>(</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">columns =</span> <span class="fu">c</span>(펭귄종, 암컷, 수컷),</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">fns =</span> <span class="fu">list</span>(</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">'합계'</span> <span class="ot">=</span> <span class="er">~</span><span class="fu">sum</span>(.) </span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">fmt =</span> <span class="sc">~</span> <span class="fu">fmt_number</span>(., <span class="at">use_seps =</span> <span class="cn">FALSE</span>, <span class="at">decimals =</span> <span class="dv">0</span>),</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>      <span class="at">missing_text =</span> <span class="st">'-'</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>    )  <span class="sc">|&gt;</span> </span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cols_align</span>(<span class="st">"center"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">opt_row_striping</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_source_note</span>(</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">source_note =</span> <span class="fu">md</span>(<span class="st">"자료출처: `penguins` 데이터셋"</span>)</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>original_penguins_gt <span class="sc">|&gt;</span> </span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gtsave</span>(<span class="st">"images/rprofile_original.png"</span>)</span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>theme_penguins_gt <span class="ot">&lt;-</span> original_penguins_gt <span class="sc">|&gt;</span> </span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt_theme_hangul</span>()</span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>theme_penguins_gt <span class="sc">|&gt;</span> </span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gtsave</span>(<span class="st">"images/rprofile_hangul_theme.png"</span>)</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-figure quarto-figure-center" style="flex-basis: 49.5%;justify-content: center;">
+<figure class="figure">
+<p><a href="images/rprofile_original.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="gt_theme_hangul() 테마 적용 전"><img src="images/rprofile_original.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption"><code>gt_theme_hangul()</code> 테마 적용 전</figcaption>
+</figure>
+</div>
+<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 1.0%;justify-content: center;">
+<p>&nbsp;</p>
+</div>
+<div class="quarto-figure quarto-figure-center" style="flex-basis: 49.5%;justify-content: center;">
+<figure class="figure">
+<p><a href="images/rprofile_hangul_theme.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="gt_theme_hangul() 테마 적용 후"><img src="images/rprofile_hangul_theme.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption"><code>gt_theme_hangul()</code> 테마 적용 후</figcaption>
+</figure>
+</div>
+</div>
 </div>
 
 
@@ -2087,7 +2181,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","openEffect":"zoom","loop":true});</script>
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","descPosition":"bottom","loop":true,"openEffect":"zoom"});</script>
 
 
 
