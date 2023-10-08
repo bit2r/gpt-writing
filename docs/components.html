@@ -411,8 +411,8 @@ ga('send', {
   <li><a href="#%ED%91%9C-%EC%A0%9C%EC%9E%91-%EC%82%AC%EB%A1%80" id="toc-표-제작-사례" class="nav-link" data-scroll-target="#%ED%91%9C-%EC%A0%9C%EC%9E%91-%EC%82%AC%EB%A1%80"><span class="header-section-number">10.4.4</span> 표 제작 사례</a></li>
   </ul>
 </li>
-  <li><a href="#%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8" id="toc-다이어그램" class="nav-link" data-scroll-target="#%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8"><span class="header-section-number">10.5</span> 다이어그램</a></li>
-  <li><a href="#%EC%9B%B9%EB%AC%B8%EC%84%9C" id="toc-웹문서" class="nav-link" data-scroll-target="#%EC%9B%B9%EB%AC%B8%EC%84%9C"><span class="header-section-number">10.6</span> 웹문서</a></li>
+  <li><a href="#%EC%9B%B9%EB%AC%B8%EC%84%9C" id="toc-웹문서" class="nav-link" data-scroll-target="#%EC%9B%B9%EB%AC%B8%EC%84%9C"><span class="header-section-number">10.5</span> 웹문서</a></li>
+  <li><a href="#%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8" id="toc-다이어그램" class="nav-link" data-scroll-target="#%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8"><span class="header-section-number">10.6</span> 다이어그램</a></li>
   <li>
 <a href="#%EC%88%98%EC%8B%9D" id="toc-수식" class="nav-link" data-scroll-target="#%EC%88%98%EC%8B%9D"><span class="header-section-number">10.7</span> 수식</a>
   <ul class="collapse">
@@ -455,7 +455,7 @@ ga('send', {
 
 
 </header><div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/writing_document.jpg" class="lightbox" title="디지털 문서 구성요소" data-gallery="quarto-lightbox-gallery-1"><img src="images/writing_document.jpg" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="images/writing_document.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="디지털 문서 구성요소"><img src="images/writing_document.jpg" class="img-fluid figure-img"></a></p>
 <figcaption class="figure-caption">디지털 문서 구성요소</figcaption></figure>
 </div>
 <section id="그림" class="level2" data-number="10.1"><h2 data-number="10.1" class="anchored" data-anchor-id="그림">
@@ -490,7 +490,7 @@ ga('send', {
 </div>
 <p>특히 생성형 AI 기술의 눈부신 발전으로 인해 사람이 그린 것 같은 정교한 이미지를 문서에 넣는 것도 비용이 많이 들지 않고 쉽게 가능하다. 이제는 텍스트로 작성되는 문단과 문단 사이 적절한 곳에 “프롬프트”를 넣어 이미지를 넣는 것이 큰 어려움 없이 가능하게 되었다. 다음은 최근에 공개된 OpenAI 달리3(DALL·E 3) 모델을 사용해서 ’강원도 설악산 멋진 풍경’이라는 프롬프트로 생성한 이미지다.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/dalle_mountain.png" class="lightbox" title="AI 생성 이미지" data-gallery="quarto-lightbox-gallery-5"><img src="images/dalle_mountain.png" class="img-fluid figure-img" width="350"></a></p>
+<figure class="figure"><p><a href="images/dalle_mountain.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="AI 생성 이미지"><img src="images/dalle_mountain.png" class="img-fluid figure-img" width="350"></a></p>
 <figcaption class="figure-caption">AI 생성 이미지</figcaption></figure>
 </div>
 </section><section id="지도" class="level2" data-number="10.2"><h2 data-number="10.2" class="anchored" data-anchor-id="지도">
@@ -505,7 +505,7 @@ ga('send', {
 <span><span class="fu"><a href="https://r-spatial.github.io/sf/reference/s2.html">sf_use_s2</a></span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co">## 지도</span></span>
-<span><span class="va">korea_map</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_read.html">read_sf</a></span><span class="op">(</span><span class="st">"../chatGPT4ds/data/HangJeongDong_ver20230401.geojson"</span><span class="op">)</span></span>
+<span><span class="va">korea_map</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_read.html">read_sf</a></span><span class="op">(</span><span class="st">"data/HangJeongDong_ver20230401.geojson"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">sido_map</span> <span class="op">&lt;-</span> <span class="va">korea_map</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">sidonm</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
@@ -522,7 +522,7 @@ ga('send', {
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>geometry <span class="op">=</span> <span class="va">geometry</span>, fill <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/cut.html">cut</a></span><span class="op">(</span><span class="va">인구수</span>, <span class="fl">10</span><span class="op">)</span><span class="op">)</span>, show.legend <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span></span>
 <span>    <span class="fu">ggrepel</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/ggrepel/man/geom_text_repel.html">geom_label_repel</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>label <span class="op">=</span> <span class="va">sidonm</span>, geometry <span class="op">=</span> <span class="va">geometry</span><span class="op">)</span>, </span>
-<span>                              size <span class="op">=</span> <span class="fl">3</span>, stat <span class="op">=</span> <span class="st">"sf_coordinates"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>                              size <span class="op">=</span> <span class="fl">20</span>, stat <span class="op">=</span> <span class="st">"sf_coordinates"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_void</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_brewer.html">scale_fill_brewer</a></span><span class="op">(</span>palette <span class="op">=</span> <span class="st">"OrRd"</span><span class="op">)</span></span>
 <span></span>
@@ -530,6 +530,10 @@ ga('send', {
 <span>               width <span class="op">=</span> <span class="fl">10</span>, height <span class="op">=</span> <span class="fl">7</span>, units <span class="op">=</span> <span class="st">"in"</span>, res <span class="op">=</span> <span class="fl">600</span><span class="op">)</span></span>
 <span><span class="va">sigo_gg</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/grDevices/dev.html">dev.off</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/GIS_tools.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="images/GIS_tools.jpeg" class="img-fluid figure-img"></a></p>
+</figure>
 </div>
 </section><section id="그래프" class="level2" data-number="10.3"><h2 data-number="10.3" class="anchored" data-anchor-id="그래프">
 <span class="header-section-number">10.3</span> 그래프</h2>
@@ -539,15 +543,15 @@ ga('send', {
 <div id="fig-graphics" class="quarto-layout-panel">
 <figure class="figure"><div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 33.3%;justify-content: center;">
-<figure class="figure"><p><a href="images/graphics_base.jpg" class="lightbox" title="Base 시스템" data-gallery="quarto-lightbox-gallery-6"><img src="images/graphics_base.jpg" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="images/graphics_base.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Base 시스템"><img src="images/graphics_base.jpg" class="img-fluid figure-img"></a></p>
 <figcaption class="figure-caption">Base 시스템</figcaption></figure>
 </div>
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 33.3%;justify-content: center;">
-<figure class="figure"><p><a href="images/graphics_trellis.jpg" class="lightbox" title="Trellis 시스템" data-gallery="quarto-lightbox-gallery-7"><img src="images/graphics_trellis.jpg" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="images/graphics_trellis.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Trellis 시스템"><img src="images/graphics_trellis.jpg" class="img-fluid figure-img"></a></p>
 <figcaption class="figure-caption">Trellis 시스템</figcaption></figure>
 </div>
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 33.3%;justify-content: center;">
-<figure class="figure"><p><a href="images/graphics_ggplot2.jpeg" class="lightbox" title="ggplot2 시스템" data-gallery="quarto-lightbox-gallery-8"><img src="images/graphics_ggplot2.jpeg" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="images/graphics_ggplot2.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="ggplot2 시스템"><img src="images/graphics_ggplot2.jpeg" class="img-fluid figure-img"></a></p>
 <figcaption class="figure-caption">ggplot2 시스템</figcaption></figure>
 </div>
 </div>
@@ -600,7 +604,7 @@ ga('send', {
 <span><span class="va">mass_flipper</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="components_files/figure-html/unnamed-chunk-4-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="components_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></a></p>
+<figure class="figure"><p><a href="components_files/figure-html/unnamed-chunk-4-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="components_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -609,7 +613,7 @@ ga('send', {
 <span class="header-section-number">10.4</span> 표</h2>
 <p>문서에 표를 넣게 되면 정보를 효과적으로 요약할 뿐만 아니라 가독성을 높이는 중요한 커뮤니케이션 도구 중 하나다. 마크다운(Markdown), <code>gt</code> 패키지, 라텍는 자료를 표 형식으로 표현할 때 각각의 장점이 있다. 마크다운은 기본적이며 간단한 방법으로, 복잡한 설치나 추가 패키지 없이도 빠르게 내용에 충실한 기본표를 작성할 수 있다. <code>gt</code> 패키지는 그래프 문법을 참고하여 표문법을 충실히 준수하며 데이터에 기반한 표제작에 필요한 거의 모든 기능을 제공한다. 라텍는 가장 전문적인 표를 만들 수 있는 도구로, 논문이나 학술 자료에 적합한 고품질의 표를 제작하는데 유용하다.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/table_three.jpg" class="lightbox" title="표제작 세가지 방식" data-gallery="quarto-lightbox-gallery-10"><img src="images/table_three.jpg" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="images/table_three.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="표제작 세가지 방식"><img src="images/table_three.jpg" class="img-fluid figure-img"></a></p>
 <figcaption class="figure-caption">표제작 세가지 방식</figcaption></figure>
 </div>
 <section id="rmarkdown-kable-table" class="level3" data-number="10.4.1"><h3 data-number="10.4.1" class="anchored" data-anchor-id="rmarkdown-kable-table">
@@ -640,34 +644,34 @@ ga('send', {
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Datsun 710</td>
-<td style="text-align: right;">22.8</td>
+<td style="text-align: left;">Volvo 142E</td>
+<td style="text-align: right;">21.4</td>
 <td style="text-align: right;">4</td>
-<td style="text-align: right;">108.0</td>
+<td style="text-align: right;">121.0</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Maserati Bora</td>
-<td style="text-align: right;">15.0</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">301.0</td>
+<td style="text-align: left;">Fiat 128</td>
+<td style="text-align: right;">32.4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">78.7</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Merc 230</td>
-<td style="text-align: right;">22.8</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">140.8</td>
+<td style="text-align: left;">Valiant</td>
+<td style="text-align: right;">18.1</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">225.0</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Merc 450SE</td>
-<td style="text-align: right;">16.4</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">275.8</td>
+<td style="text-align: left;">Toyota Corona</td>
+<td style="text-align: right;">21.5</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">120.1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Duster 360</td>
-<td style="text-align: right;">14.3</td>
+<td style="text-align: left;">Chrysler Imperial</td>
+<td style="text-align: right;">14.7</td>
 <td style="text-align: right;">8</td>
-<td style="text-align: right;">360.0</td>
+<td style="text-align: right;">440.0</td>
 </tr>
 </tbody>
 </table>
@@ -680,7 +684,7 @@ ga('send', {
 </h3>
 <p>그래프 문법(grammar of graphics)처럼 표 문법(grammar of table) <a href="https://github.com/rstudio/gt/"><code>gt</code></a> 팩키지가 등장했다. 표를 분해하면 다음과 같고 이를 <code>tibble</code> 혹은 데이터프레임을 입력받아 GT 객체로 변환시킨 후에 GT 표를 HTML로 출력하는 작업흐름을 갖는다.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/gt_parts_of_a_table.svg" class="lightbox" title="표 해부도" data-gallery="quarto-lightbox-gallery-11"><img src="images/gt_parts_of_a_table.svg" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="images/gt_parts_of_a_table.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="표 해부도"><img src="images/gt_parts_of_a_table.svg" class="img-fluid figure-img"></a></p>
 <figcaption class="figure-caption">표 해부도</figcaption></figure>
 </div>
 <p><code>gt</code> 팩키지에 내장된 <code>exibble</code> 데이터셋은 <span class="math inline">\(8 \times 9\)</span> 구조를 갖는 단순한 데이터셋이지만 표와 관련된 다양한 형태를 개발에 사용할 주요한 정보를 담고 있다. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
@@ -704,23 +708,23 @@ ga('send', {
 </div><div class="column">
 <div class="cell">
 <div class="cell-output-display">
-<div id="ljtkaqnffp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ljtkaqnffp table {
+<div id="bqwsnviugd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#bqwsnviugd table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ljtkaqnffp thead, #ljtkaqnffp tbody, #ljtkaqnffp tfoot, #ljtkaqnffp tr, #ljtkaqnffp td, #ljtkaqnffp th {
+#bqwsnviugd thead, #bqwsnviugd tbody, #bqwsnviugd tfoot, #bqwsnviugd tr, #bqwsnviugd td, #bqwsnviugd th {
   border-style: none;
 }
 
-#ljtkaqnffp p {
+#bqwsnviugd p {
   margin: 0;
   padding: 0;
 }
 
-#ljtkaqnffp .gt_table {
+#bqwsnviugd .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -746,12 +750,12 @@ ga('send', {
   border-left-color: #D3D3D3;
 }
 
-#ljtkaqnffp .gt_caption {
+#bqwsnviugd .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ljtkaqnffp .gt_title {
+#bqwsnviugd .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -763,7 +767,7 @@ ga('send', {
   border-bottom-width: 0;
 }
 
-#ljtkaqnffp .gt_subtitle {
+#bqwsnviugd .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -775,7 +779,7 @@ ga('send', {
   border-top-width: 0;
 }
 
-#ljtkaqnffp .gt_heading {
+#bqwsnviugd .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -787,13 +791,13 @@ ga('send', {
   border-right-color: #D3D3D3;
 }
 
-#ljtkaqnffp .gt_bottom_border {
+#bqwsnviugd .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ljtkaqnffp .gt_col_headings {
+#bqwsnviugd .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -808,7 +812,7 @@ ga('send', {
   border-right-color: #D3D3D3;
 }
 
-#ljtkaqnffp .gt_col_heading {
+#bqwsnviugd .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -828,7 +832,7 @@ ga('send', {
   overflow-x: hidden;
 }
 
-#ljtkaqnffp .gt_column_spanner_outer {
+#bqwsnviugd .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -840,15 +844,15 @@ ga('send', {
   padding-right: 4px;
 }
 
-#ljtkaqnffp .gt_column_spanner_outer:first-child {
+#bqwsnviugd .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ljtkaqnffp .gt_column_spanner_outer:last-child {
+#bqwsnviugd .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ljtkaqnffp .gt_column_spanner {
+#bqwsnviugd .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -860,11 +864,11 @@ ga('send', {
   width: 100%;
 }
 
-#ljtkaqnffp .gt_spanner_row {
+#bqwsnviugd .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ljtkaqnffp .gt_group_heading {
+#bqwsnviugd .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -890,7 +894,7 @@ ga('send', {
   text-align: left;
 }
 
-#ljtkaqnffp .gt_empty_group_heading {
+#bqwsnviugd .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -905,15 +909,15 @@ ga('send', {
   vertical-align: middle;
 }
 
-#ljtkaqnffp .gt_from_md > :first-child {
+#bqwsnviugd .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ljtkaqnffp .gt_from_md > :last-child {
+#bqwsnviugd .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ljtkaqnffp .gt_row {
+#bqwsnviugd .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -932,7 +936,7 @@ ga('send', {
   overflow-x: hidden;
 }
 
-#ljtkaqnffp .gt_stub {
+#bqwsnviugd .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -945,7 +949,7 @@ ga('send', {
   padding-right: 5px;
 }
 
-#ljtkaqnffp .gt_stub_row_group {
+#bqwsnviugd .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -959,15 +963,15 @@ ga('send', {
   vertical-align: top;
 }
 
-#ljtkaqnffp .gt_row_group_first td {
+#bqwsnviugd .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ljtkaqnffp .gt_row_group_first th {
+#bqwsnviugd .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ljtkaqnffp .gt_summary_row {
+#bqwsnviugd .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -977,16 +981,16 @@ ga('send', {
   padding-right: 5px;
 }
 
-#ljtkaqnffp .gt_first_summary_row {
+#bqwsnviugd .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ljtkaqnffp .gt_first_summary_row.thick {
+#bqwsnviugd .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ljtkaqnffp .gt_last_summary_row {
+#bqwsnviugd .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -996,7 +1000,7 @@ ga('send', {
   border-bottom-color: #D3D3D3;
 }
 
-#ljtkaqnffp .gt_grand_summary_row {
+#bqwsnviugd .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1006,7 +1010,7 @@ ga('send', {
   padding-right: 5px;
 }
 
-#ljtkaqnffp .gt_first_grand_summary_row {
+#bqwsnviugd .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1016,7 +1020,7 @@ ga('send', {
   border-top-color: #D3D3D3;
 }
 
-#ljtkaqnffp .gt_last_grand_summary_row_top {
+#bqwsnviugd .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1026,11 +1030,11 @@ ga('send', {
   border-bottom-color: #D3D3D3;
 }
 
-#ljtkaqnffp .gt_striped {
+#bqwsnviugd .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ljtkaqnffp .gt_table_body {
+#bqwsnviugd .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1039,7 +1043,7 @@ ga('send', {
   border-bottom-color: #D3D3D3;
 }
 
-#ljtkaqnffp .gt_footnotes {
+#bqwsnviugd .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1053,7 +1057,7 @@ ga('send', {
   border-right-color: #D3D3D3;
 }
 
-#ljtkaqnffp .gt_footnote {
+#bqwsnviugd .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1062,7 +1066,7 @@ ga('send', {
   padding-right: 5px;
 }
 
-#ljtkaqnffp .gt_sourcenotes {
+#bqwsnviugd .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1076,7 +1080,7 @@ ga('send', {
   border-right-color: #D3D3D3;
 }
 
-#ljtkaqnffp .gt_sourcenote {
+#bqwsnviugd .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1084,63 +1088,63 @@ ga('send', {
   padding-right: 5px;
 }
 
-#ljtkaqnffp .gt_left {
+#bqwsnviugd .gt_left {
   text-align: left;
 }
 
-#ljtkaqnffp .gt_center {
+#bqwsnviugd .gt_center {
   text-align: center;
 }
 
-#ljtkaqnffp .gt_right {
+#bqwsnviugd .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ljtkaqnffp .gt_font_normal {
+#bqwsnviugd .gt_font_normal {
   font-weight: normal;
 }
 
-#ljtkaqnffp .gt_font_bold {
+#bqwsnviugd .gt_font_bold {
   font-weight: bold;
 }
 
-#ljtkaqnffp .gt_font_italic {
+#bqwsnviugd .gt_font_italic {
   font-style: italic;
 }
 
-#ljtkaqnffp .gt_super {
+#bqwsnviugd .gt_super {
   font-size: 65%;
 }
 
-#ljtkaqnffp .gt_footnote_marks {
+#bqwsnviugd .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ljtkaqnffp .gt_asterisk {
+#bqwsnviugd .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ljtkaqnffp .gt_indent_1 {
+#bqwsnviugd .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ljtkaqnffp .gt_indent_2 {
+#bqwsnviugd .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ljtkaqnffp .gt_indent_3 {
+#bqwsnviugd .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ljtkaqnffp .gt_indent_4 {
+#bqwsnviugd .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ljtkaqnffp .gt_indent_5 {
+#bqwsnviugd .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1161,24 +1165,24 @@ ga('send', {
 </thead>
 <tbody class="gt_table_body">
 <tr>
-<td headers="mpg" class="gt_row gt_right">14.3</td>
+<td headers="mpg" class="gt_row gt_right">17.3</td>
 <td headers="cyl" class="gt_row gt_right">8</td>
-<td headers="disp" class="gt_row gt_right">360.0</td>
-</tr>
-<tr>
-<td headers="mpg" class="gt_row gt_right">15.2</td>
-<td headers="cyl" class="gt_row gt_right">8</td>
-<td headers="disp" class="gt_row gt_right">304.0</td>
-</tr>
-<tr>
-<td headers="mpg" class="gt_row gt_right">19.2</td>
-<td headers="cyl" class="gt_row gt_right">6</td>
-<td headers="disp" class="gt_row gt_right">167.6</td>
+<td headers="disp" class="gt_row gt_right">275.8</td>
 </tr>
 <tr>
 <td headers="mpg" class="gt_row gt_right">30.4</td>
 <td headers="cyl" class="gt_row gt_right">4</td>
 <td headers="disp" class="gt_row gt_right">95.1</td>
+</tr>
+<tr>
+<td headers="mpg" class="gt_row gt_right">19.2</td>
+<td headers="cyl" class="gt_row gt_right">8</td>
+<td headers="disp" class="gt_row gt_right">400.0</td>
+</tr>
+<tr>
+<td headers="mpg" class="gt_row gt_right">22.8</td>
+<td headers="cyl" class="gt_row gt_right">4</td>
+<td headers="disp" class="gt_row gt_right">140.8</td>
 </tr>
 <tr>
 <td headers="mpg" class="gt_row gt_right">32.4</td>
@@ -1345,27 +1349,27 @@ ga('send', {
 <span>  <span class="fu">basic_theme</span><span class="op">(</span><span class="op">)</span> </span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="tbl-gt-penguins" class="anchored">
-<div id="bzdlisjzjk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="xlofqyeqxd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=Dokdo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Do+Hyeon:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-#bzdlisjzjk table {
+#xlofqyeqxd table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#bzdlisjzjk thead, #bzdlisjzjk tbody, #bzdlisjzjk tfoot, #bzdlisjzjk tr, #bzdlisjzjk td, #bzdlisjzjk th {
+#xlofqyeqxd thead, #xlofqyeqxd tbody, #xlofqyeqxd tfoot, #xlofqyeqxd tr, #xlofqyeqxd td, #xlofqyeqxd th {
   border-style: none;
 }
 
-#bzdlisjzjk p {
+#xlofqyeqxd p {
   margin: 0;
   padding: 0;
 }
 
-#bzdlisjzjk .gt_table {
+#xlofqyeqxd .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1391,12 +1395,12 @@ ga('send', {
   border-left-color: #D3D3D3;
 }
 
-#bzdlisjzjk .gt_caption {
+#xlofqyeqxd .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#bzdlisjzjk .gt_title {
+#xlofqyeqxd .gt_title {
   color: #333333;
   font-size: 30px;
   font-weight: initial;
@@ -1408,7 +1412,7 @@ ga('send', {
   border-bottom-width: 0;
 }
 
-#bzdlisjzjk .gt_subtitle {
+#xlofqyeqxd .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1420,7 +1424,7 @@ ga('send', {
   border-top-width: 0;
 }
 
-#bzdlisjzjk .gt_heading {
+#xlofqyeqxd .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -1432,13 +1436,13 @@ ga('send', {
   border-right-color: #D3D3D3;
 }
 
-#bzdlisjzjk .gt_bottom_border {
+#xlofqyeqxd .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#bzdlisjzjk .gt_col_headings {
+#xlofqyeqxd .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1453,7 +1457,7 @@ ga('send', {
   border-right-color: #D3D3D3;
 }
 
-#bzdlisjzjk .gt_col_heading {
+#xlofqyeqxd .gt_col_heading {
   color: #FFFFFF;
   background-color: #F98400;
   font-size: 20px;
@@ -1473,7 +1477,7 @@ ga('send', {
   overflow-x: hidden;
 }
 
-#bzdlisjzjk .gt_column_spanner_outer {
+#xlofqyeqxd .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #F98400;
   font-size: 20px;
@@ -1485,15 +1489,15 @@ ga('send', {
   padding-right: 4px;
 }
 
-#bzdlisjzjk .gt_column_spanner_outer:first-child {
+#xlofqyeqxd .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#bzdlisjzjk .gt_column_spanner_outer:last-child {
+#xlofqyeqxd .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#bzdlisjzjk .gt_column_spanner {
+#xlofqyeqxd .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1505,11 +1509,11 @@ ga('send', {
   width: 100%;
 }
 
-#bzdlisjzjk .gt_spanner_row {
+#xlofqyeqxd .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#bzdlisjzjk .gt_group_heading {
+#xlofqyeqxd .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1535,7 +1539,7 @@ ga('send', {
   text-align: left;
 }
 
-#bzdlisjzjk .gt_empty_group_heading {
+#xlofqyeqxd .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1550,15 +1554,15 @@ ga('send', {
   vertical-align: middle;
 }
 
-#bzdlisjzjk .gt_from_md > :first-child {
+#xlofqyeqxd .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#bzdlisjzjk .gt_from_md > :last-child {
+#xlofqyeqxd .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#bzdlisjzjk .gt_row {
+#xlofqyeqxd .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1577,7 +1581,7 @@ ga('send', {
   overflow-x: hidden;
 }
 
-#bzdlisjzjk .gt_stub {
+#xlofqyeqxd .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1590,7 +1594,7 @@ ga('send', {
   padding-right: 5px;
 }
 
-#bzdlisjzjk .gt_stub_row_group {
+#xlofqyeqxd .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1604,15 +1608,15 @@ ga('send', {
   vertical-align: top;
 }
 
-#bzdlisjzjk .gt_row_group_first td {
+#xlofqyeqxd .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#bzdlisjzjk .gt_row_group_first th {
+#xlofqyeqxd .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#bzdlisjzjk .gt_summary_row {
+#xlofqyeqxd .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1622,16 +1626,16 @@ ga('send', {
   padding-right: 5px;
 }
 
-#bzdlisjzjk .gt_first_summary_row {
+#xlofqyeqxd .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#bzdlisjzjk .gt_first_summary_row.thick {
+#xlofqyeqxd .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#bzdlisjzjk .gt_last_summary_row {
+#xlofqyeqxd .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1641,7 +1645,7 @@ ga('send', {
   border-bottom-color: #D3D3D3;
 }
 
-#bzdlisjzjk .gt_grand_summary_row {
+#xlofqyeqxd .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1651,7 +1655,7 @@ ga('send', {
   padding-right: 5px;
 }
 
-#bzdlisjzjk .gt_first_grand_summary_row {
+#xlofqyeqxd .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1661,7 +1665,7 @@ ga('send', {
   border-top-color: #D3D3D3;
 }
 
-#bzdlisjzjk .gt_last_grand_summary_row_top {
+#xlofqyeqxd .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1671,11 +1675,11 @@ ga('send', {
   border-bottom-color: #D3D3D3;
 }
 
-#bzdlisjzjk .gt_striped {
+#xlofqyeqxd .gt_striped {
   background-color: #F2AD00;
 }
 
-#bzdlisjzjk .gt_table_body {
+#xlofqyeqxd .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1684,7 +1688,7 @@ ga('send', {
   border-bottom-color: #D3D3D3;
 }
 
-#bzdlisjzjk .gt_footnotes {
+#xlofqyeqxd .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1698,7 +1702,7 @@ ga('send', {
   border-right-color: #D3D3D3;
 }
 
-#bzdlisjzjk .gt_footnote {
+#xlofqyeqxd .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1707,7 +1711,7 @@ ga('send', {
   padding-right: 5px;
 }
 
-#bzdlisjzjk .gt_sourcenotes {
+#xlofqyeqxd .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1721,7 +1725,7 @@ ga('send', {
   border-right-color: #D3D3D3;
 }
 
-#bzdlisjzjk .gt_sourcenote {
+#xlofqyeqxd .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1729,63 +1733,63 @@ ga('send', {
   padding-right: 5px;
 }
 
-#bzdlisjzjk .gt_left {
+#xlofqyeqxd .gt_left {
   text-align: left;
 }
 
-#bzdlisjzjk .gt_center {
+#xlofqyeqxd .gt_center {
   text-align: center;
 }
 
-#bzdlisjzjk .gt_right {
+#xlofqyeqxd .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#bzdlisjzjk .gt_font_normal {
+#xlofqyeqxd .gt_font_normal {
   font-weight: normal;
 }
 
-#bzdlisjzjk .gt_font_bold {
+#xlofqyeqxd .gt_font_bold {
   font-weight: bold;
 }
 
-#bzdlisjzjk .gt_font_italic {
+#xlofqyeqxd .gt_font_italic {
   font-style: italic;
 }
 
-#bzdlisjzjk .gt_super {
+#xlofqyeqxd .gt_super {
   font-size: 65%;
 }
 
-#bzdlisjzjk .gt_footnote_marks {
+#xlofqyeqxd .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#bzdlisjzjk .gt_asterisk {
+#xlofqyeqxd .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#bzdlisjzjk .gt_indent_1 {
+#xlofqyeqxd .gt_indent_1 {
   text-indent: 5px;
 }
 
-#bzdlisjzjk .gt_indent_2 {
+#xlofqyeqxd .gt_indent_2 {
   text-indent: 10px;
 }
 
-#bzdlisjzjk .gt_indent_3 {
+#xlofqyeqxd .gt_indent_3 {
   text-indent: 15px;
 }
 
-#bzdlisjzjk .gt_indent_4 {
+#xlofqyeqxd .gt_indent_4 {
   text-indent: 20px;
 }
 
-#bzdlisjzjk .gt_indent_5 {
+#xlofqyeqxd .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1806,50 +1810,32 @@ ga('send', {
 <tr>
 <td headers="펭귄종" class="gt_row gt_center" style="font-family: 'Do Hyeon'; font-size: large;">Chinstrap</td>
 <td headers="섬" class="gt_row gt_center">Dream</td>
-<td headers="bill_length_mm" class="gt_row gt_right" style="color: #595959; font-family: 'Nanum Pen Script', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size: xx-large; font-weight: bolder;">45.5</td>
-<td headers="body_mass_g" class="gt_row gt_right" style="color: #00A08A; font-family: 'Black Han Sans', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size: large; font-weight: bolder;">3,500</td>
+<td headers="bill_length_mm" class="gt_row gt_right" style="color: #595959; font-family: 'Nanum Pen Script', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size: xx-large; font-weight: bolder;">49.5</td>
+<td headers="body_mass_g" class="gt_row gt_right" style="color: #00A08A; font-family: 'Black Han Sans', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size: large; font-weight: bolder;">3,800</td>
 </tr>
 <tr>
 <td headers="펭귄종" class="gt_row gt_center" style="font-family: 'Do Hyeon'; font-size: large;">Adelie</td>
-<td headers="섬" class="gt_row gt_center">Dream</td>
-<td headers="bill_length_mm" class="gt_row gt_right" style="color: #595959; font-family: 'Nanum Pen Script', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size: xx-large; font-weight: bolder;">38.1</td>
-<td headers="body_mass_g" class="gt_row gt_right" style="color: #00A08A; font-family: 'Black Han Sans', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size: large; font-weight: bolder;">3,425</td>
-</tr>
-<tr>
-<td headers="펭귄종" class="gt_row gt_center" style="font-family: 'Do Hyeon'; font-size: large;">Gentoo</td>
-<td headers="섬" class="gt_row gt_center">Biscoe</td>
-<td headers="bill_length_mm" class="gt_row gt_right" style="color: #595959; font-family: 'Nanum Pen Script', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size: xx-large; font-weight: bolder;">49.6</td>
-<td headers="body_mass_g" class="gt_row gt_right" style="color: #00A08A; font-family: 'Black Han Sans', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size: large; font-weight: bolder;">4,750</td>
-</tr>
-<tr>
-<td headers="펭귄종" class="gt_row gt_center" style="font-family: 'Do Hyeon'; font-size: large;">Gentoo</td>
-<td headers="섬" class="gt_row gt_center">Biscoe</td>
-<td headers="bill_length_mm" class="gt_row gt_right" style="color: #595959; font-family: 'Nanum Pen Script', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size: xx-large; font-weight: bolder;">45.5</td>
-<td headers="body_mass_g" class="gt_row gt_right" style="color: #00A08A; font-family: 'Black Han Sans', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size: large; font-weight: bolder;">4,200</td>
+<td headers="섬" class="gt_row gt_center">Torgersen</td>
+<td headers="bill_length_mm" class="gt_row gt_right" style="color: #595959; font-family: 'Nanum Pen Script', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size: xx-large; font-weight: bolder;">41.1</td>
+<td headers="body_mass_g" class="gt_row gt_right" style="color: #00A08A; font-family: 'Black Han Sans', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size: large; font-weight: bolder;">3,325</td>
 </tr>
 <tr>
 <td headers="펭귄종" class="gt_row gt_center" style="font-family: 'Do Hyeon'; font-size: large;">Chinstrap</td>
 <td headers="섬" class="gt_row gt_center">Dream</td>
-<td headers="bill_length_mm" class="gt_row gt_right" style="color: #595959; font-family: 'Nanum Pen Script', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size: xx-large; font-weight: bolder;">50.2</td>
-<td headers="body_mass_g" class="gt_row gt_right" style="color: #00A08A; font-family: 'Black Han Sans', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size: large; font-weight: bolder;">3,775</td>
+<td headers="bill_length_mm" class="gt_row gt_right" style="color: #595959; font-family: 'Nanum Pen Script', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size: xx-large; font-weight: bolder;">52.7</td>
+<td headers="body_mass_g" class="gt_row gt_right" style="color: #00A08A; font-family: 'Black Han Sans', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size: large; font-weight: bolder;">3,725</td>
+</tr>
+<tr>
+<td headers="펭귄종" class="gt_row gt_center" style="font-family: 'Do Hyeon'; font-size: large;">Gentoo</td>
+<td headers="섬" class="gt_row gt_center">Biscoe</td>
+<td headers="bill_length_mm" class="gt_row gt_right" style="color: #595959; font-family: 'Nanum Pen Script', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size: xx-large; font-weight: bolder;">47.5</td>
+<td headers="body_mass_g" class="gt_row gt_right" style="color: #00A08A; font-family: 'Black Han Sans', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size: large; font-weight: bolder;">4,875</td>
 </tr>
 <tr>
 <td headers="펭귄종" class="gt_row gt_center" style="font-family: 'Do Hyeon'; font-size: large;">Adelie</td>
-<td headers="섬" class="gt_row gt_center">Dream</td>
-<td headers="bill_length_mm" class="gt_row gt_right" style="color: #595959; font-family: 'Nanum Pen Script', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size: xx-large; font-weight: bolder;">41.5</td>
-<td headers="body_mass_g" class="gt_row gt_right" style="color: #00A08A; font-family: 'Black Han Sans', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size: large; font-weight: bolder;">4,000</td>
-</tr>
-<tr>
-<td headers="펭귄종" class="gt_row gt_center" style="font-family: 'Do Hyeon'; font-size: large;">Gentoo</td>
-<td headers="섬" class="gt_row gt_center">Biscoe</td>
-<td headers="bill_length_mm" class="gt_row gt_right" style="color: #595959; font-family: 'Nanum Pen Script', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size: xx-large; font-weight: bolder;">43.6</td>
-<td headers="body_mass_g" class="gt_row gt_right" style="color: #00A08A; font-family: 'Black Han Sans', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size: large; font-weight: bolder;">4,900</td>
-</tr>
-<tr>
-<td headers="펭귄종" class="gt_row gt_center" style="font-family: 'Do Hyeon'; font-size: large;">Gentoo</td>
-<td headers="섬" class="gt_row gt_center">Biscoe</td>
-<td headers="bill_length_mm" class="gt_row gt_right" style="color: #595959; font-family: 'Nanum Pen Script', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size: xx-large; font-weight: bolder;">48.2</td>
-<td headers="body_mass_g" class="gt_row gt_right" style="color: #00A08A; font-family: 'Black Han Sans', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size: large; font-weight: bolder;">5,100</td>
+<td headers="섬" class="gt_row gt_center">Torgersen</td>
+<td headers="bill_length_mm" class="gt_row gt_right" style="color: #595959; font-family: 'Nanum Pen Script', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size: xx-large; font-weight: bolder;">39.2</td>
+<td headers="body_mass_g" class="gt_row gt_right" style="color: #00A08A; font-family: 'Black Han Sans', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size: large; font-weight: bolder;">4,675</td>
 </tr>
 <tr>
 <td headers="펭귄종" class="gt_row gt_center" style="font-family: 'Do Hyeon'; font-size: large;">Adelie</td>
@@ -1858,10 +1844,28 @@ ga('send', {
 <td headers="body_mass_g" class="gt_row gt_right" style="color: #00A08A; font-family: 'Black Han Sans', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size: large; font-weight: bolder;">3,550</td>
 </tr>
 <tr>
+<td headers="펭귄종" class="gt_row gt_center" style="font-family: 'Do Hyeon'; font-size: large;">Gentoo</td>
+<td headers="섬" class="gt_row gt_center">Biscoe</td>
+<td headers="bill_length_mm" class="gt_row gt_right" style="color: #595959; font-family: 'Nanum Pen Script', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size: xx-large; font-weight: bolder;">43.5</td>
+<td headers="body_mass_g" class="gt_row gt_right" style="color: #00A08A; font-family: 'Black Han Sans', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size: large; font-weight: bolder;">4,650</td>
+</tr>
+<tr>
 <td headers="펭귄종" class="gt_row gt_center" style="font-family: 'Do Hyeon'; font-size: large;">Adelie</td>
-<td headers="섬" class="gt_row gt_center">Dream</td>
-<td headers="bill_length_mm" class="gt_row gt_right" style="color: #595959; font-family: 'Nanum Pen Script', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size: xx-large; font-weight: bolder;">40.9</td>
+<td headers="섬" class="gt_row gt_center">Biscoe</td>
+<td headers="bill_length_mm" class="gt_row gt_right" style="color: #595959; font-family: 'Nanum Pen Script', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size: xx-large; font-weight: bolder;">39.6</td>
 <td headers="body_mass_g" class="gt_row gt_right" style="color: #00A08A; font-family: 'Black Han Sans', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size: large; font-weight: bolder;">3,900</td>
+</tr>
+<tr>
+<td headers="펭귄종" class="gt_row gt_center" style="font-family: 'Do Hyeon'; font-size: large;">Adelie</td>
+<td headers="섬" class="gt_row gt_center">Torgersen</td>
+<td headers="bill_length_mm" class="gt_row gt_right" style="color: #595959; font-family: 'Nanum Pen Script', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size: xx-large; font-weight: bolder;">38.8</td>
+<td headers="body_mass_g" class="gt_row gt_right" style="color: #00A08A; font-family: 'Black Han Sans', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size: large; font-weight: bolder;">3,275</td>
+</tr>
+<tr>
+<td headers="펭귄종" class="gt_row gt_center" style="font-family: 'Do Hyeon'; font-size: large;">Chinstrap</td>
+<td headers="섬" class="gt_row gt_center">Dream</td>
+<td headers="bill_length_mm" class="gt_row gt_right" style="color: #595959; font-family: 'Nanum Pen Script', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size: xx-large; font-weight: bolder;">46.6</td>
+<td headers="body_mass_g" class="gt_row gt_right" style="color: #00A08A; font-family: 'Black Han Sans', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size: large; font-weight: bolder;">3,800</td>
 </tr>
 </tbody>
 <tfoot class="gt_sourcenotes"><tr>
@@ -1872,99 +1876,8 @@ ga('send', {
 </div>
 </div>
 </div>
-</section></section><section id="다이어그램" class="level2" data-number="10.5"><h2 data-number="10.5" class="anchored" data-anchor-id="다이어그램">
-<span class="header-section-number">10.5</span> 다이어그램</h2>
-<p>다이어그램(diagram, 도표)는 복잡한 정보나 개념을 단순화하고 시각적으로 표현하여 텍스트만으로 설명하기 어려운 복잡한 데이터나 구조, 관계를 명확히 전달할 수 있어 독자가 문서를 빠르고 정확하게 이해하는 데 도움을 준다. 학술 논문, 보고서, 설명서 등에 포함된 다이어그램은 문서 전문성과 신뢰성을 높혀 효과적인 커뮤니케이션을 가능하게 한다.</p>
-<p>다이어그램 저작 방식은 도구를 직접 사용하는 방식과 프로그래밍 언어처럼 다이어그램 전용 언어를 사용하는 방식으로 나뉜다. 잘 알려진 다이어그램 저작 도구로 마이크로소프트 비지오(Microsoft Visio), 루시드차드(Lucidchart), 드로아이오(Draw.io) 등으로 주로 GUI를 통해 다이어그램을 직관적으로 그릴 수 있고 다이어그램 전용 언어로 그래프비즈(Graphviz)와 머메이드(Mermaid)가 대표적이다. Graphviz는 DOT 언어를 사용해 다양한 네트워크 다이어그램, 플로우 차트, 조직도, 의존성 그래프를 제작하는 반면, Mermaid는 마크다운과 유사한 문법으로 웹에서 다이어그램과 차트를 생성하는 자바스크립트 라이브러리로 HTML과 자바스크립트를 사용하는 모든 웹 페이지나 앱과 쉽게 통합된다는 장점이 있다.</p>
-<p>챗GPT를 활용한 디지털 글쓰기 과정을 Mermaid 코드를 이용하여 다이어그램으로 표현하면 다음과 같다. 다이어그램은 글쓰기, 구조와 외양, 배포와 공유 세가지 영역에서 챗GPT가 부기장(Copilot)으로 역할을 수행하는 것을 명확히 보여준다. 디지털 글쓰기가 글감, 표, 그래프, 코드, 그림, 도형 등 다양한 요소로 구성되며, 구조와 외양에서는 문서의 구조, 서식, 레이아웃, 참조 등이 중요하고, 배포와 공유에서는 다양한 대상, 즉 독자, 저자, 기계에게 문서가 전달되는 과정을 빠르고 명확하게 이해할 수 있도록 도와준다.</p>
-<p>비지오 같은 유명 GUI 도구보다 다이어그램 전용 언어를 사용하게 되면 높은 수준 사용자 정의와 자동화가 가능할 뿐만 아니라 복잡한 다이어그램도 정확하게 그릴 수 있고, 코드를 재사용함으로써 시간과 비용도 절약할 수 있다. 특히, 버전 관리 시스템에 쉽게 통합할 수 있어 팀원들과 공유와 협업이 용이하다.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>graph LR</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    chatGPT["챗GPT"] --&gt; Contents</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    subgraph Contents["디지털 글쓰기"]</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>        direction LR</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>        Writing["글감"] --&gt; Table["표"]</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>        Writing --&gt; Graph["그래프"]</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>        Writing --&gt; Code["파이썬/R/SQL&lt;br&gt;코드"]</span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>        Writing --&gt; Figure["그림"]</span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>        Writing --&gt; Diagram["도형"]        </span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>    end</span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>    chatGPT --&gt; Format</span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>    Contents --&gt; Format</span>
-<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>    subgraph Format["구조와 외양"]</span>
-<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>        direction LR</span>
-<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>        Theme["구조와 외양"] --&gt; Title["문서 구조"]</span>
-<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>        Theme               --&gt; Formatting["문서 서식"]</span>
-<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>        Theme               --&gt; Layout["문서 레이아웃"]</span>
-<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>        Theme               --&gt; reference["문서 참조"]</span>
-<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>    end</span>
-<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>    chatGPT --&gt; Deployment</span>
-<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>    Format --&gt; Deployment</span>
-<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>    subgraph Deployment["배포와 공유"]</span>
-<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>        direction LR</span>
-<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a>        Deploy --&gt; Reader["독자(사람)"]</span>
-<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a>        Deploy --&gt; Author["독자(저작자)"]</span>
-<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a>        Deploy --&gt; Machine["독자(기계)"]</span>
-<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a>    end</span>
-<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a>    style chatGPT fill:#d3d3d3,stroke:#333,stroke-width:3px</span>
-<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a>    style Contents fill:#d3d3d3,stroke:#333,stroke-width:1px</span>
-<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a>    style Format fill:#d3d3d3,stroke:#333,stroke-width:1px</span>
-<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a>    style Deployment fill:#d3d3d3,stroke:#333,stroke-width:1px</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<div>
-<pre class="mermaid mermaid-js">graph LR
-
-    chatGPT["챗GPT"] --&gt; Contents
-
-    subgraph Contents["디지털 글쓰기"]
-        direction LR
-        Writing["글감"] --&gt; Table["표"]
-        Writing --&gt; Graph["그래프"]
-        Writing --&gt; Code["파이썬/R/SQL&lt;br&gt;코드"]
-        Writing --&gt; Figure["그림"]
-        Writing --&gt; Diagram["도형"]        
-    end
-
-    chatGPT --&gt; Format
-    Contents --&gt; Format
-
-    subgraph Format["구조와 외양"]
-        direction LR
-        Theme["구조와 외양"] --&gt; Title["문서 구조"]
-        Theme               --&gt; Formatting["문서 서식"]
-        Theme               --&gt; Layout["문서 레이아웃"]
-        Theme               --&gt; reference["문서 참조"]
-    end
-
-    chatGPT --&gt; Deployment
-    Format --&gt; Deployment
-
-    subgraph Deployment["배포와 공유"]
-        direction LR
-        Deploy --&gt; Reader["독자(사람)"]
-        Deploy --&gt; Author["독자(저작자)"]
-        Deploy --&gt; Machine["독자(기계)"]
-    end
-
-    style chatGPT fill:#d3d3d3,stroke:#333,stroke-width:3px
-    style Contents fill:#d3d3d3,stroke:#333,stroke-width:1px
-    style Format fill:#d3d3d3,stroke:#333,stroke-width:1px
-    style Deployment fill:#d3d3d3,stroke:#333,stroke-width:1px
-</pre>
-</div>
-</div>
-</div>
-</div>
-</section><section id="웹문서" class="level2" data-number="10.6"><h2 data-number="10.6" class="anchored" data-anchor-id="웹문서">
-<span class="header-section-number">10.6</span> 웹문서</h2>
+</section></section><section id="웹문서" class="level2" data-number="10.5"><h2 data-number="10.5" class="anchored" data-anchor-id="웹문서">
+<span class="header-section-number">10.5</span> 웹문서</h2>
 <p>웹 문서 구성요소는 크게 HTML, CSS, 자바스크립트로 구분된다. HTML(HyperText Markup Language)은 웹 페이지의 기본 구조와 내용을 정의하고, 다양한 태그를 사용하여 텍스트, 이미지, 링크, 리스트, 테이블 등을 웹 페이지에 배치한다. 주요 HTML 태그로 <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code>, <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;img&gt;</code> 등을 들 수 있다. CSS(Cascading Style Sheets)는 웹 페이지 레이아웃과 디자인을 담당한다. 색상, 폰트, 여백, 정렬 등을 지정하여 웹 페이지의 외관을 꾸미는 역할을 한다. CSS는 HTML 문서 내에 <code>&lt;style&gt;</code> 태그를 사용하여 삽입할 수 있고, 외부 저장된 CSS 파일을 연결하여 사용할 수도 있다. 자바스크립트는 웹 페이지에 동적인 기능을 부여한다. 사용자와 상호작용, 데이터 처리, 동적인 요소 변경 등을 담당하고, HTML 문서 내에 <code>&lt;script&gt;</code> 태그를 사용하여 삽입할 수 있다.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -2093,11 +2006,102 @@ ga('send', {
 <td style="text-align: center;">없음</td>
 </tr>
 </tbody>
-</table></section><section id="수식" class="level2" data-number="10.7"><h2 data-number="10.7" class="anchored" data-anchor-id="수식">
+</table></section><section id="다이어그램" class="level2" data-number="10.6"><h2 data-number="10.6" class="anchored" data-anchor-id="다이어그램">
+<span class="header-section-number">10.6</span> 다이어그램</h2>
+<p>다이어그램(diagram, 도표)는 복잡한 정보나 개념을 단순화하고 시각적으로 표현하여 텍스트만으로 설명하기 어려운 복잡한 데이터나 구조, 관계를 명확히 전달할 수 있어 독자가 문서를 빠르고 정확하게 이해하는 데 도움을 준다. 학술 논문, 보고서, 설명서 등에 포함된 다이어그램은 문서 전문성과 신뢰성을 높혀 효과적인 커뮤니케이션을 가능하게 한다.</p>
+<p>다이어그램 저작 방식은 도구를 직접 사용하는 방식과 프로그래밍 언어처럼 다이어그램 전용 언어를 사용하는 방식으로 나뉜다. 잘 알려진 다이어그램 저작 도구로 마이크로소프트 비지오(Microsoft Visio), 루시드차드(Lucidchart), 드로아이오(Draw.io) 등으로 주로 GUI를 통해 다이어그램을 직관적으로 그릴 수 있고 다이어그램 전용 언어로 그래프비즈(Graphviz)와 머메이드(Mermaid)가 대표적이다. Graphviz는 DOT 언어를 사용해 다양한 네트워크 다이어그램, 플로우 차트, 조직도, 의존성 그래프를 제작하는 반면, Mermaid는 마크다운과 유사한 문법으로 웹에서 다이어그램과 차트를 생성하는 자바스크립트 라이브러리로 HTML과 자바스크립트를 사용하는 모든 웹 페이지나 앱과 쉽게 통합된다는 장점이 있다.</p>
+<p>챗GPT를 활용한 디지털 글쓰기 과정을 Mermaid 코드를 이용하여 다이어그램으로 표현하면 다음과 같다. 다이어그램은 글쓰기, 구조와 외양, 배포와 공유 세가지 영역에서 챗GPT가 부기장(Copilot)으로 역할을 수행하는 것을 명확히 보여준다. 디지털 글쓰기가 글감, 표, 그래프, 코드, 그림, 도형 등 다양한 요소로 구성되며, 구조와 외양에서는 문서의 구조, 서식, 레이아웃, 참조 등이 중요하고, 배포와 공유에서는 다양한 대상, 즉 독자, 저자, 기계에게 문서가 전달되는 과정을 빠르고 명확하게 이해할 수 있도록 도와준다.</p>
+<p>비지오 같은 유명 GUI 도구보다 다이어그램 전용 언어를 사용하게 되면 높은 수준 사용자 정의와 자동화가 가능할 뿐만 아니라 복잡한 다이어그램도 정확하게 그릴 수 있고, 코드를 재사용함으로써 시간과 비용도 절약할 수 있다. 특히, 버전 관리 시스템에 쉽게 통합할 수 있어 팀원들과 공유와 협업이 용이하다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>graph LR</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    chatGPT["챗GPT"] --&gt; Contents</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    subgraph Contents["디지털 글쓰기"]</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>        direction LR</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>        Writing["글감"] --&gt; Table["표"]</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>        Writing --&gt; Graph["그래프"]</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>        Writing --&gt; Code["파이썬/R/SQL&lt;br&gt;코드"]</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>        Writing --&gt; Figure["그림"]</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>        Writing --&gt; Diagram["도형"]        </span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>    end</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>    chatGPT --&gt; Format</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>    Contents --&gt; Format</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>    subgraph Format["구조와 외양"]</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>        direction LR</span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>        Theme["구조와 외양"] --&gt; Title["문서 구조"]</span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>        Theme               --&gt; Formatting["문서 서식"]</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>        Theme               --&gt; Layout["문서 레이아웃"]</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>        Theme               --&gt; reference["문서 참조"]</span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>    end</span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>    chatGPT --&gt; Deployment</span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>    Format --&gt; Deployment</span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>    subgraph Deployment["배포와 공유"]</span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>        direction LR</span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a>        Deploy --&gt; Reader["독자(사람)"]</span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a>        Deploy --&gt; Author["독자(저작자)"]</span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a>        Deploy --&gt; Machine["독자(기계)"]</span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a>    end</span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a>    style chatGPT fill:#d3d3d3,stroke:#333,stroke-width:3px</span>
+<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a>    style Contents fill:#d3d3d3,stroke:#333,stroke-width:1px</span>
+<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a>    style Format fill:#d3d3d3,stroke:#333,stroke-width:1px</span>
+<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a>    style Deployment fill:#d3d3d3,stroke:#333,stroke-width:1px</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">graph LR
+
+    chatGPT["챗GPT"] --&gt; Contents
+
+    subgraph Contents["디지털 글쓰기"]
+        direction LR
+        Writing["글감"] --&gt; Table["표"]
+        Writing --&gt; Graph["그래프"]
+        Writing --&gt; Code["파이썬/R/SQL&lt;br&gt;코드"]
+        Writing --&gt; Figure["그림"]
+        Writing --&gt; Diagram["도형"]        
+    end
+
+    chatGPT --&gt; Format
+    Contents --&gt; Format
+
+    subgraph Format["구조와 외양"]
+        direction LR
+        Theme["구조와 외양"] --&gt; Title["문서 구조"]
+        Theme               --&gt; Formatting["문서 서식"]
+        Theme               --&gt; Layout["문서 레이아웃"]
+        Theme               --&gt; reference["문서 참조"]
+    end
+
+    chatGPT --&gt; Deployment
+    Format --&gt; Deployment
+
+    subgraph Deployment["배포와 공유"]
+        direction LR
+        Deploy --&gt; Reader["독자(사람)"]
+        Deploy --&gt; Author["독자(저작자)"]
+        Deploy --&gt; Machine["독자(기계)"]
+    end
+
+    style chatGPT fill:#d3d3d3,stroke:#333,stroke-width:3px
+    style Contents fill:#d3d3d3,stroke:#333,stroke-width:1px
+    style Format fill:#d3d3d3,stroke:#333,stroke-width:1px
+    style Deployment fill:#d3d3d3,stroke:#333,stroke-width:1px
+</pre>
+</div>
+</div>
+</div>
+</div>
+</section><section id="수식" class="level2" data-number="10.7"><h2 data-number="10.7" class="anchored" data-anchor-id="수식">
 <span class="header-section-number">10.7</span> 수식</h2>
 <p>수학은 공학, 물리학, 컴퓨터 과학, 경제학 등 다양한 분야에서 중심 역할을 하는 학문으로 정확하고 명료한 수학적 표기는 매우 중요하다. 라텍은 수학적 표현을 깔끔하고 정확하게 표현할 수 있는 도구 중 하나로 라텍를 이용해 다양한 수학적 표현법을 살펴보자.</p>
 <p>라텍은 기본적인 사칙연산에서부터 지수, 삼각함수, 적분, 행렬, 그리스 문자, 무한대 등 광범위한 수학적 표현이 가능하여 전문가 느낌의 문서나 논문, 프레젠테이션에 즉시 적용할 수 있는 고급스럽고 미련한 수식표현이 가능하다.</p>
-<p>기본적인 덧셈과 뺄셈은 <code>\begin{equation} a + b = c \end{equation}</code>처럼 표현할 수 있고, 복잡한 적분도 <code>\begin{equation} \int_{0}^{\infty} e^{-x^2} dx = \frac{\sqrt{\pi}}{2} \end{equation}</code>와 같이 명료하게 표현할 수 있을 뿐만 아니라, 행렬이나 그리스 문자도 <code>\begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix}</code>와 <code>\alpha, \beta, \gamma, \Gamma, \pi, \Pi, \phi, \Phi, \mu</code> 등의 명령어를 통해 표현할 수 있다.</p>
+<p>기본적인 덧셈과 뺄셈은 <code>a + b = c</code>처럼 표현할 수 있고, 복잡한 적분도 <code>\int_{0}^{\infty} e^{-x^2} dx = \frac{\sqrt{\pi}}{2}</code>와 같이 명료하게 표현할 수 있을 뿐만 아니라, 행렬이나 그리스 문자도 <code>\begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix}</code>와 <code>\alpha, \beta, \gamma, \Gamma, \pi, \Pi, \phi, \Phi, \mu</code> 등의 명령어를 통해 표현할 수 있다.</p>
 <section id="기본-연산자와-수" class="level3" data-number="10.7.1"><h3 data-number="10.7.1" class="anchored" data-anchor-id="기본-연산자와-수">
 <span class="header-section-number">10.7.1</span> 기본 연산자와 수</h3>
 <div class="columns">
@@ -2305,7 +2309,7 @@ c &amp; d
 </div>
 </div>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/bibtex_reference.jpg" class="lightbox" title="서식파일 참고문헌" data-gallery="quarto-lightbox-gallery-12"><img src="images/bibtex_reference.jpg" class="img-fluid figure-img" width="635"></a></p>
+<figure class="figure"><p><a href="images/bibtex_reference.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="서식파일 참고문헌"><img src="images/bibtex_reference.jpg" class="img-fluid figure-img" width="635"></a></p>
 <figcaption class="figure-caption">서식파일 참고문헌</figcaption></figure>
 </div>
 </section><section id="영문-참고문헌" class="level3" data-number="10.8.2"><h3 data-number="10.8.2" class="anchored" data-anchor-id="영문-참고문헌">
@@ -2349,7 +2353,7 @@ c &amp; d
 
 </div><div class="column" style="width:40%;">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/pdf_english_reference.jpg" class="lightbox" title="영문 참고문헌 사례" data-gallery="quarto-lightbox-gallery-13"><img src="images/pdf_english_reference.jpg" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="images/pdf_english_reference.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-14" title="영문 참고문헌 사례"><img src="images/pdf_english_reference.jpg" class="img-fluid figure-img"></a></p>
 <figcaption class="figure-caption">영문 참고문헌 사례</figcaption></figure>
 </div>
 </div>
@@ -2402,7 +2406,7 @@ c &amp; d
 
 </div><div class="column" style="width:40%;">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/pdf_korean_reference.jpg" class="lightbox" title="한글 참고문헌 사례" data-gallery="quarto-lightbox-gallery-14"><img src="images/pdf_korean_reference.jpg" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="images/pdf_korean_reference.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-15" title="한글 참고문헌 사례"><img src="images/pdf_korean_reference.jpg" class="img-fluid figure-img"></a></p>
 <figcaption class="figure-caption">한글 참고문헌 사례</figcaption></figure>
 </div>
 </div>
@@ -2740,7 +2744,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":true,"descPosition":"bottom","closeEffect":"zoom","openEffect":"zoom"});</script>
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","loop":true,"descPosition":"bottom","closeEffect":"zoom"});</script>
 
 
 <script src="site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.js" defer="true"></script>

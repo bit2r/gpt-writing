@@ -105,7 +105,7 @@ library(tidyverse)
 sf_use_s2(FALSE)
 
 ## 지도
-korea_map <- read_sf("../chatGPT4ds/data/HangJeongDong_ver20230401.geojson")
+korea_map <- read_sf("data/HangJeongDong_ver20230401.geojson")
 
 sido_map <- korea_map |> 
   group_by(sidonm) |> 
@@ -122,7 +122,7 @@ sigo_gg <- sido_map |>
   ggplot() +
     geom_sf(aes(geometry = geometry, fill = cut(인구수, 10)), show.legend = FALSE) +
     ggrepel::geom_label_repel(aes(label = sidonm, geometry = geometry), 
-                              size = 3, stat = "sf_coordinates") +
+                              size = 20, stat = "sf_coordinates") +
     theme_void() +
     scale_fill_brewer(palette = "OrRd")
 
@@ -131,6 +131,8 @@ ragg::agg_jpeg("images/GIS_tools.jpeg",
 sigo_gg
 dev.off()
 ```
+
+![](images/GIS_tools.jpeg)
 
 ## 그래프
 
@@ -579,8 +581,80 @@ palmerpenguins::penguins %>%
     locations = cells_title("title")
   ) %>%   
   basic_theme() 
-
 ```
+
+## 웹문서
+
+웹 문서 구성요소는 크게 HTML, CSS, 자바스크립트로 구분된다.
+HTML(HyperText Markup Language)은 웹 페이지의 기본 구조와 내용을
+정의하고, 다양한 태그를 사용하여 텍스트, 이미지, 링크, 리스트, 테이블
+등을 웹 페이지에 배치한다. 주요 HTML 태그로 `<head>`, `<body>`, `<h1>`,
+`<p>`, `<a>`, `<img>` 등을 들 수 있다. CSS(Cascading Style Sheets)는 웹
+페이지 레이아웃과 디자인을 담당한다. 색상, 폰트, 여백, 정렬 등을
+지정하여 웹 페이지의 외관을 꾸미는 역할을 한다. CSS는 HTML 문서 내에
+`<style>` 태그를 사용하여 삽입할 수 있고, 외부 저장된 CSS 파일을
+연결하여 사용할 수도 있다. 자바스크립트는 웹 페이지에 동적인 기능을
+부여한다. 사용자와 상호작용, 데이터 처리, 동적인 요소 변경 등을
+담당하고, HTML 문서 내에 `<script>` 태그를 사용하여 삽입할 수 있다.
+
+```{mermaid}
+graph TD
+
+    WebDocument["웹 문서"] --> HTML
+    WebDocument --> CSS
+    WebDocument --> JavaScript
+
+    subgraph HTML["HTML"]
+        direction LR
+        Structure["구조"] --> Tags["태그"]
+        Structure --> Text["텍스트"]
+        Structure --> Links["링크"]
+        Structure --> Lists["리스트"]
+        Structure --> Tables["테이블"]
+    end
+
+    subgraph CSS["CSS"]
+        direction LR
+        Styling["스타일링"] --> Colors["색상"]
+        Styling --> Fonts["폰트"]
+        Styling --> Margins["여백"]
+        Styling --> Alignment["정렬"]
+    end
+
+    subgraph JavaScript["자바스크립트"]
+        direction LR
+        Dynamic["동적 기능"] --> UserInteraction["사용자 상호작용"]
+        Dynamic --> DataProcessing["데이터 처리"]
+        Dynamic --> ElementChange["요소 변경"]
+    end
+
+    style WebDocument fill:#f5f5f5,stroke:#333,stroke-width:3px
+    style HTML fill:#d3d3d3,stroke:#333,stroke-width:1px
+    style CSS fill:#d3d3d3,stroke:#333,stroke-width:1px
+    style JavaScript fill:#d3d3d3,stroke:#333,stroke-width:1px
+```
+
+웹 문서는 HTML, CSS, 자바스크립트를 사용하여 복잡한 구조와 디자인,
+인터랙티브한 요소를 제공하기 위해서 개발이 필요한 반면에 아래한글과 워드
+같은 워드 프로세서는 GUI 기반 문서 편집기로 사용자가 메뉴와 버튼을 통해
+쉽게 문서를 서식을 지정하여 작성한다. 마크다운은 두가지 문서 저작방식의
+장점을 취해 가장 단순한 형태 텍스트 기반 마크업 언어로 특수 문자를
+사용하여 서식을 지정한다.
+
+| 기능/저작 도구  | 웹 문서 (HTML/CSS)  |    아래한글/워드     |           마크다운            |
+|:------------:|:----------------:|:----------------:|:------------------:|
+|   텍스트 입력   |  HTML 태그를 사용   |   GUI를 통해 입력    |       일반 텍스트 입력        |
+|    서식 지정    |      CSS 사용       |    메뉴에서 선택     |        특수 문자 사용         |
+|   이미지 삽입   |  `<img>` 태그 사용  |    드래그 앤 드롭    |      `![alt](url)` 형식       |
+|     표 작성     | `<table>` 태그 사용 |     표 메뉴 사용     | 파이프(`|`), 하이픈(`-`) 사용 |
+|   하이퍼링크    |   `<a>` 태그 사용   | 하이퍼링크 메뉴 사용 |      `[text](url)` 형식       |
+|    문서 구조    |   HTML 태그 사용    |  스타일과 목차 사용  |           `#` 사용            |
+|  반응형 디자인  |  미디어 쿼리 사용   |         없음         |             없음              |
+| 인터랙티브 요소 |  자바스크립트 사용  |     매크로 사용      |             없음              |
+|      배포       |    웹 서버 사용     |  `.hwpx` 파일 배포   |        `.md` 파일 저장        |
+|     접근성      |      ARIA 사용      |        제한적        |             없음              |
+
+
 
 ## 다이어그램
 
@@ -660,76 +734,6 @@ graph LR
     style Deployment fill:#d3d3d3,stroke:#333,stroke-width:1px
 ```
 
-## 웹문서
-
-웹 문서 구성요소는 크게 HTML, CSS, 자바스크립트로 구분된다.
-HTML(HyperText Markup Language)은 웹 페이지의 기본 구조와 내용을
-정의하고, 다양한 태그를 사용하여 텍스트, 이미지, 링크, 리스트, 테이블
-등을 웹 페이지에 배치한다. 주요 HTML 태그로 `<head>`, `<body>`, `<h1>`,
-`<p>`, `<a>`, `<img>` 등을 들 수 있다. CSS(Cascading Style Sheets)는 웹
-페이지 레이아웃과 디자인을 담당한다. 색상, 폰트, 여백, 정렬 등을
-지정하여 웹 페이지의 외관을 꾸미는 역할을 한다. CSS는 HTML 문서 내에
-`<style>` 태그를 사용하여 삽입할 수 있고, 외부 저장된 CSS 파일을
-연결하여 사용할 수도 있다. 자바스크립트는 웹 페이지에 동적인 기능을
-부여한다. 사용자와 상호작용, 데이터 처리, 동적인 요소 변경 등을
-담당하고, HTML 문서 내에 `<script>` 태그를 사용하여 삽입할 수 있다.
-
-```{mermaid}
-graph TD
-
-    WebDocument["웹 문서"] --> HTML
-    WebDocument --> CSS
-    WebDocument --> JavaScript
-
-    subgraph HTML["HTML"]
-        direction LR
-        Structure["구조"] --> Tags["태그"]
-        Structure --> Text["텍스트"]
-        Structure --> Links["링크"]
-        Structure --> Lists["리스트"]
-        Structure --> Tables["테이블"]
-    end
-
-    subgraph CSS["CSS"]
-        direction LR
-        Styling["스타일링"] --> Colors["색상"]
-        Styling --> Fonts["폰트"]
-        Styling --> Margins["여백"]
-        Styling --> Alignment["정렬"]
-    end
-
-    subgraph JavaScript["자바스크립트"]
-        direction LR
-        Dynamic["동적 기능"] --> UserInteraction["사용자 상호작용"]
-        Dynamic --> DataProcessing["데이터 처리"]
-        Dynamic --> ElementChange["요소 변경"]
-    end
-
-    style WebDocument fill:#f5f5f5,stroke:#333,stroke-width:3px
-    style HTML fill:#d3d3d3,stroke:#333,stroke-width:1px
-    style CSS fill:#d3d3d3,stroke:#333,stroke-width:1px
-    style JavaScript fill:#d3d3d3,stroke:#333,stroke-width:1px
-```
-
-웹 문서는 HTML, CSS, 자바스크립트를 사용하여 복잡한 구조와 디자인,
-인터랙티브한 요소를 제공하기 위해서 개발이 필요한 반면에 아래한글과 워드
-같은 워드 프로세서는 GUI 기반 문서 편집기로 사용자가 메뉴와 버튼을 통해
-쉽게 문서를 서식을 지정하여 작성한다. 마크다운은 두가지 문서 저작방식의
-장점을 취해 가장 단순한 형태 텍스트 기반 마크업 언어로 특수 문자를
-사용하여 서식을 지정한다.
-
-| 기능/저작 도구  | 웹 문서 (HTML/CSS)  |    아래한글/워드     |           마크다운            |
-|:------------:|:----------------:|:----------------:|:------------------:|
-|   텍스트 입력   |  HTML 태그를 사용   |   GUI를 통해 입력    |       일반 텍스트 입력        |
-|    서식 지정    |      CSS 사용       |    메뉴에서 선택     |        특수 문자 사용         |
-|   이미지 삽입   |  `<img>` 태그 사용  |    드래그 앤 드롭    |      `![alt](url)` 형식       |
-|     표 작성     | `<table>` 태그 사용 |     표 메뉴 사용     | 파이프(`|`), 하이픈(`-`) 사용 |
-|   하이퍼링크    |   `<a>` 태그 사용   | 하이퍼링크 메뉴 사용 |      `[text](url)` 형식       |
-|    문서 구조    |   HTML 태그 사용    |  스타일과 목차 사용  |           `#` 사용            |
-|  반응형 디자인  |  미디어 쿼리 사용   |         없음         |             없음              |
-| 인터랙티브 요소 |  자바스크립트 사용  |     매크로 사용      |             없음              |
-|      배포       |    웹 서버 사용     |  `.hwpx` 파일 배포   |        `.md` 파일 저장        |
-|     접근성      |      ARIA 사용      |        제한적        |             없음              |
 
 ## 수식
 
@@ -743,9 +747,9 @@ graph TD
 논문, 프레젠테이션에 즉시 적용할 수 있는 고급스럽고 미련한 수식표현이
 가능하다.
 
-기본적인 덧셈과 뺄셈은 `\begin{equation} a + b = c \end{equation}`처럼
+기본적인 덧셈과 뺄셈은 `a + b = c`처럼
 표현할 수 있고, 복잡한 적분도
-`\begin{equation} \int_{0}^{\infty} e^{-x^2} dx = \frac{\sqrt{\pi}}{2} \end{equation}`와
+`\int_{0}^{\infty} e^{-x^2} dx = \frac{\sqrt{\pi}}{2}`와
 같이 명료하게 표현할 수 있을 뿐만 아니라, 행렬이나 그리스 문자도
 `\begin{pmatrix} a & b \\ c & d \end{pmatrix}`와
 `\alpha, \beta, \gamma, \Gamma, \pi, \Pi, \phi, \Phi, \mu` 등의 명령어를
