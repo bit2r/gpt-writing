@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ko-KR" xml:lang="ko-KR"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.288">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -50,7 +50,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./about_book.html" rel="prev">
+<link href="./plugin.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -62,17 +62,12 @@ div.csl-indent {
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 20,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
   "language": {
     "search-no-results-text": "일치 없음",
     "search-matching-documents-text": "일치된 문서",
@@ -87,21 +82,59 @@ div.csl-indent {
   }
 }</script>
 
+<script type="text/javascript">
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-229551680-1', 'auto');
+
+ga('send', {
+  hitType: 'pageview',
+  'anonymizeIp': true,
+});
+</script>
+
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">챗GPT 디지털 글쓰기</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="검색"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="탐색 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/bit2r/gpt-writing" rel="" target=""><i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./references.html">참고문헌</a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./references.html">참고문헌</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -109,14 +142,9 @@ div.csl-indent {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">챗GPT 디지털 글쓰기</a> 
-    </div>
-      </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="검색"></div>
@@ -138,8 +166,8 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./history.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">문자와 종이</span></span></a>
+  <a href="./whole_game.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">챗GPT 글쓰기 맛보기</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -153,20 +181,32 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./history.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">언어와 문자</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./editor.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">편집기와 출판</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">편집기와 출판</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unicode.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">유니코드와 UTF-8</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./latex_pdf.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title"></span></span></a><a href="http://example.org">LaTeX</a>과 PDF
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">LaTeX과 PDF</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./quarto.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">쿼토(Quarto)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">쿼토(Quarto)</span></span></a>
   </div>
 </li>
       </ul>
@@ -183,25 +223,13 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./markdown_01_mess.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">심각한 현재 상황</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./markdown_02_markdown.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">마크다운 기초</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./markdown_03_advanced.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">고급 마크다운</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">심각한 현재 상황</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./writing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">디지털 글쓰기</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">글쓰기와 반도체</span></span></a>
   </div>
 </li>
       </ul>
@@ -217,32 +245,26 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./unicode.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">유니코드와 UTF-8</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./components.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">문서 구성요소</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">문서 구성요소</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./fonts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">글꼴</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./colors.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">색상</span></span></a>
+  <a href="./markdown.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">마크다운</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./document_class.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">문서 클래스</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">문서 클래스</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./about_book.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">책과 문서구조</span></span></a>
   </div>
 </li>
       </ul>
@@ -258,20 +280,32 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./fonts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">글꼴</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./colors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">색상</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./themes_ggplot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">그래프 테마</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">그래프 테마</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./themes_gt.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">표 테마</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">표 테마</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./templates.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">템플릿</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">템플릿</span></span></a>
   </div>
 </li>
       </ul>
@@ -279,7 +313,7 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
- <span class="menu-text">디지털 글쓰기</span></a>
+ <span class="menu-text">출판물</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="토글 섹션">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -287,32 +321,26 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./whole_game.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">챗GPT 글쓰기 맛보기</span></span></a>
+  <a href="./publishing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">인쇄출판</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./dw_pdf.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">쿼토 PDF</span></span></a>
+  <a href="./dw_book.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">쿼토 책</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dw_website.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">웹사이트</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">웹사이트와 블로그</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dw_slideshow.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">슬라이드 PPT</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./dw_blog.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">블로그</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">PPT 슬라이드</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -326,7 +354,7 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
- <span class="menu-text">실무</span></a>
+ <span class="menu-text">챗GPT</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="토글 섹션">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -334,14 +362,26 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./publishing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">출판</span></span></a>
+  <a href="./chatGPT.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">챗GPT</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./about_book.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">책과 편집 용어</span></span></a>
+  <a href="./prompt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">프롬프트 공학</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./text_to_X.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">활용사례</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./plugin.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">챗GPT 플러그인</span></span></a>
   </div>
 </li>
       </ul>
@@ -378,39 +418,132 @@ div.csl-indent {
   </div>
   
 
-
 </header>
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-AbdulMajedRaja2020" class="csl-entry" role="listitem">
+AbdulMajedRaja. (2020). Penguins dataset overview - iris alternative in
+r using <span class="nocase">palmerpenguins</span>. <em>Programming with
+R</em>. <a href="https://www.programmingwithr.com/penguins-dataset-overview-iris-alternative-in-r/">https://www.programmingwithr.com/penguins-dataset-overview-iris-alternative-in-r/</a>
+</div>
+<div id="ref-Amatriain2023" class="csl-entry" role="listitem">
+Amatriain, X. (Xavi). (2023). <em>Prompt engineering 101 - introduction
+and resources</em>. Linkedin. <a href="https://www.linkedin.com/pulse/prompt-engineering-101-introduction-resources-amatriain/">https://www.linkedin.com/pulse/prompt-engineering-101-introduction-resources-amatriain/</a>
+</div>
+<div id="ref-Chiang2023" class="csl-entry" role="listitem">
+Chiang, T. (2023). ChatGPT is a blurry JPEG of the web - OpenAI’s
+chatbot offers paraphrases, whereas google offers quotes. Which do we
+prefer? <em>The New Yorker</em>. <a href="https://www.newyorker.com/tech/annals-of-technology/chatgpt-is-a-blurry-jpeg-of-the-web">https://www.newyorker.com/tech/annals-of-technology/chatgpt-is-a-blurry-jpeg-of-the-web</a>
+</div>
 <div id="ref-unicode2010" class="csl-entry" role="listitem">
 Davis, M. (2010). <em>Unicode nearing 50% of the web</em>. <a href="https://googleblog.blogspot.com/2010/01/unicode-nearing-50-of-web.html">https://googleblog.blogspot.com/2010/01/unicode-nearing-50-of-web.html</a>
+</div>
+<div id="ref-edwards2000genetical" class="csl-entry" role="listitem">
+Edwards, A. W. F. (2000). The genetical theory of natural selection.
+<em>Genetics</em>, <em>154</em>(4), 1419–1426.
+</div>
+<div id="ref-gohos2010" class="csl-entry" role="listitem">
+Ghosh, D., Dube, T., &amp; Adamane, S. (2010). Script recognition-a
+review. <em>IEEE Transactions on Pattern Analysis and Machine
+Intelligence</em>, <em>32</em>, 2142–2161. <a href="https://doi.org/10.1109/TPAMI.2010.30">https://doi.org/10.1109/TPAMI.2010.30</a>
+</div>
+<div id="ref-gozalo2023chatgpt" class="csl-entry" role="listitem">
+Gozalo-Brizuela, R., &amp; Garrido-Merchan, E. C. (2023). ChatGPT is not
+all you need. A state of the art review of large generative AI models.
+<em>arXiv Preprint arXiv:2301.04655</em>.
 </div>
 <div id="ref-hyde2021single" class="csl-entry" role="listitem">
 Hyde, A. (2021, August 16). <em>Single source publishing - a
 investigation of what single source publishing is and how this ’holy
 grail’ can be achieved</em>. <a href="https://coko.foundation/articles/single-source-publishing.html">https://coko.foundation/articles/single-source-publishing.html</a>
 </div>
+<div id="ref-penguin2020" class="csl-entry" role="listitem">
+KB, G., TD, W., &amp; WR, F. (2014). Ecological sexual dimorphism and
+environmental variability within a community of antarctic penguins
+(genus pygoscelis). <em>PLoS ONE</em>, <em>9(3)</em>(e90081), –13. <a href="https://doi.org/10.1371/journal.pone.0090081">https://doi.org/10.1371/journal.pone.0090081</a>
+</div>
+<div id="ref-knuth84" class="csl-entry" role="listitem">
+Knuth, D. E. (1984). Literate programming. <em>Comput. J.</em>,
+<em>27</em>(2), 97–111. <a href="https://doi.org/10.1093/comjnl/27.2.97">https://doi.org/10.1093/comjnl/27.2.97</a>
+</div>
+<div id="ref-kulkarni2019building" class="csl-entry" role="listitem">
+Kulkarni, S. (2019). Building an HR dashboard in r using flexdashboard.
+<em>Towards Data Science</em>. <a href="https://towardsdatascience.com/building-an-hr-dashboard-in-r-using-flexdashboard-76d14ed3f32">https://towardsdatascience.com/building-an-hr-dashboard-in-r-using-flexdashboard-76d14ed3f32</a>
+</div>
 <div id="ref-van1994tex" class="csl-entry" role="listitem">
 Laan, K. van der. (1994). <em>What is TEX and metafont all about?</em>
+</div>
+<div id="ref-Levy2019" class="csl-entry" role="listitem">
+Levy, I. (2019). Eugenics and the ethics of statistical analysis.
+<em>GEORGETOWN PUBLIC POLICY REVIEW</em>. <a href="https://gppreview.com/2019/12/16/eugenics-ethics-statistical-analysis/">https://gppreview.com/2019/12/16/eugenics-ethics-statistical-analysis/</a>
+</div>
+<div id="ref-McGrath2013" class="csl-entry" role="listitem">
+McGrath, R. (2013). The pace of technology adoption is speeding up.
+<em>Harvard Business Review</em>. <a href="https://hbr.org/2013/11/the-pace-of-technology-adoption-is-speeding-up">https://hbr.org/2013/11/the-pace-of-technology-adoption-is-speeding-up</a>
 </div>
 <div id="ref-oliver2023internationalization" class="csl-entry" role="listitem">
 Oliver, C. (2017). <em>Internationalization part i: Unicode and
 character encodings</em>. <a href="https://slideplayer.com/slide/7684069/">https://slideplayer.com/slide/7684069/</a>
 </div>
+<div id="ref-openai2023gpt4" class="csl-entry" role="listitem">
+OpenAI. (2023). <em>GPT-4 technical report</em>. <a href="https://arxiv.org/abs/2303.08774">https://arxiv.org/abs/2303.08774</a>
+</div>
+<div id="ref-reynolds2019racing" class="csl-entry" role="listitem">
+Reynolds, G. (2019, April). <em>Racing barchart with gganimate - a quick
+flipbook | made with xaringan</em>. R-Ladies. <a href="https://evamaerey.github.io/little_flipbooks_library/racing_bars/racing_barcharts.html#1">https://evamaerey.github.io/little_flipbooks_library/racing_bars/racing_barcharts.html#1</a>
+</div>
 <div id="ref-spivak1990joy" class="csl-entry" role="listitem">
-Spivak, M. (1990). <em>The joy of<span class="math inline">∖</span>TeX
-<span class="math inline">{</span><span class="math inline">}</span>, a
-gourmet guide to typesetting with the<span class="math inline">∖</span>AmSTeX <span class="math inline">{</span><span class="math inline">}</span> macro
-package: A gourmet guide to typesetting with the AMS-TEX macro
-package</em>. American Mathematical Soc.
+Spivak, M. (1990). <em>The joy of TeX, a gourmet guide to typesetting
+with the AmSTeX macro package: A gourmet guide to typesetting with the
+AMS-TEX macro package</em>. American Mathematical Soc.
+</div>
+<div id="ref-Turc_2022" class="csl-entry" role="listitem">
+Turc, J. (2022). Crafting prompts for text-to-image models. In
+<em>Medium</em>. Towards Data Science. <a href="https://towardsdatascience.com/the-future-of-crafting-prompts-for-text-to-image-models-fc7d9614cb65">https://towardsdatascience.com/the-future-of-crafting-prompts-for-text-to-image-models-fc7d9614cb65</a>
+</div>
+<div id="ref-wickham2019welcome" class="csl-entry" role="listitem">
+Wickham, H., Averick, M., Bryan, J., Chang, W., McGowan, L. D.,
+François, R., Grolemund, G., Hayes, A., Henry, L., Hester, J., et al.
+(2019). Welcome to the tidyverse. <em>Journal of Open Source
+Software</em>, <em>4</em>(43), 1686.
+</div>
+<div id="ref-wickham2023r" class="csl-entry" role="listitem">
+Wickham, H., Çetinkaya-Rundel, M., &amp; Grolemund, G. (2023). <em>R for
+data science</em>. " O’Reilly Media, Inc.".
+</div>
+<div id="ref-rmcook" class="csl-entry" role="listitem">
+Yihui Xie, E. R., Christophe Dervieux. (2022). <em>R markdown
+cookbook</em>. <a href="https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html" class="uri">https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html</a>.
+</div>
+<div id="ref-zhao2023survey" class="csl-entry" role="listitem">
+Zhao, W. X., Zhou, K., Li, J., Tang, T., Wang, X., Hou, Y., Min, Y.,
+Zhang, B., Zhang, J., Dong, Z., Du, Y., Yang, C., Chen, Y., Chen, Z.,
+Jiang, J., Ren, R., Li, Y., Tang, X., Liu, Z., … Wen, J.-R. (2023).
+<em>A survey of large language models</em>. <a href="https://arxiv.org/abs/2303.18223">https://arxiv.org/abs/2303.18223</a>
 </div>
 <div id="ref-KCI2009" class="csl-entry" role="listitem">
 국가기술표준원. (2009, December 28). <em>책의 명칭 및 편집 일반
 용어</em>. <a href="https://www.standard.go.kr/KSCI/standardIntro/getStandardSearchView.do?menuId=919&amp;topMenuId=502&amp;upperMenuId=503&amp;ksNo=KSX0003&amp;tmprKsNo=KSX0003&amp;reformNo=03">https://www.standard.go.kr/KSCI/standardIntro/getStandardSearchView.do?menuId=919&amp;topMenuId=502&amp;upperMenuId=503&amp;ksNo=KSX0003&amp;tmprKsNo=KSX0003&amp;reformNo=03</a>
 </div>
+<div id="ref-kim2007" class="csl-entry" role="listitem">
+김강수. (2007). 한글 라텍에서 조사 이형태 교체의 자동화에 관하여.
+<em>The Asian Journal of TEX</em>, <em>1</em>(2), 153–166. <a href="http://ajt.ktug.org/2007/0102karnes.pdf">http://ajt.ktug.org/2007/0102karnes.pdf</a>
+</div>
+<div id="ref-Kim2011" class="csl-entry" role="listitem">
+김강수. (2011). Typesetting a book with the oblivoir class. <em>The
+Asian Journal of TEX</em>, <em>5</em>(1), –.
+</div>
 <div id="ref-kim2017tex" class="csl-entry" role="listitem">
 김영록. (2017). <em>교육 현장에서의 텍의 활용</em>. TeX: 조판, 그 이상의
 가능성.
+</div>
+<div id="ref-lee2020" class="csl-entry" role="listitem">
+이광춘주용우. (2020). 사람과 인공지능의 일자리 경쟁 요인과 협업 방안.
+<em>디지털경영연구 Vol.6 No.2 Pp.39-50</em>.
+</div>
+<div id="ref-2007oblivoir" class="csl-entry" role="listitem">
+이기황. (2007). Oblivoir 를 이용한 문서 작성. <em>Asian Journal of
+TEX</em>, <em>1</em>(2).
 </div>
 </div>
 
@@ -496,9 +629,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+  function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
+      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -508,17 +642,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start',
+      placement: 'bottom-start'
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -531,81 +656,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        for (let i = 0; i < 2; i++) {
-          container.appendChild(note.children[i].cloneNode(true));
-        }
-        return container.innerHTML
-      } else {
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      return note.innerHTML;
-    }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
-          }
-        } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
-            if (note !== null) {
-              const html = processXRef(id, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
-        }
-      }
-    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -649,7 +699,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
-            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -736,15 +785,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./about_book.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">책과 편집 용어</span></span>
+      <a href="./plugin.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">챗GPT 플러그인</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
   </div>
 </nav>
 </div> <!-- /content -->
-
 
 
 

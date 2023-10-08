@@ -216,7 +216,7 @@ history_tbl |>
 
 ```{r}
 #| echo: false
-#| eval: false
+#| eval: true
 library(tidyverse)
 library(rvest)
 library(gt)
@@ -225,14 +225,22 @@ library(gtExtras)
 history_tbl <- 
   read_csv("data/history_tbl.csv")
 
-history_gt <- history_tbl |> 
-  mutate(link = map(link, gt::html)) |> 
+history_tbl |> 
+  # mutate(link = map(link, gt::html)) |> 
   select(연도, 도구=link, 개발자) |> 
+  # mutate(도구 = str_extract(도구, pattern = '<a href=[^>]+>([^<]+)</a>')) %>% 
+  mutate(도구 = str_replace_all(도구, pattern = '<a href=[^>]+>([^<]+)</a>', "\\1")) %>% 
+  mutate(도구 = if_else(도구 == "Quarto", "쿼토 (Quarto)", 도구)) %>% 
   gt() |> 
     gt_theme_538() |> 
-    cols_align("center")
+    cols_align("center") %>% 
+  tab_style(
+    style = cell_text(color = "blue", weight = "bold", size = "large"),
+    locations = cells_body(
+      columns = everything(),
+      rows = 연도 == 2020
+    ))  
 
-gtsave(history_gt, "images/history_gt.png")
+# gtsave(history_gt, "images/history_gt.png")
 ```
 
-![](images/history_gt.png)
