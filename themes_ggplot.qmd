@@ -13,6 +13,7 @@ editor_options:
 
 ```{r}
 #| label: ggplot_base
+#| eval: false
 
 library(tidyverse)
 library(palmerpenguins)
@@ -38,6 +39,8 @@ base_penguins_gg <- penguins |>
 base_penguins_gg
 ```
 
+![](images/penguin_ggplot_base.png)
+
 펭귄 데이터셋을 사용하여 물갈퀴 길이와 체중 사이의 관계를 시각화하는 그래프를 
 `draw_themes()` 함수로 테마를 달리 적용하여 `ggplot` 그래프를 생성한 후에
 리스트 객체로 저장한다.
@@ -46,6 +49,7 @@ base_penguins_gg
 
 ```{r}
 #| label: ggplot_theme
+#| eval: false
 
 draw_themes <- function(theme_name, theme_choice) {
   penguins |> 
@@ -78,6 +82,7 @@ theme_output <- map2(themes_name, themes_vector, draw_themes)
 patchwork::wrap_plots(theme_output)
 ```
 
+![](images/penguin_ggplot_theme.png)
 
 ### `hrbrthemes`
 

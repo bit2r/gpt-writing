@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ko-KR" xml:lang="ko-KR"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
-
+<meta name="generator" content="quarto-1.4.288">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
 <meta name="author" content="이광춘">
-
 <title>챗GPT 디지털 글쓰기 - 12&nbsp; 문서 클래스</title>
 <style>
 code{white-space: pre-wrap;}
@@ -76,7 +73,6 @@ div.csl-indent {
   margin-left: 2em;
 }</style>
 
-
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
@@ -98,14 +94,18 @@ div.csl-indent {
 <link href="site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.css" rel="stylesheet">
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
-<script id="quarto-search-options" type="application/json">{
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
   "limit": 20,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
   "language": {
     "search-no-results-text": "일치 없음",
     "search-matching-documents-text": "일치된 문서",
@@ -118,9 +118,7 @@ div.csl-indent {
     "search-submit-button-title": "검색",
     "search-label": "검색"
   }
-}</script>
-
-<script type="text/javascript">
+}</script><script type="text/javascript">
 
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -133,17 +131,12 @@ ga('send', {
   'anonymizeIp': true,
 });
 </script>
-
-
 </head>
-
 <body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg navbar-dark "><div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">챗GPT 디지털 글쓰기</span>
     </a>
@@ -154,43 +147,29 @@ ga('send', {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
+<li class="nav-item compact">
     <a class="nav-link" href="https://github.com/bit2r/gpt-writing" rel="" target=""><i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
+</div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
-    </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./components.html">기본요소</a></li><li class="breadcrumb-item"><a href="./document_class.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">문서 클래스</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./components.html">기본요소</a></li><li class="breadcrumb-item"><a href="./document_class.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">문서 클래스</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="검색"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto"><div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./preface.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">서문</span></a>
@@ -216,8 +195,8 @@ ga('send', {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./history.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">언어와 문자</span></span></a>
@@ -248,7 +227,7 @@ ga('send', {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
@@ -257,21 +236,21 @@ ga('send', {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./markdown_01_mess.html" class="sidebar-item-text sidebar-link">
+  <a href="./markdown_mess.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">심각한 현재 상황</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./writing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">글쓰기와 반도체</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">디지털 글쓰기</span></span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
@@ -280,8 +259,8 @@ ga('send', {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./components.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">문서 구성요소</span></span></a>
@@ -306,7 +285,7 @@ ga('send', {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
@@ -315,8 +294,8 @@ ga('send', {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./fonts.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">글꼴</span></span></a>
@@ -347,7 +326,7 @@ ga('send', {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
@@ -356,8 +335,8 @@ ga('send', {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./publishing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">인쇄출판</span></span></a>
@@ -365,8 +344,8 @@ ga('send', {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./dw_pdf.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">쿼토 PDF</span></span></a>
+  <a href="./dw_book.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">쿼토 책</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -388,7 +367,7 @@ ga('send', {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
@@ -397,8 +376,8 @@ ga('send', {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chatGPT.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">챗GPT</span></span></a>
@@ -423,7 +402,7 @@ ga('send', {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
@@ -431,36 +410,36 @@ ga('send', {
   </div>
 </li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">목차</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">목차</h2>
    
   <ul>
-  <li><a href="#lorem-ipsum" id="toc-lorem-ipsum" class="nav-link active" data-scroll-target="#lorem-ipsum"><span class="header-section-number">12.1</span> 로렘 입숨</a>
+<li>
+<a href="#lorem-ipsum" id="toc-lorem-ipsum" class="nav-link active" data-scroll-target="#lorem-ipsum"><span class="header-section-number">12.1</span> 로렘 입숨</a>
   <ul class="collapse">
-  <li><a href="#english-lipsum" id="toc-english-lipsum" class="nav-link" data-scroll-target="#english-lipsum"><span class="header-section-number">12.1.1</span> 영문 입숨</a></li>
+<li><a href="#english-lipsum" id="toc-english-lipsum" class="nav-link" data-scroll-target="#english-lipsum"><span class="header-section-number">12.1.1</span> 영문 입숨</a></li>
   <li><a href="#korean-lipsum" id="toc-korean-lipsum" class="nav-link" data-scroll-target="#korean-lipsum"><span class="header-section-number">12.1.2</span> 한글 입숨</a></li>
-  </ul></li>
-  <li><a href="#문서-클래스" id="toc-문서-클래스" class="nav-link" data-scroll-target="#문서-클래스"><span class="header-section-number">12.2</span> 문서 클래스</a>
-  <ul class="collapse">
-  <li><a href="#짧은-보고서" id="toc-짧은-보고서" class="nav-link" data-scroll-target="#짧은-보고서"><span class="header-section-number">12.2.1</span> 짧은 보고서</a></li>
-  <li><a href="#보고서" id="toc-보고서" class="nav-link" data-scroll-target="#보고서"><span class="header-section-number">12.2.2</span> 보고서</a></li>
-  <li><a href="#책" id="toc-책" class="nav-link" data-scroll-target="#책"><span class="header-section-number">12.2.3</span> 책</a></li>
-  </ul></li>
-  <li><a href="#한글문서-클래스" id="toc-한글문서-클래스" class="nav-link" data-scroll-target="#한글문서-클래스"><span class="header-section-number">12.3</span> 한글문서 클래스</a></li>
   </ul>
-</nav>
+</li>
+  <li>
+<a href="#%EB%AC%B8%EC%84%9C-%ED%81%B4%EB%9E%98%EC%8A%A4" id="toc-문서-클래스" class="nav-link" data-scroll-target="#%EB%AC%B8%EC%84%9C-%ED%81%B4%EB%9E%98%EC%8A%A4"><span class="header-section-number">12.2</span> 문서 클래스</a>
+  <ul class="collapse">
+<li><a href="#%EC%A7%A7%EC%9D%80-%EB%B3%B4%EA%B3%A0%EC%84%9C" id="toc-짧은-보고서" class="nav-link" data-scroll-target="#%EC%A7%A7%EC%9D%80-%EB%B3%B4%EA%B3%A0%EC%84%9C"><span class="header-section-number">12.2.1</span> 짧은 보고서</a></li>
+  <li><a href="#%EB%B3%B4%EA%B3%A0%EC%84%9C" id="toc-보고서" class="nav-link" data-scroll-target="#%EB%B3%B4%EA%B3%A0%EC%84%9C"><span class="header-section-number">12.2.2</span> 보고서</a></li>
+  <li><a href="#%EC%B1%85" id="toc-책" class="nav-link" data-scroll-target="#%EC%B1%85"><span class="header-section-number">12.2.3</span> 책</a></li>
+  </ul>
+</li>
+  <li><a href="#%ED%95%9C%EA%B8%80%EB%AC%B8%EC%84%9C-%ED%81%B4%EB%9E%98%EC%8A%A4" id="toc-한글문서-클래스" class="nav-link" data-scroll-target="#%ED%95%9C%EA%B8%80%EB%AC%B8%EC%84%9C-%ED%81%B4%EB%9E%98%EC%8A%A4"><span class="header-section-number">12.3</span> 한글문서 클래스</a></li>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">문서 클래스</span></h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./components.html">기본요소</a></li><li class="breadcrumb-item"><a href="./document_class.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">문서 클래스</span></a></li></ol></nav><div class="quarto-title">
+<h1 class="title">
+<span class="chapter-number">12</span>&nbsp; <span class="chapter-title">문서 클래스</span>
+</h1>
 </div>
 
 
@@ -473,10 +452,9 @@ ga('send', {
   </div>
   
 
-</header>
 
-<section id="lorem-ipsum" class="level2" data-number="12.1">
-<h2 data-number="12.1" class="anchored" data-anchor-id="lorem-ipsum"><span class="header-section-number">12.1</span> 로렘 입숨</h2>
+</header><section id="lorem-ipsum" class="level2" data-number="12.1"><h2 data-number="12.1" class="anchored" data-anchor-id="lorem-ipsum">
+<span class="header-section-number">12.1</span> 로렘 입숨</h2>
 <p>로렘 입숨(Lorem Ipsum, 줄여서 립숨, lipsum)은 출판과 그래픽 디자인 분야에서 널리 사용되는 <strong>채우기 텍스트(dummy text)</strong>로 글꼴, 타이포그래피, 레이아웃과 같은 그래픽 요소나 시각적 연출을 검토하고 싶을 때 유용하게 쓰인다. 로렘 입숨은 최종 결과물에 들어갈 실제 텍스트가 아직 준비되지 않았을 때, 기계적으로 디자인 전반적인 느낌을 파악하기 위한 임시 채움 글로 활용된다.</p>
 <p>사람들은 텍스트가 보일 경우 그 내용에 집중하는 경향 때문에 로렘 입숨이 특히 진가를 발휘한다. 전형적인 로렘 입숨 텍스트는 라틴어 문장의 일부를 변형한 “Lorem ipsum dolor sit amet, consectetur adipiscing elit…”와 같은 형태로 시작된다. 디자인의 ‘보이는’ 부분을 검토할 때 방해가 되지 않는 중립적인 내용을 제공하여 디자인이나 서체 특성을 강조하고자 할 때, 로렘 입숨을 사용하면 사람들이 디자인 자체에 더 집중할 수 있게 되어, 출판사나 디자이너가 인쇄출판 시각적 요소에만 초점을 맞출 때 매우 유용하다. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <div class="callout callout-style-simple callout-note callout-titled">
@@ -492,8 +470,8 @@ ga('send', {
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 </div>
 </div>
-<section id="english-lipsum" class="level3" data-number="12.1.1">
-<h3 data-number="12.1.1" class="anchored" data-anchor-id="english-lipsum"><span class="header-section-number">12.1.1</span> 영문 입숨</h3>
+<section id="english-lipsum" class="level3" data-number="12.1.1"><h3 data-number="12.1.1" class="anchored" data-anchor-id="english-lipsum">
+<span class="header-section-number">12.1.1</span> 영문 입숨</h3>
 <p>영문 입숨 <a href="http://example.org">LaTeX</a> 패키지로 <code>lipsum</code>, <code>blindtext</code>, <code>kantlipsum</code>, <code>mwe</code> 등이 있다. <code>lipsum</code> 패키지는 로렘 입숨(Lorem Ipsum) 텍스트를 쉽게 생성할 수 있어서 가장 널리 사용되는 텍스트 채우기 패키지 중 하나다. 특히, 문단 수를 지정할 수 있는 기능이 있어서 문서의 길이나 복잡성에 따라 유연하게 적용할 수 있다. 예를 들어, <code>\lipsum[1-5]</code> 명령어를 사용하면 5개의 로렘 입숨 문단을 생성한다.</p>
 <div class="columns">
 <div class="column" style="width:55%;">
@@ -522,16 +500,13 @@ ga('send', {
 
 </div><div class="column" style="width:40%;">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="images/pdf_ipsum_eng.jpg" class="lightbox" title="영문 입숨 2단 문서 사례" data-gallery="quarto-lightbox-gallery-1"><img src="images/pdf_ipsum_eng.jpg" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">영문 입숨 2단 문서 사례</figcaption>
-</figure>
+<figure class="figure"><p><a href="images/pdf_ipsum_eng.jpg" class="lightbox" title="영문 입숨 2단 문서 사례" data-gallery="quarto-lightbox-gallery-1"><img src="images/pdf_ipsum_eng.jpg" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">영문 입숨 2단 문서 사례</figcaption></figure>
 </div>
 </div>
 </div>
-</section>
-<section id="korean-lipsum" class="level3" data-number="12.1.2">
-<h3 data-number="12.1.2" class="anchored" data-anchor-id="korean-lipsum"><span class="header-section-number">12.1.2</span> 한글 입숨</h3>
+</section><section id="korean-lipsum" class="level3" data-number="12.1.2"><h3 data-number="12.1.2" class="anchored" data-anchor-id="korean-lipsum">
+<span class="header-section-number">12.1.2</span> 한글 입숨</h3>
 <p><a href="http://wiki.ktug.org/wiki/wiki.php/jiwonlipsum"><code>jiwonlipsum</code></a> 패키지는 라틴 계열 문자를 위한 <code>lipsum</code> 패키지와 동일한 목표를 갖지만, 한글 및 한자에 특화된 글꼴, 레이아웃 등 타이포그래피의 요소를 예제로 채우기 텍스트(dummy text)를 생성하는 패키지로 김강수님이 제작했다. <code>jiwonlipsum</code> 팩키지는 <a href="http://wiki.ktug.org/wiki/wiki.php/KtugPrivateRepository">KTUG Private Repository</a>에 저장되어 있어 이를 설치한 후 한글 lipsum을 사용할 수 있다. <code>jiwonlipsum</code> 팩키지가 저장된 <a href="http://wiki.ktug.org/wiki/wiki.php/KtugPrivateRepository">KTUG Private Repository</a> 저장소를 활용하는 방식은 다음과 같다.</p>
 <ol type="1">
 <li><p><strong>저장소 추가</strong>: TeX Live 또는 MiKTeX의 패키지 관리자에서 KTUG Private Repository를 추가한다.</p></li>
@@ -585,17 +560,13 @@ ga('send', {
 
 </div><div class="column" style="width:40%;">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="images/pdf_ipsum_kor.jpg" class="lightbox" title="한글 입숨 2단 문서 사례" data-gallery="quarto-lightbox-gallery-2"><img src="images/pdf_ipsum_kor.jpg" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">한글 입숨 2단 문서 사례</figcaption>
-</figure>
+<figure class="figure"><p><a href="images/pdf_ipsum_kor.jpg" class="lightbox" title="한글 입숨 2단 문서 사례" data-gallery="quarto-lightbox-gallery-2"><img src="images/pdf_ipsum_kor.jpg" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">한글 입숨 2단 문서 사례</figcaption></figure>
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="문서-클래스" class="level2" data-number="12.2">
-<h2 data-number="12.2" class="anchored" data-anchor-id="문서-클래스"><span class="header-section-number">12.2</span> 문서 클래스</h2>
+</section></section><section id="문서-클래스" class="level2" data-number="12.2"><h2 data-number="12.2" class="anchored" data-anchor-id="문서-클래스">
+<span class="header-section-number">12.2</span> 문서 클래스</h2>
 <p><a href="http://example.org">LaTeX</a> 문서 클래스(document class)로 <code>article</code>, <code>report</code>, <code>book</code> 이 기본으로 제공되는 문서 클래스다. KOMA-Script는 또다른 <a href="http://example.org">LaTeX</a> 패키지 모음으로 기본 <a href="http://example.org">LaTeX</a> 문서 클래스(<code>article</code>, <code>report</code>, <code>book</code> 등) 확장 버전으로, 주로 유럽에서 널리 사용되며, 유럽의 타이포그래피와 문서 규격에 더 적합하게 설계되었다.</p>
 <ol type="1">
 <li><p><code>scrartcl</code>: <code>article</code> 문서 클래스 확장이며, 과학 학술지, 프리젠테이션, 짧은 보고서, 프로그램 문서, 초대장 등에 쓰이며 1~30페이지 정도 분량을 갖는 문서 작성에 좋다. 추가적인 사용자 설정 옵션과 유럽 스타일 레이아웃을 지원한다.</p></li>
@@ -604,25 +575,24 @@ ga('send', {
 </ol>
 <div class="cell">
 <div class="cell-output-display">
-
-<div id="mwviidizsh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="qawgzquunp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-#mwviidizsh table {
+#qawgzquunp table {
   font-family: Roboto, system-ui, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#mwviidizsh thead, #mwviidizsh tbody, #mwviidizsh tfoot, #mwviidizsh tr, #mwviidizsh td, #mwviidizsh th {
+#qawgzquunp thead, #qawgzquunp tbody, #qawgzquunp tfoot, #qawgzquunp tr, #qawgzquunp td, #qawgzquunp th {
   border-style: none;
 }
 
-#mwviidizsh p {
+#qawgzquunp p {
   margin: 0;
   padding: 0;
 }
 
-#mwviidizsh .gt_table {
+#qawgzquunp .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -648,12 +618,12 @@ ga('send', {
   border-left-color: #D3D3D3;
 }
 
-#mwviidizsh .gt_caption {
+#qawgzquunp .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#mwviidizsh .gt_title {
+#qawgzquunp .gt_title {
   color: #333333;
   font-size: 12px;
   font-weight: bold;
@@ -665,7 +635,7 @@ ga('send', {
   border-bottom-width: 0;
 }
 
-#mwviidizsh .gt_subtitle {
+#qawgzquunp .gt_subtitle {
   color: #333333;
   font-size: 16px;
   font-weight: initial;
@@ -677,7 +647,7 @@ ga('send', {
   border-top-width: 0;
 }
 
-#mwviidizsh .gt_heading {
+#qawgzquunp .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -689,13 +659,13 @@ ga('send', {
   border-right-color: #D3D3D3;
 }
 
-#mwviidizsh .gt_bottom_border {
+#qawgzquunp .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#mwviidizsh .gt_col_headings {
+#qawgzquunp .gt_col_headings {
   border-top-style: solid;
   border-top-width: 3px;
   border-top-color: rgba(255, 255, 255, 0);
@@ -710,7 +680,7 @@ ga('send', {
   border-right-color: #D3D3D3;
 }
 
-#mwviidizsh .gt_col_heading {
+#qawgzquunp .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 80%;
@@ -730,7 +700,7 @@ ga('send', {
   overflow-x: hidden;
 }
 
-#mwviidizsh .gt_column_spanner_outer {
+#qawgzquunp .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 80%;
@@ -742,15 +712,15 @@ ga('send', {
   padding-right: 4px;
 }
 
-#mwviidizsh .gt_column_spanner_outer:first-child {
+#qawgzquunp .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#mwviidizsh .gt_column_spanner_outer:last-child {
+#qawgzquunp .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#mwviidizsh .gt_column_spanner {
+#qawgzquunp .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 3px;
   border-bottom-color: rgba(255, 255, 255, 0);
@@ -762,11 +732,11 @@ ga('send', {
   width: 100%;
 }
 
-#mwviidizsh .gt_spanner_row {
+#qawgzquunp .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#mwviidizsh .gt_group_heading {
+#qawgzquunp .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -792,7 +762,7 @@ ga('send', {
   text-align: left;
 }
 
-#mwviidizsh .gt_empty_group_heading {
+#qawgzquunp .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -807,15 +777,15 @@ ga('send', {
   vertical-align: middle;
 }
 
-#mwviidizsh .gt_from_md > :first-child {
+#qawgzquunp .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#mwviidizsh .gt_from_md > :last-child {
+#qawgzquunp .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#mwviidizsh .gt_row {
+#qawgzquunp .gt_row {
   padding-top: 6px;
   padding-bottom: 6px;
   padding-left: 5px;
@@ -834,7 +804,7 @@ ga('send', {
   overflow-x: hidden;
 }
 
-#mwviidizsh .gt_stub {
+#qawgzquunp .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 80%;
@@ -847,7 +817,7 @@ ga('send', {
   padding-right: 5px;
 }
 
-#mwviidizsh .gt_stub_row_group {
+#qawgzquunp .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -861,15 +831,15 @@ ga('send', {
   vertical-align: top;
 }
 
-#mwviidizsh .gt_row_group_first td {
+#qawgzquunp .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#mwviidizsh .gt_row_group_first th {
+#qawgzquunp .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#mwviidizsh .gt_summary_row {
+#qawgzquunp .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -879,16 +849,16 @@ ga('send', {
   padding-right: 5px;
 }
 
-#mwviidizsh .gt_first_summary_row {
+#qawgzquunp .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#mwviidizsh .gt_first_summary_row.thick {
+#qawgzquunp .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#mwviidizsh .gt_last_summary_row {
+#qawgzquunp .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -898,7 +868,7 @@ ga('send', {
   border-bottom-color: #D3D3D3;
 }
 
-#mwviidizsh .gt_grand_summary_row {
+#qawgzquunp .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -908,7 +878,7 @@ ga('send', {
   padding-right: 5px;
 }
 
-#mwviidizsh .gt_first_grand_summary_row {
+#qawgzquunp .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -918,7 +888,7 @@ ga('send', {
   border-top-color: #D3D3D3;
 }
 
-#mwviidizsh .gt_last_grand_summary_row_top {
+#qawgzquunp .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -928,11 +898,11 @@ ga('send', {
   border-bottom-color: #D3D3D3;
 }
 
-#mwviidizsh .gt_striped {
+#qawgzquunp .gt_striped {
   background-color: #F5F5F5;
 }
 
-#mwviidizsh .gt_table_body {
+#qawgzquunp .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -941,7 +911,7 @@ ga('send', {
   border-bottom-color: #D3D3D3;
 }
 
-#mwviidizsh .gt_footnotes {
+#qawgzquunp .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -955,7 +925,7 @@ ga('send', {
   border-right-color: #D3D3D3;
 }
 
-#mwviidizsh .gt_footnote {
+#qawgzquunp .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -964,7 +934,7 @@ ga('send', {
   padding-right: 5px;
 }
 
-#mwviidizsh .gt_sourcenotes {
+#qawgzquunp .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -978,7 +948,7 @@ ga('send', {
   border-right-color: #D3D3D3;
 }
 
-#mwviidizsh .gt_sourcenote {
+#qawgzquunp .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -986,264 +956,325 @@ ga('send', {
   padding-right: 5px;
 }
 
-#mwviidizsh .gt_left {
+#qawgzquunp .gt_left {
   text-align: left;
 }
 
-#mwviidizsh .gt_center {
+#qawgzquunp .gt_center {
   text-align: center;
 }
 
-#mwviidizsh .gt_right {
+#qawgzquunp .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#mwviidizsh .gt_font_normal {
+#qawgzquunp .gt_font_normal {
   font-weight: normal;
 }
 
-#mwviidizsh .gt_font_bold {
+#qawgzquunp .gt_font_bold {
   font-weight: bold;
 }
 
-#mwviidizsh .gt_font_italic {
+#qawgzquunp .gt_font_italic {
   font-style: italic;
 }
 
-#mwviidizsh .gt_super {
+#qawgzquunp .gt_super {
   font-size: 65%;
 }
 
-#mwviidizsh .gt_footnote_marks {
+#qawgzquunp .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#mwviidizsh .gt_asterisk {
+#qawgzquunp .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#mwviidizsh .gt_indent_1 {
+#qawgzquunp .gt_indent_1 {
   text-indent: 5px;
 }
 
-#mwviidizsh .gt_indent_2 {
+#qawgzquunp .gt_indent_2 {
   text-indent: 10px;
 }
 
-#mwviidizsh .gt_indent_3 {
+#qawgzquunp .gt_indent_3 {
   text-indent: 15px;
 }
 
-#mwviidizsh .gt_indent_4 {
+#qawgzquunp .gt_indent_4 {
   text-indent: 20px;
 }
 
-#mwviidizsh .gt_indent_5 {
+#qawgzquunp .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
 <table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-  <thead>
-    
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="background-color: #585D63; color: #FFFFFF; font-size: 10px; font-weight: bold; border-bottom-width: 2.5px; border-bottom-style: solid; border-bottom-color: #585d63;" scope="col" id="기능">기능</th>
+<thead><tr class="gt_col_headings">
+<th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="background-color: #585D63; color: #FFFFFF; font-size: 10px; font-weight: bold; border-bottom-width: 2.5px; border-bottom-style: solid; border-bottom-color: #585d63;" scope="col" id="기능">기능</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="background-color: #585D63; color: #FFFFFF; font-size: 10px; font-weight: bold; border-bottom-width: 2.5px; border-bottom-style: solid; border-bottom-color: #585d63;" scope="col" id="짧은 보고서(article)">짧은 보고서(article)</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="background-color: #585D63; color: #FFFFFF; font-size: 10px; font-weight: bold; border-bottom-width: 2.5px; border-bottom-style: solid; border-bottom-color: #585d63;" scope="col" id="보고서(report)">보고서(report)</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="background-color: #585D63; color: #FFFFFF; font-size: 10px; font-weight: bold; border-bottom-width: 2.5px; border-bottom-style: solid; border-bottom-color: #585d63;" scope="col" id="책(book)">책(book)</th>
+    </tr></thead>
+<tbody class="gt_table_body">
+<tr class="gt_group_heading_row">
+<th colspan="4" class="gt_group_heading" scope="colgroup" id="명령어와 환경">명령어와 환경</th>
     </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr class="gt_group_heading_row">
-      <th colspan="4" class="gt_group_heading" scope="colgroup" id="명령어와 환경">명령어와 환경</th>
+<tr class="gt_row_group_first">
+<td headers="명령어와 환경  FeatureKorean" class="gt_row gt_center"><div class="gt_from_md">
+<p>장(Chapter) 명령어</p>
+</div></td>
+<td headers="명령어와 환경  Article" class="gt_row gt_center"><div class="gt_from_md">
+<p>사용 불가</p>
+</div></td>
+<td headers="명령어와 환경  Report" class="gt_row gt_center"><div class="gt_from_md">
+<p>사용 가능</p>
+</div></td>
+<td headers="명령어와 환경  Book" class="gt_row gt_center"><div class="gt_from_md">
+<p>사용 가능</p>
+</div></td>
+</tr>
+<tr>
+<td headers="명령어와 환경  FeatureKorean" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>부록(Appendix) 스타일링</p>
+</div></td>
+<td headers="명령어와 환경  Article" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>해당 없음</p>
+</div></td>
+<td headers="명령어와 환경  Report" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>부록 X</p>
+</div></td>
+<td headers="명령어와 환경  Book" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>부록 X</p>
+</div></td>
+</tr>
+<tr>
+<td headers="명령어와 환경  FeatureKorean" class="gt_row gt_center"><div class="gt_from_md">
+<p>부분(Parts)에 대한 새 페이지</p>
+</div></td>
+<td headers="명령어와 환경  Article" class="gt_row gt_center"><div class="gt_from_md">
+<p>새 페이지 없음</p>
+</div></td>
+<td headers="명령어와 환경  Report" class="gt_row gt_center"><div class="gt_from_md">
+<p>새 페이지</p>
+</div></td>
+<td headers="명령어와 환경  Book" class="gt_row gt_center"><div class="gt_from_md">
+<p>새 페이지</p>
+</div></td>
+</tr>
+<tr>
+<td headers="명령어와 환경  FeatureKorean" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>전문/본문/후문(Front/Main/Back matter)</p>
+</div></td>
+<td headers="명령어와 환경  Article" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>사용 불가</p>
+</div></td>
+<td headers="명령어와 환경  Report" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>사용 불가</p>
+</div></td>
+<td headers="명령어와 환경  Book" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>사용 가능</p>
+</div></td>
+</tr>
+<tr>
+<td headers="명령어와 환경  FeatureKorean" class="gt_row gt_center"><div class="gt_from_md">
+<p>요약(Abstract) 환경</p>
+</div></td>
+<td headers="명령어와 환경  Article" class="gt_row gt_center"><div class="gt_from_md">
+<p>사용 가능</p>
+</div></td>
+<td headers="명령어와 환경  Report" class="gt_row gt_center"><div class="gt_from_md">
+<p>사용 가능</p>
+</div></td>
+<td headers="명령어와 환경  Book" class="gt_row gt_center"><div class="gt_from_md">
+<p>사용 불가</p>
+</div></td>
+</tr>
+<tr class="gt_group_heading_row">
+<th colspan="4" class="gt_group_heading" scope="colgroup" id="기본 설정">기본 설정</th>
     </tr>
-    <tr class="gt_row_group_first"><td headers="명령어와 환경  FeatureKorean" class="gt_row gt_center"><div class="gt_from_md"><p>장(Chapter) 명령어</p>
+<tr class="gt_row_group_first">
+<td headers="기본 설정  FeatureKorean" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>양면 옵션(Twoside vs Oneside)</p>
 </div></td>
-<td headers="명령어와 환경  Article" class="gt_row gt_center"><div class="gt_from_md"><p>사용 불가</p>
+<td headers="기본 설정  Article" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>단면(Oneside)</p>
 </div></td>
-<td headers="명령어와 환경  Report" class="gt_row gt_center"><div class="gt_from_md"><p>사용 가능</p>
+<td headers="기본 설정  Report" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>단면(Oneside)</p>
 </div></td>
-<td headers="명령어와 환경  Book" class="gt_row gt_center"><div class="gt_from_md"><p>사용 가능</p>
-</div></td></tr>
-    <tr><td headers="명령어와 환경  FeatureKorean" class="gt_row gt_center gt_striped"><div class="gt_from_md"><p>부록(Appendix) 스타일링</p>
+<td headers="기본 설정  Book" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>양면(Twoside)</p>
 </div></td>
-<td headers="명령어와 환경  Article" class="gt_row gt_center gt_striped"><div class="gt_from_md"><p>해당 없음</p>
+</tr>
+<tr>
+<td headers="기본 설정  FeatureKorean" class="gt_row gt_center"><div class="gt_from_md">
+<p>열기 위치(Openright vs Openany)</p>
 </div></td>
-<td headers="명령어와 환경  Report" class="gt_row gt_center gt_striped"><div class="gt_from_md"><p>부록 X</p>
+<td headers="기본 설정  Article" class="gt_row gt_center"><div class="gt_from_md">
+<p>해당 없음</p>
 </div></td>
-<td headers="명령어와 환경  Book" class="gt_row gt_center gt_striped"><div class="gt_from_md"><p>부록 X</p>
-</div></td></tr>
-    <tr><td headers="명령어와 환경  FeatureKorean" class="gt_row gt_center"><div class="gt_from_md"><p>부분(Parts)에 대한 새 페이지</p>
+<td headers="기본 설정  Report" class="gt_row gt_center"><div class="gt_from_md">
+<p>열기 위치: 어디든(Openany)</p>
 </div></td>
-<td headers="명령어와 환경  Article" class="gt_row gt_center"><div class="gt_from_md"><p>새 페이지 없음</p>
+<td headers="기본 설정  Book" class="gt_row gt_center"><div class="gt_from_md">
+<p>열기 위치: 오른쪽(Openright)</p>
 </div></td>
-<td headers="명령어와 환경  Report" class="gt_row gt_center"><div class="gt_from_md"><p>새 페이지</p>
+</tr>
+<tr>
+<td headers="기본 설정  FeatureKorean" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>페이지 스타일(Pagestyle)</p>
 </div></td>
-<td headers="명령어와 환경  Book" class="gt_row gt_center"><div class="gt_from_md"><p>새 페이지</p>
-</div></td></tr>
-    <tr><td headers="명령어와 환경  FeatureKorean" class="gt_row gt_center gt_striped"><div class="gt_from_md"><p>전문/본문/후문(Front/Main/Back matter)</p>
+<td headers="기본 설정  Article" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>일반(Plain)</p>
 </div></td>
-<td headers="명령어와 환경  Article" class="gt_row gt_center gt_striped"><div class="gt_from_md"><p>사용 불가</p>
+<td headers="기본 설정  Report" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>일반(Plain)</p>
 </div></td>
-<td headers="명령어와 환경  Report" class="gt_row gt_center gt_striped"><div class="gt_from_md"><p>사용 불가</p>
+<td headers="기본 설정  Book" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>헤딩(Headings)</p>
 </div></td>
-<td headers="명령어와 환경  Book" class="gt_row gt_center gt_striped"><div class="gt_from_md"><p>사용 가능</p>
-</div></td></tr>
-    <tr><td headers="명령어와 환경  FeatureKorean" class="gt_row gt_center"><div class="gt_from_md"><p>요약(Abstract) 환경</p>
+</tr>
+<tr>
+<td headers="기본 설정  FeatureKorean" class="gt_row gt_center"><div class="gt_from_md">
+<p>제목 페이지(Titlepage)</p>
 </div></td>
-<td headers="명령어와 환경  Article" class="gt_row gt_center"><div class="gt_from_md"><p>사용 가능</p>
+<td headers="기본 설정  Article" class="gt_row gt_center"><div class="gt_from_md">
+<p>제목 페이지 없음</p>
 </div></td>
-<td headers="명령어와 환경  Report" class="gt_row gt_center"><div class="gt_from_md"><p>사용 가능</p>
+<td headers="기본 설정  Report" class="gt_row gt_center"><div class="gt_from_md">
+<p>제목 페이지 사용</p>
 </div></td>
-<td headers="명령어와 환경  Book" class="gt_row gt_center"><div class="gt_from_md"><p>사용 불가</p>
-</div></td></tr>
-    <tr class="gt_group_heading_row">
-      <th colspan="4" class="gt_group_heading" scope="colgroup" id="기본 설정">기본 설정</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="기본 설정  FeatureKorean" class="gt_row gt_center gt_striped"><div class="gt_from_md"><p>양면 옵션(Twoside vs Oneside)</p>
+<td headers="기본 설정  Book" class="gt_row gt_center"><div class="gt_from_md">
+<p>제목 페이지 사용</p>
 </div></td>
-<td headers="기본 설정  Article" class="gt_row gt_center gt_striped"><div class="gt_from_md"><p>단면(Oneside)</p>
+</tr>
+<tr>
+<td headers="기본 설정  FeatureKorean" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>최하위 섹션(Lowest-level sectioning)</p>
 </div></td>
-<td headers="기본 설정  Report" class="gt_row gt_center gt_striped"><div class="gt_from_md"><p>단면(Oneside)</p>
+<td headers="기본 설정  Article" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>하위-하위 섹션(Subsubsection)</p>
 </div></td>
-<td headers="기본 설정  Book" class="gt_row gt_center gt_striped"><div class="gt_from_md"><p>양면(Twoside)</p>
-</div></td></tr>
-    <tr><td headers="기본 설정  FeatureKorean" class="gt_row gt_center"><div class="gt_from_md"><p>열기 위치(Openright vs Openany)</p>
+<td headers="기본 설정  Report" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>하위 섹션(Subsection)</p>
 </div></td>
-<td headers="기본 설정  Article" class="gt_row gt_center"><div class="gt_from_md"><p>해당 없음</p>
+<td headers="기본 설정  Book" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>하위 섹션(Subsection)</p>
 </div></td>
-<td headers="기본 설정  Report" class="gt_row gt_center"><div class="gt_from_md"><p>열기 위치: 어디든(Openany)</p>
+</tr>
+<tr>
+<td headers="기본 설정  FeatureKorean" class="gt_row gt_center"><div class="gt_from_md">
+<p>상단 제목(Running headings)</p>
 </div></td>
-<td headers="기본 설정  Book" class="gt_row gt_center"><div class="gt_from_md"><p>열기 위치: 오른쪽(Openright)</p>
-</div></td></tr>
-    <tr><td headers="기본 설정  FeatureKorean" class="gt_row gt_center gt_striped"><div class="gt_from_md"><p>페이지 스타일(Pagestyle)</p>
+<td headers="기본 설정  Article" class="gt_row gt_center"><div class="gt_from_md">
+<p>섹션과 하위 섹션</p>
 </div></td>
-<td headers="기본 설정  Article" class="gt_row gt_center gt_striped"><div class="gt_from_md"><p>일반(Plain)</p>
+<td headers="기본 설정  Report" class="gt_row gt_center"><div class="gt_from_md">
+<p>장과 섹션</p>
 </div></td>
-<td headers="기본 설정  Report" class="gt_row gt_center gt_striped"><div class="gt_from_md"><p>일반(Plain)</p>
+<td headers="기본 설정  Book" class="gt_row gt_center"><div class="gt_from_md">
+<p>장과 섹션</p>
 </div></td>
-<td headers="기본 설정  Book" class="gt_row gt_center gt_striped"><div class="gt_from_md"><p>헤딩(Headings)</p>
-</div></td></tr>
-    <tr><td headers="기본 설정  FeatureKorean" class="gt_row gt_center"><div class="gt_from_md"><p>제목 페이지(Titlepage)</p>
+</tr>
+<tr>
+<td headers="기본 설정  FeatureKorean" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>번호 매김(Numbering scope)</p>
 </div></td>
-<td headers="기본 설정  Article" class="gt_row gt_center"><div class="gt_from_md"><p>제목 페이지 없음</p>
+<td headers="기본 설정  Article" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>연속적</p>
 </div></td>
-<td headers="기본 설정  Report" class="gt_row gt_center"><div class="gt_from_md"><p>제목 페이지 사용</p>
+<td headers="기본 설정  Report" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>장 단위</p>
 </div></td>
-<td headers="기본 설정  Book" class="gt_row gt_center"><div class="gt_from_md"><p>제목 페이지 사용</p>
-</div></td></tr>
-    <tr><td headers="기본 설정  FeatureKorean" class="gt_row gt_center gt_striped"><div class="gt_from_md"><p>최하위 섹션(Lowest-level sectioning)</p>
+<td headers="기본 설정  Book" class="gt_row gt_center gt_striped"><div class="gt_from_md">
+<p>장 단위</p>
 </div></td>
-<td headers="기본 설정  Article" class="gt_row gt_center gt_striped"><div class="gt_from_md"><p>하위-하위 섹션(Subsubsection)</p>
+</tr>
+<tr>
+<td headers="기본 설정  FeatureKorean" class="gt_row gt_center"><div class="gt_from_md">
+<p>참고문헌 표시(Bibliography heading)</p>
 </div></td>
-<td headers="기본 설정  Report" class="gt_row gt_center gt_striped"><div class="gt_from_md"><p>하위 섹션(Subsection)</p>
+<td headers="기본 설정  Article" class="gt_row gt_center"><div class="gt_from_md">
+<p>References</p>
 </div></td>
-<td headers="기본 설정  Book" class="gt_row gt_center gt_striped"><div class="gt_from_md"><p>하위 섹션(Subsection)</p>
-</div></td></tr>
-    <tr><td headers="기본 설정  FeatureKorean" class="gt_row gt_center"><div class="gt_from_md"><p>상단 제목(Running headings)</p>
+<td headers="기본 설정  Report" class="gt_row gt_center"><div class="gt_from_md">
+<p>Bibliography</p>
 </div></td>
-<td headers="기본 설정  Article" class="gt_row gt_center"><div class="gt_from_md"><p>섹션과 하위 섹션</p>
+<td headers="기본 설정  Book" class="gt_row gt_center"><div class="gt_from_md">
+<p>Bibliography</p>
 </div></td>
-<td headers="기본 설정  Report" class="gt_row gt_center"><div class="gt_from_md"><p>장과 섹션</p>
-</div></td>
-<td headers="기본 설정  Book" class="gt_row gt_center"><div class="gt_from_md"><p>장과 섹션</p>
-</div></td></tr>
-    <tr><td headers="기본 설정  FeatureKorean" class="gt_row gt_center gt_striped"><div class="gt_from_md"><p>번호 매김(Numbering scope)</p>
-</div></td>
-<td headers="기본 설정  Article" class="gt_row gt_center gt_striped"><div class="gt_from_md"><p>연속적</p>
-</div></td>
-<td headers="기본 설정  Report" class="gt_row gt_center gt_striped"><div class="gt_from_md"><p>장 단위</p>
-</div></td>
-<td headers="기본 설정  Book" class="gt_row gt_center gt_striped"><div class="gt_from_md"><p>장 단위</p>
-</div></td></tr>
-    <tr><td headers="기본 설정  FeatureKorean" class="gt_row gt_center"><div class="gt_from_md"><p>참고문헌 표시(Bibliography heading)</p>
-</div></td>
-<td headers="기본 설정  Article" class="gt_row gt_center"><div class="gt_from_md"><p>References</p>
-</div></td>
-<td headers="기본 설정  Report" class="gt_row gt_center"><div class="gt_from_md"><p>Bibliography</p>
-</div></td>
-<td headers="기본 설정  Book" class="gt_row gt_center"><div class="gt_from_md"><p>Bibliography</p>
-</div></td></tr>
-  </tbody>
-  
-  
+</tr>
+</tbody>
 </table>
 </div>
 </div>
 </div>
-<section id="짧은-보고서" class="level3" data-number="12.2.1">
-<h3 data-number="12.2.1" class="anchored" data-anchor-id="짧은-보고서"><span class="header-section-number">12.2.1</span> 짧은 보고서</h3>
+<section id="짧은-보고서" class="level3" data-number="12.2.1"><h3 data-number="12.2.1" class="anchored" data-anchor-id="짧은-보고서">
+<span class="header-section-number">12.2.1</span> 짧은 보고서</h3>
 <p>짧은 보고서는 <code>article</code> 문서 클래스(<code>documentclass</code>)로 다음과 같은 구문을 갇고 컴파일하게 되면 짧은 보고서 문서형식을 갖는 PDF 파일을 얻게 된다.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="document_class_files/figure-html/unnamed-chunk-2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="document_class_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="331"></a></p>
+<figure class="figure"><p><a href="document_class_files/figure-html/unnamed-chunk-2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="document_class_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="331"></a></p>
 </figure>
 </div>
 </div>
 </div>
-</section>
-<section id="보고서" class="level3" data-number="12.2.2">
-<h3 data-number="12.2.2" class="anchored" data-anchor-id="보고서"><span class="header-section-number">12.2.2</span> 보고서</h3>
+</section><section id="보고서" class="level3" data-number="12.2.2"><h3 data-number="12.2.2" class="anchored" data-anchor-id="보고서">
+<span class="header-section-number">12.2.2</span> 보고서</h3>
 <p>보고서는 <code>report</code> 문서 클래스(<code>documentclass</code>)로 다음과 같은 구문을 갇고 컴파일하게 되면 보고서 문서형식을 갖는 PDF 파일을 얻게 된다.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="document_class_files/figure-html/unnamed-chunk-3-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="document_class_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="658"></a></p>
+<figure class="figure"><p><a href="document_class_files/figure-html/unnamed-chunk-3-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="document_class_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="658"></a></p>
 </figure>
 </div>
 </div>
 </div>
-</section>
-<section id="책" class="level3" data-number="12.2.3">
-<h3 data-number="12.2.3" class="anchored" data-anchor-id="책"><span class="header-section-number">12.2.3</span> 책</h3>
+</section><section id="책" class="level3" data-number="12.2.3"><h3 data-number="12.2.3" class="anchored" data-anchor-id="책">
+<span class="header-section-number">12.2.3</span> 책</h3>
 <p>책은 <code>book</code> 문서 클래스(<code>documentclass</code>)로 다음과 같은 구문을 갇고 컴파일하게 되면 보고서 문서형식을 갖는 PDF 파일을 얻게 된다.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="document_class_files/figure-html/unnamed-chunk-4-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="document_class_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="1316"></a></p>
+<figure class="figure"><p><a href="document_class_files/figure-html/unnamed-chunk-4-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="document_class_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="1316"></a></p>
 </figure>
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="한글문서-클래스" class="level2" data-number="12.3">
-<h2 data-number="12.3" class="anchored" data-anchor-id="한글문서-클래스"><span class="header-section-number">12.3</span> 한글문서 클래스</h2>
+</section></section><section id="한글문서-클래스" class="level2" data-number="12.3"><h2 data-number="12.3" class="anchored" data-anchor-id="한글문서-클래스">
+<span class="header-section-number">12.3</span> 한글문서 클래스</h2>
 <p><code>oblivoir</code>는 <code>memoir</code> 클래스를 기반으로 개발된 LaTeX 문서 클래스 중 하나로, 주로 한글 문서를 작성할 때 사용되며 한글 타이포그래피와 관련된 여러 가지 기능이 포함되어 있다. <code>oblivoir</code>와 후속 <code>xoblivoir</code> 문서 클래스는 한글문서 작성을 쉽고 편리하게 지원한다.</p>
-<p><code>oblivoir</code>와 후속 <code>xoblivoir</code> 문서 클래스(<code>documentclass</code>)는 한글 문서 특성을 잘 반영하기 때문에 별도 설정없이 다음과 같은 구문을 갇고 컴파일하게 되면 한글 문서형식을 갖는 PDF 파일을 얻게 된다. 국내에서 학술 논문, 보고서, 책 등 다양한 문서를 작성할 때 널리 사용된다. <span class="citation" data-cites="2007oblivoir Kim2011">(<a href="references.html#ref-Kim2011" role="doc-biblioref">김강수, 2011</a>; <a href="references.html#ref-2007oblivoir" role="doc-biblioref">이기황, 2007</a>)</span></p>
+<p><code>oblivoir</code>와 후속 <code>xoblivoir</code> 문서 클래스(<code>documentclass</code>)는 한글 문서 특성을 잘 반영하기 때문에 별도 설정없이 다음과 같은 구문을 갇고 컴파일하게 되면 한글 문서형식을 갖는 PDF 파일을 얻게 된다. 국내에서 학술 논문, 보고서, 책 등 다양한 문서를 작성할 때 널리 사용된다. <span class="citation" data-cites="2007oblivoir Kim2011">(<a href="#ref-Kim2011" role="doc-biblioref">김강수, 2011</a>; <a href="#ref-2007oblivoir" role="doc-biblioref">이기황, 2007</a>)</span></p>
 <div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="document_class_files/figure-html/unnamed-chunk-5-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="document_class_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="329"></a></p>
+<figure class="figure"><p><a href="document_class_files/figure-html/unnamed-chunk-5-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="document_class_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="329"></a></p>
 </figure>
 </div>
 </div>
 </div>
 <p>라텍(LaTex)은 문서 모양새에 신경쓸 필용없이 문서의 논리적 구조와 내용에 집중할 수 있게 함으로써 글쓰기 본질에 집중할 수 있다는 약속을 하지만 현실에서 용지 크기, 여백, 행간 등 초심자가 신경쓸 것이 한둘이 아니다. 이러한 문제를 해결하기 위해 <code>oblivoir</code>라는 라텍 문서 클래스가 개발되었다. <code>oblivoir</code>는 기본 한글 문서 서식을 미리 설정해 놓아, 라텍을 처음 사용하는 한글 사용자에게 진입 장벽을 대폭 낮췄다는 평가를 받고 있다.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="images/oblivoir.jpg" class="lightbox" title="oblivoir 문서 클래스" data-gallery="quarto-lightbox-gallery-7"><img src="images/oblivoir.jpg" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption"><code>oblivoir</code> 문서 클래스</figcaption>
-</figure>
+<figure class="figure"><p><a href="images/oblivoir.jpg" class="lightbox" title="oblivoir 문서 클래스" data-gallery="quarto-lightbox-gallery-7"><img src="images/oblivoir.jpg" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption"><code>oblivoir</code> 문서 클래스</figcaption></figure>
 </div>
 <p>워드 프로세서에 용지설정과 관련하여 ’공급 용지’와 ’편집 용지’라는 개념이 있다. 공급 용지는 인쇄를 위해 인쇄기에 공급되는 용지를 말하며, 편집 용지는 문서를 작성할 때 사용하는 용지를 말한다. 일반 저작자가 보통 공급 용지로 프린터에 A4 용지를 사용하고, 편집 용지는 전문서적, 만화책, 잡지 등 인쇄출판 목적에 맞춰 사륙배판, 국판, 신국판 등을 사용한다.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="images/a4paper.jpg" class="lightbox" title="A4 공급 용지를 기준으로 편집용지" data-gallery="quarto-lightbox-gallery-8"><img src="images/a4paper.jpg" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">A4 공급 용지를 기준으로 편집용지</figcaption>
-</figure>
+<figure class="figure"><p><a href="images/a4paper.jpg" class="lightbox" title="A4 공급 용지를 기준으로 편집용지" data-gallery="quarto-lightbox-gallery-8"><img src="images/a4paper.jpg" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">A4 공급 용지를 기준으로 편집용지</figcaption></figure>
 </div>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-Kim2011" class="csl-entry" role="listitem">
 김강수. (2011). Typesetting a book with the oblivoir class. <em>The Asian Journal of TEX</em>, <em>5</em>(1), –.
 </div>
@@ -1251,16 +1282,10 @@ ga('send', {
 이기황. (2007). Oblivoir 를 이용한 문서 작성. <em>Asian Journal of TEX</em>, <em>1</em>(2).
 </div>
 </div>
-</section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
+</section><aside id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><hr>
 <ol>
 <li id="fn1"><p><a href="https://ko.wikipedia.org/wiki/%EB%A1%9C%EB%A0%98_%EC%9E%85%EC%88%A8">위키백과, “로렘 입숨”</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</ol></aside></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1339,10 +1364,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1352,8 +1376,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1366,6 +1399,81 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        return container.innerHTML
+      } else {
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1409,6 +1517,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1492,9 +1601,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
+</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="./markdown.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">마크다운</span></span>
       </a>          
@@ -1506,8 +1613,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","closeEffect":"zoom","descPosition":"bottom","loop":true});</script>
-
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","descPosition":"bottom","loop":true,"closeEffect":"zoom"});</script>
 
 
 <script src="site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.js" defer="true"></script>

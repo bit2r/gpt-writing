@@ -246,7 +246,7 @@ ga('send', {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./writing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">글쓰기와 반도체</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">디지털 글쓰기</span></span></a>
   </div>
 </li>
       </ul>
@@ -875,7 +875,7 @@ $ quarto render --to bitPublish-pdf  # pdf 파일 생성하기</code></pre>
 </tbody>
 </table>
 </div>
-<p><a href="#tbl-bitpublish-fonts" class="quarto-xref">표&nbsp;<span>20.1</span></a> 는 각 분류별로 추천하는 글꼴을 요약하여 나타낸다. 이를 참고하여 문서나 프로젝트에 적합한 글꼴을 선택할 수 있다.</p>
+<p><a href="#tbl-bitpublish-fonts" class="quarto-xref">표&nbsp;<span class="quarto-unresolved-ref">tbl-bitpublish-fonts</span></a> 는 각 분류별로 추천하는 글꼴을 요약하여 나타낸다. 이를 참고하여 문서나 프로젝트에 적합한 글꼴을 선택할 수 있다.</p>
 <p>모든 글꼴은 <code>_extensions/bit2r/bitPublish/fonts</code> 디렉토리에 위치하기 때문에 별도 설치할 필요 없지만, 이미 설치된 글꼴도 중복으로 위치하게 된다. <code>KoPubWorld바탕체_Pro</code>와 <code>KoPubWorld돋움체_Pro</code> 글꼴를 사용하기 위해서는 <code>한국출판인회의</code> 홈페이지인 <a href="https://forms.gle/aQU7b3EoaF53zMKaA" class="uri">https://forms.gle/aQU7b3EoaF53zMKaA</a>에 사용자 정보를 등록 후 무료로 사용하실 수 있다. <a href="https://www.kopus.org/wp-content/uploads/2021/04/%EC%84%9C%EC%B2%B4_%EB%9D%BC%EC%9D%B4%EC%84%BC%EC%8A%A4.pdf">서체 라이선스 문서</a> 일독을 권장한다.</p>
 </section><section id="머리글-바닥글" class="level3" data-number="20.3.3"><h3 data-number="20.3.3" class="anchored" data-anchor-id="머리글-바닥글">
 <span class="header-section-number">20.3.3</span> 머리글 바닥글</h3>
@@ -919,7 +919,7 @@ $ quarto render --to bitPublish-pdf  # pdf 파일 생성하기</code></pre>
 </div>
 </section><section id="사용자-정의-블록" class="level3 page-columns page-full" data-number="20.3.6"><h3 data-number="20.3.6" class="anchored" data-anchor-id="사용자-정의-블록">
 <span class="header-section-number">20.3.6</span> 사용자 정의 블록</h3>
-<p>bitPublish 서식의 대표적인 기능에 <code>커스텀 블록</code>(<code>custom blocks</code>)<span class="citation" data-cites="rmcook">(<a href="references.html#ref-rmcook" role="doc-biblioref">Yihui Xie, 2022</a>)</span>이 있다. 사용자 정의 블록은 보고서나 책의 일부 콘텐츠를 블록으로 정의하여 본문보다 돋보이게 하여 독자가 핵심 포인트를 쉽게 이해할 수 있도록 주목도를 높이는 서식이다.</p>
+<p>bitPublish 서식의 대표적인 기능에 <code>커스텀 블록</code>(<code>custom blocks</code>)<span class="citation" data-cites="rmcook">(<a href="#ref-rmcook" role="doc-biblioref">Yihui Xie, 2022</a>)</span>이 있다. 사용자 정의 블록은 보고서나 책의 일부 콘텐츠를 블록으로 정의하여 본문보다 돋보이게 하여 독자가 핵심 포인트를 쉽게 이해할 수 있도록 주목도를 높이는 서식이다.</p>
 <p>사용자 정의 블록은 <code>팬독</code>의 <code>fenced Div blocks</code> 기능을 사용하고, 이 기능은 Div 블록을 HTML과 LaTeX 모두로 변환시키는 역할을 한다.</p>
 <div class="column-page">
 <div class="columns">
@@ -1171,7 +1171,7 @@ $ quarto render --to bitPublish-pdf  # pdf 파일 생성하기</code></pre>
 </ol>
 </li>
 </ul>
-<p>이미지 페이지 배치는 다음과 같은 <code>fig-pos</code><span class="citation" data-cites="float">(<a href="references.html#ref-float" role="doc-biblioref"><strong>float?</strong></a>)</span> 옵션으로 지정한다.</p>
+<p>이미지 페이지 배치는 다음과 같은 <code>fig-pos</code><span class="citation" data-cites="float">(<a href="#ref-float" role="doc-biblioref"><strong>float?</strong></a>)</span> 옵션으로 지정한다.</p>
 <table class="table">
 <colgroup>
 <col style="width: 25%">
@@ -1241,7 +1241,7 @@ fig-pos과 label
 </div>
 </div>
 </div>
-<p>그런데 R 플롯에 한글이 포함될 경우에 그림 <a href="#fig-hist" class="quarto-xref">그림&nbsp;<span>20.1</span></a> 처럼 한글이 출력되지 않는 문제가 발생된다.</p>
+<p>그런데 R 플롯에 한글이 포함될 경우에 그림 <a href="#fig-hist" class="quarto-xref">그림&nbsp;<span class="quarto-unresolved-ref">fig-hist</span></a> 처럼 한글이 출력되지 않는 문제가 발생된다.</p>
 <p>한글을 정상적으로 출력하기 위해서는 문서의 맨 앞에 다음 스크립트를 추가한다.</p>
 <div class="sourceCode" id="cb30" data-code-line-numbers=""><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r init, include=FALSE}</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="in">source(here::here("_extensions", "bit2r", "bitPublish", "init_environments.R"))</span></span>
@@ -1463,7 +1463,7 @@ C F_k=\sum_{i=1}^k f_i^R=\frac{F_k}{n}
 <div class="sourceCode" id="cb44" data-code-line-numbers=""><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>그림 2.3과 같이 정규분포를 따르는 히스토그램을 그린다.</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>그런데 앞 부분에 크로스-레퍼런스를 적용한 그림 하나를 추가하면 이 문장은 다음과 같이 바뀐다.</p>
 <div class="sourceCode" id="cb45" data-code-line-numbers=""><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>그림 2.4과 같이 정규분포를 따르는 히스토그램을 그린다.</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>그림에 크로스-레퍼런스를 적용해서 그림의 번호 3이 4로 정상적으로 변경되었는데, 조사가 어색하다. `그림 2.4과’가 아니라 `그림 2.4와’로 출력되야하기 때문이다. 왜냐하면 우리말 조사에는 다음과 같은 규칙이 있기 때문이다. 앞단어의 끝소리의 자소에 따라 다음처럼 조사가 결정되기 때문이다.<span class="citation" data-cites="kim2007">(<a href="references.html#ref-kim2007" role="doc-biblioref">김강수, 2007</a>)</span></p>
+<p>그림에 크로스-레퍼런스를 적용해서 그림의 번호 3이 4로 정상적으로 변경되었는데, 조사가 어색하다. `그림 2.4과’가 아니라 `그림 2.4와’로 출력되야하기 때문이다. 왜냐하면 우리말 조사에는 다음과 같은 규칙이 있기 때문이다. 앞단어의 끝소리의 자소에 따라 다음처럼 조사가 결정되기 때문이다.<span class="citation" data-cites="kim2007">(<a href="#ref-kim2007" role="doc-biblioref">김강수, 2007</a>)</span></p>
 <table class="table">
 <colgroup>
 <col style="width: 22%">
@@ -1580,7 +1580,7 @@ C F_k=\sum_{i=1}^k f_i^R=\frac{F_k}{n}
 </div>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-rmcook" class="csl-entry" role="listitem">
 Yihui Xie, E. R., Christophe Dervieux. (2022). <em>R Markdown Cookbook</em>. <a href="https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html" class="uri">https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html</a>.
 </div>
@@ -1921,7 +1921,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","openEffect":"zoom","loop":true,"closeEffect":"zoom"});</script>
+<script>var lightboxQuarto = GLightbox({"loop":true,"descPosition":"bottom","selector":".lightbox","closeEffect":"zoom","openEffect":"zoom"});</script>
 
 
 <script src="site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.js" defer="true"></script>

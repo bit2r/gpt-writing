@@ -227,7 +227,7 @@ ga('send', {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./writing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">글쓰기와 반도체</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">디지털 글쓰기</span></span></a>
   </div>
 </li>
       </ul>
@@ -447,12 +447,10 @@ ga('send', {
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.90</span>, <span class="fl">0.25</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">base_penguins_gg</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</div>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="themes_ggplot_files/figure-html/ggplot_base-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="themes_ggplot_files/figure-html/ggplot_base-1.png" class="img-fluid figure-img" width="672"></a></p>
+<figure class="figure"><p><a href="images/penguin_ggplot_base.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/penguin_ggplot_base.png" class="img-fluid figure-img"></a></p>
 </figure>
-</div>
-</div>
 </div>
 <p>펭귄 데이터셋을 사용하여 물갈퀴 길이와 체중 사이의 관계를 시각화하는 그래프를 <code>draw_themes()</code> 함수로 테마를 달리 적용하여 <code>ggplot</code> 그래프를 생성한 후에 리스트 객체로 저장한다.</p>
 <p>다양한 테마를 <code>draw_themes()</code> 함수에 인자로 넘기기 위해 <code>themes_name</code>과 <code>themes_vector</code>에 테마명과 테마 함수를 저장장 한 후 <code><a href="https://purrr.tidyverse.org/reference/map2.html">map2()</a></code> 함수로 테마를 달리한 <code>ggplot</code> 그래프를 저장한다. 마지막으로, <code><a href="https://patchwork.data-imaginist.com/reference/wrap_plots.html">patchwork::wrap_plots()</a></code> 함수를 사용하여 모든 그래프를 결합하여 하나의 그래프로 출력한다.</p>
@@ -486,12 +484,10 @@ ga('send', {
 <span><span class="va">theme_output</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://purrr.tidyverse.org/reference/map2.html">map2</a></span><span class="op">(</span><span class="va">themes_name</span>, <span class="va">themes_vector</span>, <span class="va">draw_themes</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu">patchwork</span><span class="fu">::</span><span class="fu"><a href="https://patchwork.data-imaginist.com/reference/wrap_plots.html">wrap_plots</a></span><span class="op">(</span><span class="va">theme_output</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</div>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="themes_ggplot_files/figure-html/ggplot_theme-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="themes_ggplot_files/figure-html/ggplot_theme-1.png" class="img-fluid figure-img" width="672"></a></p>
+<figure class="figure"><p><a href="images/penguin_ggplot_theme.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/penguin_ggplot_theme.png" class="img-fluid figure-img"></a></p>
 </figure>
-</div>
-</div>
 </div>
 <section id="hrbrthemes" class="level3" data-number="16.0.1"><h3 data-number="16.0.1" class="anchored" data-anchor-id="hrbrthemes">
 <span class="header-section-number">16.0.1</span> <code>hrbrthemes</code>
@@ -709,7 +705,7 @@ ga('send', {
 <span><span class="fu"><a href="https://rdrr.io/r/grDevices/dev.html">dev.off</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/penguins_theme_gg.jpg" class="lightbox" title="펭귄 데이터 사용자 테마 적용 그래프" data-gallery="quarto-lightbox-gallery-7"><img src="images/penguins_theme_gg.jpg" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="images/penguins_theme_gg.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="펭귄 데이터 사용자 테마 적용 그래프"><img src="images/penguins_theme_gg.jpg" class="img-fluid figure-img"></a></p>
 <figcaption class="figure-caption">펭귄 데이터 사용자 테마 적용 그래프</figcaption></figure>
 </div>
 
@@ -1042,7 +1038,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom","selector":".lightbox","loop":true});</script>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","loop":true,"descPosition":"bottom","openEffect":"zoom"});</script>
 
 
 <script src="site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.js" defer="true"></script>

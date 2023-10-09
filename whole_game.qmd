@@ -7,6 +7,13 @@ editor:
     wrap: 72
 ---
 
+```{r}
+#| include: false
+
+source("_common.R")
+```
+
+
 # 챗GPT 글쓰기 맛보기
 
 종이와 펜으로 글을 쓸 때 글쓰기는 주로 생각이나 정보, 감정을 언어의
@@ -594,6 +601,7 @@ penguins %>%
 
 ```{r}
 #| echo: false
+#| eval: false
 mass_flipper <- penguins %>% drop_na() %>% 
   ggplot(aes(x = flipper_length_mm, y = body_mass_g)) +
   geom_point(aes(color = species, 
@@ -616,6 +624,8 @@ mass_flipper <- penguins %>% drop_na() %>%
 
 mass_flipper
 ```
+
+![](images/whole_game_penguins.png)
 
 :::
 

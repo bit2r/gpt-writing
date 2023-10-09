@@ -61,11 +61,11 @@ div.csl-indent {
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 20,
   "keyboard-shortcut": [
     "f",
@@ -84,35 +84,56 @@ div.csl-indent {
     "search-submit-button-title": "검색",
     "search-label": "검색"
   }
-}</script><script src="site_libs/quarto-diagram/mermaid.min.js"></script><script src="site_libs/quarto-diagram/mermaid-init.js"></script><link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+}</script><script type="text/javascript">
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-229551680-1', 'auto');
+
+ga('send', {
+  hitType: 'pageview',
+  'anonymizeIp': true,
+});
+</script><script src="site_libs/quarto-diagram/mermaid.min.js"></script><script src="site_libs/quarto-diagram/mermaid-init.js"></script><link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
-<body class="nav-sidebar floating slimcontent">
+<body class="nav-sidebar floating nav-fixed slimcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg navbar-dark "><div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">챗GPT 디지털 글쓰기</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="검색"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="탐색 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/bit2r/gpt-writing" rel="" target=""><i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+</div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chatGPT.html">챗GPT</a></li><li class="breadcrumb-item"><a href="./chatGPT.html"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">챗GPT</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">챗GPT 디지털 글쓰기</a> 
-    </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="검색"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto"><div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
@@ -184,14 +205,14 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./markdown_01_mess.html" class="sidebar-item-text sidebar-link">
+  <a href="./markdown_mess.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">심각한 현재 상황</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./writing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">글쓰기와 반도체</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">디지털 글쓰기</span></span></a>
   </div>
 </li>
       </ul>
@@ -226,7 +247,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./about_book.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">책과 편집 용어</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">책과 문서구조</span></span></a>
   </div>
 </li>
       </ul>
@@ -284,13 +305,13 @@ div.csl-indent {
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./publishing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">출판</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">인쇄출판</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./dw_pdf.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">쿼토 PDF</span></span></a>
+  <a href="./dw_book.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">쿼토 책</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -302,7 +323,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dw_slideshow.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">슬라이드 PPT</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">PPT 슬라이드</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -337,13 +358,13 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./text_to_X.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">생성형 AI</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">활용사례</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./application.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">챗GPT 응용사례</span></span></a>
+  <a href="./plugin.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">챗GPT 플러그인</span></span></a>
   </div>
 </li>
       </ul>
@@ -412,7 +433,7 @@ div.csl-indent {
   
 
 
-</header><p>기술채택(소비) 속도가 가파라지는 현대 사회에서 챗GPT는 전기, 냉장고, 세탁기, 에어콘, 컴퓨터, 전화기, 휴대폰처럼 혁신적인 와해기술의 한 예라고 할 수 있다. 전화기가 50%의 가정에 보급되기까지 수십 년이 걸렸던 것과 대비해, 휴대폰은 1990년에 동일한 보급율을 달성하는 데 몇년 걸리지 않았다. 혁신적인 기술의 수용기간이 점점 짧아지고 있다는 것이 최근들어 뚜렷하게 나타나고 있다. <span class="citation" data-cites="McGrath2013">(<a href="references.html#ref-McGrath2013" role="doc-biblioref">McGrath, 2013</a>)</span></p>
+</header><p>기술채택(소비) 속도가 가파라지는 현대 사회에서 챗GPT는 전기, 냉장고, 세탁기, 에어콘, 컴퓨터, 전화기, 휴대폰처럼 혁신적인 와해기술의 한 예라고 할 수 있다. 전화기가 50%의 가정에 보급되기까지 수십 년이 걸렸던 것과 대비해, 휴대폰은 1990년에 동일한 보급율을 달성하는 데 몇년 걸리지 않았다. 혁신적인 기술의 수용기간이 점점 짧아지고 있다는 것이 최근들어 뚜렷하게 나타나고 있다. <span class="citation" data-cites="McGrath2013">(<a href="#ref-McGrath2013" role="doc-biblioref">McGrath, 2013</a>)</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><a href="images/gpt_adoption_hbr.png" class="lightbox" title="더 빠르게 확산되는 소비(수용)" data-gallery="quarto-lightbox-gallery-1"><img src="images/gpt_adoption_hbr.png" class="img-fluid figure-img"></a></p>
 <figcaption class="figure-caption">더 빠르게 확산되는 소비(수용)</figcaption></figure>
@@ -423,7 +444,7 @@ div.csl-indent {
 <span class="header-section-number">24.1</span> 생성형 AI</h2>
 <section id="jpeg-압축" class="level3 page-columns page-full" data-number="24.1.1"><h3 data-number="24.1.1" class="anchored" data-anchor-id="jpeg-압축">
 <span class="header-section-number">24.1.1</span> JPEG 압축</h3>
-<p>챗GPT는 웹의 무수한 데이터를 학습한 하나의 압축저장소로 볼 수 있다. 압축을 풀게되면 원본을 정확히 복원할 수 있는 경우도 있지만, 그렇지 않은 경우도 불가피하게 존재한다<span class="citation" data-cites="Chiang2023">(<a href="references.html#ref-Chiang2023" role="doc-biblioref">Chiang, 2023</a>)</span> .</p>
+<p>챗GPT는 웹의 무수한 데이터를 학습한 하나의 압축저장소로 볼 수 있다. 압축을 풀게되면 원본을 정확히 복원할 수 있는 경우도 있지만, 그렇지 않은 경우도 불가피하게 존재한다<span class="citation" data-cites="Chiang2023">(<a href="#ref-Chiang2023" role="doc-biblioref">Chiang, 2023</a>)</span> .</p>
 <p>챗GPT는 <strong>“웹의 흐릿한 JPEG”</strong>라는 비유로 설명된다. JPEG 기술은 손실 압축 기술로, 무손실 압축 기술인 PNG와 대조된다. 흐릿한 이미지가 선명하지 않거나 정확하지 않은 것처럼, 챗GPT 역시 항상 완벽한 답변을 제공하거나 모든 질문을 정확히 이해하는 것은 아니다. 그러나 사용자와의 상호작용을 통해 지속적인 학습을 통해 개선되고 있다. 더 많은 사람들이 챗GPT를 사용하면 할수록, 그만큼 더 정교하게 사람의 언어를 이해하고 대화할 수 있는 기술로 발전하게 된다.</p>
 <p>챗GPT를 비롯한 유사 인공지능(AI)이 너무 강력해져 인간을 대체할 것이라는 우려도 있지만, 챗GPT는 결국 인간의 작업을 더 쉽고 효율적으로 수행할 수 있는 강력한 도구에 불과하기 때문에, 인간을 능가하거나 지배할 가능성은 거의 없다. 챗GPT 즉, 인공지능을 책임감 있고 윤리적으로 사용하는 것은 결국 가계, 기업, 정부, 우리 모두의 책임이다.</p>
 <p>챗GPT가 간단한 사칙연산 계산에서 어려움을 겪는 것은 웹에 퍼져 있는 숫자 계산 데이터를 기반으로 학습하여 계산을 모방할 뿐이기 때문이다. 만약 사칙연산에 대한 일반적 원칙을 제대로 이해한다면, 웹에서 발견되는 사칙연산 문제뿐만 아니라 다른 계산 문제도 정확히 해결할 수 있지만 현재로는 그렇지 못하기 때문에 플러그인(Plugin)을 통해 해결하고 있다.</p>
@@ -461,7 +482,7 @@ div.csl-indent {
 </div>
 </section></section><section id="거대언어모형" class="level2" data-number="24.3"><h2 data-number="24.3" class="anchored" data-anchor-id="거대언어모형">
 <span class="header-section-number">24.3</span> 거대언어모형</h2>
-<p>언어모형이 시간이 지남에 따라 크기가 커져 거대언어모형(Large Language Models, LLMs)이 언어모형을 지칭하는 용어로 자리를 잡아가고 있다. 특히 트랜스포머(Transformer) 기반 사전 훈련된 언어 모형(Pre-trained Language Models, PLMs)은 모형 크기를 확장하면 성능이 향상되고, 특정 규모를 초과하면 거대언어모형에서는 작은 언어모형에서 볼 수 없는 특별한 능력을 발현함을 증명했다. <span class="citation" data-cites="zhao2023survey">(<a href="references.html#ref-zhao2023survey" role="doc-biblioref">Zhao 기타, 2023</a>)</span></p>
+<p>언어모형이 시간이 지남에 따라 크기가 커져 거대언어모형(Large Language Models, LLMs)이 언어모형을 지칭하는 용어로 자리를 잡아가고 있다. 특히 트랜스포머(Transformer) 기반 사전 훈련된 언어 모형(Pre-trained Language Models, PLMs)은 모형 크기를 확장하면 성능이 향상되고, 특정 규모를 초과하면 거대언어모형에서는 작은 언어모형에서 볼 수 없는 특별한 능력을 발현함을 증명했다. <span class="citation" data-cites="zhao2023survey">(<a href="#ref-zhao2023survey" role="doc-biblioref">Zhao 기타, 2023</a>)</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><a href="images/llm_g.png" class="lightbox" title="거대언어모형(LLM)" data-gallery="quarto-lightbox-gallery-6"><img src="images/llm_g.png" class="img-fluid figure-img"></a></p>
 <figcaption class="figure-caption">거대언어모형(LLM)</figcaption></figure>
@@ -539,7 +560,7 @@ div.csl-indent {
 <p>AMC 12도 마찬가지로 미국 수학 협회가 주관하는 수학 대회로 12학년 이하 학생들을 대상으로 하며, 고등학교 전체 교육 과정을 다루지만, 미적분학은 제외된다. AMC 12는 AMC 10과 함께 국제 수학 올림피아드 (IMO) 참가 팀을 선발하기 위한 시험 중 하나이다.</p>
 <p>GPT-4는 다양한 시험에서 이전 GPT-3.5보다 전반적으로 높은 성능을 보였다. 법률, 대학 입학 시험, 과학 시험 등에서 특히 뛰어난 결과를 보였지만 코딩 능력에 대한 시험에서는 상대적으로 낮은 성능을 보였다.</p>
 <p>특히 미국 변호사 시험(Uniform Bar Exam)에서 상위 10% 점수를 얻어 GPT-3.5보다 훨씬 나아졌고, LSAT과 SAT 같은 대학 입학 시험에서도 상위 20% 이상 점수를 기록했다. 대학원 입학 시험인 GRE에서 수리영역(Quantitative)과 언어영역(Verbal) 부분에서 상위를 차지했고, 과학 관련 시험인 USABO와 USNCO에서도 높은 백분위를 기록했다. 의학 지식을 평가하는 자가 평가 프로그램(Medical Knowledge Self-Assessment Program, MK-SAP)에서는 75% 점수를 얻었다.</p>
-<p>코딩 능력을 평가하는 코드포스(Codeforces)와 리트 코드(Leetcode)에서 상대적으로 낮은 점수를 보였지만, 대부분의 AP 시험에서 상위 20% 이상의 높은 점수를 얻었고 소믈리에 관련 시험에서도 이론 지식 부분에서 77% ~ 92% 사이 점수를 얻었다. <span class="citation" data-cites="openai2023gpt4">(<a href="references.html#ref-openai2023gpt4" role="doc-biblioref">OpenAI, 2023</a>)</span></p>
+<p>코딩 능력을 평가하는 코드포스(Codeforces)와 리트 코드(Leetcode)에서 상대적으로 낮은 점수를 보였지만, 대부분의 AP 시험에서 상위 20% 이상의 높은 점수를 얻었고 소믈리에 관련 시험에서도 이론 지식 부분에서 77% ~ 92% 사이 점수를 얻었다. <span class="citation" data-cites="openai2023gpt4">(<a href="#ref-openai2023gpt4" role="doc-biblioref">OpenAI, 2023</a>)</span></p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fnswkejvjq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
@@ -1226,7 +1247,7 @@ div.csl-indent {
 <p>기계학습과 자연어 처리 분야에서는 시간이 지남에 따라 다양한 공학 기법이 등장하고 발전해왔다. 이러한 공학 기법들은 대체로 피처 공학, 아키텍처 공학, 목적 공학, 그리고 프롬프트 공학으로 구분할 수 있다. 각 기법은 특정 시기에 주목받았으며, 그에 따라 다양한 모델과 알고리즘이 개발되었다. 이러한 공학 기법들의 진화 과정을 살펴보면, 기계학습과 자연어 처리가 어떻게 발전해왔는지 이해할 수 있다.</p>
 <p>첫 번째로, 피처 공학의 시대는 대략 2015년까지 이어졌으며, 이 기간 동안 비신경망 지도학습이 주로 사용되었다. 이 단계에서는 수작업으로 특징(Feature)을 추출하고, 그 특징을 기반으로 SVM(Support Vector Machine)이나 CRF(Conditional Random Fields) 같은 비신경망 기계학습 모델을 학습시켰다. 이 방법은 당시에는 효과적이었지만, 수작업으로 특징을 추출하는 과정이 복잡하고 시간이 많이 소요되었다.</p>
 <p>두 번째로, 2013년부터 2018년까지는 아키텍처 공학이 주목받았다. 이 시기에는 신경망 지도학습이 대두되면서, 수작업으로 특징을 추출할 필요가 줄었다. 대신, 신경망 아키텍처를 설계하고 수정하는 작업이 중요해졌다. 예를 들어, 텍스트 분류 작업에는 CNN(Convolutional Neural Networks)이 주로 사용되었다. 이 단계에서는 아키텍처의 중요성이 강조되었으며, 사전학습된 언어 모델이나 임베딩 같은 얕은 특징도 사용되기 시작했다.</p>
-<p>마지막으로, 2017년부터 현재까지는 목적 공학과 프롬프트 공학이 주를 이루고 있다. 사전학습된 언어 모델을 사용하여 초기 모델을 설정하고, 목적함수를 엔지니어링하는 것이 이 단계의 특징이다. BERT와 같은 모델이 미세조정을 통해 다양한 작업에 적용되고 있다. 또한, 2019년부터는 프롬프트 공학이 두각을 나타내고 있으며, GPT-3와 같은 모델은 프롬프트를 통해 다양한 NLP 작업을 수행할 수 있다. 이 단계에서는 언어 모델에 대한 의존도가 높아져, 아키텍처나 특징 추출에 대한 부담이 줄어들었다. <span class="citation" data-cites="Amatriain2023">(<a href="references.html#ref-Amatriain2023" role="doc-biblioref">Amatriain, 2023</a>)</span></p>
+<p>마지막으로, 2017년부터 현재까지는 목적 공학과 프롬프트 공학이 주를 이루고 있다. 사전학습된 언어 모델을 사용하여 초기 모델을 설정하고, 목적함수를 엔지니어링하는 것이 이 단계의 특징이다. BERT와 같은 모델이 미세조정을 통해 다양한 작업에 적용되고 있다. 또한, 2019년부터는 프롬프트 공학이 두각을 나타내고 있으며, GPT-3와 같은 모델은 프롬프트를 통해 다양한 NLP 작업을 수행할 수 있다. 이 단계에서는 언어 모델에 대한 의존도가 높아져, 아키텍처나 특징 추출에 대한 부담이 줄어들었다. <span class="citation" data-cites="Amatriain2023">(<a href="#ref-Amatriain2023" role="doc-biblioref">Amatriain, 2023</a>)</span></p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -1269,7 +1290,7 @@ div.csl-indent {
 </div>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-Amatriain2023" class="csl-entry" role="listitem">
 Amatriain, X. (Xavi). (2023). <em>Prompt Engineering 101 - Introduction and resources</em>. Linkedin. <a href="https://www.linkedin.com/pulse/prompt-engineering-101-introduction-resources-amatriain/">https://www.linkedin.com/pulse/prompt-engineering-101-introduction-resources-amatriain/</a>
 </div>
@@ -1617,7 +1638,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":true,"openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom"});</script>
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","closeEffect":"zoom","openEffect":"zoom","loop":true});</script>
 
 
 <script src="site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.js" defer="true"></script>
