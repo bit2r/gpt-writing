@@ -56,9 +56,11 @@ date: "2015년 7월 7일"
 :::
 
 ::: {.column width=47.5%}
+``` bash
 # 들어가며 {.unnumbered}
 # 방법론 {.unnumbered}
 ## 동적 인구 모형 {.unnumbered}
+```
 :::
 
 :::::

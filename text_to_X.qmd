@@ -191,7 +191,8 @@ Python 코드를 실행하려면 시스템에 Python이 설치되어 있어야 �
 
 챗GPT에 파이썬 언어로 계산기 프로그램을 작성하라는 지시명령어를 내린다. 지시명령어는 `please add gui with tkinter`와 같이 작성하면 된다. CLI 계산기 프로그램보다 GUI 계산기는 사용자에게는 편리하지만 개발해야 되는 코드는 더욱 복잡해진다.
 
-::: {.callout-note collapse="true"} \### please add gui with tkinter
+::: {.callout-note collapse="false"} 
+### please add gui with tkinter
 
 Sure, here is an example of the same calculator program using the Tkinter library to create a graphical user interface (GUI):
 

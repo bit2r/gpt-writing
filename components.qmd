@@ -598,6 +598,9 @@ HTML(HyperText Markup Language)은 웹 페이지의 기본 구조와 내용을
 담당하고, HTML 문서 내에 `<script>` 태그를 사용하여 삽입할 수 있다.
 
 ```{mermaid}
+%%| eval: false
+%%| echo: false
+
 graph TD
 
     WebDocument["웹 문서"] --> HTML
@@ -633,6 +636,8 @@ graph TD
     style CSS fill:#d3d3d3,stroke:#333,stroke-width:1px
     style JavaScript fill:#d3d3d3,stroke:#333,stroke-width:1px
 ```
+
+![](images/components_web_document.png)
 
 웹 문서는 HTML, CSS, 자바스크립트를 사용하여 복잡한 구조와 디자인,
 인터랙티브한 요소를 제공하기 위해서 개발이 필요한 반면에 아래한글과 워드
@@ -693,6 +698,7 @@ graph TD
 
 ```{mermaid}
 %%| echo: true
+%%| eval: false
 
 graph LR
 
@@ -734,6 +740,7 @@ graph LR
     style Deployment fill:#d3d3d3,stroke:#333,stroke-width:1px
 ```
 
+![](images/components_diagram.png)
 
 ## 수식
 
@@ -760,24 +767,16 @@ graph LR
 ::: columns
 ::: column
 ``` tex
-\begin{equation}
-
-a + b = c
-
-\end{equation}
+a^2 + b^2 = c^2
 ```
 :::
 
 ::: column
 
 
-```{=tex}
-\begin{equation}
-
-a + b = c
-
-\end{equation}
-```
+$$
+a^2 + b^2 = c^2
+$$
 
 :::
 :::
@@ -787,24 +786,16 @@ a + b = c
 ::: columns
 ::: column
 ``` tex
-\begin{equation}
-
 \sqrt{a^2 + b^2} = c
-
-\end{equation}
 ```
 :::
 
 ::: column
 
 
-```{=tex}
-\begin{equation}
-
+$$
 \sqrt{a^2 + b^2} = c
-
-\end{equation}
-```
+$$
 
 :::
 :::
@@ -814,24 +805,16 @@ a + b = c
 ::: columns
 ::: column
 ``` tex
-\begin{equation}
-
 \sin^2 \theta + \cos^2 \theta = 1
-
-\end{equation}
 ```
 :::
 
 ::: column
 
 
-```{=tex}
-\begin{equation}
-
+$$
 \sin^2 \theta + \cos^2 \theta = 1
-
-\end{equation}
-```
+$$
 
 :::
 :::
@@ -841,24 +824,16 @@ a + b = c
 ::: columns
 ::: column
 ``` tex
-\begin{equation}
-
 \int_{0}^{\infty} e^{-x^2} dx = \frac{\sqrt{\pi}}{2}
-
-\end{equation}
 ```
 :::
 
 ::: column
 
 
-```{=tex}
-\begin{equation}
-
+$$
 \int_{0}^{\infty} e^{-x^2} dx = \frac{\sqrt{\pi}}{2}
-
-\end{equation}
-```
+$$
 
 :::
 :::
@@ -868,37 +843,22 @@ a + b = c
 ::: columns
 ::: column
 ``` tex
-\begin{equation}
-
 \begin{pmatrix}
-
 a & b \\
-
 c & d
-
 \end{pmatrix}
-
-\end{equation}
 ```
 :::
 
 ::: column
 
 
-```{=tex}
-\begin{equation}
-
+$$
 \begin{pmatrix}
-
 a & b \\
-
 c & d
-
 \end{pmatrix}
-
-\end{equation}
-```
-
+$$
 :::
 :::
 
@@ -907,25 +867,16 @@ c & d
 ::: columns
 ::: column
 ``` tex
-\begin{equation}
-
 \alpha, \beta, \gamma, \Gamma, \pi, \Pi, \phi, \Phi, \mu
-
-\end{equation}
 ```
 :::
 
 ::: column
 
 
-```{=tex}
-\begin{equation}
-
+$$
 \alpha, \beta, \gamma, \Gamma, \pi, \Pi, \phi, \Phi, \mu
-
-\end{equation}
-```
-
+$$
 :::
 :::
 
@@ -934,24 +885,16 @@ c & d
 ::: columns
 ::: column
 ``` tex
-\begin{equation}
-
 \lim_{{n \to \infty}} \frac{1}{n} = 0
-
-\end{equation}
 ```
 :::
 
 ::: column
 
 
-```{=tex}
-\begin{equation}
-
+$$
 \lim_{{n \to \infty}} \frac{1}{n} = 0
-
-\end{equation}
-```
+$$
 
 :::
 :::
@@ -966,36 +909,23 @@ c & d
 
 ::: column
 ``` tex
-\begin{equation}
-
 \begin{aligned}[t]
-
 \sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6} \\
-
 \prod_{i=1}^{n} a_i = a_1 \times a_2 \times \cdots \times a_n
-
 \end{aligned}
-
-\end{equation}
 ```
 :::
 
 ::: column
 
 
-```{=tex}
-\begin{equation}
+$$
+\sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}
+$$
 
-\begin{aligned}
-
-\sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6} \\
-
+$$
 \prod_{i=1}^{n} a_i = a_1 \times a_2 \times \cdots \times a_n
-
-\end{aligned}
-
-\end{equation}
-```
+$$
 
 :::
 
@@ -1012,6 +942,8 @@ c & d
 참고문헌과 인용 정보를 최종적으로 처리하고 완성된 PDF 파일이 생성된다.
 
 ```{mermaid}
+%%| eval: false
+%%| echo: false
 graph LR;
     style A fill:#f9d71c,stroke:#333,stroke-width:2px;
     style B fill:#42f5e6,stroke:#333,stroke-width:2px;
@@ -1023,8 +955,9 @@ graph LR;
     B -->|biber <br> bibtex| C{.bbl,<br> .blg}
     C -->|xelatex| D{.aux,<br> .log,<br>.pdf}
     D -->|xelatex| E[PDF]
-
 ```
+
+![](images/mermaid_latex_workflow.png)
 
 ### `.bib` 파일
 

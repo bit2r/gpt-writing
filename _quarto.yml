@@ -37,38 +37,38 @@ book:
 
     - part: "글쓰기"
       chapters:
-        - markdown_mess.qmd       # OK
+        - markdown_mess.qmd          # OK
         - writing.qmd                # OK
 
     - part: "기본요소"
       chapters:
-        - components.qmd             # OK
-        - markdown.qmd               # OK
-        - document_class.qmd         # OK
-        - about_book.qmd             # OK
+        - components.qmd          # OK
+        - markdown.qmd            # OK -- 방법론 , # 수정
+        - document_class.qmd      # OK
+        - about_book.qmd          # OK
 
     - part: "템플릿과 테마"
       chapters:
-        - fonts.qmd                  # OK
-        - colors.qmd                 # OK
-        - themes_ggplot.qmd          # OK
-        - themes_gt.qmd              # OK
-        - templates.qmd              # OK
+        - fonts.qmd                # OK
+        - colors.qmd               # OK
+        - themes_ggplot.qmd        # OK
+        - themes_gt.qmd            # OK
+        - templates.qmd            # OK
 
     - part: "출판물"
       chapters:
-        - publishing.qmd          # OK
-        - dw_book.qmd              # OK
-        - dw_website.qmd          # OK
-        - dw_slideshow.qmd        # OK
-        - dw_dashboard.qmd        # OK
+      - publishing.qmd          # OK
+      - dw_book.qmd             # OK
+      - dw_website.qmd          # OK
+      - dw_slideshow.qmd        # OK
+      - dw_dashboard.qmd        # OK
 
     - part: "챗GPT"
       chapters:
-        - chatGPT.qmd             # OK
-        - prompt.qmd              # OK
-        - text_to_X.qmd           # OK
-        - plugin.qmd              # OK
+        - chatGPT.qmd           # OK
+        - prompt.qmd            # OK
+        - text_to_X.qmd         # OK -- 한글 깨짐
+        - plugin.qmd            # OK
 
     - references.qmd
 
